@@ -59,7 +59,6 @@ export default function MissionVisionPage() {
       <PageHero
         title="Mission &amp; Vision"
         subtitle="The foundational purpose that has guided the Jan Cosmic Foundation for over three decades — and the future we are collectively building."
-        backgroundImage="/images/studentinmeditation.jpg"
       />
 
       {/* Mission */}

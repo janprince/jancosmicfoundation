@@ -52,7 +52,6 @@ export default function VolunteerPage() {
       <PageHero
         title="Volunteer With Us"
         subtitle="Give your time, talents, and energy to something that truly matters. Service is the highest form of practice."
-        backgroundImage="/images/student-in-yoga-posture.jpg"
       />
 
       {/* Why Volunteer section */}

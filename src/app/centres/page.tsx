@@ -19,7 +19,6 @@ export default function CentresPage() {
       <PageHero
         title="Our Centres"
         subtitle="A growing global network of communities dedicated to spiritual practice, conscious living, and service to humanity."
-        backgroundImage="/images/group-of-students2.jpg"
       />
 
       {/* Intro section */}

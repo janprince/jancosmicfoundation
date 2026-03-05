@@ -1,52 +1,25 @@
-import Image from 'next/image';
-
 interface PageHeroProps {
   title: string;
   subtitle?: string;
-  backgroundImage?: string;
 }
 
 export default function PageHero({
   title,
   subtitle,
-  backgroundImage,
 }: PageHeroProps) {
   return (
     <section
       className="relative flex items-center justify-center overflow-hidden"
       style={{ minHeight: 'clamp(300px, 35vw, 400px)' }}
     >
-      {/* Background layer */}
-      {backgroundImage ? (
-        <>
-          {/* Image background */}
-          <Image
-            src={backgroundImage}
-            alt=""
-            fill
-            priority
-            className="object-cover object-center"
-            sizes="100vw"
-          />
-          {/* Deep indigo overlay gradient */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                'linear-gradient(135deg, rgba(0,11,88,0.85) 0%, rgba(0,11,88,0.65) 60%, rgba(45,106,79,0.50) 100%)',
-            }}
-          />
-        </>
-      ) : (
-        /* Solid gradient when no image is provided */
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              'linear-gradient(135deg, #000B58 0%, #001485 50%, #2D6A4F 100%)',
-          }}
-        />
-      )}
+      {/* Solid gradient background */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            'linear-gradient(135deg, #000B58 0%, #001485 50%, #2D6A4F 100%)',
+        }}
+      />
 
       {/* Decorative top edge stripe */}
       <div

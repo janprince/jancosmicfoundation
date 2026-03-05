@@ -30,28 +30,18 @@ export default function HeroSection() {
     <section className="relative">
       {/* ── Main hero area ── */}
       <div className="relative min-h-[85vh] md:min-h-[90vh] overflow-hidden">
-        {/* Background image — clean, image-dominant */}
-        <Image
-          src="/images/teaching.jpg"
-          alt="Dr. Baffour Jan teaching students"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
-
-        {/* Overlay — heavier for centered text readability */}
+        {/* Solid gradient background */}
         <div
           aria-hidden="true"
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(180deg, rgba(0,11,88,0.70) 0%, rgba(0,11,88,0.55) 50%, rgba(0,11,88,0.75) 100%)',
+              'linear-gradient(135deg, #000B58 0%, #001485 50%, #2D6A4F 100%)',
           }}
         />
 
         {/* Centered hero content */}
-        <div className="relative z-10 flex min-h-[85vh] md:min-h-[90vh] items-center justify-center">
+        <div className="relative z-10 flex min-h-[85vh] md:min-h-[90vh] items-center justify-center pt-20 lg:pt-24">
           <div className="mx-auto w-full max-w-5xl px-5 sm:px-8 lg:px-12 text-center">
             {/* Eyebrow */}
             <div className="mb-6 inline-flex items-center gap-3">

@@ -54,7 +54,6 @@ export default function AboutPage() {
       <PageHero
         title="About the Foundation"
         subtitle="Over three decades of transforming lives through inner practice, community service, and the living wisdom of Dr. Baffour Jan."
-        backgroundImage="/images/doc-holding-mic.jpg"
       />
 
       {/* Foundation History */}
