@@ -39,6 +39,7 @@ export default function EventsPage() {
       <PageHero
         title="Events"
         subtitle="Join us for retreats, workshops, community service days, and gatherings that nourish both the inner life and the world around us."
+        backgroundImage="/images/exercise.jpg"
       />
 
       <section className="py-16 sm:py-24">

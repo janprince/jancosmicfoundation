@@ -36,6 +36,7 @@ export default function BlogPage() {
       <PageHero
         title="Blog"
         subtitle="Insights, stories, and practical wisdom from the Jan Cosmic Foundation community — on meditation, service, wellbeing, and conscious living."
+        backgroundImage="/images/studentslistenning2.jpg"
       />
 
       <section className="py-16 sm:py-24">

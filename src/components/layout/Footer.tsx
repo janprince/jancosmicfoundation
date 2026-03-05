@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   FaFacebookF,
   FaXTwitter,
@@ -57,16 +58,10 @@ export default function Footer() {
           {/* Column 1 — Brand & social */}
           <div className="sm:col-span-2 lg:col-span-1">
             {/* Logo mark */}
-            <div className="flex items-center gap-2 mb-4">
-              <span
-                className="flex items-center justify-center w-9 h-9 rounded-full text-sm font-bold shrink-0"
-                style={{ backgroundColor: '#2D6A4F' }}
-              >
-                <span style={{ color: '#D4A843' }}>JCF</span>
-              </span>
-              <span className="text-white text-base font-bold leading-tight">
-                Jan Cosmic{' '}
-                <span style={{ color: '#D4A843' }}>Foundation</span>
+            <div className="flex items-center gap-3 mb-4">
+              <Image src="/images/logo.png" alt="JCF Logo" width={36} height={36} className="rounded-full" />
+              <span className="text-white text-sm font-light uppercase tracking-[0.2em]">
+                Jan Cosmic Foundation
               </span>
             </div>
 

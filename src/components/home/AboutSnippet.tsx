@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function AboutSnippet() {
@@ -5,44 +6,18 @@ export default function AboutSnippet() {
     <section className="bg-[#FDFBF7] py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-16">
-          {/* Image placeholder — left column on desktop */}
+          {/* Image — left column on desktop */}
           <div className="w-full shrink-0 lg:w-[45%]">
             <div className="relative">
               {/* Main image block */}
-              <div
-                className="relative h-72 w-full overflow-hidden rounded-3xl sm:h-96 lg:h-[440px]"
-                style={{
-                  background:
-                    'linear-gradient(145deg, #2D6A4F 0%, #000B58 60%, #1a2f6b 100%)',
-                }}
-                aria-hidden="true"
-              >
-                {/* Decorative inner pattern */}
-                <div
-                  className="absolute inset-0 opacity-10"
-                  style={{
-                    backgroundImage:
-                      'radial-gradient(circle at 30% 40%, #D4A843 0%, transparent 50%), radial-gradient(circle at 70% 70%, #2D6A4F 0%, transparent 50%)',
-                  }}
+              <div className="relative h-72 w-full overflow-hidden rounded-3xl sm:h-96 lg:h-[440px]">
+                <Image
+                  src="/images/doc-potrait.jpg"
+                  alt="Dr. Baffour Jan"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 45vw"
                 />
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-8 text-center">
-                  {/* Lotus / star SVG placeholder icon */}
-                  <svg
-                    className="h-16 w-16 text-[#D4A843]/60"
-                    viewBox="0 0 64 64"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path d="M32 4C32 4 28 16 16 20C16 20 26 22 32 32C38 22 48 20 48 20C36 16 32 4 32 4Z" opacity="0.9" />
-                    <path d="M32 60C32 60 28 48 16 44C16 44 26 42 32 32C38 42 48 44 48 44C36 48 32 60 32 60Z" opacity="0.9" />
-                    <path d="M4 32C4 32 16 28 20 16C20 16 22 26 32 32C22 38 20 48 20 48C16 36 4 32 4 32Z" opacity="0.9" />
-                    <path d="M60 32C60 32 48 28 44 16C44 16 42 26 32 32C42 38 44 48 44 48C48 36 60 32 60 32Z" opacity="0.9" />
-                    <circle cx="32" cy="32" r="6" opacity="0.8" />
-                  </svg>
-                  <p className="text-sm font-medium text-white/50 tracking-wide">
-                    Jan Cosmic Foundation
-                  </p>
-                </div>
               </div>
 
               {/* Floating badge */}
@@ -77,17 +52,11 @@ export default function AboutSnippet() {
             </h2>
 
             <p className="mt-6 text-base leading-relaxed text-[#1a1a1a]/65 sm:text-lg">
-              The Jan Cosmic Foundation (JCF) is a global spiritual and humanitarian
-              organisation founded by the visionary teacher <strong className="font-semibold text-[#000B58]">Dr. Baffour Jan</strong>.
-              Over nearly four decades, JCF has been a beacon of hope — nurturing
-              inner transformation, holistic health, and community empowerment across
-              more than 20 countries.
+              Dr. Baffour Jan is a spiritual master, mystic and a teacher with a profound understanding of spirituality and the mysteries of the world. Through his wisdom and rare insights, he guides and counsels individuals on their spiritual journeys, imparting deep knowledge that transcends boundaries of different religions.
             </p>
 
             <p className="mt-4 text-base leading-relaxed text-[#1a1a1a]/65">
-              Through a network of 15+ active centres, regular retreats, healing
-              programmes, and charitable initiatives, we walk alongside individuals
-              on their journey toward wholeness — body, mind, and spirit.
+              As the visionary founder of the Jan Cosmic Foundation (JCF), Dr. Baffour Jan has dedicated himself to promoting awareness of our true nature as spiritual beings. His foundation&apos;s mission is to guide individuals towards elevating their consciousness to its highest potential, fostering unity and oneness among all beings.
             </p>
 
             {/* Feature list */}

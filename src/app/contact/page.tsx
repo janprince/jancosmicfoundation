@@ -95,6 +95,7 @@ export default function ContactPage() {
       <PageHero
         title="Contact Us"
         subtitle="We would love to hear from you. Reach out with any questions, ideas, or simply to connect."
+        backgroundImage="/images/masterseated3.jpg"
       />
 
       {/* Main content */}

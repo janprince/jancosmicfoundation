@@ -1,13 +1,28 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function VolunteerCTA() {
   return (
-    <section
-      className="relative overflow-hidden py-20 lg:py-28"
-      style={{
-        background: 'linear-gradient(135deg, #1a4d38 0%, #2D6A4F 40%, #245c43 100%)',
-      }}
-    >
+    <section className="relative overflow-hidden py-20 lg:py-28">
+      {/* Background image */}
+      <Image
+        src="/images/group-posture.jpg"
+        alt="Students in meditation postures on green grass"
+        fill
+        className="object-cover"
+        sizes="100vw"
+      />
+
+      {/* Dark green overlay gradient */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{
+          background:
+            'linear-gradient(135deg, rgba(26,77,56,0.88) 0%, rgba(45,106,79,0.85) 40%, rgba(36,92,67,0.90) 100%)',
+        }}
+      />
+
       {/* Decorative blurred circles */}
       <div
         aria-hidden="true"

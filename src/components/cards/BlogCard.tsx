@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { BlogPost } from "@/types";
 import Badge from "@/components/ui/Badge";
 
@@ -7,7 +8,13 @@ export default function BlogCard({ post }: { post: BlogPost }) {
     <Link href={`/blog/${post.slug}`} className="group block">
       <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col">
         <div className="relative h-48 md:h-52 overflow-hidden">
-          <div className="w-full h-full bg-gradient-to-br from-[#D4A843]/30 to-[#2D6A4F] group-hover:scale-105 transition-transform duration-500" />
+          <Image
+            src="/images/studentslistenning2.jpg"
+            alt={post.title}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
           <div className="absolute top-4 left-4 z-10">
             <Badge variant="secondary">{post.category}</Badge>
           </div>

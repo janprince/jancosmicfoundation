@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import {
   Dialog,
@@ -72,16 +73,10 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
               style={{ backgroundColor: '#000B58' }}
             >
               {/* Logo mark */}
-              <div className="flex items-center gap-2">
-                <span
-                  className="flex items-center justify-center w-8 h-8 rounded-full text-xs font-bold"
-                  style={{ backgroundColor: '#2D6A4F' }}
-                >
-                  <span style={{ color: '#D4A843' }}>JCF</span>
-                </span>
-                <span className="text-white text-sm font-semibold">
-                  Jan Cosmic{' '}
-                  <span style={{ color: '#D4A843' }}>Foundation</span>
+              <div className="flex items-center gap-3">
+                <Image src="/images/logo.png" alt="JCF Logo" width={32} height={32} className="rounded-full" />
+                <span className="text-white text-xs font-light uppercase tracking-[0.18em]">
+                  Jan Cosmic Foundation
                 </span>
               </div>
 

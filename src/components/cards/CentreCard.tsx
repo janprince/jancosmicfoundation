@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Centre } from "@/types";
 import Button from "@/components/ui/Button";
 
@@ -7,7 +8,13 @@ export default function CentreCard({ centre }: { centre: Centre }) {
     <Link href={`/centres/${centre.slug}`} className="group block">
       <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col">
         <div className="relative h-48 overflow-hidden">
-          <div className="w-full h-full bg-gradient-to-br from-[#000B58] to-[#2D6A4F] group-hover:scale-105 transition-transform duration-500" />
+          <Image
+            src="/images/group-of-students.jpg"
+            alt={centre.name}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
           <div className="absolute bottom-4 left-4 z-10 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1">
             <span className="text-xs font-medium text-[#000B58]">
               {centre.country}

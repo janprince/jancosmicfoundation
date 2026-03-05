@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Button from '@/components/ui/Button';
@@ -53,6 +54,7 @@ export default function AboutPage() {
       <PageHero
         title="About the Foundation"
         subtitle="Over three decades of transforming lives through inner practice, community service, and the living wisdom of Dr. Baffour Jan."
+        backgroundImage="/images/doc-holding-mic.jpg"
       />
 
       {/* Foundation History */}
@@ -68,16 +70,10 @@ export default function AboutPage() {
               />
               <div className="mt-8 space-y-5 text-base sm:text-lg leading-relaxed" style={{ color: '#1a1a1a99' }}>
                 <p>
-                  The Jan Cosmic Foundation was established in Accra, Ghana in 1988 by Dr. Baffour Jan — a scholar, meditation teacher, and humanitarian who had spent two decades immersed in contemplative traditions across West Africa, India, and Southeast Asia.
+                  Dr. Baffour Jan is a spiritual master, mystic and a teacher with a profound understanding of spirituality and the mysteries of the world. Through his wisdom and rare insights, he guides and counsels individuals on their spiritual journeys, imparting deep knowledge that transcends boundaries of different religions.
                 </p>
                 <p>
-                  What began as a small circle of meditators gathering in Airport Residential Area has grown into an international community spanning five countries, touching over 20,000 lives through spiritual teaching, education, healthcare, and community service.
-                </p>
-                <p>
-                  The foundation's guiding conviction — that inner transformation and outer service are one integrated path — shapes every programme, every gathering, and every relationship within the JCF community. We do not separate the life of contemplation from the life of contribution.
-                </p>
-                <p>
-                  Today, JCF operates 15+ active centres across Ghana, the United Kingdom, the United States, and Canada, supported by a global network of teachers, volunteers, and donors committed to the vision of a more conscious, compassionate world.
+                  As the visionary founder of the Jan Cosmic Foundation (JCF), Dr. Baffour Jan has dedicated himself to promoting awareness of our true nature as spiritual beings. His foundation's mission is to guide individuals towards elevating their consciousness to its highest potential, fostering unity and oneness among all beings. Dr. Jan's life's work is a testament to his commitment to awakening humanity to the profound truth that we are not merely human beings but manifestations of consciousness itself.
                 </p>
               </div>
             </div>
@@ -86,33 +82,15 @@ export default function AboutPage() {
             <div className="relative">
               <div
                 className="rounded-3xl overflow-hidden"
-                style={{ background: 'linear-gradient(135deg, #000B58 0%, #2D6A4F 100%)', minHeight: '420px' }}
+                style={{ minHeight: '420px', position: 'relative' }}
               >
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-10 text-center">
-                  <div
-                    className="w-20 h-20 rounded-full flex items-center justify-center mb-6"
-                    style={{ backgroundColor: 'rgba(212,168,67,0.2)', border: '2px solid rgba(212,168,67,0.5)' }}
-                  >
-                    <span className="text-4xl font-bold" style={{ color: '#D4A843' }}>38</span>
-                  </div>
-                  <p className="text-white text-xl font-semibold mb-2">Years of Service</p>
-                  <p style={{ color: 'rgba(253,251,247,0.7)' }} className="text-base">
-                    Founded 1988 in Accra, Ghana
-                  </p>
-                  <div className="mt-8 grid grid-cols-2 gap-6 w-full max-w-xs">
-                    {[
-                      { value: '20,000+', label: 'Lives Touched' },
-                      { value: '15+', label: 'Active Centres' },
-                      { value: '20+', label: 'Countries' },
-                      { value: '340+', label: 'Scholars Funded' },
-                    ].map((stat) => (
-                      <div key={stat.label} className="text-center">
-                        <div className="text-2xl font-bold" style={{ color: '#D4A843' }}>{stat.value}</div>
-                        <div className="text-xs mt-1" style={{ color: 'rgba(253,251,247,0.65)' }}>{stat.label}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                <Image
+                  src="/images/doc-jcf.jpg"
+                  alt="Dr. Baffour Jan at JCF training programme"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
               </div>
               {/* Accent corner */}
               <div
@@ -205,18 +183,30 @@ export default function AboutPage() {
                 className="rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
                 style={{ backgroundColor: '#ffffff', border: '1px solid rgba(0,11,88,0.07)' }}
               >
-                {/* Avatar placeholder */}
-                <div
-                  className="h-48 flex items-center justify-center"
-                  style={{ background: 'linear-gradient(135deg, #000B58 0%, #2D6A4F 100%)' }}
-                >
-                  <div
-                    className="w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold"
-                    style={{ backgroundColor: 'rgba(212,168,67,0.25)', color: '#D4A843', border: '2px solid rgba(212,168,67,0.5)' }}
-                  >
-                    {member.name.charAt(0)}
+                {/* Avatar */}
+                {member.name === 'Dr. Baffour Jan' ? (
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
+                      src="/images/doc-potrait.jpg"
+                      alt="Dr. Baffour Jan"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    />
                   </div>
-                </div>
+                ) : (
+                  <div
+                    className="h-48 flex items-center justify-center"
+                    style={{ background: 'linear-gradient(135deg, #000B58 0%, #2D6A4F 100%)' }}
+                  >
+                    <div
+                      className="w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold"
+                      style={{ backgroundColor: 'rgba(212,168,67,0.25)', color: '#D4A843', border: '2px solid rgba(212,168,67,0.5)' }}
+                    >
+                      {member.name.charAt(0)}
+                    </div>
+                  </div>
+                )}
                 <div className="p-5">
                   <h3 className="text-base font-bold" style={{ color: '#000B58' }}>
                     {member.name}

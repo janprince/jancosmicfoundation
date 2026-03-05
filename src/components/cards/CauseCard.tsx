@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Cause } from "@/types";
 import ProgressBar from "@/components/ui/ProgressBar";
 import Button from "@/components/ui/Button";
@@ -8,7 +9,13 @@ export default function CauseCard({ cause }: { cause: Cause }) {
     <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group h-full flex flex-col">
       <Link href={`/donate/${cause.slug}`} className="block">
         <div className="relative h-48 md:h-56 overflow-hidden">
-          <div className="w-full h-full bg-gradient-to-br from-[#2D6A4F] to-[#D4A843] group-hover:scale-105 transition-transform duration-500" />
+          <Image
+            src="/images/exercise.jpg"
+            alt={cause.title}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
         </div>
       </Link>
       <div className="p-5 flex flex-col flex-1">

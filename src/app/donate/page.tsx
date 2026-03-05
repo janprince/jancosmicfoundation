@@ -41,6 +41,7 @@ export default function DonatePage() {
       <PageHero
         title="Donate"
         subtitle="Your generosity sustains the programmes that transform lives — in Ghana and around the world."
+        backgroundImage="/images/studentslistening.jpg"
       />
 
       {/* Intro */}

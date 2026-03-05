@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Event } from "@/types";
 import Badge from "@/components/ui/Badge";
 
@@ -11,8 +12,14 @@ export default function EventCard({ event }: { event: Event }) {
     <Link href={`/events/${event.slug}`} className="group block">
       <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
         <div className="relative h-48 md:h-56 overflow-hidden">
+          <Image
+            src="/images/students-sitting-down-on-grass.jpg"
+            alt={event.title}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
           <div className="absolute inset-0 bg-[#000B58]/30 z-10" />
-          <div className="w-full h-full bg-gradient-to-br from-[#2D6A4F] to-[#000B58] group-hover:scale-105 transition-transform duration-500" />
           <div className="absolute top-4 left-4 z-20 bg-white rounded-lg px-3 py-2 text-center shadow-md">
             <span className="block text-xs font-semibold text-[#C05021] uppercase tracking-wider">
               {month}

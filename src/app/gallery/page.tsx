@@ -41,6 +41,7 @@ export default function GalleryPage() {
       <PageHero
         title="Gallery"
         subtitle="Moments of community, service, and spiritual life from across the Jan Cosmic Foundation."
+        backgroundImage="/images/students.jpg"
       />
 
       <section className="py-16 md:py-20" style={{ backgroundColor: '#FDFBF7' }}>

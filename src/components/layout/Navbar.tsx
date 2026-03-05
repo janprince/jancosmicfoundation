@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { HiOutlineBars3BottomRight } from 'react-icons/hi2';
 import { HiChevronDown } from 'react-icons/hi2';
@@ -77,25 +78,17 @@ export default function Navbar() {
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center gap-2 shrink-0 group"
+              className="flex items-center gap-3 shrink-0 group"
               aria-label="Jan Cosmic Foundation — home"
             >
-              {/* Emblem mark */}
-              <span
-                className="flex items-center justify-center w-9 h-9 rounded-full text-white text-sm font-bold shrink-0"
-                style={{ backgroundColor: '#2D6A4F' }}
-              >
-                <span style={{ color: '#D4A843' }}>JCF</span>
-              </span>
-              {/* Full name — hidden on very small screens */}
+              <Image src="/images/logo.png" alt="JCF Logo" width={36} height={36} className="rounded-full" />
               <span
                 className={[
-                  'hidden sm:block text-lg font-bold leading-tight transition-colors duration-300',
+                  'hidden sm:block text-sm font-light uppercase tracking-[0.2em] transition-colors duration-300',
                   scrolled ? 'text-[#000B58]' : 'text-white',
                 ].join(' ')}
               >
-                Jan Cosmic{' '}
-                <span style={{ color: '#D4A843' }}>Foundation</span>
+                Jan Cosmic Foundation
               </span>
             </Link>
 
