@@ -41,7 +41,7 @@ export default function HeroSection() {
         />
 
         {/* Centered hero content */}
-        <div className="relative z-10 flex min-h-[85vh] md:min-h-[90vh] items-center justify-center pt-20 lg:pt-24">
+        <div className="relative z-10 flex min-h-[85vh] md:min-h-[90vh] items-center justify-center pt-20 lg:pt-24 pb-28 md:pb-32">
           <div className="mx-auto w-full max-w-5xl px-5 sm:px-8 lg:px-12 text-center">
             {/* Eyebrow */}
             <div className="mb-6 inline-flex items-center gap-3">
