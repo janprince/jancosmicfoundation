@@ -14,7 +14,7 @@ const coreValues = [
     ),
     title: 'Compassion',
     description:
-      'We approach every individual and community with an open heart — listening deeply, responding with care, and seeing the humanity in all people regardless of background or circumstance.',
+      'All religious doctrines should lead to the manifestation of values like love, joy, and peace. We approach every individual with an open heart, seeing the divine in all people regardless of background.',
   },
   {
     icon: (
@@ -24,7 +24,7 @@ const coreValues = [
     ),
     title: 'Unity',
     description:
-      'We recognise that individual flourishing and collective wellbeing are inseparable. Our community is built on the understanding that we rise together — across nationalities, traditions, and generations.',
+      'Unity in Divinity and Divinity in Unity — that is the goal. Our community is built on the understanding that all we see, hear, and feel are different frequencies of the same Consciousness.',
   },
   {
     icon: (
@@ -34,7 +34,7 @@ const coreValues = [
     ),
     title: 'Service',
     description:
-      'Service is not a supplement to our spiritual path — it is the path itself. We believe that genuine inner growth is measured by its fruits in the lives of those around us.',
+      'The proof of our spiritual journey is the genuine love that is revealed in us and among one another. Service is not a supplement to the spiritual path — it is the path itself.',
   },
   {
     icon: (
@@ -44,7 +44,7 @@ const coreValues = [
     ),
     title: 'Wisdom',
     description:
-      'We honour the great contemplative traditions while remaining grounded in the practical realities of contemporary life. Wisdom, for us, is knowledge lived, not merely learned.',
+      'The most worthy knowledge is that which helps to dismantle the Ego in order to reveal the True Self. Believing alone is not enough — it is through seeking, doing, and striving that one approaches perfection.',
   },
 ];
 
@@ -53,7 +53,7 @@ export default function AboutPage() {
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
         title="About the Foundation"
-        subtitle="Over three decades of transforming lives through inner practice, community service, and the living wisdom of Dr. Baffour Jan."
+        subtitle="An international spiritual organisation guiding individuals toward higher consciousness and self-realization — founded by Dr. Baffour Jan."
       />
 
       {/* Foundation History */}
@@ -69,10 +69,10 @@ export default function AboutPage() {
               />
               <div className="mt-8 space-y-5 text-base sm:text-lg leading-relaxed" style={{ color: '#1a1a1a99' }}>
                 <p>
-                  Dr. Baffour Jan is a spiritual master, mystic and a teacher with a profound understanding of spirituality and the mysteries of the world. Through his wisdom and rare insights, he guides and counsels individuals on their spiritual journeys, imparting deep knowledge that transcends boundaries of different religions.
+                  The Jan Cosmic Foundation is an international nonprofit spiritual organisation headquartered in Accra, Ghana. Founded by Dr. Baffour Jan, the foundation promotes spiritual growth, personal transformation, and social upliftment through teachings, retreats, counseling, and outreach programmes.
                 </p>
                 <p>
-                  As the visionary founder of the Jan Cosmic Foundation (JCF), Dr. Baffour Jan has dedicated himself to promoting awareness of our true nature as spiritual beings. His foundation's mission is to guide individuals towards elevating their consciousness to its highest potential, fostering unity and oneness among all beings. Dr. Jan's life's work is a testament to his commitment to awakening humanity to the profound truth that we are not merely human beings but manifestations of consciousness itself.
+                  The philosophy of the foundation centres around awakening consciousness and realizing the true nature of the self. It teaches that every human being carries within them the potential to awaken to higher states of consciousness and experience profound inner transformation — aligning human life with universal cosmic intelligence.
                 </p>
               </div>
             </div>
@@ -114,10 +114,13 @@ export default function AboutPage() {
             Our Connection to Dr. Baffour Jan
           </h2>
           <p className="text-base sm:text-lg leading-relaxed mb-6" style={{ color: '#1a1a1a99' }}>
-            Dr. Baffour Jan is the spiritual heart of everything the Jan Cosmic Foundation stands for. A teacher, author, and servant-leader, he has dedicated over four decades to demonstrating that genuine awakening is not a private achievement — it is a way of living that radiates outward into every dimension of community life.
+            Dr. Baffour Jan is a spiritual master, mystic, and teacher known for guiding seekers toward deeper awareness of the self and the nature of consciousness. His teachings focus on awakening the divine potential within every human being and transcending limiting identities of the mind.
           </p>
-          <p className="text-base sm:text-lg leading-relaxed mb-8" style={{ color: '#1a1a1a99' }}>
-            His teachings draw on the deepest wells of contemplative wisdom while remaining grounded in the everyday realities of contemporary Ghanaian and global life. To understand the JCF is to understand the man whose vision called it into being.
+          <p className="text-base sm:text-lg leading-relaxed mb-4" style={{ color: '#1a1a1a99' }}>
+            Through the Jan Cosmic Foundation, he offers teachings, courses, retreats, and spiritual guidance designed to help individuals discover truth, silence the restless mind, and experience the deeper reality of spirit.
+          </p>
+          <p className="text-base italic leading-relaxed mb-8" style={{ color: '#1a1a1a80' }}>
+            &ldquo;The most worthy knowledge is that which helps to dismantle the Ego in order to reveal the True Self.&rdquo;
           </p>
           <a
             href="https://drbaffourjan.com"
@@ -232,8 +235,11 @@ export default function AboutPage() {
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Explore Our Purpose
           </h2>
+          <p className="text-sm italic mb-6" style={{ color: 'rgba(212,168,67,0.75)' }}>
+            &ldquo;The greatest wealth is contentment and you can only be totally content when you have attained complete self-realization.&rdquo;
+          </p>
           <p className="text-base sm:text-lg mb-10" style={{ color: 'rgba(253,251,247,0.75)' }}>
-            Discover the mission, vision, and strategic goals that drive the Jan Cosmic Foundation forward in service to communities across the world.
+            Discover the mission, vision, and principles that guide the Jan Cosmic Foundation in awakening consciousness across the world.
           </p>
           <Button href="/about/mission-vision" variant="secondary" size="lg">
             View Mission &amp; Vision

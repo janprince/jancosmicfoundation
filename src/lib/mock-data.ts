@@ -147,9 +147,9 @@ export const events: Event[] = [
     slug: 'youth-empowerment-workshop-september-2025',
     title: 'Youth Empowerment Workshop',
     description:
-      'A full-day workshop equipping young people aged 16–25 with mindfulness tools, goal-setting frameworks, and leadership skills for purposeful living.',
-    content: `<p>More than 120 young people from across Accra attended the JCF Youth Empowerment Workshop held at the Ghana Institute of Management and Public Administration. The programme blended mindfulness exercises, motivational talks from JCF alumni now working as professionals, and practical sessions on vision-boarding and financial literacy.</p>
-<p>Participants left with a personal action plan, a community accountability partner, and free access to the JCF Youth Online Learning Hub for 12 months. The workshop was co-facilitated by JCF Youth Coordinator Kofi Mensah and guest facilitator Maame Agyapong, a certified life coach and JCF member.</p>`,
+      'A full-day workshop introducing young people aged 16–25 to conscious living, self-awareness, and purpose — through the lens of the JCF teachings.',
+    content: `<p>More than 120 young people from across Accra attended the JCF Youth Empowerment Workshop held at the Ghana Institute of Management and Public Administration. The programme blended awareness exercises, reflective inquiry, and practical sessions on discovering purpose and living with intention.</p>
+<p>Sessions explored themes of self-knowledge, emotional awareness, and the difference between ambition driven by conditioning and action arising from genuine inner clarity. Participants left with a personal reflection journal, a community accountability partner, and free access to the JCF Youth Online Learning Hub for 12 months. The workshop was co-facilitated by JCF Youth Coordinator Kofi Mensah and Head of Community Partnerships Maame Agyapong.</p>`,
     date: '2025-09-13',
     time: '09:00 AM',
     location: 'GIMPA Conference Centre, Accra',
@@ -287,16 +287,18 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'blog-005',
-    slug: 'how-jcf-education-scholarships-changed-lives',
-    title: 'How Our Education Scholarships Changed Five Lives — In Their Own Words',
+    slug: 'guide-the-children-shaping-young-minds',
+    title: 'How the Guide the Children Initiative is Shaping Young Minds',
     excerpt:
-      'Five JCF scholarship recipients share how access to quality education transformed not just their own futures, but the futures of their families and communities.',
-    content: `<p>The Jan Cosmic Foundation believes that education is among the most powerful levers for lasting transformation in any community. Since 2008, our Education Scholarship Programme has supported over 340 students across Ghana in accessing secondary and tertiary education they would otherwise have been unable to afford.</p>
-<p>This year, we sat down with five alumni to ask a simple question: how did it change you?</p>
-<blockquote><p>"Before the scholarship I was helping my mother sell tomatoes at Makola. Now I am a registered nurse at Korle Bu. My mother has not sold tomatoes in three years." — <strong>Akosua, 26, Accra</strong></p></blockquote>
-<blockquote><p>"I was the first in my entire family — aunties, uncles, cousins, everyone — to finish university. My younger sisters are now in secondary school because I can help pay their fees. It keeps going." — <strong>Emmanuel, 29, Kumasi</strong></p></blockquote>
-<blockquote><p>"The scholarship changed the material facts of my life. But the JCF community changed who I am. I learned to give back before I even had much to give." — <strong>Fatoumata, 24, Tamale</strong></p></blockquote>
-<p>These stories are not exceptional — they are the norm within our scholarship community. To support the next generation of scholars, visit our Education Scholarship cause page and consider making a contribution.</p>`,
+      'Through mentorship, awareness practices, and wisdom-based education, the Guide the Children programme is planting seeds of consciousness in the next generation.',
+    content: `<p>Children are naturally open. They have not yet built the layers of conditioning that make inner work so effortful for adults. The Guide the Children initiative was created by the Jan Cosmic Foundation to meet children in that openness — and nurture it before the world teaches them to close it off.</p>
+<h3>More than academics</h3>
+<p>Guide the Children is not a tutoring programme. It is an introduction to conscious living. Through age-appropriate awareness exercises, storytelling drawn from wisdom traditions, and creative expression, children learn to notice their thoughts, name their emotions, and relate to others with presence and compassion.</p>
+<h3>What we are seeing</h3>
+<p>Facilitators report that children who participate over multiple programme cycles show a visible shift in how they handle conflict, how they listen, and how they speak about themselves. Parents consistently tell us their children are calmer, more reflective, and more willing to help at home.</p>
+<h3>The role of mentors</h3>
+<p>Each child in the programme is paired with a volunteer mentor — not to instruct, but to be present. Mentors model attentiveness, curiosity, and stillness. In the JCF tradition, we believe that consciousness is caught more than it is taught, and the mentor relationship is where that transmission happens most naturally.</p>
+<p>If you feel drawn to support this work — whether through volunteering as a mentor, donating educational materials, or simply spreading the word — visit the Guide the Children cause page to learn more.</p>`,
     image: '/images/placeholder-blog.jpg',
     author: {
       name: 'Abena Asante',
@@ -305,7 +307,7 @@ export const blogPosts: BlogPost[] = [
     },
     date: '2025-11-18',
     category: 'Community Service',
-    tags: ['scholarships', 'education', 'impact', 'Ghana', 'stories'],
+    tags: ['children', 'mentorship', 'consciousness', 'youth', 'Guide the Children'],
     readTime: '6 min read',
   },
   {
@@ -342,37 +344,104 @@ export const blogPosts: BlogPost[] = [
 export const causes: Cause[] = [
   {
     id: 'cause-001',
-    slug: 'education-scholarships',
-    title: 'Education Scholarship Fund',
+    slug: 'kwahu-land-project',
+    title: 'JCF Kwahu Land Project',
     description:
-      'Providing secondary and tertiary education scholarships to brilliant but financially disadvantaged young Ghanaians, breaking the cycle of poverty through the power of learning.',
-    content: `<p>Education is the cornerstone of lasting transformation. The JCF Education Scholarship Fund has supported over 340 students since 2008, enabling them to access quality secondary and tertiary education that would otherwise have been beyond their reach.</p>
-<p>Each scholarship covers tuition, essential textbooks, and a monthly stipend for transport and meals. Recipients are selected on the basis of academic merit and financial need, with priority given to students from rural communities and female students in STEM programmes.</p>
-<p>Beyond financial support, scholarship holders are welcomed into the JCF mentorship network, connecting them with professionals and JCF community members who support their academic and personal development throughout their studies.</p>
-<p>Your donation directly funds the next cohort of scholars. GHS 500 covers one month of a student's stipend. GHS 3,000 covers a full year of secondary school tuition. Every contribution, at every level, moves a young person closer to their potential.</p>`,
+      'Acquiring a 500-acre parcel of land in Kwahu, Eastern Region of Ghana, to establish a JCF Spiritual Village with retreat facilities, organic farms, and spaces for meditation and community living.',
+    content: `<p>One of the primary initiatives of the Jan Cosmic Foundation is the acquisition of a 500-acre parcel of land in Kwahu, in the Eastern Region of Ghana. This land is envisioned as the foundation for a long-term spiritual and ecological project.</p>
+<p>The project includes the development of organic farming and sustainable agriculture, a JCF Spiritual Village, a retreat centre for spiritual seekers, and dedicated spaces for meditation, learning, and community living.</p>
+<p>The JCF Village is intended to function as a sanctuary for individuals seeking deeper spiritual understanding, similar in spirit to global spiritual retreat centres. Visitors will be able to stay for retreats, programmes, and periods of personal spiritual practice.</p>
+<p>Your donations toward this project support land acquisition, infrastructure development, environmental restoration, and the construction of facilities for retreats and spiritual programmes.</p>`,
     image: '/images/placeholder-cause.jpg',
     gallery: [
       '/images/placeholder-cause-gallery-1.jpg',
       '/images/placeholder-cause-gallery-2.jpg',
       '/images/placeholder-cause-gallery-3.jpg',
     ],
-    goalAmount: 150000,
-    raisedAmount: 98250,
+    goalAmount: 500000,
+    raisedAmount: 185000,
     currency: 'GHS',
     donorsCount: 312,
-    category: 'Education',
+    category: 'Infrastructure',
     isActive: true,
   },
   {
     id: 'cause-002',
+    slug: 'organic-farming-initiative',
+    title: 'JCF Organic Farming Initiative',
+    description:
+      'Supporting sustainable organic farming on the Kwahu land — producing healthy, chemical-free food while demonstrating conscious living in harmony with nature.',
+    content: `<p>Alongside the Kwahu Land Project, organic farming activities have already begun on portions of the land, even though the full acquisition is still in progress.</p>
+<p>The organic farms serve several purposes: producing healthy, chemical-free food, demonstrating sustainable agricultural practices, supporting the future JCF village community, and creating a model for conscious living in harmony with nature.</p>
+<p>This initiative reflects the foundation's belief that spiritual growth and care for the earth are inseparable. By cultivating the land with respect and awareness, we practise the same principles we teach — aligning human life with universal intelligence.</p>
+<p>Donations toward this initiative help support farming equipment, irrigation systems, seeds and organic inputs, and farm infrastructure and operations.</p>`,
+    image: '/images/placeholder-cause.jpg',
+    gallery: [
+      '/images/placeholder-cause-gallery-1.jpg',
+      '/images/placeholder-cause-gallery-2.jpg',
+    ],
+    goalAmount: 80000,
+    raisedAmount: 34000,
+    currency: 'GHS',
+    donorsCount: 145,
+    category: 'Sustainability',
+    isActive: true,
+  },
+  {
+    id: 'cause-003',
+    slug: 'media-digital-outreach',
+    title: 'JCF Media & Digital Outreach',
+    description:
+      'Ensuring the teachings and work of Dr. Baffour Jan reach a global audience through professional media production, digital platforms, and modern technology.',
+    content: `<p>The JCF Media Team plays a critical role in spreading the teachings and work of Dr. Baffour Jan and the Jan Cosmic Foundation to seekers around the world.</p>
+<p>The media team is responsible for recording and producing teachings and talks, editing and publishing video content, managing digital platforms and websites, producing written content and publications, and maintaining the foundation's IT systems and online presence.</p>
+<p>This work ensures that spiritual teachings and insights reach a global audience through modern media and technology. As Dr. Baffour Jan teaches, "The entire cosmos becomes accessible if we learn to speak the cosmic language" — and digital media is one of the ways we speak that language today.</p>
+<p>Donations support video and audio production equipment, editing and media software, content production, website and digital infrastructure, and media team operations.</p>`,
+    image: '/images/placeholder-cause.jpg',
+    gallery: [
+      '/images/placeholder-cause-gallery-1.jpg',
+      '/images/placeholder-cause-gallery-2.jpg',
+      '/images/placeholder-cause-gallery-3.jpg',
+    ],
+    goalAmount: 60000,
+    raisedAmount: 28500,
+    currency: 'GHS',
+    donorsCount: 203,
+    category: 'Media',
+    isActive: true,
+  },
+  {
+    id: 'cause-004',
+    slug: 'guide-the-children',
+    title: 'Guide the Children Initiative',
+    description:
+      'Introducing children to a more conscious way of living through educational activities, mentorship, and learning approaches that plant seeds of wisdom and awareness early in life.',
+    content: `<p>The Guide the Children initiative is a programme created by the Jan Cosmic Foundation to introduce children to a more conscious way of living and thinking.</p>
+<p>The programme aims to help young people develop awareness and emotional intelligence, understand deeper aspects of life and existence, cultivate compassion, responsibility, and clarity, and grow beyond limiting social conditioning.</p>
+<p>Through educational activities, mentorship, and conscious learning approaches, the initiative seeks to plant seeds of wisdom and awareness early in life. As Dr. Baffour Jan teaches, every human being carries within them the potential to awaken to higher states of consciousness — and nurturing this potential in children is among the most meaningful work we can do.</p>
+<p>Donations help support educational materials, children's programmes and workshops, outreach activities, and the development of learning resources.</p>`,
+    image: '/images/placeholder-cause.jpg',
+    gallery: [
+      '/images/placeholder-cause-gallery-1.jpg',
+      '/images/placeholder-cause-gallery-2.jpg',
+    ],
+    goalAmount: 45000,
+    raisedAmount: 18000,
+    currency: 'GHS',
+    donorsCount: 167,
+    category: 'Youth Development',
+    isActive: true,
+  },
+  {
+    id: 'cause-005',
     slug: 'community-centre-kumasi',
     title: 'Kumasi Community Centre Expansion',
     description:
-      'Expanding the JCF Kumasi Community Centre to triple its capacity, adding a library, computer lab, and multi-purpose hall to serve the growing needs of the Nhyiaeso community.',
-    content: `<p>The JCF Kumasi Community Centre has been a vital resource for the Nhyiaeso neighbourhood since its opening in 2015. Over the past decade, demand for its programmes — free tutoring, vocational training, weekly meditation sessions, and community health clinics — has grown to the point that the existing facility is consistently at capacity.</p>
-<p>This expansion campaign will fund the construction of a new wing comprising a 60-seat library with free internet access, a computer lab with 20 workstations, and a 200-seat multi-purpose hall that will serve as a venue for community events, large meditation gatherings, and vocational training workshops.</p>
-<p>The expanded centre will enable the JCF to serve an estimated 1,200 additional community members per month and provide a permanent home for programmes that currently operate from rented spaces.</p>
-<p>Construction is scheduled to begin when the campaign reaches 80% of its goal. With your support, we aim to break ground in late 2026 and welcome the community into the expanded centre by mid-2027.</p>`,
+      'Expanding the JCF Kumasi Community Centre to serve the growing spiritual community — adding meditation halls, learning spaces, and facilities for retreats and programmes.',
+    content: `<p>The JCF Kumasi Community Centre has been a vital resource for the local spiritual community since its opening. Over the years, demand for its programmes — meditation sessions, spiritual teachings, retreats, and community gatherings — has grown to the point that the existing facility is consistently at capacity.</p>
+<p>This expansion campaign will fund the construction of additional meditation and teaching spaces, a library, and a multi-purpose hall for community events, large gatherings, and training workshops.</p>
+<p>The expanded centre will enable the JCF to welcome more seekers into the community and provide a permanent home for programmes that currently operate from rented spaces.</p>
+<p>With your support, the expanded centre will become a beacon of spiritual growth and community service in the Ashanti Region.</p>`,
     image: '/images/placeholder-cause.jpg',
     gallery: [
       '/images/placeholder-cause-gallery-1.jpg',
@@ -383,52 +452,6 @@ export const causes: Cause[] = [
     currency: 'GHS',
     donorsCount: 187,
     category: 'Infrastructure',
-    isActive: true,
-  },
-  {
-    id: 'cause-003',
-    slug: 'medical-outreach-northern-ghana',
-    title: 'Medical Outreach — Northern Ghana',
-    description:
-      'Funding mobile health clinics to bring essential medical care, health education, and preventive screenings to remote communities in Northern Ghana with limited access to healthcare.',
-    content: `<p>Northern Ghana continues to face significant health disparities compared to the south. Many communities in the Upper East and Upper West regions have no clinic within reasonable travelling distance, and specialist care is effectively inaccessible for the majority of residents.</p>
-<p>The JCF Medical Outreach Programme deploys mobile health teams comprising a doctor, two nurses, a community health officer, and a JCF volunteer coordinator. Each outreach visit provides free consultations, essential medications, maternal and child health screenings, blood pressure and diabetes checks, and basic dental care.</p>
-<p>In 2025, the programme completed 24 outreach visits serving a total of 4,800 individuals. The 2026 campaign will fund 36 visits — a 50% increase — covering 14 additional communities identified by our field team as having the greatest unmet need.</p>
-<p>GHS 2,500 funds a single outreach day serving up to 200 community members. GHS 10,000 funds a full month of outreach activity. Your generosity is, quite literally, lifesaving.</p>`,
-    image: '/images/placeholder-cause.jpg',
-    gallery: [
-      '/images/placeholder-cause-gallery-1.jpg',
-      '/images/placeholder-cause-gallery-2.jpg',
-      '/images/placeholder-cause-gallery-3.jpg',
-      '/images/placeholder-cause-gallery-4.jpg',
-    ],
-    goalAmount: 90000,
-    raisedAmount: 72000,
-    currency: 'GHS',
-    donorsCount: 428,
-    category: 'Healthcare',
-    isActive: true,
-  },
-  {
-    id: 'cause-004',
-    slug: 'youth-empowerment-programme',
-    title: 'Youth Empowerment Programme',
-    description:
-      'Equipping young people aged 16–25 across Ghana with mindfulness skills, entrepreneurship training, and mentorship to build lives of purpose, resilience, and contribution.',
-    content: `<p>Ghana's youth population is its greatest resource — and its greatest responsibility. With over 60% of the population under 25 and a rapidly evolving employment landscape, young Ghanaians need more than academic qualifications. They need inner resources: emotional resilience, clarity of purpose, the capacity to think creatively and collaborate effectively.</p>
-<p>The JCF Youth Empowerment Programme is a 12-week curriculum combining mindfulness and self-awareness practices, entrepreneurship fundamentals, financial literacy, community leadership skills, and mentorship from JCF members who are established professionals across various fields.</p>
-<p>The programme is offered free of charge to accepted participants. Each cohort of 30 young people goes through the programme together, forming a peer community that continues to support one another long after the formal programme ends. Alumni cohorts from 2020 have gone on to start 14 small businesses, launch 3 community initiatives, and place members in professional roles across Ghana and internationally.</p>
-<p>This campaign will fund the 2026–2027 programme cycle, supporting four cohorts of 30 young people each — 120 participants in total — in Accra, Kumasi, Tamale, and Cape Coast.</p>`,
-    image: '/images/placeholder-cause.jpg',
-    gallery: [
-      '/images/placeholder-cause-gallery-1.jpg',
-      '/images/placeholder-cause-gallery-2.jpg',
-    ],
-    goalAmount: 60000,
-    raisedAmount: 21000,
-    currency: 'GHS',
-    donorsCount: 95,
-    category: 'Youth Development',
     isActive: true,
   },
 ];
@@ -694,7 +717,7 @@ export const volunteerOpportunities: VolunteerOpportunity[] = [
     id: 'vol-003',
     title: 'Youth Mentor',
     description:
-      'Provide one-on-one or small-group mentorship to participants in the JCF Youth Empowerment Programme. Mentors commit to regular meetings with their mentees over a 12-week programme cycle, offering professional guidance, encouragement, and practical support.',
+      'Provide presence-based mentorship to young people in the Guide the Children initiative and the Youth Empowerment Programme. Mentors commit to regular meetings with their mentees over a 12-week programme cycle, offering attentive listening, encouragement, and the kind of grounded support that comes from being genuinely present.',
     location: 'Flexible — in-person or online',
     commitment: '2 hours per week for 12 weeks per programme cycle',
     skills: ['Professional experience in any field', 'Active listening', 'Patience', 'Commitment'],
@@ -718,34 +741,34 @@ export const testimonials: Testimonial[] = [
   {
     id: 'test-001',
     name: 'Esi Amponsah',
-    role: 'Volunteer, Community Outreach — Accra',
+    role: 'Seeker & Volunteer — Accra Centre',
     avatar: '/images/placeholder-avatar.jpg',
     quote:
-      'I joined JCF thinking I was coming to help the community. What I did not expect was how much the community would help me. Volunteering here has given me a sense of purpose I did not know I was missing. Every service day leaves me feeling more alive, not more tired.',
+      'Before I found JCF, I was successful on the outside but completely lost on the inside. The teachings of Dr. Jan helped me see that the restlessness I felt was not a problem to solve — it was a call to wake up. The community of seekers here has become my spiritual family.',
   },
   {
     id: 'test-002',
     name: 'James Osei-Bonsu',
-    role: 'Meditation Session Facilitator — Kumasi Centre',
+    role: 'Meditation Facilitator — Kumasi Centre',
     avatar: '/images/placeholder-avatar.jpg',
     quote:
-      'Facilitating meditation sessions has deepened my own practice in ways I could not have achieved alone. There is something about holding space for others that demands you show up fully yourself. The JCF teacher training and mentorship have been exceptional — I feel genuinely supported.',
+      'What drew me to JCF was the directness. No dogma, no rituals for the sake of rituals — just a clear invitation to know yourself at the deepest level. Facilitating meditation sessions has become my way of giving back what was so generously given to me: the possibility of inner freedom.',
   },
   {
     id: 'test-003',
     name: 'Nana Akua Twum',
-    role: 'Youth Mentor — Youth Empowerment Programme',
+    role: 'Guide the Children Mentor — Accra',
     avatar: '/images/placeholder-avatar.jpg',
     quote:
-      'Watching my mentee go from uncertain and directionless to launching her own small business over 12 weeks was one of the most rewarding experiences of my professional life. I show up for these young people, and somehow they transform me in return. That is the JCF way.',
+      'Mentoring children in the Guide the Children programme has taught me that consciousness is not something you lecture about — it is something you transmit through presence. When I sit with these young ones, I see them soften, open up, and begin to ask the questions that matter. It transforms me as much as it transforms them.',
   },
   {
     id: 'test-004',
     name: 'David Asiedu-Antwi',
-    role: 'Digital & Communications Volunteer — London Centre',
+    role: 'Member — London Centre',
     avatar: '/images/placeholder-avatar.jpg',
     quote:
-      'As a graphic designer, I spend most of my working life serving clients I have never met, for products I have no connection to. Volunteering my skills for JCF has reminded me why I fell in love with design in the first place — to communicate things that genuinely matter. It has been a genuine gift to my creative practice.',
+      'Living in London, far from Ghana, I thought the spiritual path was something I would have to walk alone. The JCF London Centre proved me wrong. The weekly group sits, the satsangs, and the community of seekers have shown me that self-realization is not a solitary pursuit — it deepens in the company of others who are also reaching for the truth.',
   },
 ];
 
@@ -758,28 +781,28 @@ export const teamMembers: TeamMember[] = [
     id: 'team-001',
     name: 'Dr. Baffour Jan',
     role: 'Founder & Spiritual Director',
-    bio: 'Dr. Baffour Jan founded the Jan Cosmic Foundation in Accra in 1988 following two decades of intensive study in contemplative traditions across West Africa, India, and Southeast Asia. A scholar, teacher, and humanitarian, he has dedicated his life to demonstrating that inner transformation and outer service are not separate callings but one integrated path. Under his leadership, the JCF has grown from a small meditation circle in Airport Residential Area to an international community spanning five countries and reaching over 20,000 lives. He is the author of three books on consciousness and community, a sought-after retreat teacher, and above all, a deeply committed servant of the communities the JCF exists to serve.',
+    bio: 'Dr. Baffour Jan is a spiritual master, mystic, and teacher who founded the Jan Cosmic Foundation in Accra in 1988. For over 38 years he has guided seekers toward self-realization, teaching that the evolution of consciousness and selfless service are inseparable dimensions of the same path. Under his guidance, the JCF has grown from a small meditation circle in Airport Residential Area to an international community spanning five countries and touching over 20,000 lives. He is the author of three books on consciousness and higher living, a deeply sought-after retreat teacher, and above all, a living example of the inner freedom he points others toward.',
     image: '/images/placeholder-team.jpg',
   },
   {
     id: 'team-002',
     name: 'Abena Asante',
     role: 'Senior Teacher & Programme Director',
-    bio: 'Abena Asante has been a core member of the JCF community since 2003 and a certified meditation teacher within the JCF lineage since 2009. As Programme Director, she oversees the development and delivery of all JCF training and educational offerings, including the Teacher Training Programme, the Youth Empowerment curriculum, and the annual retreat calendar. She holds a Master\'s degree in Mindfulness-Based Interventions from Bangor University and is passionate about making contemplative practice accessible across cultural and economic lines. She leads the Women\'s Wisdom Circle at the Accra Centre and is a regular contributor to the JCF blog.',
+    bio: 'Abena Asante has been a core member of the JCF community since 2003 and a certified meditation teacher within the JCF lineage since 2009. As Programme Director, she oversees the development and delivery of all JCF training and educational offerings, including the Teacher Training Programme, the Youth Empowerment curriculum, and the annual retreat calendar. Grounded in the teachings of Dr. Baffour Jan, she is passionate about making contemplative practice accessible across cultural and economic lines. She leads the Women\'s Wisdom Circle at the Accra Centre and is a regular contributor to the JCF blog.',
     image: '/images/placeholder-team.jpg',
   },
   {
     id: 'team-003',
     name: 'Kofi Mensah',
     role: 'Youth Coordinator & Meditation Teacher',
-    bio: 'Kofi Mensah joined the JCF as a scholarship recipient in 2012 and returned as a staff member in 2018 — a journey that encapsulates the JCF\'s vision of transformation that gives back. As Youth Coordinator, he leads the Youth Empowerment Programme, manages the mentorship network, and serves as the primary point of contact for young people engaging with the JCF for the first time. A certified meditation teacher and trained life coach, Kofi brings warmth, energy, and lived experience to his work with young people. He co-authored the JCF Youth Mindfulness Curriculum and frequently speaks at schools and universities across Ghana.',
+    bio: 'Kofi Mensah was a young seeker drawn to Dr. Jan\'s teachings in 2012, and that encounter set the course of his life. He returned to the JCF as a staff member in 2018, bringing the same fire that first brought him through the door. As Youth Coordinator, he leads the Youth Empowerment Programme, manages the mentorship network, and serves as the primary point of contact for young people engaging with the JCF for the first time. A certified meditation teacher, Kofi brings warmth, energy, and lived experience to his work with young people. He co-authored the JCF Youth Mindfulness Curriculum and frequently speaks at schools and universities across Ghana.',
     image: '/images/placeholder-team.jpg',
   },
   {
     id: 'team-004',
     name: 'Maame Agyapong',
     role: 'Head of Community Partnerships & Outreach',
-    bio: 'Maame Agyapong leads the JCF\'s relationships with partner organisations, government agencies, healthcare institutions, and international NGOs. With a background in public health and community development, she oversees the Medical Outreach Programme, the Community Service Days calendar, and the JCF\'s growing portfolio of collaborative projects with institutions such as the Ghana Health Service and the University of Ghana. Maame is a certified life coach and serves on the boards of two Ghana-based charitable organisations. Her work ensures that the JCF\'s service programmes are rooted in genuine community need and delivered with the highest standards of care and accountability.',
+    bio: 'Maame Agyapong leads the JCF\'s relationships with partner organisations, government agencies, and community institutions. With a background in public health and community development, she oversees the Guide the Children outreach activities, the Community Service Days calendar, and the JCF\'s growing portfolio of collaborative projects with institutions such as the Ghana Health Service and the University of Ghana. She serves on the boards of two Ghana-based charitable organisations. Her work ensures that the JCF\'s service programmes are rooted in genuine community need and delivered with the highest standards of care and accountability.',
     image: '/images/placeholder-team.jpg',
   },
 ];

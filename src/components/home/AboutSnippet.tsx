@@ -47,24 +47,24 @@ export default function AboutSnippet() {
             </div>
 
             <h2 className="text-3xl font-bold leading-tight text-[#000B58] sm:text-4xl lg:text-5xl">
-              A Foundation Built on{' '}
-              <span className="text-[#2D6A4F]">Love, Healing &amp; Purpose</span>
+              Awakening the{' '}
+              <span className="text-[#2D6A4F]">Divine Potential Within</span>
             </h2>
 
             <p className="mt-6 text-base leading-relaxed text-[#1a1a1a]/65 sm:text-lg">
-              Dr. Baffour Jan is a spiritual master, mystic and a teacher with a profound understanding of spirituality and the mysteries of the world. Through his wisdom and rare insights, he guides and counsels individuals on their spiritual journeys, imparting deep knowledge that transcends boundaries of different religions.
+              Dr. Baffour Jan is a spiritual master, mystic, and teacher dedicated to guiding seekers toward deeper awareness of the self and the nature of consciousness. His teachings focus on awakening the divine potential within every human being and transcending the limiting identities of the mind.
             </p>
 
             <p className="mt-4 text-base leading-relaxed text-[#1a1a1a]/65">
-              As the visionary founder of the Jan Cosmic Foundation (JCF), Dr. Baffour Jan has dedicated himself to promoting awareness of our true nature as spiritual beings. His foundation&apos;s mission is to guide individuals towards elevating their consciousness to its highest potential, fostering unity and oneness among all beings.
+              Through the Jan Cosmic Foundation, he offers teachings, courses, retreats, and spiritual guidance designed to help individuals discover truth, silence the restless mind, and experience the deeper reality of spirit.
             </p>
 
             {/* Feature list */}
             <ul className="mt-8 space-y-3">
               {[
-                'Holistic healing and spiritual education programmes',
-                'Community outreach and humanitarian aid',
-                'Global network of centres and dedicated volunteers',
+                'Teachings, retreats, and spiritual training programmes',
+                'Personal counseling and holistic wellbeing guidance',
+                'Global network of centres and community of seekers',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span

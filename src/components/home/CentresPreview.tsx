@@ -13,7 +13,7 @@ export default function CentresPreview() {
         <SectionHeader
           label="Our Global Presence"
           title="Find a Centre Near You"
-          subtitle="With centres across 20+ countries, there is a JCF community wherever you are in the world — ready to welcome you home."
+          subtitle="A community of seekers who share a common intention: to explore truth, awaken consciousness, and live meaningful lives grounded in wisdom and compassion."
           className="mb-12"
         />
 

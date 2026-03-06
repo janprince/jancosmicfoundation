@@ -58,7 +58,7 @@ export default function MissionVisionPage() {
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
         title="Mission &amp; Vision"
-        subtitle="The foundational purpose that has guided the Jan Cosmic Foundation for over three decades — and the future we are collectively building."
+        subtitle="Teaching and inspiring people to evolve rapidly toward self-realization — and the awakened world we are collectively building."
       />
 
       {/* Mission */}
@@ -95,7 +95,7 @@ export default function MissionVisionPage() {
               />
 
               <p className="text-xl sm:text-2xl lg:text-3xl font-medium leading-relaxed text-white">
-                To awaken the highest potential in every individual and community we serve — through the transformative power of contemplative practice, compassionate service, and the living transmission of universal wisdom.
+                To teach and inspire people to evolve rapidly toward self-realization, enabling them to experience inner freedom, peace, and higher consciousness.
               </p>
 
               <div
@@ -128,16 +128,16 @@ export default function MissionVisionPage() {
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                title: 'A World of Conscious Communities',
-                body: 'We envision a world in which communities at every scale — families, neighbourhoods, nations — are guided by the values of inner awareness, mutual care, and service to the whole.',
+                title: 'Humanity Awakened',
+                body: 'To contribute to the awakening of humanity by helping individuals realize their true nature and live in harmony with themselves, others, and the cosmos.',
               },
               {
                 title: 'Accessible Wisdom for All',
-                body: 'We envision contemplative wisdom and inner-development tools freely available to every person, regardless of economic background, nationality, religious tradition, or formal education.',
+                body: 'The entire cosmos becomes accessible if we learn to speak the cosmic language. We envision spiritual wisdom freely available to every person, regardless of background or tradition.',
               },
               {
-                title: 'Africa as a Spiritual Wellspring',
-                body: 'We envision Ghana and the African continent recognised globally as a living source of profound spiritual heritage — not a recipient of wisdom, but a generous contributor to the global conversation.',
+                title: 'Unity in Divinity',
+                body: 'All that we see, hear, and feel are just different frequencies of the same Consciousness. Understanding this leads to a harmonious and balanced relationship with the world around us.',
               },
             ].map((item) => (
               <div
@@ -226,7 +226,7 @@ export default function MissionVisionPage() {
             Be Part of the Mission
           </h2>
           <p className="text-base sm:text-lg mb-10" style={{ color: 'rgba(253,251,247,0.75)' }}>
-            There are many ways to participate — as a member, a volunteer, a donor, or simply a curious seeker finding their way to us for the first time.
+            There are many ways to participate — as a member, a volunteer, a donor, or simply a curious seeker. The foundation welcomes individuals from all backgrounds who are interested in spiritual development and self-discovery.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button href="/about" variant="secondary" size="lg">

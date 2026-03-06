@@ -10,11 +10,20 @@ export default function DonatePage() {
     {
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
         </svg>
       ),
-      title: 'Scholarships',
-      description: 'Your gift funds education for bright young Ghanaians who would otherwise be unable to afford it.',
+      title: 'Spiritual Village',
+      description: 'Building a 500-acre sanctuary in Kwahu for retreats, meditation, organic farming, and community living.',
+    },
+    {
+      icon: (
+        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+        </svg>
+      ),
+      title: 'Media & Outreach',
+      description: 'Spreading the teachings of Dr. Baffour Jan to a global audience through professional media production.',
     },
     {
       icon: (
@@ -22,17 +31,8 @@ export default function DonatePage() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
         </svg>
       ),
-      title: 'Healthcare',
-      description: 'Free medical outreach brings essential health services to underserved communities across Ghana.',
-    },
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-      ),
-      title: 'Youth Empowerment',
-      description: 'Twelve-week programmes equipping young people with mindfulness, entrepreneurship, and leadership skills.',
+      title: 'Guide the Children',
+      description: 'Introducing children to conscious living through mentorship, awareness practices, and wisdom-based education.',
     },
   ];
 
@@ -40,7 +40,7 @@ export default function DonatePage() {
     <>
       <PageHero
         title="Donate"
-        subtitle="Your generosity sustains the programmes that transform lives — in Ghana and around the world."
+        subtitle="Your generosity sustains the programmes that awaken consciousness and transform lives — in Ghana and around the world."
       />
 
       {/* Intro */}
@@ -50,7 +50,7 @@ export default function DonatePage() {
             <SectionHeader
               label="Make a Difference"
               title="Support Our Work"
-              subtitle="The Jan Cosmic Foundation is sustained by the generosity of people who believe that inner transformation and outer service go hand in hand. Every donation — large or small — directly funds life-changing programmes in education, healthcare, and community development."
+              subtitle="The Jan Cosmic Foundation is sustained by the generosity of people who believe that awakening consciousness and serving others go hand in hand. Every donation — large or small — directly funds programmes in spiritual education, community outreach, and human development."
             />
           </div>
 
@@ -117,9 +117,9 @@ export default function DonatePage() {
 
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
             {[
-              { amount: 'GH₵50', impact: 'Feeds a family at a community service day' },
-              { amount: 'GH₵200', impact: 'Provides a month of free tutoring for two students' },
-              { amount: 'GH₵500', impact: 'Supports a youth participant for one programme cycle' },
+              { amount: 'GH₵50', impact: 'Provides educational materials for one child in the Guide the Children programme' },
+              { amount: 'GH₵200', impact: 'Funds a month of organic inputs for the JCF Kwahu farming project' },
+              { amount: 'GH₵500', impact: 'Supports production of one teaching session for the Media & Digital Outreach programme' },
             ].map((tier) => (
               <div
                 key={tier.amount}

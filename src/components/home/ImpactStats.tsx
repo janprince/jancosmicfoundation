@@ -7,7 +7,7 @@ const stats = [
     end: 38,
     suffix: '+',
     label: 'Years of Spiritual Teaching',
-    description: 'Decades of guiding souls toward inner transformation',
+    description: 'Decades of guiding seekers toward self-realization',
     icon: (
       <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -18,7 +18,7 @@ const stats = [
     end: 20000,
     suffix: '+',
     label: 'Lives Transformed',
-    description: 'Individuals touched by healing and cosmic service',
+    description: 'Individuals awakened to higher consciousness and inner peace',
     icon: (
       <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
@@ -29,7 +29,7 @@ const stats = [
     end: 20,
     suffix: '+',
     label: 'Countries Reached',
-    description: 'A global network spreading light across continents',
+    description: 'Communities learning to speak the cosmic language',
     icon: (
       <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
@@ -88,11 +88,11 @@ export default function ImpactStats() {
             <span className="h-px w-8 rounded-full bg-[#D4A843]" aria-hidden="true" />
           </div>
           <h2 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
-            Decades of Measurable Change
+            Decades of Inner Transformation
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base text-white/60 sm:text-lg">
-            Every number tells a story of a life transformed, a community healed,
-            and a world drawn closer together.
+            Every number represents a life awakened, a consciousness elevated,
+            and a step closer to the unity of all beings.
           </p>
         </div>
 

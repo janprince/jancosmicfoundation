@@ -60,7 +60,7 @@ export default function VolunteerPage() {
           <SectionHeader
             label="Why Volunteer"
             title="The Gift of Service"
-            subtitle="At the Jan Cosmic Foundation, we believe that serving others is one of the most powerful paths to inner growth. Volunteering with JCF is not just about giving — it is about becoming."
+            subtitle="At the Jan Cosmic Foundation, we believe that serving others is one of the most powerful paths to inner growth. Volunteering with JCF is not just about giving, it is about becoming."
             className="mb-12"
           />
 

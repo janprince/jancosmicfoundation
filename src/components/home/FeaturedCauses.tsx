@@ -13,7 +13,7 @@ export default function FeaturedCauses() {
         <SectionHeader
           label="Support Our Work"
           title="Featured Causes"
-          subtitle="Your generosity powers real change. Choose a cause close to your heart and help us continue our mission of healing and transformation."
+          subtitle="Your generosity sustains the programmes that awaken consciousness and uplift communities. Choose a cause close to your heart."
           className="mb-12"
         />
 

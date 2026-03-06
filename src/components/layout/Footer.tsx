@@ -25,22 +25,22 @@ const involvedLinks = [
 const socialLinks = [
   {
     label: 'Facebook',
-    href: 'https://facebook.com',
+    href: 'https://facebook.com/jancosmic',
     Icon: FaFacebookF,
   },
   {
     label: 'X (Twitter)',
-    href: 'https://x.com',
+    href: 'https://twitter.com/jancosmic',
     Icon: FaXTwitter,
   },
   {
     label: 'Instagram',
-    href: 'https://instagram.com',
+    href: 'https://instagram.com/jancosmic',
     Icon: FaInstagram,
   },
   {
     label: 'YouTube',
-    href: 'https://youtube.com',
+    href: 'https://youtube.com/jancosmic',
     Icon: FaYoutube,
   },
 ];
@@ -69,8 +69,8 @@ export default function Footer() {
               className="text-sm leading-relaxed"
               style={{ color: 'rgba(253,251,247,0.65)' }}
             >
-              Empowering communities through compassion, service, and spiritual
-              growth. Together we build a more conscious and equitable world.
+              Guiding individuals toward self-realization, higher consciousness,
+              and inner freedom — through the teachings of Dr. Baffour Jan.
             </p>
 
             {/* Social icons */}

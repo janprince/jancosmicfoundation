@@ -4,22 +4,22 @@ import Link from 'next/link';
 const featureCards = [
   {
     label: 'Mission',
-    title: 'Elevating Consciousness',
-    description: 'Guiding individuals towards their highest spiritual potential.',
+    title: 'Self-Realization',
+    description: 'Guiding individuals to awaken their inner potential and discover the True Self.',
     href: '/about/mission-vision',
     image: '/images/studentinmeditation.jpg',
   },
   {
-    label: 'Service',
-    title: 'Community Upliftment',
-    description: 'Humanitarian projects transforming lives across 20+ countries.',
-    href: '/donate',
+    label: 'Teachings',
+    title: 'Spiritual Growth',
+    description: 'Retreats, courses, and counseling that deepen awareness and inner transformation.',
+    href: '/about',
     image: '/images/exercise.jpg',
   },
   {
     label: 'Centres',
-    title: 'Global Presence',
-    description: 'A network of 15+ centres fostering unity and spiritual growth.',
+    title: 'Global Community',
+    description: 'A worldwide network of seekers united in the pursuit of truth and conscious living.',
     href: '/centres',
     image: '/images/group-of-students.jpg',
   },
@@ -54,15 +54,15 @@ export default function HeroSection() {
 
             {/* Main headline */}
             <h1 className="mx-auto max-w-4xl text-4xl font-extrabold leading-[1.1] text-white sm:text-5xl lg:text-6xl xl:text-7xl">
-              Transforming Lives Through{' '}
-              <span className="text-[#D4A843]">Cosmic Service</span>
+              Awakening Humanity to{' '}
+              <span className="text-[#D4A843]">Self-Realization</span>
             </h1>
 
             {/* Subtitle */}
             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">
-              A global spiritual organisation dedicated to inner transformation,
-              holistic healing, and community upliftment — guided by the teachings
-              of Dr. Baffour Jan across 20+ countries.
+              An international spiritual organisation dedicated to guiding
+              individuals toward higher consciousness, inner freedom, and
+              self-realization — through the teachings of Dr. Baffour Jan.
             </p>
 
             {/* Quote */}
