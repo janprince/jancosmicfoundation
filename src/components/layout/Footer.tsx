@@ -25,22 +25,22 @@ const involvedLinks = [
 const socialLinks = [
   {
     label: 'Facebook',
-    href: 'https://facebook.com/jancosmic',
+    href: 'https://facebook.com/jancosmicfoundation',
     Icon: FaFacebookF,
   },
   {
     label: 'X (Twitter)',
-    href: 'https://twitter.com/jancosmic',
+    href: 'https://twitter.com/jancosmicfoundation',
     Icon: FaXTwitter,
   },
   {
     label: 'Instagram',
-    href: 'https://instagram.com/jancosmic',
+    href: 'https://instagram.com/jancosmicfoundation',
     Icon: FaInstagram,
   },
   {
     label: 'YouTube',
-    href: 'https://youtube.com/jancosmic',
+    href: 'https://youtube.com/jancosmicfoundation',
     Icon: FaYoutube,
   },
 ];

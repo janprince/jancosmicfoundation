@@ -42,11 +42,11 @@ export default function TermsPage() {
             <p>
               For questions about these terms, please contact us at{' '}
               <a
-                href="mailto:info@jancosmic.org"
+                href="mailto:info@jancosmicfoundation.org"
                 className="font-medium"
                 style={{ color: '#2D6A4F' }}
               >
-                info@jancosmic.org
+                info@jancosmicfoundation.org
               </a>.
             </p>
           </div>

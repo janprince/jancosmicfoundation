@@ -41,11 +41,11 @@ export default function PrivacyPolicyPage() {
               If you have any questions or concerns about how your information
               is handled, please contact us at{' '}
               <a
-                href="mailto:info@jancosmic.org"
+                href="mailto:info@jancosmicfoundation.org"
                 className="font-medium"
                 style={{ color: '#2D6A4F' }}
               >
-                info@jancosmic.org
+                info@jancosmicfoundation.org
               </a>.
             </p>
           </div>
