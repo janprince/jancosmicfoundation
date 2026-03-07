@@ -13,25 +13,27 @@ const raleway = Raleway({
 
 export const metadata: Metadata = {
   title: {
-    default: "Jan Cosmic Foundation — Transforming Lives Through Service",
+    default: "Jan Cosmic Foundation - Awakening Humanity to Self-Realization",
     template: "%s | Jan Cosmic Foundation",
   },
   description:
-    "The Jan Cosmic Foundation is the charitable arm of Dr. Baffour Jan, dedicated to community service, spiritual education, and humanitarian projects.",
+    "A spiritual organisation founded by Dr. Baffour Jan, dedicated to guiding individuals toward higher consciousness, inner freedom, and self-realization through teachings, retreats, and community service.",
   keywords: [
     "Jan Cosmic Foundation",
     "Dr. Baffour Jan",
-    "charity",
+    "self-realization",
     "spiritual education",
-    "community service",
-    "humanitarian",
+    "higher consciousness",
     "meditation",
-    "volunteering",
+    "spiritual retreats",
+    "community service",
+    "inner freedom",
+    "conscious living",
   ],
   openGraph: {
-    title: "Jan Cosmic Foundation",
+    title: "Jan Cosmic Foundation — Awakening Humanity to Self-Realization",
     description:
-      "Transforming lives through service, spiritual education, and humanitarian projects.",
+      "A spiritual organisation guiding individuals toward higher consciousness, inner freedom, and self-realization through the teachings of Dr. Baffour Jan.",
     url: "https://jancosmicfoundation.org",
     siteName: "Jan Cosmic Foundation",
     type: "website",

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import HeroSection from '@/components/home/HeroSection';
 import AboutSnippet from '@/components/home/AboutSnippet';
 import ImpactStats from '@/components/home/ImpactStats';
@@ -7,6 +8,12 @@ import VolunteerCTA from '@/components/home/VolunteerCTA';
 import RecentBlog from '@/components/home/RecentBlog';
 import CentresPreview from '@/components/home/CentresPreview';
 import Newsletter from '@/components/ui/Newsletter';
+
+export const metadata: Metadata = {
+    title: "Jan Cosmic Foundation | Awakening Consciousness & Self-Realization",
+    description:
+        "Jan Cosmic Foundation (JCF) is a global spiritual organization founded by Dr. Baffour Jan, dedicated to guiding seekers toward higher consciousness, inner freedom, and self-realization through transformative teachings, retreats, counseling, and spiritual practices.",
+};
 
 export default function HomePage() {
   return (

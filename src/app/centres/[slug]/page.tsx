@@ -1,9 +1,20 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
 import JoinCentreForm from '@/components/forms/JoinCentreForm';
 import { getCentreBySlug, getCentres } from '@/lib/api';
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const centre = getCentreBySlug(slug);
+  if (!centre) return { title: 'Centre Not Found' };
+  return {
+    title: `${centre.name} Centre`,
+    description: centre.description,
+  };
+}
 
 export function generateStaticParams() {
   const centres = getCentres();

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import PageHero from '@/components/layout/PageHero';
@@ -5,6 +6,16 @@ import SectionHeader from '@/components/ui/SectionHeader';
 import ProgressBar from '@/components/ui/ProgressBar';
 import DonationCheckout from '@/components/forms/DonationCheckoutWrapper';
 import { getCauseBySlug, getCauses } from '@/lib/api';
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const cause = getCauseBySlug(slug);
+  if (!cause) return { title: 'Cause Not Found' };
+  return {
+    title: `Donate: ${cause.title}`,
+    description: cause.description,
+  };
+}
 
 export function generateStaticParams() {
   const causes = getCauses();

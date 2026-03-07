@@ -1,9 +1,20 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import PageHero from '@/components/layout/PageHero';
 import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
 import { getEventBySlug } from '@/lib/api';
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const event = getEventBySlug(slug);
+  if (!event) return { title: 'Event Not Found' };
+  return {
+    title: event.title,
+    description: event.description,
+  };
+}
 
 function formatDate(dateStr: string): string {
   return new Date(dateStr).toLocaleDateString('en', {

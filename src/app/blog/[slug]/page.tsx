@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import PageHero from '@/components/layout/PageHero';
@@ -5,6 +6,16 @@ import Badge from '@/components/ui/Badge';
 import BlogCard from '@/components/cards/BlogCard';
 import { getBlogPostBySlug, getBlogPosts } from '@/lib/api';
 import ShareButtons from '@/components/blog/ShareButtons';
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
+  if (!post) return { title: 'Post Not Found' };
+  return {
+    title: post.title,
+    description: post.excerpt,
+  };
+}
 
 export default async function BlogDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

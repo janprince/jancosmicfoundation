@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Button from '@/components/ui/Button';
@@ -52,6 +53,12 @@ const pillars = [
     ],
   },
 ];
+
+export const metadata: Metadata = {
+  title: 'Mission & Vision',
+  description:
+    'Our mission is to teach and inspire people to evolve toward self-realization. Discover the vision, values, and strategic pillars guiding the Jan Cosmic Foundation.',
+};
 
 export default function MissionVisionPage() {
   return (

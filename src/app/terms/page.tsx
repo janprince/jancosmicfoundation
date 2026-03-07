@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
+
+export const metadata: Metadata = {
+  title: 'Terms of Use',
+  description:
+    'Terms and conditions for using the Jan Cosmic Foundation website.',
+};
 
 export default function TermsPage() {
   return (

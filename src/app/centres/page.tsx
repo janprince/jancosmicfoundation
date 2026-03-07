@@ -1,8 +1,15 @@
+import type { Metadata } from 'next';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Button from '@/components/ui/Button';
 import CentreCard from '@/components/cards/CentreCard';
 import { getCentres } from '@/lib/api';
+
+export const metadata: Metadata = {
+  title: 'Our Centres',
+  description:
+    'A growing network of Jan Cosmic Foundation centres dedicated to spiritual practice, conscious living, and service to humanity across Ghana and beyond.',
+};
 
 export default function CentresPage() {
   const centres = getCentres();

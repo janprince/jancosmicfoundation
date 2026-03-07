@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
@@ -47,6 +47,12 @@ const coreValues = [
       'The most worthy knowledge is that which helps to dismantle the Ego in order to reveal the True Self. Believing alone is not enough — it is through seeking, doing, and striving that one approaches perfection.',
   },
 ];
+
+export const metadata: Metadata = {
+  title: 'About the Foundation',
+  description:
+    'Learn about the Jan Cosmic Foundation — a spiritual organisation founded by Dr. Baffour Jan, guiding individuals toward higher consciousness and self-realization.',
+};
 
 export default function AboutPage() {
   return (

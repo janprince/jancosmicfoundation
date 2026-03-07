@@ -1,7 +1,14 @@
+import type { Metadata } from 'next';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
 import CauseCard from '@/components/cards/CauseCard';
 import { getCauses } from '@/lib/api';
+
+export const metadata: Metadata = {
+  title: 'Donate',
+  description:
+    'Support the Jan Cosmic Foundation. Your generosity sustains programmes in spiritual education, community outreach, and humanitarian development.',
+};
 
 export default function DonatePage() {
   const causes = getCauses();

@@ -1,6 +1,13 @@
+import type { Metadata } from 'next';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
 import ContactForm from '@/components/forms/ContactForm';
+
+export const metadata: Metadata = {
+  title: 'Contact Us',
+  description:
+    'Get in touch with the Jan Cosmic Foundation. Reach out with questions, connect with our community, or visit our headquarters in Accra, Ghana.',
+};
 
 const socialLinks = [
   {

@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  description:
+    'How the Jan Cosmic Foundation handles your personal information and protects your privacy.',
+};
 
 export default function PrivacyPolicyPage() {
   return (

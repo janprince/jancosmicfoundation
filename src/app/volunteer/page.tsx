@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
 import VolunteerForm from '@/components/forms/VolunteerForm';
@@ -45,6 +46,12 @@ const benefits = [
       'Receive structured training, ongoing mentorship from senior JCF teachers, and opportunities to develop skills that extend far beyond your volunteer role.',
   },
 ];
+
+export const metadata: Metadata = {
+  title: 'Volunteer With Us',
+  description:
+    'Give your time, talents, and energy to something meaningful. Discover volunteer opportunities at the Jan Cosmic Foundation.',
+};
 
 export default function VolunteerPage() {
   return (
