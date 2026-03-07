@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Raleway } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
@@ -52,6 +53,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
       </body>
+      <GoogleAnalytics gaId="G-5Q0ZCXVWPM" />
     </html>
   );
 }
