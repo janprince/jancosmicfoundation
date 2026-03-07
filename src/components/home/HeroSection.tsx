@@ -18,8 +18,8 @@ const featureCards = [
   },
   {
     label: 'Centres',
-    title: 'Global Community',
-    description: 'A worldwide network of seekers united in the pursuit of truth and conscious living.',
+    title: 'Growing Community',
+    description: 'A growing community of seekers united in the pursuit of truth and conscious living.',
     href: '/centres',
     image: '/images/group-of-students.jpg',
   },
@@ -60,7 +60,7 @@ export default function HeroSection() {
 
             {/* Subtitle */}
             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">
-              An international spiritual organisation dedicated to guiding
+              A spiritual organisation dedicated to guiding
               individuals toward higher consciousness, inner freedom, and
               self-realization — through the teachings of Dr. Baffour Jan.
             </p>
@@ -102,7 +102,7 @@ export default function HeroSection() {
               {[
                 { value: '38+', label: 'Years of Service' },
                 { value: '20,000+', label: 'Lives Touched' },
-                { value: '20+', label: 'Countries' },
+                { value: '5+', label: 'Centres' },
               ].map((stat, i) => (
                 <div key={stat.label} className="flex items-center gap-8">
                   {i > 0 && (

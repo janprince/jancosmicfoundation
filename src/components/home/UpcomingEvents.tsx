@@ -13,7 +13,7 @@ export default function UpcomingEvents() {
         <SectionHeader
           label="What's Coming"
           title="Upcoming Events"
-          subtitle="Join us for transformative gatherings, retreats, and community celebrations happening around the world."
+          subtitle="Join us for transformative gatherings, retreats, and community celebrations."
           className="mb-12"
         />
 

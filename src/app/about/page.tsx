@@ -53,7 +53,7 @@ export default function AboutPage() {
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
         title="About the Foundation"
-        subtitle="An international spiritual organisation guiding individuals toward higher consciousness and self-realization — founded by Dr. Baffour Jan."
+        subtitle="A spiritual organisation guiding individuals toward higher consciousness and self-realization — founded by Dr. Baffour Jan."
       />
 
       {/* Foundation History */}
@@ -69,7 +69,7 @@ export default function AboutPage() {
               />
               <div className="mt-8 space-y-5 text-base sm:text-lg leading-relaxed" style={{ color: '#1a1a1a99' }}>
                 <p>
-                  The Jan Cosmic Foundation is an international nonprofit spiritual organisation headquartered in Accra, Ghana. Founded by Dr. Baffour Jan, the foundation promotes spiritual growth, personal transformation, and social upliftment through teachings, retreats, counseling, and outreach programmes.
+                  The Jan Cosmic Foundation is a nonprofit spiritual organisation headquartered in Accra, Ghana. Founded by Dr. Baffour Jan, the foundation promotes spiritual growth, personal transformation, and social upliftment through teachings, retreats, counseling, and outreach programmes.
                 </p>
                 <p>
                   The philosophy of the foundation centres around awakening consciousness and realizing the true nature of the self. It teaches that every human being carries within them the potential to awaken to higher states of consciousness and experience profound inner transformation — aligning human life with universal cosmic intelligence.

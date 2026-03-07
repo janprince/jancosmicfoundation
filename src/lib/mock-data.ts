@@ -51,12 +51,12 @@ export const impactStats: ImpactStat[] = [
     label: 'Lives Transformed',
   },
   {
-    value: 20,
+    value: 3,
     suffix: '+',
     label: 'Countries Reached',
   },
   {
-    value: 15,
+    value: 5,
     suffix: '+',
     label: 'Active Centres',
   },
@@ -392,10 +392,10 @@ export const causes: Cause[] = [
     slug: 'media-digital-outreach',
     title: 'JCF Media & Digital Outreach',
     description:
-      'Ensuring the teachings and work of Dr. Baffour Jan reach a global audience through professional media production, digital platforms, and modern technology.',
-    content: `<p>The JCF Media Team plays a critical role in spreading the teachings and work of Dr. Baffour Jan and the Jan Cosmic Foundation to seekers around the world.</p>
+      'Ensuring the teachings and work of Dr. Baffour Jan reach a wider audience through professional media production, digital platforms, and modern technology.',
+    content: `<p>The JCF Media Team plays a critical role in spreading the teachings and work of Dr. Baffour Jan and the Jan Cosmic Foundation to seekers everywhere.</p>
 <p>The media team is responsible for recording and producing teachings and talks, editing and publishing video content, managing digital platforms and websites, producing written content and publications, and maintaining the foundation's IT systems and online presence.</p>
-<p>This work ensures that spiritual teachings and insights reach a global audience through modern media and technology. As Dr. Baffour Jan teaches, "The entire cosmos becomes accessible if we learn to speak the cosmic language" — and digital media is one of the ways we speak that language today.</p>
+<p>This work ensures that spiritual teachings and insights reach a wider audience through modern media and technology. As Dr. Baffour Jan teaches, "The entire cosmos becomes accessible if we learn to speak the cosmic language" — and digital media is one of the ways we speak that language today.</p>
 <p>Donations support video and audio production equipment, editing and media software, content production, website and digital infrastructure, and media team operations.</p>`,
     image: '/images/placeholder-cause.jpg',
     gallery: [
@@ -470,7 +470,7 @@ export const centres: Centre[] = [
     country: 'Ghana',
     image: '/images/placeholder-centre.jpg',
     description:
-      'The founding and flagship centre of the Jan Cosmic Foundation, established in 1988. The Accra Centre hosts the largest meditation community in West Africa, offering daily sits, weekly satsangs, teacher training, and a full calendar of community service programmes. It is home to the JCF Secretariat and the primary coordination hub for all global centre activities.',
+      'The founding and flagship centre of the Jan Cosmic Foundation, established in 1988. The Accra Centre hosts the largest meditation community in West Africa, offering daily sits, weekly satsangs, teacher training, and a full calendar of community service programmes. It is home to the JCF Secretariat and the primary coordination hub for all centre activities.',
     memberCount: 620,
     leader: {
       name: 'Dr. Baffour Jan',

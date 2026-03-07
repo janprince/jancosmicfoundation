@@ -49,7 +49,7 @@ export default function GalleryPage() {
           <SectionHeader
             label="Our Gallery"
             title="Life at JCF"
-            subtitle="Browse photographs from retreats, community days, spiritual gatherings, and centres around the world."
+            subtitle="Browse photographs from retreats, community days, spiritual gatherings, and centre activities."
             className="mb-10"
           />
 

@@ -41,14 +41,14 @@ const pillars = [
   },
   {
     number: '04',
-    title: 'Global Outreach',
+    title: 'Expanding Reach',
     description:
-      'The JCF community is not bounded by geography. Our diaspora centres in London, New York, and Toronto connect Ghanaians and international practitioners across the world, facilitating cultural exchange, cross-border fundraising, and the global spread of a wisdom tradition rooted in African spiritual heritage.',
+      'The JCF community is steadily growing beyond its founding home in Ghana. Our centres connect seekers and practitioners, facilitating cultural exchange and the spread of a wisdom tradition rooted in African spiritual heritage.',
     highlights: [
-      '15+ Centres Worldwide',
-      'Diaspora Community Programmes',
-      'International Retreat Hosting',
-      'Cross-Border Partnerships',
+      '5+ Active Centres',
+      'Community Programmes',
+      'Retreat Hosting',
+      'Growing Partnerships',
     ],
   },
 ];

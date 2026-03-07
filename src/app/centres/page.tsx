@@ -8,8 +8,8 @@ export default function CentresPage() {
   const centres = getCentres();
 
   const stats = [
-    { value: '15+', label: 'Active Centres' },
-    { value: '5', label: 'Countries' },
+    { value: '7+', label: 'Active Centres' },
+    { value: '3+', label: 'Countries' },
     { value: '1,400+', label: 'Members Worldwide' },
     { value: '38+', label: 'Years of Service' },
   ];
@@ -18,7 +18,7 @@ export default function CentresPage() {
     <>
       <PageHero
         title="Our Centres"
-        subtitle="A growing global network of communities dedicated to spiritual practice, conscious living, and service to humanity."
+        subtitle="A growing network of communities dedicated to spiritual practice, conscious living, and service to humanity."
       />
 
       {/* Intro section */}
@@ -26,9 +26,9 @@ export default function CentresPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-14">
             <SectionHeader
-              label="Global Presence"
+              label="Our Growing Presence"
               title="Where We Are"
-              subtitle="From our founding home in Accra to diaspora communities in London, New York, and Toronto, the Jan Cosmic Foundation has established centres of practice and service on four continents. Each centre is a living expression of the JCF mission — a place where inner work and outer service meet."
+              subtitle="From our founding home in Accra, the Jan Cosmic Foundation is steadily expanding its reach — establishing centres of practice and service where inner work and outer service meet."
             />
           </div>
 

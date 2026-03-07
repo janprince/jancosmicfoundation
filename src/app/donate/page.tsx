@@ -23,7 +23,7 @@ export default function DonatePage() {
         </svg>
       ),
       title: 'Media & Outreach',
-      description: 'Spreading the teachings of Dr. Baffour Jan to a global audience through professional media production.',
+      description: 'Spreading the teachings of Dr. Baffour Jan to a wider audience through professional media production.',
     },
     {
       icon: (
@@ -40,7 +40,7 @@ export default function DonatePage() {
     <>
       <PageHero
         title="Donate"
-        subtitle="Your generosity sustains the programmes that awaken consciousness and transform lives — in Ghana and around the world."
+        subtitle="Your generosity sustains the programmes that awaken consciousness and transform lives."
       />
 
       {/* Intro */}

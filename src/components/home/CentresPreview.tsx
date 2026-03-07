@@ -11,7 +11,7 @@ export default function CentresPreview() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <SectionHeader
-          label="Our Global Presence"
+          label="Our Growing Presence"
           title="Find a Centre Near You"
           subtitle="A community of seekers who share a common intention: to explore truth, awaken consciousness, and live meaningful lives grounded in wisdom and compassion."
           className="mb-12"
@@ -27,9 +27,8 @@ export default function CentresPreview() {
         {/* Summary bar */}
         <div className="mt-10 flex flex-wrap items-center justify-center gap-8 rounded-2xl border border-[#2D6A4F]/15 bg-white/70 px-8 py-6 backdrop-blur-sm">
           {[
-            { value: '15+', label: 'Active Centres' },
-            { value: '20+', label: 'Countries' },
-            { value: '5', label: 'Continents' },
+            { value: '5+', label: 'Active Centres' },
+            { value: '3+', label: 'Countries' },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <p className="text-2xl font-bold text-[#000B58]">{stat.value}</p>

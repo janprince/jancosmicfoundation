@@ -64,7 +64,7 @@ export default function AboutSnippet() {
               {[
                 'Teachings, retreats, and spiritual training programmes',
                 'Personal counseling and holistic wellbeing guidance',
-                'Global network of centres and community of seekers',
+                'Growing network of centres and community of seekers',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span

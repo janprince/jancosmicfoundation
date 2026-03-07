@@ -13,7 +13,7 @@ export default function RecentBlog() {
         <SectionHeader
           label="From Our Blog"
           title="Latest Stories"
-          subtitle="Insights, testimonials, and reflections from our global community of healers, volunteers, and seekers."
+          subtitle="Insights, testimonials, and reflections from our community of healers, volunteers, and seekers."
           className="mb-12"
         />
 

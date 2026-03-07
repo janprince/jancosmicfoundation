@@ -91,7 +91,7 @@ export default function VolunteerCTA() {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           {[
             'Flexible Commitment',
-            'Global Opportunities',
+            'Volunteer Opportunities',
             'Training Provided',
             'Meaningful Impact',
           ].map((feature) => (
@@ -126,7 +126,7 @@ export default function VolunteerCTA() {
 
         {/* Sub-note */}
         <p className="mt-4 text-xs text-white/45">
-          Join thousands of volunteers making a difference around the world.
+          Join our growing team of volunteers making a difference in communities.
         </p>
       </div>
     </section>

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | Jan Cosmic Foundation",
   },
   description:
-    "The Jan Cosmic Foundation is the charitable arm of Dr. Baffour Jan, dedicated to community service, spiritual education, and humanitarian projects across 20+ countries.",
+    "The Jan Cosmic Foundation is the charitable arm of Dr. Baffour Jan, dedicated to community service, spiritual education, and humanitarian projects.",
   keywords: [
     "Jan Cosmic Foundation",
     "Dr. Baffour Jan",
