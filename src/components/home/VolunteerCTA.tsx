@@ -14,6 +14,17 @@ export default function VolunteerCTA() {
       className="relative overflow-hidden py-24 lg:py-32"
       style={{ background: '#2D6A4F' }}
     >
+      {/* Subtle dot pattern overlay */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 opacity-5"
+        style={{
+          backgroundImage:
+            'radial-gradient(circle, #ffffff 1px, transparent 1px)',
+          backgroundSize: '28px 28px',
+        }}
+      />
+
       <div className="relative z-10 mx-auto max-w-4xl px-5 text-center sm:px-8">
         <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-white/50">
           Get Involved
