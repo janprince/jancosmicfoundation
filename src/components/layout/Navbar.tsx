@@ -22,6 +22,7 @@ const navLinks: NavLink[] = [
   { label: 'Blog', href: '/blog' },
   { label: 'Gallery', href: '/gallery' },
   { label: 'Centres', href: '/centres' },
+  { label: 'Join', href: '/join' },
   { label: 'Volunteer', href: '/volunteer' },
   { label: 'Contact', href: '/contact' },
 ];

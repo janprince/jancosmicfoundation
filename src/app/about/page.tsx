@@ -97,6 +97,11 @@ export default function AboutPage() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
+              {/* Accent corner */}
+              <div
+                className="absolute -bottom-4 -right-4 w-24 h-24 rounded-2xl -z-10"
+                style={{ backgroundColor: '#D4A843', opacity: 0.25 }}
+              />
             </div>
           </div>
         </div>

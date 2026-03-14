@@ -216,6 +216,15 @@ export default function ContactPage() {
               background: 'linear-gradient(135deg, #000B58 0%, #001485 40%, #2D6A4F 100%)',
             }}
           >
+            {/* Decorative radial glow */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                backgroundImage:
+                  'radial-gradient(circle at 50% 50%, rgba(212,168,67,0.12) 0%, transparent 65%)',
+              }}
+            />
+
             {/* Map pin icon */}
             <div className="relative z-10 w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center border border-white/20">
               <svg

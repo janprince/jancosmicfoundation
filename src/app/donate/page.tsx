@@ -106,6 +106,13 @@ export default function DonatePage() {
         }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          {/* Decorative accent */}
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <span className="block h-px w-10 rounded-full bg-[#D4A843]/50" />
+            <span className="block w-2 h-2 rounded-full bg-[#D4A843]" />
+            <span className="block h-px w-10 rounded-full bg-[#D4A843]/50" />
+          </div>
+
           <h2 className="text-3xl sm:text-4xl font-semibold text-white leading-tight">
             Every Contribution Counts
           </h2>

@@ -29,9 +29,20 @@ export default function SectionHeader({
       ].join(' ')}
     >
       {label && (
-        <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[#D4A843]">
-          {label}
-        </p>
+        <div
+          className={[
+            'mb-4 flex items-center gap-3',
+            isCenter ? 'justify-center' : 'justify-start',
+          ].join(' ')}
+        >
+          {isCenter && (
+            <span className="h-px w-8 shrink-0 rounded-full bg-[#D4A843]" aria-hidden="true" />
+          )}
+          <span className="text-xs font-medium uppercase tracking-[0.2em] text-[#D4A843]">
+            {label}
+          </span>
+          <span className="h-px w-8 shrink-0 rounded-full bg-[#D4A843]" aria-hidden="true" />
+        </div>
       )}
 
       <h2
