@@ -1,4 +1,12 @@
 import Link from 'next/link';
+import { HiOutlineUserGroup } from 'react-icons/hi2';
+
+const highlights = [
+  'Flexible Commitment',
+  'Volunteer Opportunities',
+  'Training Provided',
+  'Meaningful Impact',
+];
 
 export default function VolunteerCTA() {
   return (
@@ -21,11 +29,25 @@ export default function VolunteerCTA() {
           of cosmic service to those who need it most.
         </p>
 
+        {/* Highlight tags */}
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+          {highlights.map((item) => (
+            <span
+              key={item}
+              className="rounded-full border border-white/25 px-5 py-2 text-xs font-medium tracking-wide text-white/80"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+
+        {/* CTA button */}
         <Link
           href="/volunteer"
           className="mt-10 inline-block rounded-sm border border-white/40 bg-white px-8 py-3.5 text-sm font-medium text-[#2D6A4F] transition-colors duration-300 hover:bg-white/90"
         >
           Become a Volunteer
+          <span aria-hidden="true">&rarr;</span>
         </Link>
       </div>
     </section>
