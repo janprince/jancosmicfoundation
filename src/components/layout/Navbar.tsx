@@ -84,11 +84,12 @@ export default function Navbar() {
               <Image src="/images/logo.png" alt="JCF Logo" width={36} height={36} className="rounded-full" />
               <span
                 className={[
-                  'hidden sm:block text-sm font-normal uppercase tracking-[0.2em] transition-colors duration-300',
+                  'text-sm font-normal uppercase tracking-[0.2em] transition-colors duration-300',
                   scrolled ? 'text-[#000B58]' : 'text-white',
                 ].join(' ')}
               >
-                Jan Cosmic Foundation
+                <span className="sm:hidden">JCF</span>
+                <span className="hidden sm:inline">Jan Cosmic Foundation</span>
               </span>
             </Link>
 

@@ -136,7 +136,7 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
               {/* Rich content */}
               <div
                 className="prose prose-green max-w-none text-gray-700 leading-relaxed
-                  prose-headings:text-[#000B58] prose-headings:font-bold
+                  prose-headings:text-[#000B58] prose-headings:font-semibold
                   prose-p:text-gray-600 prose-p:leading-relaxed
                   prose-strong:text-[#000B58]"
                 dangerouslySetInnerHTML={{ __html: cause.content }}

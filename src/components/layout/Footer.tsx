@@ -60,7 +60,7 @@ export default function Footer() {
             {/* Logo mark */}
             <div className="flex items-center gap-3 mb-4">
               <Image src="/images/logo.png" alt="JCF Logo" width={36} height={36} className="rounded-full" />
-              <span className="text-white text-sm font-light uppercase tracking-[0.2em]">
+              <span className="text-white text-sm font-normal uppercase tracking-[0.2em]">
                 Jan Cosmic Foundation
               </span>
             </div>

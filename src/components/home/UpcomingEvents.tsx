@@ -7,7 +7,7 @@ export default function UpcomingEvents() {
 
   return (
     <section className="bg-white py-24 lg:py-32">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         {/* Header */}
         <div className="mb-14 text-center">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[#D4A843]">
@@ -16,7 +16,7 @@ export default function UpcomingEvents() {
           <h2 className="text-3xl font-light leading-tight text-[#000B58] sm:text-4xl">
             Upcoming Events
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/55 font-light">
+          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/75">
             Join us for transformative gatherings, retreats, and community
             celebrations.
           </p>
@@ -44,7 +44,7 @@ export default function UpcomingEvents() {
             <p className="text-base text-[#000B58]">
               No upcoming events right now
             </p>
-            <p className="mt-2 text-sm text-[#1a1a1a]/45 font-light">
+            <p className="mt-2 text-sm text-[#1a1a1a]/65">
               Check back soon — more events are on the way.
             </p>
             <Link

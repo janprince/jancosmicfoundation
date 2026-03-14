@@ -224,7 +224,7 @@ export default function GalleryPage() {
 
             {/* Details */}
             <div className="p-6">
-              <h2 className="text-xl font-bold text-[#000B58]">
+              <h2 className="text-xl font-semibold text-[#000B58]">
                 {selectedItem.title}
               </h2>
               {selectedItem.description && (

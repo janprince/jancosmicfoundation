@@ -161,10 +161,10 @@ export default function MissionVisionPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                   </svg>
                 </div>
-                <h3 className="text-base font-bold mb-3" style={{ color: '#000B58' }}>
+                <h3 className="text-base font-semibold mb-3" style={{ color: '#000B58' }}>
                   {item.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#1a1a1a99' }}>
+                <p className="text-sm leading-relaxed" style={{ color: '#1a1a1acc' }}>
                   {item.body}
                 </p>
               </div>
@@ -186,7 +186,7 @@ export default function MissionVisionPage() {
             {pillars.map((pillar) => (
               <div
                 key={pillar.number}
-                className="rounded-2xl p-7 sm:p-9 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                className="rounded-2xl p-7 sm:p-9 transition-all duration-300 hover:shadow-md"
                 style={{ backgroundColor: '#ffffff', border: '1px solid rgba(0,11,88,0.08)' }}
               >
                 <div className="flex items-start gap-5">
@@ -198,15 +198,15 @@ export default function MissionVisionPage() {
                     {pillar.number}
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-3" style={{ color: '#000B58' }}>
+                    <h3 className="text-xl font-semibold mb-3" style={{ color: '#000B58' }}>
                       {pillar.title}
                     </h3>
-                    <p className="text-sm sm:text-base leading-relaxed mb-5" style={{ color: '#1a1a1a99' }}>
+                    <p className="text-sm sm:text-base leading-relaxed mb-5" style={{ color: '#1a1a1acc' }}>
                       {pillar.description}
                     </p>
                     <ul className="space-y-2">
                       {pillar.highlights.map((item) => (
-                        <li key={item} className="flex items-center gap-2 text-sm" style={{ color: '#1a1a1a80' }}>
+                        <li key={item} className="flex items-center gap-2 text-sm" style={{ color: '#1a1a1abf' }}>
                           <span
                             className="w-1.5 h-1.5 rounded-full shrink-0"
                             style={{ backgroundColor: '#D4A843' }}
@@ -229,7 +229,7 @@ export default function MissionVisionPage() {
         style={{ background: 'linear-gradient(135deg, #000B58 0%, #2D6A4F 100%)' }}
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
             Be Part of the Mission
           </h2>
           <p className="text-base sm:text-lg mb-10" style={{ color: 'rgba(253,251,247,0.75)' }}>

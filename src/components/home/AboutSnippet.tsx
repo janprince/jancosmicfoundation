@@ -4,13 +4,13 @@ import Link from 'next/link';
 export default function AboutSnippet() {
   return (
     <section className="bg-[#FDFBF7] py-24 lg:py-32">
-      <div className="mx-auto max-w-5xl px-5 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-20">
           {/* Image */}
           <div className="w-full shrink-0 lg:w-[42%]">
             <div className="relative h-80 w-full overflow-hidden rounded-2xl sm:h-[420px]">
               <Image
-                src="/images/doc-potrait.jpg"
+                src="/images/masterseated4.jpg"
                 alt="Dr. Baffour Jan"
                 fill
                 className="object-cover"
@@ -30,7 +30,7 @@ export default function AboutSnippet() {
               <span className="text-[#2D6A4F]">Divine Potential Within</span>
             </h2>
 
-            <p className="mt-6 text-base leading-relaxed text-[#1a1a1a]/60 font-light">
+            <p className="mt-6 text-base leading-relaxed text-[#1a1a1a]/80">
               Dr. Baffour Jan is a spiritual master, mystic, and teacher
               dedicated to guiding seekers toward deeper awareness of the self
               and the nature of consciousness. His teachings focus on awakening
@@ -38,7 +38,7 @@ export default function AboutSnippet() {
               limiting identities of the mind.
             </p>
 
-            <p className="mt-4 text-base leading-relaxed text-[#1a1a1a]/60 font-light">
+            <p className="mt-4 text-base leading-relaxed text-[#1a1a1a]/80">
               Through the Jan Cosmic Foundation, he offers teachings, courses,
               retreats, and spiritual guidance designed to help individuals
               discover truth, silence the restless mind, and experience the

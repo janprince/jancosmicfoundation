@@ -59,9 +59,9 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             {/* Meta row */}
             <div className="flex flex-wrap items-center gap-3 mb-6">
               <Badge variant="secondary">{post.category}</Badge>
-              <span className="text-sm" style={{ color: '#1a1a1a60' }}>{formattedDate}</span>
+              <span className="text-sm" style={{ color: '#1a1a1abf' }}>{formattedDate}</span>
               <span className="w-1 h-1 rounded-full inline-block" style={{ backgroundColor: '#1a1a1a30' }} />
-              <span className="text-sm" style={{ color: '#1a1a1a60' }}>{post.readTime}</span>
+              <span className="text-sm" style={{ color: '#1a1a1abf' }}>{post.readTime}</span>
             </div>
 
             {/* Author info */}
@@ -79,7 +79,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                 <p className="text-sm font-semibold" style={{ color: '#000B58' }}>
                   {post.author.name}
                 </p>
-                <p className="text-xs mt-0.5" style={{ color: '#1a1a1a70' }}>
+                <p className="text-xs mt-0.5" style={{ color: '#1a1a1abf' }}>
                   {post.author.role}
                 </p>
               </div>
@@ -95,7 +95,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             {/* Tags */}
             {post.tags.length > 0 && (
               <div className="mt-10 pt-8" style={{ borderTop: '1px solid rgba(0,11,88,0.08)' }}>
-                <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: '#1a1a1a60' }}>
+                <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: '#1a1a1abf' }}>
                   Tagged
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -114,7 +114,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
 
             {/* Share buttons (visual only) */}
             <div className="mt-10 pt-8" style={{ borderTop: '1px solid rgba(0,11,88,0.08)' }}>
-              <p className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: '#1a1a1a60' }}>
+              <p className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: '#1a1a1abf' }}>
                 Share this article
               </p>
               <ShareButtons title={post.title} />
@@ -127,7 +127,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
               className="rounded-2xl p-6 sticky top-24"
               style={{ backgroundColor: '#ffffff', border: '1px solid rgba(0,11,88,0.08)', boxShadow: '0 4px 24px rgba(0,11,88,0.05)' }}
             >
-              <h3 className="text-sm font-bold uppercase tracking-wider mb-5 pb-4" style={{ color: '#000B58', borderBottom: '1px solid rgba(0,11,88,0.08)' }}>
+              <h3 className="text-sm font-semibold uppercase tracking-wider mb-5 pb-4" style={{ color: '#000B58', borderBottom: '1px solid rgba(0,11,88,0.08)' }}>
                 Article Info
               </h3>
 
@@ -135,7 +135,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                 <div>
                   <dt className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: '#2D6A4F' }}>Author</dt>
                   <dd style={{ color: '#000B58' }} className="font-medium">{post.author.name}</dd>
-                  <dd style={{ color: '#1a1a1a70' }} className="text-xs mt-0.5">{post.author.role}</dd>
+                  <dd style={{ color: '#1a1a1abf' }} className="text-xs mt-0.5">{post.author.role}</dd>
                 </div>
                 <div>
                   <dt className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: '#2D6A4F' }}>Published</dt>
@@ -157,7 +157,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
         {/* Related posts */}
         {relatedPosts.length > 0 && (
           <section className="mt-20 pt-14" style={{ borderTop: '2px solid rgba(0,11,88,0.07)' }}>
-            <h2 className="text-2xl font-bold mb-8" style={{ color: '#000B58' }}>
+            <h2 className="text-2xl font-semibold mb-8" style={{ color: '#000B58' }}>
               Related Articles
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

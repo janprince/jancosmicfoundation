@@ -111,7 +111,7 @@ export default function EventsPage() {
               <h3 className="text-xl font-bold mb-2" style={{ color: '#000B58' }}>
                 No {activeFilter === 'upcoming' ? 'upcoming' : activeFilter === 'past' ? 'past' : ''} events found
               </h3>
-              <p className="text-base max-w-sm" style={{ color: '#1a1a1a60' }}>
+              <p className="text-base max-w-sm" style={{ color: '#1a1a1abf' }}>
                 {activeFilter === 'upcoming'
                   ? 'Check back soon — new events are added regularly.'
                   : activeFilter === 'past'
@@ -138,7 +138,7 @@ export default function EventsPage() {
           <h2 className="text-2xl sm:text-3xl font-bold mb-3" style={{ color: '#000B58' }}>
             Never Miss an Event
           </h2>
-          <p className="text-sm sm:text-base mb-6" style={{ color: '#1a1a1a80' }}>
+          <p className="text-sm sm:text-base mb-6" style={{ color: '#1a1a1abf' }}>
             Subscribe to our newsletter and be the first to know about upcoming retreats, workshops, and community gatherings.
           </p>
           <a

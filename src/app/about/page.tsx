@@ -73,7 +73,7 @@ export default function AboutPage() {
                 title="A Foundation Born from Vision"
                 align="left"
               />
-              <div className="mt-8 space-y-5 text-base sm:text-lg leading-relaxed" style={{ color: '#1a1a1a99' }}>
+              <div className="mt-8 space-y-5 text-base sm:text-lg leading-relaxed" style={{ color: '#1a1a1acc' }}>
                 <p>
                   The Jan Cosmic Foundation is a nonprofit spiritual organisation headquartered in Accra, Ghana. Founded by Dr. Baffour Jan, the foundation promotes spiritual growth, personal transformation, and social upliftment through teachings, retreats, counseling, and outreach programmes.
                 </p>
@@ -97,11 +97,6 @@ export default function AboutPage() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
-              {/* Accent corner */}
-              <div
-                className="absolute -bottom-4 -right-4 w-24 h-24 rounded-2xl -z-10"
-                style={{ backgroundColor: '#D4A843', opacity: 0.25 }}
-              />
             </div>
           </div>
         </div>
@@ -116,16 +111,16 @@ export default function AboutPage() {
           >
             The Founder
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6" style={{ color: '#000B58' }}>
+          <h2 className="text-3xl sm:text-4xl font-semibold mb-6" style={{ color: '#000B58' }}>
             Our Connection to Dr. Baffour Jan
           </h2>
-          <p className="text-base sm:text-lg leading-relaxed mb-6" style={{ color: '#1a1a1a99' }}>
+          <p className="text-base sm:text-lg leading-relaxed mb-6" style={{ color: '#1a1a1acc' }}>
             Dr. Baffour Jan is a spiritual master, mystic, and teacher known for guiding seekers toward deeper awareness of the self and the nature of consciousness. His teachings focus on awakening the divine potential within every human being and transcending limiting identities of the mind.
           </p>
-          <p className="text-base sm:text-lg leading-relaxed mb-4" style={{ color: '#1a1a1a99' }}>
+          <p className="text-base sm:text-lg leading-relaxed mb-4" style={{ color: '#1a1a1acc' }}>
             Through the Jan Cosmic Foundation, he offers teachings, courses, retreats, and spiritual guidance designed to help individuals discover truth, silence the restless mind, and experience the deeper reality of spirit.
           </p>
-          <p className="text-base italic leading-relaxed mb-8" style={{ color: '#1a1a1a80' }}>
+          <p className="text-base italic leading-relaxed mb-8" style={{ color: '#1a1a1abf' }}>
             &ldquo;The most worthy knowledge is that which helps to dismantle the Ego in order to reveal the True Self.&rdquo;
           </p>
           <a
@@ -155,7 +150,7 @@ export default function AboutPage() {
             {coreValues.map((value) => (
               <div
                 key={value.title}
-                className="rounded-2xl p-7 flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                className="rounded-2xl p-7 flex flex-col transition-all duration-300 hover:shadow-md"
                 style={{ backgroundColor: '#ffffff', border: '1px solid rgba(0,11,88,0.08)' }}
               >
                 <div
@@ -164,10 +159,10 @@ export default function AboutPage() {
                 >
                   {value.icon}
                 </div>
-                <h3 className="text-lg font-bold mb-3" style={{ color: '#000B58' }}>
+                <h3 className="text-lg font-semibold mb-3" style={{ color: '#000B58' }}>
                   {value.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#1a1a1a99' }}>
+                <p className="text-sm leading-relaxed" style={{ color: '#1a1a1acc' }}>
                   {value.description}
                 </p>
               </div>
@@ -188,7 +183,7 @@ export default function AboutPage() {
             {teamMembers.map((member) => (
               <div
                 key={member.id}
-                className="rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                className="rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-md"
                 style={{ backgroundColor: '#ffffff', border: '1px solid rgba(0,11,88,0.07)' }}
               >
                 {/* Avatar */}
@@ -216,13 +211,13 @@ export default function AboutPage() {
                   </div>
                 )}
                 <div className="p-5">
-                  <h3 className="text-base font-bold" style={{ color: '#000B58' }}>
+                  <h3 className="text-base font-semibold" style={{ color: '#000B58' }}>
                     {member.name}
                   </h3>
                   <p className="text-xs font-semibold mt-0.5 mb-3" style={{ color: '#2D6A4F' }}>
                     {member.role}
                   </p>
-                  <p className="text-xs leading-relaxed line-clamp-4" style={{ color: '#1a1a1a80' }}>
+                  <p className="text-xs leading-relaxed line-clamp-4" style={{ color: '#1a1a1abf' }}>
                     {member.bio}
                   </p>
                 </div>
@@ -238,7 +233,7 @@ export default function AboutPage() {
         style={{ background: 'linear-gradient(135deg, #000B58 0%, #001485 50%, #2D6A4F 100%)' }}
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
             Explore Our Purpose
           </h2>
           <p className="text-sm italic mb-6" style={{ color: 'rgba(212,168,67,0.75)' }}>

@@ -29,7 +29,7 @@ export default function HomePage() {
 
       {/* Newsletter */}
       <section className="py-24 lg:py-32" style={{ background: '#000B58' }}>
-        <div className="mx-auto max-w-xl px-5 sm:px-8">
+        <div className="mx-auto max-w-2xl px-5 sm:px-8">
           <div className="mb-8 text-center">
             <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-[#D4A843]/80">
               Stay Connected

@@ -6,7 +6,7 @@ export default function VolunteerCTA() {
       className="relative overflow-hidden py-24 lg:py-32"
       style={{ background: '#2D6A4F' }}
     >
-      <div className="relative z-10 mx-auto max-w-3xl px-5 text-center sm:px-8">
+      <div className="relative z-10 mx-auto max-w-4xl px-5 text-center sm:px-8">
         <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-white/50">
           Get Involved
         </p>
@@ -15,7 +15,7 @@ export default function VolunteerCTA() {
           Volunteer With Us
         </h2>
 
-        <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/65 font-light">
+        <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/80">
           Whether you have an hour or a lifetime to give, your time and talents
           can help heal communities, support our programmes, and carry the light
           of cosmic service to those who need it most.
