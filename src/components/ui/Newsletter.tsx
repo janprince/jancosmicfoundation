@@ -26,10 +26,10 @@ export default function Newsletter({
   const [errorMsg, setErrorMsg] = useState('');
 
   const headingColor = dark ? 'text-white' : 'text-[#000B58]';
-  const descColor = dark ? 'text-white/70' : 'text-[#1a1a1a]/60';
+  const descColor = dark ? 'text-white/85' : 'text-[#1a1a1a]/80';
   const inputBg = dark
-    ? 'bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-[#D4A843] focus:bg-white/15'
-    : 'bg-white border-primary/25 text-[#1a1a1a] placeholder:text-[#1a1a1a]/40 focus:border-primary';
+    ? 'bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-[#D4A843] focus:bg-white/15'
+    : 'bg-white border-primary/25 text-[#1a1a1a] placeholder:text-[#1a1a1a]/60 focus:border-primary';
 
   function validateEmail(val: string) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
@@ -130,7 +130,7 @@ export default function Newsletter({
             </label>
             <div className="pointer-events-none absolute inset-y-0 left-3.5 flex items-center">
               <svg
-                className={['h-4 w-4', dark ? 'text-white/40' : 'text-primary/40'].join(' ')}
+                className={['h-4 w-4', dark ? 'text-white/60' : 'text-primary/60'].join(' ')}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

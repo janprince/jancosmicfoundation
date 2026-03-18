@@ -42,27 +42,6 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
         subtitle={`${cause.category} · ${cause.donorsCount} donors`}
       />
 
-      {/* Back link */}
-      <div style={{ backgroundColor: '#FDFBF7' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-          <Link
-            href="/donate"
-            className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-[#245c43] transition-colors group"
-          >
-            <svg
-              className="w-4 h-4 transition-transform group-hover:-translate-x-1"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-            Back to All Causes
-          </Link>
-        </div>
-      </div>
-
       {/* Main content */}
       <section className="py-12 md:py-16" style={{ backgroundColor: '#FDFBF7' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -177,7 +156,7 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
                     currency={cause.currency}
                   />
                   <div className="mt-4 flex items-center gap-2 text-sm text-gray-500">
-                    <svg className="w-4 h-4 text-[#D4A843]" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-4 h-4 text-[#8a6c1a]" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
                     </svg>
                     <span>
@@ -191,7 +170,7 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
 
                 {/* Donation checkout */}
                 <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                  <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#D4A843] mb-4">
+                  <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#8a6c1a] mb-4">
                     Make a Donation
                   </p>
                   <DonationCheckout

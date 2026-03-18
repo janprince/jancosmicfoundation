@@ -44,18 +44,18 @@ export default function HeroSection() {
               <span className="text-[#D4A843]">Self-Realization</span>
             </h1>
 
-            <p className="mt-7 max-w-lg text-lg leading-relaxed text-white/75">
+            <p className="mt-7 max-w-lg text-lg leading-relaxed text-white/90">
               A spiritual organisation dedicated to guiding individuals toward
               higher consciousness, inner freedom, and self-realization —
               through the teachings of Dr. Baffour Jan.
             </p>
 
             <blockquote className="mt-8 border-l-2 border-[#D4A843]/30 pl-5">
-              <p className="text-base italic leading-relaxed text-white/60">
+              <p className="text-base italic leading-relaxed text-white/80">
                 &ldquo;The Jan Cosmic Foundation is an expression of divine
                 will.&rdquo;
               </p>
-              <cite className="mt-2 block text-xs font-normal not-italic tracking-wide text-[#D4A843]/70">
+              <cite className="mt-2 block text-xs font-normal not-italic tracking-wide text-[#D4A843]/90">
                 Dr. Baffour Jan
               </cite>
             </blockquote>
@@ -153,18 +153,18 @@ export default function HeroSection() {
               <span className="text-[#D4A843]">Self-Realization</span>
             </h1>
 
-            <p className="mx-auto mt-6 max-w-md text-base leading-relaxed text-white/75">
+            <p className="mx-auto mt-6 max-w-md text-base leading-relaxed text-white/90">
               A spiritual organisation dedicated to guiding individuals toward
               higher consciousness, inner freedom, and self-realization —
               through the teachings of Dr. Baffour Jan.
             </p>
 
             <blockquote className="mx-auto mt-8 max-w-sm border-t border-white/10 pt-6">
-              <p className="text-sm italic leading-relaxed text-white/60">
+              <p className="text-sm italic leading-relaxed text-white/80">
                 &ldquo;The Jan Cosmic Foundation is an expression of divine
                 will.&rdquo;
               </p>
-              <cite className="mt-2 block text-xs font-normal not-italic tracking-wide text-[#D4A843]/70">
+              <cite className="mt-2 block text-xs font-normal not-italic tracking-wide text-[#D4A843]/90">
                 Dr. Baffour Jan
               </cite>
             </blockquote>

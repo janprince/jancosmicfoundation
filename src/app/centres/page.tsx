@@ -91,7 +91,7 @@ export default async function CentresPage() {
           <h2 className="text-3xl sm:text-4xl font-semibold text-white leading-tight">
             Ready to Connect?
           </h2>
-          <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed text-white/75">
+          <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed text-white/90">
             Join an existing centre near you, or reach out if you are interested
             in establishing a JCF presence in your community. We welcome all
             sincere seekers.

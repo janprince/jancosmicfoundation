@@ -18,7 +18,7 @@ export default function SectionHeader({
   const isCenter = align === 'center';
 
   const titleColor = light ? 'text-white' : 'text-[#000B58]';
-  const subtitleColor = light ? 'text-white/80' : 'text-[#1a1a1a]/75';
+  const subtitleColor = light ? 'text-white/90' : 'text-[#1a1a1a]/85';
 
   return (
     <div
@@ -38,7 +38,7 @@ export default function SectionHeader({
           {isCenter && (
             <span className="h-px w-8 shrink-0 rounded-full bg-[#D4A843]" aria-hidden="true" />
           )}
-          <span className="text-xs font-medium uppercase tracking-[0.2em] text-[#D4A843]">
+          <span className={`text-xs font-medium uppercase tracking-[0.2em] ${light ? 'text-[#D4A843]' : 'text-[#8a6c1a]'}`}>
             {label}
           </span>
           <span className="h-px w-8 shrink-0 rounded-full bg-[#D4A843]" aria-hidden="true" />

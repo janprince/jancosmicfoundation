@@ -41,17 +41,6 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
       <PageHero title={event.title} subtitle={event.description} />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
-        {/* Back link */}
-        <Link
-          href="/events"
-          className="inline-flex items-center gap-2 text-sm font-medium mb-10 transition-colors hover:opacity-75"
-          style={{ color: 'var(--color-primary)' }}
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-          </svg>
-          Back to Events
-        </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14">
           {/* Main content */}

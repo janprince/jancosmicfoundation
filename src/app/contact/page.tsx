@@ -144,7 +144,7 @@ export default function ContactPage() {
                         {detail.icon}
                       </span>
                       <div>
-                        <p className="text-xs font-bold uppercase tracking-wider text-[#D4A843] mb-1">
+                        <p className="text-xs font-bold uppercase tracking-wider text-[#8a6c1a] mb-1">
                           {detail.label}
                         </p>
                         {detail.lines.map((line) => (
@@ -164,7 +164,7 @@ export default function ContactPage() {
                         {detail.icon}
                       </span>
                       <div>
-                        <p className="text-xs font-bold uppercase tracking-wider text-[#D4A843] mb-1">
+                        <p className="text-xs font-bold uppercase tracking-wider text-[#8a6c1a] mb-1">
                           {detail.label}
                         </p>
                         {detail.lines.map((line) => (
@@ -183,7 +183,7 @@ export default function ContactPage() {
                 className="rounded-2xl p-5"
                 style={{ backgroundColor: '#F2EFE9' }}
               >
-                <p className="text-xs font-bold uppercase tracking-wider text-[#D4A843] mb-4">
+                <p className="text-xs font-bold uppercase tracking-wider text-[#8a6c1a] mb-4">
                   Follow Us
                 </p>
                 <div className="flex flex-wrap gap-3">
@@ -244,7 +244,7 @@ export default function ContactPage() {
 
             <div className="relative z-10 text-center px-4">
               <p className="text-white font-semibold text-lg">Map Coming Soon</p>
-              <p className="text-white/60 text-sm mt-1">
+              <p className="text-white/80 text-sm mt-1">
                 Franko Estate, Kwabenya, Accra, Ghana
               </p>
               <a

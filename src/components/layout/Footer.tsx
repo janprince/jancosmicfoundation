@@ -67,7 +67,7 @@ export default function Footer() {
 
             <p
               className="text-sm leading-relaxed"
-              style={{ color: 'rgba(253,251,247,0.65)' }}
+              style={{ color: 'rgba(253,251,247,0.88)' }}
             >
               Guiding individuals toward self-realization, higher consciousness,
               and inner freedom — through the teachings of Dr. Baffour Jan.
@@ -87,7 +87,7 @@ export default function Footer() {
                 >
                   <Icon
                     className="w-4 h-4 transition-colors duration-200 group-hover:text-white"
-                    style={{ color: 'rgba(253,251,247,0.70)' }}
+                    style={{ color: 'rgba(253,251,247,0.88)' }}
                   />
                 </a>
               ))}
@@ -108,7 +108,7 @@ export default function Footer() {
                   <Link
                     href={href}
                     className="text-sm transition-colors duration-150 hover:text-[#FDFBF7]"
-                    style={{ color: 'rgba(253,251,247,0.65)' }}
+                    style={{ color: 'rgba(253,251,247,0.88)' }}
                   >
                     {label}
                   </Link>
@@ -131,7 +131,7 @@ export default function Footer() {
                   <Link
                     href={href}
                     className="text-sm transition-colors duration-150 hover:text-[#FDFBF7]"
-                    style={{ color: 'rgba(253,251,247,0.65)' }}
+                    style={{ color: 'rgba(253,251,247,0.88)' }}
                   >
                     {label}
                   </Link>
@@ -150,7 +150,7 @@ export default function Footer() {
             </h3>
             <p
               className="text-sm mb-4"
-              style={{ color: 'rgba(253,251,247,0.65)' }}
+              style={{ color: 'rgba(253,251,247,0.88)' }}
             >
               Get updates on events, programs, and impact stories delivered to
               your inbox.
@@ -170,7 +170,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
         <div
           className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs"
-          style={{ color: 'rgba(253,251,247,0.40)' }}
+          style={{ color: 'rgba(253,251,247,0.75)' }}
         >
           <p>
             &copy; {currentYear} Jan Cosmic Foundation. All rights reserved.

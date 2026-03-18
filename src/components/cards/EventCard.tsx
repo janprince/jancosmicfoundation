@@ -9,11 +9,11 @@ export default function EventCard({ event }: { event: Event }) {
   const day = date.getDate();
 
   return (
-    <Link href={`/events/${event.slug}`} className="group block">
+    <Link href={`/events/${event.slug}`} className="group block cursor-pointer">
       <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
-        <div className="relative h-48 md:h-56 overflow-hidden">
+        <div className="relative aspect-video overflow-hidden">
           <Image
-            src="/images/students-sitting-down-on-grass.jpg"
+            src={event.image}
             alt={event.title}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-500"

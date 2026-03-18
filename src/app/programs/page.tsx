@@ -256,7 +256,7 @@ export default async function ProgramsPage() {
           </h2>
           <p
             className="text-base sm:text-lg mb-10 leading-relaxed"
-            style={{ color: 'rgba(253,251,247,0.75)' }}
+            style={{ color: 'rgba(253,251,247,0.9)' }}
           >
             Whether you are drawn to the inner path of meditation or the outer path of service, there is a place for you in the Jan Cosmic Foundation.
           </p>

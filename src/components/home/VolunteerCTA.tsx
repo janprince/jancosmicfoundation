@@ -26,7 +26,7 @@ export default function VolunteerCTA() {
       />
 
       <div className="relative z-10 mx-auto max-w-4xl px-5 text-center sm:px-8">
-        <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-white/50">
+        <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-white/75">
           Get Involved
         </p>
 

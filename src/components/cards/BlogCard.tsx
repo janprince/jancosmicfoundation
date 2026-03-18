@@ -5,11 +5,11 @@ import Badge from "@/components/ui/Badge";
 
 export default function BlogCard({ post }: { post: BlogPost }) {
   return (
-    <Link href={`/blog/${post.slug}`} className="group block">
+    <Link href={`/blog/${post.slug}`} className="group block cursor-pointer">
       <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col">
-        <div className="relative h-48 md:h-52 overflow-hidden">
+        <div className="relative aspect-video overflow-hidden">
           <Image
-            src="/images/studentslistenning2.jpg"
+            src={post.image}
             alt={post.title}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-500"

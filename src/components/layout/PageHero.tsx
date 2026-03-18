@@ -41,7 +41,7 @@ export default function PageHero({
         </h1>
 
         {subtitle && (
-          <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed text-white/75">
+          <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed text-white/90">
             {subtitle}
           </p>
         )}

@@ -99,7 +99,7 @@ export default async function JoinPage() {
             <div className="mb-10 text-center">
               <div className="mb-4 flex items-center justify-center gap-3">
                 <span className="h-px w-8 rounded-full bg-[#D4A843]" aria-hidden="true" />
-                <span className="text-xs font-medium uppercase tracking-[0.2em] text-[#D4A843]">
+                <span className="text-xs font-medium uppercase tracking-[0.2em] text-[#8a6c1a]">
                   Groups &amp; Channels
                 </span>
                 <span className="h-px w-8 rounded-full bg-[#D4A843]" aria-hidden="true" />
@@ -107,7 +107,7 @@ export default async function JoinPage() {
               <h2 className="text-3xl font-semibold text-[#000B58] sm:text-4xl">
                 Stay Connected
               </h2>
-              <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/75 sm:text-lg">
+              <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/85 sm:text-lg">
                 Join our groups and channels to receive teachings, announcements,
                 and connect with fellow seekers.
               </p>
@@ -143,7 +143,7 @@ export default async function JoinPage() {
                         </span>
                       )}
                     </div>
-                    <p className="mt-1 text-sm leading-relaxed text-[#1a1a1a]/65">
+                    <p className="mt-1 text-sm leading-relaxed text-[#1a1a1a]/80">
                       {link.description}
                     </p>
                   </div>
@@ -169,7 +169,7 @@ export default async function JoinPage() {
           <div className="mx-auto max-w-3xl px-5 sm:px-8 text-center">
             <div className="mb-4 flex items-center justify-center gap-3">
               <span className="h-px w-8 rounded-full bg-[#D4A843]" aria-hidden="true" />
-              <span className="text-xs font-medium uppercase tracking-[0.2em] text-[#D4A843]">
+              <span className="text-xs font-medium uppercase tracking-[0.2em] text-[#8a6c1a]">
                 Social Media
               </span>
               <span className="h-px w-8 rounded-full bg-[#D4A843]" aria-hidden="true" />
@@ -177,7 +177,7 @@ export default async function JoinPage() {
             <h2 className="text-3xl font-semibold text-[#000B58] sm:text-4xl">
               Follow Us
             </h2>
-            <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-[#1a1a1a]/75">
+            <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-[#1a1a1a]/85">
               Follow the foundation on social media for teachings, event
               highlights, and community stories.
             </p>
@@ -210,7 +210,7 @@ export default async function JoinPage() {
             <div className="mb-10 text-center">
               <div className="mb-4 flex items-center justify-center gap-3">
                 <span className="h-px w-8 rounded-full bg-[#D4A843]" aria-hidden="true" />
-                <span className="text-xs font-medium uppercase tracking-[0.2em] text-[#D4A843]">
+                <span className="text-xs font-medium uppercase tracking-[0.2em] text-[#8a6c1a]">
                   In Person
                 </span>
                 <span className="h-px w-8 rounded-full bg-[#D4A843]" aria-hidden="true" />
@@ -218,7 +218,7 @@ export default async function JoinPage() {
               <h2 className="text-3xl font-semibold text-[#000B58] sm:text-4xl">
                 Join a Centre
               </h2>
-              <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/75 sm:text-lg">
+              <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/85 sm:text-lg">
                 Connect with a local JCF community near you. Each centre offers
                 regular meditation sessions, community programmes, and
                 opportunities for service.
@@ -252,7 +252,7 @@ export default async function JoinPage() {
                     <h3 className="text-base font-semibold text-[#000B58]">
                       {centre.name}
                     </h3>
-                    <p className="text-sm text-[#1a1a1a]/60">
+                    <p className="text-sm text-[#1a1a1a]/80">
                       {centre.location} · {centre.memberCount} members
                     </p>
                   </div>
@@ -300,7 +300,7 @@ export default async function JoinPage() {
             <h2 className="text-2xl font-semibold text-white sm:text-3xl">
               Welcome to the Family
             </h2>
-            <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-white/70">
+            <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-white/85">
               Whether online or in person, you are always welcome. Join us in
               the pursuit of truth, conscious living, and service to humanity.
             </p>

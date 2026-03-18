@@ -84,7 +84,7 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
               <button
                 onClick={onClose}
                 aria-label="Close navigation menu"
-                className="p-1.5 rounded-md text-white/70 hover:text-white hover:bg-white/10 transition-colors duration-150"
+                className="p-1.5 rounded-md text-white/85 hover:text-white hover:bg-white/10 transition-colors duration-150"
               >
                 <HiXMark className="w-5 h-5" />
               </button>

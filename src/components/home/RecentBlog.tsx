@@ -10,13 +10,13 @@ export default async function RecentBlog() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         {/* Header */}
         <div className="mb-14 text-center">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[#D4A843]">
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[#8a6c1a]">
             From Our Blog
           </p>
           <h2 className="text-3xl font-light leading-tight text-[#000B58] sm:text-4xl">
             Latest Stories
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/75">
+          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/85">
             Insights, testimonials, and reflections from our community of
             seekers.
           </p>

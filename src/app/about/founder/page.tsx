@@ -164,7 +164,7 @@ export default function FounderPage() {
                     <p className="text-2xl sm:text-3xl font-semibold" style={{ color: 'var(--color-primary)' }}>
                       {stat.value}
                     </p>
-                    <p className="text-xs sm:text-sm mt-1" style={{ color: '#1a1a1a99' }}>
+                    <p className="text-xs sm:text-sm mt-1" style={{ color: '#1a1a1acc' }}>
                       {stat.label}
                     </p>
                   </div>
@@ -320,10 +320,10 @@ export default function FounderPage() {
                 <h3 className="text-lg font-semibold text-white mb-1">
                   {institution.name}
                 </h3>
-                <p className="text-xs font-medium mb-4" style={{ color: 'rgba(212,168,67,0.7)' }}>
+                <p className="text-xs font-medium mb-4" style={{ color: 'rgba(212,168,67,0.9)' }}>
                   {institution.location}
                 </p>
-                <p className="text-sm leading-relaxed flex-1" style={{ color: 'rgba(253,251,247,0.75)' }}>
+                <p className="text-sm leading-relaxed flex-1" style={{ color: 'rgba(253,251,247,0.9)' }}>
                   {institution.description}
                 </p>
               </div>
@@ -358,7 +358,7 @@ export default function FounderPage() {
                 <p className="text-2xl font-semibold" style={{ color: 'var(--color-primary)' }}>
                   {stat.value}
                 </p>
-                <p className="text-xs mt-1" style={{ color: '#1a1a1a99' }}>
+                <p className="text-xs mt-1" style={{ color: '#1a1a1acc' }}>
                   {stat.label}
                 </p>
               </div>
@@ -379,12 +379,12 @@ export default function FounderPage() {
           <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
             Experience the Teachings
           </h2>
-          <p className="text-sm italic mb-6" style={{ color: 'rgba(212,168,67,0.75)' }}>
+          <p className="text-sm italic mb-6" style={{ color: 'rgba(212,168,67,0.9)' }}>
             &ldquo;The most worthy knowledge is that which helps to dismantle the Ego in order to reveal the True Self.&rdquo;
           </p>
           <p
             className="text-base sm:text-lg mb-10 leading-relaxed"
-            style={{ color: 'rgba(253,251,247,0.75)' }}
+            style={{ color: 'rgba(253,251,247,0.9)' }}
           >
             Explore the foundation born from Dr. Jan&apos;s vision, or visit his personal site to engage directly with his teachings, talks, and guided practices.
           </p>

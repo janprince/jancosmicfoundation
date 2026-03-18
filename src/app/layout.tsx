@@ -4,7 +4,6 @@ import { Raleway } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import ThemeSwitcher from "@/components/ui/ThemeSwitcher";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -50,10 +49,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={raleway.variable}>
       <body className="font-sans antialiased bg-[#FDFBF7] text-[#1a1a1a]">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-lg focus:text-sm focus:font-medium focus:shadow-lg"
+        >
+          Skip to main content
+        </a>
         <Navbar />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
-        <ThemeSwitcher />
       </body>
       <GoogleAnalytics gaId="G-5Q0ZCXVWPM" />
     </html>

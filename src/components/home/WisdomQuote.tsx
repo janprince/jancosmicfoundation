@@ -27,7 +27,7 @@ export default function WisdomQuote() {
               <cite className="block text-sm font-medium not-italic text-[#000B58]">
                 Dr. Baffour Jan
               </cite>
-              <span className="text-xs text-[#1a1a1a]/45">
+              <span className="text-xs text-[#1a1a1a]/70">
                 Founder, Jan Cosmic Foundation
               </span>
             </div>

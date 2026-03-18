@@ -171,7 +171,7 @@ export default function Navbar() {
                       <div
                         className="absolute top-full left-0 pt-1 w-52 z-50"
                       >
-                        <div className="bg-white rounded-xl shadow-xl shadow-black/10 border border-gray-100 py-2 animate-fade-in">
+                        <div className="bg-white rounded-xl shadow-xl shadow-black/10 border border-gray-100 py-2 animate-dropdown-enter">
                           {link.children.map((child) => (
                             <Link
                               key={child.href}

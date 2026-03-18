@@ -20,6 +20,23 @@ export default async function TestimonialsPage() {
         subtitle="Hear from the seekers, volunteers, and community members whose lives have been touched by the Jan Cosmic Foundation."
       />
 
+      {/* Empty state */}
+      {testimonials.length === 0 && (
+        <section className="py-16 sm:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center py-20">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center">
+                <svg className="w-8 h-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-medium text-gray-700 mb-2">No testimonials yet</h3>
+              <p className="text-sm text-gray-500">Check back soon for stories of transformation from our community.</p>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Featured Testimonial */}
       {testimonials.length > 0 && (
         <section className="py-16 sm:py-24">
@@ -59,7 +76,7 @@ export default async function TestimonialsPage() {
                     <p className="text-base font-semibold text-white">
                       {testimonials[0].name}
                     </p>
-                    <p className="text-sm" style={{ color: 'rgba(212,168,67,0.8)' }}>
+                    <p className="text-sm" style={{ color: 'rgba(212,168,67,0.95)' }}>
                       {testimonials[0].role}
                     </p>
                   </div>
@@ -110,7 +127,7 @@ export default async function TestimonialsPage() {
                     <p className="text-sm font-semibold" style={{ color: '#000B58' }}>
                       {testimonial.name}
                     </p>
-                    <p className="text-xs" style={{ color: '#1a1a1a99' }}>
+                    <p className="text-xs" style={{ color: '#1a1a1acc' }}>
                       {testimonial.role}
                     </p>
                   </div>
@@ -147,7 +164,7 @@ export default async function TestimonialsPage() {
           </h2>
           <p
             className="text-base sm:text-lg mb-10 leading-relaxed"
-            style={{ color: 'rgba(253,251,247,0.75)' }}
+            style={{ color: 'rgba(253,251,247,0.9)' }}
           >
             Every story of transformation began with a single step. Whether through our centres, retreats, or volunteer programmes — there is a place for you here.
           </p>

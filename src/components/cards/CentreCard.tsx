@@ -5,11 +5,11 @@ import Button from "@/components/ui/Button";
 
 export default function CentreCard({ centre }: { centre: Centre }) {
   return (
-    <Link href={`/centres/${centre.slug}`} className="group block">
+    <Link href={`/centres/${centre.slug}`} className="group block cursor-pointer">
       <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col">
-        <div className="relative h-48 overflow-hidden">
+        <div className="relative aspect-video overflow-hidden">
           <Image
-            src="/images/group-of-students.jpg"
+            src={centre.image}
             alt={centre.name}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -31,7 +31,7 @@ export default function CentreCard({ centre }: { centre: Centre }) {
           </p>
           <div className="mt-4 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-[#D4A843]/20 flex items-center justify-center text-xs font-semibold text-[#D4A843]">
+              <div className="w-8 h-8 rounded-full bg-[#D4A843]/20 flex items-center justify-center text-xs font-semibold text-[#8a6c1a]">
                 {centre.leader.name.charAt(0)}
               </div>
               <div>

@@ -58,7 +58,7 @@ export default function ProgressBar({
       {/* Labels */}
       {showLabel && (
         <div className="mt-2 flex items-center justify-between gap-2">
-          <p className="text-sm text-[#1a1a1a]/70">
+          <p className="text-sm text-[#1a1a1a]/80">
             <span className="font-semibold text-primary">
               {currency} {formatAmount(current)}
             </span>{' '}

@@ -21,7 +21,7 @@ export default function AboutSnippet() {
 
           {/* Text */}
           <div className="w-full lg:w-[58%]">
-            <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[#D4A843]">
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[#8a6c1a]">
               Who We Are
             </p>
 

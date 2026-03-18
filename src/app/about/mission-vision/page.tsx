@@ -232,7 +232,7 @@ export default function MissionVisionPage() {
           <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
             Be Part of the Mission
           </h2>
-          <p className="text-base sm:text-lg mb-10" style={{ color: 'rgba(253,251,247,0.75)' }}>
+          <p className="text-base sm:text-lg mb-10" style={{ color: 'rgba(253,251,247,0.9)' }}>
             There are many ways to participate — as a member, a volunteer, a donor, or simply a curious seeker. The foundation welcomes individuals from all backgrounds who are interested in spiritual development and self-discovery.
           </p>
           <div className="flex flex-wrap justify-center gap-4">

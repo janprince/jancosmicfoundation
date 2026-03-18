@@ -76,27 +76,6 @@ export default async function CentrePage({ params }: { params: Promise<{ slug: s
         subtitle={`${centre.location} · ${centre.memberCount} members`}
       />
 
-      {/* Back link */}
-      <div style={{ backgroundColor: '#FDFBF7' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-          <Link
-            href="/centres"
-            className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-[#245c43] transition-colors group"
-          >
-            <svg
-              className="w-4 h-4 transition-transform group-hover:-translate-x-1"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-            Back to All Centres
-          </Link>
-        </div>
-      </div>
-
       {/* Main content */}
       <section className="py-12 md:py-16" style={{ backgroundColor: '#FDFBF7' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -163,7 +142,7 @@ export default async function CentrePage({ params }: { params: Promise<{ slug: s
                 className="rounded-2xl p-6"
                 style={{ backgroundColor: '#F2EFE9' }}
               >
-                <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#D4A843] mb-4">
+                <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#8a6c1a] mb-4">
                   Centre Leader
                 </p>
                 <div className="flex items-center gap-4">
@@ -182,7 +161,7 @@ export default async function CentrePage({ params }: { params: Promise<{ slug: s
                 className="rounded-2xl p-6 space-y-4"
                 style={{ backgroundColor: '#F2EFE9' }}
               >
-                <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#D4A843]">
+                <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#8a6c1a]">
                   Contact
                 </p>
 
@@ -216,7 +195,7 @@ export default async function CentrePage({ params }: { params: Promise<{ slug: s
                 className="rounded-2xl p-6"
                 style={{ backgroundColor: '#F2EFE9' }}
               >
-                <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#D4A843] mb-4">
+                <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#8a6c1a] mb-4">
                   Get Involved
                 </p>
                 <ul className="space-y-2 text-sm">

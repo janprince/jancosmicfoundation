@@ -29,6 +29,24 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
+/* Global focus indicators for keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Remove default outline since we're using focus-visible */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
@@ -98,4 +116,20 @@ html {
   bottom: -50px;
   left: -50px;
   pointer-events: none;
+}
+
+/* Dropdown enter animation */
+@keyframes dropdownEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-dropdown-enter {
+  animation: dropdownEnter 0.15s ease-out forwards;
 }

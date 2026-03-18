@@ -10,6 +10,8 @@ interface CounterProps {
   className?: string;
   /** Format large numbers with commas */
   format?: boolean;
+  /** Externally controlled trigger — when true, starts counting. Falls back to own IntersectionObserver if not provided. */
+  startWhen?: boolean;
 }
 
 function easeOutQuart(t: number): number {
@@ -23,17 +25,18 @@ export default function Counter({
   suffix = '',
   className = '',
   format = true,
+  startWhen,
 }: CounterProps) {
   const [count, setCount] = useState(0);
-  const [hasStarted, setHasStarted] = useState(false);
+  const hasStartedRef = useRef(false);
   const containerRef = useRef<HTMLSpanElement>(null);
   const rafRef = useRef<number | null>(null);
   const startTimeRef = useRef<number | null>(null);
 
   // Start the count-up animation
   const startCounting = () => {
-    if (hasStarted) return;
-    setHasStarted(true);
+    if (hasStartedRef.current) return;
+    hasStartedRef.current = true;
 
     const animate = (timestamp: number) => {
       if (startTimeRef.current === null) {
@@ -57,8 +60,18 @@ export default function Counter({
     rafRef.current = requestAnimationFrame(animate);
   };
 
-  // IntersectionObserver to trigger on scroll into view
+  // External trigger via startWhen prop
   useEffect(() => {
+    if (startWhen) {
+      startCounting();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [startWhen]);
+
+  // Fallback: IntersectionObserver to trigger on scroll into view (when startWhen is not provided)
+  useEffect(() => {
+    if (startWhen !== undefined) return; // skip if externally controlled
+
     const el = containerRef.current;
     if (!el) return;
 

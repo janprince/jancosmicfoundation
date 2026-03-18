@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useRef, useState } from 'react';
 import Counter from '@/components/ui/Counter';
 
 const stats = [
@@ -50,8 +51,35 @@ const stats = [
 ];
 
 export default function ImpactStats() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsInView(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(el);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       className="relative overflow-hidden py-20 lg:py-28"
       style={{ background: '#000B58' }}
     >
@@ -90,7 +118,7 @@ export default function ImpactStats() {
           <h2 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
             Decades of Inner Transformation
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base text-white/60 sm:text-lg">
+          <p className="mx-auto mt-4 max-w-xl text-base text-white/80 sm:text-lg">
             Every number represents a life awakened, a consciousness elevated,
             and a step closer to the unity of all beings.
           </p>
@@ -125,6 +153,7 @@ export default function ImpactStats() {
                   suffix={stat.suffix}
                   duration={2200}
                   format={true}
+                  startWhen={isInView}
                 />
               </p>
 
@@ -134,7 +163,7 @@ export default function ImpactStats() {
               </p>
 
               {/* Description */}
-              <p className="mt-2 text-xs leading-relaxed text-white/45">
+              <p className="mt-2 text-xs leading-relaxed text-white/75">
                 {stat.description}
               </p>
 

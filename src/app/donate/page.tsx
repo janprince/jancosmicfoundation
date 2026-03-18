@@ -90,11 +90,23 @@ export default async function DonatePage() {
             className="mb-10"
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {causes.map((cause) => (
-              <CauseCard key={cause.id} cause={cause} />
-            ))}
-          </div>
+          {causes.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {causes.map((cause) => (
+                <CauseCard key={cause.id} cause={cause} />
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-20">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center">
+                <svg className="w-8 h-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-medium text-gray-700 mb-2">No active causes yet</h3>
+              <p className="text-sm text-gray-500">Check back soon for new causes to support.</p>
+            </div>
+          )}
         </div>
       </section>
 
@@ -116,7 +128,7 @@ export default async function DonatePage() {
           <h2 className="text-3xl sm:text-4xl font-semibold text-white leading-tight">
             Every Contribution Counts
           </h2>
-          <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed text-white/75">
+          <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed text-white/90">
             Not sure which cause to choose? Any donation to the Jan Cosmic
             Foundation goes directly into the programmes and communities that
             need it most. We are grateful for every act of generosity, however
@@ -135,12 +147,12 @@ export default async function DonatePage() {
                 style={{ backgroundColor: 'rgba(255,255,255,0.08)', border: '1px solid rgba(212,168,67,0.25)' }}
               >
                 <p className="text-2xl font-bold text-[#D4A843]">{tier.amount}</p>
-                <p className="mt-2 text-xs text-white/70 leading-relaxed">{tier.impact}</p>
+                <p className="mt-2 text-xs text-white/85 leading-relaxed">{tier.impact}</p>
               </div>
             ))}
           </div>
 
-          <p className="mt-8 text-sm text-white/50">
+          <p className="mt-8 text-sm text-white/75">
             Payments processed securely via Paystack. Donations are tax-deductible where applicable.
           </p>
         </div>

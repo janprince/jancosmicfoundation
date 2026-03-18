@@ -242,10 +242,10 @@ export default async function AboutPage() {
           <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
             Explore Our Purpose
           </h2>
-          <p className="text-sm italic mb-6" style={{ color: 'rgba(212,168,67,0.75)' }}>
+          <p className="text-sm italic mb-6" style={{ color: 'rgba(212,168,67,0.9)' }}>
             &ldquo;The greatest wealth is contentment and you can only be totally content when you have attained complete self-realization.&rdquo;
           </p>
-          <p className="text-base sm:text-lg mb-10" style={{ color: 'rgba(253,251,247,0.75)' }}>
+          <p className="text-base sm:text-lg mb-10" style={{ color: 'rgba(253,251,247,0.9)' }}>
             Discover the mission, vision, and principles that guide the Jan Cosmic Foundation in awakening consciousness across the world.
           </p>
           <Button href="/about/mission-vision" variant="secondary" size="lg">
