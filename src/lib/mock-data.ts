@@ -9,6 +9,7 @@ import type {
   VolunteerOpportunity,
   Testimonial,
   TeamMember,
+  Program,
 } from '@/types';
 
 // ---------------------------------------------------------------------------
@@ -770,6 +771,38 @@ export const testimonials: Testimonial[] = [
     quote:
       'Living in London, far from Ghana, I thought the spiritual path was something I would have to walk alone. The JCF London Centre proved me wrong. The weekly group sits, the satsangs, and the community of seekers have shown me that self-realization is not a solitary pursuit — it deepens in the company of others who are also reaching for the truth.',
   },
+  {
+    id: 'test-005',
+    name: 'Akosua Mensah-Bonsu',
+    role: 'Retreat Participant — Annual Retreat 2025',
+    avatar: '/images/placeholder-avatar.jpg',
+    quote:
+      'The five-day silent retreat at Aburi changed my life. I came with a mind full of noise and left with a stillness I did not know was possible. Dr. Jan\'s guidance during the retreat was direct and compassionate — he met me exactly where I was and showed me the door I had been looking for all my life.',
+  },
+  {
+    id: 'test-006',
+    name: 'Kweku Ampong',
+    role: 'Community Service Volunteer — Accra',
+    avatar: '/images/placeholder-avatar.jpg',
+    quote:
+      'I joined the Community Clean-Up & Care Day expecting to give a few hours of my weekend. What I found was a community that views service as worship. Distributing food to the elderly, cleaning the neighbourhood — these simple acts became a meditation in themselves. JCF showed me that spirituality is not separate from daily life.',
+  },
+  {
+    id: 'test-007',
+    name: 'Priscilla Owusu',
+    role: 'Member — New York Centre',
+    avatar: '/images/placeholder-avatar.jpg',
+    quote:
+      'As a Ghanaian living in the diaspora, finding the JCF New York Centre felt like coming home. The teachings bridge the gap between ancient wisdom and modern life in a way that speaks to my experience as a professional and a seeker. The monthly Q&A sessions with Dr. Jan over video are a lifeline.',
+  },
+  {
+    id: 'test-008',
+    name: 'Yaw Frimpong',
+    role: 'Parent — Guide the Children Programme',
+    avatar: '/images/placeholder-avatar.jpg',
+    quote:
+      'My daughter has been in the Guide the Children programme for two years. The change in her is remarkable — she is calmer, more focused, and asks the most beautiful questions about life. The mentors at JCF treat every child as if they carry the universe within them. Because they do.',
+  },
 ];
 
 // ---------------------------------------------------------------------------
@@ -804,5 +837,90 @@ export const teamMembers: TeamMember[] = [
     role: 'Head of Community Partnerships & Outreach',
     bio: 'Maame Agyapong leads the JCF\'s relationships with partner organisations, government agencies, and community institutions. With a background in public health and community development, she oversees the Guide the Children outreach activities, the Community Service Days calendar, and the JCF\'s growing portfolio of collaborative projects with institutions such as the Ghana Health Service and the University of Ghana. She serves on the boards of two Ghana-based charitable organisations. Her work ensures that the JCF\'s service programmes are rooted in genuine community need and delivered with the highest standards of care and accountability.',
     image: '/images/placeholder-team.jpg',
+  },
+];
+
+// ---------------------------------------------------------------------------
+// Programs
+// ---------------------------------------------------------------------------
+
+export const programs: Program[] = [
+  {
+    id: 'prog-001',
+    slug: 'spiritual-teachings',
+    title: 'Spiritual Teachings & Courses',
+    description:
+      'Structured courses and ongoing teachings rooted in non-dual wisdom, guiding seekers toward direct self-realization and inner freedom.',
+    content:
+      'The core of the Jan Cosmic Foundation is its teaching programme. Under the direct guidance of Dr. Baffour Jan, seekers engage with a curriculum that draws from non-dual wisdom traditions without allegiance to any single doctrine. Courses range from introductory sessions for newcomers to advanced intensive programmes for long-standing practitioners. The teachings focus on dismantling the ego, silencing the restless mind, and revealing the True Self that lies beneath conditioned identity. Weekly satsangs, monthly Q&A forums, and over 50 recorded talks form the backbone of this offering.',
+    image: '/images/teaching.jpg',
+    icon: 'lotus',
+    category: 'spiritual',
+    isActive: true,
+  },
+  {
+    id: 'prog-002',
+    slug: 'meditation-retreats',
+    title: 'Meditation Retreats & Intensives',
+    description:
+      'Silent retreats and meditation intensives at sacred spaces across Ghana, offering deep immersion in mindfulness and contemplative practice.',
+    content:
+      'The JCF hosts annual silent retreats and periodic meditation intensives designed to take seekers beyond the surface of daily practice into deeper states of awareness. The flagship Annual Spiritual Retreat — held at centres such as the Aburi Botanical Gardens Retreat Centre — spans five days of silence, meditation, conscious breathing, and contemplative teachings led by Dr. Jan. Shorter meditation intensives focus on specific techniques including mindfulness, concentration, and pranic awareness. These retreats provide a sacred pause from worldly activity, allowing participants to reconnect with their essential nature.',
+    image: '/images/studentinmeditation.jpg',
+    icon: 'meditation',
+    category: 'spiritual',
+    isActive: true,
+  },
+  {
+    id: 'prog-003',
+    slug: 'guide-the-children',
+    title: 'Guide the Children Initiative',
+    description:
+      'Introducing conscious living to children through educational activities, mentorship, and mindfulness programmes that nurture young minds.',
+    content:
+      'The Guide the Children Initiative is the JCF\'s flagship youth programme, born from the understanding that consciousness education should begin early. The programme introduces children and adolescents to principles of mindful living, emotional intelligence, and inner awareness through age-appropriate activities, storytelling, creative expression, and guided meditation. Trained JCF mentors work with young people in schools, community centres, and JCF branches across Ghana. The programme has touched hundreds of young lives, helping children develop focus, self-awareness, empathy, and a sense of connection to something greater than themselves.',
+    image: '/images/group-of-students.jpg',
+    icon: 'children',
+    category: 'education',
+    isActive: true,
+  },
+  {
+    id: 'prog-004',
+    slug: 'community-service',
+    title: 'Community Service & Outreach',
+    description:
+      'Regular community clean-ups, food distribution, elder care, and neighbourhood beautification projects — service as a spiritual practice.',
+    content:
+      'At the heart of the JCF philosophy is the belief that service is not separate from the spiritual path — it is the path itself. The Community Service programme organises regular outreach activities including neighbourhood clean-ups, food distribution to vulnerable communities, elder care visits, and environmental beautification projects. The flagship Community Clean-Up & Care Day brings together JCF volunteers and community members in acts of collective service. These activities are not mere charity — they are treated as opportunities for practitioners to embody the teachings of compassion, selflessness, and unity in direct, tangible ways.',
+    image: '/images/students-sitting-down-on-grass.jpg',
+    icon: 'hands',
+    category: 'community',
+    isActive: true,
+  },
+  {
+    id: 'prog-005',
+    slug: 'spiritual-counselling',
+    title: 'Spiritual Guidance & Counselling',
+    description:
+      'One-on-one spiritual guidance and counselling with trained JCF teachers, offering personalised support on the inner journey.',
+    content:
+      'Recognising that the spiritual path can be deeply personal and sometimes challenging, the JCF offers one-on-one spiritual guidance and counselling. Trained teachers and senior practitioners are available to meet with seekers who need personalised support — whether navigating a crisis of identity, processing a profound inner experience, or seeking clarity on their spiritual direction. Dr. Jan himself offers periodic personal guidance sessions. This programme ensures that no seeker walks alone and that the wisdom of the tradition is transmitted not just through lectures but through intimate, compassionate human connection.',
+    image: '/images/masterseated3.jpg',
+    icon: 'guidance',
+    category: 'spiritual',
+    isActive: true,
+  },
+  {
+    id: 'prog-006',
+    slug: 'media-digital-outreach',
+    title: 'Media & Digital Outreach',
+    description:
+      'Expanding the reach of the teachings through professional media production, digital platforms, and online community engagement.',
+    content:
+      'The JCF Media & Digital Outreach programme aims to bring the teachings of Dr. Baffour Jan to seekers around the world through modern media channels. This includes professional recording and distribution of talks, guided meditations, and essays; maintaining an active presence on social media platforms; producing video content for YouTube; and developing the foundation\'s online community infrastructure. The programme recognises that many sincere seekers cannot physically attend a JCF centre, and that the digital sphere offers a powerful means of reaching those who are ready to hear the message of inner awakening.',
+    image: '/images/doc-holding-mic.jpg',
+    icon: 'media',
+    category: 'community',
+    isActive: true,
   },
 ];

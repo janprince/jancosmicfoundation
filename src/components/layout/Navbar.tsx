@@ -15,8 +15,11 @@ const navLinks: NavLink[] = [
     label: 'About',
     href: '/about',
     children: [
+      { label: 'The Founder', href: '/about/founder' },
       { label: 'Mission & Vision', href: '/about/mission-vision' },
+      { label: 'Our Programmes', href: '/programs' },
       { label: 'Our Centres', href: '/centres' },
+      { label: 'Testimonials', href: '/testimonials' },
     ],
   },
   {
@@ -119,15 +122,18 @@ export default function Navbar() {
               {navLinks.map((link) =>
                 link.children ? (
                   // Dropdown link
-                  <div key={link.href} className="relative">
+                  <div
+                    key={link.href}
+                    className="relative"
+                    onMouseEnter={() => setActiveDropdown(link.href)}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                  >
                     <button
                       onClick={() =>
                         setActiveDropdown(
                           activeDropdown === link.href ? null : link.href,
                         )
                       }
-                      onMouseEnter={() => setActiveDropdown(link.href)}
-                      onMouseLeave={() => setActiveDropdown(null)}
                       aria-expanded={activeDropdown === link.href}
                       aria-haspopup="true"
                       className={[
@@ -163,25 +169,25 @@ export default function Navbar() {
                     {/* Dropdown panel */}
                     {activeDropdown === link.href && (
                       <div
-                        onMouseEnter={() => setActiveDropdown(link.href)}
-                        onMouseLeave={() => setActiveDropdown(null)}
-                        className="absolute top-full left-0 mt-1 w-52 bg-white rounded-xl shadow-xl shadow-black/10 border border-gray-100 py-2 z-50 animate-fade-in"
+                        className="absolute top-full left-0 pt-1 w-52 z-50"
                       >
-                        {link.children.map((child) => (
-                          <Link
-                            key={child.href}
-                            href={child.href}
-                            className={[
-                              'block px-4 py-2.5 text-sm transition-colors duration-150',
-                              'hover:bg-[#2D6A4F]/8 hover:text-[#2D6A4F]',
-                              isActivePath(child.href)
-                                ? 'text-[#2D6A4F] font-medium bg-[#2D6A4F]/5'
-                                : 'text-gray-700',
-                            ].join(' ')}
-                          >
-                            {child.label}
-                          </Link>
-                        ))}
+                        <div className="bg-white rounded-xl shadow-xl shadow-black/10 border border-gray-100 py-2 animate-fade-in">
+                          {link.children.map((child) => (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              className={[
+                                'block px-4 py-2.5 text-sm transition-colors duration-150',
+                                'hover:bg-[#2D6A4F]/8 hover:text-[#2D6A4F]',
+                                isActivePath(child.href)
+                                  ? 'text-[#2D6A4F] font-medium bg-[#2D6A4F]/5'
+                                  : 'text-gray-700',
+                              ].join(' ')}
+                            >
+                              {child.label}
+                            </Link>
+                          ))}
+                        </div>
                       </div>
                     )}
                   </div>

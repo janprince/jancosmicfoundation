@@ -108,6 +108,18 @@ export interface TeamMember {
   image: string;
 }
 
+export interface Program {
+  id: string;
+  slug: string;
+  title: string;
+  description: string;
+  content: string;
+  image: string;
+  icon: string;
+  category: 'spiritual' | 'education' | 'community' | 'humanitarian';
+  isActive: boolean;
+}
+
 export interface ContactFormData {
   name: string;
   email: string;

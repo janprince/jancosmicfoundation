@@ -8,6 +8,7 @@ import type {
   Testimonial,
   TeamMember,
   ImpactStat,
+  Program,
   ContactFormData,
   VolunteerFormData,
   JoinCentreFormData,
@@ -195,6 +196,19 @@ function transformImpactStat(raw: any): ImpactStat {
     prefix: raw.prefix ?? undefined,
   };
 }
+function transformProgram(raw: any): Program {
+  return {
+    id: String(raw.id),
+    slug: raw.slug,
+    title: raw.title,
+    description: raw.description,
+    content: raw.content ?? '',
+    image: raw.image_url ?? raw.image ?? '/images/placeholder-event.jpg',
+    icon: raw.icon ?? 'lotus',
+    category: raw.category ?? 'spiritual',
+    isActive: raw.is_active ?? true,
+  };
+}
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
 // ---------------------------------------------------------------------------
@@ -317,6 +331,25 @@ export async function getImpactStats(): Promise<ImpactStat[]> {
   const data = await fetchWithFallback<unknown[]>('/impact-stats/', []);
   if (data.length === 0 && mock.impactStats.length > 0) return mock.impactStats;
   return data.map(transformImpactStat);
+}
+
+// ---------------------------------------------------------------------------
+// Programs
+// ---------------------------------------------------------------------------
+
+export async function getPrograms(): Promise<Program[]> {
+  const data = await fetchWithFallback<unknown[]>('/programs/', []);
+  if (data.length === 0 && mock.programs.length > 0) return mock.programs;
+  return data.map(transformProgram);
+}
+
+export async function getProgramBySlug(slug: string): Promise<Program | undefined> {
+  try {
+    const raw = await fetchAPI<unknown>(`/programs/${slug}/`);
+    return transformProgram(raw);
+  } catch {
+    return mock.programs.find((p) => p.slug === slug);
+  }
 }
 
 // ---------------------------------------------------------------------------
