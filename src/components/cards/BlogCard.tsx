@@ -27,14 +27,14 @@ export default function BlogCard({ post }: { post: BlogPost }) {
             <span className="w-1 h-1 rounded-full bg-gray-300" />
             <span>{post.readTime}</span>
           </div>
-          <h3 className="text-lg font-semibold text-[#000B58] group-hover:text-[#2D6A4F] transition-colors line-clamp-2">
+          <h3 className="text-lg font-semibold text-[#000B58] group-hover:text-primary transition-colors line-clamp-2">
             {post.title}
           </h3>
           <p className="mt-2 text-sm text-gray-600 line-clamp-3 flex-1">
             {post.excerpt}
           </p>
           <div className="mt-4 flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-[#2D6A4F]/20 flex items-center justify-center text-xs font-semibold text-[#2D6A4F]">
+            <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-xs font-semibold text-primary">
               {post.author.name.charAt(0)}
             </div>
             <span className="text-sm text-gray-600">{post.author.name}</span>

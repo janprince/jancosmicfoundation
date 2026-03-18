@@ -137,10 +137,10 @@ export default function ContactPage() {
                     <a
                       key={detail.label}
                       href={detail.href}
-                      className="flex items-start gap-4 p-4 rounded-xl transition-colors group hover:bg-[#2D6A4F]/5"
+                      className="flex items-start gap-4 p-4 rounded-xl transition-colors group hover:bg-primary/5"
                       style={{ backgroundColor: '#F2EFE9' }}
                     >
-                      <span className="w-10 h-10 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center text-[#2D6A4F] shrink-0 group-hover:bg-[#2D6A4F]/20 transition-colors">
+                      <span className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 group-hover:bg-primary/20 transition-colors">
                         {detail.icon}
                       </span>
                       <div>
@@ -160,7 +160,7 @@ export default function ContactPage() {
                       className="flex items-start gap-4 p-4 rounded-xl"
                       style={{ backgroundColor: '#F2EFE9' }}
                     >
-                      <span className="w-10 h-10 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center text-[#2D6A4F] shrink-0">
+                      <span className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
                         {detail.icon}
                       </span>
                       <div>
@@ -194,7 +194,7 @@ export default function ContactPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={link.label}
-                      className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#2D6A4F] hover:bg-[#2D6A4F] hover:text-white transition-all duration-200 shadow-sm"
+                      className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all duration-200 shadow-sm"
                     >
                       {link.icon}
                     </a>
@@ -213,7 +213,7 @@ export default function ContactPage() {
             className="w-full rounded-2xl overflow-hidden flex flex-col items-center justify-center gap-4 relative"
             style={{
               minHeight: '320px',
-              background: 'linear-gradient(135deg, #000B58 0%, #001485 40%, #2D6A4F 100%)',
+              background: 'linear-gradient(135deg, #000B58 0%, #001485 40%, var(--color-primary) 100%)',
             }}
           >
             {/* Decorative radial glow */}

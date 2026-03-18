@@ -10,7 +10,7 @@ interface BadgeProps {
 
 const variantClasses: Record<BadgeVariant, string> = {
   primary:
-    'bg-[#2D6A4F]/15 text-[#2D6A4F] ring-1 ring-[#2D6A4F]/30',
+    'bg-primary/15 text-primary ring-1 ring-primary/30',
   secondary:
     'bg-[#D4A843]/15 text-[#a07d1f] ring-1 ring-[#D4A843]/40',
   accent:

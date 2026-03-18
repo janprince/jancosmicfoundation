@@ -59,7 +59,7 @@ export default function ImpactStats() {
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -top-40 -left-40 h-96 w-96 rounded-full opacity-10 blur-3xl"
-        style={{ background: 'radial-gradient(circle, #2D6A4F, transparent 70%)' }}
+        style={{ background: 'radial-gradient(circle, var(--color-primary), transparent 70%)' }}
       />
       <div
         aria-hidden="true"

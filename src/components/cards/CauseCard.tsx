@@ -20,7 +20,7 @@ export default function CauseCard({ cause }: { cause: Cause }) {
       </Link>
       <div className="p-5 flex flex-col flex-1">
         <Link href={`/donate/${cause.slug}`}>
-          <h3 className="text-lg font-semibold text-[#000B58] group-hover:text-[#2D6A4F] transition-colors line-clamp-2">
+          <h3 className="text-lg font-semibold text-[#000B58] group-hover:text-primary transition-colors line-clamp-2">
             {cause.title}
           </h3>
         </Link>

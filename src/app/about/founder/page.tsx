@@ -130,7 +130,7 @@ export default function FounderPage() {
               />
               <div
                 className="absolute -top-4 -left-4 w-20 h-20 rounded-2xl -z-10"
-                style={{ backgroundColor: '#2D6A4F', opacity: 0.15 }}
+                style={{ backgroundColor: 'var(--color-primary)', opacity: 0.15 }}
               />
             </div>
 
@@ -161,7 +161,7 @@ export default function FounderPage() {
                   { value: '1K+', label: 'Active Students' },
                 ].map((stat) => (
                   <div key={stat.label} className="text-center">
-                    <p className="text-2xl sm:text-3xl font-semibold" style={{ color: '#2D6A4F' }}>
+                    <p className="text-2xl sm:text-3xl font-semibold" style={{ color: 'var(--color-primary)' }}>
                       {stat.value}
                     </p>
                     <p className="text-xs sm:text-sm mt-1" style={{ color: '#1a1a1a99' }}>
@@ -189,7 +189,7 @@ export default function FounderPage() {
           <p className="text-xl sm:text-2xl italic font-light leading-relaxed mb-4" style={{ color: '#000B58' }}>
             &ldquo;The greatest magic is revealing the God in You.&rdquo;
           </p>
-          <p className="text-sm font-semibold" style={{ color: '#2D6A4F' }}>
+          <p className="text-sm font-semibold" style={{ color: 'var(--color-primary)' }}>
             — Dr. Baffour Jan
           </p>
         </div>
@@ -208,7 +208,7 @@ export default function FounderPage() {
             {/* Vertical timeline line */}
             <div
               className="absolute left-6 sm:left-8 top-0 bottom-0 w-px"
-              style={{ backgroundColor: 'rgba(45,106,79,0.2)' }}
+              style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.2)' }}
             />
 
             <div className="space-y-10">
@@ -219,7 +219,7 @@ export default function FounderPage() {
                     className="absolute left-4 sm:left-6 top-1 w-4 h-4 rounded-full border-[3px]"
                     style={{
                       backgroundColor: '#FDFBF7',
-                      borderColor: '#2D6A4F',
+                      borderColor: 'var(--color-primary)',
                     }}
                   />
                   {/* Year badge */}
@@ -308,7 +308,7 @@ export default function FounderPage() {
                 className="rounded-2xl p-7 flex flex-col"
                 style={{
                   background:
-                    'linear-gradient(135deg, #000B58 0%, #001485 50%, #2D6A4F 100%)',
+                    'linear-gradient(135deg, #000B58 0%, #001485 50%, var(--color-primary) 100%)',
                 }}
               >
                 <span
@@ -355,7 +355,7 @@ export default function FounderPage() {
                 className="bg-white rounded-xl p-5 text-center transition-all duration-300 hover:shadow-sm"
                 style={{ border: '1px solid rgba(0,11,88,0.06)' }}
               >
-                <p className="text-2xl font-semibold" style={{ color: '#2D6A4F' }}>
+                <p className="text-2xl font-semibold" style={{ color: 'var(--color-primary)' }}>
                   {stat.value}
                 </p>
                 <p className="text-xs mt-1" style={{ color: '#1a1a1a99' }}>
@@ -372,7 +372,7 @@ export default function FounderPage() {
         className="py-16 sm:py-24"
         style={{
           background:
-            'linear-gradient(135deg, #000B58 0%, #001485 50%, #2D6A4F 100%)',
+            'linear-gradient(135deg, #000B58 0%, #001485 50%, var(--color-primary) 100%)',
         }}
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

@@ -33,8 +33,8 @@ export default function JoinCentreForm({ centreName, centreId }: JoinCentreFormP
   if (status === "sent") {
     return (
       <div className="text-center py-8">
-        <div className="w-16 h-16 bg-[#2D6A4F]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-          <span className="text-3xl text-[#2D6A4F]">&#10003;</span>
+        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span className="text-3xl text-primary">&#10003;</span>
         </div>
         <h3 className="text-xl font-semibold text-[#000B58]">Request Submitted!</h3>
         <p className="mt-2 text-gray-600">
@@ -56,7 +56,7 @@ export default function JoinCentreForm({ centreName, centreId }: JoinCentreFormP
           required
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#2D6A4F] focus:ring-2 focus:ring-[#2D6A4F]/20 outline-none transition-all"
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
           placeholder="Your name"
         />
       </div>
@@ -70,7 +70,7 @@ export default function JoinCentreForm({ centreName, centreId }: JoinCentreFormP
           required
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#2D6A4F] focus:ring-2 focus:ring-[#2D6A4F]/20 outline-none transition-all"
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
           placeholder="your@email.com"
         />
       </div>
@@ -83,7 +83,7 @@ export default function JoinCentreForm({ centreName, centreId }: JoinCentreFormP
           type="tel"
           value={formData.phone}
           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#2D6A4F] focus:ring-2 focus:ring-[#2D6A4F]/20 outline-none transition-all"
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
           placeholder="+233 XXX XXX XXX"
         />
       </div>
@@ -96,7 +96,7 @@ export default function JoinCentreForm({ centreName, centreId }: JoinCentreFormP
           rows={3}
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#2D6A4F] focus:ring-2 focus:ring-[#2D6A4F]/20 outline-none transition-all resize-none"
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
           placeholder="Tell us about yourself..."
         />
       </div>

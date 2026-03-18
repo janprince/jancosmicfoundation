@@ -80,7 +80,7 @@ export default async function VolunteerPage() {
                 className="rounded-2xl p-6 flex flex-col gap-4"
                 style={{ backgroundColor: '#F2EFE9' }}
               >
-                <div className="w-12 h-12 rounded-xl bg-[#2D6A4F]/10 flex items-center justify-center text-[#2D6A4F] shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
                   {benefit.icon}
                 </div>
                 <div>
@@ -118,7 +118,7 @@ export default async function VolunteerPage() {
                   <h3 className="text-lg font-semibold text-[#000B58] leading-snug">
                     {opportunity.title}
                   </h3>
-                  <span className="shrink-0 text-xs font-semibold text-[#2D6A4F] bg-[#2D6A4F]/10 px-2.5 py-1 rounded-full">
+                  <span className="shrink-0 text-xs font-semibold text-primary bg-primary/10 px-2.5 py-1 rounded-full">
                     Open
                   </span>
                 </div>
@@ -131,14 +131,14 @@ export default async function VolunteerPage() {
                 {/* Meta info */}
                 <div className="space-y-2 text-sm">
                   <div className="flex items-center gap-2 text-gray-500">
-                    <svg className="w-4 h-4 text-[#2D6A4F] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="w-4 h-4 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                     <span>{opportunity.location}</span>
                   </div>
                   <div className="flex items-center gap-2 text-gray-500">
-                    <svg className="w-4 h-4 text-[#2D6A4F] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="w-4 h-4 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span>{opportunity.commitment}</span>
@@ -200,7 +200,7 @@ export default async function VolunteerPage() {
 
                 {/* Author */}
                 <div className="flex items-center gap-3 pt-2 border-t border-gray-100">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#2D6A4F] to-[#D4A843] flex items-center justify-center text-white font-bold text-sm shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-[#D4A843] flex items-center justify-center text-white font-bold text-sm shrink-0">
                     {testimonial.name.charAt(0)}
                   </div>
                   <div>

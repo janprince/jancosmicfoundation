@@ -51,7 +51,7 @@ export default function TermsPage() {
               <a
                 href="mailto:info@jancosmicfoundation.org"
                 className="font-medium"
-                style={{ color: '#2D6A4F' }}
+                style={{ color: 'var(--color-primary)' }}
               >
                 info@jancosmicfoundation.org
               </a>.

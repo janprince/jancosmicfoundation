@@ -72,7 +72,7 @@ export default function EventsPageContent({ events }: EventsPageContentProps) {
                     className="flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 cursor-pointer"
                     style={
                       isActive
-                        ? { backgroundColor: '#2D6A4F', color: '#FDFBF7', boxShadow: '0 1px 3px rgba(0,0,0,0.15)' }
+                        ? { backgroundColor: 'var(--color-primary)', color: '#FDFBF7', boxShadow: '0 1px 3px rgba(0,0,0,0.15)' }
                         : { color: '#1a1a1a80' }
                     }
                   >
@@ -105,9 +105,9 @@ export default function EventsPageContent({ events }: EventsPageContentProps) {
             <div className="flex flex-col items-center justify-center py-24 text-center">
               <div
                 className="w-20 h-20 rounded-full flex items-center justify-center mb-6"
-                style={{ backgroundColor: 'rgba(45,106,79,0.08)' }}
+                style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.08)' }}
               >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#2D6A4F" className="w-9 h-9">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="var(--color-primary)" className="w-9 h-9">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
                 </svg>
               </div>
@@ -125,7 +125,7 @@ export default function EventsPageContent({ events }: EventsPageContentProps) {
                 <button
                   onClick={() => setActiveFilter('all')}
                   className="mt-6 text-sm font-semibold underline underline-offset-2 cursor-pointer"
-                  style={{ color: '#2D6A4F' }}
+                  style={{ color: 'var(--color-primary)' }}
                 >
                   View all events
                 </button>
@@ -147,7 +147,7 @@ export default function EventsPageContent({ events }: EventsPageContentProps) {
           <a
             href="/contact"
             className="inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-base font-semibold transition-all duration-300 hover:shadow-lg"
-            style={{ backgroundColor: '#2D6A4F', color: '#FDFBF7' }}
+            style={{ backgroundColor: 'var(--color-primary)', color: '#FDFBF7' }}
           >
             Get in Touch
           </a>

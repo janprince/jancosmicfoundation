@@ -22,7 +22,7 @@ export default function CentreCard({ centre }: { centre: Centre }) {
           </div>
         </div>
         <div className="p-5 flex flex-col flex-1">
-          <h3 className="text-lg font-semibold text-[#000B58] group-hover:text-[#2D6A4F] transition-colors">
+          <h3 className="text-lg font-semibold text-[#000B58] group-hover:text-primary transition-colors">
             {centre.name}
           </h3>
           <p className="mt-1 text-sm text-gray-500">{centre.location}</p>
@@ -41,7 +41,7 @@ export default function CentreCard({ centre }: { centre: Centre }) {
                 <p className="text-xs text-gray-400">{centre.leader.title}</p>
               </div>
             </div>
-            <span className="text-xs text-[#2D6A4F] font-medium">
+            <span className="text-xs text-primary font-medium">
               {centre.memberCount} members
             </span>
           </div>

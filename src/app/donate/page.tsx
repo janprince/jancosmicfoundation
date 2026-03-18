@@ -69,7 +69,7 @@ export default async function DonatePage() {
                 className="text-center rounded-2xl p-6"
                 style={{ backgroundColor: '#F2EFE9' }}
               >
-                <div className="w-12 h-12 rounded-full bg-[#2D6A4F]/10 flex items-center justify-center mx-auto mb-4 text-[#2D6A4F]">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 text-primary">
                   {item.icon}
                 </div>
                 <h3 className="text-base font-semibold text-[#000B58] mb-2">
@@ -102,7 +102,7 @@ export default async function DonatePage() {
       <section
         className="py-20"
         style={{
-          background: 'linear-gradient(135deg, #000B58 0%, #001485 50%, #2D6A4F 100%)',
+          background: 'linear-gradient(135deg, #000B58 0%, #001485 50%, var(--color-primary) 100%)',
         }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

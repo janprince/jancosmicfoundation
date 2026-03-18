@@ -29,7 +29,7 @@ export default function NewsletterForm() {
     return (
       <p
         className="text-sm py-3 px-4 rounded-lg font-medium"
-        style={{ backgroundColor: 'rgba(45,106,79,0.25)', color: '#86efac' }}
+        style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.25)', color: '#86efac' }}
       >
         Thank you for subscribing! We&apos;ll be in touch soon.
       </p>
@@ -68,7 +68,7 @@ export default function NewsletterForm() {
               'flex items-center justify-center w-8 h-8 rounded-md',
               'transition-all duration-150 disabled:opacity-40',
             ].join(' ')}
-            style={{ backgroundColor: '#2D6A4F' }}
+            style={{ backgroundColor: 'var(--color-primary)' }}
           >
             {status === 'loading' ? (
               <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin block" />

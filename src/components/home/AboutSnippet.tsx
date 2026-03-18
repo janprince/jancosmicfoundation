@@ -27,7 +27,7 @@ export default function AboutSnippet() {
 
             <h2 className="text-3xl font-light leading-tight text-[#000B58] sm:text-4xl">
               Awakening the{' '}
-              <span className="text-[#2D6A4F]">Divine Potential Within</span>
+              <span className="text-primary">Divine Potential Within</span>
             </h2>
 
             <p className="mt-6 text-base leading-relaxed text-[#1a1a1a]/80">
@@ -47,7 +47,7 @@ export default function AboutSnippet() {
 
             <Link
               href="/about"
-              className="mt-8 inline-flex items-center gap-2 rounded-full border-2 border-[#2D6A4F] px-8 py-3 text-sm font-medium text-[#2D6A4F] transition-all duration-300 hover:bg-[#2D6A4F] hover:text-white"
+              className="mt-8 inline-flex items-center gap-2 rounded-full border-2 border-primary px-8 py-3 text-sm font-medium text-primary transition-all duration-300 hover:bg-primary hover:text-white"
             >
               Learn More
               <span aria-hidden="true">&rarr;</span>

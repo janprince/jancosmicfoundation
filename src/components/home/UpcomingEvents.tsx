@@ -33,7 +33,7 @@ export default async function UpcomingEvents() {
             <div className="mt-14 text-center">
               <Link
                 href="/events"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-[#2D6A4F] px-8 py-3 text-sm font-medium text-[#2D6A4F] transition-all duration-300 hover:bg-[#2D6A4F] hover:text-white"
+                className="inline-flex items-center gap-2 rounded-full border-2 border-primary px-8 py-3 text-sm font-medium text-primary transition-all duration-300 hover:bg-primary hover:text-white"
               >
                 View All Events
                 <span aria-hidden="true">&rarr;</span>
@@ -50,7 +50,7 @@ export default async function UpcomingEvents() {
             </p>
             <Link
               href="/events"
-              className="mt-6 inline-block text-sm font-medium text-[#2D6A4F] underline underline-offset-4 decoration-[#2D6A4F]/30 transition-colors duration-300 hover:decoration-[#2D6A4F]"
+              className="mt-6 inline-block text-sm font-medium text-primary underline underline-offset-4 decoration-[var(--color-primary)]/30 transition-colors duration-300 hover:decoration-[var(--color-primary)]"
             >
               Browse past events
             </Link>

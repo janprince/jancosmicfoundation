@@ -47,7 +47,7 @@ export default async function CentresPage() {
                 className="text-center rounded-2xl p-6"
                 style={{ backgroundColor: '#F2EFE9' }}
               >
-                <p className="text-3xl sm:text-4xl font-bold text-[#2D6A4F]">
+                <p className="text-3xl sm:text-4xl font-bold text-primary">
                   {stat.value}
                 </p>
                 <p className="mt-1 text-sm text-[#000B58]/70 font-medium">
@@ -77,7 +77,7 @@ export default async function CentresPage() {
       <section
         className="py-20"
         style={{
-          background: 'linear-gradient(135deg, #000B58 0%, #001485 50%, #2D6A4F 100%)',
+          background: 'linear-gradient(135deg, #000B58 0%, #001485 50%, var(--color-primary) 100%)',
         }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

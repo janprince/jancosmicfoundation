@@ -35,15 +35,15 @@ export default function EventCard({ event }: { event: Event }) {
           )}
         </div>
         <div className="p-5">
-          <h3 className="text-lg font-semibold text-[#000B58] group-hover:text-[#2D6A4F] transition-colors line-clamp-2">
+          <h3 className="text-lg font-semibold text-[#000B58] group-hover:text-primary transition-colors line-clamp-2">
             {event.title}
           </h3>
           <div className="mt-3 space-y-1.5">
             <p className="text-sm text-gray-500 flex items-center gap-2">
-              <span className="text-[#2D6A4F]">&#9719;</span> {event.time}
+              <span className="text-primary">&#9719;</span> {event.time}
             </p>
             <p className="text-sm text-gray-500 flex items-center gap-2">
-              <span className="text-[#2D6A4F]">&#9906;</span> {event.location}
+              <span className="text-primary">&#9906;</span> {event.location}
             </p>
           </div>
           <p className="mt-3 text-sm text-gray-600 line-clamp-2">

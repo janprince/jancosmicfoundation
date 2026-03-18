@@ -14,7 +14,7 @@ const categoryLabels: Record<string, string> = {
 };
 
 const categoryColors: Record<string, { bg: string; text: string }> = {
-  spiritual: { bg: 'rgba(45,106,79,0.1)', text: '#2D6A4F' },
+  spiritual: { bg: 'rgba(var(--color-primary-rgb),0.1)', text: 'var(--color-primary)' },
   education: { bg: 'rgba(212,168,67,0.12)', text: '#8a6c1a' },
   community: { bg: 'rgba(0,11,88,0.08)', text: '#000B58' },
   humanitarian: { bg: 'rgba(192,80,33,0.1)', text: '#C05021' },
@@ -132,7 +132,7 @@ export default async function ProgramsPage() {
                     <div className={`p-8 sm:p-10 lg:p-12 flex flex-col justify-center ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
                       <div
                         className="w-14 h-14 rounded-xl flex items-center justify-center mb-5"
-                        style={{ backgroundColor: 'rgba(45,106,79,0.1)', color: '#2D6A4F' }}
+                        style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.1)', color: 'var(--color-primary)' }}
                       >
                         {iconMap[program.icon] || iconMap.lotus}
                       </div>
@@ -145,9 +145,9 @@ export default async function ProgramsPage() {
                       {program.isActive && (
                         <span
                           className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full w-fit"
-                          style={{ backgroundColor: 'rgba(45,106,79,0.1)', color: '#2D6A4F' }}
+                          style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.1)', color: 'var(--color-primary)' }}
                         >
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#2D6A4F]" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                           Active Programme
                         </span>
                       )}
@@ -203,7 +203,7 @@ export default async function ProgramsPage() {
                   <div className="p-6 flex flex-col flex-1">
                     <div
                       className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                      style={{ backgroundColor: 'rgba(45,106,79,0.1)', color: '#2D6A4F' }}
+                      style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.1)', color: 'var(--color-primary)' }}
                     >
                       {iconMap[program.icon] || iconMap.lotus}
                     </div>
@@ -216,9 +216,9 @@ export default async function ProgramsPage() {
                     {program.isActive && (
                       <span
                         className="inline-flex items-center gap-1.5 text-xs font-semibold mt-4 px-2.5 py-1 rounded-full w-fit"
-                        style={{ backgroundColor: 'rgba(45,106,79,0.1)', color: '#2D6A4F' }}
+                        style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.1)', color: 'var(--color-primary)' }}
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#2D6A4F]" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                         Active
                       </span>
                     )}
@@ -236,7 +236,7 @@ export default async function ProgramsPage() {
           <p className="text-xl sm:text-2xl italic font-light leading-relaxed mb-4" style={{ color: '#000B58' }}>
             &ldquo;The purpose of human life is to evolve — to grow beyond the limitations of the mind and awaken to the infinite consciousness that you truly are.&rdquo;
           </p>
-          <p className="text-sm font-semibold" style={{ color: '#2D6A4F' }}>
+          <p className="text-sm font-semibold" style={{ color: 'var(--color-primary)' }}>
             — Dr. Baffour Jan
           </p>
         </div>
@@ -247,7 +247,7 @@ export default async function ProgramsPage() {
         className="py-16 sm:py-24"
         style={{
           background:
-            'linear-gradient(135deg, #000B58 0%, #001485 50%, #2D6A4F 100%)',
+            'linear-gradient(135deg, #000B58 0%, #001485 50%, var(--color-primary) 100%)',
         }}
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

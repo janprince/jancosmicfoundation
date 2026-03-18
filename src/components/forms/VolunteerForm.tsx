@@ -31,14 +31,14 @@ export default function VolunteerForm() {
   if (status === "sent") {
     return (
       <div className="text-center py-12">
-        <div className="w-16 h-16 bg-[#2D6A4F]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-          <span className="text-3xl text-[#2D6A4F]">&#10003;</span>
+        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span className="text-3xl text-primary">&#10003;</span>
         </div>
         <h3 className="text-xl font-semibold text-[#000B58]">Application Submitted!</h3>
         <p className="mt-2 text-gray-600">
           Thank you for your interest in volunteering. We&apos;ll be in touch soon.
         </p>
-        <button onClick={() => setStatus("idle")} className="mt-4 text-[#2D6A4F] font-medium hover:underline">
+        <button onClick={() => setStatus("idle")} className="mt-4 text-primary font-medium hover:underline">
           Submit another application
         </button>
       </div>
@@ -58,7 +58,7 @@ export default function VolunteerForm() {
             required
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#2D6A4F] focus:ring-2 focus:ring-[#2D6A4F]/20 outline-none transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
             placeholder="Your name"
           />
         </div>
@@ -72,7 +72,7 @@ export default function VolunteerForm() {
             required
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#2D6A4F] focus:ring-2 focus:ring-[#2D6A4F]/20 outline-none transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
             placeholder="your@email.com"
           />
         </div>
@@ -87,7 +87,7 @@ export default function VolunteerForm() {
             type="tel"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#2D6A4F] focus:ring-2 focus:ring-[#2D6A4F]/20 outline-none transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
             placeholder="+233 XXX XXX XXX"
           />
         </div>
@@ -99,7 +99,7 @@ export default function VolunteerForm() {
             id="vol-centre"
             value={formData.centrePreference}
             onChange={(e) => setFormData({ ...formData, centrePreference: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#2D6A4F] focus:ring-2 focus:ring-[#2D6A4F]/20 outline-none transition-all bg-white"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white"
           >
             <option value="">Select a centre</option>
             <option value="accra">Accra, Ghana</option>
@@ -119,7 +119,7 @@ export default function VolunteerForm() {
           type="text"
           value={formData.skills}
           onChange={(e) => setFormData({ ...formData, skills: e.target.value })}
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#2D6A4F] focus:ring-2 focus:ring-[#2D6A4F]/20 outline-none transition-all"
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
           placeholder="e.g., Teaching, Event Planning, IT, Medical..."
         />
       </div>
@@ -131,7 +131,7 @@ export default function VolunteerForm() {
           id="vol-availability"
           value={formData.availability}
           onChange={(e) => setFormData({ ...formData, availability: e.target.value })}
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#2D6A4F] focus:ring-2 focus:ring-[#2D6A4F]/20 outline-none transition-all bg-white"
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white"
         >
           <option value="">Select availability</option>
           <option value="weekdays">Weekdays</option>
@@ -149,7 +149,7 @@ export default function VolunteerForm() {
           rows={4}
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#2D6A4F] focus:ring-2 focus:ring-[#2D6A4F]/20 outline-none transition-all resize-none"
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
           placeholder="Tell us about your motivation..."
         />
       </div>

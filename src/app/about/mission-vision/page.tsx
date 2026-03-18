@@ -92,7 +92,7 @@ export default function MissionVisionPage() {
             <div
               className="relative rounded-3xl p-8 sm:p-12 lg:p-16 text-center"
               style={{
-                background: 'linear-gradient(135deg, #000B58 0%, #001485 60%, #2D6A4F 100%)',
+                background: 'linear-gradient(135deg, #000B58 0%, #001485 60%, var(--color-primary) 100%)',
               }}
             >
               {/* Gold accent bar */}
@@ -193,7 +193,7 @@ export default function MissionVisionPage() {
                   {/* Number badge */}
                   <div
                     className="shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center text-xl font-bold"
-                    style={{ background: 'linear-gradient(135deg, #000B58, #2D6A4F)', color: '#D4A843' }}
+                    style={{ background: 'linear-gradient(135deg, #000B58, var(--color-primary))', color: '#D4A843' }}
                   >
                     {pillar.number}
                   </div>
@@ -226,7 +226,7 @@ export default function MissionVisionPage() {
       {/* CTA */}
       <section
         className="py-14 sm:py-20"
-        style={{ background: 'linear-gradient(135deg, #000B58 0%, #2D6A4F 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #000B58 0%, var(--color-primary) 100%)' }}
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4">

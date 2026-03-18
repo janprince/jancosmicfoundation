@@ -25,7 +25,7 @@ export default function ProgressBar({
     <div className={['w-full', className].join(' ')}>
       {/* Track */}
       <div
-        className="relative h-3 w-full overflow-hidden rounded-full bg-[#2D6A4F]/15"
+        className="relative h-3 w-full overflow-hidden rounded-full bg-primary/15"
         role="progressbar"
         aria-valuenow={current}
         aria-valuemin={0}
@@ -38,7 +38,7 @@ export default function ProgressBar({
           style={{
             width: `${percentage}%`,
             background:
-              'linear-gradient(90deg, #2D6A4F 0%, #52b788 60%, #D4A843 100%)',
+              'linear-gradient(90deg, var(--color-primary) 0%, #52b788 60%, #D4A843 100%)',
           }}
         />
 
@@ -59,7 +59,7 @@ export default function ProgressBar({
       {showLabel && (
         <div className="mt-2 flex items-center justify-between gap-2">
           <p className="text-sm text-[#1a1a1a]/70">
-            <span className="font-semibold text-[#2D6A4F]">
+            <span className="font-semibold text-primary">
               {currency} {formatAmount(current)}
             </span>{' '}
             raised of{' '}
@@ -67,7 +67,7 @@ export default function ProgressBar({
               {currency} {formatAmount(goal)}
             </span>
           </p>
-          <span className="shrink-0 rounded-full bg-[#2D6A4F]/10 px-2 py-0.5 text-xs font-semibold text-[#2D6A4F]">
+          <span className="shrink-0 rounded-full bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">
             {displayPercent}%
           </span>
         </div>

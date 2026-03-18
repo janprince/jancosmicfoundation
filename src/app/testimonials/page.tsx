@@ -28,7 +28,7 @@ export default async function TestimonialsPage() {
               className="relative rounded-3xl p-8 sm:p-12"
               style={{
                 background:
-                  'linear-gradient(135deg, #000B58 0%, #001485 50%, #2D6A4F 100%)',
+                  'linear-gradient(135deg, #000B58 0%, #001485 50%, var(--color-primary) 100%)',
               }}
             >
               {/* Large quote mark */}
@@ -103,7 +103,7 @@ export default async function TestimonialsPage() {
 
                 {/* Author */}
                 <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
-                  <div className="w-11 h-11 rounded-full flex items-center justify-center text-sm font-bold shrink-0 bg-gradient-to-br from-[#2D6A4F] to-[#D4A843] text-white">
+                  <div className="w-11 h-11 rounded-full flex items-center justify-center text-sm font-bold shrink-0 bg-gradient-to-br from-primary to-[#D4A843] text-white">
                     {testimonial.name.charAt(0)}
                   </div>
                   <div>
@@ -127,7 +127,7 @@ export default async function TestimonialsPage() {
           <p className="text-xl sm:text-2xl italic font-light leading-relaxed mb-4" style={{ color: '#000B58' }}>
             &ldquo;The proof of our spiritual journey is the genuine love that is revealed in us and among one another.&rdquo;
           </p>
-          <p className="text-sm font-semibold" style={{ color: '#2D6A4F' }}>
+          <p className="text-sm font-semibold" style={{ color: 'var(--color-primary)' }}>
             — Dr. Baffour Jan
           </p>
         </div>
@@ -138,7 +138,7 @@ export default async function TestimonialsPage() {
         className="py-16 sm:py-24"
         style={{
           background:
-            'linear-gradient(135deg, #000B58 0%, #001485 50%, #2D6A4F 100%)',
+            'linear-gradient(135deg, #000B58 0%, #001485 50%, var(--color-primary) 100%)',
         }}
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

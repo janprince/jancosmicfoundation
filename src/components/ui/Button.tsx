@@ -14,20 +14,20 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-[#2D6A4F] text-white border-2 border-[#2D6A4F] ' +
-    'hover:bg-[#245c43] hover:border-[#245c43] hover:shadow-lg hover:shadow-[#2D6A4F]/20 ' +
+    'bg-primary text-white border-2 border-primary ' +
+    'hover:bg-[#245c43] hover:border-[#245c43] hover:shadow-lg hover:shadow-primary/20 ' +
     'active:scale-[0.97]',
   secondary:
     'bg-[#D4A843] text-[#000B58] border-2 border-[#D4A843] font-semibold ' +
     'hover:bg-[#c49a38] hover:border-[#c49a38] hover:shadow-lg hover:shadow-[#D4A843]/25 ' +
     'active:scale-[0.97]',
   outline:
-    'bg-transparent text-[#2D6A4F] border-2 border-[#2D6A4F] ' +
-    'hover:bg-[#2D6A4F] hover:text-white hover:shadow-lg hover:shadow-[#2D6A4F]/20 ' +
+    'bg-transparent text-primary border-2 border-primary ' +
+    'hover:bg-primary hover:text-white hover:shadow-lg hover:shadow-primary/20 ' +
     'active:scale-[0.97]',
   ghost:
-    'bg-transparent text-[#2D6A4F] border-2 border-transparent ' +
-    'hover:bg-[#2D6A4F]/10 hover:border-[#2D6A4F]/10 ' +
+    'bg-transparent text-primary border-2 border-transparent ' +
+    'hover:bg-primary/10 hover:border-primary/10 ' +
     'active:scale-[0.97]',
 };
 
@@ -40,7 +40,7 @@ const sizeClasses: Record<ButtonSize, string> = {
 const baseClasses =
   'inline-flex items-center justify-center gap-2 font-medium cursor-pointer ' +
   'transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 ' +
-  'focus-visible:ring-[#2D6A4F] focus-visible:ring-offset-2 ' +
+  'focus-visible:ring-primary focus-visible:ring-offset-2 ' +
   'disabled:opacity-50 disabled:pointer-events-none select-none';
 
 export default function Button({

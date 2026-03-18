@@ -31,7 +31,7 @@ export default async function RecentBlog() {
         <div className="mt-14 text-center">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 rounded-full border-2 border-[#2D6A4F] px-8 py-3 text-sm font-medium text-[#2D6A4F] transition-all duration-300 hover:bg-[#2D6A4F] hover:text-white"
+            className="inline-flex items-center gap-2 rounded-full border-2 border-primary px-8 py-3 text-sm font-medium text-primary transition-all duration-300 hover:bg-primary hover:text-white"
           >
             Read More Stories
             <span aria-hidden="true">&rarr;</span>

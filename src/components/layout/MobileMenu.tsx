@@ -103,8 +103,8 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
                           'w-full flex items-center justify-between px-3 py-3 rounded-lg text-sm font-medium',
                           'transition-colors duration-150',
                           isActivePath(link.href)
-                            ? 'text-[#2D6A4F] bg-[#2D6A4F]/8'
-                            : 'text-gray-700 hover:text-[#2D6A4F] hover:bg-[#2D6A4F]/5',
+                            ? 'text-primary bg-primary/8'
+                            : 'text-gray-700 hover:text-primary hover:bg-primary/5',
                         ].join(' ')}
                         aria-expanded={expandedItems.includes(link.href)}
                       >
@@ -119,7 +119,7 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
 
                       {/* Children — always expanded/visible on mobile */}
                       {(expandedItems.includes(link.href) || isActivePath(link.href)) && (
-                        <div className="mt-1 ml-4 pl-3 border-l-2 border-[#2D6A4F]/20 space-y-1">
+                        <div className="mt-1 ml-4 pl-3 border-l-2 border-primary/20 space-y-1">
                           {/* Parent link itself */}
                           <Link
                             href={link.href}
@@ -127,8 +127,8 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
                             className={[
                               'block px-3 py-2.5 rounded-lg text-sm transition-colors duration-150',
                               isActivePath(link.href) && pathname === link.href
-                                ? 'text-[#2D6A4F] font-semibold bg-[#2D6A4F]/8'
-                                : 'text-gray-600 hover:text-[#2D6A4F] hover:bg-[#2D6A4F]/5',
+                                ? 'text-primary font-semibold bg-primary/8'
+                                : 'text-gray-600 hover:text-primary hover:bg-primary/5',
                             ].join(' ')}
                           >
                             Overview
@@ -141,8 +141,8 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
                               className={[
                                 'block px-3 py-2.5 rounded-lg text-sm transition-colors duration-150',
                                 isActivePath(child.href)
-                                  ? 'text-[#2D6A4F] font-semibold bg-[#2D6A4F]/8'
-                                  : 'text-gray-600 hover:text-[#2D6A4F] hover:bg-[#2D6A4F]/5',
+                                  ? 'text-primary font-semibold bg-primary/8'
+                                  : 'text-gray-600 hover:text-primary hover:bg-primary/5',
                               ].join(' ')}
                             >
                               {child.label}
@@ -160,8 +160,8 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
                         'flex items-center px-3 py-3 rounded-lg text-sm font-medium',
                         'transition-colors duration-150',
                         isActivePath(link.href)
-                          ? 'text-[#2D6A4F] bg-[#2D6A4F]/8 font-semibold'
-                          : 'text-gray-700 hover:text-[#2D6A4F] hover:bg-[#2D6A4F]/5',
+                          ? 'text-primary bg-primary/8 font-semibold'
+                          : 'text-gray-700 hover:text-primary hover:bg-primary/5',
                       ].join(' ')}
                     >
                       {link.label}
@@ -180,7 +180,7 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
                   'block w-full text-center py-3 px-6 rounded-xl text-sm font-semibold text-white',
                   'transition-all duration-200 hover:shadow-lg active:scale-[0.98]',
                 ].join(' ')}
-                style={{ backgroundColor: '#2D6A4F' }}
+                style={{ backgroundColor: 'var(--color-primary)' }}
               >
                 Donate Now
               </Link>

@@ -29,14 +29,14 @@ export default function GalleryPageContent({ items }: GalleryPageContentProps) {
         );
 
   const gradients: Record<string, string> = {
-    events: 'from-[#000B58] to-[#2D6A4F]',
-    community: 'from-[#2D6A4F] to-[#D4A843]',
+    events: 'from-[#000B58] to-primary',
+    community: 'from-primary to-[#D4A843]',
     spiritual: 'from-[#000B58] to-[#C05021]',
     centres: 'from-[#D4A843] to-[#C05021]',
   };
 
   const getGradient = (category: string) =>
-    gradients[category.toLowerCase()] ?? 'from-[#000B58] to-[#2D6A4F]';
+    gradients[category.toLowerCase()] ?? 'from-[#000B58] to-primary';
 
   return (
     <>
@@ -64,8 +64,8 @@ export default function GalleryPageContent({ items }: GalleryPageContentProps) {
                 className={[
                   'px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 border-2',
                   activeCategory === cat.value
-                    ? 'bg-[#2D6A4F] text-white border-[#2D6A4F] shadow-md shadow-[#2D6A4F]/20'
-                    : 'bg-white text-[#000B58] border-[#2D6A4F]/20 hover:border-[#2D6A4F] hover:text-[#2D6A4F]',
+                    ? 'bg-primary text-white border-primary shadow-md shadow-primary/20'
+                    : 'bg-white text-[#000B58] border-primary/20 hover:border-primary hover:text-primary',
                 ].join(' ')}
               >
                 {cat.label}
@@ -76,7 +76,7 @@ export default function GalleryPageContent({ items }: GalleryPageContentProps) {
           {/* Item count */}
           <p className="text-center text-sm text-gray-500 mb-8">
             Showing{' '}
-            <span className="font-semibold text-[#2D6A4F]">
+            <span className="font-semibold text-primary">
               {filteredItems.length}
             </span>{' '}
             {filteredItems.length === 1 ? 'item' : 'items'}
@@ -138,7 +138,7 @@ export default function GalleryPageContent({ items }: GalleryPageContentProps) {
 
                     {/* Card content */}
                     <div className="p-4">
-                      <h3 className="text-sm font-semibold text-[#000B58] group-hover:text-[#2D6A4F] transition-colors leading-snug">
+                      <h3 className="text-sm font-semibold text-[#000B58] group-hover:text-primary transition-colors leading-snug">
                         {item.title}
                       </h3>
                       {item.description && (
@@ -243,7 +243,7 @@ export default function GalleryPageContent({ items }: GalleryPageContentProps) {
               </p>
               <button
                 onClick={() => setSelectedItem(null)}
-                className="mt-4 text-sm text-[#2D6A4F] font-medium hover:underline"
+                className="mt-4 text-sm text-primary font-medium hover:underline"
               >
                 Close
               </button>

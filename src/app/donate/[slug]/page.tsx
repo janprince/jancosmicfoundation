@@ -47,7 +47,7 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
           <Link
             href="/donate"
-            className="inline-flex items-center gap-2 text-sm font-medium text-[#2D6A4F] hover:text-[#245c43] transition-colors group"
+            className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-[#245c43] transition-colors group"
           >
             <svg
               className="w-4 h-4 transition-transform group-hover:-translate-x-1"
@@ -76,7 +76,7 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
                 style={{ paddingBottom: '52%' }}
               >
                 <div
-                  className="absolute inset-0 bg-gradient-to-br from-[#2D6A4F] to-[#D4A843]"
+                  className="absolute inset-0 bg-gradient-to-br from-primary to-[#D4A843]"
                   style={{
                     backgroundImage:
                       'radial-gradient(circle at 25% 35%, rgba(0,11,88,0.3) 0%, transparent 55%), radial-gradient(circle at 75% 65%, rgba(192,80,33,0.2) 0%, transparent 50%)',
@@ -91,7 +91,7 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
                 {/* Active badge */}
                 {cause.isActive && (
                   <div className="absolute top-4 right-4">
-                    <span className="flex items-center gap-1.5 bg-[#2D6A4F] text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    <span className="flex items-center gap-1.5 bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#D4A843] animate-pulse" />
                       Active
                     </span>
@@ -102,7 +102,7 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
               {/* Progress — mobile only (shown above content on small screens) */}
               <div className="lg:hidden rounded-2xl p-6 bg-white shadow-sm border border-gray-100">
                 <div className="mb-4 flex items-center gap-2">
-                  <span className="text-[#2D6A4F] font-bold text-3xl">
+                  <span className="text-primary font-bold text-3xl">
                     {percentage}%
                   </span>
                   <span className="text-gray-500 text-sm">funded</span>
@@ -152,7 +152,7 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
                     {cause.gallery.map((_, idx) => (
                       <div
                         key={idx}
-                        className="aspect-square rounded-xl bg-gradient-to-br from-[#2D6A4F]/40 to-[#D4A843]/40"
+                        className="aspect-square rounded-xl bg-gradient-to-br from-primary/40 to-[#D4A843]/40"
                       />
                     ))}
                   </div>
@@ -166,7 +166,7 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
                 {/* Progress card */}
                 <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
                   <div className="mb-1 flex items-end gap-2">
-                    <span className="text-[#2D6A4F] font-bold text-3xl">
+                    <span className="text-primary font-bold text-3xl">
                       {percentage}%
                     </span>
                     <span className="text-gray-500 text-sm mb-1">funded</span>

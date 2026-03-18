@@ -150,7 +150,7 @@ export default async function JoinPage() {
 
                   {/* Arrow */}
                   <svg
-                    className="h-5 w-5 shrink-0 text-[#000B58]/25 transition-colors duration-200 group-hover:text-[#2D6A4F]"
+                    className="h-5 w-5 shrink-0 text-[#000B58]/25 transition-colors duration-200 group-hover:text-primary"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -234,7 +234,7 @@ export default async function JoinPage() {
                   className="group flex items-center gap-4 rounded-2xl bg-white p-5 shadow-sm border border-[#000B58]/6 transition-shadow duration-200 hover:shadow-md"
                 >
                   {/* Location icon */}
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#2D6A4F]/10 text-[#2D6A4F]">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
                     <svg
                       className="h-5 w-5"
                       fill="none"
@@ -259,7 +259,7 @@ export default async function JoinPage() {
 
                   {/* Arrow */}
                   <svg
-                    className="h-4 w-4 shrink-0 text-[#000B58]/25 transition-colors duration-200 group-hover:text-[#2D6A4F]"
+                    className="h-4 w-4 shrink-0 text-[#000B58]/25 transition-colors duration-200 group-hover:text-primary"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -274,7 +274,7 @@ export default async function JoinPage() {
             <div className="mt-8 text-center">
               <Link
                 href="/centres"
-                className="text-sm font-medium text-[#2D6A4F] underline underline-offset-4 decoration-[#2D6A4F]/30 transition-colors duration-300 hover:decoration-[#2D6A4F]"
+                className="text-sm font-medium text-primary underline underline-offset-4 decoration-primary/30 transition-colors duration-300 hover:decoration-primary"
               >
                 View all centres
               </Link>
@@ -286,7 +286,7 @@ export default async function JoinPage() {
         <section
           className="py-16 sm:py-20"
           style={{
-            background: 'linear-gradient(135deg, #000B58 0%, #001485 50%, #2D6A4F 100%)',
+            background: 'linear-gradient(135deg, #000B58 0%, #001485 50%, var(--color-primary) 100%)',
           }}
         >
           <div className="mx-auto max-w-2xl px-5 sm:px-8 text-center">

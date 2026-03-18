@@ -63,8 +63,8 @@ export default function DonationCheckout({ causeTitle, causeId }: DonationChecko
   if (donated) {
     return (
       <div className="text-center py-8">
-        <div className="w-20 h-20 bg-[#2D6A4F]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-          <span className="text-4xl text-[#2D6A4F]">&#10003;</span>
+        <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span className="text-4xl text-primary">&#10003;</span>
         </div>
         <h3 className="text-2xl font-semibold text-[#000B58]">Thank You!</h3>
         <p className="mt-2 text-gray-600">
@@ -75,7 +75,7 @@ export default function DonationCheckout({ causeTitle, causeId }: DonationChecko
         </p>
         <button
           onClick={() => setDonated(false)}
-          className="mt-6 text-[#2D6A4F] font-medium hover:underline"
+          className="mt-6 text-primary font-medium hover:underline"
         >
           Make another donation
         </button>
@@ -100,8 +100,8 @@ export default function DonationCheckout({ causeTitle, causeId }: DonationChecko
               }}
               className={`py-3 px-4 rounded-xl border-2 text-center font-semibold transition-all ${
                 !isCustom && selectedAmount === amount
-                  ? "border-[#2D6A4F] bg-[#2D6A4F]/5 text-[#2D6A4F]"
-                  : "border-gray-200 text-gray-600 hover:border-[#2D6A4F]/40"
+                  ? "border-primary bg-primary/5 text-primary"
+                  : "border-gray-200 text-gray-600 hover:border-primary/40"
               }`}
             >
               GH₵{amount}
@@ -112,8 +112,8 @@ export default function DonationCheckout({ causeTitle, causeId }: DonationChecko
             onClick={() => setIsCustom(true)}
             className={`py-3 px-4 rounded-xl border-2 text-center font-semibold transition-all ${
               isCustom
-                ? "border-[#2D6A4F] bg-[#2D6A4F]/5 text-[#2D6A4F]"
-                : "border-gray-200 text-gray-600 hover:border-[#2D6A4F]/40"
+                ? "border-primary bg-primary/5 text-primary"
+                : "border-gray-200 text-gray-600 hover:border-primary/40"
             }`}
           >
             Custom
@@ -132,7 +132,7 @@ export default function DonationCheckout({ causeTitle, causeId }: DonationChecko
             min="1"
             value={customAmount}
             onChange={(e) => setCustomAmount(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#2D6A4F] focus:ring-2 focus:ring-[#2D6A4F]/20 outline-none transition-all"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
             placeholder="Enter amount"
           />
         </div>
@@ -148,7 +148,7 @@ export default function DonationCheckout({ causeTitle, causeId }: DonationChecko
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-[#2D6A4F] focus:ring-2 focus:ring-[#2D6A4F]/20 outline-none transition-all"
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
           placeholder="your@email.com (for receipt)"
         />
       </div>

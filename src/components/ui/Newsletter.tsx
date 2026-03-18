@@ -29,7 +29,7 @@ export default function Newsletter({
   const descColor = dark ? 'text-white/70' : 'text-[#1a1a1a]/60';
   const inputBg = dark
     ? 'bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-[#D4A843] focus:bg-white/15'
-    : 'bg-white border-[#2D6A4F]/25 text-[#1a1a1a] placeholder:text-[#1a1a1a]/40 focus:border-[#2D6A4F]';
+    : 'bg-white border-primary/25 text-[#1a1a1a] placeholder:text-[#1a1a1a]/40 focus:border-primary';
 
   function validateEmail(val: string) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
@@ -68,16 +68,16 @@ export default function Newsletter({
       <div
         className={[
           'w-full rounded-2xl p-6 text-center sm:p-8',
-          dark ? 'bg-white/10' : 'bg-[#2D6A4F]/08',
+          dark ? 'bg-white/10' : 'bg-primary/08',
           className,
         ].join(' ')}
         role="status"
         aria-live="polite"
       >
         {/* Checkmark icon */}
-        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#2D6A4F]/15">
+        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/15">
           <svg
-            className="h-7 w-7 text-[#2D6A4F]"
+            className="h-7 w-7 text-primary"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -98,7 +98,7 @@ export default function Newsletter({
           onClick={handleReset}
           className={[
             'mt-4 text-sm font-medium underline underline-offset-2 transition-opacity hover:opacity-70',
-            dark ? 'text-[#D4A843]' : 'text-[#2D6A4F]',
+            dark ? 'text-[#D4A843]' : 'text-primary',
           ].join(' ')}
         >
           Subscribe another email
@@ -130,7 +130,7 @@ export default function Newsletter({
             </label>
             <div className="pointer-events-none absolute inset-y-0 left-3.5 flex items-center">
               <svg
-                className={['h-4 w-4', dark ? 'text-white/40' : 'text-[#2D6A4F]/40'].join(' ')}
+                className={['h-4 w-4', dark ? 'text-white/40' : 'text-primary/40'].join(' ')}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -157,7 +157,7 @@ export default function Newsletter({
               disabled={status === 'loading'}
               className={[
                 'w-full rounded-xl border py-3 pl-10 pr-4 text-sm outline-none',
-                'transition-all duration-200 focus:ring-2 focus:ring-[#2D6A4F]/20',
+                'transition-all duration-200 focus:ring-2 focus:ring-primary/20',
                 'disabled:opacity-60',
                 inputBg,
                 errorMsg ? 'border-[#C05021] focus:ring-[#C05021]/20' : '',
@@ -176,7 +176,7 @@ export default function Newsletter({
               'disabled:opacity-60 disabled:pointer-events-none',
               dark
                 ? 'bg-[#D4A843] text-[#000B58] hover:bg-[#c49a38] hover:shadow-lg hover:shadow-[#D4A843]/25'
-                : 'bg-[#2D6A4F] text-white hover:bg-[#245c43] hover:shadow-lg hover:shadow-[#2D6A4F]/20',
+                : 'bg-primary text-white hover:bg-[#245c43] hover:shadow-lg hover:shadow-primary/20',
             ].join(' ')}
           >
             {status === 'loading' ? (

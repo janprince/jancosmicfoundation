@@ -72,9 +72,9 @@ export default function BlogPageContent({ posts }: BlogPageContentProps) {
                     style={
                       isActive
                         ? {
-                            backgroundColor: '#2D6A4F',
+                            backgroundColor: 'var(--color-primary)',
                             color: '#FDFBF7',
-                            boxShadow: '0 2px 8px rgba(45,106,79,0.3)',
+                            boxShadow: '0 2px 8px rgba(var(--color-primary-rgb),0.3)',
                           }
                         : {
                             backgroundColor: '#F2EFE9',
@@ -112,7 +112,7 @@ export default function BlogPageContent({ posts }: BlogPageContentProps) {
               <div className="mt-14 flex items-center justify-center gap-2" aria-label="Pagination">
                 <span
                   className="px-4 py-2 rounded-lg text-sm font-medium"
-                  style={{ backgroundColor: '#2D6A4F', color: '#FDFBF7' }}
+                  style={{ backgroundColor: 'var(--color-primary)', color: '#FDFBF7' }}
                 >
                   1
                 </span>
@@ -129,9 +129,9 @@ export default function BlogPageContent({ posts }: BlogPageContentProps) {
             <div className="flex flex-col items-center justify-center py-24 text-center">
               <div
                 className="w-20 h-20 rounded-full flex items-center justify-center mb-6"
-                style={{ backgroundColor: 'rgba(45,106,79,0.08)' }}
+                style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.08)' }}
               >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#2D6A4F" className="w-9 h-9">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="var(--color-primary)" className="w-9 h-9">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z" />
                 </svg>
               </div>
@@ -144,7 +144,7 @@ export default function BlogPageContent({ posts }: BlogPageContentProps) {
               <button
                 onClick={() => setActiveCategory(ALL_LABEL)}
                 className="text-sm font-semibold underline underline-offset-2 cursor-pointer"
-                style={{ color: '#2D6A4F' }}
+                style={{ color: 'var(--color-primary)' }}
               >
                 View all posts
               </button>

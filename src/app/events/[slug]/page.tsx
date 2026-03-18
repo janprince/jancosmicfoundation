@@ -45,7 +45,7 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
         <Link
           href="/events"
           className="inline-flex items-center gap-2 text-sm font-medium mb-10 transition-colors hover:opacity-75"
-          style={{ color: '#2D6A4F' }}
+          style={{ color: 'var(--color-primary)' }}
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
@@ -89,14 +89,14 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
                 <li className="flex items-start gap-3">
                   <span
                     className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
-                    style={{ backgroundColor: 'rgba(45,106,79,0.1)' }}
+                    style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.1)' }}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#2D6A4F" className="w-5 h-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="var(--color-primary)" className="w-5 h-5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
                     </svg>
                   </span>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider mb-0.5" style={{ color: '#2D6A4F' }}>
+                    <p className="text-xs font-semibold uppercase tracking-wider mb-0.5" style={{ color: 'var(--color-primary)' }}>
                       Date
                     </p>
                     <p className="text-sm font-medium" style={{ color: '#000B58' }}>{startDate}</p>
@@ -112,14 +112,14 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
                 <li className="flex items-start gap-3">
                   <span
                     className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
-                    style={{ backgroundColor: 'rgba(45,106,79,0.1)' }}
+                    style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.1)' }}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#2D6A4F" className="w-5 h-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="var(--color-primary)" className="w-5 h-5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                     </svg>
                   </span>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider mb-0.5" style={{ color: '#2D6A4F' }}>
+                    <p className="text-xs font-semibold uppercase tracking-wider mb-0.5" style={{ color: 'var(--color-primary)' }}>
                       Start Time
                     </p>
                     <p className="text-sm font-medium" style={{ color: '#000B58' }}>{event.time}</p>
@@ -130,15 +130,15 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
                 <li className="flex items-start gap-3">
                   <span
                     className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
-                    style={{ backgroundColor: 'rgba(45,106,79,0.1)' }}
+                    style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.1)' }}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#2D6A4F" className="w-5 h-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="var(--color-primary)" className="w-5 h-5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                     </svg>
                   </span>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider mb-0.5" style={{ color: '#2D6A4F' }}>
+                    <p className="text-xs font-semibold uppercase tracking-wider mb-0.5" style={{ color: 'var(--color-primary)' }}>
                       Location
                     </p>
                     <p className="text-sm font-medium" style={{ color: '#000B58' }}>{event.location}</p>
@@ -176,7 +176,7 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
           <Link
             href="/events"
             className="inline-flex items-center gap-2 text-sm font-medium transition-colors hover:opacity-75"
-            style={{ color: '#2D6A4F' }}
+            style={{ color: 'var(--color-primary)' }}
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />

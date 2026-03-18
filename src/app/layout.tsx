@@ -4,6 +4,7 @@ import { Raleway } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import ThemeSwitcher from "@/components/ui/ThemeSwitcher";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -52,6 +53,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <ThemeSwitcher />
       </body>
       <GoogleAnalytics gaId="G-5Q0ZCXVWPM" />
     </html>

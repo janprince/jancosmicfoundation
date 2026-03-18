@@ -45,7 +45,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
         <Link
           href="/blog"
           className="inline-flex items-center gap-2 text-sm font-medium mb-10 transition-opacity hover:opacity-75"
-          style={{ color: '#2D6A4F' }}
+          style={{ color: 'var(--color-primary)' }}
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
@@ -71,7 +71,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             >
               <div
                 className="w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold shrink-0"
-                style={{ backgroundColor: 'rgba(45,106,79,0.15)', color: '#2D6A4F', border: '2px solid rgba(45,106,79,0.25)' }}
+                style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.15)', color: 'var(--color-primary)', border: '2px solid rgba(var(--color-primary-rgb),0.25)' }}
               >
                 {post.author.name.charAt(0)}
               </div>
@@ -103,7 +103,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                     <span
                       key={tag}
                       className="rounded-full px-3 py-1 text-xs font-medium"
-                      style={{ backgroundColor: 'rgba(45,106,79,0.08)', color: '#2D6A4F' }}
+                      style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.08)', color: 'var(--color-primary)' }}
                     >
                       #{tag}
                     </span>
@@ -133,20 +133,20 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
 
               <dl className="space-y-4 text-sm">
                 <div>
-                  <dt className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: '#2D6A4F' }}>Author</dt>
+                  <dt className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: 'var(--color-primary)' }}>Author</dt>
                   <dd style={{ color: '#000B58' }} className="font-medium">{post.author.name}</dd>
                   <dd style={{ color: '#1a1a1abf' }} className="text-xs mt-0.5">{post.author.role}</dd>
                 </div>
                 <div>
-                  <dt className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: '#2D6A4F' }}>Published</dt>
+                  <dt className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: 'var(--color-primary)' }}>Published</dt>
                   <dd style={{ color: '#000B58' }}>{formattedDate}</dd>
                 </div>
                 <div>
-                  <dt className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: '#2D6A4F' }}>Reading Time</dt>
+                  <dt className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: 'var(--color-primary)' }}>Reading Time</dt>
                   <dd style={{ color: '#000B58' }}>{post.readTime}</dd>
                 </div>
                 <div>
-                  <dt className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: '#2D6A4F' }}>Category</dt>
+                  <dt className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: 'var(--color-primary)' }}>Category</dt>
                   <dd><Badge variant="secondary">{post.category}</Badge></dd>
                 </div>
               </dl>
@@ -173,7 +173,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
           <Link
             href="/blog"
             className="inline-flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-75"
-            style={{ color: '#2D6A4F' }}
+            style={{ color: 'var(--color-primary)' }}
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />

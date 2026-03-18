@@ -12,7 +12,7 @@ export default function VolunteerCTA() {
   return (
     <section
       className="relative overflow-hidden py-24 lg:py-32"
-      style={{ background: '#2D6A4F' }}
+      style={{ background: 'var(--color-primary)' }}
     >
       {/* Subtle dot pattern overlay */}
       <div
@@ -55,7 +55,7 @@ export default function VolunteerCTA() {
         {/* CTA button */}
         <Link
           href="/volunteer"
-          className="mt-10 inline-block rounded-sm border border-white/40 bg-white px-8 py-3.5 text-sm font-medium text-[#2D6A4F] transition-colors duration-300 hover:bg-white/90"
+          className="mt-10 inline-block rounded-sm border border-white/40 bg-white px-8 py-3.5 text-sm font-medium text-primary transition-colors duration-300 hover:bg-white/90"
         >
           Become a Volunteer
           <span aria-hidden="true">&rarr;</span>

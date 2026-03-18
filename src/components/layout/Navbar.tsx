@@ -140,11 +140,11 @@ export default function Navbar() {
                         'flex items-center gap-1 px-3 py-2 rounded-md text-sm font-medium',
                         'transition-all duration-200 relative group',
                         scrolled
-                          ? 'text-gray-700 hover:text-[#2D6A4F]'
+                          ? 'text-gray-700 hover:text-primary'
                           : 'text-white/90 hover:text-white',
                         isActivePath(link.href)
                           ? scrolled
-                            ? 'text-[#2D6A4F]'
+                            ? 'text-primary'
                             : 'text-white'
                           : '',
                       ].join(' ')}
@@ -162,7 +162,7 @@ export default function Navbar() {
                           'absolute bottom-0 left-3 right-3 h-0.5 rounded-full transition-transform duration-200 origin-left',
                           isActivePath(link.href) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100',
                         ].join(' ')}
-                        style={{ backgroundColor: '#2D6A4F' }}
+                        style={{ backgroundColor: 'var(--color-primary)' }}
                       />
                     </button>
 
@@ -178,9 +178,9 @@ export default function Navbar() {
                               href={child.href}
                               className={[
                                 'block px-4 py-2.5 text-sm transition-colors duration-150',
-                                'hover:bg-[#2D6A4F]/8 hover:text-[#2D6A4F]',
+                                'hover:bg-primary/8 hover:text-primary',
                                 isActivePath(child.href)
-                                  ? 'text-[#2D6A4F] font-medium bg-[#2D6A4F]/5'
+                                  ? 'text-primary font-medium bg-primary/5'
                                   : 'text-gray-700',
                               ].join(' ')}
                             >
@@ -200,11 +200,11 @@ export default function Navbar() {
                       'relative px-3 py-2 rounded-md text-sm font-medium',
                       'transition-all duration-200 group',
                       scrolled
-                        ? 'text-gray-700 hover:text-[#2D6A4F]'
+                        ? 'text-gray-700 hover:text-primary'
                         : 'text-white/90 hover:text-white',
                       isActivePath(link.href)
                         ? scrolled
-                          ? 'text-[#2D6A4F]'
+                          ? 'text-primary'
                           : 'text-white'
                         : '',
                     ].join(' ')}
@@ -218,7 +218,7 @@ export default function Navbar() {
                           ? 'scale-x-100'
                           : 'scale-x-0 group-hover:scale-x-100',
                       ].join(' ')}
-                      style={{ backgroundColor: '#2D6A4F' }}
+                      style={{ backgroundColor: 'var(--color-primary)' }}
                     />
                   </Link>
                 ),
@@ -231,7 +231,7 @@ export default function Navbar() {
                   'ml-3 px-5 py-2 rounded-lg text-sm font-semibold text-white',
                   'transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-100',
                 ].join(' ')}
-                style={{ backgroundColor: '#2D6A4F' }}
+                style={{ backgroundColor: 'var(--color-primary)' }}
               >
                 Donate
               </Link>

@@ -134,7 +134,7 @@ export default async function AboutPage() {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-base font-semibold transition-all duration-300 hover:shadow-lg"
-            style={{ backgroundColor: '#2D6A4F', color: '#FDFBF7' }}
+            style={{ backgroundColor: 'var(--color-primary)', color: '#FDFBF7' }}
           >
             Visit drbaffourjan.com
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
@@ -161,7 +161,7 @@ export default async function AboutPage() {
               >
                 <div
                   className="w-14 h-14 rounded-xl flex items-center justify-center mb-5"
-                  style={{ backgroundColor: 'rgba(45,106,79,0.1)', color: '#2D6A4F' }}
+                  style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.1)', color: 'var(--color-primary)' }}
                 >
                   {value.icon}
                 </div>
@@ -206,7 +206,7 @@ export default async function AboutPage() {
                 ) : (
                   <div
                     className="h-48 flex items-center justify-center"
-                    style={{ background: 'linear-gradient(135deg, #000B58 0%, #2D6A4F 100%)' }}
+                    style={{ background: 'linear-gradient(135deg, #000B58 0%, var(--color-primary) 100%)' }}
                   >
                     <div
                       className="w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold"
@@ -220,7 +220,7 @@ export default async function AboutPage() {
                   <h3 className="text-base font-semibold" style={{ color: '#000B58' }}>
                     {member.name}
                   </h3>
-                  <p className="text-xs font-semibold mt-0.5 mb-3" style={{ color: '#2D6A4F' }}>
+                  <p className="text-xs font-semibold mt-0.5 mb-3" style={{ color: 'var(--color-primary)' }}>
                     {member.role}
                   </p>
                   <p className="text-xs leading-relaxed line-clamp-4" style={{ color: '#1a1a1abf' }}>
@@ -236,7 +236,7 @@ export default async function AboutPage() {
       {/* CTA */}
       <section
         className="py-16 sm:py-24"
-        style={{ background: 'linear-gradient(135deg, #000B58 0%, #001485 50%, #2D6A4F 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #000B58 0%, #001485 50%, var(--color-primary) 100%)' }}
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
