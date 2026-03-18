@@ -16,7 +16,9 @@ export default function BlogCard({ post }: { post: BlogPost }) {
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
           <div className="absolute top-4 left-4 z-10">
-            <Badge variant="secondary">{post.category}</Badge>
+            <span className="inline-flex items-center rounded-full bg-white/95 px-3 py-1 text-xs font-semibold tracking-wide uppercase text-[#000B58] shadow-sm backdrop-blur-sm">
+              {post.category}
+            </span>
           </div>
         </div>
         <div className="p-5 flex flex-col flex-1">

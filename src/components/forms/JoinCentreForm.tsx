@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Button from "@/components/ui/Button";
+import { submitJoinCentreRequest } from "@/lib/api";
 
 interface JoinCentreFormProps {
   centreName: string;
@@ -15,15 +16,18 @@ export default function JoinCentreForm({ centreName, centreId }: JoinCentreFormP
     phone: "",
     message: "",
   });
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
-    await new Promise((res) => setTimeout(res, 1500));
-    console.log("Join centre:", { ...formData, centreId });
-    setStatus("sent");
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    const result = await submitJoinCentreRequest({ ...formData, centreId });
+    if (result.ok) {
+      setStatus("sent");
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } else {
+      setStatus("error");
+    }
   };
 
   if (status === "sent") {
@@ -96,6 +100,9 @@ export default function JoinCentreForm({ centreName, centreId }: JoinCentreFormP
           placeholder="Tell us about yourself..."
         />
       </div>
+      {status === "error" && (
+        <p className="text-sm text-red-600">Something went wrong. Please try again.</p>
+      )}
       <Button type="submit" variant="primary" size="md" className="w-full">
         {status === "sending" ? "Submitting..." : `Join ${centreName}`}
       </Button>

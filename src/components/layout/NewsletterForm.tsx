@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from 'react';
 import { HiArrowRight } from 'react-icons/hi2';
+import { submitNewsletter } from '@/lib/api';
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
 
@@ -15,12 +16,11 @@ export default function NewsletterForm() {
 
     setStatus('loading');
 
-    // Placeholder — wire up to your actual API endpoint
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 800));
+    const result = await submitNewsletter({ email });
+    if (result.ok) {
       setStatus('success');
       setEmail('');
-    } catch {
+    } else {
       setStatus('error');
     }
   };

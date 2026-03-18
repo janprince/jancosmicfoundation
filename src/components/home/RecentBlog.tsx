@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { getBlogPosts } from '@/lib/api';
 import BlogCard from '@/components/cards/BlogCard';
 
-export default function RecentBlog() {
-  const posts = getBlogPosts().slice(0, 3);
+export default async function RecentBlog() {
+  const posts = (await getBlogPosts()).slice(0, 3);
 
   return (
     <section className="bg-[#FDFBF7] py-24 lg:py-32">

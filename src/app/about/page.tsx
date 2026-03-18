@@ -3,7 +3,7 @@ import Image from 'next/image';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Button from '@/components/ui/Button';
-import { teamMembers } from '@/lib/mock-data';
+import { getTeamMembers } from '@/lib/api';
 
 const coreValues = [
   {
@@ -54,7 +54,8 @@ export const metadata: Metadata = {
     'Learn about the Jan Cosmic Foundation — a spiritual organisation founded by Dr. Baffour Jan, guiding individuals toward higher consciousness and self-realization.',
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const teamMembers = await getTeamMembers();
   return (
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero

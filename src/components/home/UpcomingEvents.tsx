@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { getEvents } from '@/lib/api';
 import EventCard from '@/components/cards/EventCard';
 
-export default function UpcomingEvents() {
-  const upcomingEvents = getEvents('upcoming').slice(0, 3);
+export default async function UpcomingEvents() {
+  const upcomingEvents = (await getEvents('upcoming')).slice(0, 3);
 
   return (
     <section className="bg-white py-24 lg:py-32">

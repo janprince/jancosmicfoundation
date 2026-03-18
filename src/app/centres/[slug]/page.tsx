@@ -8,7 +8,7 @@ import { getCentreBySlug, getCentres } from '@/lib/api';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const centre = getCentreBySlug(slug);
+  const centre = await getCentreBySlug(slug);
   if (!centre) return { title: 'Centre Not Found' };
   return {
     title: `${centre.name} Centre`,
@@ -16,14 +16,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export function generateStaticParams() {
-  const centres = getCentres();
+export async function generateStaticParams() {
+  const centres = await getCentres();
   return centres.map((centre) => ({ slug: centre.slug }));
 }
 
 export default async function CentrePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const centre = getCentreBySlug(slug);
+  const centre = await getCentreBySlug(slug);
 
   if (!centre) {
     notFound();

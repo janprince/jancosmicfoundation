@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Button from "@/components/ui/Button";
+import { submitContactForm } from "@/lib/api";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -15,10 +16,13 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
-    // Simulate API call
-    await new Promise((res) => setTimeout(res, 1500));
-    setStatus("sent");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    const result = await submitContactForm(formData);
+    if (result.ok) {
+      setStatus("sent");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } else {
+      setStatus("error");
+    }
   };
 
   if (status === "sent") {
@@ -101,6 +105,9 @@ export default function ContactForm() {
           placeholder="Your message..."
         />
       </div>
+      {status === "error" && (
+        <p className="text-sm text-red-600">Something went wrong. Please try again.</p>
+      )}
       <Button type="submit" variant="primary" size="lg" className="w-full md:w-auto">
         {status === "sending" ? "Sending..." : "Send Message"}
       </Button>

@@ -81,8 +81,8 @@ const socialLinks = [
   },
 ];
 
-export default function JoinPage() {
-  const centres = getCentres();
+export default async function JoinPage() {
+  const centres = await getCentres();
 
   return (
     <>

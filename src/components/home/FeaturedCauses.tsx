@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { getCauses } from '@/lib/api';
 import CauseCard from '@/components/cards/CauseCard';
 
-export default function FeaturedCauses() {
-  const causes = getCauses().slice(0, 3);
+export default async function FeaturedCauses() {
+  const causes = (await getCauses()).slice(0, 3);
 
   return (
     <section className="bg-[#F2EFE9] py-24 lg:py-32">

@@ -16,15 +16,27 @@ const navLinks: NavLink[] = [
     href: '/about',
     children: [
       { label: 'Mission & Vision', href: '/about/mission-vision' },
+      { label: 'Our Centres', href: '/centres' },
     ],
   },
-  { label: 'Events', href: '/events' },
+  {
+    label: 'Events',
+    href: '/events',
+    children: [
+      { label: 'Upcoming Events', href: '/events' },
+      { label: 'Gallery', href: '/gallery' },
+    ],
+  },
   { label: 'Blog', href: '/blog' },
-  { label: 'Gallery', href: '/gallery' },
-  { label: 'Centres', href: '/centres' },
-  { label: 'Join', href: '/join' },
-  { label: 'Volunteer', href: '/volunteer' },
-  { label: 'Contact', href: '/contact' },
+  {
+    label: 'Get Involved',
+    href: '/join',
+    children: [
+      { label: 'Join a Centre', href: '/join' },
+      { label: 'Volunteer', href: '/volunteer' },
+      { label: 'Contact Us', href: '/contact' },
+    ],
+  },
 ];
 
 export default function Navbar() {
@@ -60,6 +72,11 @@ export default function Navbar() {
 
   const isActivePath = (href: string) => {
     if (href === '/') return pathname === '/';
+    // Check if pathname matches the href or any of its children
+    const link = navLinks.find((l) => l.href === href);
+    if (link?.children) {
+      return link.children.some((child) => pathname.startsWith(child.href));
+    }
     return pathname.startsWith(href);
   };
 

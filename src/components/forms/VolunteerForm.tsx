@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Button from "@/components/ui/Button";
+import { submitVolunteerApplication } from "@/lib/api";
 
 export default function VolunteerForm() {
   const [formData, setFormData] = useState({
@@ -13,14 +14,18 @@ export default function VolunteerForm() {
     availability: "",
     message: "",
   });
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
-    await new Promise((res) => setTimeout(res, 1500));
-    setStatus("sent");
-    setFormData({ name: "", email: "", phone: "", centrePreference: "", skills: "", availability: "", message: "" });
+    const result = await submitVolunteerApplication(formData);
+    if (result.ok) {
+      setStatus("sent");
+      setFormData({ name: "", email: "", phone: "", centrePreference: "", skills: "", availability: "", message: "" });
+    } else {
+      setStatus("error");
+    }
   };
 
   if (status === "sent") {
@@ -148,6 +153,9 @@ export default function VolunteerForm() {
           placeholder="Tell us about your motivation..."
         />
       </div>
+      {status === "error" && (
+        <p className="text-sm text-red-600">Something went wrong. Please try again.</p>
+      )}
       <Button type="submit" variant="primary" size="lg" className="w-full md:w-auto">
         {status === "sending" ? "Submitting..." : "Submit Application"}
       </Button>

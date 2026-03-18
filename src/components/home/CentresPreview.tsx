@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { getCentres } from '@/lib/api';
 import CentreCard from '@/components/cards/CentreCard';
 
-export default function CentresPreview() {
-  const centres = getCentres().slice(0, 4);
+export default async function CentresPreview() {
+  const centres = (await getCentres()).slice(0, 4);
 
   return (
     <section className="bg-[#F2EFE9] py-24 lg:py-32">

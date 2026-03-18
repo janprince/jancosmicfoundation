@@ -11,8 +11,8 @@ export const metadata: Metadata = {
     'A growing network of Jan Cosmic Foundation centres dedicated to spiritual practice, conscious living, and service to humanity across Ghana and beyond.',
 };
 
-export default function CentresPage() {
-  const centres = getCentres();
+export default async function CentresPage() {
+  const centres = await getCentres();
 
   const stats = [
     { value: '7+', label: 'Active Centres' },

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
 import VolunteerForm from '@/components/forms/VolunteerForm';
-import { volunteerOpportunities, testimonials } from '@/lib/mock-data';
+import { getVolunteerOpportunities, getTestimonials } from '@/lib/api';
 
 const benefits = [
   {
@@ -53,7 +53,9 @@ export const metadata: Metadata = {
     'Give your time, talents, and energy to something meaningful. Discover volunteer opportunities at the Jan Cosmic Foundation.',
 };
 
-export default function VolunteerPage() {
+export default async function VolunteerPage() {
+  const volunteerOpportunities = await getVolunteerOpportunities();
+  const testimonials = await getTestimonials();
   return (
     <>
       <PageHero

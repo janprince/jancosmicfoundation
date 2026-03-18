@@ -9,7 +9,7 @@ import { getCauseBySlug, getCauses } from '@/lib/api';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const cause = getCauseBySlug(slug);
+  const cause = await getCauseBySlug(slug);
   if (!cause) return { title: 'Cause Not Found' };
   return {
     title: `Donate: ${cause.title}`,
@@ -17,14 +17,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export function generateStaticParams() {
-  const causes = getCauses();
+export async function generateStaticParams() {
+  const causes = await getCauses();
   return causes.map((cause) => ({ slug: cause.slug }));
 }
 
 export default async function CausePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const cause = getCauseBySlug(slug);
+  const cause = await getCauseBySlug(slug);
 
   if (!cause) {
     notFound();

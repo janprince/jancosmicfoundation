@@ -9,7 +9,7 @@ import ShareButtons from '@/components/blog/ShareButtons';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getBlogPostBySlug(slug);
+  const post = await getBlogPostBySlug(slug);
   if (!post) return { title: 'Post Not Found' };
   return {
     title: post.title,
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function BlogDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = getBlogPostBySlug(slug);
+  const post = await getBlogPostBySlug(slug);
 
   if (!post) {
     notFound();
@@ -32,7 +32,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
   });
 
   // Related posts: same category, excluding current post, max 3
-  const relatedPosts = getBlogPosts(post.category)
+  const relatedPosts = (await getBlogPosts(post.category))
     .filter((p) => p.slug !== post.slug)
     .slice(0, 3);
 

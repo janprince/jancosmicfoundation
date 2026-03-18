@@ -10,8 +10,8 @@ export const metadata: Metadata = {
     'Support the Jan Cosmic Foundation. Your generosity sustains programmes in spiritual education, community outreach, and humanitarian development.',
 };
 
-export default function DonatePage() {
-  const causes = getCauses();
+export default async function DonatePage() {
+  const causes = await getCauses();
 
   const impactItems = [
     {
