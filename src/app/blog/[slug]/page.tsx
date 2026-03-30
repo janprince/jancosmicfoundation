@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import PageHero from '@/components/layout/PageHero';
 import Badge from '@/components/ui/Badge';
 import BlogCard from '@/components/cards/BlogCard';
@@ -45,6 +46,18 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14">
           {/* Article body */}
           <article className="lg:col-span-2">
+            {/* Post image */}
+            <div className="relative aspect-video rounded-2xl overflow-hidden mb-8">
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 66vw"
+                priority
+              />
+            </div>
+
             {/* Meta row */}
             <div className="flex flex-wrap items-center gap-3 mb-6">
               <Badge variant="secondary">{post.category}</Badge>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
 import ProgressBar from '@/components/ui/ProgressBar';
@@ -49,27 +50,25 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
 
             {/* Left: Story / Content */}
             <div className="lg:col-span-2 space-y-8">
-              {/* Cause image placeholder */}
-              <div
-                className="w-full rounded-2xl overflow-hidden relative"
-                style={{ paddingBottom: '52%' }}
-              >
-                <div
-                  className="absolute inset-0 bg-gradient-to-br from-primary to-[#D4A843]"
-                  style={{
-                    backgroundImage:
-                      'radial-gradient(circle at 25% 35%, rgba(0,11,88,0.3) 0%, transparent 55%), radial-gradient(circle at 75% 65%, rgba(192,80,33,0.2) 0%, transparent 50%)',
-                  }}
+              {/* Cause image */}
+              <div className="w-full rounded-2xl overflow-hidden relative aspect-video">
+                <Image
+                  src={cause.image}
+                  alt={cause.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 66vw"
+                  priority
                 />
                 {/* Category badge */}
-                <div className="absolute top-4 left-4">
+                <div className="absolute top-4 left-4 z-10">
                   <span className="bg-white/90 backdrop-blur-sm text-[#000B58] text-xs font-semibold px-3 py-1 rounded-full">
                     {cause.category}
                   </span>
                 </div>
                 {/* Active badge */}
                 {cause.isActive && (
-                  <div className="absolute top-4 right-4">
+                  <div className="absolute top-4 right-4 z-10">
                     <span className="flex items-center gap-1.5 bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#D4A843] animate-pulse" />
                       Active
@@ -128,11 +127,16 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
                     Gallery
                   </h3>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                    {cause.gallery.map((_, idx) => (
-                      <div
-                        key={idx}
-                        className="aspect-square rounded-xl bg-gradient-to-br from-primary/40 to-[#D4A843]/40"
-                      />
+                    {cause.gallery.map((img, idx) => (
+                      <div key={idx} className="relative aspect-square rounded-xl overflow-hidden">
+                        <Image
+                          src={img}
+                          alt={`${cause.title} gallery ${idx + 1}`}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 640px) 50vw, 25vw"
+                        />
+                      </div>
                     ))}
                   </div>
                 </div>

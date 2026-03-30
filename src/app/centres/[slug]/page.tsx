@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
 import JoinCentreForm from '@/components/forms/JoinCentreForm';
@@ -83,19 +84,17 @@ export default async function CentrePage({ params }: { params: Promise<{ slug: s
 
             {/* Left: Description + details */}
             <div className="lg:col-span-2 space-y-8">
-              {/* Image placeholder */}
-              <div
-                className="w-full rounded-2xl overflow-hidden"
-                style={{ paddingBottom: '45%', position: 'relative' }}
-              >
-                <div
-                  className="absolute inset-0 bg-gradient-to-br from-[#000B58] to-primary"
-                  style={{
-                    backgroundImage:
-                      'radial-gradient(circle at 30% 40%, rgba(212,168,67,0.2) 0%, transparent 60%), radial-gradient(circle at 70% 60%, rgba(var(--color-primary-rgb),0.3) 0%, transparent 55%)',
-                  }}
+              {/* Centre image */}
+              <div className="relative aspect-video w-full rounded-2xl overflow-hidden">
+                <Image
+                  src={centre.image}
+                  alt={centre.name}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 66vw"
+                  priority
                 />
-                <div className="absolute bottom-5 left-5">
+                <div className="absolute bottom-5 left-5 z-10">
                   <span className="bg-white/90 backdrop-blur-sm text-[#000B58] text-sm font-semibold px-4 py-1.5 rounded-full">
                     {centre.country}
                   </span>

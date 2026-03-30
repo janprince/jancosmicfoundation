@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
 import type { GalleryItem } from '@/types';
@@ -27,16 +28,6 @@ export default function GalleryPageContent({ items }: GalleryPageContentProps) {
       : items.filter(
           (item) => item.category.toLowerCase() === activeCategory,
         );
-
-  const gradients: Record<string, string> = {
-    events: 'from-[#000B58] to-primary',
-    community: 'from-primary to-[#D4A843]',
-    spiritual: 'from-[#000B58] to-[#C05021]',
-    centres: 'from-[#D4A843] to-[#C05021]',
-  };
-
-  const getGradient = (category: string) =>
-    gradients[category.toLowerCase()] ?? 'from-[#000B58] to-primary';
 
   return (
     <>
@@ -92,32 +83,28 @@ export default function GalleryPageContent({ items }: GalleryPageContentProps) {
                   onClick={() => setSelectedItem(item)}
                 >
                   <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
-                    {/* Image placeholder with gradient */}
+                    {/* Gallery image */}
                     <div
-                      className={[
-                        'w-full bg-gradient-to-br relative overflow-hidden',
-                        getGradient(item.category),
-                      ].join(' ')}
+                      className="w-full relative overflow-hidden"
                       style={{
                         paddingBottom: item.id.charCodeAt(item.id.length - 1) % 2 === 0 ? '75%' : '60%',
                       }}
                     >
-                      {/* Decorative overlay pattern */}
-                      <div
-                        className="absolute inset-0 opacity-10"
-                        style={{
-                          backgroundImage:
-                            'radial-gradient(circle at 25% 25%, rgba(255,255,255,0.3) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(255,255,255,0.2) 0%, transparent 40%)',
-                        }}
+                      <Image
+                        src={item.thumbnail || item.url}
+                        alt={item.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                       {/* Category badge */}
-                      <div className="absolute top-3 left-3">
+                      <div className="absolute top-3 left-3 z-10">
                         <span className="bg-white/90 backdrop-blur-sm text-[#000B58] text-xs font-semibold px-2.5 py-1 rounded-full capitalize">
                           {item.category}
                         </span>
                       </div>
                       {/* Click to expand hint */}
-                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                         <div className="bg-black/40 backdrop-blur-sm rounded-full p-3">
                           <svg
                             className="w-6 h-6 text-white"
@@ -215,23 +202,17 @@ export default function GalleryPageContent({ items }: GalleryPageContentProps) {
             className="relative max-w-2xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Full-size image placeholder */}
-            <div
-              className={[
-                'w-full bg-gradient-to-br relative',
-                getGradient(selectedItem.category),
-              ].join(' ')}
-              style={{ paddingBottom: '62%' }}
-            >
-              <div
-                className="absolute inset-0 opacity-10"
-                style={{
-                  backgroundImage:
-                    'radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4) 0%, transparent 55%), radial-gradient(circle at 70% 70%, rgba(255,255,255,0.25) 0%, transparent 45%)',
-                }}
+            {/* Full-size image */}
+            <div className="w-full relative" style={{ paddingBottom: '62%' }}>
+              <Image
+                src={selectedItem.url}
+                alt={selectedItem.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 672px) 100vw, 672px"
               />
               {/* Category badge */}
-              <div className="absolute top-4 left-4">
+              <div className="absolute top-4 left-4 z-10">
                 <span className="bg-white/90 backdrop-blur-sm text-[#000B58] text-xs font-semibold px-3 py-1 rounded-full capitalize">
                   {selectedItem.category}
                 </span>
