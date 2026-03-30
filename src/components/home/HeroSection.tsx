@@ -40,6 +40,17 @@ export default function HeroSection() {
             </p>
 
             <h1 className="text-5xl font-semibold leading-[1.12] text-white xl:text-6xl">
+              Revealing the{' '}
+              <span className="text-[#D4A843]">God in You</span>
+            </h1>
+
+            <p className="mt-7 max-w-lg text-lg leading-relaxed text-white/90">
+              A global movement guiding individuals beyond the limits of
+              identity, into direct self-realization, inner peace, and true
+              freedom — through the teachings of Dr. Baffour Jan.
+            </p>
+
+            {/* <h1 className="text-5xl font-semibold leading-[1.12] text-white xl:text-6xl">
               Awakening Humanity to{' '}
               <span className="text-[#D4A843]">Self-Realization</span>
             </h1>
@@ -48,7 +59,7 @@ export default function HeroSection() {
               A spiritual organisation dedicated to guiding individuals toward
               higher consciousness, inner freedom, and self-realization —
               through the teachings of Dr. Baffour Jan.
-            </p>
+            </p> */}
 
             <blockquote className="mt-8 border-l-2 border-[#D4A843]/30 pl-5">
               <p className="text-base italic leading-relaxed text-white/80">
@@ -149,6 +160,17 @@ export default function HeroSection() {
             </p>
 
             <h1 className="text-4xl font-semibold leading-[1.15] text-white sm:text-5xl">
+              Revealing the{' '}
+              <span className="text-[#D4A843]">God in You</span>
+            </h1>
+
+            <p className="mx-auto mt-6 max-w-md text-base leading-relaxed text-white/90">
+              A global movement guiding individuals beyond the limits of
+              identity, into direct self-realization, inner peace, and true
+              freedom — through the teachings of Dr. Baffour Jan.
+            </p>
+
+            {/* <h1 className="text-4xl font-semibold leading-[1.15] text-white sm:text-5xl">
               Awakening Humanity to{' '}
               <span className="text-[#D4A843]">Self-Realization</span>
             </h1>
@@ -157,7 +179,7 @@ export default function HeroSection() {
               A spiritual organisation dedicated to guiding individuals toward
               higher consciousness, inner freedom, and self-realization —
               through the teachings of Dr. Baffour Jan.
-            </p>
+            </p> */}
 
             <blockquote className="mx-auto mt-8 max-w-sm border-t border-white/10 pt-6">
               <p className="text-sm italic leading-relaxed text-white/80">
