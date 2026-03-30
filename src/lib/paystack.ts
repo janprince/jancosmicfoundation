@@ -1,4 +1,4 @@
-export const PAYSTACK_PUBLIC_KEY = process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY || "pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+export const PAYSTACK_PUBLIC_KEY = process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY!;
 
 export interface PaystackConfig {
   email: string;
@@ -9,9 +9,7 @@ export interface PaystackConfig {
 }
 
 export function generateReference(): string {
-  const timestamp = Date.now();
-  const random = Math.random().toString(36).substring(2, 8);
-  return `JCF-${timestamp}-${random}`;
+  return `JCF-${Date.now()}-${crypto.randomUUID().slice(0, 8)}`;
 }
 
 export function formatAmount(amount: number, currency: string = "GHS"): string {
@@ -24,3 +22,6 @@ export function formatAmount(amount: number, currency: string = "GHS"): string {
 }
 
 export const PRESET_AMOUNTS = [50, 100, 200, 500, 1000];
+
+export const MIN_DONATION = 1;
+export const MAX_DONATION = 50000;

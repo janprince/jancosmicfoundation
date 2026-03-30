@@ -402,3 +402,10 @@ export async function submitJoinCentreRequest(data: JoinCentreFormData) {
 export async function submitNewsletter(data: NewsletterFormData) {
   return postAPI('/newsletter/', data);
 }
+
+export async function verifyDonation(data: {
+  reference: string;
+  cause_id: string;
+}): Promise<{ ok: boolean; error?: string }> {
+  return postAPI('/donations/verify/', data);
+}

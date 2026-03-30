@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { usePaystackPayment } from "react-paystack";
-import { PAYSTACK_PUBLIC_KEY, PRESET_AMOUNTS, generateReference, formatAmount } from "@/lib/paystack";
+import { PAYSTACK_PUBLIC_KEY, PRESET_AMOUNTS, MIN_DONATION, MAX_DONATION, generateReference, formatAmount } from "@/lib/paystack";
+import { verifyDonation } from "@/lib/api";
 import Button from "@/components/ui/Button";
 
 interface DonationCheckoutProps {
@@ -10,15 +11,17 @@ interface DonationCheckoutProps {
   causeId: string;
 }
 
-function PaystackButton({ amount, email, causeId, causeTitle, onSuccess }: {
+function PaystackButton({ amount, email, causeId, causeTitle, reference, onSuccess, onClose }: {
   amount: number;
   email: string;
   causeId: string;
   causeTitle: string;
-  onSuccess: () => void;
+  reference: string;
+  onSuccess: (ref: string) => void;
+  onClose: () => void;
 }) {
   const config = {
-    reference: generateReference(),
+    reference,
     email,
     amount: amount * 100, // Convert to pesewas
     publicKey: PAYSTACK_PUBLIC_KEY,
@@ -41,8 +44,8 @@ function PaystackButton({ amount, email, causeId, causeTitle, onSuccess }: {
       className="w-full"
       onClick={() => {
         initializePayment({
-          onSuccess: () => onSuccess(),
-          onClose: () => {},
+          onSuccess: () => onSuccess(reference),
+          onClose,
         });
       }}
     >
@@ -56,11 +59,36 @@ export default function DonationCheckout({ causeTitle, causeId }: DonationChecko
   const [customAmount, setCustomAmount] = useState("");
   const [email, setEmail] = useState("");
   const [isCustom, setIsCustom] = useState(false);
-  const [donated, setDonated] = useState(false);
+  const [state, setState] = useState<"idle" | "verifying" | "success" | "pending" | "error">("idle");
+  const referenceRef = useRef(generateReference());
 
   const finalAmount = isCustom ? Number(customAmount) : selectedAmount;
 
-  if (donated) {
+  async function handlePaymentSuccess(reference: string) {
+    setState("verifying");
+    try {
+      const result = await verifyDonation({ reference, cause_id: causeId });
+      if (result.ok) {
+        setState("success");
+      } else {
+        // Payment went through Paystack but backend verification failed.
+        // Show a pending state — the webhook will catch it as a safety net.
+        setState("pending");
+      }
+    } catch {
+      // Network/server error — payment already went through Paystack,
+      // so treat as pending rather than error to avoid alarming the donor.
+      setState("pending");
+    }
+  }
+
+  function handlePaymentClose() {
+    // User closed the Paystack modal without completing — generate a fresh reference
+    // so the next attempt doesn't reuse a potentially abandoned one.
+    referenceRef.current = generateReference();
+  }
+
+  if (state === "success") {
     return (
       <div className="text-center py-8">
         <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -74,10 +102,60 @@ export default function DonationCheckout({ causeTitle, causeId }: DonationChecko
           A receipt has been sent to your email.
         </p>
         <button
-          onClick={() => setDonated(false)}
+          onClick={() => {
+            setState("idle");
+            referenceRef.current = generateReference();
+          }}
           className="mt-6 text-primary font-medium hover:underline"
         >
           Make another donation
+        </button>
+      </div>
+    );
+  }
+
+  if (state === "pending") {
+    return (
+      <div className="text-center py-8">
+        <div className="w-20 h-20 bg-[#D4A843]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span className="text-4xl text-[#D4A843]">&#10003;</span>
+        </div>
+        <h3 className="text-2xl font-semibold text-[#000B58]">Payment Received</h3>
+        <p className="mt-2 text-gray-600">
+          Your donation of {formatAmount(finalAmount)} to {causeTitle} is being confirmed.
+        </p>
+        <p className="mt-1 text-sm text-gray-500">
+          You&apos;ll receive a confirmation email shortly. If you have any concerns, please contact us.
+        </p>
+        <button
+          onClick={() => {
+            setState("idle");
+            referenceRef.current = generateReference();
+          }}
+          className="mt-6 text-primary font-medium hover:underline"
+        >
+          Make another donation
+        </button>
+      </div>
+    );
+  }
+
+  if (state === "error") {
+    return (
+      <div className="text-center py-8">
+        <div className="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4">
+          <span className="text-4xl text-red-500">!</span>
+        </div>
+        <h3 className="text-xl font-semibold text-[#000B58]">Something went wrong</h3>
+        <p className="mt-2 text-sm text-gray-600">We couldn&apos;t process your donation. Please try again or contact us for help.</p>
+        <button
+          onClick={() => {
+            setState("idle");
+            referenceRef.current = generateReference();
+          }}
+          className="mt-6 text-primary font-medium hover:underline"
+        >
+          Try again
         </button>
       </div>
     );
@@ -129,12 +207,18 @@ export default function DonationCheckout({ causeTitle, causeId }: DonationChecko
           <input
             id="custom-amount"
             type="number"
-            min="1"
+            min={MIN_DONATION}
+            max={MAX_DONATION}
             value={customAmount}
             onChange={(e) => setCustomAmount(e.target.value)}
             className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-            placeholder="Enter amount"
+            placeholder={`GH₵${MIN_DONATION} – GH₵${MAX_DONATION.toLocaleString()}`}
           />
+          {customAmount && (Number(customAmount) < MIN_DONATION || Number(customAmount) > MAX_DONATION) && (
+            <p className="mt-1 text-sm text-red-500">
+              Amount must be between GH₵{MIN_DONATION} and GH₵{MAX_DONATION.toLocaleString()}
+            </p>
+          )}
         </div>
       )}
 
@@ -153,14 +237,22 @@ export default function DonationCheckout({ causeTitle, causeId }: DonationChecko
         />
       </div>
 
-      {email && finalAmount > 0 ? (
-        <PaystackButton
-          amount={finalAmount}
-          email={email}
-          causeId={causeId}
-          causeTitle={causeTitle}
-          onSuccess={() => setDonated(true)}
-        />
+      {/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && finalAmount >= MIN_DONATION && finalAmount <= MAX_DONATION ? (
+        state === "verifying" ? (
+          <Button variant="primary" size="lg" className="w-full opacity-75" disabled>
+            Verifying payment...
+          </Button>
+        ) : (
+          <PaystackButton
+            amount={finalAmount}
+            email={email}
+            causeId={causeId}
+            causeTitle={causeTitle}
+            reference={referenceRef.current}
+            onSuccess={handlePaymentSuccess}
+            onClose={handlePaymentClose}
+          />
+        )
       ) : (
         <Button variant="primary" size="lg" className="w-full opacity-50 cursor-not-allowed" disabled>
           Enter email to donate
