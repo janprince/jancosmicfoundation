@@ -41,12 +41,16 @@ export interface Cause {
   content: string;
   image: string;
   gallery?: string[];
+  /** 'specific' causes have a financial goal + progress bar; 'ongoing' causes focus on impact. */
+  type: 'specific' | 'ongoing';
   goalAmount: number;
   raisedAmount: number;
   currency: string;
   donorsCount: number;
   category: string;
   isActive: boolean;
+  /** Short impact statement shown instead of progress for ongoing causes. */
+  impactStatement?: string;
 }
 
 export interface Centre {

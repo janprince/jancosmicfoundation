@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
 import Image from 'next/image';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
@@ -31,16 +30,20 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
     notFound();
   }
 
-  const percentage = Math.min(
-    Math.round((cause.raisedAmount / cause.goalAmount) * 100),
-    100,
-  );
+  const isSpecific = cause.type === 'specific';
+  const percentage = isSpecific && cause.goalAmount > 0
+    ? Math.min(Math.round((cause.raisedAmount / cause.goalAmount) * 100), 100)
+    : 0;
 
   return (
     <>
       <PageHero
         title={cause.title}
-        subtitle={`${cause.category} · ${cause.donorsCount} donors`}
+        subtitle={
+          isSpecific
+            ? `${cause.category} · ${cause.donorsCount} donors`
+            : `${cause.category} · Ongoing initiative`
+        }
       />
 
       {/* Main content */}
@@ -66,36 +69,68 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
                     {cause.category}
                   </span>
                 </div>
-                {/* Active badge */}
-                {cause.isActive && (
-                  <div className="absolute top-4 right-4 z-10">
+                {/* Status badge */}
+                <div className="absolute top-4 right-4 z-10">
+                  {isSpecific && cause.isActive ? (
                     <span className="flex items-center gap-1.5 bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#D4A843] animate-pulse" />
                       Active
                     </span>
-                  </div>
-                )}
+                  ) : !isSpecific ? (
+                    <span className="flex items-center gap-1.5 bg-[#D4A843] text-white text-xs font-semibold px-3 py-1 rounded-full">
+                      <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                      Ongoing
+                    </span>
+                  ) : null}
+                </div>
               </div>
 
-              {/* Progress — mobile only (shown above content on small screens) */}
+              {/* Mobile sidebar — shown above content on small screens */}
               <div className="lg:hidden rounded-2xl p-6 bg-white shadow-sm border border-gray-100">
-                <div className="mb-4 flex items-center gap-2">
-                  <span className="text-primary font-bold text-3xl">
-                    {percentage}%
-                  </span>
-                  <span className="text-gray-500 text-sm">funded</span>
-                </div>
-                <ProgressBar
-                  current={cause.raisedAmount}
-                  goal={cause.goalAmount}
-                  currency={cause.currency}
-                />
-                <p className="mt-3 text-sm text-gray-500">
-                  <span className="font-semibold text-[#000B58]">
-                    {cause.donorsCount}
-                  </span>{' '}
-                  generous donor{cause.donorsCount !== 1 ? 's' : ''}
-                </p>
+                {isSpecific ? (
+                  <>
+                    <div className="mb-4 flex items-center gap-2">
+                      <span className="text-primary font-bold text-3xl">
+                        {percentage}%
+                      </span>
+                      <span className="text-gray-500 text-sm">funded</span>
+                    </div>
+                    <ProgressBar
+                      current={cause.raisedAmount}
+                      goal={cause.goalAmount}
+                      currency={cause.currency}
+                    />
+                    <p className="mt-3 text-sm text-gray-500">
+                      <span className="font-semibold text-[#000B58]">
+                        {cause.donorsCount}
+                      </span>{' '}
+                      generous donor{cause.donorsCount !== 1 ? 's' : ''}
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    {cause.impactStatement && (
+                      <div className="mb-4 rounded-lg bg-[#F2EFE9] px-4 py-3">
+                        <p className="text-sm leading-relaxed text-[#000B58]/80">
+                          <span className="mr-1.5 inline-block text-[#D4A843]" aria-hidden="true">&#10047;</span>
+                          {cause.impactStatement}
+                        </p>
+                      </div>
+                    )}
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      This is an ongoing initiative sustained by the continued generosity of our community.
+                      Every contribution directly supports this work.
+                    </p>
+                    {cause.donorsCount > 0 && (
+                      <p className="mt-3 text-sm text-gray-500">
+                        <span className="font-semibold text-[#000B58]">
+                          {cause.donorsCount}
+                        </span>{' '}
+                        supporter{cause.donorsCount !== 1 ? 's' : ''}
+                      </p>
+                    )}
+                  </>
+                )}
               </div>
 
               {/* Cause title and description */}
@@ -120,7 +155,7 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
                 dangerouslySetInnerHTML={{ __html: cause.content }}
               />
 
-              {/* Gallery placeholder (if available) */}
+              {/* Gallery */}
               {cause.gallery && cause.gallery.length > 0 && (
                 <div>
                   <h3 className="text-lg font-semibold text-[#000B58] mb-4">
@@ -146,36 +181,74 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
             {/* Right: Sticky donation sidebar */}
             <div className="lg:col-span-1">
               <div className="sticky top-6 space-y-6">
-                {/* Progress card */}
+                {/* Progress / Impact card */}
                 <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                  <div className="mb-1 flex items-end gap-2">
-                    <span className="text-primary font-bold text-3xl">
-                      {percentage}%
-                    </span>
-                    <span className="text-gray-500 text-sm mb-1">funded</span>
-                  </div>
-                  <ProgressBar
-                    current={cause.raisedAmount}
-                    goal={cause.goalAmount}
-                    currency={cause.currency}
-                  />
-                  <div className="mt-4 flex items-center gap-2 text-sm text-gray-500">
-                    <svg className="w-4 h-4 text-[#8a6c1a]" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                    </svg>
-                    <span>
-                      <span className="font-semibold text-[#000B58]">
-                        {cause.donorsCount}
-                      </span>{' '}
-                      donor{cause.donorsCount !== 1 ? 's' : ''}
-                    </span>
-                  </div>
+                  {isSpecific ? (
+                    <>
+                      <div className="mb-1 flex items-end gap-2">
+                        <span className="text-primary font-bold text-3xl">
+                          {percentage}%
+                        </span>
+                        <span className="text-gray-500 text-sm mb-1">funded</span>
+                      </div>
+                      <ProgressBar
+                        current={cause.raisedAmount}
+                        goal={cause.goalAmount}
+                        currency={cause.currency}
+                      />
+                      <div className="mt-4 flex items-center gap-2 text-sm text-gray-500">
+                        <svg className="w-4 h-4 text-[#8a6c1a]" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                        </svg>
+                        <span>
+                          <span className="font-semibold text-[#000B58]">
+                            {cause.donorsCount}
+                          </span>{' '}
+                          donor{cause.donorsCount !== 1 ? 's' : ''}
+                        </span>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="mb-4 flex items-center gap-2">
+                        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#D4A843]/15">
+                          <span className="text-[#D4A843] text-sm">&#10047;</span>
+                        </span>
+                        <span className="text-sm font-semibold text-[#000B58]">
+                          Ongoing Initiative
+                        </span>
+                      </div>
+                      {cause.impactStatement && (
+                        <p className="text-sm leading-relaxed text-gray-600 mb-4">
+                          {cause.impactStatement}
+                        </p>
+                      )}
+                      <p className="text-xs leading-relaxed text-gray-500">
+                        This work is sustained by the continued generosity of our community.
+                        There is no fixed goal — every contribution directly supports and
+                        strengthens this initiative.
+                      </p>
+                      {cause.donorsCount > 0 && (
+                        <div className="mt-4 flex items-center gap-2 text-sm text-gray-500">
+                          <svg className="w-4 h-4 text-[#8a6c1a]" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                          </svg>
+                          <span>
+                            <span className="font-semibold text-[#000B58]">
+                              {cause.donorsCount}
+                            </span>{' '}
+                            supporter{cause.donorsCount !== 1 ? 's' : ''}
+                          </span>
+                        </div>
+                      )}
+                    </>
+                  )}
                 </div>
 
                 {/* Donation checkout */}
                 <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
                   <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#8a6c1a] mb-4">
-                    Make a Donation
+                    {isSpecific ? 'Make a Donation' : 'Support This Work'}
                   </p>
                   <DonationCheckout
                     causeTitle={cause.title}

@@ -112,12 +112,14 @@ function transformCause(raw: any): Cause {
     content: raw.content ?? '',
     image: raw.image_url ?? raw.image ?? '/images/students-sitting-down-on-grass.jpg',
     gallery: raw.gallery ?? [],
-    goalAmount: Number(raw.goal_amount),
+    type: raw.type ?? 'specific',
+    goalAmount: Number(raw.goal_amount ?? 0),
     raisedAmount: Number(raw.raised_amount ?? 0),
     currency: raw.currency ?? 'GHS',
     donorsCount: Number(raw.donors_count ?? 0),
     category: raw.category_name ?? '',
     isActive: raw.is_active ?? true,
+    impactStatement: raw.impact_statement,
   };
 }
 
