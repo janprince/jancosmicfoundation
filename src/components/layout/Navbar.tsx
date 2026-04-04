@@ -30,6 +30,7 @@ const navLinks: NavLink[] = [
       { label: 'Gallery', href: '/gallery' },
     ],
   },
+  { label: 'Teachings', href: '/teachings' },
   { label: 'Blog', href: '/blog' },
   {
     label: 'Get Involved',

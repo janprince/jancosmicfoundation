@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import HeroSection from '@/components/home/HeroSection';
 import AboutSnippet from '@/components/home/AboutSnippet';
+import Pathways from '@/components/home/Pathways';
 import WisdomQuote from '@/components/home/WisdomQuote';
 import FeaturedCauses from '@/components/home/FeaturedCauses';
 import UpcomingEvents from '@/components/home/UpcomingEvents';
@@ -20,6 +21,7 @@ export default function HomePage() {
     <main>
       <HeroSection />
       <AboutSnippet />
+      <Pathways />
       <WisdomQuote />
       <FeaturedCauses />
       <UpcomingEvents />
