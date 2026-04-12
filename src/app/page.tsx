@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <main>
+    <main className="overflow-x-clip">
       <HeroSection />
       <AboutSnippet />
       <Pathways />
