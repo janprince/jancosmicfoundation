@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { BlogPost } from "@/types";
-import Badge from "@/components/ui/Badge";
 
 export default function BlogCard({ post }: { post: BlogPost }) {
   return (
@@ -15,10 +14,18 @@ export default function BlogCard({ post }: { post: BlogPost }) {
             className="object-cover group-hover:scale-105 transition-transform duration-500"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
-          <div className="absolute top-4 left-4 z-10">
+          <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
             <span className="inline-flex items-center rounded-full bg-white/95 px-3 py-1 text-xs font-semibold tracking-wide uppercase text-[#000B58] shadow-sm backdrop-blur-sm">
               {post.category}
             </span>
+            {post.videoLink && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-red-600/90 px-2.5 py-1 text-xs font-medium text-white shadow-sm backdrop-blur-sm">
+                <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+                Video
+              </span>
+            )}
           </div>
         </div>
         <div className="p-5 flex flex-col flex-1">
@@ -33,12 +40,6 @@ export default function BlogCard({ post }: { post: BlogPost }) {
           <p className="mt-2 text-sm text-gray-600 line-clamp-3 flex-1">
             {post.excerpt}
           </p>
-          <div className="mt-4 flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-xs font-semibold text-primary">
-              {post.author.name.charAt(0)}
-            </div>
-            <span className="text-sm text-gray-600">{post.author.name}</span>
-          </div>
         </div>
       </div>
     </Link>

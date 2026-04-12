@@ -198,15 +198,11 @@ export const blogPosts: BlogPost[] = [
 <p>True stillness is not passive. It is the condition in which wisdom surfaces, in which we hear the quiet voice that knows what truly matters. Silence is not empty — it is full of the answers we have not yet learned to listen for.</p>
 <p>We invite you to explore this dimension of your life with us. Our upcoming meditation sessions and retreats offer a structured, community-held space for this exploration.</p>`,
     image: '/images/masterseated.jpg',
-    author: {
-      name: 'Dr. Baffour Jan',
-      avatar: '/images/doc-potrait.jpg',
-      role: 'Founder & Spiritual Director',
-    },
     date: '2026-02-14',
     category: 'Spiritual Growth',
     tags: ['meditation', 'stillness', 'mindfulness', 'inner peace'],
     readTime: '5 min read',
+    videoLink: 'https://youtu.be/dA1fa8xAyic',
   },
   {
     id: 'blog-002',
@@ -224,11 +220,6 @@ export const blogPosts: BlogPost[] = [
 <p>Service does not require grand gestures. A phone call to a lonely neighbour. Mentoring a young person in your field. Showing up consistently to a community project. The JCF's Community Service Days are designed precisely to make this step easy and joyful.</p>
 <p>We invite you to join us at our next Community Care Day and discover for yourself why so many of our volunteers describe their service hours as the most spiritually alive moments of their week.</p>`,
     image: '/images/group-of-students.jpg',
-    author: {
-      name: 'Abena Asante',
-      avatar: '/images/doc-jcf.jpg',
-      role: 'Senior Teacher & Programme Director',
-    },
     date: '2026-01-28',
     category: 'Community Service',
     tags: ['service', 'giving', 'community', 'spiritual growth', 'ubuntu'],
@@ -251,11 +242,6 @@ export const blogPosts: BlogPost[] = [
 <h3>4. Find community</h3>
 <p>This is perhaps the single most underrated factor. Practitioners who meditate within a community — even via a weekly group session — maintain their practice at dramatically higher rates than solo practitioners. Our centres hold weekly group sits open to all. Come once. Feel the difference.</p>`,
     image: '/images/student-in-posture.jpg',
-    author: {
-      name: 'Kofi Mensah',
-      avatar: '/images/doc-jcf.jpg',
-      role: 'Youth Coordinator & Meditation Teacher',
-    },
     date: '2026-01-10',
     category: 'Meditation',
     tags: ['meditation', 'habit', 'daily practice', 'beginners', 'mindfulness'],
@@ -276,11 +262,6 @@ export const blogPosts: BlogPost[] = [
 <h3>Creating your own collective</h3>
 <p>You do not need a large retreat to access this. Inviting two or three friends to sit together once a week creates a meaningful field of collective intention. Begin simply: agree on a time, sit for 20 minutes together, and close with a brief sharing. The JCF centres are also always open for community sits — check our events page for scheduled group meditation sessions near you.</p>`,
     image: '/images/studentslistenning2.jpg',
-    author: {
-      name: 'Dr. Baffour Jan',
-      avatar: '/images/doc-potrait.jpg',
-      role: 'Founder & Spiritual Director',
-    },
     date: '2025-12-05',
     category: 'Spiritual Growth',
     tags: ['group meditation', 'collective consciousness', 'retreat', 'science', 'community'],
@@ -301,11 +282,6 @@ export const blogPosts: BlogPost[] = [
 <p>Each child in the programme is paired with a volunteer mentor — not to instruct, but to be present. Mentors model attentiveness, curiosity, and stillness. In the JCF tradition, we believe that consciousness is caught more than it is taught, and the mentor relationship is where that transmission happens most naturally.</p>
 <p>If you feel drawn to support this work — whether through volunteering as a mentor, donating educational materials, or simply spreading the word — visit the Guide the Children cause page to learn more.</p>`,
     image: '/images/students.jpg',
-    author: {
-      name: 'Abena Asante',
-      avatar: '/images/doc-jcf.jpg',
-      role: 'Senior Teacher & Programme Director',
-    },
     date: '2025-11-18',
     category: 'Community Service',
     tags: ['children', 'mentorship', 'consciousness', 'youth', 'Guide the Children'],
@@ -326,11 +302,6 @@ export const blogPosts: BlogPost[] = [
 <p>Each evening, write three specific things you are grateful for — not general things ("my health") but specific things ("the conversation with my colleague this afternoon that helped me see the problem differently"). Specificity is what produces the neurological benefit. After 21 days, notice what has shifted.</p>
 <p>We invite you to share your experience with our community. The JCF online forum — accessible to all centre members — has an active gratitude thread where hundreds of practitioners have been posting daily for over two years.</p>`,
     image: '/images/exercise.jpg',
-    author: {
-      name: 'Kofi Mensah',
-      avatar: '/images/doc-jcf.jpg',
-      role: 'Youth Coordinator & Meditation Teacher',
-    },
     date: '2025-10-22',
     category: 'Meditation',
     tags: ['gratitude', 'wellbeing', 'positive psychology', 'daily practice', 'neuroscience'],

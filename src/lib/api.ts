@@ -91,15 +91,11 @@ function transformBlogPost(raw: any): BlogPost {
     excerpt: raw.excerpt ?? '',
     content: raw.content ?? '',
     image: raw.image_url ?? raw.image ?? '/images/masterseated.jpg',
-    author: {
-      name: raw.author?.name ?? '',
-      avatar: raw.author?.avatar_url ?? raw.author?.avatar ?? '/images/doc-jcf.jpg',
-      role: raw.author?.role ?? '',
-    },
     date: raw.published_date ?? raw.date ?? '',
     category: raw.category_name ?? '',
     tags: raw.tags ?? [],
     readTime: raw.read_time ?? '',
+    videoLink: raw.video_link ?? undefined,
   };
 }
 

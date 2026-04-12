@@ -22,15 +22,12 @@ export interface BlogPost {
   excerpt: string;
   content: string;
   image: string;
-  author: {
-    name: string;
-    avatar: string;
-    role: string;
-  };
   date: string;
   category: string;
   tags: string[];
   readTime: string;
+  /** YouTube short-link if this article was transcribed from a video. */
+  videoLink?: string;
 }
 
 export interface Cause {
