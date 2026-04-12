@@ -1,9 +1,10 @@
 import Image from 'next/image';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 
 export default function WisdomQuote() {
   return (
     <section className="bg-white py-24 lg:py-32">
-      <div className="mx-auto max-w-3xl px-5 sm:px-8 text-center">
+      <ScrollReveal animation="scale-up" duration={0.9} className="mx-auto max-w-3xl px-5 sm:px-8 text-center">
         {/* Decorative mark */}
         <div className="mx-auto mb-8 h-px w-12 bg-[#D4A843]/50" />
 
@@ -35,7 +36,7 @@ export default function WisdomQuote() {
         </blockquote>
 
         <div className="mx-auto mt-8 h-px w-12 bg-[#D4A843]/50" />
-      </div>
+      </ScrollReveal>
     </section>
   );
 }

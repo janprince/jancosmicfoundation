@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
   --color-primary: #2D6A4F;
@@ -116,6 +117,146 @@ html {
   bottom: -50px;
   left: -50px;
   pointer-events: none;
+}
+
+/* ── Blog prose styling ── */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  color: #000B58;
+  font-weight: 600;
+}
+
+.prose h2 {
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+}
+
+.prose h3 {
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+}
+
+.prose a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(var(--color-primary-rgb), 0.3);
+  transition: text-decoration-color 0.2s;
+}
+
+.prose a:hover {
+  text-decoration-color: var(--color-primary);
+}
+
+.prose blockquote {
+  border-left-color: var(--color-secondary);
+  color: #000B58;
+  font-style: italic;
+}
+
+.prose strong {
+  color: #000B58;
+}
+
+.prose img {
+  border-radius: 0.75rem;
+}
+
+/* ── Scroll-reveal animations ── */
+
+/* Base hidden state for individual elements */
+.sr {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sr-fade-up    { transform: translateY(40px); }
+.sr-fade-down  { transform: translateY(-40px); }
+.sr-fade-left  { transform: translateX(50px); }
+.sr-fade-right { transform: translateX(-50px); }
+.sr-fade-in    { transform: none; }
+.sr-scale-up   { transform: scale(0.92); }
+
+/* Revealed state */
+.sr.sr-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger parent — children animate individually */
+.sr-stagger-parent > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sr-stagger-parent > .sr-child-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Hero entrance animations (play on load, not scroll) ── */
+
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes heroScaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.hero-animate {
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-animate-1 { animation: heroFadeUp 0.8s 0.1s forwards cubic-bezier(0.22, 1, 0.36, 1); }
+.hero-animate-2 { animation: heroFadeUp 0.8s 0.25s forwards cubic-bezier(0.22, 1, 0.36, 1); }
+.hero-animate-3 { animation: heroFadeUp 0.8s 0.4s forwards cubic-bezier(0.22, 1, 0.36, 1); }
+.hero-animate-4 { animation: heroFadeUp 0.8s 0.55s forwards cubic-bezier(0.22, 1, 0.36, 1); }
+.hero-animate-5 { animation: heroFadeUp 0.8s 0.7s forwards cubic-bezier(0.22, 1, 0.36, 1); }
+
+.hero-mosaic-animate {
+  opacity: 0;
+  animation: heroScaleIn 1s 0.3s forwards cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-mosaic-item {
+  opacity: 0;
+  animation: heroFadeUp 0.7s forwards cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-mosaic-item:nth-child(1) { animation-delay: 0.4s; }
+.hero-mosaic-item:nth-child(2) { animation-delay: 0.55s; }
+.hero-mosaic-item:nth-child(3) { animation-delay: 0.7s; }
+.hero-mosaic-item:nth-child(4) { animation-delay: 0.85s; }
+.hero-mosaic-item:nth-child(5) { animation-delay: 1.0s; }
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .sr,
+  .sr-stagger-parent > *,
+  .hero-animate,
+  .hero-mosaic-animate,
+  .hero-mosaic-item {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 /* Dropdown enter animation */

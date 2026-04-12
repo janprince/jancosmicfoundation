@@ -6,9 +6,9 @@ import WisdomQuote from '@/components/home/WisdomQuote';
 import FeaturedCauses from '@/components/home/FeaturedCauses';
 import UpcomingEvents from '@/components/home/UpcomingEvents';
 import RecentBlog from '@/components/home/RecentBlog';
-import VolunteerCTA from '@/components/home/VolunteerCTA';
 import CentresPreview from '@/components/home/CentresPreview';
 import Newsletter from '@/components/ui/Newsletter';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 
 export const metadata: Metadata = {
     title: "Jan Cosmic Foundation | Awakening Consciousness & Self-Realization",
@@ -26,24 +26,25 @@ export default function HomePage() {
       <FeaturedCauses />
       <UpcomingEvents />
       <RecentBlog />
-      <VolunteerCTA />
       <CentresPreview />
 
       {/* Newsletter */}
       <section className="py-24 lg:py-32" style={{ background: '#000B58' }}>
         <div className="mx-auto max-w-2xl px-5 sm:px-8">
-          <div className="mb-8 text-center">
-            <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-[#D4A843]/90">
-              Stay Connected
-            </p>
-          </div>
-          <Newsletter
-            dark
-            heading="Stay in the Loop"
-            description="Receive inspiring stories, event announcements, and programme updates from the Jan Cosmic Foundation."
-            placeholder="Enter your email address"
-            buttonLabel="Subscribe"
-          />
+          <ScrollReveal animation="fade-up">
+            <div className="mb-8 text-center">
+              <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-[#D4A843]/90">
+                Stay Connected
+              </p>
+            </div>
+            <Newsletter
+              dark
+              heading="Stay in the Loop"
+              description="Receive inspiring stories, event announcements, and programme updates from the Jan Cosmic Foundation."
+              placeholder="Enter your email address"
+              buttonLabel="Subscribe"
+            />
+          </ScrollReveal>
         </div>
       </section>
     </main>

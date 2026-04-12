@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getBlogPosts } from '@/lib/api';
 import BlogCard from '@/components/cards/BlogCard';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 
 export default async function RecentBlog() {
   const posts = (await getBlogPosts()).slice(0, 3);
@@ -9,7 +10,7 @@ export default async function RecentBlog() {
     <section className="bg-[#FDFBF7] py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         {/* Header */}
-        <div className="mb-14 text-center">
+        <ScrollReveal animation="fade-up" className="mb-14 text-center">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[#8a6c1a]">
             From Our Blog
           </p>
@@ -20,23 +21,25 @@ export default async function RecentBlog() {
             Insights, testimonials, and reflections from our community of
             seekers.
           </p>
-        </div>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ScrollReveal staggerChildren={0.15} className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
             <BlogCard key={post.id} post={post} />
           ))}
-        </div>
+        </ScrollReveal>
 
-        <div className="mt-14 text-center">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 rounded-full border-2 border-primary px-8 py-3 text-sm font-medium text-primary transition-all duration-300 hover:bg-primary hover:text-white"
-          >
-            Read More Stories
-            <span aria-hidden="true">&rarr;</span>
-          </Link>
-        </div>
+        <ScrollReveal animation="fade-up" delay={0.3}>
+          <div className="mt-14 text-center">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-primary px-8 py-3 text-sm font-medium text-primary transition-all duration-300 hover:bg-primary hover:text-white"
+            >
+              Read More Stories
+              <span aria-hidden="true">&rarr;</span>
+            </Link>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

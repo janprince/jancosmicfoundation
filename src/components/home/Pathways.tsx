@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { HiOutlineBookOpen, HiOutlineCalendarDays, HiOutlineHeart, HiOutlineMapPin } from 'react-icons/hi2';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 
 const pathways = [
   {
@@ -37,7 +38,7 @@ export default function Pathways() {
     <section className="bg-[#F2EFE9] py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         {/* Header */}
-        <div className="mb-16 text-center">
+        <ScrollReveal animation="fade-up" className="mb-16 text-center">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-[#8a6c1a]">
             Your Path
           </p>
@@ -48,10 +49,10 @@ export default function Pathways() {
             Whether you are seeking wisdom, community, or purpose — there is a
             place for you here.
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* Cards */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <ScrollReveal staggerChildren={0.12} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {pathways.map((item) => (
             <Link
               key={item.href}
@@ -72,7 +73,7 @@ export default function Pathways() {
               </p>
             </Link>
           ))}
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

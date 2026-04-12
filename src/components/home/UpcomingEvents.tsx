@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getEvents } from '@/lib/api';
 import EventCard from '@/components/cards/EventCard';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 
 export default async function UpcomingEvents() {
   const upcomingEvents = (await getEvents('upcoming')).slice(0, 3);
@@ -9,7 +10,7 @@ export default async function UpcomingEvents() {
     <section className="bg-white py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         {/* Header */}
-        <div className="mb-14 text-center">
+        <ScrollReveal animation="fade-up" className="mb-14 text-center">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[#8a6c1a]">
             What&apos;s Coming
           </p>
@@ -20,41 +21,45 @@ export default async function UpcomingEvents() {
             Join us for transformative gatherings, retreats, and community
             celebrations.
           </p>
-        </div>
+        </ScrollReveal>
 
         {upcomingEvents.length > 0 ? (
           <>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <ScrollReveal staggerChildren={0.15} className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {upcomingEvents.map((event) => (
                 <EventCard key={event.id} event={event} />
               ))}
-            </div>
+            </ScrollReveal>
 
-            <div className="mt-14 text-center">
-              <Link
-                href="/events"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-primary px-8 py-3 text-sm font-medium text-primary transition-all duration-300 hover:bg-primary hover:text-white"
-              >
-                View All Events
-                <span aria-hidden="true">&rarr;</span>
-              </Link>
-            </div>
+            <ScrollReveal animation="fade-up" delay={0.3}>
+              <div className="mt-14 text-center">
+                <Link
+                  href="/events"
+                  className="inline-flex items-center gap-2 rounded-full border-2 border-primary px-8 py-3 text-sm font-medium text-primary transition-all duration-300 hover:bg-primary hover:text-white"
+                >
+                  View All Events
+                  <span aria-hidden="true">&rarr;</span>
+                </Link>
+              </div>
+            </ScrollReveal>
           </>
         ) : (
-          <div className="py-16 text-center">
-            <p className="text-base text-[#000B58]">
-              No upcoming events right now
-            </p>
-            <p className="mt-2 text-sm text-[#1a1a1a]/80">
-              Check back soon — more events are on the way.
-            </p>
-            <Link
-              href="/events"
-              className="mt-6 inline-block text-sm font-medium text-primary underline underline-offset-4 decoration-[var(--color-primary)]/30 transition-colors duration-300 hover:decoration-[var(--color-primary)]"
-            >
-              Browse past events
-            </Link>
-          </div>
+          <ScrollReveal animation="fade-in">
+            <div className="py-16 text-center">
+              <p className="text-base text-[#000B58]">
+                No upcoming events right now
+              </p>
+              <p className="mt-2 text-sm text-[#1a1a1a]/80">
+                Check back soon — more events are on the way.
+              </p>
+              <Link
+                href="/events"
+                className="mt-6 inline-block text-sm font-medium text-primary underline underline-offset-4 decoration-[var(--color-primary)]/30 transition-colors duration-300 hover:decoration-[var(--color-primary)]"
+              >
+                Browse past events
+              </Link>
+            </div>
+          </ScrollReveal>
         )}
       </div>
     </section>

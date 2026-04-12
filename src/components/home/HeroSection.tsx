@@ -35,16 +35,16 @@ export default function HeroSection() {
         <div className="relative z-10 mx-auto hidden max-w-7xl lg:flex lg:items-center lg:gap-12 lg:px-12 lg:py-36 xl:gap-16 xl:py-40">
           {/* Text column */}
           <div className="w-1/2 shrink-0">
-            <p className="mb-6 text-xs font-medium uppercase tracking-[0.25em] text-[#D4A843]">
+            <p className="hero-animate hero-animate-1 mb-6 text-xs font-medium uppercase tracking-[0.25em] text-[#D4A843]">
               Jan Cosmic Foundation
             </p>
 
-            <h1 className="text-5xl font-semibold leading-[1.12] text-white xl:text-6xl">
+            <h1 className="hero-animate hero-animate-2 text-5xl font-semibold leading-[1.12] text-white xl:text-6xl">
               Revealing the{' '}
               <span className="text-[#D4A843]">God in You</span>
             </h1>
 
-            <p className="mt-7 max-w-lg text-lg leading-relaxed text-white/90">
+            <p className="hero-animate hero-animate-3 mt-7 max-w-lg text-lg leading-relaxed text-white/90">
               A global movement guiding individuals beyond the limits of
               identity, into direct self-realization, inner peace, and true
               freedom — through the teachings of Dr. Baffour Jan.
@@ -61,7 +61,7 @@ export default function HeroSection() {
               through the teachings of Dr. Baffour Jan.
             </p> */}
 
-            <blockquote className="mt-8 border-l-2 border-[#D4A843]/30 pl-5">
+            <blockquote className="hero-animate hero-animate-4 mt-8 border-l-2 border-[#D4A843]/30 pl-5">
               <p className="text-base italic leading-relaxed text-white/80">
                 &ldquo;The Jan Cosmic Foundation is an expression of divine
                 will.&rdquo;
@@ -71,7 +71,7 @@ export default function HeroSection() {
               </cite>
             </blockquote>
 
-            <div className="mt-10 flex items-center gap-4">
+            <div className="hero-animate hero-animate-5 mt-10 flex items-center gap-4">
               <Link
                 href="/about"
                 className="rounded-sm border border-white/30 px-7 py-3 text-sm font-medium text-white transition-colors duration-300 hover:bg-white/10"
@@ -89,7 +89,7 @@ export default function HeroSection() {
           </div>
 
           {/* Photo mosaic — 2-column asymmetric grid */}
-          <div className="w-1/2">
+          <div className="hero-mosaic-animate w-1/2">
             <div className="grid grid-cols-2 gap-3">
               {/* Left column — 2 images stacked */}
               <div className="flex flex-col gap-3">
@@ -155,16 +155,16 @@ export default function HeroSection() {
         <div className="relative z-10 flex min-h-screen flex-col justify-center px-5 pt-24 pb-12 sm:px-8 lg:hidden">
           {/* Text content */}
           <div className="mx-auto w-full max-w-xl text-center">
-            <p className="mb-6 text-xs font-medium uppercase tracking-[0.25em] text-[#D4A843]">
+            <p className="hero-animate hero-animate-1 mb-6 text-xs font-medium uppercase tracking-[0.25em] text-[#D4A843]">
               Jan Cosmic Foundation
             </p>
 
-            <h1 className="text-4xl font-semibold leading-[1.15] text-white sm:text-5xl">
+            <h1 className="hero-animate hero-animate-2 text-4xl font-semibold leading-[1.15] text-white sm:text-5xl">
               Revealing the{' '}
               <span className="text-[#D4A843]">God in You</span>
             </h1>
 
-            <p className="mx-auto mt-6 max-w-md text-base leading-relaxed text-white/90">
+            <p className="hero-animate hero-animate-3 mx-auto mt-6 max-w-md text-base leading-relaxed text-white/90">
               A global movement guiding individuals beyond the limits of
               identity, into direct self-realization, inner peace, and true
               freedom — through the teachings of Dr. Baffour Jan.
@@ -181,7 +181,7 @@ export default function HeroSection() {
               through the teachings of Dr. Baffour Jan.
             </p> */}
 
-            <blockquote className="mx-auto mt-8 max-w-sm border-t border-white/10 pt-6">
+            <blockquote className="hero-animate hero-animate-4 mx-auto mt-8 max-w-sm border-t border-white/10 pt-6">
               <p className="text-sm italic leading-relaxed text-white/80">
                 &ldquo;The Jan Cosmic Foundation is an expression of divine
                 will.&rdquo;
@@ -191,7 +191,7 @@ export default function HeroSection() {
               </cite>
             </blockquote>
 
-            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+            <div className="hero-animate hero-animate-5 mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link
                 href="/about"
                 className="rounded-sm border border-white/30 px-7 py-3 text-sm font-medium text-white transition-colors duration-300 hover:bg-white/10"

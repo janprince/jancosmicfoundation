@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 
 export default function AboutSnippet() {
   return (
@@ -7,7 +8,7 @@ export default function AboutSnippet() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-20">
           {/* Image */}
-          <div className="w-full shrink-0 lg:w-[42%]">
+          <ScrollReveal animation="fade-right" className="w-full shrink-0 lg:w-[42%]">
             <div className="relative h-80 w-full overflow-hidden rounded-2xl sm:h-[420px]">
               <Image
                 src="/images/masterseated4.jpg"
@@ -17,10 +18,10 @@ export default function AboutSnippet() {
                 sizes="(max-width: 1024px) 100vw, 42vw"
               />
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Text */}
-          <div className="w-full lg:w-[58%]">
+          <ScrollReveal animation="fade-left" delay={0.15} className="w-full lg:w-[58%]">
             <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[#8a6c1a]">
               Who We Are
             </p>
@@ -52,7 +53,7 @@ export default function AboutSnippet() {
               Learn More
               <span aria-hidden="true">&rarr;</span>
             </Link>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
