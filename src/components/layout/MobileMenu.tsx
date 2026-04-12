@@ -176,11 +176,7 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
               <Link
                 href="/donate"
                 onClick={onClose}
-                className={[
-                  'block w-full text-center py-3 px-6 rounded-xl text-sm font-semibold text-white',
-                  'transition-all duration-200 hover:shadow-lg active:scale-[0.98]',
-                ].join(' ')}
-                style={{ backgroundColor: 'var(--color-primary)' }}
+                className="block w-full text-center py-3 px-6 rounded-xl text-sm font-semibold text-[#000B58] bg-[#D4A843] transition-all duration-200 hover:bg-[#c49a38] hover:shadow-lg active:scale-[0.98]"
               >
                 Donate Now
               </Link>

@@ -228,11 +228,7 @@ export default function Navbar() {
               {/* Donate CTA button */}
               <Link
                 href="/donate"
-                className={[
-                  'ml-3 px-5 py-2 rounded-lg text-sm font-semibold text-white',
-                  'transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-100',
-                ].join(' ')}
-                style={{ backgroundColor: 'var(--color-primary)' }}
+                className="ml-3 inline-flex items-center gap-2 rounded-lg px-5 py-2 text-sm font-semibold text-[#000B58] bg-[#D4A843] transition-all duration-200 hover:bg-[#c49a38] hover:shadow-lg hover:scale-105 active:scale-100"
               >
                 Donate
               </Link>
