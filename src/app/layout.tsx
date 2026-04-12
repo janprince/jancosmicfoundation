@@ -13,6 +13,7 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://jancosmicfoundation.org"),
   title: {
     default: "Jan Cosmic Foundation - Awakening Humanity to Self-Realization",
     template: "%s | Jan Cosmic Foundation",
@@ -38,6 +39,9 @@ export const metadata: Metadata = {
     url: "https://jancosmicfoundation.org",
     siteName: "Jan Cosmic Foundation",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
   },
 };
 

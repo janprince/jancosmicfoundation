@@ -19,13 +19,48 @@ function getYouTubeId(url: string): string | null {
   return longMatch?.[1] ?? null;
 }
 
+const SITE_URL = 'https://jancosmicfoundation.org';
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = await getBlogPostBySlug(slug);
   if (!post) return { title: 'Post Not Found' };
+
+  const url = `${SITE_URL}/blog/${post.slug}`;
+  const description = post.excerpt.length > 160
+    ? post.excerpt.slice(0, 157) + '...'
+    : post.excerpt;
+
   return {
     title: post.title,
-    description: post.excerpt,
+    description,
+    keywords: [post.category, ...post.tags],
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title: post.title,
+      description,
+      url,
+      type: 'article',
+      publishedTime: post.date,
+      section: post.category,
+      tags: post.tags,
+      images: [
+        {
+          url: post.image,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description,
+      images: [post.image],
+    },
   };
 }
 
@@ -50,8 +85,51 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
     .filter((p) => p.slug !== post.slug)
     .slice(0, 3);
 
+  const absoluteImage = post.image.startsWith('http')
+    ? post.image
+    : `${SITE_URL}${post.image}`;
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt,
+    image: absoluteImage,
+    datePublished: post.date,
+    url: `${SITE_URL}/blog/${post.slug}`,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Jan Cosmic Foundation',
+      url: SITE_URL,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/images/logo.png`,
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${SITE_URL}/blog/${post.slug}`,
+    },
+    ...(videoId
+      ? {
+          video: {
+            '@type': 'VideoObject',
+            name: post.title,
+            description: post.excerpt,
+            thumbnailUrl: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
+            embedUrl: `https://www.youtube-nocookie.com/embed/${videoId}`,
+            uploadDate: post.date,
+          },
+        }
+      : {}),
+  };
+
   return (
     <main style={{ backgroundColor: '#FDFBF7' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <PageHero title={post.title} subtitle={post.excerpt} />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
