@@ -42,7 +42,45 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    title: "Jan Cosmic Foundation — Awakening Humanity to Self-Realization",
+    description:
+      "A spiritual organisation founded by Dr. Baffour Jan, dedicated to guiding individuals toward higher consciousness, inner freedom, and self-realization.",
   },
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://jancosmicfoundation.org/#organization",
+  name: "Jan Cosmic Foundation",
+  legalName: "Jan Cosmic Foundation",
+  url: "https://jancosmicfoundation.org",
+  logo: "https://jancosmicfoundation.org/images/logo.png",
+  founder: {
+    "@type": "Person",
+    name: "Dr. Baffour Jan",
+    url: "https://drbaffourjan.com",
+  },
+  foundingDate: "2021",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Franko Estate",
+    addressLocality: "Kwabenya",
+    addressRegion: "Greater Accra",
+    addressCountry: "GH",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+233-55-059-0054",
+    email: "info@jancosmicfoundation.org",
+    contactType: "general",
+  },
+  sameAs: [
+    "https://facebook.com/jancosmicfoundation",
+    "https://instagram.com/jancosmicfoundation",
+    "https://youtube.com/jancosmicfoundation",
+    "https://twitter.com/jancosmicfoundation",
+  ],
 };
 
 export default function RootLayout({
@@ -53,6 +91,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={raleway.variable}>
       <body className="font-sans antialiased bg-[#FDFBF7] text-[#1a1a1a]">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-lg focus:text-sm focus:font-medium focus:shadow-lg"
@@ -63,7 +105,9 @@ export default function RootLayout({
         <main id="main-content">{children}</main>
         <Footer />
       </body>
-      <GoogleAnalytics gaId="G-5Q0ZCXVWPM" />
+      {process.env.NEXT_PUBLIC_GA_ID && (
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+      )}
     </html>
   );
 }

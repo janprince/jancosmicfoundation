@@ -28,6 +28,9 @@ body {
   background: var(--color-bg-light);
   color: var(--color-text);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  /* ScrollReveal slides elements horizontally during animation;
+     overflow-x: clip prevents that from creating a scrollbar. */
+  overflow-x: clip;
 }
 
 /* Global focus indicators for keyboard navigation */

@@ -54,7 +54,9 @@ async function fetchWithFallback<T>(
   try {
     return await fetchAPI<T>(path, options);
   } catch {
-    console.warn(`[api] ${API_URL}${path} unreachable — using fallback data`);
+    if (process.env.NODE_ENV !== 'production') {
+      console.warn(`[api] ${API_URL}${path} unreachable — using fallback data`);
+    }
     return fallback;
   }
 }

@@ -11,14 +11,13 @@ import Newsletter from '@/components/ui/Newsletter';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 
 export const metadata: Metadata = {
-    title: "Jan Cosmic Foundation | Awakening Consciousness & Self-Realization",
-    description:
-        "Jan Cosmic Foundation (JCF) is a global spiritual organization founded by Dr. Baffour Jan, dedicated to guiding seekers toward higher consciousness, inner freedom, and self-realization through transformative teachings, retreats, counseling, and spiritual practices.",
+  description:
+    "Jan Cosmic Foundation is the formal home of nearly four decades of teaching by Dr. Baffour Jan. Headquartered in Accra, we run weekly sittings, annual retreats, and the InnerSpace course for sincere seekers.",
 };
 
 export default function HomePage() {
   return (
-    <main className="overflow-x-clip">
+    <main>
       <HeroSection />
       <AboutSnippet />
       <Pathways />
