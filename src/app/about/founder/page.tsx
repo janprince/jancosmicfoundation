@@ -3,6 +3,7 @@ import Image from 'next/image';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Button from '@/components/ui/Button';
+import { siteConfig } from '@/lib/site-config';
 
 const milestones = [
   {
@@ -156,9 +157,9 @@ export default function FounderPage() {
               {/* Key stats */}
               <div className="mt-10 grid grid-cols-3 gap-4">
                 {[
-                  { value: '38+', label: 'Years Teaching' },
-                  { value: '30K+', label: 'Lives Touched' },
-                  { value: '1K+', label: 'Active Students' },
+                  { value: siteConfig.stats.yearsTeaching, label: 'Years Teaching' },
+                  { value: siteConfig.stats.lives, label: 'Lives Touched' },
+                  { value: siteConfig.stats.countries, label: 'Countries' },
                 ].map((stat) => (
                   <div key={stat.label} className="text-center">
                     <p className="text-2xl sm:text-3xl font-semibold" style={{ color: 'var(--color-primary)' }}>
@@ -345,10 +346,10 @@ export default function FounderPage() {
             {[
               { value: '50+', label: 'Recorded Talks' },
               { value: '20+', label: 'Guided Meditations' },
-              { value: '20+', label: 'Countries Reached' },
-              { value: '4', label: 'JCF Centres' },
+              { value: siteConfig.stats.countries, label: 'Countries Reached' },
+              { value: siteConfig.stats.centres, label: 'JCF Centres' },
               { value: '3', label: 'Institutions Founded' },
-              { value: '1K+', label: 'Active Students' },
+              { value: siteConfig.stats.lives, label: 'Lives Touched' },
             ].map((stat) => (
               <div
                 key={stat.label}

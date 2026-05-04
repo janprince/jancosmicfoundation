@@ -47,19 +47,19 @@ export const impactStats: ImpactStat[] = [
     label: 'of Spiritual Teaching',
   },
   {
-    value: 20000,
-    suffix: '+',
-    label: 'Lives Transformed',
+    value: 4000,
+    suffix: '',
+    label: 'Lives',
   },
   {
-    value: 3,
+    value: 9,
     suffix: '+',
     label: 'Countries Reached',
   },
   {
-    value: 5,
+    value: 8,
     suffix: '+',
-    label: 'Active Centres',
+    label: 'Centres & Communities',
   },
 ];
 
@@ -792,7 +792,7 @@ export const teamMembers: TeamMember[] = [
     id: 'team-001',
     name: 'Dr. Baffour Jan',
     role: 'Founder & Spiritual Director',
-    bio: 'Dr. Baffour Jan is a spiritual master, mystic, and teacher who founded the Jan Cosmic Foundation in Accra in 1988. For over 38 years he has guided seekers toward self-realization, teaching that the evolution of consciousness and selfless service are inseparable dimensions of the same path. Under his guidance, the JCF has grown from a small meditation circle in Airport Residential Area to an international community spanning five countries and touching over 20,000 lives. He is the author of three books on consciousness and higher living, a deeply sought-after retreat teacher, and above all, a living example of the inner freedom he points others toward.',
+    bio: 'Dr. Baffour Jan is a spiritual master, mystic, and teacher who founded the Jan Cosmic Foundation in Accra in 2021 to formalise nearly four decades of teaching work. He has guided seekers toward self-realization since 1986, teaching that the evolution of consciousness and selfless service are inseparable dimensions of the same path. Under his guidance, the JCF community spans 9+ countries and touches roughly 4,000 lives. He is a deeply sought-after retreat teacher and, above all, a living example of the inner freedom he points others toward.',
     image: '/images/doc-potrait.jpg',
   },
   {

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import PageHero from '@/components/layout/PageHero';
 import { getCentres } from '@/lib/api';
+import { siteConfig } from '@/lib/site-config';
 import {
   FaTelegram,
   FaWhatsapp,
@@ -23,7 +24,7 @@ const communityLinks = [
     title: 'Telegram Channel',
     description:
       'Official announcements, teachings, and updates from the foundation.',
-    href: 'https://t.me/jancosmicfoundation',
+    href: siteConfig.social.telegramChannel,
     icon: FaTelegram,
     color: '#229ED9',
   },
@@ -31,7 +32,7 @@ const communityLinks = [
     title: 'Telegram Group',
     description:
       'Connect with fellow seekers. Discuss teachings, share insights, and support one another.',
-    href: 'https://t.me/jancosmicfoundationchat',
+    href: siteConfig.social.telegramGroup,
     icon: FaTelegram,
     color: '#229ED9',
   },
@@ -39,7 +40,7 @@ const communityLinks = [
     title: 'WhatsApp Channel',
     description:
       'Receive updates and announcements directly on WhatsApp.',
-    href: 'https://whatsapp.com/channel/jancosmicfoundation',
+    href: siteConfig.social.whatsappChannel,
     icon: FaWhatsapp,
     color: '#25D366',
   },
@@ -47,7 +48,7 @@ const communityLinks = [
     title: 'WhatsApp Group',
     description:
       'For members of the foundation. A space for coordination, fellowship, and community.',
-    href: 'https://chat.whatsapp.com/jancosmicfoundation',
+    href: siteConfig.social.whatsappGroup,
     icon: FaWhatsapp,
     color: '#25D366',
     badge: 'Members Only',
@@ -55,30 +56,10 @@ const communityLinks = [
 ];
 
 const socialLinks = [
-  {
-    label: 'Facebook',
-    href: 'https://facebook.com/jancosmicfoundation',
-    icon: FaFacebookF,
-    color: '#1877F2',
-  },
-  {
-    label: 'Instagram',
-    href: 'https://instagram.com/jancosmicfoundation',
-    icon: FaInstagram,
-    color: '#E4405F',
-  },
-  {
-    label: 'YouTube',
-    href: 'https://youtube.com/jancosmicfoundation',
-    icon: FaYoutube,
-    color: '#FF0000',
-  },
-  {
-    label: 'X (Twitter)',
-    href: 'https://twitter.com/jancosmicfoundation',
-    icon: FaXTwitter,
-    color: '#000000',
-  },
+  { label: 'Facebook', href: siteConfig.social.facebook, icon: FaFacebookF, color: '#1877F2' },
+  { label: 'Instagram', href: siteConfig.social.instagram, icon: FaInstagram, color: '#E4405F' },
+  { label: 'YouTube', href: siteConfig.social.youtube, icon: FaYoutube, color: '#FF0000' },
+  { label: 'X (Twitter)', href: siteConfig.social.x, icon: FaXTwitter, color: '#000000' },
 ];
 
 export default async function JoinPage() {

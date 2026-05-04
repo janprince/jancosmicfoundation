@@ -4,6 +4,7 @@ import SectionHeader from '@/components/ui/SectionHeader';
 import Button from '@/components/ui/Button';
 import CentreCard from '@/components/cards/CentreCard';
 import { getCentres } from '@/lib/api';
+import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Our Centres',
@@ -15,10 +16,10 @@ export default async function CentresPage() {
   const centres = await getCentres();
 
   const stats = [
-    { value: '7+', label: 'Active Centres' },
-    { value: '3+', label: 'Countries' },
-    { value: '1,400+', label: 'Members Worldwide' },
-    { value: '38+', label: 'Years of Service' },
+    { value: siteConfig.stats.centres, label: 'Centres & Communities' },
+    { value: siteConfig.stats.countries, label: 'Countries' },
+    { value: siteConfig.stats.lives, label: 'Lives' },
+    { value: siteConfig.stats.yearsTeaching, label: 'Years of Service' },
   ];
 
   return (

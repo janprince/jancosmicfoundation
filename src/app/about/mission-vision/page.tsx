@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Button from '@/components/ui/Button';
+import { siteConfig } from '@/lib/site-config';
 
 const pillars = [
   {
@@ -46,7 +47,7 @@ const pillars = [
     description:
       'The JCF community is steadily growing beyond its founding home in Ghana. Our centres connect seekers and practitioners, facilitating cultural exchange and the spread of a wisdom tradition rooted in African spiritual heritage.',
     highlights: [
-      '5+ Active Centres',
+      `${siteConfig.stats.centres} Centres & Communities`,
       'Community Programmes',
       'Retreat Hosting',
       'Growing Partnerships',

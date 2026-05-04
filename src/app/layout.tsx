@@ -4,6 +4,7 @@ import { Raleway } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { siteConfig, socialUrlsForSchema } from "@/lib/site-config";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -51,36 +52,31 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://jancosmicfoundation.org/#organization",
-  name: "Jan Cosmic Foundation",
-  legalName: "Jan Cosmic Foundation",
-  url: "https://jancosmicfoundation.org",
-  logo: "https://jancosmicfoundation.org/images/logo.png",
+  "@id": `${siteConfig.url}/#organization`,
+  name: siteConfig.name,
+  legalName: siteConfig.name,
+  url: siteConfig.url,
+  logo: `${siteConfig.url}/images/logo.png`,
   founder: {
     "@type": "Person",
     name: "Dr. Baffour Jan",
     url: "https://drbaffourjan.com",
   },
-  foundingDate: "2021",
+  foundingDate: siteConfig.founded,
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Franko Estate",
-    addressLocality: "Kwabenya",
-    addressRegion: "Greater Accra",
-    addressCountry: "GH",
+    streetAddress: siteConfig.address.streetAddress,
+    addressLocality: siteConfig.address.locality,
+    addressRegion: siteConfig.address.region,
+    addressCountry: siteConfig.address.country,
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+233-55-059-0054",
-    email: "info@jancosmicfoundation.org",
+    telephone: siteConfig.contact.phoneE164,
+    email: siteConfig.contact.email,
     contactType: "general",
   },
-  sameAs: [
-    "https://facebook.com/jancosmicfoundation",
-    "https://instagram.com/jancosmicfoundation",
-    "https://youtube.com/jancosmicfoundation",
-    "https://twitter.com/jancosmicfoundation",
-  ],
+  sameAs: socialUrlsForSchema,
 };
 
 export default function RootLayout({

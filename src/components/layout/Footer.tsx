@@ -7,6 +7,7 @@ import {
   FaYoutube,
 } from 'react-icons/fa6';
 import NewsletterForm from './NewsletterForm';
+import { siteConfig } from '@/lib/site-config';
 
 const quickLinks = [
   { label: 'Home', href: '/' },
@@ -23,26 +24,10 @@ const involvedLinks = [
 ];
 
 const socialLinks = [
-  {
-    label: 'Facebook',
-    href: 'https://facebook.com/jancosmicfoundation',
-    Icon: FaFacebookF,
-  },
-  {
-    label: 'X (Twitter)',
-    href: 'https://twitter.com/jancosmicfoundation',
-    Icon: FaXTwitter,
-  },
-  {
-    label: 'Instagram',
-    href: 'https://instagram.com/jancosmicfoundation',
-    Icon: FaInstagram,
-  },
-  {
-    label: 'YouTube',
-    href: 'https://youtube.com/jancosmicfoundation',
-    Icon: FaYoutube,
-  },
+  { label: 'Facebook', href: siteConfig.social.facebook, Icon: FaFacebookF },
+  { label: 'X (Twitter)', href: siteConfig.social.x, Icon: FaXTwitter },
+  { label: 'Instagram', href: siteConfig.social.instagram, Icon: FaInstagram },
+  { label: 'YouTube', href: siteConfig.social.youtube, Icon: FaYoutube },
 ];
 
 export default function Footer() {
