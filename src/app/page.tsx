@@ -3,6 +3,7 @@ import HeroSection from '@/components/home/HeroSection';
 import AboutSnippet from '@/components/home/AboutSnippet';
 import Pathways from '@/components/home/Pathways';
 import WisdomQuote from '@/components/home/WisdomQuote';
+import InnerSpaceSection from '@/components/home/InnerSpaceSection';
 import FeaturedCauses from '@/components/home/FeaturedCauses';
 import UpcomingEvents from '@/components/home/UpcomingEvents';
 import RecentBlog from '@/components/home/RecentBlog';
@@ -22,6 +23,7 @@ export default function HomePage() {
       <AboutSnippet />
       <Pathways />
       <WisdomQuote />
+      <InnerSpaceSection />
       <FeaturedCauses />
       <UpcomingEvents />
       <RecentBlog />

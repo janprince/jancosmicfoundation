@@ -99,7 +99,7 @@ export default function TeachingsPage() {
               Explore InnerSpace
             </a>
             <Link
-              href="/join"
+              href="/community"
               className="inline-flex items-center gap-2 rounded-lg border-2 border-white/30 px-8 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:border-white/60 hover:bg-white/10"
             >
               Become a Member

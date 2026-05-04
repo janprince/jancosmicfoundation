@@ -133,21 +133,36 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
                           >
                             Overview
                           </Link>
-                          {link.children.map((child) => (
-                            <Link
-                              key={child.href}
-                              href={child.href}
-                              onClick={onClose}
-                              className={[
-                                'block px-3 py-2.5 rounded-lg text-sm transition-colors duration-150',
-                                isActivePath(child.href)
-                                  ? 'text-primary font-semibold bg-primary/8'
-                                  : 'text-gray-600 hover:text-primary hover:bg-primary/5',
-                              ].join(' ')}
-                            >
-                              {child.label}
-                            </Link>
-                          ))}
+                          {link.children.map((child) => {
+                            const baseClass = [
+                              'block px-3 py-2.5 rounded-lg text-sm transition-colors duration-150',
+                              !child.external && isActivePath(child.href)
+                                ? 'text-primary font-semibold bg-primary/8'
+                                : 'text-gray-600 hover:text-primary hover:bg-primary/5',
+                            ].join(' ');
+                            return child.external ? (
+                              <a
+                                key={child.href}
+                                href={child.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={onClose}
+                                className={baseClass}
+                              >
+                                {child.label}
+                                <span aria-hidden="true" className="ml-1 text-gray-400">↗</span>
+                              </a>
+                            ) : (
+                              <Link
+                                key={child.href}
+                                href={child.href}
+                                onClick={onClose}
+                                className={baseClass}
+                              >
+                                {child.label}
+                              </Link>
+                            );
+                          })}
                         </div>
                       )}
                     </div>

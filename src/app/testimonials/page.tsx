@@ -169,8 +169,8 @@ export default async function TestimonialsPage() {
             Every story of transformation began with a single step. Whether through our centres, retreats, or volunteer programmes — there is a place for you here.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button href="/join" variant="secondary" size="lg">
-              Join a Centre
+            <Button href="/community" variant="secondary" size="lg">
+              Join the Community
             </Button>
             <Button href="/volunteer" variant="outline" size="lg" className="!border-white/30 !text-white hover:!bg-white/10">
               Volunteer With Us

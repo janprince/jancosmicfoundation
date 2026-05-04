@@ -161,4 +161,6 @@ export interface NavLink {
   label: string;
   href: string;
   children?: NavLink[];
+  /** When true, renders as <a target="_blank"> instead of <Link>. */
+  external?: boolean;
 }

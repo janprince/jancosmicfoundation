@@ -15,30 +15,29 @@ const navLinks: NavLink[] = [
     label: 'About',
     href: '/about',
     children: [
+      { label: 'The Foundation', href: '/about' },
       { label: 'The Founder', href: '/about/founder' },
       { label: 'Mission & Vision', href: '/about/mission-vision' },
-      { label: 'Our Programmes', href: '/programs' },
       { label: 'Our Centres', href: '/centres' },
       { label: 'Testimonials', href: '/testimonials' },
     ],
   },
+  {
+    label: 'Teachings',
+    href: '/teachings',
+    children: [
+      { label: 'Public Teachings', href: '/teachings' },
+      { label: 'InnerSpace', href: 'https://www.drbaffourjan.com/inner-space', external: true },
+      { label: 'Blog', href: '/blog' },
+    ],
+  },
+  { label: 'Programmes', href: '/programs' },
   {
     label: 'Events',
     href: '/events',
     children: [
       { label: 'Upcoming Events', href: '/events' },
       { label: 'Gallery', href: '/gallery' },
-    ],
-  },
-  { label: 'Teachings', href: '/teachings' },
-  { label: 'Blog', href: '/blog' },
-  {
-    label: 'Get Involved',
-    href: '/join',
-    children: [
-      { label: 'Join a Centre', href: '/join' },
-      { label: 'Volunteer', href: '/volunteer' },
-      { label: 'Contact Us', href: '/contact' },
     ],
   },
 ];
@@ -173,21 +172,31 @@ export default function Navbar() {
                         className="absolute top-full left-0 pt-1 w-52 z-50"
                       >
                         <div className="bg-white rounded-xl shadow-xl shadow-black/10 border border-gray-100 py-2 animate-dropdown-enter">
-                          {link.children.map((child) => (
-                            <Link
-                              key={child.href}
-                              href={child.href}
-                              className={[
-                                'block px-4 py-2.5 text-sm transition-colors duration-150',
-                                'hover:bg-primary/8 hover:text-primary',
-                                isActivePath(child.href)
-                                  ? 'text-primary font-medium bg-primary/5'
-                                  : 'text-gray-700',
-                              ].join(' ')}
-                            >
-                              {child.label}
-                            </Link>
-                          ))}
+                          {link.children.map((child) => {
+                            const baseClass = [
+                              'block px-4 py-2.5 text-sm transition-colors duration-150',
+                              'hover:bg-primary/8 hover:text-primary',
+                              !child.external && isActivePath(child.href)
+                                ? 'text-primary font-medium bg-primary/5'
+                                : 'text-gray-700',
+                            ].join(' ');
+                            return child.external ? (
+                              <a
+                                key={child.href}
+                                href={child.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={baseClass}
+                              >
+                                {child.label}
+                                <span aria-hidden="true" className="ml-1 text-gray-400">↗</span>
+                              </a>
+                            ) : (
+                              <Link key={child.href} href={child.href} className={baseClass}>
+                                {child.label}
+                              </Link>
+                            );
+                          })}
                         </div>
                       </div>
                     )}

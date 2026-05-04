@@ -12,13 +12,15 @@ import { siteConfig } from '@/lib/site-config';
 const quickLinks = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
-  { label: 'Events', href: '/events' },
+  { label: 'Teachings', href: '/teachings' },
+  { label: 'Programmes', href: '/programs' },
   { label: 'Blog', href: '/blog' },
 ];
 
 const involvedLinks = [
   { label: 'Donate', href: '/donate' },
   { label: 'Volunteer', href: '/volunteer' },
+  { label: 'Community', href: '/community' },
   { label: 'Centres', href: '/centres' },
   { label: 'Contact', href: '/contact' },
 ];
