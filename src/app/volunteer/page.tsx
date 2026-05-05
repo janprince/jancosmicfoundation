@@ -50,7 +50,7 @@ const benefits = [
 export const metadata: Metadata = {
   title: 'Volunteer With Us',
   description:
-    'Give your time, talents, and energy to something meaningful. Discover volunteer opportunities at the Jan Cosmic Foundation.',
+    'Practical work the Foundation needs help with — coordinating retreats, hosting students, driving, cooking, filming, writing, building. A Saturday or a season, both help.',
 };
 
 export default async function VolunteerPage() {
@@ -60,7 +60,7 @@ export default async function VolunteerPage() {
     <>
       <PageHero
         title="Volunteer With Us"
-        subtitle="Give your time, talents, and energy to something that truly matters. Service is the highest form of practice."
+        subtitle="There is more to do here than we can do alone."
       />
 
       {/* Why Volunteer section */}
@@ -68,8 +68,8 @@ export default async function VolunteerPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             label="Why Volunteer"
-            title="The Gift of Service"
-            subtitle="At the Jan Cosmic Foundation, we believe that serving others is one of the most powerful paths to inner growth. Volunteering with JCF is not just about giving, it is about becoming."
+            title="What you&rsquo;d be helping with"
+            subtitle="Practical work — coordinating retreats, hosting visiting students, driving, cooking, filming, writing, building. If you can give a Saturday or a season, write to us. We&rsquo;ll find a place for you."
             className="mb-12"
           />
 
@@ -102,8 +102,8 @@ export default async function VolunteerPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             label="Open Roles"
-            title="Current Opportunities"
-            subtitle="We welcome volunteers of all backgrounds and skill sets. Here are our current openings — if you do not see the right fit, we still want to hear from you."
+            title="Current openings"
+            subtitle="If none of these fit, write anyway. The list below is partial — there&rsquo;s often something that hasn&rsquo;t made the page yet."
             className="mb-10"
           />
 
@@ -173,8 +173,8 @@ export default async function VolunteerPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             label="Volunteer Stories"
-            title="What Our Volunteers Say"
-            subtitle="Hear from the people who give their time and talents to the Jan Cosmic Foundation — and what they have received in return."
+            title="From people already doing this"
+            subtitle="A few words from current and former volunteers."
             className="mb-10"
           />
 
@@ -220,9 +220,9 @@ export default async function VolunteerPage() {
       <section className="py-16 md:py-20" style={{ backgroundColor: '#F2EFE9' }}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="Apply Now"
-            title="Submit Your Application"
-            subtitle="Ready to volunteer? Fill in the form below and our volunteer coordinator will be in touch within a few days."
+            label="Apply"
+            title="Tell us about yourself"
+            subtitle="Fill the form below. Our volunteer coordinator will reply within a few days."
             className="mb-10"
           />
           <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm">

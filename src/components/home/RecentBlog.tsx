@@ -12,14 +12,14 @@ export default async function RecentBlog() {
         {/* Header */}
         <ScrollReveal animation="fade-up" className="mb-14 text-center">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[#8a6c1a]">
-            From Our Blog
+            From the Teachings
           </p>
           <h2 className="text-3xl font-light leading-tight text-[#000B58] sm:text-4xl">
-            Latest Stories
+            Recent writing
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/85">
-            Insights, testimonials, and reflections from our community of
-            seekers.
+            Transcribed talks, notes from retreats, and writing from members
+            of the foundation.
           </p>
         </ScrollReveal>
 

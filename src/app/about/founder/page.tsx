@@ -94,7 +94,7 @@ const teachings = [
 export const metadata: Metadata = {
   title: 'Dr. Baffour Jan — Founder & Spiritual Director',
   description:
-    'Learn about Dr. Baffour Jan, the founder of the Jan Cosmic Foundation — a spiritual master and contemporary mystic with nearly four decades of teaching.',
+    'Born 1953 in Dwenem, Ghana. From ISKCON to the Brahma Kumaris to the Hermetic Sanctuary (1996), San Bra Centre (2012), and the Jan Cosmic Foundation (2021).',
 };
 
 export default function FounderPage() {
@@ -102,7 +102,7 @@ export default function FounderPage() {
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
         title="Dr. Baffour Jan"
-        subtitle="Spiritual Master, Mystic & Founder of the Jan Cosmic Foundation"
+        subtitle="Spiritual master, mystic, and founder of the Jan Cosmic Foundation. Teaching since 1986."
       />
 
       {/* Introduction */}

@@ -7,7 +7,7 @@ import { siteConfig, mapsEmbedUrl, mapsDirectUrl } from '@/lib/site-config';
 export const metadata: Metadata = {
   title: 'Contact Us',
   description:
-    'Get in touch with the Jan Cosmic Foundation. Reach out with questions, connect with our community, or visit our headquarters in Accra, Ghana.',
+    'Write to the Foundation, call us, or visit our headquarters at Franko Estate, Kwabenya, Accra. We read every message.',
 };
 
 const socialLinks = [
@@ -101,7 +101,7 @@ export default function ContactPage() {
     <>
       <PageHero
         title="Contact Us"
-        subtitle="We would love to hear from you. Reach out with any questions, ideas, or simply to connect."
+        subtitle="Questions, partnership ideas, or visiting Accra — write to us. We read every message."
       />
 
       {/* Main content */}
@@ -112,8 +112,8 @@ export default function ContactPage() {
             {/* Left: Contact Form */}
             <div className="lg:col-span-3">
               <SectionHeader
-                label="Get in Touch"
-                title="Send Us a Message"
+                label="Write to us"
+                title="Send a message"
                 align="left"
                 className="mb-8"
               />

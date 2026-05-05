@@ -56,7 +56,7 @@ const iconMap: Record<string, React.ReactNode> = {
 export const metadata: Metadata = {
   title: 'Our Programmes',
   description:
-    'Explore the programmes and initiatives of the Jan Cosmic Foundation — from spiritual teachings and meditation retreats to community service and youth education.',
+    'What the Foundation runs — sittings, retreats, the InnerSpace course, youth mentorship, medical outreach, the Spiritual Village in Kwahu, and media work.',
 };
 
 export default async function ProgramsPage() {
@@ -69,7 +69,7 @@ export default async function ProgramsPage() {
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
         title="Our Programmes"
-        subtitle="The work of the Jan Cosmic Foundation spans spiritual education, community service, youth development, and humanitarian outreach."
+        subtitle="What we run, where, and why. Inner work and outer service, treated as the same work."
       />
 
       {/* Intro Section */}
@@ -77,12 +77,9 @@ export default async function ProgramsPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <SectionHeader
             label="What We Do"
-            title="Programmes That Transform Lives"
-            subtitle="Every programme of the Jan Cosmic Foundation is an expression of a single purpose: to help human beings awaken to their true nature and serve one another with love."
+            title="What we run, where, and why."
+            subtitle="The Foundation runs four kinds of programmes — spiritual study, community development, youth work, and media — under the guidance of Dr. Baffour Jan. They are listed below, with the active ones flagged."
           />
-          <p className="mt-6 text-base leading-relaxed" style={{ color: '#1a1a1abf' }}>
-            Under the guidance of Dr. Baffour Jan, the foundation operates programmes across four pillars — spiritual growth, education, community service, and media outreach — each designed to serve seekers and communities at different stages of their journey.
-          </p>
         </div>
       </section>
 
@@ -92,8 +89,8 @@ export default async function ProgramsPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
               label="Spiritual Growth"
-              title="The Inner Path"
-              subtitle="Programmes dedicated to awakening consciousness, deepening meditation practice, and realising the True Self."
+              title="The inner path"
+              subtitle="Sittings, retreats, and structured study for people working on themselves."
             />
 
             <div className="mt-12 space-y-8">
@@ -165,9 +162,9 @@ export default async function ProgramsPage() {
         <section className="py-16 sm:py-24" style={{ backgroundColor: '#F2EFE9' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
-              label="Service & Outreach"
-              title="The Outer Expression"
-              subtitle="Programmes that carry the spirit of the teachings into schools, communities, and homes — transforming lives through action."
+              label="Service &amp; Outreach"
+              title="The outer expression"
+              subtitle="Schools, clinics, mentorship, media. The teaching put into use."
             />
 
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -252,13 +249,13 @@ export default async function ProgramsPage() {
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
-            Get Involved
+            Take part
           </h2>
           <p
             className="text-base sm:text-lg mb-10 leading-relaxed"
             style={{ color: 'rgba(253,251,247,0.9)' }}
           >
-            Whether you are drawn to the inner path of meditation or the outer path of service, there is a place for you in the Jan Cosmic Foundation.
+            Fund a programme, give your time, or join a centre. All three help.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button href="/donate" variant="secondary" size="lg">

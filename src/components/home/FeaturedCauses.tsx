@@ -12,14 +12,14 @@ export default async function FeaturedCauses() {
         {/* Header */}
         <ScrollReveal animation="fade-up" className="mb-14 text-center">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[#8a6c1a]">
-            Support Our Work
+            Where Donations Go
           </p>
           <h2 className="text-3xl font-light leading-tight text-[#000B58] sm:text-4xl">
-            Featured Causes
+            Active causes
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/85">
-            Your generosity sustains the programmes that awaken consciousness
-            and uplift communities.
+            Specific things the Foundation is funding right now —
+            in Accra, Kwahu, and through our media work.
           </p>
         </ScrollReveal>
 

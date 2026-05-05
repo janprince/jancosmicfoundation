@@ -45,9 +45,9 @@ export default function HeroSection() {
             </h1>
 
             <p className="hero-animate hero-animate-3 mt-7 max-w-lg text-lg leading-relaxed text-white/90">
-              A global movement guiding individuals beyond the limits of
-              identity, into direct self-realization, inner peace, and true
-              freedom — through the teachings of Dr. Baffour Jan.
+              Founded in Accra in 2021 to carry the teachings of
+              Dr. Baffour Jan — sittings, retreats, and a school
+              for sincere seekers. In Ghana and beyond.
             </p>
 
             <blockquote className="hero-animate hero-animate-4 mt-8 border-l-2 border-[#D4A843]/30 pl-5">
@@ -65,7 +65,7 @@ export default function HeroSection() {
                 href="/about"
                 className="rounded-sm border border-white/30 px-7 py-3 text-sm font-medium text-white transition-colors duration-300 hover:bg-white/10"
               >
-                Explore the Foundation
+                Read about the Foundation
               </Link>
               <Link
                 href="/donate"
@@ -154,9 +154,9 @@ export default function HeroSection() {
             </h1>
 
             <p className="hero-animate hero-animate-3 mx-auto mt-6 max-w-md text-base leading-relaxed text-white/90">
-              A global movement guiding individuals beyond the limits of
-              identity, into direct self-realization, inner peace, and true
-              freedom — through the teachings of Dr. Baffour Jan.
+              Founded in Accra in 2021 to carry the teachings of
+              Dr. Baffour Jan — sittings, retreats, and a school
+              for sincere seekers. In Ghana and beyond.
             </p>
 
             <blockquote className="hero-animate hero-animate-4 mx-auto mt-8 max-w-sm border-t border-white/10 pt-6">
@@ -174,7 +174,7 @@ export default function HeroSection() {
                 href="/about"
                 className="rounded-sm border border-white/30 px-7 py-3 text-sm font-medium text-white transition-colors duration-300 hover:bg-white/10"
               >
-                Explore the Foundation
+                Read about the Foundation
               </Link>
               <Link
                 href="/donate"

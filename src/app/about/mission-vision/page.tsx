@@ -58,7 +58,7 @@ const pillars = [
 export const metadata: Metadata = {
   title: 'Mission & Vision',
   description:
-    'Our mission is to teach and inspire people to evolve toward self-realization. Discover the vision, values, and strategic pillars guiding the Jan Cosmic Foundation.',
+    'The Foundation&apos;s mission and the four pillars under which we work — spiritual education, community development, youth empowerment, and reach.',
 };
 
 export default function MissionVisionPage() {
@@ -66,7 +66,7 @@ export default function MissionVisionPage() {
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
         title="Mission &amp; Vision"
-        subtitle="Teaching and inspiring people to evolve rapidly toward self-realization — and the awakened world we are collectively building."
+        subtitle="What we are trying to do, and how. The four pillars under which everything we run sits."
       />
 
       {/* Mission */}
@@ -231,10 +231,10 @@ export default function MissionVisionPage() {
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
-            Be Part of the Mission
+            Take part
           </h2>
           <p className="text-base sm:text-lg mb-10" style={{ color: 'rgba(253,251,247,0.9)' }}>
-            There are many ways to participate — as a member, a volunteer, a donor, or simply a curious seeker. The foundation welcomes individuals from all backgrounds who are interested in spiritual development and self-discovery.
+            As a student, a volunteer, a donor — or simply someone curious. Anyone interested in this work is welcome to begin where they are.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button href="/about" variant="secondary" size="lg">

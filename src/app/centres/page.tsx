@@ -9,7 +9,7 @@ import { siteConfig } from '@/lib/site-config';
 export const metadata: Metadata = {
   title: 'Our Centres',
   description:
-    'A growing network of Jan Cosmic Foundation centres dedicated to spiritual practice, conscious living, and service to humanity across Ghana and beyond.',
+    'JCF centres run regular sittings, host visiting teachers, and organise local service work. From our home in Accra to communities across Ghana and beyond.',
 };
 
 export default async function CentresPage() {
@@ -26,7 +26,7 @@ export default async function CentresPage() {
     <>
       <PageHero
         title="Our Centres"
-        subtitle="A growing network of communities dedicated to spiritual practice, conscious living, and service to humanity."
+        subtitle="From our home in Accra to centres across Ghana and beyond. Visit, sit, ask questions."
       />
 
       {/* Intro section */}
@@ -34,9 +34,9 @@ export default async function CentresPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-14">
             <SectionHeader
-              label="Our Growing Presence"
-              title="Where We Are"
-              subtitle="From our founding home in Accra, the Jan Cosmic Foundation is steadily expanding its reach — establishing centres of practice and service where inner work and outer service meet."
+              label="Where We Are"
+              title="Active centres &amp; communities"
+              subtitle="Each centre runs regular sittings, hosts visiting teachers, and organises local service work. Find the one nearest you below."
             />
           </div>
 
@@ -61,8 +61,8 @@ export default async function CentresPage() {
           {/* Centres grid */}
           <SectionHeader
             label="Find a Centre"
-            title="Our Locations"
-            subtitle="Each JCF centre offers regular meditation sessions, community programmes, and opportunities for service. Find the one nearest to you."
+            title="Locations"
+            subtitle="Tap any centre to read more, see contact details, or join."
             className="mb-10"
           />
 
@@ -90,21 +90,21 @@ export default async function CentresPage() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-semibold text-white leading-tight">
-            Ready to Connect?
+            Visit a centre, or start one.
           </h2>
           <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed text-white/90">
-            Join an existing centre near you, or reach out if you are interested
-            in establishing a JCF presence in your community. We welcome all
-            sincere seekers.
+            If there&rsquo;s no centre near you and you&rsquo;d like to host
+            sittings in your city, write to us. We&rsquo;ve done it more than
+            once and we&rsquo;ll help.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
-              href="/centres#find-a-centre"
+              href="/community"
               variant="secondary"
               size="lg"
             >
-              Join a Centre
+              Join the Community
             </Button>
             <Button
               href="/contact"

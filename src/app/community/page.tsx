@@ -14,9 +14,9 @@ import {
 } from 'react-icons/fa6';
 
 export const metadata: Metadata = {
-  title: 'Join Our Community',
+  title: 'Community',
   description:
-    'Connect with the Jan Cosmic Foundation community. Join our Telegram channels, WhatsApp groups, and social platforms — or find a centre near you.',
+    'Telegram channels, WhatsApp groups, social media, and centres — find the foundation where you already are.',
 };
 
 const communityLinks = [
@@ -86,11 +86,11 @@ export default async function JoinPage() {
                 <span className="h-px w-8 rounded-full bg-[#D4A843]" aria-hidden="true" />
               </div>
               <h2 className="text-3xl font-semibold text-[#000B58] sm:text-4xl">
-                Stay Connected
+                Channels &amp; groups
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/85 sm:text-lg">
-                Join our groups and channels to receive teachings, announcements,
-                and connect with fellow seekers.
+                Channels for teachings and announcements, groups for talking
+                with other students. Free to join.
               </p>
             </div>
 
@@ -156,11 +156,11 @@ export default async function JoinPage() {
               <span className="h-px w-8 rounded-full bg-[#D4A843]" aria-hidden="true" />
             </div>
             <h2 className="text-3xl font-semibold text-[#000B58] sm:text-4xl">
-              Follow Us
+              Follow us
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-[#1a1a1a]/85">
-              Follow the foundation on social media for teachings, event
-              highlights, and community stories.
+              Short clips, photos, and event highlights — pick the platform
+              you actually use.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -197,12 +197,11 @@ export default async function JoinPage() {
                 <span className="h-px w-8 rounded-full bg-[#D4A843]" aria-hidden="true" />
               </div>
               <h2 className="text-3xl font-semibold text-[#000B58] sm:text-4xl">
-                Join a Centre
+                Or visit a centre
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/85 sm:text-lg">
-                Connect with a local JCF community near you. Each centre offers
-                regular meditation sessions, community programmes, and
-                opportunities for service.
+                Sittings, study groups, and service work happen in person at
+                each centre. Tap one to read more.
               </p>
             </div>
 
@@ -279,11 +278,11 @@ export default async function JoinPage() {
               className="mx-auto mb-6 rounded-full"
             />
             <h2 className="text-2xl font-semibold text-white sm:text-3xl">
-              Welcome to the Family
+              Welcome.
             </h2>
             <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-white/85">
-              Whether online or in person, you are always welcome. Join us in
-              the pursuit of truth, conscious living, and service to humanity.
+              Online or in person — you&rsquo;re welcome here. If you&rsquo;d
+              like to give time or money to the work too, both help.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link

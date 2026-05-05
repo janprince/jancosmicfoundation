@@ -7,7 +7,7 @@ import { getCauses } from '@/lib/api';
 export const metadata: Metadata = {
   title: 'Donate',
   description:
-    'Support the Jan Cosmic Foundation. Your generosity sustains programmes in spiritual education, community outreach, and humanitarian development.',
+    'Support the Foundation. Donations fund the Spiritual Village in Kwahu, teaching video production, the children&apos;s mentorship programme, and ongoing community work.',
 };
 
 export default async function DonatePage() {
@@ -47,7 +47,7 @@ export default async function DonatePage() {
     <>
       <PageHero
         title="Donate"
-        subtitle="Your generosity sustains the programmes that awaken consciousness and transform lives."
+        subtitle="The Foundation is paid for by the people who study with us. Here is what your contribution funds."
       />
 
       {/* Intro */}
@@ -55,9 +55,9 @@ export default async function DonatePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-14">
             <SectionHeader
-              label="Make a Difference"
-              title="Support Our Work"
-              subtitle="The Jan Cosmic Foundation is sustained by the generosity of people who believe that awakening consciousness and serving others go hand in hand. Every donation — large or small — directly funds programmes in spiritual education, community outreach, and human development."
+              label="Support Our Work"
+              title="Where your contribution goes"
+              subtitle="Currently, three things need funding: the Spiritual Village land in Kwahu (in development), the production of teaching videos, and the children's mentorship programme. Every cause below is something the Foundation is actively running."
             />
           </div>
 
@@ -85,8 +85,8 @@ export default async function DonatePage() {
           {/* Causes grid */}
           <SectionHeader
             label="Active Causes"
-            title="Choose a Cause"
-            subtitle="Select a cause below to learn more and make your donation. All funds are managed with full transparency and accountability."
+            title="Choose a cause"
+            subtitle="Select a cause below to read more and donate. You can also give without choosing one — see further down the page."
             className="mb-10"
           />
 
@@ -126,13 +126,12 @@ export default async function DonatePage() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-semibold text-white leading-tight">
-            Every Contribution Counts
+            Or let us choose where it goes.
           </h2>
           <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed text-white/90">
-            Not sure which cause to choose? Any donation to the Jan Cosmic
-            Foundation goes directly into the programmes and communities that
-            need it most. We are grateful for every act of generosity, however
-            it is expressed.
+            If you&rsquo;d rather not pick a specific cause, give to the
+            Foundation directly. We&rsquo;ll put it where it&rsquo;s most
+            needed — usually a programme that&rsquo;s under-funded that month.
           </p>
 
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">

@@ -5,9 +5,9 @@ import Button from '@/components/ui/Button';
 import { getTestimonials } from '@/lib/api';
 
 export const metadata: Metadata = {
-  title: 'Testimonials — Stories of Transformation',
+  title: 'Testimonials — Voices from the Community',
   description:
-    'Hear from seekers, volunteers, and community members whose lives have been transformed through the teachings and programmes of the Jan Cosmic Foundation.',
+    'In their own words — students, volunteers, and centre members on what brought them to the Jan Cosmic Foundation and what they found.',
 };
 
 export default async function TestimonialsPage() {
@@ -16,8 +16,8 @@ export default async function TestimonialsPage() {
   return (
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
-        title="Stories of Transformation"
-        subtitle="Hear from the seekers, volunteers, and community members whose lives have been touched by the Jan Cosmic Foundation."
+        title="Voices from the Community"
+        subtitle="In their own words — students, volunteers, and centre members on what brought them and what they found."
       />
 
       {/* Empty state */}
@@ -160,13 +160,13 @@ export default async function TestimonialsPage() {
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
-            Begin Your Own Journey
+            Come find out for yourself.
           </h2>
           <p
             className="text-base sm:text-lg mb-10 leading-relaxed"
             style={{ color: 'rgba(253,251,247,0.9)' }}
           >
-            Every story of transformation began with a single step. Whether through our centres, retreats, or volunteer programmes — there is a place for you here.
+            These are real people. The work they describe is the same work we&rsquo;re doing this week. If you&rsquo;d like to be part of it — write to us, or come to a sitting.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button href="/community" variant="secondary" size="lg">

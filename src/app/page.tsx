@@ -35,14 +35,14 @@ export default function HomePage() {
           <ScrollReveal animation="fade-up">
             <div className="mb-8 text-center">
               <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-[#D4A843]/90">
-                Stay Connected
+                Letters from the Foundation
               </p>
             </div>
             <Newsletter
               dark
-              heading="Stay in the Loop"
-              description="Receive inspiring stories, event announcements, and programme updates from the Jan Cosmic Foundation."
-              placeholder="Enter your email address"
+              heading="A note, when there&rsquo;s something to say."
+              description="A few times a month — a teaching, an event date, a note from Dr. Jan when there&rsquo;s something worth saying. Nothing automated."
+              placeholder="Your email"
               buttonLabel="Subscribe"
             />
           </ScrollReveal>

@@ -23,34 +23,33 @@ export default function AboutSnippet() {
           {/* Text */}
           <ScrollReveal animation="fade-left" delay={0.15} className="w-full lg:w-[58%]">
             <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[#8a6c1a]">
-              Who We Are
+              About the Foundation
             </p>
 
             <h2 className="text-3xl font-light leading-tight text-[#000B58] sm:text-4xl">
-              Awakening the{' '}
-              <span className="text-primary">Divine Potential Within</span>
+              A teaching home, made{' '}
+              <span className="text-primary">formal in 2021.</span>
             </h2>
 
             <p className="mt-6 text-base leading-relaxed text-[#1a1a1a]/80">
-              Dr. Baffour Jan is a spiritual master, mystic, and teacher
-              dedicated to guiding seekers toward deeper awareness of the self
-              and the nature of consciousness. His teachings focus on awakening
-              the divine potential within every human being and transcending the
-              limiting identities of the mind.
+              The Foundation is the formal home of nearly four decades of
+              teaching by Dr. Baffour Jan. Headquartered in Kwabenya, Accra, we
+              run weekly sittings, annual retreats at the San Bra Enlightenment
+              Centre, the InnerSpace course for committed students, and a small
+              set of community programmes — youth education, medical outreach,
+              and the developing Spiritual Village in Kwahu.
             </p>
 
             <p className="mt-4 text-base leading-relaxed text-[#1a1a1a]/80">
-              Through the Jan Cosmic Foundation, he offers teachings, courses,
-              retreats, and spiritual guidance designed to help individuals
-              discover truth, silence the restless mind, and experience the
-              deeper reality of spirit.
+              The work is the same work Dr. Jan has been doing for a long time.
+              The Foundation is what makes it sustainable.
             </p>
 
             <Link
               href="/about"
               className="mt-8 inline-flex items-center gap-2 rounded-full border-2 border-primary px-8 py-3 text-sm font-medium text-primary transition-all duration-300 hover:bg-primary hover:text-white"
             >
-              Learn More
+              Read more
               <span aria-hidden="true">&rarr;</span>
             </Link>
           </ScrollReveal>

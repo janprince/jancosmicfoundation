@@ -12,14 +12,14 @@ export default async function CentresPreview() {
         {/* Header */}
         <ScrollReveal animation="fade-up" className="mb-14 text-center">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[#8a6c1a]">
-            Our Growing Presence
+            Where We Sit
           </p>
           <h2 className="text-3xl font-light leading-tight text-[#000B58] sm:text-4xl">
-            Find a Centre Near You
+            Centres &amp; communities
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/85">
-            A community of seekers united in the pursuit of truth, conscious
-            living, and compassion.
+            From our home in Accra to centres across Ghana and beyond.
+            Visit, sit, ask questions.
           </p>
         </ScrollReveal>
 

@@ -139,17 +139,17 @@ export default function EventsPageContent({ events }: EventsPageContentProps) {
       <section className="py-14" style={{ backgroundColor: '#F2EFE9' }}>
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-3" style={{ color: '#000B58' }}>
-            Never Miss an Event
+            Hear about events first.
           </h2>
           <p className="text-sm sm:text-base mb-6" style={{ color: '#1a1a1abf' }}>
-            Subscribe to our newsletter and be the first to know about upcoming retreats, workshops, and community gatherings.
+            Subscribe to the newsletter — retreats and gatherings often fill before they&rsquo;re widely announced.
           </p>
           <a
-            href="/contact"
+            href="/community"
             className="inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-base font-semibold transition-all duration-300 hover:shadow-lg"
             style={{ backgroundColor: 'var(--color-primary)', color: '#FDFBF7' }}
           >
-            Get in Touch
+            Join the Community
           </a>
         </div>
       </section>

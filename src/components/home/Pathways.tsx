@@ -5,31 +5,31 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 const pathways = [
   {
     icon: HiOutlineBookOpen,
-    title: 'Explore the Teachings',
+    title: 'Watch the teachings',
     description:
-      'Discover wisdom on consciousness, meditation, and the path to self-realization.',
+      'Free recordings on YouTube. Or join InnerSpace for the deeper, structured work.',
     href: '/teachings',
   },
   {
     icon: HiOutlineCalendarDays,
-    title: 'Attend an Event',
+    title: 'Come to an event',
     description:
-      'Retreats, workshops, and gatherings for seekers at every stage of the path.',
+      'Talks, retreats, and weekly sittings — most in Accra, some online.',
     href: '/events',
   },
   {
-    icon: HiOutlineHeart,
-    title: 'Support a Cause',
+    icon: HiOutlineMapPin,
+    title: 'Visit a centre',
     description:
-      'Fund programmes that awaken consciousness and uplift communities across Ghana.',
-    href: '/donate',
+      'Centres across Ghana and beyond. Sit, listen, ask questions.',
+    href: '/centres',
   },
   {
-    icon: HiOutlineMapPin,
-    title: 'Find a Centre',
+    icon: HiOutlineHeart,
+    title: 'Help fund the work',
     description:
-      'Join a local community of seekers united in the pursuit of truth and conscious living.',
-    href: '/centres',
+      'Youth education, retreats, the Spiritual Village in Kwahu, and more.',
+    href: '/donate',
   },
 ];
 
@@ -40,14 +40,14 @@ export default function Pathways() {
         {/* Header */}
         <ScrollReveal animation="fade-up" className="mb-16 text-center">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-[#8a6c1a]">
-            Your Path
+            Where to Begin
           </p>
           <h2 className="text-3xl font-semibold leading-tight text-[#000B58] sm:text-4xl">
-            What Brings You Here?
+            Four ways in.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/75 sm:text-lg">
-            Whether you are seeking wisdom, community, or purpose — there is a
-            place for you here.
+            Some come for the teachings. Some come for the community. Some come
+            because they couldn&apos;t say why. All are welcome.
           </p>
         </ScrollReveal>
 

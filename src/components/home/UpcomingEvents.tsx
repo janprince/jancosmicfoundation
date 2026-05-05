@@ -15,11 +15,10 @@ export default async function UpcomingEvents() {
             What&apos;s Coming
           </p>
           <h2 className="text-3xl font-light leading-tight text-[#000B58] sm:text-4xl">
-            Upcoming Events
+            Upcoming events
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/85">
-            Join us for transformative gatherings, retreats, and community
-            celebrations.
+            Talks, retreats, and weekly sittings — most in Accra, some online.
           </p>
         </ScrollReveal>
 

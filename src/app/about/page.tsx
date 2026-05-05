@@ -51,7 +51,7 @@ const coreValues = [
 export const metadata: Metadata = {
   title: 'About the Foundation',
   description:
-    'Learn about the Jan Cosmic Foundation — a spiritual organisation founded by Dr. Baffour Jan, guiding individuals toward higher consciousness and self-realization.',
+    'Founded in Accra in 2021 to formalise nearly four decades of teaching by Dr. Baffour Jan. Read about the work, the team, and the four core values.',
 };
 
 export default async function AboutPage() {
@@ -60,7 +60,7 @@ export default async function AboutPage() {
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
         title="About the Foundation"
-        subtitle="A spiritual organisation guiding individuals toward higher consciousness and self-realization — founded by Dr. Baffour Jan."
+        subtitle="The formal home of Dr. Baffour Jan&rsquo;s teaching work. Founded in Accra in 2021."
       />
 
       {/* Foundation History */}
@@ -71,15 +71,15 @@ export default async function AboutPage() {
             <div>
               <SectionHeader
                 label="Our Story"
-                title="A Foundation Born from Vision"
+                title="Founded in Accra, 2021."
                 align="left"
               />
               <div className="mt-8 space-y-5 text-base sm:text-lg leading-relaxed" style={{ color: '#1a1a1acc' }}>
                 <p>
-                  The Jan Cosmic Foundation is a nonprofit spiritual organisation headquartered in Accra, Ghana. Founded by Dr. Baffour Jan, the foundation promotes spiritual growth, personal transformation, and social upliftment through teachings, retreats, counseling, and outreach programmes.
+                  The Jan Cosmic Foundation was established in 2021 to formalise nearly four decades of teaching work by Dr. Baffour Jan. We are headquartered at Franko Estate, Kwabenya, in Greater Accra. We run weekly sittings, annual retreats at the San Bra Enlightenment Centre, the InnerSpace course for committed students, and a small set of community programmes — youth mentorship, medical outreach, and the developing Spiritual Village in Kwahu.
                 </p>
                 <p>
-                  The philosophy of the foundation centres around awakening consciousness and realizing the true nature of the self. It teaches that every human being carries within them the potential to awaken to higher states of consciousness and experience profound inner transformation — aligning human life with universal cosmic intelligence.
+                  The teaching itself is older than the Foundation. Dr. Jan has been guiding seekers since 1986, drawing from Christianity, Rosicrucianism, Buddhism, and Vedic philosophy before transcending all of them. The Foundation is what makes the work sustainable, repeatable, and reachable to people who want to study seriously.
                 </p>
               </div>
             </div>
@@ -240,16 +240,16 @@ export default async function AboutPage() {
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
-            Explore Our Purpose
+            Mission &amp; Vision
           </h2>
           <p className="text-sm italic mb-6" style={{ color: 'rgba(212,168,67,0.9)' }}>
             &ldquo;The greatest wealth is contentment and you can only be totally content when you have attained complete self-realization.&rdquo;
           </p>
           <p className="text-base sm:text-lg mb-10" style={{ color: 'rgba(253,251,247,0.9)' }}>
-            Discover the mission, vision, and principles that guide the Jan Cosmic Foundation in awakening consciousness across the world.
+            Read what we are trying to do, and how.
           </p>
           <Button href="/about/mission-vision" variant="secondary" size="lg">
-            View Mission &amp; Vision
+            Read the Mission
           </Button>
         </div>
       </section>

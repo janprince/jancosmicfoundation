@@ -133,14 +133,14 @@ export default function Footer() {
               className="text-sm font-semibold uppercase tracking-widest mb-5"
               style={{ color: '#D4A843' }}
             >
-              Stay Connected
+              Letters from the Foundation
             </h3>
             <p
               className="text-sm mb-4"
               style={{ color: 'rgba(253,251,247,0.88)' }}
             >
-              Get updates on events, programs, and impact stories delivered to
-              your inbox.
+              A few times a month — a teaching, an event date, a note when
+              there&rsquo;s something worth saying.
             </p>
             <NewsletterForm />
           </div>

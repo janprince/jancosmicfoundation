@@ -5,9 +5,9 @@ import VideoSection from '@/components/teachings/VideoSection';
 import { HiOutlineAcademicCap, HiOutlineSparkles } from 'react-icons/hi2';
 
 export const metadata: Metadata = {
-  title: 'Teachings | Jan Cosmic Foundation',
+  title: 'Teachings',
   description:
-    'Explore the public teachings of Dr. Baffour Jan on consciousness, meditation, and self-realization. Access free YouTube teachings or join InnerSpace for deeper mystical studies.',
+    'Free public teachings by Dr. Baffour Jan on YouTube. For deeper, structured study, the InnerSpace course is offered to committed students.',
 };
 
 export default function TeachingsPage() {
@@ -15,7 +15,7 @@ export default function TeachingsPage() {
     <main>
       <PageHero
         title="Teachings"
-        subtitle="Timeless wisdom on consciousness, meditation, and the path to self-realization."
+        subtitle="Recordings on YouTube, free to anyone. The deeper, structured work is in InnerSpace."
       />
 
       {/* Intro */}
@@ -29,13 +29,13 @@ export default function TeachingsPage() {
             <span className="h-px w-8 rounded-full bg-[#D4A843]" />
           </div>
           <h2 className="text-3xl font-semibold leading-tight text-[#000B58] sm:text-4xl">
-            Freely Shared Wisdom
+            Freely shared, on YouTube.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#1a1a1a]/80 sm:text-lg">
-            Dr. Baffour Jan has made a selection of his teachings freely available
-            on YouTube — covering topics from consciousness and meditation to the
-            nature of the self and the deeper dimensions of spiritual life. These
-            public teachings are an open invitation to all seekers of truth.
+            Dr. Baffour Jan has made a selection of his teachings freely
+            available — talks on consciousness, meditation, the nature of the
+            self. Watch one. If something in you stays with it, the rest of
+            this page is for you.
           </p>
         </div>
       </section>
@@ -70,22 +70,21 @@ export default function TeachingsPage() {
           </div>
 
           <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
-            Go Deeper with{' '}
+            For the deeper work —{' '}
             <span className="text-[#D4A843]">InnerSpace</span>
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg">
-            The public teachings are just the beginning. For members of the
-            foundation who are truly willing to go deeper into mystical studies
-            and an understanding of themselves, Dr. Baffour Jan has created{' '}
-            <strong className="font-semibold text-white">InnerSpace</strong> — a
-            dedicated course for sincere and serious seekers of truth.
+            The YouTube videos are the open door.{' '}
+            <strong className="font-semibold text-white">InnerSpace</strong> is
+            the room you walk into next — a structured course Dr. Baffour Jan
+            built for students who want to study seriously, in cohorts, with
+            guidance.
           </p>
 
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-white/70">
-            InnerSpace offers structured lessons, guided practices, and profound
-            insights into the nature of consciousness, the self, and the path to
-            inner freedom.
+            Lessons, guided practices, and a path through the material that
+            keeps moving. Hosted on drbaffourjan.com.
           </p>
 
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
