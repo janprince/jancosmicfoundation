@@ -14,7 +14,7 @@ const coreValues = [
     ),
     title: 'Compassion',
     description:
-      'All religious doctrines should lead to the manifestation of values like love, joy, and peace. We approach every individual with an open heart, seeing the divine in all people regardless of background.',
+      'The measure of spiritual work is not language or doctrine, but the love, patience, and clarity it reveals in ordinary life.',
   },
   {
     icon: (
@@ -24,7 +24,7 @@ const coreValues = [
     ),
     title: 'Unity',
     description:
-      'Unity in Divinity and Divinity in Unity — that is the goal. Our community is built on the understanding that all we see, hear, and feel are different frequencies of the same Consciousness.',
+      'The teachings return again and again to the one Consciousness behind apparent separation. Community is where that understanding is practised.',
   },
   {
     icon: (
@@ -34,7 +34,7 @@ const coreValues = [
     ),
     title: 'Service',
     description:
-      'The proof of our spiritual journey is the genuine love that is revealed in us and among one another. Service is not a supplement to the spiritual path — it is the path itself.',
+      'Inner awakening naturally expresses itself as care. Service keeps the path grounded in how we treat one another and the world around us.',
   },
   {
     icon: (
@@ -44,14 +44,14 @@ const coreValues = [
     ),
     title: 'Wisdom',
     description:
-      'The most worthy knowledge is that which helps to dismantle the Ego in order to reveal the True Self. Believing alone is not enough — it is through seeking, doing, and striving that one approaches perfection.',
+      'True wisdom is not information collected by the mind. It is the seeing that loosens ego, reveals the Self, and changes how a person lives.',
   },
 ];
 
 export const metadata: Metadata = {
   title: 'About the Foundation',
   description:
-    'Founded in Accra in 2021 to formalise nearly four decades of teaching by Dr. Baffour Jan. Read about the work, the team, and the four core values.',
+    'Learn about Jan Cosmic Foundation, the spiritual foundation founded by Dr. Baffour Jan to support self-realization, higher consciousness, inner freedom, and service.',
 };
 
 export default async function AboutPage() {
@@ -60,7 +60,7 @@ export default async function AboutPage() {
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
         title="About the Foundation"
-        subtitle="The formal home of Dr. Baffour Jan&rsquo;s teaching work. Founded in Accra in 2021."
+        subtitle="A spiritual foundation founded by Dr. Baffour Jan for sincere seekers drawn to self-realization, inner awakening, conscious living, and service."
       />
 
       {/* Foundation History */}
@@ -71,15 +71,18 @@ export default async function AboutPage() {
             <div>
               <SectionHeader
                 label="Our Story"
-                title="Founded in Accra, 2021."
+                title="Founded in Ghana, 2021."
                 align="left"
               />
               <div className="mt-8 space-y-5 text-base sm:text-lg leading-relaxed" style={{ color: '#1a1a1acc' }}>
                 <p>
-                  The Jan Cosmic Foundation was established in 2021 to formalise nearly four decades of teaching work by Dr. Baffour Jan. We are headquartered at Franko Estate, Kwabenya, in Greater Accra. We run weekly sittings, annual retreats at the San Bra Enlightenment Centre, the InnerSpace course for committed students, and a small set of community programmes — youth mentorship, medical outreach, and the developing Spiritual Village in Kwahu.
+                  Jan Cosmic Foundation was established in 2021 to give a living home to the teachings of Dr. Baffour Jan. Based in Ghana and reaching seekers beyond it, the Foundation exists to support people who feel called to understand themselves beyond the body, the mind, and borrowed belief.
                 </p>
                 <p>
-                  The teaching itself is older than the Foundation. Dr. Jan has been guiding seekers since 1986, drawing from Christianity, Rosicrucianism, Buddhism, and Vedic philosophy before transcending all of them. The Foundation is what makes the work sustainable, repeatable, and reachable to people who want to study seriously.
+                  The work is not about adding another identity. It is about the direct question beneath every label: Who am I? What is this life? What is the Source from which it comes? Dr. Jan&rsquo;s teachings return to consciousness, the soul, God, the mind, the body, illusion, suffering, and the possibility of inner freedom.
+                </p>
+                <p>
+                  In practice this takes the form of teachings, retreats, sittings, the InnerSpace course, media, gatherings, and service. JCF is not only an organisation. It is a movement of awakening and service for people willing to study sincerely, practise honestly, and let understanding become life.
                 </p>
               </div>
             </div>
@@ -118,13 +121,13 @@ export default async function AboutPage() {
             The Founder
           </div>
           <h2 className="text-3xl sm:text-4xl font-semibold mb-6" style={{ color: '#000B58' }}>
-            Our Connection to Dr. Baffour Jan
+            About Dr. Baffour Jan
           </h2>
           <p className="text-base sm:text-lg leading-relaxed mb-6" style={{ color: '#1a1a1acc' }}>
-            Dr. Baffour Jan is a spiritual master, mystic, and teacher known for guiding seekers toward deeper awareness of the self and the nature of consciousness. His teachings focus on awakening the divine potential within every human being and transcending limiting identities of the mind.
+            Dr. Baffour Jan is a Ghanaian mystic, spiritual master, and teacher. His work points beyond belief, ritual, and intellectual knowledge toward the direct recognition of who one is beneath the layers of mind and identity.
           </p>
           <p className="text-base sm:text-lg leading-relaxed mb-4" style={{ color: '#1a1a1acc' }}>
-            Through the Jan Cosmic Foundation, he offers teachings, courses, retreats, and spiritual guidance designed to help individuals discover truth, silence the restless mind, and experience the deeper reality of spirit.
+            His teaching is offered through the Foundation as public talks, sittings, retreats, and structured study. The aim is not to collect spiritual ideas, but to become still enough to see clearly.
           </p>
           <p className="text-base italic leading-relaxed mb-8" style={{ color: '#1a1a1abf' }}>
             &ldquo;The most worthy knowledge is that which helps to dismantle the Ego in order to reveal the True Self.&rdquo;
@@ -148,9 +151,9 @@ export default async function AboutPage() {
       <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="What We Stand For"
-            title="Our Core Values"
-            subtitle="Four principles guide every decision we make, every programme we run, and every relationship we build."
+            label="What guides the work"
+            title="Values that keep the work grounded"
+            subtitle="Not slogans. These are the qualities the Foundation returns to as the teachings become practice, community, and service."
           />
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {coreValues.map((value) => (
@@ -182,8 +185,8 @@ export default async function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             label="The People"
-            title="Leadership & Team"
-            subtitle="The dedicated individuals who bring the Jan Cosmic Foundation's mission to life every day."
+            title="Who runs the Foundation"
+            subtitle="The people who help hold the day-to-day work: teachings, retreats, programmes, media, centres, and service."
           />
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {teamMembers.map((member) => (
@@ -243,13 +246,13 @@ export default async function AboutPage() {
             Mission &amp; Vision
           </h2>
           <p className="text-sm italic mb-6" style={{ color: 'rgba(212,168,67,0.9)' }}>
-            &ldquo;The greatest wealth is contentment and you can only be totally content when you have attained complete self-realization.&rdquo;
+            &ldquo;The greatest wealth is contentment, and one only becomes truly content through self-realisation.&rdquo;
           </p>
           <p className="text-base sm:text-lg mb-10" style={{ color: 'rgba(253,251,247,0.9)' }}>
-            Read what we are trying to do, and how.
+            The purpose behind the Foundation, and the way that purpose becomes practice.
           </p>
           <Button href="/about/mission-vision" variant="secondary" size="lg">
-            Read the Mission
+            Read the mission
           </Button>
         </div>
       </section>

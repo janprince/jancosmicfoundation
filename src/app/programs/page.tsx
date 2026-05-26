@@ -56,7 +56,7 @@ const iconMap: Record<string, React.ReactNode> = {
 export const metadata: Metadata = {
   title: 'Our Programmes',
   description:
-    'What the Foundation runs — sittings, retreats, the InnerSpace course, youth mentorship, medical outreach, the Spiritual Village in Kwahu, and media work.',
+    'Programmes of Jan Cosmic Foundation: spiritual teachings, retreats, InnerSpace study, youth mentorship, service, media, and conscious community.',
 };
 
 export default async function ProgramsPage() {
@@ -68,17 +68,17 @@ export default async function ProgramsPage() {
   return (
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
-        title="Our Programmes"
-        subtitle="What we run, where, and why. Inner work and outer service, treated as the same work."
+        title="Programmes"
+        subtitle="Teachings, retreats, structured study, service, youth mentorship, and media for seekers walking the inner path."
       />
 
       {/* Intro Section */}
       <section className="py-16 sm:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <SectionHeader
-            label="What We Do"
-            title="What we run, where, and why."
-            subtitle="The Foundation runs four kinds of programmes — spiritual study, community development, youth work, and media — under the guidance of Dr. Baffour Jan. They are listed below, with the active ones flagged."
+            label="What we run"
+            title="Different forms, one inner work"
+            subtitle="The Foundation supports spiritual study, conscious practice, community service, youth mentorship, and media so the teachings can reach sincere seekers wherever they are."
           />
         </div>
       </section>
@@ -88,9 +88,9 @@ export default async function ProgramsPage() {
         <section className="pb-16 sm:pb-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
-              label="Spiritual Growth"
-              title="The inner path"
-              subtitle="Sittings, retreats, and structured study for people working on themselves."
+              label="Inner work"
+              title="Sittings, retreats, and structured study"
+              subtitle="The core of the Foundation: study, stillness, inquiry, and direct practice."
             />
 
             <div className="mt-12 space-y-8">
@@ -162,9 +162,9 @@ export default async function ProgramsPage() {
         <section className="py-16 sm:py-24" style={{ backgroundColor: '#F2EFE9' }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
-              label="Service &amp; Outreach"
-              title="The outer expression"
-              subtitle="Schools, clinics, mentorship, media. The teaching put into use."
+              label="Service and outreach"
+              title="Where the teaching meets the world"
+              subtitle="Youth mentorship, service, media, and practical support. The same inner work expressed outwardly."
             />
 
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -231,7 +231,7 @@ export default async function ProgramsPage() {
       <section className="py-14 sm:py-20" style={{ backgroundColor: '#FDFBF7' }}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xl sm:text-2xl italic font-light leading-relaxed mb-4" style={{ color: '#000B58' }}>
-            &ldquo;The purpose of human life is to evolve — to grow beyond the limitations of the mind and awaken to the infinite consciousness that you truly are.&rdquo;
+            &ldquo;The proof of our spiritual journey is the genuine love that is revealed in us and among one another.&rdquo;
           </p>
           <p className="text-sm font-semibold" style={{ color: 'var(--color-primary)' }}>
             — Dr. Baffour Jan
@@ -249,17 +249,17 @@ export default async function ProgramsPage() {
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
-            Take part
+            Take part in the work
           </h2>
           <p
             className="text-base sm:text-lg mb-10 leading-relaxed"
             style={{ color: 'rgba(253,251,247,0.9)' }}
           >
-            Fund a programme, give your time, or join a centre. All three help.
+            Support a programme, give your time, or join a centre. Choose the form of participation that feels sincere and sustainable.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button href="/donate" variant="secondary" size="lg">
-              Support a Programme
+              Support a programme
             </Button>
             <Button href="/volunteer" variant="outline" size="lg" className="!border-white/30 !text-white hover:!bg-white/10">
               Volunteer

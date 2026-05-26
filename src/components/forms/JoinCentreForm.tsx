@@ -36,9 +36,9 @@ export default function JoinCentreForm({ centreName, centreId }: JoinCentreFormP
         <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
           <span className="text-3xl text-primary">&#10003;</span>
         </div>
-        <h3 className="text-xl font-semibold text-[#000B58]">Request Submitted!</h3>
+        <h3 className="text-xl font-semibold text-[#000B58]">Request received</h3>
         <p className="mt-2 text-gray-600">
-          Your request to join {centreName} has been submitted. The centre leader will contact you soon.
+          Your message about {centreName} has been received. Someone from the centre will contact you soon.
         </p>
       </div>
     );
@@ -48,7 +48,7 @@ export default function JoinCentreForm({ centreName, centreId }: JoinCentreFormP
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
         <label htmlFor="join-name" className="block text-sm font-medium text-gray-700 mb-1.5">
-          Full Name
+          Full name
         </label>
         <input
           id="join-name"
@@ -89,7 +89,7 @@ export default function JoinCentreForm({ centreName, centreId }: JoinCentreFormP
       </div>
       <div>
         <label htmlFor="join-message" className="block text-sm font-medium text-gray-700 mb-1.5">
-          Message (Optional)
+          Message (optional)
         </label>
         <textarea
           id="join-message"
@@ -97,7 +97,7 @@ export default function JoinCentreForm({ centreName, centreId }: JoinCentreFormP
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
-          placeholder="Tell us about yourself..."
+          placeholder="Tell us what draws you to this centre..."
         />
       </div>
       {status === "error" && (

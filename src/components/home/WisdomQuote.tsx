@@ -10,9 +10,8 @@ export default function WisdomQuote() {
 
         <blockquote>
           <p className="text-xl font-light leading-relaxed text-[#000B58] sm:text-2xl lg:text-3xl">
-            &ldquo;The purpose of human life is to evolve — to grow beyond the
-            limitations of the mind and awaken to the infinite consciousness
-            that you truly are.&rdquo;
+            &ldquo;The proof of our spiritual journey is the genuine love that is
+            revealed in us and among one another.&rdquo;
           </p>
           <footer className="mt-8 flex flex-col items-center gap-4">
             <div className="h-14 w-14 overflow-hidden rounded-full">

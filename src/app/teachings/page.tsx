@@ -7,7 +7,7 @@ import { HiOutlineAcademicCap, HiOutlineSparkles } from 'react-icons/hi2';
 export const metadata: Metadata = {
   title: 'Teachings',
   description:
-    'Free public teachings by Dr. Baffour Jan on YouTube. For deeper, structured study, the InnerSpace course is offered to committed students.',
+    'Public teachings by Dr. Baffour Jan on consciousness, self-realization, God, the soul, the mind, and inner freedom, with InnerSpace for deeper structured study.',
 };
 
 export default function TeachingsPage() {
@@ -15,7 +15,7 @@ export default function TeachingsPage() {
     <main>
       <PageHero
         title="Teachings"
-        subtitle="Recordings on YouTube, free to anyone. The deeper, structured work is in InnerSpace."
+        subtitle="Public talks for seekers, with InnerSpace for deeper structured study."
       />
 
       {/* Intro */}
@@ -29,13 +29,12 @@ export default function TeachingsPage() {
             <span className="h-px w-8 rounded-full bg-[#D4A843]" />
           </div>
           <h2 className="text-3xl font-semibold leading-tight text-[#000B58] sm:text-4xl">
-            Freely shared, on YouTube.
+            Public teachings, freely shared
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#1a1a1a]/80 sm:text-lg">
-            Dr. Baffour Jan has made a selection of his teachings freely
-            available — talks on consciousness, meditation, the nature of the
-            self. Watch one. If something in you stays with it, the rest of
-            this page is for you.
+            Dr. Baffour Jan&rsquo;s public teachings explore consciousness,
+            self-realization, God, the soul, the mind, illusion, and the freedom
+            that becomes possible through direct inner knowing.
           </p>
         </div>
       </section>
@@ -75,16 +74,15 @@ export default function TeachingsPage() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg">
-            The YouTube videos are the open door.{' '}
+            Public videos are an open door.{' '}
             <strong className="font-semibold text-white">InnerSpace</strong> is
-            the room you walk into next — a structured course Dr. Baffour Jan
-            built for students who want to study seriously, in cohorts, with
-            guidance.
+            a structured path for students who want to study seriously, practise
+            consistently, and receive guidance.
           </p>
 
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-white/70">
-            Lessons, guided practices, and a path through the material that
-            keeps moving. Hosted on drbaffourjan.com.
+            Lessons, guided practices, and a living sequence through the work.
+            Hosted on drbaffourjan.com.
           </p>
 
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
@@ -101,7 +99,7 @@ export default function TeachingsPage() {
               href="/community"
               className="inline-flex items-center gap-2 rounded-lg border-2 border-white/30 px-8 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:border-white/60 hover:bg-white/10"
             >
-              Become a Member
+              Join the Community
             </Link>
           </div>
         </div>

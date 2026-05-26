@@ -45,9 +45,7 @@ export default function HeroSection() {
             </h1>
 
             <p className="hero-animate hero-animate-3 mt-7 max-w-lg text-lg leading-relaxed text-white/90">
-              Founded in Accra in 2021 to carry the teachings of
-              Dr. Baffour Jan — sittings, retreats, and a school
-              for sincere seekers. In Ghana and beyond.
+              A spiritual foundation founded by Dr. Baffour Jan, guiding sincere seekers toward self-realization, higher consciousness, inner freedom, and conscious living.
             </p>
 
             <blockquote className="hero-animate hero-animate-4 mt-8 border-l-2 border-[#D4A843]/30 pl-5">
@@ -65,7 +63,7 @@ export default function HeroSection() {
                 href="/about"
                 className="rounded-sm border border-white/30 px-7 py-3 text-sm font-medium text-white transition-colors duration-300 hover:bg-white/10"
               >
-                Read about the Foundation
+                Explore the Foundation
               </Link>
               <Link
                 href="/donate"
@@ -154,9 +152,8 @@ export default function HeroSection() {
             </h1>
 
             <p className="hero-animate hero-animate-3 mx-auto mt-6 max-w-md text-base leading-relaxed text-white/90">
-              Founded in Accra in 2021 to carry the teachings of
-              Dr. Baffour Jan — sittings, retreats, and a school
-              for sincere seekers. In Ghana and beyond.
+              A spiritual foundation founded by Dr. Baffour Jan for seekers
+              drawn to self-realization, inner freedom, and conscious living.
             </p>
 
             <blockquote className="hero-animate hero-animate-4 mx-auto mt-8 max-w-sm border-t border-white/10 pt-6">
@@ -174,7 +171,7 @@ export default function HeroSection() {
                 href="/about"
                 className="rounded-sm border border-white/30 px-7 py-3 text-sm font-medium text-white transition-colors duration-300 hover:bg-white/10"
               >
-                Read about the Foundation
+                Explore the Foundation
               </Link>
               <Link
                 href="/donate"

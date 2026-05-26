@@ -31,7 +31,7 @@ export default function NewsletterForm() {
         className="text-sm py-3 px-4 rounded-lg font-medium"
         style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.25)', color: '#86efac' }}
       >
-        Thank you for subscribing! We&apos;ll be in touch soon.
+        You&rsquo;re on the list. We&rsquo;ll write when there is something useful to share.
       </p>
     );
   }

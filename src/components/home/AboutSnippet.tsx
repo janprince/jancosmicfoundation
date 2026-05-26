@@ -27,22 +27,23 @@ export default function AboutSnippet() {
             </p>
 
             <h2 className="text-3xl font-light leading-tight text-[#000B58] sm:text-4xl">
-              A teaching home, made{' '}
-              <span className="text-primary">formal in 2021.</span>
+              A living movement of{' '}
+              <span className="text-primary">awakening and service.</span>
             </h2>
 
             <p className="mt-6 text-base leading-relaxed text-[#1a1a1a]/80">
-              The Foundation is the formal home of nearly four decades of
-              teaching by Dr. Baffour Jan. Headquartered in Kwabenya, Accra, we
-              run weekly sittings, annual retreats at the San Bra Enlightenment
-              Centre, the InnerSpace course for committed students, and a small
-              set of community programmes — youth education, medical outreach,
-              and the developing Spiritual Village in Kwahu.
+              Jan Cosmic Foundation carries the teachings of Dr. Baffour Jan,
+              a Ghanaian mystic and spiritual teacher whose work points seekers
+              beyond belief, ritual, and accumulated knowledge into direct inner
+              realization. Based in Ghana, the Foundation welcomes sincere
+              seekers from every background.
             </p>
 
             <p className="mt-4 text-base leading-relaxed text-[#1a1a1a]/80">
-              The work is the same work Dr. Jan has been doing for a long time.
-              The Foundation is what makes it sustainable.
+              Through teachings, retreats, courses, gatherings, media, and
+              service, JCF supports the inner evolution of people who feel called
+              to understand life more deeply and live from the truth of who they
+              are.
             </p>
 
             <Link

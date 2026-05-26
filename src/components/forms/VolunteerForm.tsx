@@ -34,12 +34,12 @@ export default function VolunteerForm() {
         <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
           <span className="text-3xl text-primary">&#10003;</span>
         </div>
-        <h3 className="text-xl font-semibold text-[#000B58]">Application Submitted!</h3>
+        <h3 className="text-xl font-semibold text-[#000B58]">Thank you</h3>
         <p className="mt-2 text-gray-600">
-          Thank you for your interest in volunteering. We&apos;ll be in touch soon.
+          We have received your volunteer message and will be in touch soon.
         </p>
         <button onClick={() => setStatus("idle")} className="mt-4 text-primary font-medium hover:underline">
-          Submit another application
+          Send another message
         </button>
       </div>
     );
@@ -50,7 +50,7 @@ export default function VolunteerForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
           <label htmlFor="vol-name" className="block text-sm font-medium text-gray-700 mb-1.5">
-            Full Name
+            Full name
           </label>
           <input
             id="vol-name"
@@ -64,7 +64,7 @@ export default function VolunteerForm() {
         </div>
         <div>
           <label htmlFor="vol-email" className="block text-sm font-medium text-gray-700 mb-1.5">
-            Email Address
+            Email address
           </label>
           <input
             id="vol-email"
@@ -112,7 +112,7 @@ export default function VolunteerForm() {
       </div>
       <div>
         <label htmlFor="vol-skills" className="block text-sm font-medium text-gray-700 mb-1.5">
-          Skills & Expertise
+          Skills and experience
         </label>
         <input
           id="vol-skills"
@@ -120,7 +120,7 @@ export default function VolunteerForm() {
           value={formData.skills}
           onChange={(e) => setFormData({ ...formData, skills: e.target.value })}
           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-          placeholder="e.g., Teaching, Event Planning, IT, Medical..."
+          placeholder="e.g., teaching, events, IT, writing, care..."
         />
       </div>
       <div>
@@ -142,7 +142,7 @@ export default function VolunteerForm() {
       </div>
       <div>
         <label htmlFor="vol-message" className="block text-sm font-medium text-gray-700 mb-1.5">
-          Why would you like to volunteer? (Optional)
+          What draws you to volunteer? (Optional)
         </label>
         <textarea
           id="vol-message"
@@ -150,14 +150,14 @@ export default function VolunteerForm() {
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
-          placeholder="Tell us about your motivation..."
+          placeholder="Tell us what you feel called to offer..."
         />
       </div>
       {status === "error" && (
         <p className="text-sm text-red-600">Something went wrong. Please try again.</p>
       )}
       <Button type="submit" variant="primary" size="lg" className="w-full md:w-auto">
-        {status === "sending" ? "Submitting..." : "Submit Application"}
+        {status === "sending" ? "Submitting..." : "Send volunteer message"}
       </Button>
     </form>
   );

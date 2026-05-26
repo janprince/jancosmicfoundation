@@ -15,9 +15,9 @@ type FormStatus = 'idle' | 'loading' | 'success' | 'error';
 
 export default function Newsletter({
   dark = false,
-  heading = 'Stay in the loop',
-  description = 'Get updates on our programmes, events, and impact stories delivered to your inbox.',
-  placeholder = 'Enter your email address',
+  heading = 'Letters for sincere seekers',
+  description = 'Occasional teachings, event dates, and Foundation updates. Sent only when there is something useful to share.',
+  placeholder = 'Your email',
   buttonLabel = 'Subscribe',
   className = '',
 }: NewsletterProps) {
@@ -88,11 +88,10 @@ export default function Newsletter({
           </svg>
         </div>
         <h3 className={['text-xl font-bold', headingColor].join(' ')}>
-          You&apos;re subscribed!
+          You&rsquo;re on the list.
         </h3>
         <p className={['mt-2 text-sm', descColor].join(' ')}>
-          Thank you for joining us. We&apos;ll be in touch with inspiring stories
-          and updates.
+          Thank you. We&rsquo;ll write when there is something useful to share.
         </p>
         <button
           onClick={handleReset}

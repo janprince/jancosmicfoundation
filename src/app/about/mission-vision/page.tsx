@@ -7,50 +7,50 @@ import { siteConfig } from '@/lib/site-config';
 const pillars = [
   {
     number: '01',
-    title: 'Spiritual Education',
+    title: 'The teachings',
     description:
-      'We provide accessible, high-quality instruction in meditation, contemplative philosophy, and conscious living — drawing from the depth of diverse wisdom traditions while remaining rooted in the JCF lineage as transmitted by Dr. Baffour Jan.',
+      'Public talks, sittings, retreats, and structured study shaped by Dr. Baffour Jan\'s direct teaching on consciousness, the Self, God, mind, illusion, and inner freedom.',
     highlights: [
-      'Annual Silent Retreats',
-      'Teacher Training Programme',
-      'Weekly Community Sittings',
-      'Youth Mindfulness Curriculum',
+      'Weekly sittings in Accra',
+      'Annual retreat',
+      'The InnerSpace course for committed students',
+      'Free public talks on YouTube',
     ],
   },
   {
     number: '02',
-    title: 'Community Development',
+    title: 'Service that keeps the path grounded',
     description:
-      'We believe that genuine spiritual growth expresses itself as care for the communities around us. Through scholarships, medical outreach, community centre programmes, and collaborative partnerships, we invest in the material and social conditions that allow human potential to flourish.',
+      'Inner work becomes real in how we serve. JCF supports community programmes, youth mentorship, media work, and practical outreach as expressions of the same spiritual life.',
     highlights: [
-      'Education Scholarship Fund',
-      'Medical Outreach Programme',
-      'Community Centre Services',
-      'Vocational Training',
+      'Medical outreach',
+      'Educational support for young people',
+      'Community service days',
+      'Local partnerships',
     ],
   },
   {
     number: '03',
-    title: 'Youth Empowerment',
+    title: 'Seeds of awareness in young people',
     description:
-      'Young people are not the leaders of tomorrow — they are participants and contributors today. Our youth programmes combine inner-development tools with practical skills, mentorship, and community to equip the next generation with the resources they need to build purposeful lives.',
+      'The Guide the Children work introduces young people to presence, self-awareness, responsibility, and conscious living through mentorship and simple practices.',
     highlights: [
-      'Youth Empowerment Programme',
-      'Mentorship Network',
-      'Leadership Workshops',
-      'Online Learning Hub',
+      'Guide the Children Initiative',
+      'Mentorship circle',
+      'School visits and workshops',
+      'Youth retreats',
     ],
   },
   {
     number: '04',
-    title: 'Expanding Reach',
+    title: 'A community of sincere seekers',
     description:
-      'The JCF community is steadily growing beyond its founding home in Ghana. Our centres connect seekers and practitioners, facilitating cultural exchange and the spread of a wisdom tradition rooted in African spiritual heritage.',
+      'The work is rooted in Ghana and open to the world. Centres and online platforms give seekers a place to sit, ask questions, study, and serve together.',
     highlights: [
-      `${siteConfig.stats.centres} Centres & Communities`,
-      'Community Programmes',
-      'Retreat Hosting',
-      'Growing Partnerships',
+      `${siteConfig.stats.centres} centres and communities`,
+      'In-person sittings and study',
+      'Retreat hosting',
+      'Hosts in new cities, by request',
     ],
   },
 ];
@@ -58,7 +58,7 @@ const pillars = [
 export const metadata: Metadata = {
   title: 'Mission & Vision',
   description:
-    'The Foundation&apos;s mission and the four pillars under which we work — spiritual education, community development, youth empowerment, and reach.',
+    'The mission and vision of Jan Cosmic Foundation: self-realization, higher consciousness, inner freedom, conscious living, and service through the teachings of Dr. Baffour Jan.',
 };
 
 export default function MissionVisionPage() {
@@ -66,7 +66,7 @@ export default function MissionVisionPage() {
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
         title="Mission &amp; Vision"
-        subtitle="What we are trying to do, and how. The four pillars under which everything we run sits."
+        subtitle="Why the Foundation exists, what it serves, and how the inner path becomes life."
       />
 
       {/* Mission */}
@@ -103,7 +103,7 @@ export default function MissionVisionPage() {
               />
 
               <p className="text-xl sm:text-2xl lg:text-3xl font-medium leading-relaxed text-white">
-                To teach and inspire people to evolve rapidly toward self-realization, enabling them to experience inner freedom, peace, and higher consciousness.
+                To guide sincere seekers toward self-realization, higher consciousness, inner freedom, and conscious living through the teachings of Dr. Baffour Jan, and to let that inner work express itself through service.
               </p>
 
               <div
@@ -128,24 +128,24 @@ export default function MissionVisionPage() {
       <section className="py-14 sm:py-20" style={{ backgroundColor: '#F2EFE9' }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="Where We Are Going"
+            label="Where the work is heading"
             title="Our Vision"
-            subtitle="The future we are working to help create."
+            subtitle="Three intentions that shape the way we teach, gather, serve, and grow."
           />
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                title: 'Humanity Awakened',
-                body: 'To contribute to the awakening of humanity by helping individuals realize their true nature and live in harmony with themselves, others, and the cosmos.',
+                title: 'Awakened human beings',
+                body: 'That more people come to know themselves beyond the noise of the mind, and live with the clarity, humility, and love that such seeing brings.',
               },
               {
-                title: 'Accessible Wisdom for All',
-                body: 'The entire cosmos becomes accessible if we learn to speak the cosmic language. We envision spiritual wisdom freely available to every person, regardless of background or tradition.',
+                title: 'Teachings kept reachable',
+                body: 'That the teachings of Dr. Jan remain available to sincere seekers through public media, live gatherings, structured courses, centres, and personal practice.',
               },
               {
-                title: 'Unity in Divinity',
-                body: 'All that we see, hear, and feel are just different frequencies of the same Consciousness. Understanding this leads to a harmonious and balanced relationship with the world around us.',
+                title: 'Unity lived, not only spoken',
+                body: 'That the understanding of one Consciousness becomes visible in how we relate to ourselves, to one another, to nature, and to the communities we serve.',
               },
             ].map((item) => (
               <div
@@ -178,9 +178,9 @@ export default function MissionVisionPage() {
       <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="How We Work"
-            title="Our Four Strategic Pillars"
-            subtitle="Every programme, initiative, and relationship we build falls under one or more of these four pillars — the structural framework through which we pursue our mission."
+            label="How the work breaks down"
+            title="Four areas of work"
+            subtitle="Teachings, service, youth mentorship, and community. Different forms, one intention: awakening expressed through life."
           />
 
           <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -231,17 +231,17 @@ export default function MissionVisionPage() {
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
-            Take part
+            Begin sincerely
           </h2>
           <p className="text-base sm:text-lg mb-10" style={{ color: 'rgba(253,251,247,0.9)' }}>
-            As a student, a volunteer, a donor — or simply someone curious. Anyone interested in this work is welcome to begin where they are.
+            Come as a student, a volunteer, a supporter, or simply as someone who wants to understand life more deeply. The right door is the one you can enter honestly.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button href="/about" variant="secondary" size="lg">
               Back to About
             </Button>
             <Button href="/events" variant="outline" size="lg">
-              Explore Events
+              See upcoming events
             </Button>
           </div>
         </div>

@@ -13,7 +13,7 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 
 export const metadata: Metadata = {
   description:
-    "Jan Cosmic Foundation is the formal home of nearly four decades of teaching by Dr. Baffour Jan. Headquartered in Accra, we run weekly sittings, annual retreats, and the InnerSpace course for sincere seekers.",
+    "Jan Cosmic Foundation is a spiritual foundation founded by Dr. Baffour Jan, created for sincere seekers drawn to self-realization, consciousness, inner awakening, and conscious living.",
 };
 
 export default function HomePage() {
@@ -40,8 +40,8 @@ export default function HomePage() {
             </div>
             <Newsletter
               dark
-              heading="A note, when there&rsquo;s something to say."
-              description="A few times a month — a teaching, an event date, a note from Dr. Jan when there&rsquo;s something worth saying. Nothing automated."
+              heading="Letters for sincere seekers"
+              description="Occasional teachings, event dates, and Foundation updates. Sent only when there is something useful to share."
               placeholder="Your email"
               buttonLabel="Subscribe"
             />

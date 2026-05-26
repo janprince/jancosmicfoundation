@@ -104,7 +104,7 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
                       <span className="font-semibold text-[#000B58]">
                         {cause.donorsCount}
                       </span>{' '}
-                      generous donor{cause.donorsCount !== 1 ? 's' : ''}
+                      donor{cause.donorsCount !== 1 ? 's' : ''}
                     </p>
                   </>
                 ) : (
@@ -118,8 +118,7 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
                       </div>
                     )}
                     <p className="text-sm text-gray-600 leading-relaxed">
-                      This is an ongoing initiative sustained by the continued generosity of our community.
-                      Every contribution directly supports this work.
+                      An ongoing initiative sustained by students, volunteers, and supporters. Every contribution helps keep it moving.
                     </p>
                     {cause.donorsCount > 0 && (
                       <p className="mt-3 text-sm text-gray-500">
@@ -224,9 +223,7 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
                         </p>
                       )}
                       <p className="text-xs leading-relaxed text-gray-500">
-                        This work is sustained by the continued generosity of our community.
-                        There is no fixed goal — every contribution directly supports and
-                        strengthens this initiative.
+                        This ongoing work has no fixed goal. Every contribution helps sustain it with care.
                       </p>
                       {cause.donorsCount > 0 && (
                         <div className="mt-4 flex items-center gap-2 text-sm text-gray-500">
@@ -262,9 +259,7 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
                   style={{ backgroundColor: '#F2EFE9' }}
                 >
                   <p className="text-xs text-gray-500 leading-relaxed">
-                    The Jan Cosmic Foundation is a registered charitable
-                    organisation. All donations are used transparently and
-                    accountably.
+                    Donations support the work named on this page. For questions about giving or stewardship, write to the Foundation.
                   </p>
                 </div>
               </div>

@@ -11,9 +11,9 @@ const benefits = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
       </svg>
     ),
-    title: 'Meaningful Impact',
+    title: 'Real, hands-on work',
     description:
-      'Your time and skills contribute directly to programmes that transform lives — in education, healthcare, and community development across Ghana.',
+      'Your time supports the visible work: retreats, gatherings, youth mentorship, media, centre care, and practical service.',
   },
   {
     icon: (
@@ -21,9 +21,9 @@ const benefits = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
       </svg>
     ),
-    title: 'Community & Connection',
+    title: 'A community to work alongside',
     description:
-      'Join a warm, values-driven community of practitioners and service-givers who become genuine friends and support networks for life.',
+      'Volunteering places you beside other students and supporters who are also learning to turn inner work into daily life.',
   },
   {
     icon: (
@@ -31,9 +31,9 @@ const benefits = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
-    title: 'Personal Growth',
+    title: 'Service as practice',
     description:
-      'Service as a spiritual practice deepens self-awareness, cultivates patience and compassion, and accelerates your own inner development.',
+      'Service is one way the teachings become real. It asks for attention, humility, patience, and love in practical form.',
   },
   {
     icon: (
@@ -41,16 +41,16 @@ const benefits = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
       </svg>
     ),
-    title: 'Mentorship & Training',
+    title: 'Guidance, where it helps',
     description:
-      'Receive structured training, ongoing mentorship from senior JCF teachers, and opportunities to develop skills that extend far beyond your volunteer role.',
+      'You will be guided into a role that fits your capacity, skills, and season of life.',
   },
 ];
 
 export const metadata: Metadata = {
   title: 'Volunteer With Us',
   description:
-    'Practical work the Foundation needs help with — coordinating retreats, hosting students, driving, cooking, filming, writing, building. A Saturday or a season, both help.',
+    'Volunteer with Jan Cosmic Foundation through retreats, gatherings, media, youth mentorship, centre support, and service programmes.',
 };
 
 export default async function VolunteerPage() {
@@ -60,7 +60,7 @@ export default async function VolunteerPage() {
     <>
       <PageHero
         title="Volunteer With Us"
-        subtitle="There is more to do here than we can do alone."
+        subtitle="Offer your time, skills, and presence in service of the work."
       />
 
       {/* Why Volunteer section */}
@@ -68,8 +68,8 @@ export default async function VolunteerPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             label="Why Volunteer"
-            title="What you&rsquo;d be helping with"
-            subtitle="Practical work — coordinating retreats, hosting visiting students, driving, cooking, filming, writing, building. If you can give a Saturday or a season, write to us. We&rsquo;ll find a place for you."
+            title="What you'd be helping with"
+            subtitle="Retreats, gatherings, media, youth mentorship, centre support, writing, logistics, care, and community service. A little time, offered sincerely, matters."
             className="mb-12"
           />
 
@@ -103,7 +103,7 @@ export default async function VolunteerPage() {
           <SectionHeader
             label="Open Roles"
             title="Current openings"
-            subtitle="If none of these fit, write anyway. The list below is partial — there&rsquo;s often something that hasn&rsquo;t made the page yet."
+            subtitle="If none of these fit, write anyway. There is often a quieter need that has not made the page yet."
             className="mb-10"
           />
 

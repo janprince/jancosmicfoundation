@@ -31,9 +31,9 @@ export default function ContactForm() {
         <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
           <span className="text-3xl text-primary">&#10003;</span>
         </div>
-        <h3 className="text-xl font-semibold text-[#000B58]">Message Sent!</h3>
+        <h3 className="text-xl font-semibold text-[#000B58]">Message sent</h3>
         <p className="mt-2 text-gray-600">
-          Thank you for reaching out. We&apos;ll get back to you soon.
+          Thank you for writing to the Foundation. We&apos;ll get back to you soon.
         </p>
         <button
           onClick={() => setStatus("idle")}
@@ -50,7 +50,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">
-            Full Name
+            Full name
           </label>
           <input
             id="name"
@@ -64,7 +64,7 @@ export default function ContactForm() {
         </div>
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">
-            Email Address
+            Email address
           </label>
           <input
             id="email"
@@ -88,7 +88,7 @@ export default function ContactForm() {
           value={formData.subject}
           onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-          placeholder="What is this about?"
+          placeholder="Teachings, centres, volunteering, events..."
         />
       </div>
       <div>
@@ -102,14 +102,14 @@ export default function ContactForm() {
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
-          placeholder="Your message..."
+          placeholder="Write your message..."
         />
       </div>
       {status === "error" && (
         <p className="text-sm text-red-600">Something went wrong. Please try again.</p>
       )}
       <Button type="submit" variant="primary" size="lg" className="w-full md:w-auto">
-        {status === "sending" ? "Sending..." : "Send Message"}
+        {status === "sending" ? "Sending..." : "Send message"}
       </Button>
     </form>
   );

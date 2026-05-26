@@ -41,7 +41,7 @@ export default function EventsPageContent({ events }: EventsPageContentProps) {
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
         title="Events"
-        subtitle="Join us for retreats, workshops, community service days, and gatherings that nourish both the inner life and the world around us."
+        subtitle="Retreats, sittings, teachings, and service gatherings for seekers who want to practise with others."
       />
 
       <section className="py-16 sm:py-24">
@@ -139,10 +139,10 @@ export default function EventsPageContent({ events }: EventsPageContentProps) {
       <section className="py-14" style={{ backgroundColor: '#F2EFE9' }}>
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-3" style={{ color: '#000B58' }}>
-            Hear about events first.
+            Hear about events first
           </h2>
           <p className="text-sm sm:text-base mb-6" style={{ color: '#1a1a1abf' }}>
-            Subscribe to the newsletter — retreats and gatherings often fill before they&rsquo;re widely announced.
+            Join the community to hear when new retreats, sittings, and teaching dates are announced.
           </p>
           <a
             href="/community"

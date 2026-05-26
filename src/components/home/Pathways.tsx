@@ -7,28 +7,28 @@ const pathways = [
     icon: HiOutlineBookOpen,
     title: 'Watch the teachings',
     description:
-      'Free recordings on YouTube. Or join InnerSpace for the deeper, structured work.',
+      'Begin with public talks, then continue through InnerSpace when you are ready for structured study.',
     href: '/teachings',
   },
   {
     icon: HiOutlineCalendarDays,
-    title: 'Come to an event',
+    title: 'Attend a gathering',
     description:
-      'Talks, retreats, and weekly sittings — most in Accra, some online.',
+      'Retreats, sittings, and live sessions for seekers who want to practise in community.',
     href: '/events',
   },
   {
     icon: HiOutlineMapPin,
     title: 'Visit a centre',
     description:
-      'Centres across Ghana and beyond. Sit, listen, ask questions.',
+      'Sit with others, listen deeply, ask sincere questions, and serve where you are.',
     href: '/centres',
   },
   {
     icon: HiOutlineHeart,
-    title: 'Help fund the work',
+    title: 'Support the work',
     description:
-      'Youth education, retreats, the Spiritual Village in Kwahu, and more.',
+      'Help sustain the teachings, youth mentorship, media work, retreats, and service programmes.',
     href: '/donate',
   },
 ];
@@ -43,11 +43,11 @@ export default function Pathways() {
             Where to Begin
           </p>
           <h2 className="text-3xl font-semibold leading-tight text-[#000B58] sm:text-4xl">
-            Four ways in.
+            Four ways to begin
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/75 sm:text-lg">
-            Some come for the teachings. Some come for the community. Some come
-            because they couldn&apos;t say why. All are welcome.
+            Start with the doorway that feels honest. The path deepens through
+            practice, study, service, and community.
           </p>
         </ScrollReveal>
 

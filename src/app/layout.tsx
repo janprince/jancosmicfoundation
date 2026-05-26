@@ -16,36 +16,40 @@ const raleway = Raleway({
 export const metadata: Metadata = {
   metadataBase: new URL("https://jancosmicfoundation.org"),
   title: {
-    default: "Jan Cosmic Foundation - Awakening Humanity to Self-Realization",
+    default: "Jan Cosmic Foundation — Self-Realization & Conscious Living",
     template: "%s | Jan Cosmic Foundation",
   },
   description:
-    "A spiritual organisation founded by Dr. Baffour Jan, dedicated to guiding individuals toward higher consciousness, inner freedom, and self-realization through teachings, retreats, and community service.",
+    "Jan Cosmic Foundation is a spiritual foundation founded by Dr. Baffour Jan, guiding sincere seekers toward self-realization, higher consciousness, inner freedom, and conscious living.",
   keywords: [
     "Jan Cosmic Foundation",
     "Dr. Baffour Jan",
     "self-realization",
-    "spiritual education",
-    "higher consciousness",
-    "meditation",
-    "spiritual retreats",
-    "community service",
-    "inner freedom",
+    "spiritual awakening",
+    "spiritual teachings",
+    "spiritual master Ghana",
+    "mystic teacher",
+    "InnerSpace course",
+    "spiritual retreat Ghana",
+    "consciousness",
     "conscious living",
+    "inner transformation",
+    "soul",
+    "mystic",
   ],
   openGraph: {
-    title: "Jan Cosmic Foundation — Awakening Humanity to Self-Realization",
+    title: "Jan Cosmic Foundation — Self-Realization & Conscious Living",
     description:
-      "A spiritual organisation guiding individuals toward higher consciousness, inner freedom, and self-realization through the teachings of Dr. Baffour Jan.",
+      "A spiritual foundation founded by Dr. Baffour Jan, offering teachings, retreats, courses, gatherings, and service for sincere seekers.",
     url: "https://jancosmicfoundation.org",
     siteName: "Jan Cosmic Foundation",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jan Cosmic Foundation — Awakening Humanity to Self-Realization",
+    title: "Jan Cosmic Foundation — Self-Realization & Conscious Living",
     description:
-      "A spiritual organisation founded by Dr. Baffour Jan, dedicated to guiding individuals toward higher consciousness, inner freedom, and self-realization.",
+      "Teachings, retreats, courses, gatherings, and service for seekers drawn to self-realization, consciousness, and inner freedom.",
   },
 };
 

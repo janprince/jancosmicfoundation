@@ -33,16 +33,16 @@ export default function GalleryPageContent({ items }: GalleryPageContentProps) {
     <>
       <PageHero
         title="Gallery"
-        subtitle="Moments of community, service, and spiritual life from across the Jan Cosmic Foundation."
+        subtitle="Photographs from teachings, sittings, retreats, service, and life in community."
       />
 
       <section className="py-16 md:py-20" style={{ backgroundColor: '#FDFBF7' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section header */}
           <SectionHeader
-            label="Our Gallery"
-            title="Life at JCF"
-            subtitle="Browse photographs from retreats, community days, spiritual gatherings, and centre activities."
+            label="Photographs"
+            title="The work in lived moments"
+            subtitle="A small archive from retreats, teachings, community days, and ordinary days at the centres."
             className="mb-10"
           />
 
@@ -153,8 +153,8 @@ export default function GalleryPageContent({ items }: GalleryPageContentProps) {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-medium text-gray-700 mb-2">No photos in this category</h3>
-              <p className="text-sm text-gray-500 mb-6">Check back soon for updates.</p>
+              <h3 className="text-lg font-medium text-gray-700 mb-2">Nothing here yet</h3>
+              <p className="text-sm text-gray-500 mb-6">Photographs from this category haven&rsquo;t been added yet.</p>
               {activeCategory !== 'all' && (
                 <button
                   onClick={() => setActiveCategory('all')}

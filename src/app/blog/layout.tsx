@@ -3,14 +3,14 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Blog',
   description:
-    'Insights, stories, and practical wisdom from the Jan Cosmic Foundation — on meditation, service, wellbeing, and conscious living.',
+    'Teachings, reflections, retreat notes, and practical wisdom from Jan Cosmic Foundation on consciousness, self-realization, service, and conscious living.',
   alternates: {
     canonical: 'https://jancosmicfoundation.org/blog',
   },
   openGraph: {
     title: 'Blog | Jan Cosmic Foundation',
     description:
-      'Insights, stories, and practical wisdom from the Jan Cosmic Foundation — on meditation, service, wellbeing, and conscious living.',
+      'Teachings, reflections, retreat notes, and practical wisdom from Jan Cosmic Foundation on consciousness, self-realization, service, and conscious living.',
     url: 'https://jancosmicfoundation.org/blog',
     type: 'website',
   },

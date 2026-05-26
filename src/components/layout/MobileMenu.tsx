@@ -193,10 +193,10 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
                 onClick={onClose}
                 className="block w-full text-center py-3 px-6 rounded-xl text-sm font-semibold text-[#000B58] bg-[#D4A843] transition-all duration-200 hover:bg-[#c49a38] hover:shadow-lg active:scale-[0.98]"
               >
-                Donate Now
+                Donate
               </Link>
               <p className="text-center text-xs text-gray-400">
-                Your support makes a difference.
+                Support the teachings, service, and community work.
               </p>
             </div>
           </DialogPanel>

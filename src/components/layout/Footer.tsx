@@ -56,8 +56,9 @@ export default function Footer() {
               className="text-sm leading-relaxed"
               style={{ color: 'rgba(253,251,247,0.88)' }}
             >
-              Guiding individuals toward self-realization, higher consciousness,
-              and inner freedom — through the teachings of Dr. Baffour Jan.
+              A spiritual foundation founded by Dr. Baffour Jan, guiding sincere
+              seekers toward self-realization, higher consciousness, and conscious
+              living.
             </p>
 
             {/* Social icons */}
@@ -139,8 +140,8 @@ export default function Footer() {
               className="text-sm mb-4"
               style={{ color: 'rgba(253,251,247,0.88)' }}
             >
-              A few times a month — a teaching, an event date, a note when
-              there&rsquo;s something worth saying.
+              Occasional teachings, event dates, and Foundation updates for
+              people walking the inner path.
             </p>
             <NewsletterForm />
           </div>

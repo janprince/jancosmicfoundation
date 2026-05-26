@@ -36,8 +36,8 @@ export default function BlogPageContent({ posts }: BlogPageContentProps) {
   return (
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
-        title="Blog"
-        subtitle="Insights, stories, and practical wisdom from the Jan Cosmic Foundation community — on meditation, service, wellbeing, and conscious living."
+        title="Writing"
+        subtitle="Teachings, reflections, retreat notes, and writing from the Foundation."
       />
 
       <section className="py-16 sm:py-24">
@@ -45,9 +45,9 @@ export default function BlogPageContent({ posts }: BlogPageContentProps) {
           {/* Header + category filters */}
           <div className="flex flex-col gap-8 mb-12">
             <SectionHeader
-              label="From the Community"
-              title="Latest Articles"
-              subtitle="Explore our growing library of writing from teachers, volunteers, and community members."
+              label="From the Foundation"
+              title="Recent writing"
+              subtitle="Some pieces begin as talks, some as questions, some as quiet notes from practice. Read what meets you where you are."
             />
 
             {/* Category filter tabs */}
@@ -136,10 +136,10 @@ export default function BlogPageContent({ posts }: BlogPageContentProps) {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2" style={{ color: '#000B58' }}>
-                No posts in this category
+                Nothing here yet
               </h3>
               <p className="text-base max-w-sm mb-6" style={{ color: '#1a1a1abf' }}>
-                We have not published any posts under &ldquo;{activeCategory}&rdquo; yet. Check back soon or browse all articles.
+                We haven&rsquo;t written anything under &ldquo;{activeCategory}&rdquo; yet. Browse the rest of the writing in the meantime.
               </p>
               <button
                 onClick={() => setActiveCategory(ALL_LABEL)}

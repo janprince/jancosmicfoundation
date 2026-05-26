@@ -94,9 +94,9 @@ export default function DonationCheckout({ causeTitle, causeId }: DonationChecko
         <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
           <span className="text-4xl text-primary">&#10003;</span>
         </div>
-        <h3 className="text-2xl font-semibold text-[#000B58]">Thank You!</h3>
+        <h3 className="text-2xl font-semibold text-[#000B58]">Thank you</h3>
         <p className="mt-2 text-gray-600">
-          Your generous donation of {formatAmount(finalAmount)} to {causeTitle} has been received.
+          Your donation of {formatAmount(finalAmount)} to {causeTitle} has been received.
         </p>
         <p className="mt-1 text-sm text-gray-500">
           A receipt has been sent to your email.
@@ -260,7 +260,7 @@ export default function DonationCheckout({ causeTitle, causeId }: DonationChecko
       )}
 
       <p className="text-xs text-gray-400 text-center">
-        Payments processed securely via Paystack. Your donation is tax-deductible.
+        Payments are processed securely via Paystack. A receipt is sent to your email.
       </p>
     </div>
   );

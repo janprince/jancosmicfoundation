@@ -5,9 +5,9 @@ import Button from '@/components/ui/Button';
 import { getTestimonials } from '@/lib/api';
 
 export const metadata: Metadata = {
-  title: 'Testimonials — Voices from the Community',
+  title: 'Voices from the Community',
   description:
-    'In their own words — students, volunteers, and centre members on what brought them to the Jan Cosmic Foundation and what they found.',
+    'Reflections from Jan Cosmic Foundation students, volunteers, and community members on the teachings, service, and inner path.',
 };
 
 export default async function TestimonialsPage() {
@@ -17,7 +17,7 @@ export default async function TestimonialsPage() {
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
         title="Voices from the Community"
-        subtitle="In their own words — students, volunteers, and centre members on what brought them and what they found."
+        subtitle="Reflections from students, volunteers, and centre members walking with the Foundation."
       />
 
       {/* Empty state */}
@@ -30,8 +30,8 @@ export default async function TestimonialsPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-medium text-gray-700 mb-2">No testimonials yet</h3>
-              <p className="text-sm text-gray-500">Check back soon for stories of transformation from our community.</p>
+              <h3 className="text-lg font-medium text-gray-700 mb-2">No testimonies yet</h3>
+              <p className="text-sm text-gray-500">We&rsquo;ll add reflections from students and volunteers as they come in.</p>
             </div>
           </div>
         </section>
@@ -91,9 +91,9 @@ export default async function TestimonialsPage() {
       <section className="pb-16 sm:pb-24" style={{ backgroundColor: '#FDFBF7' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="In Their Words"
-            title="What Our Community Says"
-            subtitle="Every testimony is a reminder that the path of awakening is real, accessible, and transformative."
+            label="In their words"
+            title="Reflections from the community"
+            subtitle="No reflection can replace direct experience. Still, another seeker's words can sometimes help us take the next honest step."
           />
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -160,13 +160,13 @@ export default async function TestimonialsPage() {
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
-            Come find out for yourself.
+            Come and see for yourself
           </h2>
           <p
             className="text-base sm:text-lg mb-10 leading-relaxed"
             style={{ color: 'rgba(253,251,247,0.9)' }}
           >
-            These are real people. The work they describe is the same work we&rsquo;re doing this week. If you&rsquo;d like to be part of it — write to us, or come to a sitting.
+            If these reflections speak to something in you, begin simply: join a gathering, visit a centre, or write to the Foundation.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button href="/community" variant="secondary" size="lg">

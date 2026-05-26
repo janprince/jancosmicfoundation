@@ -7,7 +7,7 @@ import { getCauses } from '@/lib/api';
 export const metadata: Metadata = {
   title: 'Donate',
   description:
-    'Support the Foundation. Donations fund the Spiritual Village in Kwahu, teaching video production, the children&apos;s mentorship programme, and ongoing community work.',
+    'Support Jan Cosmic Foundation. Donations help sustain spiritual teachings, retreats, media, youth mentorship, service programmes, and the developing Spiritual Village in Kwahu.',
 };
 
 export default async function DonatePage() {
@@ -20,8 +20,8 @@ export default async function DonatePage() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
         </svg>
       ),
-      title: 'Spiritual Village',
-      description: 'Building a 500-acre sanctuary in Kwahu for retreats, meditation, organic farming, and community living.',
+      title: 'Spiritual Village in Kwahu',
+      description: 'A long-term sanctuary vision for retreats, meditation, conscious living, organic farming, and community.',
     },
     {
       icon: (
@@ -29,8 +29,8 @@ export default async function DonatePage() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
         </svg>
       ),
-      title: 'Media & Outreach',
-      description: 'Spreading the teachings of Dr. Baffour Jan to a wider audience through professional media production.',
+      title: 'Recording the teachings',
+      description: 'Filming, editing, and publishing Dr. Jan\'s talks so sincere seekers can meet the teachings wherever they are.',
     },
     {
       icon: (
@@ -39,7 +39,7 @@ export default async function DonatePage() {
         </svg>
       ),
       title: 'Guide the Children',
-      description: 'Introducing children to conscious living through mentorship, awareness practices, and wisdom-based education.',
+      description: 'Mentorship and simple awareness practices that help young people grow with presence, responsibility, and inner clarity.',
     },
   ];
 
@@ -47,7 +47,7 @@ export default async function DonatePage() {
     <>
       <PageHero
         title="Donate"
-        subtitle="The Foundation is paid for by the people who study with us. Here is what your contribution funds."
+        subtitle="Support the teachings, service, media, youth mentorship, and long-term spiritual home of the Foundation."
       />
 
       {/* Intro */}
@@ -55,9 +55,9 @@ export default async function DonatePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center mb-14">
             <SectionHeader
-              label="Support Our Work"
-              title="Where your contribution goes"
-              subtitle="Currently, three things need funding: the Spiritual Village land in Kwahu (in development), the production of teaching videos, and the children's mentorship programme. Every cause below is something the Foundation is actively running."
+              label="Where it goes"
+              title="What your contribution funds"
+              subtitle="Your support helps keep the teachings reachable, the programmes active, and the work grounded in service."
             />
           </div>
 
@@ -84,9 +84,9 @@ export default async function DonatePage() {
 
           {/* Causes grid */}
           <SectionHeader
-            label="Active Causes"
-            title="Choose a cause"
-            subtitle="Select a cause below to read more and donate. You can also give without choosing one — see further down the page."
+            label="Active causes"
+            title="Choose where to give"
+            subtitle="Support a specific cause, or give to the Foundation directly so funds can go where they are most needed."
             className="mb-10"
           />
 
@@ -126,12 +126,12 @@ export default async function DonatePage() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-semibold text-white leading-tight">
-            Or let us choose where it goes.
+            Or give to the whole work
           </h2>
           <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed text-white/90">
-            If you&rsquo;d rather not pick a specific cause, give to the
-            Foundation directly. We&rsquo;ll put it where it&rsquo;s most
-            needed — usually a programme that&rsquo;s under-funded that month.
+            If you would rather not choose a specific cause, give to the
+            Foundation directly. Your contribution will support the area of the
+            work that needs it most.
           </p>
 
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
@@ -152,7 +152,7 @@ export default async function DonatePage() {
           </div>
 
           <p className="mt-8 text-sm text-white/75">
-            Payments processed securely via Paystack. Donations are tax-deductible where applicable.
+            Payments are processed securely via Paystack. A receipt is sent to your email.
           </p>
         </div>
       </section>

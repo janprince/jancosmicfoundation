@@ -15,19 +15,18 @@ export default function InnerSpaceSection() {
         </div>
 
         <h2 className="text-3xl font-semibold leading-tight text-[#000B58] sm:text-4xl lg:text-5xl">
-          For those ready to go further
+          A structured path for deeper study
         </h2>
 
         <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#1a1a1a]/85 sm:text-lg">
-          <strong className="font-semibold text-[#000B58]">InnerSpace</strong> is a
-          structured course Dr. Baffour Jan created for sincere seekers who want
-          to study the nature of consciousness, the self, and the path to inner
-          freedom — in depth, in cohorts, with guidance.
+          <strong className="font-semibold text-[#000B58]">InnerSpace</strong> is
+          Dr. Baffour Jan&rsquo;s online study path for sincere seekers who want
+          to explore consciousness, the Self, and inner freedom with guidance.
         </p>
 
         <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/65">
-          The public teachings on YouTube are an open door. InnerSpace is the
-          room you walk into next.
+          Public teachings are an open door. InnerSpace gives the study a
+          rhythm, a sequence, and a community of students walking inward.
         </p>
 
         <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">

@@ -7,94 +7,76 @@ import { siteConfig } from '@/lib/site-config';
 
 const milestones = [
   {
-    year: '1953',
-    title: 'Born in Dwenem, Ghana',
+    year: 'Ghana',
+    title: 'A life rooted in spiritual inquiry',
     description:
-      'Dr. Baffour Jan was born on 10th December 1953 at St. Mary\'s Hospital in Dwenem (New Drobo), Jaman District, Bono Region, Ghana, to late Francis Kumi and late Madam Mary Donkor.',
+      'Dr. Baffour Jan is publicly known as a Ghanaian mystic and spiritual teacher whose life has been shaped by a sustained inquiry into God, the soul, consciousness, and the nature of human suffering.',
   },
   {
-    year: '1969',
-    title: 'Early Education',
+    year: 'Early path',
+    title: 'Study across traditions',
     description:
-      'Completed studies at the Local Authority Middle School at Dunkwa with distinction, already showing deep spiritual interests from his school years.',
+      'Before the current form of his teaching, Dr. Jan studied widely across spiritual and mystical traditions, looking for the truth beneath inherited forms and language.',
   },
   {
-    year: '1974',
-    title: 'Secondary Education',
+    year: 'Inner turning',
+    title: 'Beyond belief and doctrine',
     description:
-      'Completed studies at Dormaa Secondary School, where his exploration of esoteric traditions began through Rosicrucianism.',
-  },
-  {
-    year: '1975–80',
-    title: 'Medical Sciences & Buddhist Study',
-    description:
-      'Undertook a three-year Medical Sciences course at Korle-Bu Teaching Hospital while simultaneously deepening his spiritual exploration through the Nichiren Shoshu sect of Buddhism.',
-  },
-  {
-    year: '1980',
-    title: 'ISKCON Initiation',
-    description:
-      'Initiated as Jiva Goswami within the International Society for Krishna Consciousness. Became the first Ghanaian ISKCON Temple President and first Regional Director for West Africa.',
-  },
-  {
-    year: '1983',
-    title: 'Studies in India',
-    description:
-      'Travelled to India for specialised training in Ayurvedic medicine, Pranic Healing, Psychotherapy, Hydrotherapy, and Reflexology — deepening both his healing abilities and spiritual understanding.',
+      'His teaching points seekers beyond belief, ritual, and intellectual knowledge into direct inner realization: the recognition of the Self beneath the activity of the mind.',
   },
   {
     year: '1986',
-    title: 'Spiritual Realisation',
+    title: 'Teaching work begins',
     description:
-      'After releasing all prior beliefs and practices, a spontaneous and profound spiritual realisation occurred in the presence of three teachers from the Brahma Kumaris World Spiritual University. This marked the beginning of his teaching mission.',
+      'Public materials connected to Dr. Jan describe his teaching work as beginning in 1986, with a focus on self-realization, higher consciousness, and the awakening of the divine within.',
   },
   {
-    year: '1996',
-    title: 'Hermetic Sanctuary Founded',
+    year: 'Public talks',
+    title: 'Teachings for seekers',
     description:
-      'Established the Hermetic Sanctuary in Ivory Coast — a sacred space dedicated to spiritual practice, inner retreat, and the transmission of higher knowledge.',
+      'Through talks, guided reflections, online teachings, and gatherings, Dr. Jan continues to speak on consciousness, the mind, the body, the soul, God, truth, illusion, and freedom from within.',
   },
   {
-    year: '2012',
-    title: 'San Bra Enlightenment Centre',
+    year: 'InnerSpace',
+    title: 'Structured study',
     description:
-      'Founded the San Bra Enlightenment Centre in Adjen Kotoku, Ghana — a retreat centre designed for deep spiritual transformation and immersive practice.',
+      'InnerSpace gives committed students a more structured way to study his teachings, practise consistently, and move from spiritual curiosity into disciplined inner work.',
   },
   {
     year: '2021',
     title: 'Jan Cosmic Foundation',
     description:
-      'Established the Jan Cosmic Foundation in Accra, Ghana, to formalise and expand his teaching mission, support community service, and bring the teachings to seekers worldwide.',
+      'The Jan Cosmic Foundation was established to hold and share this work through teachings, retreats, courses, media, gatherings, centres, and service.',
   },
 ];
 
 const teachings = [
   {
-    title: 'Self-Realisation',
+    title: 'Self-realization',
     description:
-      'The core of Dr. Jan\'s teaching is the direct realisation of the True Self — not through belief or intellectual study, but through the dismantling of the ego and the dissolution of conditioned identity.',
+      'The aim is not to acquire a new identity, but to recognise the one that was never created — the Self beneath the layers of body, mind, and conditioning.',
   },
   {
-    title: 'Non-Dual Wisdom',
+    title: 'Non-dual wisdom',
     description:
-      'Drawing from traditions across Christianity, Buddhism, Hinduism, and mystical philosophy — without allegiance to any single doctrine — his teachings point to the one truth underlying all paths.',
+      'Drawing from Christianity, Buddhism, Hinduism, and the mystical traditions — without claiming allegiance to any single one — Dr. Jan points to what they each, in their own language, are pointing at.',
   },
   {
-    title: 'Inner Silence',
+    title: 'Inner silence',
     description:
-      'Dr. Jan teaches that genuine spiritual awakening happens not through accumulation of knowledge but through the silencing of the restless mind, revealing the peace that is always already present.',
+      'Awakening is not produced by adding more spiritual knowledge. It is what becomes available when the mind grows quiet enough to stop talking over it.',
   },
   {
-    title: 'Service as Practice',
+    title: 'Service as practice',
     description:
-      'Selfless service is not treated as a supplement to the spiritual path, but as an essential expression of awakened consciousness — the proof of genuine inner transformation.',
+      'If something has truly opened inwardly, it shows up in how a person treats others. Service is not a moral duty bolted onto the path. It is one of the ways the path expresses itself.',
   },
 ];
 
 export const metadata: Metadata = {
   title: 'Dr. Baffour Jan — Founder & Spiritual Director',
   description:
-    'Born 1953 in Dwenem, Ghana. From ISKCON to the Brahma Kumaris to the Hermetic Sanctuary (1996), San Bra Centre (2012), and the Jan Cosmic Foundation (2021).',
+    'Dr. Baffour Jan is a Ghanaian mystic, spiritual master, and founder of Jan Cosmic Foundation. His teachings explore self-realization, consciousness, God, the soul, mind, truth, and inner freedom.',
 };
 
 export default function FounderPage() {
@@ -102,7 +84,7 @@ export default function FounderPage() {
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
         title="Dr. Baffour Jan"
-        subtitle="Spiritual master, mystic, and founder of the Jan Cosmic Foundation. Teaching since 1986."
+        subtitle="Mystic, spiritual master, teacher, and founder of Jan Cosmic Foundation."
       />
 
       {/* Introduction */}
@@ -139,18 +121,18 @@ export default function FounderPage() {
             <div>
               <SectionHeader
                 label="The Founder"
-                title="A Contemporary Mystic"
+                title="A teacher of direct inner realization"
                 align="left"
               />
               <div className="mt-8 space-y-5 text-base sm:text-lg leading-relaxed" style={{ color: '#1a1a1acc' }}>
                 <p>
-                  Dr. Baffour Jan is a spiritual master and contemporary mystic whose teachings cut through centuries of accumulated spiritual complexity to reveal the simple, immediate truth of who you are.
+                  Dr. Baffour Jan is a Ghanaian mystic, spiritual master, and teacher whose work points beyond doctrine and ritual to the direct recognition of who one already is. His teachings explore God, the soul, consciousness, illusion, the mind, the body, truth, human suffering, and inner awakening.
                 </p>
                 <p>
-                  Born on 10th December 1953 in Dwenem, Ghana, his spiritual journey has taken him through the depths of Christianity, Rosicrucianism, Buddhism, and Vedic philosophy — each tradition adding a dimension to his understanding before he ultimately transcended all doctrinal boundaries.
+                  Public materials around his work describe a path shaped by wide study and direct realization. He does not ask seekers to collect beliefs. He points them back to direct experience: the knowing that becomes possible when the mind becomes quiet.
                 </p>
                 <p>
-                  For nearly four decades, he has guided sincere seekers toward Self-Realisation and genuine inner peace — not through the accumulation of knowledge, but through shedding what obscures the natural state of consciousness.
+                  Through Jan Cosmic Foundation, Dr. Jan&rsquo;s teachings are shared through public talks, retreats, courses, gatherings, media, and service. The invitation is simple and demanding: to know the Self, and to let that knowing transform how one lives.
                 </p>
               </div>
 
@@ -158,7 +140,7 @@ export default function FounderPage() {
               <div className="mt-10 grid grid-cols-3 gap-4">
                 {[
                   { value: siteConfig.stats.yearsTeaching, label: 'Years Teaching' },
-                  { value: siteConfig.stats.lives, label: 'Lives Touched' },
+                  { value: siteConfig.stats.lives, label: 'Seekers Reached' },
                   { value: siteConfig.stats.countries, label: 'Countries' },
                 ].map((stat) => (
                   <div key={stat.label} className="text-center">
@@ -196,13 +178,13 @@ export default function FounderPage() {
         </div>
       </section>
 
-      {/* Spiritual Journey Timeline */}
+      {/* Spiritual path timeline */}
       <section className="py-16 sm:py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="The Journey"
-            title="A Life Dedicated to Awakening"
-            subtitle="From a young seeker in rural Ghana to a spiritual master guiding thousands — the milestones of an extraordinary inner journey."
+            label="The Path"
+            title="A life of seeking"
+            subtitle="A careful outline based on public-facing material. The inner journey itself cannot be reduced to dates."
           />
 
           <div className="mt-14 relative">
@@ -248,8 +230,8 @@ export default function FounderPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             label="The Teachings"
-            title="Philosophy & Approach"
-            subtitle="Dr. Jan's teachings are rooted in the understanding that every human being carries within them the potential to awaken to higher states of consciousness."
+            title="Four threads that run through the work"
+            subtitle="These threads recur across the talks, retreats, public teachings, and InnerSpace study path."
           />
 
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -271,61 +253,46 @@ export default function FounderPage() {
         </div>
       </section>
 
-      {/* Institutions Founded */}
+      {/* Foundation Work */}
       <section className="py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            label="Institutions"
-            title="Spaces for Transformation"
-            subtitle="Over the decades, Dr. Jan has established sacred spaces and organisations dedicated to spiritual practice and community service."
+            label="The Foundation"
+            title="How the work is held today"
+            subtitle="Jan Cosmic Foundation gives form to the teaching through study, practice, media, gatherings, and service."
           />
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
               {
-                name: 'Hermetic Sanctuary',
-                location: 'Ivory Coast',
-                year: '1996',
+                name: 'Teachings',
                 description:
-                  'A sacred space dedicated to spiritual practice, inner retreat, and the transmission of higher knowledge to committed seekers.',
+                  'Public talks, recorded teachings, and reflections that invite seekers into direct inquiry.',
               },
               {
-                name: 'San Bra Enlightenment Centre',
-                location: 'Adjen Kotoku, Ghana',
-                year: '2012',
+                name: 'Practice',
                 description:
-                  'A retreat centre designed for deep spiritual transformation, immersive practice, and extended periods of contemplative study.',
+                  'Retreats, sittings, and structured study for those ready to stay with the inner work.',
               },
               {
-                name: 'Jan Cosmic Foundation',
-                location: 'Accra, Ghana',
-                year: '2021',
+                name: 'Service',
                 description:
-                  'The formal embodiment of Dr. Jan\'s teaching mission, supporting spiritual education, community service, and global outreach.',
+                  'Community programmes and volunteer work that keep awakening connected to daily life.',
               },
-            ].map((institution) => (
+            ].map((item) => (
               <div
-                key={institution.name}
+                key={item.name}
                 className="rounded-2xl p-7 flex flex-col"
                 style={{
                   background:
                     'linear-gradient(135deg, #000B58 0%, #001485 50%, var(--color-primary) 100%)',
                 }}
               >
-                <span
-                  className="text-xs font-bold px-2.5 py-1 rounded-full w-fit mb-4"
-                  style={{ backgroundColor: 'rgba(212,168,67,0.2)', color: '#D4A843' }}
-                >
-                  Est. {institution.year}
-                </span>
-                <h3 className="text-lg font-semibold text-white mb-1">
-                  {institution.name}
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  {item.name}
                 </h3>
-                <p className="text-xs font-medium mb-4" style={{ color: 'rgba(212,168,67,0.9)' }}>
-                  {institution.location}
-                </p>
                 <p className="text-sm leading-relaxed flex-1" style={{ color: 'rgba(253,251,247,0.9)' }}>
-                  {institution.description}
+                  {item.description}
                 </p>
               </div>
             ))}
@@ -338,8 +305,8 @@ export default function FounderPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             label="His Work"
-            title="Teaching & Offerings"
-            subtitle="Dr. Jan reaches seekers through a wide range of formats, making the teachings accessible to all who are ready."
+            title="The shape of the teaching, in numbers"
+            subtitle="Public teachings, guided practices, centres, and students gathered around the inner work."
           />
 
           <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -348,8 +315,8 @@ export default function FounderPage() {
               { value: '20+', label: 'Guided Meditations' },
               { value: siteConfig.stats.countries, label: 'Countries Reached' },
               { value: siteConfig.stats.centres, label: 'JCF Centres' },
-              { value: '3', label: 'Institutions Founded' },
-              { value: siteConfig.stats.lives, label: 'Lives Touched' },
+              { value: '1', label: 'Foundation' },
+              { value: siteConfig.stats.lives, label: 'Seekers Reached' },
             ].map((stat) => (
               <div
                 key={stat.label}
@@ -378,20 +345,20 @@ export default function FounderPage() {
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
-            Experience the Teachings
+            Sit with the teaching
           </h2>
           <p className="text-sm italic mb-6" style={{ color: 'rgba(212,168,67,0.9)' }}>
-            &ldquo;The most worthy knowledge is that which helps to dismantle the Ego in order to reveal the True Self.&rdquo;
+            &ldquo;The most useful knowledge is that which helps to dismantle the ego, in order to reveal the True Self.&rdquo;
           </p>
           <p
             className="text-base sm:text-lg mb-10 leading-relaxed"
             style={{ color: 'rgba(253,251,247,0.9)' }}
           >
-            Explore the foundation born from Dr. Jan&apos;s vision, or visit his personal site to engage directly with his teachings, talks, and guided practices.
+            Explore the Foundation&rsquo;s programmes, or visit Dr. Jan&rsquo;s personal site for public talks, writing, and the InnerSpace course.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button href="/programs" variant="secondary" size="lg">
-              Explore Programmes
+              See the programmes
             </Button>
             <a
               href="https://drbaffourjan.com"

@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: 'Community',
   description:
-    'Telegram channels, WhatsApp groups, social media, and centres — find the foundation where you already are.',
+    'Join the Jan Cosmic Foundation community through centres, Telegram, WhatsApp, social media, and public teachings.',
 };
 
 const communityLinks = [
@@ -69,7 +69,7 @@ export default async function JoinPage() {
     <>
       <PageHero
         title="Join Our Community"
-        subtitle="Connect with the Jan Cosmic Foundation — on the platforms you already use."
+        subtitle="Stay close to the teachings, gatherings, centres, and people walking the path."
       />
 
       <main style={{ backgroundColor: '#FDFBF7' }}>
@@ -89,8 +89,8 @@ export default async function JoinPage() {
                 Channels &amp; groups
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/85 sm:text-lg">
-                Channels for teachings and announcements, groups for talking
-                with other students. Free to join.
+                Channels for teachings and announcements; groups for sincere
+                conversation, questions, and community.
               </p>
             </div>
 
@@ -159,8 +159,8 @@ export default async function JoinPage() {
               Follow us
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-[#1a1a1a]/85">
-              Short clips, photos, and event highlights — pick the platform
-              you actually use.
+              Short teachings, event moments, photographs, and Foundation
+              updates. Follow where you already spend time.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -200,8 +200,8 @@ export default async function JoinPage() {
                 Or visit a centre
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/85 sm:text-lg">
-                Sittings, study groups, and service work happen in person at
-                each centre. Tap one to read more.
+                Sittings, study, and service happen most deeply in person. Find
+                a centre and begin with a visit.
               </p>
             </div>
 
@@ -278,11 +278,11 @@ export default async function JoinPage() {
               className="mx-auto mb-6 rounded-full"
             />
             <h2 className="text-2xl font-semibold text-white sm:text-3xl">
-              Welcome.
+              Begin with one step
             </h2>
             <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-white/85">
-              Online or in person — you&rsquo;re welcome here. If you&rsquo;d
-              like to give time or money to the work too, both help.
+              Join a channel, visit a centre, volunteer, or support the work.
+              Let the first step be simple and sincere.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
