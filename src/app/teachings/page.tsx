@@ -48,7 +48,7 @@ export default function TeachingsPage() {
         className="relative overflow-hidden py-24 lg:py-32"
         style={{
           background:
-            'linear-gradient(135deg, #000B58 0%, #001485 60%, #2D6A4F 100%)',
+            'linear-gradient(135deg, #000B58 0%, #1a1b6b 55%, #5B4B9E 100%)',
         }}
       >
         <div className="absolute top-0 left-0 right-0 h-px bg-[#D4A843]/30" />
@@ -56,7 +56,7 @@ export default function TeachingsPage() {
           className="absolute inset-0 opacity-10"
           style={{
             backgroundImage:
-              'radial-gradient(circle at 20% 50%, rgba(212,168,67,0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(45,106,79,0.3) 0%, transparent 50%)',
+              'radial-gradient(circle at 20% 50%, rgba(212,168,67,0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(91,75,158,0.35) 0%, transparent 50%)',
           }}
         />
 

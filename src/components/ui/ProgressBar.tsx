@@ -38,7 +38,7 @@ export default function ProgressBar({
           style={{
             width: `${percentage}%`,
             background:
-              'linear-gradient(90deg, var(--color-primary) 0%, #52b788 60%, #D4A843 100%)',
+              'linear-gradient(90deg, var(--color-primary) 0%, var(--color-violet) 55%, #D4A843 100%)',
           }}
         />
 
@@ -58,7 +58,7 @@ export default function ProgressBar({
       {/* Labels */}
       {showLabel && (
         <div className="mt-2 flex items-center justify-between gap-2">
-          <p className="text-sm text-[#1a1a1a]/80">
+          <p className="text-sm text-[#1c1a26]/75">
             <span className="font-semibold text-primary">
               {currency} {formatAmount(current)}
             </span>{' '}

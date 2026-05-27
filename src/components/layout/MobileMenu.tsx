@@ -39,7 +39,7 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
 
   return (
     <Transition show={isOpen}>
-      <Dialog onClose={onClose} className="relative z-50 lg:hidden">
+      <Dialog onClose={onClose} className="relative z-50 xl:hidden">
 
         {/* Dark overlay */}
         <TransitionChild
@@ -166,6 +166,18 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
                         </div>
                       )}
                     </div>
+                  ) : link.external ? (
+                    // External plain link
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={onClose}
+                      className="flex items-center px-3 py-3 rounded-lg text-sm font-medium text-gray-700 hover:text-primary hover:bg-primary/5 transition-colors duration-150"
+                    >
+                      {link.label}
+                      <span aria-hidden="true" className="ml-1 text-gray-400">↗</span>
+                    </a>
                   ) : (
                     // Plain link
                     <Link
@@ -186,14 +198,14 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
               ))}
             </nav>
 
-            {/* Donate CTA pinned at bottom */}
+            {/* Give CTA pinned at bottom */}
             <div className="px-5 py-5 border-t border-gray-100 space-y-3">
               <Link
                 href="/donate"
                 onClick={onClose}
-                className="block w-full text-center py-3 px-6 rounded-xl text-sm font-semibold text-[#000B58] bg-[#D4A843] transition-all duration-200 hover:bg-[#c49a38] hover:shadow-lg active:scale-[0.98]"
+                className="block w-full text-center py-3 px-6 rounded-xl text-sm font-semibold tracking-wide text-[#000B58] bg-[#D4A843] transition-all duration-200 hover:bg-[#c49a38] hover:shadow-lg active:scale-[0.98]"
               >
-                Donate
+                Give
               </Link>
               <p className="text-center text-xs text-gray-400">
                 Support the teachings, service, and community work.

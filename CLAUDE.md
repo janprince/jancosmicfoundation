@@ -13,17 +13,28 @@ The charitable foundation of Dr. Baffour Jan, a spiritual master with 38+ years 
 
 ## Design System
 
-### Colors (Hybrid Identity)
+### Colors (Cosmic Identity — "a living path inward")
 
-Shared with drbaffourjan.com:
-- Deep Indigo `#000B58` — hero sections, footer, cosmic depth
-- Warm Cream `#FDFBF7` — light backgrounds
-- Rust `#C05021` — sparingly as supporting accent
+JCF's palette is the night sky and the light within it: deep indigo / violet
+depth, gold as light emerging from stillness, on a warm cream ground.
+**There is no green in the brand.** (The codebase previously shipped a forest-green
+primary `#2D6A4F` by mistake — it has been removed. Do not reintroduce it.)
 
-Foundation-specific:
-- **Primary Green** `#2D6A4F` — CTAs, links, buttons
-- **Secondary Gold** `#D4A843` — highlights, badges, progress bars
-- Alt Beige `#F2EFE9` — alternating section backgrounds
+Tokens live in `src/app/globals.css`:
+- Deep Indigo `#000B58` (`--color-deep`) — dark sections, hero, footer, cosmic depth
+- Indigo-violet `#2A2A6E` (`--color-primary`) — interactive: buttons, links, focus
+- Twilight Violet `#5B4B9E` (`--color-violet`) — gradients (navy→violet), hovers, highlights
+- Gold `#D4A843` (`--color-secondary`) — accents, badges, progress, "Give" CTA
+- Warm Cream `#FDFBF7` (`--color-bg-light`) — default background
+- Warm Sand `#F2EFE9` (`--color-bg-alt`) — alternating section backgrounds
+- Warm Ink `#1c1a26` (`--color-text`) — body text
+- Rust `#C05021` (`--color-accent`) — reserved for error/critical states only
+
+### Typography
+
+- **Fraunces** (variable serif, via `next/font`) → `--font-serif` — display headings,
+  quote moments, card/section titles (use the `.display` helper class)
+- **Raleway** → body, UI, and uppercase tracked labels (use the `.eyebrow` helper)
 
 ### Design Patterns
 
@@ -31,8 +42,10 @@ Foundation-specific:
 - Sticky navbar with scroll-aware transparent → solid transition
 - Full-viewport hero sections with gradient overlays
 - Card hover: image scale transforms + shadow elevation
-- Section rhythm: cream → white → beige → dark alternation
-- Typography: light weight (300) headings, uppercase tracked labels
+- Section rhythm: cream → white → sand → dark alternation; no two same-coloured sections adjacent
+- Editorial layouts: serif display headings, generous whitespace, hairline borders over heavy shadows
+- Light/dark blend: light editorial body sections with dark cinematic moments (hero, quote, footer)
+- Motion "like breath": slow fades via `ScrollReveal` (`--ease-breath`), honoring `prefers-reduced-motion`
 - `transition-all duration-300` for smooth interactions
 - Animated counters for impact statistics
 

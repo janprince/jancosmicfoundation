@@ -1,78 +1,83 @@
 import Link from 'next/link';
-import { HiOutlineBookOpen, HiOutlineCalendarDays, HiOutlineHeart, HiOutlineMapPin } from 'react-icons/hi2';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 
-const pathways = [
+const firstSteps = [
   {
-    icon: HiOutlineBookOpen,
-    title: 'Watch the teachings',
+    step: 'Watch',
+    title: 'Watch a teaching',
     description:
-      'Begin with public talks, then continue through InnerSpace when you are ready for structured study.',
+      'Start with a public talk. Let the words meet you before deciding anything.',
     href: '/teachings',
   },
   {
-    icon: HiOutlineCalendarDays,
-    title: 'Attend a gathering',
+    step: 'Attend',
+    title: 'Join a gathering',
     description:
-      'Retreats, sittings, and live sessions for seekers who want to practise in community.',
+      'Sit with others at a retreat, sitting, or live session — in Accra or online.',
     href: '/events',
   },
   {
-    icon: HiOutlineMapPin,
-    title: 'Visit a centre',
+    step: 'Study',
+    title: 'Explore InnerSpace',
     description:
-      'Sit with others, listen deeply, ask sincere questions, and serve where you are.',
-    href: '/centres',
-  },
-  {
-    icon: HiOutlineHeart,
-    title: 'Support the work',
-    description:
-      'Help sustain the teachings, youth mentorship, media work, retreats, and service programmes.',
-    href: '/donate',
+      'When you are ready for rhythm and guidance, go deeper through structured study.',
+    href: 'https://www.drbaffourjan.com/inner-space',
+    external: true,
   },
 ];
 
 export default function Pathways() {
   return (
-    <section className="bg-[#F2EFE9] py-24 lg:py-32">
+    <section id="begin" className="scroll-mt-20 bg-[#F2EFE9] py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-        {/* Header */}
-        <ScrollReveal animation="fade-up" className="mb-16 text-center">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-[#8a6c1a]">
-            Where to Begin
-          </p>
-          <h2 className="text-3xl font-semibold leading-tight text-[#000B58] sm:text-4xl">
-            Four ways to begin
+        <ScrollReveal animation="fade-up" className="mx-auto mb-14 max-w-2xl text-center">
+          <p className="eyebrow mb-4 text-[#8a6c1a]">New to the Foundation?</p>
+          <h2 className="display text-[2rem] leading-[1.12] text-[#000B58] sm:text-4xl lg:text-[2.7rem]">
+            You don&rsquo;t need to know where this leads to begin
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/75 sm:text-lg">
-            Start with the doorway that feels honest. The path deepens through
-            practice, study, service, and community.
+          <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-[#1c1a26]/75 sm:text-lg">
+            Jan Cosmic Foundation carries the teachings of Dr. Baffour Jan, a
+            Ghanaian mystic and teacher. There is no membership to join and
+            nothing to believe in advance. Begin with the doorway that feels
+            honest.
           </p>
         </ScrollReveal>
 
-        {/* Cards */}
-        <ScrollReveal staggerChildren={0.12} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {pathways.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="group flex flex-col rounded-xl border border-[#e8e4dc] bg-white p-8 transition-all duration-300 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5"
-            >
-              {/* Icon */}
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-[#F2EFE9] transition-colors duration-300 group-hover:bg-primary/10">
-                <item.icon className="h-6 w-6 text-[#000B58] transition-colors duration-300 group-hover:text-primary" />
-              </div>
-
-              {/* Text */}
-              <h3 className="mb-2 text-lg font-semibold text-[#000B58] transition-colors duration-300 group-hover:text-primary">
-                {item.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-[#1a1a1a]/65">
-                {item.description}
-              </p>
-            </Link>
-          ))}
+        <ScrollReveal
+          staggerChildren={0.12}
+          className="grid gap-5 sm:grid-cols-3"
+        >
+          {firstSteps.map((item) => {
+            const inner = (
+              <>
+                <span className="eyebrow text-[#8a6c1a]">{item.step}</span>
+                <h3 className="display mt-3 text-2xl text-[#000B58] transition-colors duration-300 group-hover:text-primary">
+                  {item.title}
+                  {item.external && (
+                    <span aria-hidden="true" className="ml-1.5 text-[#8a6c1a]/60 text-base align-middle">↗</span>
+                  )}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-[#1c1a26]/70">
+                  {item.description}
+                </p>
+                <span
+                  aria-hidden="true"
+                  className="mt-6 block h-px w-8 origin-left bg-[#D4A843] transition-transform duration-500 group-hover:scale-x-[2.5]"
+                />
+              </>
+            );
+            const className =
+              'group flex flex-col rounded-xl border border-black/[0.08] bg-white p-8 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-lg hover:shadow-[#000B58]/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary';
+            return item.external ? (
+              <a key={item.title} href={item.href} target="_blank" rel="noopener noreferrer" className={className}>
+                {inner}
+              </a>
+            ) : (
+              <Link key={item.title} href={item.href} className={className}>
+                {inner}
+              </Link>
+            );
+          })}
         </ScrollReveal>
       </div>
     </section>

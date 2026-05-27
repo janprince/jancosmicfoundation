@@ -9,19 +9,21 @@ import {
 import NewsletterForm from './NewsletterForm';
 import { siteConfig } from '@/lib/site-config';
 
-const quickLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
+const exploreLinks = [
+  { label: 'About the Foundation', href: '/about' },
   { label: 'Teachings', href: '/teachings' },
-  { label: 'Programmes', href: '/programs' },
-  { label: 'Blog', href: '/blog' },
+  { label: 'Writings', href: '/blog' },
+  { label: 'Retreats & Events', href: '/events' },
+  { label: 'Initiatives', href: '/programs' },
+  { label: 'Centres', href: '/centres' },
 ];
 
 const involvedLinks = [
-  { label: 'Donate', href: '/donate' },
+  { label: 'Give', href: '/donate' },
   { label: 'Volunteer', href: '/volunteer' },
   { label: 'Community', href: '/community' },
-  { label: 'Centres', href: '/centres' },
+  { label: 'Gallery', href: '/gallery' },
+  { label: 'Voices', href: '/testimonials' },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -52,13 +54,16 @@ export default function Footer() {
               </span>
             </div>
 
+            <p className="display text-lg leading-snug text-white/95">
+              A living path inward.
+            </p>
             <p
-              className="text-sm leading-relaxed"
-              style={{ color: 'rgba(253,251,247,0.88)' }}
+              className="mt-3 text-sm leading-relaxed"
+              style={{ color: 'rgba(253,251,247,0.85)' }}
             >
-              A spiritual foundation founded by Dr. Baffour Jan, guiding sincere
-              seekers toward self-realization, higher consciousness, and conscious
-              living.
+              A spiritual foundation founded by Dr. Baffour Jan, for sincere
+              seekers drawn to self-realization, consciousness, inner freedom,
+              and a life of service.
             </p>
 
             {/* Social icons */}
@@ -88,10 +93,10 @@ export default function Footer() {
               className="text-sm font-semibold uppercase tracking-widest mb-5"
               style={{ color: '#D4A843' }}
             >
-              Quick Links
+              Explore
             </h3>
             <ul className="space-y-3">
-              {quickLinks.map(({ label, href }) => (
+              {exploreLinks.map(({ label, href }) => (
                 <li key={href}>
                   <Link
                     href={href}
@@ -134,14 +139,14 @@ export default function Footer() {
               className="text-sm font-semibold uppercase tracking-widest mb-5"
               style={{ color: '#D4A843' }}
             >
-              Letters from the Foundation
+              Letters for sincere seekers
             </h3>
             <p
               className="text-sm mb-4"
-              style={{ color: 'rgba(253,251,247,0.88)' }}
+              style={{ color: 'rgba(253,251,247,0.85)' }}
             >
-              Occasional teachings, event dates, and Foundation updates for
-              people walking the inner path.
+              Occasional teachings, retreat dates, and notes from the Foundation —
+              for those walking the inner path.
             </p>
             <NewsletterForm />
           </div>

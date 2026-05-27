@@ -6,23 +6,23 @@ import Button from "@/components/ui/Button";
 export default function CentreCard({ centre }: { centre: Centre }) {
   return (
     <Link href={`/centres/${centre.slug}`} className="group block cursor-pointer">
-      <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+      <div className="bg-white rounded-xl overflow-hidden border border-black/[0.07] shadow-sm transition-all duration-500 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#000B58]/5 hover:border-primary/25 h-full flex flex-col">
         <div className="relative aspect-video overflow-hidden">
           <Image
             src={centre.image}
             alt={centre.name}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            className="object-cover group-hover:scale-[1.04] transition-transform duration-[900ms]"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
-          <div className="absolute bottom-4 left-4 z-10 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1">
-            <span className="text-xs font-medium text-[#000B58]">
+          <div className="absolute bottom-4 left-4 z-10 bg-[#FDFBF7]/90 backdrop-blur-sm rounded-full px-3 py-1">
+            <span className="text-xs font-medium tracking-wide text-[#000B58]">
               {centre.country}
             </span>
           </div>
         </div>
         <div className="p-5 flex flex-col flex-1">
-          <h3 className="text-lg font-semibold text-[#000B58] group-hover:text-primary transition-colors">
+          <h3 className="display text-xl text-[#000B58] group-hover:text-primary transition-colors">
             {centre.name}
           </h3>
           <p className="mt-1 text-sm text-gray-500">{centre.location}</p>

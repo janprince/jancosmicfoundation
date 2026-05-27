@@ -14,27 +14,27 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-primary text-white border-2 border-primary ' +
-    'hover:bg-[#245c43] hover:border-[#245c43] hover:shadow-lg hover:shadow-primary/20 ' +
-    'active:scale-[0.97]',
+    'bg-primary text-white border border-primary ' +
+    'hover:bg-[#1f1f57] hover:border-[#1f1f57] hover:shadow-lg hover:shadow-primary/25 ' +
+    'active:scale-[0.98]',
   secondary:
-    'bg-[#D4A843] text-[#000B58] border-2 border-[#D4A843] font-semibold ' +
-    'hover:bg-[#c49a38] hover:border-[#c49a38] hover:shadow-lg hover:shadow-[#D4A843]/25 ' +
-    'active:scale-[0.97]',
+    'bg-[#D4A843] text-[#000B58] border border-[#D4A843] font-semibold ' +
+    'hover:bg-[#c49a38] hover:border-[#c49a38] hover:shadow-lg hover:shadow-[#D4A843]/30 ' +
+    'active:scale-[0.98]',
   outline:
-    'bg-transparent text-primary border-2 border-primary ' +
+    'bg-transparent text-primary border border-primary ' +
     'hover:bg-primary hover:text-white hover:shadow-lg hover:shadow-primary/20 ' +
-    'active:scale-[0.97]',
+    'active:scale-[0.98]',
   ghost:
-    'bg-transparent text-primary border-2 border-transparent ' +
-    'hover:bg-primary/10 hover:border-primary/10 ' +
-    'active:scale-[0.97]',
+    'bg-transparent text-primary border border-transparent ' +
+    'hover:bg-primary/10 ' +
+    'active:scale-[0.98]',
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
-  sm: 'px-4 py-1.5 text-sm rounded-md',
-  md: 'px-6 py-2.5 text-base rounded-lg',
-  lg: 'px-8 py-3.5 text-lg rounded-xl',
+  sm: 'px-4 py-2 text-sm rounded-md tracking-wide',
+  md: 'px-6 py-3 text-base rounded-lg tracking-wide',
+  lg: 'px-8 py-4 text-lg rounded-xl tracking-wide',
 };
 
 const baseClasses =

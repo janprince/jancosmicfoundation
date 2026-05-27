@@ -24,7 +24,7 @@ export default function ScrollReveal({
   children,
   animation = 'fade-up',
   delay = 0,
-  duration = 0.7,
+  duration = 0.9,
   threshold = 0.15,
   className = '',
   staggerChildren,

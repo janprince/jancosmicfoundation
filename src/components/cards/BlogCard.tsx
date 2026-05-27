@@ -5,17 +5,17 @@ import { BlogPost } from "@/types";
 export default function BlogCard({ post }: { post: BlogPost }) {
   return (
     <Link href={`/blog/${post.slug}`} className="group block cursor-pointer">
-      <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+      <div className="bg-white rounded-xl overflow-hidden border border-black/[0.07] shadow-sm transition-all duration-500 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#000B58]/5 hover:border-primary/25 h-full flex flex-col">
         <div className="relative aspect-video overflow-hidden">
           <Image
             src={post.image}
             alt={post.title}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            className="object-cover group-hover:scale-[1.04] transition-transform duration-[900ms]"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
           <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
-            <span className="inline-flex items-center rounded-full bg-white/95 px-3 py-1 text-xs font-semibold tracking-wide uppercase text-[#000B58] shadow-sm backdrop-blur-sm">
+            <span className="inline-flex items-center rounded-full bg-[#FDFBF7]/95 px-3 py-1 text-[11px] font-semibold tracking-[0.12em] uppercase text-[#000B58] shadow-sm backdrop-blur-sm">
               {post.category}
             </span>
             {post.videoLink && (
@@ -34,7 +34,7 @@ export default function BlogCard({ post }: { post: BlogPost }) {
             <span className="w-1 h-1 rounded-full bg-gray-300" />
             <span>{post.readTime}</span>
           </div>
-          <h3 className="text-lg font-semibold text-[#000B58] group-hover:text-primary transition-colors line-clamp-2">
+          <h3 className="display text-xl text-[#000B58] group-hover:text-primary transition-colors line-clamp-2">
             {post.title}
           </h3>
           <p className="mt-2 text-sm text-gray-600 line-clamp-3 flex-1">

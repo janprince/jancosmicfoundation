@@ -4,27 +4,25 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 
 export default function InnerSpaceSection() {
   return (
-    <section className="bg-white py-24 lg:py-32">
+    <section className="bg-[#FDFBF7] py-24 lg:py-32">
       <ScrollReveal animation="fade-up" className="mx-auto max-w-3xl px-5 sm:px-8 text-center">
         {/* Kicker */}
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#D4A843]/30 bg-[#D4A843]/10 px-4 py-1.5">
           <HiOutlineSparkles className="h-4 w-4 text-[#8a6c1a]" aria-hidden="true" />
-          <span className="text-xs font-medium uppercase tracking-[0.2em] text-[#8a6c1a]">
-            The Deeper Work
-          </span>
+          <span className="eyebrow text-[#8a6c1a]">The Deeper Work</span>
         </div>
 
-        <h2 className="text-3xl font-semibold leading-tight text-[#000B58] sm:text-4xl lg:text-5xl">
-          A structured path for deeper study
+        <h2 className="display text-[2rem] leading-[1.12] text-[#000B58] sm:text-4xl lg:text-5xl">
+          When you are ready, go deeper
         </h2>
 
-        <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#1a1a1a]/85 sm:text-lg">
+        <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#1c1a26]/85 sm:text-lg">
           <strong className="font-semibold text-[#000B58]">InnerSpace</strong> is
           Dr. Baffour Jan&rsquo;s online study path for sincere seekers who want
           to explore consciousness, the Self, and inner freedom with guidance.
         </p>
 
-        <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/65">
+        <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1c1a26]/65">
           Public teachings are an open door. InnerSpace gives the study a
           rhythm, a sequence, and a community of students walking inward.
         </p>

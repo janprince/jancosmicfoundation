@@ -26,7 +26,7 @@ export default function Newsletter({
   const [errorMsg, setErrorMsg] = useState('');
 
   const headingColor = dark ? 'text-white' : 'text-[#000B58]';
-  const descColor = dark ? 'text-white/85' : 'text-[#1a1a1a]/80';
+  const descColor = dark ? 'text-white/85' : 'text-[#1c1a26]/75';
   const inputBg = dark
     ? 'bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-[#D4A843] focus:bg-white/15'
     : 'bg-white border-primary/25 text-[#1a1a1a] placeholder:text-[#1a1a1a]/60 focus:border-primary';
@@ -68,7 +68,7 @@ export default function Newsletter({
       <div
         className={[
           'w-full rounded-2xl p-6 text-center sm:p-8',
-          dark ? 'bg-white/10' : 'bg-primary/08',
+          dark ? 'bg-white/10' : 'bg-primary/10',
           className,
         ].join(' ')}
         role="status"
@@ -87,7 +87,7 @@ export default function Newsletter({
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className={['text-xl font-bold', headingColor].join(' ')}>
+        <h3 className={['display text-2xl', headingColor].join(' ')}>
           You&rsquo;re on the list.
         </h3>
         <p className={['mt-2 text-sm', descColor].join(' ')}>
@@ -110,7 +110,7 @@ export default function Newsletter({
     <div className={['w-full', className].join(' ')}>
       {/* Heading & description */}
       {heading && (
-        <h3 className={['mb-1 text-xl font-bold sm:text-2xl', headingColor].join(' ')}>
+        <h3 className={['display mb-2 text-2xl sm:text-[1.7rem]', headingColor].join(' ')}>
           {heading}
         </h3>
       )}
@@ -175,7 +175,7 @@ export default function Newsletter({
               'disabled:opacity-60 disabled:pointer-events-none',
               dark
                 ? 'bg-[#D4A843] text-[#000B58] hover:bg-[#c49a38] hover:shadow-lg hover:shadow-[#D4A843]/25'
-                : 'bg-primary text-white hover:bg-[#245c43] hover:shadow-lg hover:shadow-primary/20',
+                : 'bg-primary text-white hover:bg-[#1f1f57] hover:shadow-lg hover:shadow-primary/20',
             ].join(' ')}
           >
             {status === 'loading' ? (
@@ -232,7 +232,7 @@ export default function Newsletter({
 
         {/* Privacy note */}
         <p className={['mt-3 text-xs', descColor].join(' ')}>
-          No spam, ever. Unsubscribe at any time.
+          We write rarely, and only when there is something worth your attention.
         </p>
       </form>
     </div>

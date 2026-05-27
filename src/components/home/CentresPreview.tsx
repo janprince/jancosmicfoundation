@@ -11,15 +11,13 @@ export default async function CentresPreview() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         {/* Header */}
         <ScrollReveal animation="fade-up" className="mb-14 text-center">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[#8a6c1a]">
-            Where We Sit
-          </p>
-          <h2 className="text-3xl font-light leading-tight text-[#000B58] sm:text-4xl">
-            Centres &amp; communities
+          <p className="eyebrow mb-4 text-[#8a6c1a]">Centres &amp; community</p>
+          <h2 className="display text-[2rem] leading-[1.12] text-[#000B58] sm:text-4xl lg:text-[2.7rem]">
+            Where we sit together
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/85">
-            From our home in Accra to centres across Ghana and beyond.
-            Visit, sit, ask questions.
+          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1c1a26]/75 sm:text-lg">
+            From the home centre in Accra to communities across Ghana and the
+            diaspora. Visit, sit, and ask sincere questions.
           </p>
         </ScrollReveal>
 
@@ -33,9 +31,9 @@ export default async function CentresPreview() {
           <div className="mt-14 text-center">
             <Link
               href="/centres"
-              className="inline-flex items-center gap-2 rounded-full border-2 border-primary px-8 py-3 text-sm font-medium text-primary transition-all duration-300 hover:bg-primary hover:text-white"
+              className="inline-flex items-center gap-2 rounded-lg border border-primary px-8 py-3 text-sm font-medium tracking-wide text-primary transition-all duration-300 hover:bg-primary hover:text-white"
             >
-              View All Centres
+              Find a centre near you
               <span aria-hidden="true">&rarr;</span>
             </Link>
           </div>

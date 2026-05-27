@@ -11,15 +11,13 @@ export default async function RecentBlog() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         {/* Header */}
         <ScrollReveal animation="fade-up" className="mb-14 text-center">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[#8a6c1a]">
-            From the Teachings
-          </p>
-          <h2 className="text-3xl font-light leading-tight text-[#000B58] sm:text-4xl">
-            Recent writing
+          <p className="eyebrow mb-4 text-[#8a6c1a]">Writings</p>
+          <h2 className="display text-[2rem] leading-[1.12] text-[#000B58] sm:text-4xl lg:text-[2.7rem]">
+            Notes from the path
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/85">
-            Transcribed talks, notes from retreats, and writing from members
-            of the foundation.
+          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1c1a26]/75 sm:text-lg">
+            Transcribed talks, reflections, and notes from retreats — short
+            pieces to sit with, not to rush through.
           </p>
         </ScrollReveal>
 
@@ -33,9 +31,9 @@ export default async function RecentBlog() {
           <div className="mt-14 text-center">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 rounded-full border-2 border-primary px-8 py-3 text-sm font-medium text-primary transition-all duration-300 hover:bg-primary hover:text-white"
+              className="inline-flex items-center gap-2 rounded-lg border border-primary px-8 py-3 text-sm font-medium tracking-wide text-primary transition-all duration-300 hover:bg-primary hover:text-white"
             >
-              Read More Stories
+              Read more writings
               <span aria-hidden="true">&rarr;</span>
             </Link>
           </div>

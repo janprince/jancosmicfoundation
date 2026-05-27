@@ -18,7 +18,7 @@ export default function SectionHeader({
   const isCenter = align === 'center';
 
   const titleColor = light ? 'text-white' : 'text-[#000B58]';
-  const subtitleColor = light ? 'text-white/90' : 'text-[#1a1a1a]/85';
+  const subtitleColor = light ? 'text-white/85' : 'text-[#1c1a26]/75';
 
   return (
     <div
@@ -36,18 +36,18 @@ export default function SectionHeader({
           ].join(' ')}
         >
           {isCenter && (
-            <span className="h-px w-8 shrink-0 rounded-full bg-[#D4A843]" aria-hidden="true" />
+            <span className="h-px w-8 shrink-0 rounded-full bg-[#D4A843]/70" aria-hidden="true" />
           )}
-          <span className={`text-xs font-medium uppercase tracking-[0.2em] ${light ? 'text-[#D4A843]' : 'text-[#8a6c1a]'}`}>
+          <span className={`eyebrow ${light ? 'text-[#D4A843]' : 'text-[#8a6c1a]'}`}>
             {label}
           </span>
-          <span className="h-px w-8 shrink-0 rounded-full bg-[#D4A843]" aria-hidden="true" />
+          <span className="h-px w-8 shrink-0 rounded-full bg-[#D4A843]/70" aria-hidden="true" />
         </div>
       )}
 
       <h2
         className={[
-          'text-3xl font-semibold leading-tight sm:text-4xl',
+          'display text-[1.95rem] leading-[1.12] sm:text-4xl lg:text-[2.7rem]',
           titleColor,
         ].join(' ')}
       >

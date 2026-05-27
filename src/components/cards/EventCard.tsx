@@ -10,18 +10,18 @@ export default function EventCard({ event }: { event: Event }) {
 
   return (
     <Link href={`/events/${event.slug}`} className="group block cursor-pointer">
-      <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+      <div className="bg-white rounded-xl overflow-hidden border border-black/[0.07] shadow-sm transition-all duration-500 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#000B58]/5 hover:border-primary/25 h-full flex flex-col">
         <div className="relative aspect-video overflow-hidden">
           <Image
             src={event.image}
             alt={event.title}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            className="object-cover group-hover:scale-[1.04] transition-transform duration-[900ms]"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
-          <div className="absolute inset-0 bg-[#000B58]/30 z-10" />
-          <div className="absolute top-4 left-4 z-20 bg-white rounded-lg px-3 py-2 text-center shadow-md">
-            <span className="block text-xs font-semibold text-[#C05021] uppercase tracking-wider">
+          <div className="absolute inset-0 bg-gradient-to-t from-[#000B58]/35 to-transparent z-10" />
+          <div className="absolute top-4 left-4 z-20 bg-[#FDFBF7] rounded-lg px-3 py-2 text-center shadow-md">
+            <span className="block text-xs font-semibold text-primary uppercase tracking-wider">
               {month}
             </span>
             <span className="block text-2xl font-bold text-[#000B58] leading-none">
@@ -30,12 +30,12 @@ export default function EventCard({ event }: { event: Event }) {
           </div>
           {event.isPast && (
             <div className="absolute top-4 right-4 z-20">
-              <Badge variant="accent">Past Event</Badge>
+              <Badge variant="secondary">Past</Badge>
             </div>
           )}
         </div>
-        <div className="p-5">
-          <h3 className="text-lg font-semibold text-[#000B58] group-hover:text-primary transition-colors line-clamp-2">
+        <div className="p-5 flex flex-col flex-1">
+          <h3 className="display text-xl text-[#000B58] group-hover:text-primary transition-colors line-clamp-2">
             {event.title}
           </h3>
           <div className="mt-3 space-y-1.5">

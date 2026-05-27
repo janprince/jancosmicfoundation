@@ -11,14 +11,13 @@ export default async function UpcomingEvents() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         {/* Header */}
         <ScrollReveal animation="fade-up" className="mb-14 text-center">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-[#8a6c1a]">
-            What&apos;s Coming
-          </p>
-          <h2 className="text-3xl font-light leading-tight text-[#000B58] sm:text-4xl">
-            Upcoming events
+          <p className="eyebrow mb-4 text-[#8a6c1a]">Retreats &amp; gatherings</p>
+          <h2 className="display text-[2rem] leading-[1.12] text-[#000B58] sm:text-4xl lg:text-[2.7rem]">
+            Come and sit with us
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/85">
-            Talks, retreats, and weekly sittings — most in Accra, some online.
+          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1c1a26]/75 sm:text-lg">
+            Retreats, sittings, and gatherings — most in Accra, some online.
+            Open to new and returning seekers alike.
           </p>
         </ScrollReveal>
 
@@ -34,9 +33,9 @@ export default async function UpcomingEvents() {
               <div className="mt-14 text-center">
                 <Link
                   href="/events"
-                  className="inline-flex items-center gap-2 rounded-full border-2 border-primary px-8 py-3 text-sm font-medium text-primary transition-all duration-300 hover:bg-primary hover:text-white"
+                  className="inline-flex items-center gap-2 rounded-lg border border-primary px-8 py-3 text-sm font-medium tracking-wide text-primary transition-all duration-300 hover:bg-primary hover:text-white"
                 >
-                  View All Events
+                  See the full calendar
                   <span aria-hidden="true">&rarr;</span>
                 </Link>
               </div>

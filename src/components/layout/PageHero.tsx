@@ -9,39 +9,47 @@ export default function PageHero({
 }: PageHeroProps) {
   return (
     <section
-      className="relative flex items-center justify-center overflow-hidden"
-      style={{ minHeight: 'clamp(280px, 32vw, 380px)' }}
+      className="grain-dark relative flex items-center justify-center overflow-hidden"
+      style={{ minHeight: 'clamp(300px, 34vw, 420px)' }}
     >
-      {/* Background */}
+      {/* Cosmic twilight background: deep indigo → violet */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(135deg, #000B58 0%, #001485 50%, var(--color-primary) 100%)',
+            'linear-gradient(150deg, #000B58 0%, #1a1b6b 48%, var(--color-violet) 100%)',
+        }}
+      />
+      {/* Faint radial light, like dawn over the horizon */}
+      <div
+        className="absolute inset-0 opacity-70"
+        style={{
+          background:
+            'radial-gradient(120% 80% at 50% 120%, rgba(212,168,67,0.20) 0%, transparent 60%)',
         }}
       />
 
       {/* Gold top stripe */}
       <div
-        className="absolute top-0 left-0 right-0 h-1"
+        className="absolute top-0 left-0 right-0 h-px"
         style={{ backgroundColor: '#D4A843' }}
       />
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center py-16 sm:py-20">
         {/* Decorative accent */}
-        <div className="flex items-center justify-center gap-3 mb-5">
+        <div className="flex items-center justify-center gap-3 mb-6">
           <span className="block h-px w-10 rounded-full bg-[#D4A843]/50" />
-          <span className="block w-2 h-2 rounded-full bg-[#D4A843]" />
+          <span className="block w-1.5 h-1.5 rounded-full bg-[#D4A843]" />
           <span className="block h-px w-10 rounded-full bg-[#D4A843]/50" />
         </div>
 
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white leading-tight">
+        <h1 className="display text-[2.1rem] sm:text-5xl lg:text-[3.25rem] text-white">
           {title}
         </h1>
 
         {subtitle && (
-          <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed text-white/90">
+          <p className="mt-5 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed text-white/85">
             {subtitle}
           </p>
         )}

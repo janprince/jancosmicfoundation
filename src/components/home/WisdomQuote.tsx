@@ -1,41 +1,12 @@
-import Image from 'next/image';
-import ScrollReveal from '@/components/ui/ScrollReveal';
+import QuoteBlock from '@/components/ui/QuoteBlock';
 
 export default function WisdomQuote() {
   return (
-    <section className="bg-white py-24 lg:py-32">
-      <ScrollReveal animation="scale-up" duration={0.9} className="mx-auto max-w-3xl px-5 sm:px-8 text-center">
-        {/* Decorative mark */}
-        <div className="mx-auto mb-8 h-px w-12 bg-[#D4A843]/50" />
-
-        <blockquote>
-          <p className="text-xl font-light leading-relaxed text-[#000B58] sm:text-2xl lg:text-3xl">
-            &ldquo;The proof of our spiritual journey is the genuine love that is
-            revealed in us and among one another.&rdquo;
-          </p>
-          <footer className="mt-8 flex flex-col items-center gap-4">
-            <div className="h-14 w-14 overflow-hidden rounded-full">
-              <Image
-                src="/images/drjan-thinking.jpg"
-                alt="Dr. Baffour Jan"
-                width={56}
-                height={56}
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <div>
-              <cite className="block text-sm font-medium not-italic text-[#000B58]">
-                Dr. Baffour Jan
-              </cite>
-              <span className="text-xs text-[#1a1a1a]/70">
-                Founder, Jan Cosmic Foundation
-              </span>
-            </div>
-          </footer>
-        </blockquote>
-
-        <div className="mx-auto mt-8 h-px w-12 bg-[#D4A843]/50" />
-      </ScrollReveal>
-    </section>
+    <QuoteBlock
+      quote="The proof of our spiritual journey is the genuine love that is revealed in us and among one another."
+      author="Dr. Baffour Jan"
+      role="Founder, Jan Cosmic Foundation"
+      image="/images/drjan-thinking.jpg"
+    />
   );
 }

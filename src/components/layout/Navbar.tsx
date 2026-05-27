@@ -18,8 +18,6 @@ const navLinks: NavLink[] = [
       { label: 'The Foundation', href: '/about' },
       { label: 'The Founder', href: '/about/founder' },
       { label: 'Mission & Vision', href: '/about/mission-vision' },
-      { label: 'Our Centres', href: '/centres' },
-      { label: 'Testimonials', href: '/testimonials' },
     ],
   },
   {
@@ -27,19 +25,14 @@ const navLinks: NavLink[] = [
     href: '/teachings',
     children: [
       { label: 'Public Teachings', href: '/teachings' },
-      { label: 'InnerSpace', href: 'https://www.drbaffourjan.com/inner-space', external: true },
-      { label: 'Blog', href: '/blog' },
+      { label: 'Writings', href: '/blog' },
     ],
   },
-  { label: 'Programmes', href: '/programs' },
-  {
-    label: 'Events',
-    href: '/events',
-    children: [
-      { label: 'Upcoming Events', href: '/events' },
-      { label: 'Gallery', href: '/gallery' },
-    ],
-  },
+  // Bridge page lands in a later phase; points to the InnerSpace course for now.
+  { label: 'InnerSpace', href: 'https://www.drbaffourjan.com/inner-space', external: true },
+  { label: 'Retreats & Events', href: '/events' },
+  { label: 'Initiatives', href: '/programs' },
+  { label: 'Centres', href: '/centres' },
 ];
 
 export default function Navbar() {
@@ -87,9 +80,9 @@ export default function Navbar() {
     <>
       <header
         className={[
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+          'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
           scrolled
-            ? 'bg-white shadow-md shadow-black/8'
+            ? 'bg-[#FDFBF7]/90 backdrop-blur-md shadow-sm shadow-black/5 border-b border-black/5'
             : 'bg-transparent',
         ].join(' ')}
       >
@@ -117,7 +110,7 @@ export default function Navbar() {
             {/* Desktop navigation */}
             <div
               ref={dropdownRef}
-              className="hidden lg:flex items-center gap-1"
+              className="hidden xl:flex items-center gap-1"
             >
               {navLinks.map((link) =>
                 link.children ? (
@@ -202,11 +195,9 @@ export default function Navbar() {
                     )}
                   </div>
                 ) : (
-                  // Regular link
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={[
+                  // Regular link (internal Link or external anchor)
+                  (() => {
+                    const linkClass = [
                       'relative px-3 py-2 rounded-md text-sm font-medium',
                       'transition-all duration-200 group',
                       scrolled
@@ -217,29 +208,45 @@ export default function Navbar() {
                           ? 'text-primary'
                           : 'text-white'
                         : '',
-                    ].join(' ')}
-                  >
-                    {link.label}
-                    {/* Animated underline */}
-                    <span
-                      className={[
-                        'absolute bottom-0 left-3 right-3 h-0.5 rounded-full transition-transform duration-200 origin-left',
-                        isActivePath(link.href)
-                          ? 'scale-x-100'
-                          : 'scale-x-0 group-hover:scale-x-100',
-                      ].join(' ')}
-                      style={{ backgroundColor: 'var(--color-primary)' }}
-                    />
-                  </Link>
+                    ].join(' ');
+                    const underline = (
+                      <span
+                        className={[
+                          'absolute bottom-0 left-3 right-3 h-0.5 rounded-full transition-transform duration-200 origin-left',
+                          isActivePath(link.href)
+                            ? 'scale-x-100'
+                            : 'scale-x-0 group-hover:scale-x-100',
+                        ].join(' ')}
+                        style={{ backgroundColor: 'var(--color-primary)' }}
+                      />
+                    );
+                    return link.external ? (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={linkClass}
+                      >
+                        {link.label}
+                        {underline}
+                      </a>
+                    ) : (
+                      <Link key={link.href} href={link.href} className={linkClass}>
+                        {link.label}
+                        {underline}
+                      </Link>
+                    );
+                  })()
                 ),
               )}
 
-              {/* Donate CTA button */}
+              {/* Give CTA button */}
               <Link
                 href="/donate"
-                className="ml-3 inline-flex items-center gap-2 rounded-lg px-5 py-2 text-sm font-semibold text-[#000B58] bg-[#D4A843] transition-all duration-200 hover:bg-[#c49a38] hover:shadow-lg hover:scale-105 active:scale-100"
+                className="ml-3 inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold tracking-wide text-[#000B58] bg-[#D4A843] transition-all duration-300 hover:bg-[#c49a38] hover:shadow-lg hover:shadow-[#D4A843]/30"
               >
-                Donate
+                Give
               </Link>
             </div>
 
@@ -248,7 +255,7 @@ export default function Navbar() {
               onClick={() => setMobileOpen(true)}
               aria-label="Open navigation menu"
               className={[
-                'lg:hidden p-2 rounded-md transition-colors duration-200',
+                'xl:hidden p-2 rounded-md transition-colors duration-200',
                 scrolled
                   ? 'text-gray-700 hover:bg-gray-100'
                   : 'text-white hover:bg-white/10',
