@@ -17,7 +17,8 @@ export default async function CentresPreview() {
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1c1a26]/75 sm:text-lg">
             From the home centre in Accra to communities across Ghana and the
-            diaspora. Visit, sit, and ask sincere questions.
+            diaspora. Visit, sit, ask sincere questions, and meet the work in
+            person.
           </p>
         </ScrollReveal>
 

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: "%s | Jan Cosmic Foundation",
   },
   description:
-    "Jan Cosmic Foundation is a spiritual foundation founded by Dr. Baffour Jan, guiding sincere seekers toward self-realization, higher consciousness, inner freedom, and conscious living.",
+    "Jan Cosmic Foundation teaches and inspires sincere seekers to evolve rapidly toward self-realization through Dr. Baffour Jan's teachings, practice, service, and conscious living.",
   keywords: [
     "Jan Cosmic Foundation",
     "Dr. Baffour Jan",
@@ -44,6 +44,9 @@ export const metadata: Metadata = {
     "spiritual retreat Ghana",
     "consciousness",
     "conscious living",
+    "awake and aware",
+    "organic farming",
+    "spiritual service",
     "inner transformation",
     "soul",
     "mystic",
@@ -51,7 +54,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Jan Cosmic Foundation — Self-Realization & Conscious Living",
     description:
-      "A spiritual foundation founded by Dr. Baffour Jan, offering teachings, retreats, courses, gatherings, and service for sincere seekers.",
+      "A spiritual foundation founded by Dr. Baffour Jan, offering teachings, retreats, centres, media, organic farming, and service for sincere seekers.",
     url: "https://jancosmicfoundation.org",
     siteName: "Jan Cosmic Foundation",
     type: "website",
@@ -60,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Jan Cosmic Foundation — Self-Realization & Conscious Living",
     description:
-      "Teachings, retreats, courses, gatherings, and service for seekers drawn to self-realization, consciousness, and inner freedom.",
+      "Teachings, practice, centres, media, and service for seekers drawn to self-realization, consciousness, and inner freedom.",
   },
 };
 

@@ -24,7 +24,7 @@ const doorways: Doorway[] = [
   {
     index: '02',
     title: 'Retreats & Gatherings',
-    line: 'Silence, sittings, and time away from the world — alone and together.',
+    line: 'Silence, sittings, balanced-state practice, and time to return inward.',
     href: '/events',
     image: '/images/students-sitting-down-on-grass.jpg',
     alt: 'Seekers gathered outdoors',
@@ -40,7 +40,7 @@ const doorways: Doorway[] = [
   {
     index: '04',
     title: 'Centres & Community',
-    line: 'Places to sit, ask sincere questions, and walk the path alongside others.',
+    line: 'Places to sit, ask sincere questions, recharge, organise, and serve.',
     href: '/centres',
     image: '/images/group-of-students.jpg',
     alt: 'A community of seekers',
@@ -48,7 +48,7 @@ const doorways: Doorway[] = [
   {
     index: '05',
     title: 'Service',
-    line: 'Inner work made visible — youth mentorship, the land, and care for others.',
+    line: 'Direct and indirect service: outreach, healing, land work, media, and care.',
     href: '/programs',
     image: '/images/group-of-students2.jpg',
     alt: 'Community service',
@@ -56,7 +56,7 @@ const doorways: Doorway[] = [
   {
     index: '06',
     title: 'Media & Writings',
-    line: 'Recorded talks and reflections, so the teachings reach you wherever you are.',
+    line: 'Recorded talks, interviews, and reflections that carry the teachings outward.',
     href: '/blog',
     image: '/images/teaching.jpg',
     alt: 'A teaching session',
@@ -124,9 +124,9 @@ export default function LivingWork() {
             Six doorways into the same path
           </h2>
           <p className="mt-5 text-base leading-relaxed text-[#1c1a26]/75 sm:text-lg">
-            The Foundation is teachings, practice, service, and community — not
-            separate programmes, but one inward movement seen from different
-            sides. Enter through whichever feels honest today.
+            The Foundation is teaching, practice, service, and community. Dr.
+            Jan describes service as part of evolution itself: different forms,
+            one movement toward self-realization.
           </p>
         </ScrollReveal>
 

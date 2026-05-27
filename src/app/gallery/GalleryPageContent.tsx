@@ -33,7 +33,7 @@ export default function GalleryPageContent({ items }: GalleryPageContentProps) {
     <>
       <PageHero
         title="Gallery"
-        subtitle="Photographs from teachings, sittings, retreats, service, and life in community."
+        subtitle="Photographs from teachings, sittings, retreats, outreach, service, and life in community."
       />
 
       <section className="py-16 md:py-20" style={{ backgroundColor: '#FDFBF7' }}>
@@ -42,7 +42,7 @@ export default function GalleryPageContent({ items }: GalleryPageContentProps) {
           <SectionHeader
             label="Photographs"
             title="The work in lived moments"
-            subtitle="A small archive from retreats, teachings, community days, and ordinary days at the centres."
+            subtitle="A small archive from retreats, teachings, outreach, community days, and ordinary days at the centres."
             className="mb-10"
           />
 

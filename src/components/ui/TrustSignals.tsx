@@ -15,7 +15,7 @@ const signals = [
   {
     Icon: HiOutlineSquares2X2,
     title: 'You can see where it goes',
-    body: 'Support is directed to real work — media, the children’s initiative, organic farming and Kwahu land, retreats, and centres.',
+    body: 'Support is directed to real work: media, Guide the Children, organic farms, the JCF Village vision, retreats, and centres.',
   },
   {
     Icon: HiOutlineEnvelope,

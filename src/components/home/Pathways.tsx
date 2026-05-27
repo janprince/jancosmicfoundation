@@ -6,21 +6,21 @@ const firstSteps = [
     step: 'Watch',
     title: 'Watch a teaching',
     description:
-      'Start with a public talk. Let the words meet you before deciding anything.',
+      'Start with a public talk. Let the teaching meet you before deciding anything.',
     href: '/teachings',
   },
   {
     step: 'Attend',
     title: 'Join a gathering',
     description:
-      'Sit with others at a retreat, sitting, or live session — in Accra or online.',
+      'Sit with others at a centre, retreat, or live session in Ghana or online.',
     href: '/events',
   },
   {
     step: 'Study',
     title: 'Explore InnerSpace',
     description:
-      'When you are ready for rhythm and guidance, go deeper through structured study.',
+      'When the pull becomes serious, go deeper through structured study and practice.',
     href: '/innerspace',
   },
 ];
@@ -36,9 +36,8 @@ export default function Pathways() {
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-[#1c1a26]/75 sm:text-lg">
             Jan Cosmic Foundation carries the teachings of Dr. Baffour Jan, a
-            Ghanaian mystic and teacher. There is no membership to join and
-            nothing to believe in advance. Begin with the doorway that feels
-            honest.
+            Ghanaian mystic and teacher. Begin with the doorway that feels
+            honest: listen, sit, study, serve, and let understanding become life.
           </p>
         </ScrollReveal>
 

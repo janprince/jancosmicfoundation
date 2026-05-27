@@ -14,7 +14,7 @@ const coreValues = [
     ),
     title: 'Compassion',
     description:
-      'The measure of spiritual work is not language or doctrine, but the love, patience, and clarity it reveals in ordinary life.',
+      'Dr. Jan teaches that concern, love, and compassion are not decoration. They are how inner realization begins to report itself in ordinary life.',
   },
   {
     icon: (
@@ -24,7 +24,7 @@ const coreValues = [
     ),
     title: 'Unity',
     description:
-      'The teachings return again and again to the one Consciousness behind apparent separation. Community is where that understanding is practised.',
+      'The logo points to a global village: many faces, one reality. Community is where that understanding is practised.',
   },
   {
     icon: (
@@ -34,7 +34,7 @@ const coreValues = [
     ),
     title: 'Service',
     description:
-      'Inner awakening naturally expresses itself as care. Service keeps the path grounded in how we treat one another and the world around us.',
+      'Service may be direct or indirect, full-time or part-time. What matters is that the inner work becomes useful to evolution.',
   },
   {
     icon: (
@@ -44,14 +44,14 @@ const coreValues = [
     ),
     title: 'Wisdom',
     description:
-      'True wisdom is not information collected by the mind. It is the seeing that loosens ego, reveals the Self, and changes how a person lives.',
+      'True wisdom is not information collected by the mind. It is lived knowledge that loosens ego and reveals the Self.',
   },
 ];
 
 export const metadata: Metadata = {
   title: 'About the Foundation',
   description:
-    'Learn about Jan Cosmic Foundation, the spiritual foundation founded by Dr. Baffour Jan to support self-realization, higher consciousness, inner freedom, and service.',
+    'Learn about Jan Cosmic Foundation, founded by Dr. Baffour Jan to teach and inspire all to evolve rapidly toward self-realization through practice and service.',
 };
 
 export default async function AboutPage() {
@@ -60,7 +60,7 @@ export default async function AboutPage() {
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
         title="About the Foundation"
-        subtitle="A spiritual foundation founded by Dr. Baffour Jan for sincere seekers drawn to self-realization, inner awakening, conscious living, and service."
+        subtitle="A spiritual foundation founded by Dr. Baffour Jan to teach and inspire all to evolve rapidly toward self-realization."
       />
 
       {/* Foundation History */}
@@ -76,13 +76,13 @@ export default async function AboutPage() {
               />
               <div className="mt-8 space-y-5 text-base sm:text-lg leading-relaxed" style={{ color: '#1c1a26cc' }}>
                 <p>
-                  Jan Cosmic Foundation was established in 2021 to give a living home to the teachings of Dr. Baffour Jan. Based in Ghana and reaching seekers beyond it, the Foundation exists to support people who feel called to understand themselves beyond the body, the mind, and borrowed belief.
+                  Jan Cosmic Foundation was established in 2021 to give a living home to the teachings of Dr. Baffour Jan. In the words carried through his teaching, its mission is to teach and inspire all to evolve rapidly toward self-realization.
                 </p>
                 <p>
-                  The work is not about adding another identity. It is about the direct question beneath every label: Who am I? What is this life? What is the Source from which it comes? Dr. Jan&rsquo;s teachings return to consciousness, the soul, God, the mind, the body, illusion, suffering, and the possibility of inner freedom.
+                  The work is not about adding another identity. It is about becoming free from false identity and waking to the Spirit within. Dr. Jan&rsquo;s teachings return to consciousness, the soul, God, the mind, the body, illusion, suffering, and the possibility of inner freedom.
                 </p>
                 <p>
-                  In practice this takes the form of teachings, retreats, sittings, the InnerSpace course, media, gatherings, and service. JCF is not only an organisation. It is a movement of awakening and service for people willing to study sincerely, practise honestly, and let understanding become life.
+                  In practice this takes the form of teachings, retreats, sittings, InnerSpace study, outreach teachers, healing and counselling, media, organic farms, children&rsquo;s work, centres, and service. JCF is not only an organisation. It is a movement of awakening and service for people willing to study sincerely, practise honestly, and let understanding become life.
                 </p>
               </div>
             </div>
@@ -127,7 +127,7 @@ export default async function AboutPage() {
             Dr. Baffour Jan is a Ghanaian mystic, spiritual master, and teacher. His work points beyond belief, ritual, and intellectual knowledge toward the direct recognition of who one is beneath the layers of mind and identity.
           </p>
           <p className="text-base sm:text-lg leading-relaxed mb-4" style={{ color: '#1c1a26cc' }}>
-            His teaching is offered through the Foundation as public talks, sittings, retreats, and structured study. The aim is not to collect spiritual ideas, but to become still enough to see clearly.
+            His teaching is offered through the Foundation as public talks, sittings, retreats, structured study, and practical service. The aim is not to collect spiritual ideas, but to become still enough to see clearly and live from that seeing.
           </p>
           <p className="text-base italic leading-relaxed mb-8" style={{ color: '#1c1a26bf' }}>
             &ldquo;The most worthy knowledge is that which helps to dismantle the Ego in order to reveal the True Self.&rdquo;
@@ -153,7 +153,7 @@ export default async function AboutPage() {
           <SectionHeader
             label="What guides the work"
             title="Values that keep the work grounded"
-            subtitle="Not slogans. These are the qualities the Foundation returns to as the teachings become practice, community, and service."
+            subtitle="Not slogans. These are the qualities the Foundation returns to as teachings become practice, community, and service."
           />
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {coreValues.map((value) => (
@@ -186,7 +186,7 @@ export default async function AboutPage() {
           <SectionHeader
             label="The People"
             title="Who runs the Foundation"
-            subtitle="The people who help hold the day-to-day work: teachings, retreats, programmes, media, centres, and service."
+            subtitle="The people who help hold the day-to-day work: teachings, retreats, outreach, media, centres, farms, and service."
           />
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {teamMembers.map((member) => (
@@ -249,7 +249,7 @@ export default async function AboutPage() {
             &ldquo;The greatest wealth is contentment, and one only becomes truly content through self-realisation.&rdquo;
           </p>
           <p className="text-base sm:text-lg mb-10" style={{ color: 'rgba(253,251,247,0.9)' }}>
-            The purpose behind the Foundation, and the way that purpose becomes practice.
+            The purpose behind the Foundation, and the way that purpose becomes teaching, practice, and service.
           </p>
           <Button href="/about/mission-vision" variant="secondary" size="lg">
             Read the mission

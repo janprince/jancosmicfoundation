@@ -16,14 +16,14 @@ import {
 export const metadata: Metadata = {
   title: 'Community',
   description:
-    'Join the Jan Cosmic Foundation community through centres, Telegram, WhatsApp, social media, and public teachings.',
+    'Join the Jan Cosmic Foundation community through centres, Telegram, WhatsApp, social media, public teachings, and service.',
 };
 
 const communityLinks = [
   {
     title: 'Telegram Channel',
     description:
-      'Official announcements, teachings, and updates from the foundation.',
+      'Official announcements, teachings, and updates from the Foundation.',
     href: siteConfig.social.telegramChannel,
     icon: FaTelegram,
     color: '#229ED9',
@@ -31,7 +31,7 @@ const communityLinks = [
   {
     title: 'Telegram Group',
     description:
-      'Connect with fellow seekers. Discuss teachings, share insights, and support one another.',
+      'Connect with fellow seekers. Discuss teachings, ask sincere questions, and support one another.',
     href: siteConfig.social.telegramGroup,
     icon: FaTelegram,
     color: '#229ED9',
@@ -39,7 +39,7 @@ const communityLinks = [
   {
     title: 'WhatsApp Channel',
     description:
-      'Receive updates and announcements directly on WhatsApp.',
+      'Receive teachings, centre notices, and service updates directly on WhatsApp.',
     href: siteConfig.social.whatsappChannel,
     icon: FaWhatsapp,
     color: '#25D366',
@@ -47,7 +47,7 @@ const communityLinks = [
   {
     title: 'WhatsApp Group',
     description:
-      'For members of the foundation. A space for coordination, fellowship, and community.',
+      'For members of the Foundation. A space for coordination, fellowship, and community.',
     href: siteConfig.social.whatsappGroup,
     icon: FaWhatsapp,
     color: '#25D366',
@@ -69,7 +69,7 @@ export default async function JoinPage() {
     <>
       <PageHero
         title="Join Our Community"
-        subtitle="Stay close to the teachings, gatherings, centres, and people walking the path."
+        subtitle="Stay close to the teachings, centres, gatherings, service, and people walking the path."
       />
 
       <main style={{ backgroundColor: '#FDFBF7' }}>
@@ -90,7 +90,7 @@ export default async function JoinPage() {
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1c1a26]/85 sm:text-lg">
                 Channels for teachings and announcements; groups for sincere
-                conversation, questions, and community.
+                conversation, questions, coordination, and community.
               </p>
             </div>
 
@@ -159,8 +159,8 @@ export default async function JoinPage() {
               Follow us
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-[#1c1a26]/85">
-              Short teachings, event moments, photographs, and Foundation
-              updates. Follow where you already spend time.
+              Short teachings, event moments, photographs, service updates, and
+              Foundation news. Follow where you already spend time.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -200,8 +200,9 @@ export default async function JoinPage() {
                 Or visit a centre
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1c1a26]/85 sm:text-lg">
-                Sittings, study, and service happen most deeply in person. Find
-                a centre and begin with a visit.
+                Sittings, study, healing and counselling support, and service
+                happen most deeply in person. Find a centre and begin with a
+                visit.
               </p>
             </div>
 
@@ -282,7 +283,7 @@ export default async function JoinPage() {
             </h2>
             <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-white/85">
               Join a channel, visit a centre, volunteer, or support the work.
-              Let the first step be simple and sincere.
+              Let the first step be simple, sincere, and steady.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link

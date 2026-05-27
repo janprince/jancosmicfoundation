@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Button from '@/components/ui/Button';
@@ -56,7 +55,7 @@ const iconMap: Record<string, React.ReactNode> = {
 export const metadata: Metadata = {
   title: 'Our Programmes',
   description:
-    'Programmes of Jan Cosmic Foundation: spiritual teachings, retreats, InnerSpace study, youth mentorship, service, media, and conscious community.',
+    'Programmes of Jan Cosmic Foundation: teachings, retreats, InnerSpace study, outreach teachers, healing and counselling, organic farms, children\'s work, media, and community.',
 };
 
 export default async function ProgramsPage() {
@@ -69,7 +68,7 @@ export default async function ProgramsPage() {
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
         title="Programmes"
-        subtitle="Teachings, retreats, structured study, service, youth mentorship, and media for seekers walking the inner path."
+        subtitle="Teachings, retreats, structured study, outreach, healing, farms, children's work, media, and service."
       />
 
       {/* Intro Section */}
@@ -78,7 +77,7 @@ export default async function ProgramsPage() {
           <SectionHeader
             label="What we run"
             title="Different forms, one inner work"
-            subtitle="The Foundation supports spiritual study, conscious practice, community service, youth mentorship, and media so the teachings can reach sincere seekers wherever they are."
+            subtitle="The Foundation supports spiritual study, balanced practice, outreach teachers, healing and counselling, organic farms, media, and children's work so the teachings can become life."
           />
         </div>
       </section>
@@ -90,7 +89,7 @@ export default async function ProgramsPage() {
             <SectionHeader
               label="Inner work"
               title="Sittings, retreats, and structured study"
-              subtitle="The core of the Foundation: study, stillness, inquiry, and direct practice."
+              subtitle="The core of the Foundation: study, stillness, inquiry, balanced-state practice, and direct experience."
             />
 
             <div className="mt-12 space-y-8">
@@ -164,7 +163,7 @@ export default async function ProgramsPage() {
             <SectionHeader
               label="Service and outreach"
               title="Where the teaching meets the world"
-              subtitle="Youth mentorship, service, media, and practical support. The same inner work expressed outwardly."
+              subtitle="Outreach teachers, organisers, media, farms, children's work, and practical support. The same inner work expressed outwardly."
             />
 
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -231,7 +230,7 @@ export default async function ProgramsPage() {
       <section className="py-14 sm:py-20" style={{ backgroundColor: '#FDFBF7' }}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="display text-2xl sm:text-3xl italic leading-relaxed mb-4" style={{ color: '#000B58' }}>
-            &ldquo;The proof of our spiritual journey is the genuine love that is revealed in us and among one another.&rdquo;
+            &ldquo;To teach and inspire all to evolve rapidly toward self-realization.&rdquo;
           </p>
           <p className="text-sm font-semibold" style={{ color: 'var(--color-primary)' }}>
             — Dr. Baffour Jan
@@ -255,7 +254,7 @@ export default async function ProgramsPage() {
             className="text-base sm:text-lg mb-10 leading-relaxed"
             style={{ color: 'rgba(253,251,247,0.9)' }}
           >
-            Support a programme, give your time, or join a centre. Choose the form of participation that feels sincere and sustainable.
+            Support a programme, give your time, or join a centre. Choose the service that is sincere, useful, and sustainable.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button href="/donate" variant="secondary" size="lg">

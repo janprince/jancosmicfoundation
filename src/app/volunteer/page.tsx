@@ -13,7 +13,7 @@ const benefits = [
     ),
     title: 'Real, hands-on work',
     description:
-      'Your time supports the visible work: retreats, gatherings, youth mentorship, media, centre care, and practical service.',
+      'Your time supports the visible work: teachings, outreach, centres, farms, media, children\'s work, and practical care.',
   },
   {
     icon: (
@@ -23,7 +23,7 @@ const benefits = [
     ),
     title: 'A community to work alongside',
     description:
-      'Volunteering places you beside other students and supporters who are also learning to turn inner work into daily life.',
+      'Volunteering places you beside students and supporters learning to let inner work become useful in daily life.',
   },
   {
     icon: (
@@ -33,7 +33,7 @@ const benefits = [
     ),
     title: 'Service as practice',
     description:
-      'Service is one way the teachings become real. It asks for attention, humility, patience, and love in practical form.',
+      'Dr. Jan teaches service as part of evolution. It asks for attention, humility, patience, and love in practical form.',
   },
   {
     icon: (
@@ -43,14 +43,14 @@ const benefits = [
     ),
     title: 'Guidance, where it helps',
     description:
-      'You will be guided into a role that fits your capacity, skills, and season of life.',
+      'You will be guided toward service that fits your love, ability, capacity, and season of life.',
   },
 ];
 
 export const metadata: Metadata = {
   title: 'Volunteer With Us',
   description:
-    'Volunteer with Jan Cosmic Foundation through retreats, gatherings, media, youth mentorship, centre support, and service programmes.',
+    'Volunteer with Jan Cosmic Foundation through outreach, centres, media, children\'s work, organic farms, retreats, and practical service.',
 };
 
 export default async function VolunteerPage() {
@@ -60,7 +60,7 @@ export default async function VolunteerPage() {
     <>
       <PageHero
         title="Volunteer With Us"
-        subtitle="Offer your time, skills, and presence in service of the work."
+        subtitle="Offer your time, skills, and presence in service of evolution."
       />
 
       {/* Why Volunteer section */}
@@ -69,7 +69,7 @@ export default async function VolunteerPage() {
           <SectionHeader
             label="Why Volunteer"
             title="What you'd be helping with"
-            subtitle="Retreats, gatherings, media, youth mentorship, centre support, writing, logistics, care, and community service. A little time, offered sincerely, matters."
+            subtitle="Outreach teachers, centres, media, children\'s work, farms, writing, logistics, care, and community service. A little time, offered sincerely, matters."
             className="mb-12"
           />
 
@@ -103,7 +103,7 @@ export default async function VolunteerPage() {
           <SectionHeader
             label="Open Roles"
             title="Current openings"
-            subtitle="If none of these fit, write anyway. There is often a quieter need that has not made the page yet."
+            subtitle="If none of these fit, write anyway. Some service is direct, some indirect, and there is often a quieter need that has not made the page yet."
             className="mb-10"
           />
 

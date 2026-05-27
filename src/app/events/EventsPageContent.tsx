@@ -41,7 +41,7 @@ export default function EventsPageContent({ events }: EventsPageContentProps) {
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
         title="Retreats &amp; Events"
-        subtitle="Retreats, sittings, teachings, and service gatherings for seekers who want to practise with others."
+        subtitle="Retreats, sittings, teachings, balanced practice, and service gatherings for seekers who want to practise with others."
       />
 
       <section className="py-16 sm:py-24">

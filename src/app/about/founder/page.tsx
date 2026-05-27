@@ -46,7 +46,7 @@ const milestones = [
     year: '2021',
     title: 'Jan Cosmic Foundation',
     description:
-      'The Jan Cosmic Foundation was established to hold and share this work through teachings, retreats, courses, media, gatherings, centres, and service.',
+      'The Jan Cosmic Foundation was established to hold and share this work through teachings, retreats, courses, media, gatherings, centres, farms, children\'s work, and service.',
   },
 ];
 
@@ -69,14 +69,14 @@ const teachings = [
   {
     title: 'Service as practice',
     description:
-      'If something has truly opened inwardly, it shows up in how a person treats others. Service is not a moral duty bolted onto the path. It is one of the ways the path expresses itself.',
+      'If something has truly opened inwardly, it shows up in how a person treats others. Service is not a duty bolted onto the path. It is one of the ways evolution expresses itself.',
   },
 ];
 
 export const metadata: Metadata = {
   title: 'Dr. Baffour Jan — Founder & Spiritual Director',
   description:
-    'Dr. Baffour Jan is a Ghanaian mystic, spiritual master, and founder of Jan Cosmic Foundation. His teachings explore self-realization, consciousness, God, the soul, mind, truth, and inner freedom.',
+    'Dr. Baffour Jan is a Ghanaian mystic, spiritual master, and founder of Jan Cosmic Foundation. His teachings explore self-realization, consciousness, God, the soul, mind, truth, service, and inner freedom.',
 };
 
 export default function FounderPage() {
@@ -132,7 +132,7 @@ export default function FounderPage() {
                   Public materials around his work describe a path shaped by wide study and direct realization. He does not ask seekers to collect beliefs. He points them back to direct experience: the knowing that becomes possible when the mind becomes quiet.
                 </p>
                 <p>
-                  Through Jan Cosmic Foundation, Dr. Jan&rsquo;s teachings are shared through public talks, retreats, courses, gatherings, media, and service. The invitation is simple and demanding: to know the Self, and to let that knowing transform how one lives.
+                  Through Jan Cosmic Foundation, Dr. Jan&rsquo;s teachings are shared through public talks, retreats, courses, gatherings, media, outreach, farms, centres, and service. The invitation is simple and demanding: to know the Self, and to let that knowing transform how one lives.
                 </p>
               </div>
 
@@ -259,7 +259,7 @@ export default function FounderPage() {
           <SectionHeader
             label="The Foundation"
             title="How the work is held today"
-            subtitle="Jan Cosmic Foundation gives form to the teaching through study, practice, media, gatherings, and service."
+            subtitle="Jan Cosmic Foundation gives form to the teaching through study, practice, media, centres, outreach, farms, and service."
           />
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -267,17 +267,17 @@ export default function FounderPage() {
               {
                 name: 'Teachings',
                 description:
-                  'Public talks, recorded teachings, and reflections that invite seekers into direct inquiry.',
+                  'Public talks, recorded teachings, and reflections that invite seekers into direct inquiry and self-realization.',
               },
               {
                 name: 'Practice',
                 description:
-                  'Retreats, sittings, and structured study for those ready to stay with the inner work.',
+                  'Retreats, sittings, balanced-state practice, and structured study for those ready to stay with the inner work.',
               },
               {
                 name: 'Service',
                 description:
-                  'Community programmes and volunteer work that keep awakening connected to daily life.',
+                  'Outreach, healing, counselling, media, farms, children\'s work, and volunteer support that keep awakening connected to daily life.',
               },
             ].map((item) => (
               <div

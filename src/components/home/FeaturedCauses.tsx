@@ -17,8 +17,8 @@ export default async function FeaturedCauses() {
             Help carry the teachings forward
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1c1a26]/75 sm:text-lg">
-            The Foundation is sustained by people who believe this work matters.
-            Here is some of what your support makes possible right now.
+            The Foundation is sustained by people who believe this work matters:
+            teachings, outreach, farms, media, centres, and care for children.
           </p>
         </ScrollReveal>
 

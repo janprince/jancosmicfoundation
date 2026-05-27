@@ -37,7 +37,7 @@ export default function BlogPageContent({ posts }: BlogPageContentProps) {
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
         title="Writing"
-        subtitle="Teachings, reflections, retreat notes, and writing from the Foundation."
+        subtitle="Teachings, reflections, retreat notes, service insights, and writing from the Foundation."
       />
 
       <section className="py-16 sm:py-24">
@@ -47,7 +47,7 @@ export default function BlogPageContent({ posts }: BlogPageContentProps) {
             <SectionHeader
               label="From the Foundation"
               title="Recent writing"
-              subtitle="Some pieces begin as talks, some as questions, some as quiet notes from practice. Read what meets you where you are."
+              subtitle="Some pieces begin as talks, some as questions, some as quiet notes from practice and service. Read what meets you where you are."
             />
 
             {/* Category filter tabs */}

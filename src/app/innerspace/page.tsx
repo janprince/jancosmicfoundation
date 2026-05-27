@@ -52,7 +52,8 @@ export default function InnerSpacePage() {
             Anyone can begin with a public talk — freely, without commitment.
             For many, that is enough for a long time. But some seekers reach a
             point where they want more than to listen: a way to study seriously,
-            practise consistently, and be guided as they go deeper.
+            practise consistently, enter the balanced state, and be guided as
+            they go deeper.
           </p>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-[#1c1a26]/70">
             That is what InnerSpace is for.
@@ -71,7 +72,7 @@ export default function InnerSpacePage() {
               <p className="mt-4 flex-1 text-sm leading-relaxed text-[#1c1a26]/75 sm:text-base">
                 Free and open. Talks on consciousness, the Self, God, mind, and
                 inner freedom — to watch whenever you wish, with nothing to join.
-                The honest place for almost everyone to begin.
+                The honest place for almost everyone to begin listening.
               </p>
               <Link
                 href="/teachings"
@@ -96,8 +97,8 @@ export default function InnerSpacePage() {
               <h3 className="display relative z-10 mt-3 text-2xl text-white">InnerSpace</h3>
               <p className="relative z-10 mt-4 flex-1 text-sm leading-relaxed text-white/80 sm:text-base">
                 A structured path for committed students: lessons in sequence,
-                guided practice, and a living rhythm through the work. Hosted on
-                drbaffourjan.com.
+                guided practice, and a living rhythm through the inner work.
+                Hosted on drbaffourjan.com.
               </p>
               <a
                 href={INNERSPACE_URL}
@@ -124,7 +125,8 @@ export default function InnerSpacePage() {
             </h2>
             <p className="mt-5 text-base leading-relaxed text-[#1c1a26]/75 sm:text-lg">
               The aim is not to collect more spiritual information, but to
-              practise — steadily, honestly, and with support.
+              practise steadily, honestly, and with support until knowledge
+              begins to become experience.
             </p>
           </ScrollReveal>
 

@@ -16,7 +16,7 @@ type FormStatus = 'idle' | 'loading' | 'success' | 'error';
 export default function Newsletter({
   dark = false,
   heading = 'Letters for sincere seekers',
-  description = 'Occasional teachings, event dates, and Foundation updates. Sent only when there is something useful to share.',
+  description = 'Occasional teachings, retreat dates, service updates, and Foundation notes. Sent only when there is something useful to share.',
   placeholder = 'Your email',
   buttonLabel = 'Subscribe',
   className = '',

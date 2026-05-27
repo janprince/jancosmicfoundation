@@ -225,8 +225,8 @@ export default async function CentrePage({ params }: { params: Promise<{ slug: s
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             label="Join Us"
-            title={`Become a Member of ${centre.name}`}
-            subtitle="Fill in the form below and the centre leader will be in touch to welcome you."
+            title={`Connect with ${centre.name}`}
+            subtitle="Fill in the form below and the centre leader will be in touch about sittings, teachings, and service opportunities."
             className="mb-10"
           />
           <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm">

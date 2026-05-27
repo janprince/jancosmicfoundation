@@ -7,7 +7,7 @@ import { HiOutlineAcademicCap, HiOutlineSparkles } from 'react-icons/hi2';
 export const metadata: Metadata = {
   title: 'Teachings',
   description:
-    'Public teachings by Dr. Baffour Jan on consciousness, self-realization, God, the soul, the mind, and inner freedom, with InnerSpace for deeper structured study.',
+    'Public teachings by Dr. Baffour Jan on consciousness, self-realization, God, the soul, the mind, balanced practice, and inner freedom, with InnerSpace for deeper structured study.',
 };
 
 export default function TeachingsPage() {
@@ -15,7 +15,7 @@ export default function TeachingsPage() {
     <main>
       <PageHero
         title="Teachings"
-        subtitle="Public talks for seekers, with InnerSpace for deeper structured study."
+        subtitle="Public talks for seekers, with InnerSpace for deeper structured study and practice."
       />
 
       {/* Intro */}
@@ -32,7 +32,8 @@ export default function TeachingsPage() {
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#1c1a26]/80 sm:text-lg">
             Dr. Baffour Jan&rsquo;s public teachings explore consciousness,
             self-realization, God, the soul, the mind, illusion, and the freedom
-            that becomes possible through direct inner knowing.
+            that becomes possible through direct inner knowing and lived
+            practice.
           </p>
         </div>
       </section>

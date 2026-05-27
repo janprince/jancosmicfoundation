@@ -7,7 +7,7 @@ import { getCauses } from '@/lib/api';
 export const metadata: Metadata = {
   title: 'Donate',
   description:
-    'Support Jan Cosmic Foundation. Donations help sustain spiritual teachings, retreats, media, youth mentorship, service programmes, and the developing Spiritual Village in Kwahu.',
+    'Support Jan Cosmic Foundation. Donations help sustain teachings, outreach, media, organic farms, children\'s work, centres, and the developing JCF Village.',
 };
 
 export default async function DonatePage() {
@@ -20,8 +20,8 @@ export default async function DonatePage() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
         </svg>
       ),
-      title: 'Spiritual Village in Kwahu',
-      description: 'A long-term sanctuary vision for retreats, meditation, conscious living, organic farming, and community.',
+      title: 'JCF Village & organic farms',
+      description: 'A peaceful place for retreat, organic food, herbal gardens, practice, and community life.',
     },
     {
       icon: (
@@ -29,8 +29,8 @@ export default async function DonatePage() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
         </svg>
       ),
-      title: 'Recording the teachings',
-      description: 'Filming, editing, and publishing Dr. Jan\'s talks so sincere seekers can meet the teachings wherever they are.',
+      title: 'Media and outreach',
+      description: 'Filming, interviewing, editing, and publishing Dr. Jan\'s talks so seekers can meet the teachings wherever they are.',
     },
     {
       icon: (
@@ -47,7 +47,7 @@ export default async function DonatePage() {
     <>
       <PageHero
         title="Donate"
-        subtitle="Support the teachings, service, media, youth mentorship, and long-term spiritual home of the Foundation."
+        subtitle="Support the teachings, outreach, media, farms, children's work, centres, and long-term home of the Foundation."
       />
 
       {/* Intro */}
@@ -86,7 +86,7 @@ export default async function DonatePage() {
           <SectionHeader
             label="Active causes"
             title="Choose where to give"
-            subtitle="Support a specific cause, or give to the Foundation directly so funds can go where they are most needed."
+            subtitle="Support a specific cause, or give to the Foundation directly so resources can go where the work needs them most."
             className="mb-10"
           />
 
@@ -131,13 +131,14 @@ export default async function DonatePage() {
           <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed text-white/90">
             If you would rather not choose a specific cause, give to the
             Foundation directly. Your contribution will support the area of the
-            work that needs it most.
+            work that needs it most: teaching, outreach, farms, media, centres,
+            or care for children.
           </p>
 
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
             {[
               { amount: 'GH₵50', impact: 'Provides educational materials for one child in the Guide the Children programme' },
-              { amount: 'GH₵200', impact: 'Funds a month of organic inputs for the JCF Kwahu farming project' },
+              { amount: 'GH₵200', impact: 'Funds organic inputs for JCF farm work' },
               { amount: 'GH₵500', impact: 'Supports production of one teaching session for the Media & Digital Outreach programme' },
             ].map((tier) => (
               <div

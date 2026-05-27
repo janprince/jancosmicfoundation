@@ -55,15 +55,15 @@ export default function Footer() {
             </div>
 
             <p className="display text-lg leading-snug text-white/95">
-              A living path inward.
+              Freedom. Awake and aware.
             </p>
             <p
               className="mt-3 text-sm leading-relaxed"
               style={{ color: 'rgba(253,251,247,0.85)' }}
             >
-              A spiritual foundation founded by Dr. Baffour Jan, for sincere
-              seekers drawn to self-realization, consciousness, inner freedom,
-              and a life of service.
+              Founded by Dr. Baffour Jan to teach and inspire all to evolve
+              rapidly toward self-realization through practice, service, and
+              conscious living.
             </p>
 
             {/* Social icons */}
@@ -145,8 +145,8 @@ export default function Footer() {
               className="text-sm mb-4"
               style={{ color: 'rgba(253,251,247,0.85)' }}
             >
-              Occasional teachings, retreat dates, and notes from the Foundation —
-              for those walking the inner path.
+              Occasional teachings, retreat dates, service updates, and notes
+              from the Foundation.
             </p>
             <NewsletterForm />
           </div>

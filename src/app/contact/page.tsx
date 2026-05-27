@@ -7,7 +7,7 @@ import { siteConfig, mapsEmbedUrl, mapsDirectUrl } from '@/lib/site-config';
 export const metadata: Metadata = {
   title: 'Contact Us',
   description:
-    'Contact Jan Cosmic Foundation for teachings, centres, events, partnerships, volunteering, or visiting the Foundation in Accra.',
+    'Contact Jan Cosmic Foundation for teachings, centres, outreach, volunteering, giving, partnerships, or visiting the Foundation in Accra.',
 };
 
 const socialLinks = [
@@ -101,7 +101,7 @@ export default function ContactPage() {
     <>
       <PageHero
         title="Contact Us"
-        subtitle="Questions about the teachings, centres, events, volunteering, or visiting Accra — write to us."
+        subtitle="Questions about teachings, centres, outreach, volunteering, giving, or visiting Accra — write to us."
       />
 
       {/* Main content */}

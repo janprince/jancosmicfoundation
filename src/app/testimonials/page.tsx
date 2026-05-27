@@ -7,7 +7,7 @@ import { getTestimonials } from '@/lib/api';
 export const metadata: Metadata = {
   title: 'Voices from the Community',
   description:
-    'Reflections from Jan Cosmic Foundation students, volunteers, and community members on the teachings, service, and inner path.',
+    'Reflections from Jan Cosmic Foundation students, volunteers, and community members on the teachings, service, centres, and inner path.',
 };
 
 export default async function TestimonialsPage() {
@@ -17,7 +17,7 @@ export default async function TestimonialsPage() {
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
         title="Voices from the Community"
-        subtitle="Reflections from students, volunteers, and centre members walking with the Foundation."
+        subtitle="Reflections from students, volunteers, centre members, and people serving with the Foundation."
       />
 
       {/* Empty state */}

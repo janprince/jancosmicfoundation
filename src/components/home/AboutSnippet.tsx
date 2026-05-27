@@ -33,14 +33,14 @@ export default function AboutSnippet() {
               Jan Cosmic Foundation carries the teachings of Dr. Baffour Jan,
               a Ghanaian mystic and spiritual teacher whose work points seekers
               beyond belief, ritual, and accumulated knowledge into direct inner
-              realization. Based in Ghana, the Foundation welcomes sincere
-              seekers from every background.
+              realization. Its stated mission is to teach and inspire all to
+              evolve rapidly toward self-realization.
             </p>
 
             <p className="mt-4 text-base leading-relaxed text-[#1c1a26]/75">
-              Through teachings, retreats, courses, gatherings, media, and
-              service, the work supports people who feel called to understand
-              life more deeply and live from the truth of who they are.
+              Based in Ghana and open to the world, the work takes shape through
+              teachings, sittings, outreach teachers, healing and counselling,
+              media, organic farms, children&rsquo;s work, and practical service.
             </p>
 
             <Link

@@ -208,7 +208,7 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
                 Give
               </Link>
               <p className="text-center text-xs text-gray-400">
-                Support the teachings, service, and community work.
+                Support teachings, outreach, farms, media, and centres.
               </p>
             </div>
           </DialogPanel>

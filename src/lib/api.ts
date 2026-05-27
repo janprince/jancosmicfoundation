@@ -102,7 +102,7 @@ function transformBlogPost(raw: any): BlogPost {
 }
 
 function transformCause(raw: any): Cause {
-  return {
+  const cause = {
     id: String(raw.id),
     slug: raw.slug,
     title: raw.title,
@@ -119,6 +119,19 @@ function transformCause(raw: any): Cause {
     isActive: raw.is_active ?? true,
     impactStatement: raw.impact_statement,
   };
+
+  const override = mock.causes.find((item) => item.slug === cause.slug);
+
+  return override
+    ? {
+        ...cause,
+        title: override.title,
+        description: override.description,
+        content: override.content,
+        category: override.category,
+        impactStatement: override.impactStatement,
+      }
+    : cause;
 }
 
 function transformCentre(raw: any): Centre {
@@ -179,13 +192,22 @@ function transformTestimonial(raw: any): Testimonial {
 }
 
 function transformTeamMember(raw: any): TeamMember {
-  return {
+  const member = {
     id: String(raw.id),
     name: raw.name,
     role: raw.role,
     bio: raw.bio,
     image: raw.image_url ?? raw.image ?? '/images/doc-potrait.jpg',
   };
+
+  const override = mock.teamMembers.find((item) => item.name === member.name);
+  return override
+    ? {
+        ...member,
+        role: override.role,
+        bio: override.bio,
+      }
+    : member;
 }
 
 function transformImpactStat(raw: any): ImpactStat {
@@ -197,7 +219,7 @@ function transformImpactStat(raw: any): ImpactStat {
   };
 }
 function transformProgram(raw: any): Program {
-  return {
+  const program = {
     id: String(raw.id),
     slug: raw.slug,
     title: raw.title,
@@ -208,6 +230,20 @@ function transformProgram(raw: any): Program {
     category: raw.category ?? 'spiritual',
     isActive: raw.is_active ?? true,
   };
+
+  const override = mock.programs.find((item) => item.slug === program.slug);
+
+  return override
+    ? {
+        ...program,
+        title: override.title,
+        description: override.description,
+        content: override.content,
+        icon: override.icon,
+        category: override.category,
+        isActive: override.isActive,
+      }
+    : program;
 }
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
@@ -340,7 +376,10 @@ export async function getImpactStats(): Promise<ImpactStat[]> {
 export async function getPrograms(): Promise<Program[]> {
   const data = await fetchWithFallback<unknown[]>('/programs/', []);
   if (data.length === 0 && mock.programs.length > 0) return mock.programs;
-  return data.map(transformProgram);
+  const programs = data.map(transformProgram);
+  const existing = new Set(programs.map((program) => program.slug));
+  const localOnly = mock.programs.filter((program) => !existing.has(program.slug));
+  return [...programs, ...localOnly];
 }
 
 export async function getProgramBySlug(slug: string): Promise<Program | undefined> {

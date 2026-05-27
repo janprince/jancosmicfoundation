@@ -9,18 +9,18 @@ const initiatives = [
     href: '/programs',
   },
   {
-    title: 'Organic farming & Kwahu land',
-    line: 'Care for the earth as part of conscious living, and a long-term vision for a spiritual village.',
+    title: 'Organic farms & JCF Village',
+    line: 'Natural food, herbal gardens, and a peaceful village where seekers can recharge.',
     href: '/donate',
   },
   {
     title: 'Media & digital outreach',
-    line: 'Recording and sharing the teachings so seekers can meet them wherever they are.',
+    line: 'Recording, interviewing, editing, and sharing the teachings wherever seekers are.',
     href: '/programs',
   },
   {
-    title: 'Community service',
-    line: 'Practical care and outreach — quiet work, done with attention, offered without spectacle.',
+    title: 'Outreach teachers & organisers',
+    line: 'Carrying basic knowledge outward, supporting centres, and helping seekers become awake and aware.',
     href: '/volunteer',
   },
 ];
@@ -36,10 +36,10 @@ export default function ServiceSection() {
             Inner work becomes real in how we serve
           </h2>
           <p className="mt-6 text-base leading-relaxed text-[#1c1a26]/80 sm:text-lg">
-            At the Foundation, service is not a separate good deed bolted onto
-            spiritual life. It is where understanding is tested and made
-            visible. If something has truly opened inwardly, it shows up in how
-            we treat the people and the world around us.
+            Dr. Jan presents service as part of evolution, not an extra activity
+            added to spiritual life. Some serve directly as outreach teachers,
+            healers, counsellors, organisers, farm workers, or media workers;
+            others serve indirectly by supporting the work.
           </p>
 
           <div className="relative mt-8 h-64 w-full overflow-hidden rounded-xl sm:h-80">

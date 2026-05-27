@@ -15,7 +15,7 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 
 export const metadata: Metadata = {
   description:
-    "Jan Cosmic Foundation is a spiritual foundation founded by Dr. Baffour Jan, created for sincere seekers drawn to self-realization, consciousness, inner awakening, and conscious living.",
+    "Jan Cosmic Foundation teaches and inspires all to evolve rapidly toward self-realization through Dr. Baffour Jan's teachings, practice, service, and conscious living.",
 };
 
 export default function HomePage() {
@@ -64,7 +64,7 @@ export default function HomePage() {
             <Newsletter
               dark
               heading="Letters for sincere seekers"
-              description="Occasional teachings, retreat dates, and notes from the Foundation. Sent only when there is something worth sharing."
+              description="Occasional teachings, retreat dates, service updates, and notes from the Foundation. Sent only when there is something worth sharing."
               placeholder="Your email"
               buttonLabel="Subscribe"
             />

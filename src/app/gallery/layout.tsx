@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Gallery',
   description:
-    'Photographs from Jan Cosmic Foundation teachings, retreats, sittings, service days, centres, and community life.',
+    'Photographs from Jan Cosmic Foundation teachings, retreats, sittings, service days, centres, outreach, and community life.',
 };
 
 export default function GalleryLayout({ children }: { children: React.ReactNode }) {

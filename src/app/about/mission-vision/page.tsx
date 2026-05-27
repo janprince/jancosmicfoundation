@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Button from '@/components/ui/Button';
@@ -7,7 +8,7 @@ import { siteConfig } from '@/lib/site-config';
 const pillars = [
   {
     number: '01',
-    title: 'The teachings',
+    title: 'Teaching for self-realization',
     description:
       'Public talks, sittings, retreats, and structured study shaped by Dr. Baffour Jan\'s direct teaching on consciousness, the Self, God, mind, illusion, and inner freedom.',
     highlights: [
@@ -19,19 +20,19 @@ const pillars = [
   },
   {
     number: '02',
-    title: 'Service that keeps the path grounded',
+    title: 'Service to evolution',
     description:
-      'Inner work becomes real in how we serve. JCF supports community programmes, youth mentorship, media work, and practical outreach as expressions of the same spiritual life.',
+      'Inner work becomes real in how we serve. JCF holds direct and indirect service through outreach teachers, organisers, farms, media, children\'s work, and practical care.',
     highlights: [
-      'Medical outreach',
-      'Educational support for young people',
-      'Community service days',
-      'Local partnerships',
+      'Outreach teachers and organisers',
+      'Healing, counselling, and teaching',
+      'Organic farms and food work',
+      'Media and digital outreach',
     ],
   },
   {
     number: '03',
-    title: 'Seeds of awareness in young people',
+    title: 'Children awakened early',
     description:
       'The Guide the Children work introduces young people to presence, self-awareness, responsibility, and conscious living through mentorship and simple practices.',
     highlights: [
@@ -43,9 +44,9 @@ const pillars = [
   },
   {
     number: '04',
-    title: 'A community of sincere seekers',
+    title: 'Centres, farms, and community',
     description:
-      'The work is rooted in Ghana and open to the world. Centres and online platforms give seekers a place to sit, ask questions, study, and serve together.',
+      'The work is rooted in Ghana and open to the world. Centres, farms, online platforms, and the JCF Village vision give seekers places to sit, recharge, study, and serve together.',
     highlights: [
       `${siteConfig.stats.centres} centres and communities`,
       'In-person sittings and study',
@@ -58,7 +59,7 @@ const pillars = [
 export const metadata: Metadata = {
   title: 'Mission & Vision',
   description:
-    'The mission and vision of Jan Cosmic Foundation: self-realization, higher consciousness, inner freedom, conscious living, and service through the teachings of Dr. Baffour Jan.',
+    'The mission and vision of Jan Cosmic Foundation: to teach and inspire all to evolve rapidly toward self-realization, true empowerment, peace, bliss, love, and wellness.',
 };
 
 export default function MissionVisionPage() {
@@ -66,7 +67,7 @@ export default function MissionVisionPage() {
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
         title="Mission &amp; Vision"
-        subtitle="Why the Foundation exists, what it serves, and how the inner path becomes life."
+        subtitle="Why the Foundation exists, what it serves, and how awakening becomes life."
       />
 
       {/* Mission */}
@@ -103,7 +104,7 @@ export default function MissionVisionPage() {
               />
 
               <p className="display text-2xl sm:text-3xl lg:text-4xl leading-[1.32] text-white">
-                To guide sincere seekers toward self-realization, higher consciousness, inner freedom, and conscious living through the teachings of Dr. Baffour Jan, and to let that inner work express itself through service.
+                To teach and inspire all to evolve rapidly toward self-realization.
               </p>
 
               <div
@@ -130,22 +131,22 @@ export default function MissionVisionPage() {
           <SectionHeader
             label="Where the work is heading"
             title="Our Vision"
-            subtitle="Three intentions that shape the way we teach, gather, serve, and grow."
+            subtitle="To awaken the whole world through self-realization, ensuring true empowerment, peace, bliss, love, and wellness."
           />
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                title: 'Awakened human beings',
-                body: 'That more people come to know themselves beyond the noise of the mind, and live with the clarity, humility, and love that such seeing brings.',
+                title: 'Freedom',
+                body: 'Freedom from false identity and from the external bondage that keeps the soul asleep.',
               },
               {
-                title: 'Teachings kept reachable',
-                body: 'That the teachings of Dr. Jan remain available to sincere seekers through public media, live gatherings, structured courses, centres, and personal practice.',
+                title: 'Awake and aware',
+                body: 'Awakening in the internal life, then growing into full awareness of the Spirit within.',
               },
               {
-                title: 'Unity lived, not only spoken',
-                body: 'That the understanding of one Consciousness becomes visible in how we relate to ourselves, to one another, to nature, and to the communities we serve.',
+                title: 'Unity lived',
+                body: 'The understanding of one Consciousness made visible in how we relate, serve, heal, teach, farm, organise, and care.',
               },
             ].map((item) => (
               <div
@@ -180,7 +181,7 @@ export default function MissionVisionPage() {
           <SectionHeader
             label="How the work breaks down"
             title="Four areas of work"
-            subtitle="Teachings, service, youth mentorship, and community. Different forms, one intention: awakening expressed through life."
+            subtitle="Teaching, service, children, and community. Different forms, one intention: awakening expressed through life."
           />
 
           <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -231,21 +232,21 @@ export default function MissionVisionPage() {
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="display text-3xl sm:text-4xl text-white mb-4">
-            Begin sincerely
+            Choose your service sincerely
           </h2>
           <p className="text-base sm:text-lg mb-10" style={{ color: 'rgba(253,251,247,0.9)' }}>
-            Come as a student, a volunteer, a supporter, or simply as someone who wants to understand life more deeply. The right door is the one you can enter honestly.
+            Dr. Jan gives a practical measure: choose work you love, work you can become good at, work the world needs, and work that can sustain the life around you.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button href="/about" variant="secondary" size="lg">
               Back to About
             </Button>
-            <a
+            <Link
               href="/events"
               className="inline-flex items-center justify-center rounded-xl border border-white/35 px-8 py-4 text-lg font-medium tracking-wide text-white transition-colors duration-300 hover:bg-white/10"
             >
               See upcoming events
-            </a>
+            </Link>
           </div>
         </div>
       </section>

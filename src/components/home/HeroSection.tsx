@@ -74,20 +74,19 @@ export default function HeroSection() {
             </p>
 
             <h1 className="hero-animate hero-animate-2 display text-5xl text-white xl:text-6xl">
-              Revealing the{' '}
-              <span className="italic text-[#D4A843]">God in You</span>
+              A Path of{' '}
+              <span className="italic text-[#D4A843]">Freedom and Awareness</span>
             </h1>
 
             <p className="hero-animate hero-animate-3 mt-7 max-w-lg text-lg leading-relaxed text-white/85">
-              A spiritual foundation founded by Dr. Baffour Jan, for sincere
-              seekers drawn to self-realization, inner freedom, and conscious
-              living.
+              Teachings, practice, and service for sincere seekers ready to turn
+              inward, become awake and aware, and let self-realization shape
+              everyday life.
             </p>
 
             <blockquote className="hero-animate hero-animate-4 mt-8 border-l border-[#D4A843]/40 pl-5">
               <p className="font-serif text-base italic leading-relaxed text-white/80">
-                &ldquo;The Jan Cosmic Foundation is an expression of divine
-                will.&rdquo;
+                &ldquo;Freedom. Awake and aware.&rdquo;
               </p>
               <cite className="mt-2 block text-xs not-italic tracking-wide text-[#D4A843]/90">
                 Dr. Baffour Jan
@@ -136,19 +135,19 @@ export default function HeroSection() {
             </p>
 
             <h1 className="hero-animate hero-animate-2 display text-[2.6rem] text-white sm:text-5xl">
-              Revealing the{' '}
-              <span className="italic text-[#D4A843]">God in You</span>
+              A Path of{' '}
+              <span className="italic text-[#D4A843]">Freedom and Awareness</span>
             </h1>
 
             <p className="hero-animate hero-animate-3 mx-auto mt-6 max-w-md text-base leading-relaxed text-white/85">
-              A spiritual foundation founded by Dr. Baffour Jan for seekers
-              drawn to self-realization, inner freedom, and conscious living.
+              Teachings, practice, and service for sincere seekers ready to turn
+              inward, become awake and aware, and let self-realization shape
+              everyday life.
             </p>
 
             <blockquote className="hero-animate hero-animate-4 mx-auto mt-8 max-w-sm border-t border-white/10 pt-6">
               <p className="font-serif text-sm italic leading-relaxed text-white/80">
-                &ldquo;The Jan Cosmic Foundation is an expression of divine
-                will.&rdquo;
+                &ldquo;Freedom. Awake and aware.&rdquo;
               </p>
               <cite className="mt-2 block text-xs not-italic tracking-wide text-[#D4A843]/90">
                 Dr. Baffour Jan

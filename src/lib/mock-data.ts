@@ -271,7 +271,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Guide the Children: Seeds of Awareness',
     excerpt:
       'Through mentorship, awareness practices, and wisdom-based education, the Guide the Children programme is planting seeds of consciousness in the next generation.',
-    content: `<p>Children are naturally open. They have not yet built the layers of conditioning that make inner work so effortful for adults. The Guide the Children initiative was created by the Jan Cosmic Foundation to meet children in that openness — and nurture it before the world teaches them to close it off.</p>
+    content: `<p>Children are naturally open. They have not yet built the layers of conditioning that make inner work so effortful for adults. The Guide the Children programme is part of the Foundation&rsquo;s service to the next generation.</p>
 <h3>More than academics</h3>
 <p>Guide the Children is not a tutoring programme. It is an introduction to conscious living. Through age-appropriate awareness exercises, storytelling drawn from wisdom traditions, and creative expression, children learn to notice their thoughts, name their emotions, and relate to others with presence and compassion.</p>
 <h3>What we are seeing</h3>
@@ -314,12 +314,12 @@ export const causes: Cause[] = [
   {
     id: 'cause-001',
     slug: 'kwahu-land-project',
-    title: 'JCF Kwahu Land Project',
+    title: 'JCF Village & Land Project',
     description:
-      'Supporting the long-term vision for a JCF Spiritual Village in Kwahu: a sanctuary for retreats, meditation, conscious living, organic farming, and community.',
-    content: `<p>The Kwahu Land Project is part of the Foundation&rsquo;s long-term vision for a spiritual village: a place for retreat, meditation, conscious living, service, and care for the land.</p>
-<p>The vision includes quiet spaces for spiritual practice, simple retreat facilities, organic farming, and community life shaped by the teachings of Dr. Baffour Jan.</p>
-<p>Your donations support the careful development of this work, including land-related costs, infrastructure, environmental care, and facilities for retreats and spiritual programmes.</p>`,
+      'Supporting the long-term JCF Village vision: a peaceful place for retreat, organic farming, herbal gardens, healing work, and community life.',
+    content: `<p>In Dr. Jan&rsquo;s teaching on JCF, the village is not only a property project. It is a practical home for balance: a place where people can step away from external pressure, breathe fresh air, eat organic food, practise, and return to life renewed.</p>
+<p>The vision includes retreat spaces, simple accommodation, organic farms, herbal gardens, healing and counselling work, and community life shaped by the Foundation&rsquo;s purpose.</p>
+<p>Your donations support land acquisition, infrastructure, environmental care, farm development, and the practical facilities needed to hold this work well.</p>`,
     image: '/images/students-sitting-down-on-grass.jpg',
     gallery: [
       '/images/group-of-students.jpg',
@@ -339,10 +339,10 @@ export const causes: Cause[] = [
     slug: 'organic-farming-initiative',
     title: 'JCF Organic Farming Initiative',
     description:
-      'Supporting organic farming connected to the Kwahu vision, with care for the earth treated as part of conscious living.',
-    content: `<p>The Organic Farming Initiative supports the practical side of conscious living: food, land, patience, responsibility, and care for what sustains life.</p>
-<p>For JCF, spiritual growth and care for the earth are not separate concerns. The way land is cultivated should reflect the same awareness the teachings ask us to bring to the mind and heart.</p>
-<p>Donations help support farming equipment, seeds, organic inputs, irrigation, and basic farm operations.</p>`,
+      'Supporting the farms Dr. Jan described as part of JCF service: organic food, farm managers, farm workers, regional farms, and practical care for the land.',
+    content: `<p>The Organic Farming Initiative supports one of the concrete service areas named in Dr. Jan&rsquo;s JCF teaching. The farms are meant to provide wholesome food, train committed workers, support regional communities, and connect spiritual practice with the care of land and body.</p>
+<p>As the work grows, the farms will feed retreats, centres, and the future vegetarian training restaurant, while also helping members and visitors experience a more natural way of living.</p>
+<p>Donations help support farm workers, equipment, seeds, organic inputs, irrigation, storage, transport, and basic farm operations.</p>`,
     image: '/images/exercise.jpg',
     gallery: [
       '/images/students-sitting-down-on-grass.jpg',
@@ -361,10 +361,10 @@ export const causes: Cause[] = [
     slug: 'media-digital-outreach',
     title: 'JCF Media & Digital Outreach',
     description:
-      'Recording, editing, publishing, and preserving Dr. Baffour Jan\'s teachings so sincere seekers can access them wherever they are.',
-    content: `<p>The JCF Media &amp; Digital Outreach work helps record, edit, publish, and preserve the teachings of Dr. Baffour Jan.</p>
-<p>Many seekers first meet the work through a short clip, a recorded talk, a written reflection, or the official website. This work keeps the teachings reachable without reducing them to noise.</p>
-<p>Donations support video and audio production, editing tools, content publishing, website infrastructure, and the people who help maintain the Foundation&rsquo;s digital presence.</p>`,
+      'Recording, editing, publishing, and preserving Dr. Baffour Jan\'s teachings so seekers can meet the work wherever they are.',
+    content: `<p>Dr. Jan spoke of a full media team: cameras, lighting, presenters, interviewers, editing, and steady publishing so the teachings can reach people beyond the room.</p>
+<p>Many seekers first meet the work through a short clip, a recorded talk, a written reflection, or the official website. This work keeps the teachings reachable without flattening them into noise.</p>
+<p>Donations support video and audio production, lighting, editing tools, content publishing, website infrastructure, and the people who help maintain the Foundation&rsquo;s digital presence.</p>`,
     image: '/images/doc-holding-mic.jpg',
     gallery: [
       '/images/teaching.jpg',
@@ -385,11 +385,10 @@ export const causes: Cause[] = [
     slug: 'guide-the-children',
     title: 'Guide the Children Initiative',
     description:
-      'Introducing young people to presence, awareness, responsibility, and conscious living through mentorship and age-appropriate learning.',
-    content: `<p>The Guide the Children initiative is a programme created by the Jan Cosmic Foundation to introduce children to a more conscious way of living and thinking.</p>
-<p>The programme aims to help young people develop presence, self-awareness, compassion, responsibility, and inner clarity before life becomes only pressure and performance.</p>
-<p>Through educational activities, mentorship, and conscious learning approaches, the initiative plants seeds of wisdom and awareness early in life.</p>
-<p>Donations help support educational materials, children&rsquo;s programmes, workshops, outreach activities, and learning resources.</p>`,
+      'Guiding young people early toward awareness, responsibility, compassion, and self-realization.',
+    content: `<p>The Guide the Children initiative is part of the Foundation&rsquo;s work. The intention is to meet young people before life becomes only pressure, performance, and borrowed identity.</p>
+<p>Through mentorship, simple awareness practices, storytelling, reflection, and conscious learning, the programme helps children grow with presence, compassion, responsibility, and inner clarity.</p>
+<p>Donations help support educational materials, children&rsquo;s programmes, workshops, outreach activities, mentor preparation, and learning resources.</p>`,
     image: '/images/students.jpg',
     gallery: [
       '/images/group-of-students2.jpg',
@@ -407,12 +406,12 @@ export const causes: Cause[] = [
   {
     id: 'cause-005',
     slug: 'community-centre-kumasi',
-    title: 'Kumasi Community Centre Expansion',
+    title: 'Regional Centres & Outreach',
     description:
-      'Supporting space for sittings, study, youth work, and service activities connected to the JCF community in Kumasi.',
-    content: `<p>As local communities grow, they need steady places to sit, study, gather, mentor young people, and organise service.</p>
-<p>This cause supports the development of practical spaces for meditation, teaching, meetings, and community programmes connected to the JCF Kumasi community.</p>
-<p>Your support helps create a more stable home for seekers and volunteers who are already carrying the work locally.</p>`,
+      'Supporting local centres where outreach teachers, organisers, healers, counsellors, and students can gather, recharge, and serve.',
+    content: `<p>Dr. Jan described centres and regional structures as practical contact points for the work. Outreach takes the teaching outward, but people also need places to gather, ask questions, recharge, and be guided.</p>
+<p>This cause supports practical spaces for sittings, teaching, healing and counselling work, meetings, youth work, and local service connected to JCF communities.</p>
+<p>Your support helps create stable homes for seekers, volunteers, organisers, and outreach teachers already carrying the work locally.</p>`,
     image: '/images/group-of-students.jpg',
     gallery: [
       '/images/masterseated3.jpg',
@@ -442,7 +441,7 @@ export const centres: Centre[] = [
     country: 'Ghana',
     image: '/images/group-of-students.jpg',
     description:
-      'The home centre of Jan Cosmic Foundation in Accra. The community gathers for sittings, teachings, service coordination, and the day-to-day work of holding the Foundation.',
+      'The home centre of Jan Cosmic Foundation in Accra. The community gathers for sittings, teachings, service coordination, outreach preparation, and the day-to-day work of holding the Foundation.',
     memberCount: 620,
     leader: {
       name: 'Dr. Baffour Jan',
@@ -462,7 +461,7 @@ export const centres: Centre[] = [
     country: 'Ghana',
     image: '/images/group-of-students2.jpg',
     description:
-      'A JCF community in Kumasi for seekers who gather to sit, study, serve, and support the work locally.',
+      'A JCF community in Kumasi for seekers who gather to sit, study, serve, organise locally, and support the wider work.',
     memberCount: 310,
     leader: {
       name: 'Yaw Boateng',
@@ -669,25 +668,25 @@ export const galleryItems: GalleryItem[] = [
 export const volunteerOpportunities: VolunteerOpportunity[] = [
   {
     id: 'vol-001',
-    title: 'Community Outreach Coordinator',
+    title: 'Outreach & Regional Organiser',
     description:
-      'Help coordinate community service days, volunteer roles, supplies, communication, and follow-up so the work is carried with care.',
+      'Help coordinate local gatherings, service days, communication, follow-up, and the practical organisation Dr. Jan described for regional JCF work.',
     location: 'Accra or Kumasi, Ghana',
     commitment: '1 day per month minimum, plus occasional weeknight planning meetings',
     skills: ['Organisation', 'Communication', 'Community relations', 'Problem solving'],
   },
   {
     id: 'vol-002',
-    title: 'Meditation Session Facilitator',
+    title: 'Outreach Teacher Support',
     description:
-      'Support weekly sittings at a JCF centre or local gathering. A steady personal practice, humility, and reliability matter more than performance.',
+      'Support sittings, introductory teachings, questions, and centre gatherings. A steady practice, humility, and reliability matter more than performance.',
     location: 'Any JCF Centre (Accra, Kumasi, London, New York, Toronto)',
     commitment: '2–4 hours per week',
-    skills: ['Personal meditation practice', 'Public speaking', 'Empathy', 'Reliability'],
+    skills: ['Personal practice', 'Public speaking', 'Listening', 'Reliability'],
   },
   {
     id: 'vol-003',
-    title: 'Youth Mentor',
+    title: 'Guide the Children Mentor',
     description:
       'Offer presence-based mentorship to young people in the Guide the Children work through attentive listening, consistency, and grounded support.',
     location: 'Flexible — in-person or online',
@@ -698,10 +697,19 @@ export const volunteerOpportunities: VolunteerOpportunity[] = [
     id: 'vol-004',
     title: 'Digital & Communications Volunteer',
     description:
-      'Support the Foundation through social media, website updates, photography, video, newsletters, writing, editing, or design.',
+      'Support the media work through social media, website updates, photography, video, newsletters, writing, editing, design, or publishing.',
     location: 'Remote, with occasional in-person events in Accra',
     commitment: 'Flexible — approximately 4–6 hours per month',
     skills: ['Social media', 'Photography / Videography', 'Graphic design', 'Writing', 'WordPress or web skills'],
+  },
+  {
+    id: 'vol-005',
+    title: 'Organic Farm & Food Service Support',
+    description:
+      'Support farm work, produce handling, organic food distribution, or preparation for the future vegetarian training restaurant.',
+    location: 'Ghana, with selected remote coordination roles',
+    commitment: 'Flexible, from monthly support to full-time interest',
+    skills: ['Farming', 'Food handling', 'Logistics', 'Catering', 'Reliability'],
   },
 ];
 
@@ -785,7 +793,7 @@ export const teamMembers: TeamMember[] = [
     id: 'team-001',
     name: 'Dr. Baffour Jan',
     role: 'Founder & Spiritual Director',
-    bio: 'A Ghanaian mystic and spiritual teacher. Dr. Jan founded the Jan Cosmic Foundation in Accra in 2021 to give a formal home to teaching work he has been doing since 1986. He keeps the focus on direct realisation rather than belief, and on service as a natural part of inner life — not a separate department of it.',
+    bio: 'A Ghanaian mystic and spiritual teacher. Dr. Jan founded the Jan Cosmic Foundation in Accra in 2021 to give a formal home to teaching work he has been doing since 1986. He describes JCF\'s work as teaching and inspiring all to evolve rapidly toward self-realization, with service as a natural expression of inner life.',
     image: '/images/doc-potrait.jpg',
   },
   {
@@ -821,9 +829,9 @@ export const programs: Program[] = [
     slug: 'spiritual-teachings',
     title: 'Spiritual Teachings & Courses',
     description:
-      'Teachings and structured study guiding sincere seekers toward self-realization, higher consciousness, and inner freedom.',
+      'Teachings and structured study that guide sincere seekers from borrowed identity toward self-realization.',
     content:
-      'The core of Jan Cosmic Foundation is the teaching work of Dr. Baffour Jan. Through public talks, structured courses, sittings, and guided study, seekers are invited to examine consciousness, the Self, God, the soul, the mind, illusion, and the possibility of direct realization. The emphasis is not on collecting spiritual information, but on becoming quiet enough to see what is true.',
+      'The core of Jan Cosmic Foundation is the teaching work of Dr. Baffour Jan. Through public talks, structured courses, sittings, and guided study, seekers are invited to examine consciousness, the Self, God, the soul, the mind, illusion, and the possibility of direct realization. The emphasis is not on collecting spiritual information, but on becoming quiet enough for knowledge to become lived experience.',
     image: '/images/teaching.jpg',
     icon: 'lotus',
     category: 'spiritual',
@@ -836,7 +844,7 @@ export const programs: Program[] = [
     description:
       'Retreats and intensives that give seekers time for silence, sitting, inquiry, and deeper practice.',
     content:
-      'JCF retreats and intensives create a sacred pause from ordinary noise. Through silence, meditation, teaching, and simple community rhythm, participants are invited to look inward with more honesty and steadiness. The purpose is not escape from life, but a clearer return to it.',
+      'JCF retreats and intensives create a pause from ordinary noise. Through silence, meditation, teaching, balanced-state practice, and simple community rhythm, participants are invited to look inward with more honesty and steadiness. The purpose is not escape from life, but a clearer return to it.',
     image: '/images/studentinmeditation.jpg',
     icon: 'meditation',
     category: 'spiritual',
@@ -847,9 +855,9 @@ export const programs: Program[] = [
     slug: 'guide-the-children',
     title: 'Guide the Children Initiative',
     description:
-      'Introducing children and young people to presence, awareness, responsibility, and conscious living.',
+      'Introducing children and young people to awareness, responsibility, compassion, and conscious living.',
     content:
-      'The Guide the Children Initiative plants seeds of awareness early in life. Through mentorship, simple practices, storytelling, reflection, and creative learning, young people are encouraged to develop self-awareness, compassion, responsibility, and inner clarity.',
+      'The Guide the Children Initiative plants seeds of awareness early in life. Through mentorship, simple practices, storytelling, reflection, and creative learning, young people are encouraged to develop self-awareness, compassion, responsibility, and inner clarity before the world trains them only for pressure and performance.',
     image: '/images/group-of-students.jpg',
     icon: 'children',
     category: 'education',
@@ -858,11 +866,11 @@ export const programs: Program[] = [
   {
     id: 'prog-004',
     slug: 'community-service',
-    title: 'Community Service & Outreach',
+    title: 'Service & Outreach Teachers',
     description:
-      'Practical service that keeps inner work connected to the people and communities around us.',
+      'Direct and indirect service that carries the teaching into homes, centres, regions, media, land work, and community life.',
     content:
-      'Service is treated as part of the path, not a public relations activity. JCF volunteers support practical community needs through outreach, centre work, youth mentorship, event support, and other forms of care. The intention is simple: let the understanding of unity become visible in action.',
+      'In Dr. Jan\'s teaching, service is not a public relations activity. It is one way evolution moves through a person. Outreach teachers, organisers, volunteers, and supporters help carry basic knowledge to sleeping souls, guide newcomers, coordinate centres, and let the understanding of unity become visible in action.',
     image: '/images/students-sitting-down-on-grass.jpg',
     icon: 'hands',
     category: 'community',
@@ -871,11 +879,11 @@ export const programs: Program[] = [
   {
     id: 'prog-005',
     slug: 'spiritual-counselling',
-    title: 'Spiritual Guidance & Counselling',
+    title: 'Healing, Counselling & Guidance',
     description:
-      'Personal spiritual guidance for seekers who need support, clarity, or steadiness on the inner path.',
+      'Support for seekers through guidance, counselling, and healing work rooted in receptivity, balance, and compassion.',
     content:
-      'The inner path can be deeply personal. Through guidance from senior students and teachers, seekers can ask questions, receive support, and return to practice with more clarity. This work is not a replacement for personal responsibility; it is a compassionate support for sincere inquiry.',
+      'Dr. Jan presents healing, counselling, and teaching as connected forms of service. Counselling helps a person become receptive; teaching brings clarity; healing flows through love, balance, and the recognition of the perfect Self beneath the condition. This work supports sincere inquiry without replacing personal responsibility.',
     image: '/images/masterseated3.jpg',
     icon: 'guidance',
     category: 'spiritual',
@@ -888,9 +896,22 @@ export const programs: Program[] = [
     description:
       'Recording, publishing, and preserving the teachings so seekers can meet the work wherever they are.',
     content:
-      'The Media & Digital Outreach programme records talks, edits teachings, publishes video and written content, and maintains the Foundation\'s online presence. It helps the work reach seekers who cannot attend a centre physically while preserving the depth and seriousness of the teachings.',
+      'The Media & Digital Outreach programme records talks, edits teachings, hosts interviews, publishes video and written content, and maintains the Foundation\'s online presence. It helps the work reach seekers who cannot attend a centre physically while preserving the depth and seriousness of the teachings.',
     image: '/images/doc-holding-mic.jpg',
     icon: 'media',
+    category: 'community',
+    isActive: true,
+  },
+  {
+    id: 'prog-007',
+    slug: 'organic-farms-and-food',
+    title: 'Organic Farms & Vegetarian Training',
+    description:
+      'Organic farms, herbal gardens, food preparation, and training that connect spiritual work with the body, the land, and daily living.',
+    content:
+      'Dr. Jan described the organic farms, herbal preparations, and vegetarian training restaurant as practical arms of the Foundation. The farms provide natural food, train workers and managers, support regional communities, and prepare the ground for a village atmosphere where seekers can recharge in nature.',
+    image: '/images/students-sitting-down-on-grass.jpg',
+    icon: 'hands',
     category: 'community',
     isActive: true,
   },

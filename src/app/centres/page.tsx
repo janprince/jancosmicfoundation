@@ -9,7 +9,7 @@ import { siteConfig } from '@/lib/site-config';
 export const metadata: Metadata = {
   title: 'Our Centres',
   description:
-    'Jan Cosmic Foundation centres and communities offer sittings, study, gatherings, service, and contact points for sincere seekers in Ghana and beyond.',
+    'Jan Cosmic Foundation centres and communities offer sittings, study, outreach, healing and counselling support, service, and contact points for sincere seekers.',
 };
 
 export default async function CentresPage() {
@@ -26,7 +26,7 @@ export default async function CentresPage() {
     <>
       <PageHero
         title="Our Centres"
-        subtitle="Places to sit, study, ask sincere questions, and practise in community."
+        subtitle="Places to sit, study, ask sincere questions, recharge, organise, and serve."
       />
 
       {/* Intro section */}
@@ -36,7 +36,7 @@ export default async function CentresPage() {
             <SectionHeader
               label="Where we sit"
               title="Active centres and communities"
-              subtitle="Each centre or community is a local doorway into the teachings, gatherings, and service of the Foundation."
+              subtitle="Each centre or community is a local doorway into the teachings, gatherings, outreach, healing support, and service of the Foundation."
             />
           </div>
 
@@ -62,7 +62,7 @@ export default async function CentresPage() {
           <SectionHeader
             label="Locations"
             title="Find a centre near you"
-            subtitle="Choose a centre to read more, see contact details, or ask about joining a sitting."
+            subtitle="Choose a centre to read more, see contact details, or ask about joining a sitting or service activity."
             className="mb-10"
           />
 
@@ -90,12 +90,12 @@ export default async function CentresPage() {
           </div>
 
           <h2 className="display text-3xl sm:text-4xl text-white leading-tight">
-            Visit a centre, or ask about hosting one
+            Visit a centre, or ask about helping one grow
           </h2>
           <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed text-white/90">
             If there is no centre near you and you feel called to host sincere
-            seekers in your city, write to us. We will listen and guide the next
-            step carefully.
+            seekers, organise locally, or support outreach in your city, write
+            to us. We will listen and guide the next step carefully.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

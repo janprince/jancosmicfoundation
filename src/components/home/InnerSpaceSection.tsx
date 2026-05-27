@@ -19,7 +19,8 @@ export default function InnerSpaceSection() {
         <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#1c1a26]/85 sm:text-lg">
           <strong className="font-semibold text-[#000B58]">InnerSpace</strong> is
           Dr. Baffour Jan&rsquo;s online study path for sincere seekers who want
-          to explore consciousness, the Self, and inner freedom with guidance.
+          to explore consciousness, the Self, balanced practice, and inner
+          freedom with guidance.
         </p>
 
         <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1c1a26]/65">
