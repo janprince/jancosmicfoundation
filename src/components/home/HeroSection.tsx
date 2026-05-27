@@ -79,9 +79,9 @@ export default function HeroSection() {
             </h1>
 
             <p className="hero-animate hero-animate-3 mt-7 max-w-lg text-lg leading-relaxed text-white/85">
-              Teachings, practice, and service for sincere seekers ready to turn
-              inward, become awake and aware, and let self-realization shape
-              everyday life.
+                A living spiritual foundation guiding sincere seekers
+                toward inner freedom, self-realization, and conscious living
+                through the teachings of Dr. Baffour Jan.
             </p>
 
             <blockquote className="hero-animate hero-animate-4 mt-8 border-l border-[#D4A843]/40 pl-5">
