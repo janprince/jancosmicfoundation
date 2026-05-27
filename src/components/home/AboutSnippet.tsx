@@ -31,8 +31,8 @@ export default function AboutSnippet() {
 
             <p className="mt-6 text-base leading-relaxed text-[#1c1a26]/80 sm:text-lg">
               Jan Cosmic Foundation carries the teachings of Dr. Baffour Jan,
-              a Ghanaian mystic and spiritual teacher whose work points seekers
-              beyond belief, ritual, and accumulated knowledge into direct inner
+              a mystic and spiritual teacher whose work points seekers beyond
+              belief, ritual, and accumulated knowledge into direct inner
               realization. Its stated mission is to teach and inspire all to
               evolve rapidly toward self-realization.
             </p>

@@ -10,7 +10,7 @@ const milestones = [
     year: 'Ghana',
     title: 'A life rooted in spiritual inquiry',
     description:
-      'Dr. Baffour Jan is publicly known as a Ghanaian mystic and spiritual teacher whose life has been shaped by a sustained inquiry into God, the soul, consciousness, and the nature of human suffering.',
+      'Dr. Baffour Jan is publicly known as a mystic and spiritual teacher whose life has been shaped by a sustained inquiry into God, the soul, consciousness, and the nature of human suffering.',
   },
   {
     year: 'Early path',
@@ -76,7 +76,7 @@ const teachings = [
 export const metadata: Metadata = {
   title: 'Dr. Baffour Jan — Founder & Spiritual Director',
   description:
-    'Dr. Baffour Jan is a Ghanaian mystic, spiritual master, and founder of Jan Cosmic Foundation. His teachings explore self-realization, consciousness, God, the soul, mind, truth, service, and inner freedom.',
+    'Dr. Baffour Jan is a mystic, spiritual master, and founder of Jan Cosmic Foundation. His teachings explore self-realization, consciousness, God, the soul, mind, truth, service, and inner freedom.',
 };
 
 export default function FounderPage() {
@@ -126,7 +126,7 @@ export default function FounderPage() {
               />
               <div className="mt-8 space-y-5 text-base sm:text-lg leading-relaxed" style={{ color: '#1c1a26cc' }}>
                 <p>
-                  Dr. Baffour Jan is a Ghanaian mystic, spiritual master, and teacher whose work points beyond doctrine and ritual to the direct recognition of who one already is. His teachings explore God, the soul, consciousness, illusion, the mind, the body, truth, human suffering, and inner awakening.
+                  Dr. Baffour Jan is a mystic, spiritual master, and teacher whose work points beyond doctrine and ritual to the direct recognition of who one already is. His teachings explore God, the soul, consciousness, illusion, the mind, the body, truth, human suffering, and inner awakening.
                 </p>
                 <p>
                   Public materials around his work describe a path shaped by wide study and direct realization. He does not ask seekers to collect beliefs. He points them back to direct experience: the knowing that becomes possible when the mind becomes quiet.

@@ -36,8 +36,8 @@ export default function Pathways() {
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-[#1c1a26]/75 sm:text-lg">
             Jan Cosmic Foundation carries the teachings of Dr. Baffour Jan, a
-            Ghanaian mystic and teacher. Begin with the doorway that feels
-            honest: listen, sit, study, serve, and let understanding become life.
+            mystic and teacher. Begin with the doorway that feels honest: listen,
+            sit, study, serve, and let understanding become life.
           </p>
         </ScrollReveal>
 

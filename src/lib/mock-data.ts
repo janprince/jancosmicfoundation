@@ -793,7 +793,7 @@ export const teamMembers: TeamMember[] = [
     id: 'team-001',
     name: 'Dr. Baffour Jan',
     role: 'Founder & Spiritual Director',
-    bio: 'A Ghanaian mystic and spiritual teacher. Dr. Jan founded the Jan Cosmic Foundation in Accra in 2021 to give a formal home to teaching work he has been doing since 1986. He describes JCF\'s work as teaching and inspiring all to evolve rapidly toward self-realization, with service as a natural expression of inner life.',
+    bio: 'A mystic and spiritual teacher. Dr. Jan founded the Jan Cosmic Foundation in Accra in 2021 to give a formal home to teaching work he has been doing since 1986. He describes JCF\'s work as teaching and inspiring all to evolve rapidly toward self-realization, with service as a natural expression of inner life.',
     image: '/images/doc-potrait.jpg',
   },
   {

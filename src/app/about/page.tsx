@@ -143,7 +143,7 @@ export default async function AboutPage() {
             About Dr. Baffour Jan
           </h2>
           <p className="text-base sm:text-lg leading-relaxed mb-6" style={{ color: '#1c1a26cc' }}>
-            Dr. Baffour Jan is a Ghanaian mystic, spiritual master, and teacher. His work points beyond belief, ritual, and intellectual knowledge toward the direct recognition of who one is beneath the layers of mind and identity.
+            Dr. Baffour Jan is a mystic, spiritual master, and teacher. His work points beyond belief, ritual, and intellectual knowledge toward the direct recognition of who one is beneath the layers of mind and identity.
           </p>
           <p className="text-base sm:text-lg leading-relaxed mb-4" style={{ color: '#1c1a26cc' }}>
             His teaching is offered through the Foundation as public talks, sittings, retreats, structured study, and practical service. The aim is not to collect spiritual ideas, but to become still enough to see clearly and live from that seeing.
