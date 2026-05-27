@@ -93,7 +93,7 @@ export default function MissionVisionPage() {
             <div
               className="relative rounded-3xl p-8 sm:p-12 lg:p-16 text-center"
               style={{
-                background: 'linear-gradient(135deg, #000B58 0%, #1a1b6b 55%, var(--color-violet) 100%)',
+                background: 'linear-gradient(135deg, #000B58 0%, #1a1b6b 55%, var(--color-violet, #5B4B9E) 100%)',
               }}
             >
               {/* Gold accent bar */}
@@ -227,7 +227,7 @@ export default function MissionVisionPage() {
       {/* CTA */}
       <section
         className="py-14 sm:py-20"
-        style={{ background: 'linear-gradient(135deg, #000B58 0%, var(--color-violet) 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #000B58 0%, var(--color-violet, #5B4B9E) 100%)' }}
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="display text-3xl sm:text-4xl text-white mb-4">

@@ -12,7 +12,7 @@ export default function NotFound() {
       className="relative flex min-h-[80vh] items-center justify-center overflow-hidden px-5 py-24 sm:px-8"
       style={{
         background:
-          'linear-gradient(135deg, #000B58 0%, #1a1b6b 50%, var(--color-violet) 100%)',
+          'linear-gradient(135deg, #000B58 0%, #1a1b6b 50%, var(--color-violet, #5B4B9E) 100%)',
       }}
     >
       <div

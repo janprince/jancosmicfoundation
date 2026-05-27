@@ -78,7 +78,7 @@ export default async function CentresPage() {
       <section
         className="py-20"
         style={{
-          background: 'linear-gradient(135deg, #000B58 0%, #1a1b6b 50%, var(--color-violet) 100%)',
+          background: 'linear-gradient(135deg, #000B58 0%, #1a1b6b 50%, var(--color-violet, #5B4B9E) 100%)',
         }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

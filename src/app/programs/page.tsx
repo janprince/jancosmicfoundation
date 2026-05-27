@@ -244,7 +244,7 @@ export default async function ProgramsPage() {
         className="py-16 sm:py-24"
         style={{
           background:
-            'linear-gradient(135deg, #000B58 0%, #1a1b6b 50%, var(--color-violet) 100%)',
+            'linear-gradient(135deg, #000B58 0%, #1a1b6b 50%, var(--color-violet, #5B4B9E) 100%)',
         }}
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

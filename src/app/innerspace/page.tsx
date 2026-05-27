@@ -89,7 +89,7 @@ export default function InnerSpacePage() {
               className="grain-dark relative flex h-full flex-col overflow-hidden rounded-xl p-8 sm:p-10"
               style={{
                 background:
-                  'linear-gradient(150deg, #000B58 0%, #1a1b6b 55%, var(--color-violet) 100%)',
+                  'linear-gradient(150deg, #000B58 0%, #1a1b6b 55%, var(--color-violet, #5B4B9E) 100%)',
               }}
             >
               <p className="eyebrow relative z-10 text-[#D4A843]">Go deeper</p>

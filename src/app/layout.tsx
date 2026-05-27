@@ -4,6 +4,7 @@ import { Raleway, Fraunces } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import RouteProgress from "@/components/layout/RouteProgress";
 import { siteConfig, socialUrlsForSchema } from "@/lib/site-config";
 
 const raleway = Raleway({
@@ -111,6 +112,7 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
+        <RouteProgress />
         <Navbar />
         <main id="main-content">{children}</main>
         <Footer />

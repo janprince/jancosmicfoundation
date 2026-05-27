@@ -52,7 +52,7 @@ export default function HeroSection() {
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(150deg, #000B58 0%, #1a1b6b 50%, var(--color-violet) 100%)',
+              'linear-gradient(150deg, #000B58 0%, #1a1b6b 50%, var(--color-violet, #5B4B9E) 100%)',
           }}
         />
         {/* Dawn light rising from the horizon */}

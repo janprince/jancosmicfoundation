@@ -266,7 +266,7 @@ export default async function JoinPage() {
         <section
           className="py-16 sm:py-20"
           style={{
-            background: 'linear-gradient(135deg, #000B58 0%, #1a1b6b 50%, var(--color-violet) 100%)',
+            background: 'linear-gradient(135deg, #000B58 0%, #1a1b6b 50%, var(--color-violet, #5B4B9E) 100%)',
           }}
         >
           <div className="mx-auto max-w-2xl px-5 sm:px-8 text-center">

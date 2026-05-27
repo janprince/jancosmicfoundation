@@ -38,7 +38,7 @@ export default function ProgressBar({
           style={{
             width: `${percentage}%`,
             background:
-              'linear-gradient(90deg, var(--color-primary) 0%, var(--color-violet) 55%, #D4A843 100%)',
+              'linear-gradient(90deg, var(--color-primary) 0%, var(--color-violet, #5B4B9E) 55%, #D4A843 100%)',
           }}
         />
 

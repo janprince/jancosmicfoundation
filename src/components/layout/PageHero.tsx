@@ -17,7 +17,7 @@ export default function PageHero({
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(150deg, #000B58 0%, #1a1b6b 48%, var(--color-violet) 100%)',
+            'linear-gradient(150deg, #000B58 0%, #1a1b6b 48%, var(--color-violet, #5B4B9E) 100%)',
         }}
       />
       {/* Faint radial light, like dawn over the horizon */}
