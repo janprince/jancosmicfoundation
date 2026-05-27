@@ -21,8 +21,7 @@ const firstSteps = [
     title: 'Explore InnerSpace',
     description:
       'When you are ready for rhythm and guidance, go deeper through structured study.',
-    href: 'https://www.drbaffourjan.com/inner-space',
-    external: true,
+    href: '/innerspace',
   },
 ];
 
@@ -47,37 +46,25 @@ export default function Pathways() {
           staggerChildren={0.12}
           className="grid gap-5 sm:grid-cols-3"
         >
-          {firstSteps.map((item) => {
-            const inner = (
-              <>
-                <span className="eyebrow text-[#8a6c1a]">{item.step}</span>
-                <h3 className="display mt-3 text-2xl text-[#000B58] transition-colors duration-300 group-hover:text-primary">
-                  {item.title}
-                  {item.external && (
-                    <span aria-hidden="true" className="ml-1.5 text-[#8a6c1a]/60 text-base align-middle">↗</span>
-                  )}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#1c1a26]/70">
-                  {item.description}
-                </p>
-                <span
-                  aria-hidden="true"
-                  className="mt-6 block h-px w-8 origin-left bg-[#D4A843] transition-transform duration-500 group-hover:scale-x-[2.5]"
-                />
-              </>
-            );
-            const className =
-              'group flex flex-col rounded-xl border border-black/[0.08] bg-white p-8 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-lg hover:shadow-[#000B58]/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary';
-            return item.external ? (
-              <a key={item.title} href={item.href} target="_blank" rel="noopener noreferrer" className={className}>
-                {inner}
-              </a>
-            ) : (
-              <Link key={item.title} href={item.href} className={className}>
-                {inner}
-              </Link>
-            );
-          })}
+          {firstSteps.map((item) => (
+            <Link
+              key={item.title}
+              href={item.href}
+              className="group flex flex-col rounded-xl border border-black/[0.08] bg-white p-8 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-lg hover:shadow-[#000B58]/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            >
+              <span className="eyebrow text-[#8a6c1a]">{item.step}</span>
+              <h3 className="display mt-3 text-2xl text-[#000B58] transition-colors duration-300 group-hover:text-primary">
+                {item.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-[#1c1a26]/70">
+                {item.description}
+              </p>
+              <span
+                aria-hidden="true"
+                className="mt-6 block h-px w-8 origin-left bg-[#D4A843] transition-transform duration-500 group-hover:scale-x-[2.5]"
+              />
+            </Link>
+          ))}
         </ScrollReveal>
       </div>
     </section>

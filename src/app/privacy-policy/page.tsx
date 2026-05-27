@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
             className="mb-10"
           />
 
-          <div className="prose prose-sm sm:prose-base max-w-none leading-relaxed" style={{ color: '#1a1a1a' }}>
+          <div className="prose prose-sm sm:prose-base max-w-none leading-relaxed" style={{ color: '#1c1a26' }}>
             <p>
               Our formal privacy policy is currently being finalised. In the
               meantime, we want you to know the following:

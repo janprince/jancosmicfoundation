@@ -47,7 +47,7 @@ export default async function UpcomingEvents() {
               <p className="text-base text-[#000B58]">
                 No upcoming events right now
               </p>
-              <p className="mt-2 text-sm text-[#1a1a1a]/80">
+              <p className="mt-2 text-sm text-[#1c1a26]/80">
                 Check back soon — more events are on the way.
               </p>
               <Link

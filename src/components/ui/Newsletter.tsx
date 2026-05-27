@@ -29,7 +29,7 @@ export default function Newsletter({
   const descColor = dark ? 'text-white/85' : 'text-[#1c1a26]/75';
   const inputBg = dark
     ? 'bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-[#D4A843] focus:bg-white/15'
-    : 'bg-white border-primary/25 text-[#1a1a1a] placeholder:text-[#1a1a1a]/60 focus:border-primary';
+    : 'bg-white border-primary/25 text-[#1c1a26] placeholder:text-[#1c1a26]/60 focus:border-primary';
 
   function validateEmail(val: string) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);

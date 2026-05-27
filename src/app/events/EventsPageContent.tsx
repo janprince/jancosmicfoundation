@@ -40,7 +40,7 @@ export default function EventsPageContent({ events }: EventsPageContentProps) {
   return (
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
-        title="Events"
+        title="Retreats &amp; Events"
         subtitle="Retreats, sittings, teachings, and service gatherings for seekers who want to practise with others."
       />
 
@@ -73,7 +73,7 @@ export default function EventsPageContent({ events }: EventsPageContentProps) {
                     style={
                       isActive
                         ? { backgroundColor: 'var(--color-primary)', color: '#FDFBF7', boxShadow: '0 1px 3px rgba(0,0,0,0.15)' }
-                        : { color: '#1a1a1a80' }
+                        : { color: '#1c1a2680' }
                     }
                   >
                     {filter.label}
@@ -82,7 +82,7 @@ export default function EventsPageContent({ events }: EventsPageContentProps) {
                       style={
                         isActive
                           ? { backgroundColor: 'rgba(212,168,67,0.3)', color: '#D4A843' }
-                          : { backgroundColor: 'rgba(0,0,0,0.08)', color: '#1a1a1a60' }
+                          : { backgroundColor: 'rgba(0,0,0,0.08)', color: '#1c1a2660' }
                       }
                     >
                       {counts[filter.value]}
@@ -111,10 +111,10 @@ export default function EventsPageContent({ events }: EventsPageContentProps) {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-2" style={{ color: '#000B58' }}>
+              <h3 className="display text-2xl mb-2" style={{ color: '#000B58' }}>
                 No {activeFilter === 'upcoming' ? 'upcoming' : activeFilter === 'past' ? 'past' : ''} events found
               </h3>
-              <p className="text-base max-w-sm" style={{ color: '#1a1a1abf' }}>
+              <p className="text-base max-w-sm" style={{ color: '#1c1a26bf' }}>
                 {activeFilter === 'upcoming'
                   ? 'Check back soon — new events are added regularly.'
                   : activeFilter === 'past'
@@ -138,10 +138,10 @@ export default function EventsPageContent({ events }: EventsPageContentProps) {
       {/* Newsletter CTA */}
       <section className="py-14" style={{ backgroundColor: '#F2EFE9' }}>
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-3" style={{ color: '#000B58' }}>
+          <h2 className="display text-3xl mb-3" style={{ color: '#000B58' }}>
             Hear about events first
           </h2>
-          <p className="text-sm sm:text-base mb-6" style={{ color: '#1a1a1abf' }}>
+          <p className="text-sm sm:text-base mb-6" style={{ color: '#1c1a26bf' }}>
             Join the community to hear when new retreats, sittings, and teaching dates are announced.
           </p>
           <a

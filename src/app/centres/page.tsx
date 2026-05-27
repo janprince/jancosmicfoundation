@@ -78,7 +78,7 @@ export default async function CentresPage() {
       <section
         className="py-20"
         style={{
-          background: 'linear-gradient(135deg, #000B58 0%, #001485 50%, var(--color-primary) 100%)',
+          background: 'linear-gradient(135deg, #000B58 0%, #1a1b6b 50%, var(--color-violet) 100%)',
         }}
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -89,7 +89,7 @@ export default async function CentresPage() {
             <span className="block h-px w-10 rounded-full bg-[#D4A843]/50" />
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-semibold text-white leading-tight">
+          <h2 className="display text-3xl sm:text-4xl text-white leading-tight">
             Visit a centre, or ask about hosting one
           </h2>
           <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed text-white/90">
@@ -106,14 +106,12 @@ export default async function CentresPage() {
             >
               Join the Community
             </Button>
-            <Button
+            <a
               href="/contact"
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white hover:text-[#000B58]"
+              className="inline-flex items-center justify-center rounded-xl border border-white/35 px-8 py-4 text-lg font-medium tracking-wide text-white transition-colors duration-300 hover:bg-white/10"
             >
               Start a Centre
-            </Button>
+            </a>
           </div>
         </div>
       </section>

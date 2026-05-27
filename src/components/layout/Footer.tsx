@@ -14,7 +14,7 @@ const exploreLinks = [
   { label: 'Teachings', href: '/teachings' },
   { label: 'Writings', href: '/blog' },
   { label: 'Retreats & Events', href: '/events' },
-  { label: 'Initiatives', href: '/programs' },
+  { label: 'Programmes', href: '/programs' },
   { label: 'Centres', href: '/centres' },
 ];
 

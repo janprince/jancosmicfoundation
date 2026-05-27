@@ -53,7 +53,7 @@ export default function GalleryPageContent({ items }: GalleryPageContentProps) {
                 key={cat.value}
                 onClick={() => setActiveCategory(cat.value)}
                 className={[
-                  'px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 border-2',
+                  'px-5 py-2 rounded-full text-sm font-medium tracking-wide transition-all duration-200 border',
                   activeCategory === cat.value
                     ? 'bg-primary text-white border-primary shadow-md shadow-primary/20'
                     : 'bg-white text-[#000B58] border-primary/20 hover:border-primary hover:text-primary',
@@ -82,7 +82,7 @@ export default function GalleryPageContent({ items }: GalleryPageContentProps) {
                   className="break-inside-avoid mb-5 group cursor-pointer"
                   onClick={() => setSelectedItem(item)}
                 >
-                  <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                  <div className="bg-white rounded-xl overflow-hidden border border-black/[0.06] shadow-sm hover:shadow-lg hover:shadow-[#000B58]/5 transition-all duration-500">
                     {/* Gallery image */}
                     <div
                       className="w-full relative overflow-hidden"
@@ -153,7 +153,7 @@ export default function GalleryPageContent({ items }: GalleryPageContentProps) {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-medium text-gray-700 mb-2">Nothing here yet</h3>
+              <h3 className="display text-2xl text-[#000B58] mb-2">Nothing here yet</h3>
               <p className="text-sm text-gray-500 mb-6">Photographs from this category haven&rsquo;t been added yet.</p>
               {activeCategory !== 'all' && (
                 <button
@@ -221,7 +221,7 @@ export default function GalleryPageContent({ items }: GalleryPageContentProps) {
 
             {/* Details */}
             <div className="p-6">
-              <h2 className="text-xl font-semibold text-[#000B58]">
+              <h2 className="display text-2xl text-[#000B58]">
                 {selectedItem.title}
               </h2>
               {selectedItem.description && (

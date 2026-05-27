@@ -64,14 +64,14 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
               {event.isPast && <Badge variant="accent">Past Event</Badge>}
             </div>
 
-            <h2 className="text-2xl sm:text-3xl font-semibold mb-6" style={{ color: '#000B58' }}>
+            <h2 className="display text-3xl mb-6" style={{ color: '#000B58' }}>
               About This Event
             </h2>
 
             {/* Content rendered as HTML */}
             <div
               className="prose prose-sm sm:prose-base max-w-none space-y-4 leading-relaxed"
-              style={{ color: '#1a1a1a' }}
+              style={{ color: '#1c1a26' }}
               dangerouslySetInnerHTML={{ __html: event.content }}
             />
           </div>
@@ -82,7 +82,7 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
               className="rounded-2xl p-6 sticky top-24"
               style={{ backgroundColor: '#ffffff', border: '1px solid rgba(0,11,88,0.1)', boxShadow: '0 4px 24px rgba(0,11,88,0.06)' }}
             >
-              <h3 className="text-base font-semibold mb-5 pb-4" style={{ color: '#000B58', borderBottom: '1px solid rgba(0,11,88,0.08)' }}>
+              <h3 className="display text-lg mb-5 pb-4" style={{ color: '#000B58', borderBottom: '1px solid rgba(0,11,88,0.08)' }}>
                 Event Details
               </h3>
 
@@ -103,7 +103,7 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
                     </p>
                     <p className="text-sm font-medium" style={{ color: '#000B58' }}>{startDate}</p>
                     {endDate && (
-                      <p className="text-sm mt-0.5" style={{ color: '#1a1a1abf' }}>
+                      <p className="text-sm mt-0.5" style={{ color: '#1c1a26bf' }}>
                         to {endDate}
                       </p>
                     )}
@@ -145,7 +145,7 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
                     </p>
                     <p className="text-sm font-medium" style={{ color: '#000B58' }}>{event.location}</p>
                     {event.address && (
-                      <p className="text-xs mt-1 leading-relaxed" style={{ color: '#1a1a1abf' }}>
+                      <p className="text-xs mt-1 leading-relaxed" style={{ color: '#1c1a26bf' }}>
                         {event.address}
                       </p>
                     )}

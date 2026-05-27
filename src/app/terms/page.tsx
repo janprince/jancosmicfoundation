@@ -25,7 +25,7 @@ export default function TermsPage() {
             className="mb-10"
           />
 
-          <div className="prose prose-sm sm:prose-base max-w-none leading-relaxed" style={{ color: '#1a1a1a' }}>
+          <div className="prose prose-sm sm:prose-base max-w-none leading-relaxed" style={{ color: '#1c1a26' }}>
             <p>
               Our full terms of use are coming soon. In the meantime, please
               note the following:

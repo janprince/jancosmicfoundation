@@ -152,9 +152,9 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             {/* Meta row */}
             <div className="flex flex-wrap items-center gap-3 mb-6">
               <Badge variant="secondary">{post.category}</Badge>
-              <span className="text-sm" style={{ color: '#1a1a1abf' }}>{formattedDate}</span>
-              <span className="w-1 h-1 rounded-full inline-block" style={{ backgroundColor: '#1a1a1a30' }} />
-              <span className="text-sm" style={{ color: '#1a1a1abf' }}>{post.readTime}</span>
+              <span className="text-sm" style={{ color: '#1c1a26bf' }}>{formattedDate}</span>
+              <span className="w-1 h-1 rounded-full inline-block" style={{ backgroundColor: '#1c1a2630' }} />
+              <span className="text-sm" style={{ color: '#1c1a26bf' }}>{post.readTime}</span>
             </div>
 
             {/* Video transcription notice */}
@@ -175,7 +175,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                   <p className="text-sm font-medium" style={{ color: '#000B58' }}>
                     Transcribed from video
                   </p>
-                  <p className="text-xs mt-0.5" style={{ color: '#1a1a1abf' }}>
+                  <p className="text-xs mt-0.5" style={{ color: '#1c1a26bf' }}>
                     This article was derived from a teaching on our YouTube channel. Watch the original video below.
                   </p>
                 </div>
@@ -185,7 +185,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             {/* Article content */}
             <div
               className="prose prose-sm sm:prose-base max-w-none leading-relaxed"
-              style={{ color: '#1a1a1a' }}
+              style={{ color: '#1c1a26' }}
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
 
@@ -196,7 +196,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                   <svg className="h-5 w-5 text-red-600" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0C.488 3.45.029 5.804 0 12c.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0C23.512 20.55 23.971 18.196 24 12c-.029-6.185-.484-8.549-4.385-8.816zM9 16V8l8 4-8 4z" />
                   </svg>
-                  <h3 className="text-lg font-semibold" style={{ color: '#000B58' }}>
+                  <h3 className="display text-xl" style={{ color: '#000B58' }}>
                     Watch the Teaching
                   </h3>
                 </div>
@@ -216,7 +216,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             {/* Tags */}
             {post.tags.length > 0 && (
               <div className="mt-10 pt-8" style={{ borderTop: '1px solid rgba(0,11,88,0.08)' }}>
-                <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: '#1a1a1abf' }}>
+                <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: '#1c1a26bf' }}>
                   Tagged
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -235,7 +235,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
 
             {/* Share buttons (visual only) */}
             <div className="mt-10 pt-8" style={{ borderTop: '1px solid rgba(0,11,88,0.08)' }}>
-              <p className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: '#1a1a1abf' }}>
+              <p className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: '#1c1a26bf' }}>
                 Share this article
               </p>
               <ShareButtons title={post.title} />
@@ -292,7 +292,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
         {/* Related posts */}
         {relatedPosts.length > 0 && (
           <section className="mt-20 pt-14" style={{ borderTop: '2px solid rgba(0,11,88,0.07)' }}>
-            <h2 className="text-2xl font-semibold mb-8" style={{ color: '#000B58' }}>
+            <h2 className="display text-3xl mb-8" style={{ color: '#000B58' }}>
               Related Articles
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

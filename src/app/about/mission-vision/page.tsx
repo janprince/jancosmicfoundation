@@ -93,7 +93,7 @@ export default function MissionVisionPage() {
             <div
               className="relative rounded-3xl p-8 sm:p-12 lg:p-16 text-center"
               style={{
-                background: 'linear-gradient(135deg, #000B58 0%, #001485 60%, var(--color-primary) 100%)',
+                background: 'linear-gradient(135deg, #000B58 0%, #1a1b6b 55%, var(--color-violet) 100%)',
               }}
             >
               {/* Gold accent bar */}
@@ -102,7 +102,7 @@ export default function MissionVisionPage() {
                 style={{ backgroundColor: '#D4A843' }}
               />
 
-              <p className="text-xl sm:text-2xl lg:text-3xl font-medium leading-relaxed text-white">
+              <p className="display text-2xl sm:text-3xl lg:text-4xl leading-[1.32] text-white">
                 To guide sincere seekers toward self-realization, higher consciousness, inner freedom, and conscious living through the teachings of Dr. Baffour Jan, and to let that inner work express itself through service.
               </p>
 
@@ -162,10 +162,10 @@ export default function MissionVisionPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                   </svg>
                 </div>
-                <h3 className="text-base font-semibold mb-3" style={{ color: '#000B58' }}>
+                <h3 className="display text-xl mb-3" style={{ color: '#000B58' }}>
                   {item.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#1a1a1acc' }}>
+                <p className="text-sm leading-relaxed" style={{ color: '#1c1a26cc' }}>
                   {item.body}
                 </p>
               </div>
@@ -199,15 +199,15 @@ export default function MissionVisionPage() {
                     {pillar.number}
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-3" style={{ color: '#000B58' }}>
+                    <h3 className="display text-2xl mb-3" style={{ color: '#000B58' }}>
                       {pillar.title}
                     </h3>
-                    <p className="text-sm sm:text-base leading-relaxed mb-5" style={{ color: '#1a1a1acc' }}>
+                    <p className="text-sm sm:text-base leading-relaxed mb-5" style={{ color: '#1c1a26cc' }}>
                       {pillar.description}
                     </p>
                     <ul className="space-y-2">
                       {pillar.highlights.map((item) => (
-                        <li key={item} className="flex items-center gap-2 text-sm" style={{ color: '#1a1a1abf' }}>
+                        <li key={item} className="flex items-center gap-2 text-sm" style={{ color: '#1c1a26bf' }}>
                           <span
                             className="w-1.5 h-1.5 rounded-full shrink-0"
                             style={{ backgroundColor: '#D4A843' }}
@@ -227,10 +227,10 @@ export default function MissionVisionPage() {
       {/* CTA */}
       <section
         className="py-14 sm:py-20"
-        style={{ background: 'linear-gradient(135deg, #000B58 0%, var(--color-primary) 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #000B58 0%, var(--color-violet) 100%)' }}
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
+          <h2 className="display text-3xl sm:text-4xl text-white mb-4">
             Begin sincerely
           </h2>
           <p className="text-base sm:text-lg mb-10" style={{ color: 'rgba(253,251,247,0.9)' }}>
@@ -240,9 +240,12 @@ export default function MissionVisionPage() {
             <Button href="/about" variant="secondary" size="lg">
               Back to About
             </Button>
-            <Button href="/events" variant="outline" size="lg">
+            <a
+              href="/events"
+              className="inline-flex items-center justify-center rounded-xl border border-white/35 px-8 py-4 text-lg font-medium tracking-wide text-white transition-colors duration-300 hover:bg-white/10"
+            >
               See upcoming events
-            </Button>
+            </a>
           </div>
         </div>
       </section>

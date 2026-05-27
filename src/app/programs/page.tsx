@@ -133,10 +133,10 @@ export default async function ProgramsPage() {
                       >
                         {iconMap[program.icon] || iconMap.lotus}
                       </div>
-                      <h3 className="text-2xl font-semibold mb-4" style={{ color: '#000B58' }}>
+                      <h3 className="display text-2xl sm:text-3xl mb-4" style={{ color: '#000B58' }}>
                         {program.title}
                       </h3>
-                      <p className="text-base leading-relaxed mb-6" style={{ color: '#1a1a1acc' }}>
+                      <p className="text-base leading-relaxed mb-6" style={{ color: '#1c1a26cc' }}>
                         {program.content}
                       </p>
                       {program.isActive && (
@@ -204,10 +204,10 @@ export default async function ProgramsPage() {
                     >
                       {iconMap[program.icon] || iconMap.lotus}
                     </div>
-                    <h3 className="text-lg font-semibold mb-3" style={{ color: '#000B58' }}>
+                    <h3 className="display text-xl mb-3" style={{ color: '#000B58' }}>
                       {program.title}
                     </h3>
-                    <p className="text-sm leading-relaxed flex-1" style={{ color: '#1a1a1acc' }}>
+                    <p className="text-sm leading-relaxed flex-1" style={{ color: '#1c1a26cc' }}>
                       {program.description}
                     </p>
                     {program.isActive && (
@@ -230,7 +230,7 @@ export default async function ProgramsPage() {
       {/* Impact Quote */}
       <section className="py-14 sm:py-20" style={{ backgroundColor: '#FDFBF7' }}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xl sm:text-2xl italic font-light leading-relaxed mb-4" style={{ color: '#000B58' }}>
+          <p className="display text-2xl sm:text-3xl italic leading-relaxed mb-4" style={{ color: '#000B58' }}>
             &ldquo;The proof of our spiritual journey is the genuine love that is revealed in us and among one another.&rdquo;
           </p>
           <p className="text-sm font-semibold" style={{ color: 'var(--color-primary)' }}>
@@ -244,11 +244,11 @@ export default async function ProgramsPage() {
         className="py-16 sm:py-24"
         style={{
           background:
-            'linear-gradient(135deg, #000B58 0%, #001485 50%, var(--color-primary) 100%)',
+            'linear-gradient(135deg, #000B58 0%, #1a1b6b 50%, var(--color-violet) 100%)',
         }}
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
+          <h2 className="display text-3xl sm:text-4xl text-white mb-4">
             Take part in the work
           </h2>
           <p

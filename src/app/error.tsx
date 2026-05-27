@@ -21,7 +21,7 @@ export default function Error({
       className="relative flex min-h-[80vh] items-center justify-center overflow-hidden px-5 py-24 sm:px-8"
       style={{
         background:
-          'linear-gradient(135deg, #000B58 0%, #001485 50%, var(--color-primary) 100%)',
+          'linear-gradient(135deg, #000B58 0%, #1a1b6b 50%, var(--color-violet) 100%)',
       }}
     >
       <div
@@ -40,11 +40,9 @@ export default function Error({
           <span className="block h-px w-10 rounded-full bg-[#D4A843]/50" aria-hidden="true" />
         </div>
 
-        <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-[#D4A843]/90">
-          Something went wrong
-        </p>
+        <p className="eyebrow mb-4 text-[#D4A843]/90">Something went wrong</p>
 
-        <h1 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">
+        <h1 className="display text-[2.1rem] leading-[1.12] text-white sm:text-4xl">
           The page could not be loaded.
         </h1>
 

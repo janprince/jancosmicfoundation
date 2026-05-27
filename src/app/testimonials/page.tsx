@@ -30,7 +30,7 @@ export default async function TestimonialsPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-medium text-gray-700 mb-2">No testimonies yet</h3>
+              <h3 className="display text-2xl text-[#000B58] mb-2">No testimonies yet</h3>
               <p className="text-sm text-gray-500">We&rsquo;ll add reflections from students and volunteers as they come in.</p>
             </div>
           </div>
@@ -45,7 +45,7 @@ export default async function TestimonialsPage() {
               className="relative rounded-3xl p-8 sm:p-12"
               style={{
                 background:
-                  'linear-gradient(135deg, #000B58 0%, #001485 50%, var(--color-primary) 100%)',
+                  'linear-gradient(135deg, #000B58 0%, #1a1b6b 50%, var(--color-violet) 100%)',
               }}
             >
               {/* Large quote mark */}
@@ -58,7 +58,7 @@ export default async function TestimonialsPage() {
               </svg>
 
               <div className="relative z-10">
-                <blockquote className="text-lg sm:text-xl leading-relaxed text-white/90 italic mb-8">
+                <blockquote className="display text-xl sm:text-2xl leading-relaxed text-white/95 italic mb-8">
                   &ldquo;{testimonials[0].quote}&rdquo;
                 </blockquote>
                 <div className="flex items-center gap-4">
@@ -114,7 +114,7 @@ export default async function TestimonialsPage() {
                 </svg>
 
                 {/* Quote text */}
-                <blockquote className="text-sm sm:text-base leading-relaxed italic flex-1" style={{ color: '#1a1a1acc' }}>
+                <blockquote className="text-sm sm:text-base leading-relaxed italic flex-1" style={{ color: '#1c1a26cc' }}>
                   &ldquo;{testimonial.quote}&rdquo;
                 </blockquote>
 
@@ -127,7 +127,7 @@ export default async function TestimonialsPage() {
                     <p className="text-sm font-semibold" style={{ color: '#000B58' }}>
                       {testimonial.name}
                     </p>
-                    <p className="text-xs" style={{ color: '#1a1a1acc' }}>
+                    <p className="text-xs" style={{ color: '#1c1a26cc' }}>
                       {testimonial.role}
                     </p>
                   </div>
@@ -141,7 +141,7 @@ export default async function TestimonialsPage() {
       {/* Inspirational Quote Section */}
       <section className="py-14 sm:py-20" style={{ backgroundColor: '#F2EFE9' }}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-xl sm:text-2xl italic font-light leading-relaxed mb-4" style={{ color: '#000B58' }}>
+          <p className="display text-2xl sm:text-3xl italic leading-relaxed mb-4" style={{ color: '#000B58' }}>
             &ldquo;The proof of our spiritual journey is the genuine love that is revealed in us and among one another.&rdquo;
           </p>
           <p className="text-sm font-semibold" style={{ color: 'var(--color-primary)' }}>
@@ -155,11 +155,11 @@ export default async function TestimonialsPage() {
         className="py-16 sm:py-24"
         style={{
           background:
-            'linear-gradient(135deg, #000B58 0%, #001485 50%, var(--color-primary) 100%)',
+            'linear-gradient(135deg, #000B58 0%, #1a1b6b 50%, var(--color-violet) 100%)',
         }}
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
+          <h2 className="display text-3xl sm:text-4xl text-white mb-4">
             Come and see for yourself
           </h2>
           <p

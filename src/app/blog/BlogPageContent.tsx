@@ -78,7 +78,7 @@ export default function BlogPageContent({ posts }: BlogPageContentProps) {
                           }
                         : {
                             backgroundColor: '#F2EFE9',
-                            color: '#1a1a1abf',
+                            color: '#1c1a26bf',
                           }
                     }
                   >
@@ -88,7 +88,7 @@ export default function BlogPageContent({ posts }: BlogPageContentProps) {
                       style={
                         isActive
                           ? { backgroundColor: 'rgba(212,168,67,0.3)', color: '#D4A843' }
-                          : { backgroundColor: 'rgba(0,0,0,0.07)', color: '#1a1a1abf' }
+                          : { backgroundColor: 'rgba(0,0,0,0.07)', color: '#1c1a26bf' }
                       }
                     >
                       {count}
@@ -118,7 +118,7 @@ export default function BlogPageContent({ posts }: BlogPageContentProps) {
                 </span>
                 <span
                   className="px-3 py-2 rounded-lg text-sm"
-                  style={{ color: '#1a1a1a40' }}
+                  style={{ color: '#1c1a2640' }}
                 >
                   — Showing all {visiblePosts.length} {activeCategory !== ALL_LABEL ? `"${activeCategory}" ` : ''}posts
                 </span>
@@ -135,10 +135,10 @@ export default function BlogPageContent({ posts }: BlogPageContentProps) {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2" style={{ color: '#000B58' }}>
+              <h3 className="display text-2xl mb-2" style={{ color: '#000B58' }}>
                 Nothing here yet
               </h3>
-              <p className="text-base max-w-sm mb-6" style={{ color: '#1a1a1abf' }}>
+              <p className="text-base max-w-sm mb-6" style={{ color: '#1c1a26bf' }}>
                 We haven&rsquo;t written anything under &ldquo;{activeCategory}&rdquo; yet. Browse the rest of the writing in the meantime.
               </p>
               <button

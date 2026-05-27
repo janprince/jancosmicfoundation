@@ -80,15 +80,15 @@ export default async function JoinPage() {
             <div className="mb-10 text-center">
               <div className="mb-4 flex items-center justify-center gap-3">
                 <span className="h-px w-8 rounded-full bg-[#D4A843]" aria-hidden="true" />
-                <span className="text-xs font-medium uppercase tracking-[0.2em] text-[#8a6c1a]">
+                <span className="eyebrow text-[#8a6c1a]">
                   Groups &amp; Channels
                 </span>
                 <span className="h-px w-8 rounded-full bg-[#D4A843]" aria-hidden="true" />
               </div>
-              <h2 className="text-3xl font-semibold text-[#000B58] sm:text-4xl">
+              <h2 className="display text-[2rem] text-[#000B58] sm:text-4xl lg:text-[2.7rem]">
                 Channels &amp; groups
               </h2>
-              <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/85 sm:text-lg">
+              <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1c1a26]/85 sm:text-lg">
                 Channels for teachings and announcements; groups for sincere
                 conversation, questions, and community.
               </p>
@@ -115,7 +115,7 @@ export default async function JoinPage() {
                   {/* Text */}
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
-                      <h3 className="text-base font-semibold text-[#000B58]">
+                      <h3 className="display text-lg text-[#000B58]">
                         {link.title}
                       </h3>
                       {link.badge && (
@@ -124,7 +124,7 @@ export default async function JoinPage() {
                         </span>
                       )}
                     </div>
-                    <p className="mt-1 text-sm leading-relaxed text-[#1a1a1a]/80">
+                    <p className="mt-1 text-sm leading-relaxed text-[#1c1a26]/80">
                       {link.description}
                     </p>
                   </div>
@@ -150,15 +150,15 @@ export default async function JoinPage() {
           <div className="mx-auto max-w-3xl px-5 sm:px-8 text-center">
             <div className="mb-4 flex items-center justify-center gap-3">
               <span className="h-px w-8 rounded-full bg-[#D4A843]" aria-hidden="true" />
-              <span className="text-xs font-medium uppercase tracking-[0.2em] text-[#8a6c1a]">
+              <span className="eyebrow text-[#8a6c1a]">
                 Social Media
               </span>
               <span className="h-px w-8 rounded-full bg-[#D4A843]" aria-hidden="true" />
             </div>
-            <h2 className="text-3xl font-semibold text-[#000B58] sm:text-4xl">
+            <h2 className="display text-[2rem] text-[#000B58] sm:text-4xl lg:text-[2.7rem]">
               Follow us
             </h2>
-            <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-[#1a1a1a]/85">
+            <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-[#1c1a26]/85">
               Short teachings, event moments, photographs, and Foundation
               updates. Follow where you already spend time.
             </p>
@@ -191,15 +191,15 @@ export default async function JoinPage() {
             <div className="mb-10 text-center">
               <div className="mb-4 flex items-center justify-center gap-3">
                 <span className="h-px w-8 rounded-full bg-[#D4A843]" aria-hidden="true" />
-                <span className="text-xs font-medium uppercase tracking-[0.2em] text-[#8a6c1a]">
+                <span className="eyebrow text-[#8a6c1a]">
                   In Person
                 </span>
                 <span className="h-px w-8 rounded-full bg-[#D4A843]" aria-hidden="true" />
               </div>
-              <h2 className="text-3xl font-semibold text-[#000B58] sm:text-4xl">
+              <h2 className="display text-[2rem] text-[#000B58] sm:text-4xl lg:text-[2.7rem]">
                 Or visit a centre
               </h2>
-              <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1a1a1a]/85 sm:text-lg">
+              <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[#1c1a26]/85 sm:text-lg">
                 Sittings, study, and service happen most deeply in person. Find
                 a centre and begin with a visit.
               </p>
@@ -229,10 +229,10 @@ export default async function JoinPage() {
 
                   {/* Text */}
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-base font-semibold text-[#000B58]">
+                    <h3 className="display text-lg text-[#000B58]">
                       {centre.name}
                     </h3>
-                    <p className="text-sm text-[#1a1a1a]/80">
+                    <p className="text-sm text-[#1c1a26]/80">
                       {centre.location} · {centre.memberCount} members
                     </p>
                   </div>
@@ -266,7 +266,7 @@ export default async function JoinPage() {
         <section
           className="py-16 sm:py-20"
           style={{
-            background: 'linear-gradient(135deg, #000B58 0%, #001485 50%, var(--color-primary) 100%)',
+            background: 'linear-gradient(135deg, #000B58 0%, #1a1b6b 50%, var(--color-violet) 100%)',
           }}
         >
           <div className="mx-auto max-w-2xl px-5 sm:px-8 text-center">
@@ -277,7 +277,7 @@ export default async function JoinPage() {
               height={56}
               className="mx-auto mb-6 rounded-full"
             />
-            <h2 className="text-2xl font-semibold text-white sm:text-3xl">
+            <h2 className="display text-3xl text-white sm:text-4xl">
               Begin with one step
             </h2>
             <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-white/85">

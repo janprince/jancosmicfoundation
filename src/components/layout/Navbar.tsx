@@ -18,6 +18,7 @@ const navLinks: NavLink[] = [
       { label: 'The Foundation', href: '/about' },
       { label: 'The Founder', href: '/about/founder' },
       { label: 'Mission & Vision', href: '/about/mission-vision' },
+      { label: 'Programmes', href: '/programs' },
     ],
   },
   {
@@ -28,10 +29,8 @@ const navLinks: NavLink[] = [
       { label: 'Writings', href: '/blog' },
     ],
   },
-  // Bridge page lands in a later phase; points to the InnerSpace course for now.
-  { label: 'InnerSpace', href: 'https://www.drbaffourjan.com/inner-space', external: true },
+  { label: 'InnerSpace', href: '/innerspace' },
   { label: 'Retreats & Events', href: '/events' },
-  { label: 'Initiatives', href: '/programs' },
   { label: 'Centres', href: '/centres' },
 ];
 

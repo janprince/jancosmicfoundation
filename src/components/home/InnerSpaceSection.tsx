@@ -28,16 +28,13 @@ export default function InnerSpaceSection() {
         </p>
 
         <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-          <a
-            href="https://www.drbaffourjan.com/inner-space"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-sm bg-[#000B58] px-7 py-3 text-sm font-medium text-white transition-colors duration-300 hover:bg-[#001485]"
+          <Link
+            href="/innerspace"
+            className="inline-flex items-center gap-2 rounded-lg bg-[#000B58] px-7 py-3 text-sm font-medium tracking-wide text-white transition-colors duration-300 hover:bg-[#1a1b6b]"
           >
             <HiOutlineAcademicCap className="h-5 w-5" aria-hidden="true" />
             Explore InnerSpace
-            <span aria-hidden="true" className="text-white/60">↗</span>
-          </a>
+          </Link>
           <Link
             href="/teachings"
             className="inline-flex items-center gap-2 rounded-sm border border-[#000B58]/20 px-7 py-3 text-sm font-medium text-[#000B58] transition-colors duration-300 hover:bg-[#000B58]/5"

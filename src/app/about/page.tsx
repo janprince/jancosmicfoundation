@@ -74,7 +74,7 @@ export default async function AboutPage() {
                 title="Founded in Ghana, 2021."
                 align="left"
               />
-              <div className="mt-8 space-y-5 text-base sm:text-lg leading-relaxed" style={{ color: '#1a1a1acc' }}>
+              <div className="mt-8 space-y-5 text-base sm:text-lg leading-relaxed" style={{ color: '#1c1a26cc' }}>
                 <p>
                   Jan Cosmic Foundation was established in 2021 to give a living home to the teachings of Dr. Baffour Jan. Based in Ghana and reaching seekers beyond it, the Foundation exists to support people who feel called to understand themselves beyond the body, the mind, and borrowed belief.
                 </p>
@@ -120,16 +120,16 @@ export default async function AboutPage() {
           >
             The Founder
           </div>
-          <h2 className="text-3xl sm:text-4xl font-semibold mb-6" style={{ color: '#000B58' }}>
+          <h2 className="display text-3xl sm:text-4xl mb-6" style={{ color: '#000B58' }}>
             About Dr. Baffour Jan
           </h2>
-          <p className="text-base sm:text-lg leading-relaxed mb-6" style={{ color: '#1a1a1acc' }}>
+          <p className="text-base sm:text-lg leading-relaxed mb-6" style={{ color: '#1c1a26cc' }}>
             Dr. Baffour Jan is a Ghanaian mystic, spiritual master, and teacher. His work points beyond belief, ritual, and intellectual knowledge toward the direct recognition of who one is beneath the layers of mind and identity.
           </p>
-          <p className="text-base sm:text-lg leading-relaxed mb-4" style={{ color: '#1a1a1acc' }}>
+          <p className="text-base sm:text-lg leading-relaxed mb-4" style={{ color: '#1c1a26cc' }}>
             His teaching is offered through the Foundation as public talks, sittings, retreats, and structured study. The aim is not to collect spiritual ideas, but to become still enough to see clearly.
           </p>
-          <p className="text-base italic leading-relaxed mb-8" style={{ color: '#1a1a1abf' }}>
+          <p className="text-base italic leading-relaxed mb-8" style={{ color: '#1c1a26bf' }}>
             &ldquo;The most worthy knowledge is that which helps to dismantle the Ego in order to reveal the True Self.&rdquo;
           </p>
           <a
@@ -168,10 +168,10 @@ export default async function AboutPage() {
                 >
                   {value.icon}
                 </div>
-                <h3 className="text-lg font-semibold mb-3" style={{ color: '#000B58' }}>
+                <h3 className="display text-xl mb-3" style={{ color: '#000B58' }}>
                   {value.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#1a1a1acc' }}>
+                <p className="text-sm leading-relaxed" style={{ color: '#1c1a26cc' }}>
                   {value.description}
                 </p>
               </div>
@@ -220,13 +220,13 @@ export default async function AboutPage() {
                   </div>
                 )}
                 <div className="p-5">
-                  <h3 className="text-base font-semibold" style={{ color: '#000B58' }}>
+                  <h3 className="display text-lg" style={{ color: '#000B58' }}>
                     {member.name}
                   </h3>
                   <p className="text-xs font-semibold mt-0.5 mb-3" style={{ color: 'var(--color-primary)' }}>
                     {member.role}
                   </p>
-                  <p className="text-xs leading-relaxed line-clamp-4" style={{ color: '#1a1a1abf' }}>
+                  <p className="text-xs leading-relaxed line-clamp-4" style={{ color: '#1c1a26bf' }}>
                     {member.bio}
                   </p>
                 </div>
@@ -239,10 +239,10 @@ export default async function AboutPage() {
       {/* CTA */}
       <section
         className="py-16 sm:py-24"
-        style={{ background: 'linear-gradient(135deg, #000B58 0%, #001485 50%, var(--color-primary) 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #000B58 0%, #1a1b6b 50%, var(--color-violet) 100%)' }}
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
+          <h2 className="display text-3xl sm:text-4xl text-white mb-4">
             Mission &amp; Vision
           </h2>
           <p className="text-sm italic mb-6" style={{ color: 'rgba(212,168,67,0.9)' }}>

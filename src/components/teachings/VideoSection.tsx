@@ -38,13 +38,11 @@ export default function VideoSection() {
         {/* Section label */}
         <div className="mb-12 text-center">
           <div className="mb-4 flex items-center justify-center gap-3">
-            <span className="h-px w-8 rounded-full bg-[#D4A843]" />
-            <span className="text-xs font-medium uppercase tracking-[0.25em] text-[#8a6c1a]">
-              Video Teachings
-            </span>
-            <span className="h-px w-8 rounded-full bg-[#D4A843]" />
+            <span className="h-px w-8 rounded-full bg-[#D4A843]/70" />
+            <span className="eyebrow text-[#8a6c1a]">Video Teachings</span>
+            <span className="h-px w-8 rounded-full bg-[#D4A843]/70" />
           </div>
-          <h2 className="text-3xl font-semibold leading-tight text-[#000B58] sm:text-4xl">
+          <h2 className="display text-[2rem] leading-[1.12] text-[#000B58] sm:text-4xl">
             Conversations with Dr. Jan
           </h2>
         </div>
@@ -69,7 +67,7 @@ export default function VideoSection() {
             <span className="mt-0.5 shrink-0 rounded bg-primary/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
               Now Playing
             </span>
-            <h3 className="text-base font-semibold leading-snug text-[#000B58] sm:text-lg">
+            <h3 className="display text-lg leading-snug text-[#000B58] sm:text-xl">
               {activeVideo.title}
             </h3>
           </div>
@@ -78,7 +76,7 @@ export default function VideoSection() {
         {/* Video list */}
         <div className="mx-auto mt-12 max-w-4xl">
           <div className="mb-5 flex items-center justify-between">
-            <p className="text-sm font-medium text-[#1a1a1a]/60">
+            <p className="text-sm font-medium text-[#1c1a26]/60">
               {videos.length} teachings in this series
             </p>
             <a
@@ -151,7 +149,7 @@ export default function VideoSection() {
                     >
                       {video.title}
                     </p>
-                    <span className="mt-1 text-xs text-[#1a1a1a]/40">
+                    <span className="mt-1 text-xs text-[#1c1a26]/40">
                       Dr. Baffour Jan
                     </span>
                   </div>

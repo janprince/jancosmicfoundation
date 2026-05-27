@@ -124,7 +124,7 @@ export default function FounderPage() {
                 title="A teacher of direct inner realization"
                 align="left"
               />
-              <div className="mt-8 space-y-5 text-base sm:text-lg leading-relaxed" style={{ color: '#1a1a1acc' }}>
+              <div className="mt-8 space-y-5 text-base sm:text-lg leading-relaxed" style={{ color: '#1c1a26cc' }}>
                 <p>
                   Dr. Baffour Jan is a Ghanaian mystic, spiritual master, and teacher whose work points beyond doctrine and ritual to the direct recognition of who one already is. His teachings explore God, the soul, consciousness, illusion, the mind, the body, truth, human suffering, and inner awakening.
                 </p>
@@ -147,7 +147,7 @@ export default function FounderPage() {
                     <p className="text-2xl sm:text-3xl font-semibold" style={{ color: 'var(--color-primary)' }}>
                       {stat.value}
                     </p>
-                    <p className="text-xs sm:text-sm mt-1" style={{ color: '#1a1a1acc' }}>
+                    <p className="text-xs sm:text-sm mt-1" style={{ color: '#1c1a26cc' }}>
                       {stat.label}
                     </p>
                   </div>
@@ -169,7 +169,7 @@ export default function FounderPage() {
           >
             <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
           </svg>
-          <p className="text-xl sm:text-2xl italic font-light leading-relaxed mb-4" style={{ color: '#000B58' }}>
+          <p className="display text-2xl sm:text-3xl italic leading-relaxed mb-4" style={{ color: '#000B58' }}>
             &ldquo;The greatest magic is revealing the God in You.&rdquo;
           </p>
           <p className="text-sm font-semibold" style={{ color: 'var(--color-primary)' }}>
@@ -212,10 +212,10 @@ export default function FounderPage() {
                   >
                     {milestone.year}
                   </span>
-                  <h3 className="text-lg font-semibold mb-2" style={{ color: '#000B58' }}>
+                  <h3 className="display text-xl mb-2" style={{ color: '#000B58' }}>
                     {milestone.title}
                   </h3>
-                  <p className="text-sm sm:text-base leading-relaxed" style={{ color: '#1a1a1acc' }}>
+                  <p className="text-sm sm:text-base leading-relaxed" style={{ color: '#1c1a26cc' }}>
                     {milestone.description}
                   </p>
                 </div>
@@ -241,10 +241,10 @@ export default function FounderPage() {
                 className="bg-white rounded-2xl p-7 flex flex-col transition-all duration-300 hover:shadow-md"
                 style={{ border: '1px solid rgba(0,11,88,0.08)' }}
               >
-                <h3 className="text-lg font-semibold mb-3" style={{ color: '#000B58' }}>
+                <h3 className="display text-xl mb-3" style={{ color: '#000B58' }}>
                   {teaching.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#1a1a1acc' }}>
+                <p className="text-sm leading-relaxed" style={{ color: '#1c1a26cc' }}>
                   {teaching.description}
                 </p>
               </div>
@@ -285,10 +285,10 @@ export default function FounderPage() {
                 className="rounded-2xl p-7 flex flex-col"
                 style={{
                   background:
-                    'linear-gradient(135deg, #000B58 0%, #001485 50%, var(--color-primary) 100%)',
+                    'linear-gradient(135deg, #000B58 0%, #1a1b6b 50%, var(--color-violet) 100%)',
                 }}
               >
-                <h3 className="text-lg font-semibold text-white mb-3">
+                <h3 className="display text-xl text-white mb-3">
                   {item.name}
                 </h3>
                 <p className="text-sm leading-relaxed flex-1" style={{ color: 'rgba(253,251,247,0.9)' }}>
@@ -326,7 +326,7 @@ export default function FounderPage() {
                 <p className="text-2xl font-semibold" style={{ color: 'var(--color-primary)' }}>
                   {stat.value}
                 </p>
-                <p className="text-xs mt-1" style={{ color: '#1a1a1acc' }}>
+                <p className="text-xs mt-1" style={{ color: '#1c1a26cc' }}>
                   {stat.label}
                 </p>
               </div>
@@ -340,11 +340,11 @@ export default function FounderPage() {
         className="py-16 sm:py-24"
         style={{
           background:
-            'linear-gradient(135deg, #000B58 0%, #001485 50%, var(--color-primary) 100%)',
+            'linear-gradient(135deg, #000B58 0%, #1a1b6b 50%, var(--color-violet) 100%)',
         }}
       >
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
+          <h2 className="display text-3xl sm:text-4xl text-white mb-4">
             Sit with the teaching
           </h2>
           <p className="text-sm italic mb-6" style={{ color: 'rgba(212,168,67,0.9)' }}>

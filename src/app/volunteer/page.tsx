@@ -84,7 +84,7 @@ export default async function VolunteerPage() {
                   {benefit.icon}
                 </div>
                 <div>
-                  <h3 className="text-base font-semibold text-[#000B58] mb-1">
+                  <h3 className="display text-xl text-[#000B58] mb-1">
                     {benefit.title}
                   </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -115,7 +115,7 @@ export default async function VolunteerPage() {
               >
                 {/* Header */}
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-lg font-semibold text-[#000B58] leading-snug">
+                  <h3 className="display text-xl text-[#000B58] leading-snug">
                     {opportunity.title}
                   </h3>
                   <span className="shrink-0 text-xs font-semibold text-primary bg-primary/10 px-2.5 py-1 rounded-full">

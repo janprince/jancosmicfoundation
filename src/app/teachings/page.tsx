@@ -22,16 +22,14 @@ export default function TeachingsPage() {
       <section className="bg-[#FDFBF7] py-20 lg:py-28">
         <div className="mx-auto max-w-4xl px-5 sm:px-8 lg:px-12 text-center">
           <div className="mb-6 flex items-center justify-center gap-3">
-            <span className="h-px w-8 rounded-full bg-[#D4A843]" />
-            <span className="text-xs font-medium uppercase tracking-[0.25em] text-[#8a6c1a]">
-              Public Teachings
-            </span>
-            <span className="h-px w-8 rounded-full bg-[#D4A843]" />
+            <span className="h-px w-8 rounded-full bg-[#D4A843]/70" />
+            <span className="eyebrow text-[#8a6c1a]">Public Teachings</span>
+            <span className="h-px w-8 rounded-full bg-[#D4A843]/70" />
           </div>
-          <h2 className="text-3xl font-semibold leading-tight text-[#000B58] sm:text-4xl">
+          <h2 className="display text-[2rem] leading-[1.12] text-[#000B58] sm:text-4xl lg:text-[2.7rem]">
             Public teachings, freely shared
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#1a1a1a]/80 sm:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#1c1a26]/80 sm:text-lg">
             Dr. Baffour Jan&rsquo;s public teachings explore consciousness,
             self-realization, God, the soul, the mind, illusion, and the freedom
             that becomes possible through direct inner knowing.
@@ -63,14 +61,12 @@ export default function TeachingsPage() {
         <div className="relative mx-auto max-w-4xl px-5 sm:px-8 lg:px-12 text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#D4A843]/30 bg-[#D4A843]/10 px-4 py-1.5">
             <HiOutlineSparkles className="h-4 w-4 text-[#D4A843]" />
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-[#D4A843]">
-              For Sincere Seekers
-            </span>
+            <span className="eyebrow text-[#D4A843]">For Sincere Seekers</span>
           </div>
 
-          <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
+          <h2 className="display text-[2rem] leading-[1.12] text-white sm:text-4xl lg:text-5xl">
             For the deeper work —{' '}
-            <span className="text-[#D4A843]">InnerSpace</span>
+            <span className="italic text-[#D4A843]">InnerSpace</span>
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg">

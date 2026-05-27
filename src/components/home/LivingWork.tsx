@@ -33,10 +33,9 @@ const doorways: Doorway[] = [
     index: '03',
     title: 'InnerSpace',
     line: 'A structured path for those ready to study and practise with rhythm.',
-    href: 'https://www.drbaffourjan.com/inner-space',
+    href: '/innerspace',
     image: '/images/studentinmeditation.jpg',
     alt: 'A student in meditation',
-    external: true,
   },
   {
     index: '04',
