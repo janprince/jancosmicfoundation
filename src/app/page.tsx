@@ -27,6 +27,19 @@ export default function HomePage() {
       {/* 2 — Who this is */}
       <AboutSnippet />
 
+      {/* 2.5 — Core framework */}
+      <section className="bg-white py-12">
+        <div className="mx-auto max-w-5xl px-5 sm:px-8 lg:px-12">
+          <ScrollReveal animation="fade-up">
+            <p className="mx-auto max-w-3xl text-center text-base leading-relaxed text-[#1c1a26]/78 sm:text-lg">
+              JCF supports the seeker&rsquo;s movement from external living into
+              inner refinement, and from inner refinement into spiritual
+              realization.
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* 3 — For the first-time seeker */}
       <Pathways />
 

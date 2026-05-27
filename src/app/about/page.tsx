@@ -111,6 +111,25 @@ export default async function AboutPage() {
         </div>
       </section>
 
+      {/* Spiritual Framework */}
+      <section className="py-14 sm:py-20" style={{ backgroundColor: '#000B58' }}>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeader
+            label="How the path is understood"
+            title="External, internal, spiritual"
+            subtitle="Dr. Jan often frames the journey as a movement from external living, into inner refinement, and then into spiritual realization."
+            light
+          />
+          <p className="mt-8 max-w-3xl mx-auto text-base sm:text-lg leading-relaxed text-center" style={{ color: 'rgba(253,251,247,0.86)' }}>
+            The external level concerns the body, comfort, pleasure, and public
+            life. The internal level concerns the mind, feeling, happiness, and
+            private refinement. The spiritual level concerns Spirit, bliss,
+            awareness, and direct realization. JCF exists to support this
+            movement with teaching, practice, service, and community.
+          </p>
+        </div>
+      </section>
+
       {/* Connection to Dr. Jan */}
       <section className="py-14 sm:py-20" style={{ backgroundColor: '#F2EFE9' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

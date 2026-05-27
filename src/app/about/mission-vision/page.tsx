@@ -125,6 +125,30 @@ export default function MissionVisionPage() {
         </div>
       </section>
 
+      {/* Framework */}
+      <section className="py-14 sm:py-20" style={{ backgroundColor: '#FDFBF7' }}>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-8 lg:gap-12 items-center">
+            <SectionHeader
+              label="The movement"
+              title="From pleasure, to happiness, to bliss"
+              subtitle="The mission is practical because the journey is practical: the seeker is helped to move from external dependence into inner balance, then toward direct spiritual realization."
+              align="left"
+            />
+            <div className="rounded-2xl p-7 sm:p-8" style={{ backgroundColor: '#F2EFE9', border: '1px solid rgba(0,11,88,0.08)' }}>
+              <p className="text-base leading-relaxed" style={{ color: '#1c1a26cc' }}>
+                In this framework, pleasure is external and short-lived.
+                Happiness is internal and deeper, but still changes. Bliss
+                belongs to Spirit. JCF&rsquo;s teachings, retreats, counselling,
+                healing, organic food work, centres, and service are different
+                supports for the same movement toward awareness and
+                self-realization.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Vision */}
       <section className="py-14 sm:py-20" style={{ backgroundColor: '#F2EFE9' }}>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

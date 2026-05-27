@@ -19,6 +19,27 @@ const categoryColors: Record<string, { bg: string; text: string }> = {
   humanitarian: { bg: 'rgba(192,80,33,0.1)', text: '#C05021' },
 };
 
+const frameworkLevels = [
+  {
+    name: 'External',
+    focus: 'Body, pleasure, comfort, outer activity, society, and public life.',
+    movement:
+      'This is where most people begin: occupied with the body, the world, and what brings temporary comfort.',
+  },
+  {
+    name: 'Internal',
+    focus: 'Mind, feeling, happiness, private life, attention, and inner refinement.',
+    movement:
+      'Here the seeker begins to turn inward, observe the mind, refine feeling, and seek a deeper balance than pleasure can give.',
+  },
+  {
+    name: 'Spiritual',
+    focus: 'Spirit, bliss, direct realization, pure awareness, and true freedom.',
+    movement:
+      'This is the movement beyond temporary happiness into the bliss and awareness Dr. Jan points to as the highest motivation.',
+  },
+];
+
 const iconMap: Record<string, React.ReactNode> = {
   lotus: (
     <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -79,6 +100,59 @@ export default async function ProgramsPage() {
             title="Different forms, one inner work"
             subtitle="The Foundation supports spiritual study, balanced practice, outreach teachers, healing and counselling, organic farms, media, and children's work so the teachings can become life."
           />
+        </div>
+      </section>
+
+      {/* Framework */}
+      <section className="pb-16 sm:pb-24" style={{ backgroundColor: '#FDFBF7' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-12">
+            <SectionHeader
+              label="The framework"
+              title="From external living to spiritual realization"
+              subtitle="Dr. Jan often teaches through three levels: external, internal, and spiritual. The programmes are different forms of support for this one movement."
+              align="left"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {frameworkLevels.map((level, index) => (
+              <div
+                key={level.name}
+                className="rounded-2xl p-7"
+                style={{
+                  backgroundColor: index === 2 ? '#000B58' : '#ffffff',
+                  border: '1px solid rgba(0,11,88,0.08)',
+                  color: index === 2 ? '#FDFBF7' : '#1c1a26',
+                }}
+              >
+                <p
+                  className="text-xs font-semibold uppercase tracking-[0.18em] mb-3"
+                  style={{ color: index === 2 ? '#D4A843' : '#8a6c1a' }}
+                >
+                  {String(index + 1).padStart(2, '0')}
+                </p>
+                <h3 className="display text-2xl mb-4" style={{ color: index === 2 ? '#ffffff' : '#000B58' }}>
+                  {level.name}
+                </h3>
+                <p className="text-sm leading-relaxed mb-4" style={{ color: index === 2 ? 'rgba(253,251,247,0.86)' : '#1c1a26cc' }}>
+                  {level.focus}
+                </p>
+                <p className="text-sm leading-relaxed" style={{ color: index === 2 ? 'rgba(253,251,247,0.72)' : '#1c1a26a6' }}>
+                  {level.movement}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 max-w-4xl border-l-2 border-[#D4A843] pl-6">
+            <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#1c1a26cc' }}>
+              Pleasure belongs to the external level and quickly passes. Happiness
+              belongs to the internal level and goes deeper, but still moves in
+              polarity. Bliss belongs to Spirit. JCF programmes exist to help the
+              seeker move toward balance, awareness, and direct realization.
+            </p>
+          </div>
         </div>
       </section>
 
