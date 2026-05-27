@@ -446,7 +446,7 @@ export const centres: Centre[] = [
     leader: {
       name: 'Dr. Baffour Jan',
       avatar: '/images/doc-potrait.jpg',
-      title: 'Founder & Spiritual Director',
+      title: 'Spiritual Master & Teacher',
     },
     contactEmail: 'info@jancosmicfoundation.org',
     contactPhone: '+233 55 059 0054',
@@ -792,8 +792,8 @@ export const teamMembers: TeamMember[] = [
   {
     id: 'team-001',
     name: 'Dr. Baffour Jan',
-    role: 'Founder & Spiritual Director',
-    bio: 'A mystic and spiritual teacher. Dr. Jan founded the Jan Cosmic Foundation in Accra in 2021 to give a formal home to teaching work he has been doing since 1986. He describes JCF\'s work as teaching and inspiring all to evolve rapidly toward self-realization, with service as a natural expression of inner life.',
+    role: 'Spiritual Master & Teacher',
+    bio: 'A mystic and spiritual teacher. The Jan Cosmic Foundation gives a formal home to teaching work Dr. Jan has been offering since 1986. He describes JCF\'s work as teaching and inspiring all to evolve rapidly toward self-realization, with service as a natural expression of inner life.',
     image: '/images/doc-potrait.jpg',
   },
   {

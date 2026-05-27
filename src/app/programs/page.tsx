@@ -22,21 +22,15 @@ const categoryColors: Record<string, { bg: string; text: string }> = {
 const frameworkLevels = [
   {
     name: 'External',
-    focus: 'Body, pleasure, comfort, outer activity, society, and public life.',
-    movement:
-      'This is where most people begin: occupied with the body, the world, and what brings temporary comfort.',
+    focus: 'Body, comfort, society, public life, and the pleasures that pass quickly.',
   },
   {
     name: 'Internal',
-    focus: 'Mind, feeling, happiness, private life, attention, and inner refinement.',
-    movement:
-      'Here the seeker begins to turn inward, observe the mind, refine feeling, and seek a deeper balance than pleasure can give.',
+    focus: 'Mind, feeling, attention, private life, and the happiness that comes through inner refinement.',
   },
   {
     name: 'Spiritual',
     focus: 'Spirit, bliss, direct realization, pure awareness, and true freedom.',
-    movement:
-      'This is the movement beyond temporary happiness into the bliss and awareness Dr. Jan points to as the highest motivation.',
   },
 ];
 
@@ -89,28 +83,17 @@ export default async function ProgramsPage() {
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
         title="Programmes"
-        subtitle="Teachings, retreats, structured study, outreach, healing, farms, children's work, media, and service."
+        subtitle="Different forms of one work: awakening, practice, and service."
       />
 
-      {/* Intro Section */}
-      <section className="py-16 sm:py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <SectionHeader
-            label="What we run"
-            title="Different forms, one inner work"
-            subtitle="The Foundation supports spiritual study, balanced practice, outreach teachers, healing and counselling, organic farms, media, and children's work so the teachings can become life."
-          />
-        </div>
-      </section>
-
       {/* Framework */}
-      <section className="pb-16 sm:pb-24" style={{ backgroundColor: '#FDFBF7' }}>
+      <section className="py-16 sm:py-24" style={{ backgroundColor: '#FDFBF7' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
             <SectionHeader
-              label="The framework"
-              title="From external living to spiritual realization"
-              subtitle="Dr. Jan often teaches through three levels: external, internal, and spiritual. The programmes are different forms of support for this one movement."
+              label="The movement"
+              title="External, internal, spiritual"
+              subtitle="Dr. Jan often frames the path as a movement from pleasure, to happiness, to bliss. The programmes support that movement in practical ways."
               align="left"
             />
           </div>
@@ -138,20 +121,8 @@ export default async function ProgramsPage() {
                 <p className="text-sm leading-relaxed mb-4" style={{ color: index === 2 ? 'rgba(253,251,247,0.86)' : '#1c1a26cc' }}>
                   {level.focus}
                 </p>
-                <p className="text-sm leading-relaxed" style={{ color: index === 2 ? 'rgba(253,251,247,0.72)' : '#1c1a26a6' }}>
-                  {level.movement}
-                </p>
               </div>
             ))}
-          </div>
-
-          <div className="mt-10 max-w-4xl border-l-2 border-[#D4A843] pl-6">
-            <p className="text-base sm:text-lg leading-relaxed" style={{ color: '#1c1a26cc' }}>
-              Pleasure belongs to the external level and quickly passes. Happiness
-              belongs to the internal level and goes deeper, but still moves in
-              polarity. Bliss belongs to Spirit. JCF programmes exist to help the
-              seeker move toward balance, awareness, and direct realization.
-            </p>
           </div>
         </div>
       </section>
@@ -299,18 +270,6 @@ export default async function ProgramsPage() {
           </div>
         </section>
       )}
-
-      {/* Impact Quote */}
-      <section className="py-14 sm:py-20" style={{ backgroundColor: '#FDFBF7' }}>
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="display text-2xl sm:text-3xl italic leading-relaxed mb-4" style={{ color: '#000B58' }}>
-            &ldquo;To teach and inspire all to evolve rapidly toward self-realization.&rdquo;
-          </p>
-          <p className="text-sm font-semibold" style={{ color: 'var(--color-primary)' }}>
-            — Dr. Baffour Jan
-          </p>
-        </div>
-      </section>
 
       {/* CTA */}
       <section

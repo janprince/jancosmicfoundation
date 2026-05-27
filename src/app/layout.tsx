@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Jan Cosmic Foundation — Self-Realization & Conscious Living",
     description:
-      "A spiritual foundation founded by Dr. Baffour Jan, offering teachings, retreats, centres, media, organic farming, and service for sincere seekers.",
+      "A spiritual foundation carrying the teachings of Dr. Baffour Jan through retreats, centres, media, organic farming, and service for sincere seekers.",
     url: "https://jancosmicfoundation.org",
     siteName: "Jan Cosmic Foundation",
     type: "website",

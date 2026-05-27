@@ -51,7 +51,7 @@ const coreValues = [
 export const metadata: Metadata = {
   title: 'About the Foundation',
   description:
-    'Learn about Jan Cosmic Foundation, founded by Dr. Baffour Jan to teach and inspire all to evolve rapidly toward self-realization through practice and service.',
+    'Learn about Jan Cosmic Foundation, a spiritual home for the teachings of Dr. Baffour Jan and the work of self-realization through practice and service.',
 };
 
 export default async function AboutPage() {
@@ -60,7 +60,7 @@ export default async function AboutPage() {
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
         title="About the Foundation"
-        subtitle="A spiritual foundation founded by Dr. Baffour Jan to teach and inspire all to evolve rapidly toward self-realization."
+        subtitle="A spiritual home for teachings, practice, and service that help sincere seekers move toward self-realization."
       />
 
       {/* Foundation History */}
@@ -71,7 +71,7 @@ export default async function AboutPage() {
             <div>
               <SectionHeader
                 label="Our Story"
-                title="Founded in Ghana, 2021."
+                title="A living home for the teachings."
                 align="left"
               />
               <div className="mt-8 space-y-5 text-base sm:text-lg leading-relaxed" style={{ color: '#1c1a26cc' }}>
@@ -137,7 +137,7 @@ export default async function AboutPage() {
             className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold mb-6"
             style={{ backgroundColor: '#D4A843', color: '#000B58' }}
           >
-            The Founder
+            The Mystic
           </div>
           <h2 className="display text-3xl sm:text-4xl mb-6" style={{ color: '#000B58' }}>
             About Dr. Baffour Jan

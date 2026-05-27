@@ -18,7 +18,7 @@ interface QuoteBlockProps {
 export default function QuoteBlock({
   quote,
   author = 'Dr. Baffour Jan',
-  role = 'Founder, Jan Cosmic Foundation',
+  role = 'The Teacher, Jan Cosmic Foundation',
   image = '/images/drjan-thinking.jpg',
   className = '',
 }: QuoteBlockProps) {

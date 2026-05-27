@@ -61,9 +61,9 @@ export default function Footer() {
               className="mt-3 text-sm leading-relaxed"
               style={{ color: 'rgba(253,251,247,0.85)' }}
             >
-              Founded by Dr. Baffour Jan to teach and inspire all to evolve
-              rapidly toward self-realization through practice, service, and
-              conscious living.
+              Guided by the teachings of Dr. Baffour Jan, JCF helps sincere
+              seekers move toward self-realization through practice, service,
+              and conscious living.
             </p>
 
             {/* Social icons */}

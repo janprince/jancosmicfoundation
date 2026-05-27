@@ -145,7 +145,7 @@ export default function InnerSpacePage() {
       <QuoteBlock
         quote="Awakening is not produced by adding more knowledge. It is what becomes available when the mind grows quiet."
         author="Dr. Baffour Jan"
-        role="Founder, Jan Cosmic Foundation"
+        role="The Teacher, Jan Cosmic Foundation"
         image="/images/masterseated2.jpg"
       />
 

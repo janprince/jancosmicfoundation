@@ -3,52 +3,6 @@ import Image from 'next/image';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Button from '@/components/ui/Button';
-import { siteConfig } from '@/lib/site-config';
-
-const milestones = [
-  {
-    year: 'Ghana',
-    title: 'A life rooted in spiritual inquiry',
-    description:
-      'Dr. Baffour Jan is publicly known as a mystic and spiritual teacher whose life has been shaped by a sustained inquiry into God, the soul, consciousness, and the nature of human suffering.',
-  },
-  {
-    year: 'Early path',
-    title: 'Study across traditions',
-    description:
-      'Before the current form of his teaching, Dr. Jan studied widely across spiritual and mystical traditions, looking for the truth beneath inherited forms and language.',
-  },
-  {
-    year: 'Inner turning',
-    title: 'Beyond belief and doctrine',
-    description:
-      'His teaching points seekers beyond belief, ritual, and intellectual knowledge into direct inner realization: the recognition of the Self beneath the activity of the mind.',
-  },
-  {
-    year: '1986',
-    title: 'Teaching work begins',
-    description:
-      'Public materials connected to Dr. Jan describe his teaching work as beginning in 1986, with a focus on self-realization, higher consciousness, and the awakening of the divine within.',
-  },
-  {
-    year: 'Public talks',
-    title: 'Teachings for seekers',
-    description:
-      'Through talks, guided reflections, online teachings, and gatherings, Dr. Jan continues to speak on consciousness, the mind, the body, the soul, God, truth, illusion, and freedom from within.',
-  },
-  {
-    year: 'InnerSpace',
-    title: 'Structured study',
-    description:
-      'InnerSpace gives committed students a more structured way to study his teachings, practise consistently, and move from spiritual curiosity into disciplined inner work.',
-  },
-  {
-    year: '2021',
-    title: 'Jan Cosmic Foundation',
-    description:
-      'The Jan Cosmic Foundation was established to hold and share this work through teachings, retreats, courses, media, gatherings, centres, farms, children\'s work, and service.',
-  },
-];
 
 const teachings = [
   {
@@ -74,9 +28,9 @@ const teachings = [
 ];
 
 export const metadata: Metadata = {
-  title: 'Dr. Baffour Jan — Founder & Spiritual Director',
+  title: 'Dr. Baffour Jan — The Mystic & Teacher',
   description:
-    'Dr. Baffour Jan is a mystic, spiritual master, and founder of Jan Cosmic Foundation. His teachings explore self-realization, consciousness, God, the soul, mind, truth, service, and inner freedom.',
+    'Dr. Baffour Jan is a mystic, spiritual master, and teacher. His teachings explore self-realization, consciousness, God, the soul, mind, truth, service, and inner freedom.',
 };
 
 export default function FounderPage() {
@@ -84,7 +38,7 @@ export default function FounderPage() {
     <main style={{ backgroundColor: '#FDFBF7' }}>
       <PageHero
         title="Dr. Baffour Jan"
-        subtitle="Mystic, spiritual master, teacher, and founder of Jan Cosmic Foundation."
+        subtitle="The Mystic and Teacher whose work points seekers toward direct inner realization."
       />
 
       {/* Introduction */}
@@ -120,7 +74,7 @@ export default function FounderPage() {
             {/* Bio Text */}
             <div>
               <SectionHeader
-                label="The Founder"
+                label="The Mystic"
                 title="A teacher of direct inner realization"
                 align="left"
               />
@@ -134,24 +88,6 @@ export default function FounderPage() {
                 <p>
                   Through Jan Cosmic Foundation, Dr. Jan&rsquo;s teachings are shared through public talks, retreats, courses, gatherings, media, outreach, farms, centres, and service. The invitation is simple and demanding: to know the Self, and to let that knowing transform how one lives.
                 </p>
-              </div>
-
-              {/* Key stats */}
-              <div className="mt-10 grid grid-cols-3 gap-4">
-                {[
-                  { value: siteConfig.stats.yearsTeaching, label: 'Years Teaching' },
-                  { value: siteConfig.stats.lives, label: 'Seekers Reached' },
-                  { value: siteConfig.stats.countries, label: 'Countries' },
-                ].map((stat) => (
-                  <div key={stat.label} className="text-center">
-                    <p className="text-2xl sm:text-3xl font-semibold" style={{ color: 'var(--color-primary)' }}>
-                      {stat.value}
-                    </p>
-                    <p className="text-xs sm:text-sm mt-1" style={{ color: '#1c1a26cc' }}>
-                      {stat.label}
-                    </p>
-                  </div>
-                ))}
               </div>
             </div>
           </div>
@@ -178,53 +114,6 @@ export default function FounderPage() {
         </div>
       </section>
 
-      {/* Spiritual path timeline */}
-      <section className="py-16 sm:py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            label="The Path"
-            title="A life of seeking"
-            subtitle="A careful outline based on public-facing material. The inner journey itself cannot be reduced to dates."
-          />
-
-          <div className="mt-14 relative">
-            {/* Vertical timeline line */}
-            <div
-              className="absolute left-6 sm:left-8 top-0 bottom-0 w-px"
-              style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.2)' }}
-            />
-
-            <div className="space-y-10">
-              {milestones.map((milestone) => (
-                <div key={milestone.year} className="relative pl-16 sm:pl-20">
-                  {/* Timeline dot */}
-                  <div
-                    className="absolute left-4 sm:left-6 top-1 w-4 h-4 rounded-full border-[3px]"
-                    style={{
-                      backgroundColor: '#FDFBF7',
-                      borderColor: 'var(--color-primary)',
-                    }}
-                  />
-                  {/* Year badge */}
-                  <span
-                    className="inline-block text-xs font-bold px-2.5 py-1 rounded-full mb-2"
-                    style={{ backgroundColor: 'rgba(212,168,67,0.15)', color: '#8a6c1a' }}
-                  >
-                    {milestone.year}
-                  </span>
-                  <h3 className="display text-xl mb-2" style={{ color: '#000B58' }}>
-                    {milestone.title}
-                  </h3>
-                  <p className="text-sm sm:text-base leading-relaxed" style={{ color: '#1c1a26cc' }}>
-                    {milestone.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Teaching Philosophy */}
       <section className="py-16 sm:py-24" style={{ backgroundColor: '#F2EFE9' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -246,88 +135,6 @@ export default function FounderPage() {
                 </h3>
                 <p className="text-sm leading-relaxed" style={{ color: '#1c1a26cc' }}>
                   {teaching.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Foundation Work */}
-      <section className="py-16 sm:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            label="The Foundation"
-            title="How the work is held today"
-            subtitle="Jan Cosmic Foundation gives form to the teaching through study, practice, media, centres, outreach, farms, and service."
-          />
-
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {[
-              {
-                name: 'Teachings',
-                description:
-                  'Public talks, recorded teachings, and reflections that invite seekers into direct inquiry and self-realization.',
-              },
-              {
-                name: 'Practice',
-                description:
-                  'Retreats, sittings, balanced-state practice, and structured study for those ready to stay with the inner work.',
-              },
-              {
-                name: 'Service',
-                description:
-                  'Outreach, healing, counselling, media, farms, children\'s work, and volunteer support that keep awakening connected to daily life.',
-              },
-            ].map((item) => (
-              <div
-                key={item.name}
-                className="rounded-2xl p-7 flex flex-col"
-                style={{
-                  background:
-                    'linear-gradient(135deg, #000B58 0%, #1a1b6b 50%, var(--color-violet, #5B4B9E) 100%)',
-                }}
-              >
-                <h3 className="display text-xl text-white mb-3">
-                  {item.name}
-                </h3>
-                <p className="text-sm leading-relaxed flex-1" style={{ color: 'rgba(253,251,247,0.9)' }}>
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Teaching Offerings */}
-      <section className="py-14 sm:py-20" style={{ backgroundColor: '#F2EFE9' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            label="His Work"
-            title="The shape of the teaching, in numbers"
-            subtitle="Public teachings, guided practices, centres, and students gathered around the inner work."
-          />
-
-          <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {[
-              { value: '50+', label: 'Recorded Talks' },
-              { value: '20+', label: 'Guided Meditations' },
-              { value: siteConfig.stats.countries, label: 'Countries Reached' },
-              { value: siteConfig.stats.centres, label: 'JCF Centres' },
-              { value: '1', label: 'Foundation' },
-              { value: siteConfig.stats.lives, label: 'Seekers Reached' },
-            ].map((stat) => (
-              <div
-                key={stat.label}
-                className="bg-white rounded-xl p-5 text-center transition-all duration-300 hover:shadow-sm"
-                style={{ border: '1px solid rgba(0,11,88,0.06)' }}
-              >
-                <p className="text-2xl font-semibold" style={{ color: 'var(--color-primary)' }}>
-                  {stat.value}
-                </p>
-                <p className="text-xs mt-1" style={{ color: '#1c1a26cc' }}>
-                  {stat.label}
                 </p>
               </div>
             ))}

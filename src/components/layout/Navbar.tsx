@@ -16,7 +16,7 @@ const navLinks: NavLink[] = [
     href: '/about',
     children: [
       { label: 'The Foundation', href: '/about' },
-      { label: 'The Founder', href: '/about/founder' },
+      { label: 'The Mystic', href: '/about/founder' },
       { label: 'Mission & Vision', href: '/about/mission-vision' },
       { label: 'Programmes', href: '/programs' },
     ],
