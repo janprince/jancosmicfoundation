@@ -94,6 +94,11 @@ button:focus:not(:focus-visible) {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  /* ScrollReveal slides elements in horizontally (translateX), which can push
+     past the viewport edge mid-animation. overflow-x: clip on body does NOT
+     propagate to the viewport, so the clip must live on the root element to
+     actually prevent horizontal scrolling/shift on mobile. */
+  overflow-x: clip;
 }
 
 /* Custom scrollbar */
