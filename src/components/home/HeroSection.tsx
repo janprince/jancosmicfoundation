@@ -160,12 +160,12 @@ export default function HeroSection() {
           </div>
 
           {/* Mobile photo strip */}
-          <div className="mx-auto mt-10 flex w-full max-w-md items-end justify-center gap-2.5 sm:gap-3">
+          <div className="mx-auto mt-10 grid w-full max-w-md grid-cols-4 items-end gap-2.5 sm:gap-3">
             {galleryImages.slice(0, 4).map((img, i) => (
               <div
                 key={img.src}
                 className="relative overflow-hidden rounded-lg"
-                style={{ width: '23%', height: i === 1 || i === 2 ? '88px' : '72px' }}
+                style={{ height: i === 1 || i === 2 ? '88px' : '72px' }}
               >
                 <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="25vw" />
               </div>
