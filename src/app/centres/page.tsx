@@ -18,7 +18,7 @@ export default async function CentresPage() {
   const stats = [
     { value: siteConfig.stats.centres, label: 'Centres & Communities' },
     { value: siteConfig.stats.countries, label: 'Countries' },
-    { value: siteConfig.stats.lives, label: 'Lives' },
+    { value: siteConfig.stats.lives, label: 'Lives Touched' },
     { value: siteConfig.stats.yearsTeaching, label: 'Years of Service' },
   ];
 

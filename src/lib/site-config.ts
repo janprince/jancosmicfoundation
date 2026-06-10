@@ -11,9 +11,9 @@ export const siteConfig = {
 
   // Headline numbers — keep these honest
   stats: {
-    yearsTeaching: '38+',
+    yearsTeaching: '5+',
     centres: '8+',
-    lives: '4,000',
+    lives: '4,000+',
     countries: '9+',
   },
 
