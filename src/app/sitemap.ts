@@ -3,8 +3,9 @@ import { getBlogPosts } from '@/lib/api';
 import { getEvents } from '@/lib/api';
 import { getCauses } from '@/lib/api';
 import { getCentres } from '@/lib/api';
+import { siteConfig } from '@/lib/site-config';
 
-const SITE_URL = 'https://jancosmicfoundation.org';
+const SITE_URL = siteConfig.url;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Static pages
@@ -21,6 +22,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
+      url: `${SITE_URL}/about/founder`,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: `${SITE_URL}/about/mission-vision`,
       changeFrequency: 'monthly',
       priority: 0.6,
@@ -29,6 +35,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${SITE_URL}/teachings`,
       changeFrequency: 'monthly',
       priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/innerspace`,
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
     {
       url: `${SITE_URL}/events`,
@@ -79,6 +90,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${SITE_URL}/testimonials`,
       changeFrequency: 'monthly',
       priority: 0.5,
+    },
+    {
+      url: `${SITE_URL}/privacy-policy`,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${SITE_URL}/terms`,
+      changeFrequency: 'yearly',
+      priority: 0.3,
     },
   ];
 

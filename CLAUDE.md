@@ -4,12 +4,23 @@ The charitable foundation of Dr. Baffour Jan, a spiritual master with 38+ years 
 
 ## Tech Stack
 
-- **Next.js 15** (App Router) with React 19, TypeScript
-- **Tailwind CSS 4** (CSS-first config via `@tailwindcss/postcss`)
-- **Raleway** font (Google Fonts, weights 300–700)
+- **Next.js 16** (App Router) with React 19, TypeScript
+- **Tailwind CSS 4** (CSS-first config via `@tailwindcss/postcss`) + `@tailwindcss/typography` (prose for blog/teachings)
+- Fonts via `next/font/google`: **Fraunces** (variable serif) + **Raleway** (sans)
 - **react-icons**, **@headlessui/react**, **react-paystack**
-- No database — consume external APIs for dynamic data (blogs, events, gallery, causes, centres)
-- Static mock data in `src/lib/mock-data.ts` during development (mirrors API response shapes)
+- **@next/third-parties** for Google Analytics
+- No database — data comes from an external REST API (`NEXT_PUBLIC_API_URL`, defaults to
+  `https://admin.jancosmicfoundation.org/api`) with a **static mock fallback** (`src/lib/mock-data.ts`)
+  so pages never throw when the API is unreachable
+- Foundation-level facts (name, stats, contact, address, socials) live in `src/lib/site-config.ts` —
+  the single source of truth read by pages, components, and JSON-LD schema
+
+## Commands
+
+- `npm run dev` — local dev server
+- `npm run build` — production build
+- `npm start` — serve the production build
+- `npm run lint` — ESLint
 
 ## Design System
 
@@ -53,51 +64,75 @@ Tokens live in `src/app/globals.css`:
 
 ```
 src/
-├── app/                    # App Router pages
-│   ├── layout.tsx          # Root layout (Raleway, Navbar, Footer)
+├── app/                    # App Router pages (globals.css lives here, not src/styles)
+│   ├── layout.tsx          # Root layout (fonts, Navbar, Footer, RouteProgress, GA, JSON-LD)
+│   ├── globals.css         # Tailwind imports, CSS custom properties (color tokens), base styles
 │   ├── page.tsx            # Homepage
-│   ├── about/              # /about, /about/mission-vision
-│   ├── events/             # /events, /events/[slug]
-│   ├── blog/               # /blog, /blog/[slug]
-│   ├── gallery/            # /gallery
+│   ├── error.tsx           # Global error boundary
+│   ├── not-found.tsx       # 404 page
+│   ├── about/              # /about, /about/founder ("The Mystic"), /about/mission-vision
+│   ├── programs/           # /programs (programmes overview)
+│   ├── teachings/          # /teachings (public teachings + video)
+│   ├── blog/               # /blog ("Writings"), /blog/[slug]
+│   ├── innerspace/         # /innerspace
+│   ├── events/             # /events ("Retreats & Events"), /events/[slug]
 │   ├── centres/            # /centres, /centres/[slug]
+│   ├── community/          # /community (members-only hub)
+│   ├── gallery/            # /gallery
+│   ├── testimonials/       # /testimonials
 │   ├── donate/             # /donate, /donate/[slug]
 │   ├── volunteer/          # /volunteer
-│   └── contact/            # /contact
+│   ├── contact/            # /contact
+│   ├── privacy-policy/     # /privacy-policy
+│   └── terms/              # /terms
+│   # Most routes also ship a loading.tsx skeleton; list/detail pages with
+│   # client interactivity split into a *PageContent.tsx client child.
 ├── components/
-│   ├── layout/             # Navbar, Footer, MobileMenu, PageHero
-│   ├── home/               # Homepage sections (Hero, AboutSnippet, ImpactStats, etc.)
+│   ├── layout/             # Navbar, Footer, MobileMenu, PageHero, NewsletterForm, RouteProgress
+│   ├── home/               # Homepage sections (HeroSection, AboutSnippet, Pathways, LivingWork,
+│   │                       #   ServiceSection, InnerSpaceSection, WisdomQuote, Featured/Upcoming/Recent…)
 │   ├── cards/              # EventCard, BlogCard, CauseCard, CentreCard
-│   ├── ui/                 # Button, Badge, ProgressBar, Counter, SectionHeader, Newsletter
-│   └── forms/              # ContactForm, VolunteerForm, JoinCentreForm, DonationCheckout
+│   ├── ui/                 # Button, Badge, ProgressBar, Counter, SectionHeader, Newsletter,
+│   │                       #   QuoteBlock, ScrollReveal, TrustSignals
+│   ├── forms/              # ContactForm, VolunteerForm, JoinCentreForm, DonationCheckout(+Wrapper)
+│   ├── blog/               # ShareButtons
+│   └── teachings/          # VideoSection
 ├── lib/
-│   ├── api.ts              # API client (fetch blogs, events, etc.)
-│   ├── mock-data.ts        # Static mock data matching API shapes
+│   ├── api.ts              # API client: fetch + mock fallback, slug lookups, form submits
+│   ├── mock-data.ts        # Static mock data matching API shapes (fallback source)
+│   ├── site-config.ts      # Single source of truth for foundation facts + maps/schema helpers
+│   ├── centres.ts          # Centre membership display helpers (threshold labels)
 │   └── paystack.ts         # Paystack helper utilities
-├── types/
-│   └── index.ts            # TypeScript interfaces (Event, Blog, Cause, Centre, etc.)
-└── styles/
-    └── globals.css         # Tailwind imports, CSS custom properties, base styles
+└── types/
+    └── index.ts            # TS interfaces (Event, BlogPost, Cause, Centre, Program, Testimonial…)
 ```
 
 ## Routes
 
-| Route | Type | Description |
-|-------|------|-------------|
-| `/` | Static | Homepage |
-| `/about` | Static | About the Foundation |
-| `/about/mission-vision` | Static | Mission & Vision |
-| `/events` | Dynamic | Events listing (from API) |
-| `/events/[slug]` | Dynamic | Single event detail |
-| `/blog` | Dynamic | Blog grid (from API) |
-| `/blog/[slug]` | Dynamic | Single blog post |
-| `/gallery` | Dynamic | Photo/video gallery |
-| `/centres` | SSG | Centres overview |
-| `/centres/[slug]` | SSG | Single centre + join form |
-| `/donate` | SSG | Donation causes |
-| `/donate/[slug]` | SSG | Single cause + Paystack checkout |
-| `/volunteer` | Static | Volunteering info + signup form |
-| `/contact` | Static | Contact form |
+| Route | Description |
+|-------|-------------|
+| `/` | Homepage |
+| `/about` | About the Foundation |
+| `/about/founder` | Dr. Baffour Jan — "The Mystic" |
+| `/about/mission-vision` | Mission & Vision |
+| `/programs` | Programmes overview |
+| `/teachings` | Public teachings + video |
+| `/blog`, `/blog/[slug]` | Writings grid + single post |
+| `/innerspace` | InnerSpace |
+| `/events`, `/events/[slug]` | Retreats & events listing + detail |
+| `/centres`, `/centres/[slug]` | Centres overview + single centre with join form |
+| `/community` | Members-only community hub |
+| `/gallery` | Photo/video gallery |
+| `/testimonials` | Testimonials |
+| `/donate`, `/donate/[slug]` | Donation causes + single cause with Paystack checkout |
+| `/volunteer` | Volunteering info + signup form |
+| `/contact` | Contact form |
+| `/privacy-policy`, `/terms` | Legal pages |
+
+Data is fetched in async Server Components via `src/lib/api.ts`, which fetches the
+external API with `next: { revalidate: 60 }` and falls back to mock data on failure.
+Nav structure: top-level **Home · About · Teachings · InnerSpace · Retreats & Events ·
+Centres** (About and Teachings have dropdowns), with **Donate** as the standalone CTA.
 
 ## Payments
 
@@ -108,9 +143,13 @@ src/
 
 ## Key Conventions
 
-- Dynamic route params use `params: Promise<{ slug: string }>` pattern (Next.js 15 async params)
+- Dynamic route params use the `params: Promise<{ slug: string }>` pattern (Next.js async params)
 - All images use Next.js `<Image>` component for optimization
-- Forms submit to API endpoints (mock during development)
+- Forms submit through `src/lib/api.ts` (mocked during development)
+- Read foundation facts from `siteConfig` (`src/lib/site-config.ts`) — never hard-code name,
+  stats, contact details, address, or social URLs in components
+- Centre membership counts render through `src/lib/centres.ts` helpers — counts below
+  `MEMBER_DISPLAY_THRESHOLD` (20) show a "Newly forming" label instead of a small number
 - Prefer `@headlessui/react` for accessible interactive components (menus, dialogs, tabs)
 - Design inspiration: Donar charity template (structure), drbaffourjan.com (visual identity)
 
