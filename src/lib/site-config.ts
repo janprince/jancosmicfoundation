@@ -6,7 +6,7 @@
 export const siteConfig = {
   name: 'Jan Cosmic Foundation',
   shortName: 'JCF',
-  url: 'https://jancosmicfoundation.org',
+  url: 'https://www.jancosmicfoundation.org',
   founded: '2021',
 
   // Headline numbers — keep these honest
