@@ -86,21 +86,23 @@ export default async function CentrePage({ params }: { params: Promise<{ slug: s
             {/* Left: Description + details */}
             <div className="lg:col-span-2 space-y-8">
               {/* Centre image */}
-              <div className="relative aspect-video w-full rounded-2xl overflow-hidden">
-                <Image
-                  src={centre.image}
-                  alt={centre.name}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 66vw"
-                  priority
-                />
-                <div className="absolute bottom-5 left-5 z-10">
-                  <span className="bg-white/90 backdrop-blur-sm text-[#000B58] text-sm font-semibold px-4 py-1.5 rounded-full">
-                    {centre.country}
-                  </span>
+              {centre.image && (
+                <div className="relative aspect-video w-full rounded-2xl overflow-hidden">
+                  <Image
+                    src={centre.image}
+                    alt={centre.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 66vw"
+                    priority
+                  />
+                  <div className="absolute bottom-5 left-5 z-10">
+                    <span className="bg-white/90 backdrop-blur-sm text-[#000B58] text-sm font-semibold px-4 py-1.5 rounded-full">
+                      {centre.country}
+                    </span>
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Description */}
               <div>
