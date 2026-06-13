@@ -6,6 +6,7 @@ import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
 import JoinCentreForm from '@/components/forms/JoinCentreForm';
 import { getCentreBySlug, getCentres } from '@/lib/api';
+import { centreMembership, centreMembershipDetail } from '@/lib/centres';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
@@ -57,7 +58,7 @@ export default async function CentrePage({ params }: { params: Promise<{ slug: s
         </svg>
       ),
       label: 'Members',
-      value: `${centre.memberCount.toLocaleString()} active members`,
+      value: centreMembershipDetail(centre.memberCount),
     },
     {
       icon: (
@@ -74,7 +75,7 @@ export default async function CentrePage({ params }: { params: Promise<{ slug: s
     <>
       <PageHero
         title={centre.name}
-        subtitle={`${centre.location} · ${centre.memberCount} members`}
+        subtitle={`${centre.location} · ${centreMembership(centre.memberCount)}`}
       />
 
       {/* Main content */}

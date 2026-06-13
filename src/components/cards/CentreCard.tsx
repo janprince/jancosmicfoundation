@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Centre } from "@/types";
+import { centreMembership } from "@/lib/centres";
 import Button from "@/components/ui/Button";
 
 export default function CentreCard({ centre }: { centre: Centre }) {
@@ -42,7 +43,7 @@ export default function CentreCard({ centre }: { centre: Centre }) {
               </div>
             </div>
             <span className="text-xs text-primary font-medium">
-              {centre.memberCount} members
+              {centreMembership(centre.memberCount)}
             </span>
           </div>
         </div>

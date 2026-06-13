@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import PageHero from '@/components/layout/PageHero';
 import { getCentres } from '@/lib/api';
+import { centreMembership } from '@/lib/centres';
 import { siteConfig } from '@/lib/site-config';
 import {
   FaTelegram,
@@ -234,7 +235,7 @@ export default async function JoinPage() {
                       {centre.name}
                     </h3>
                     <p className="text-sm text-[#1c1a26]/80">
-                      {centre.location} · {centre.memberCount} members
+                      {centre.location} · {centreMembership(centre.memberCount)}
                     </p>
                   </div>
 
