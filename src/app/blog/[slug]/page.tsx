@@ -7,6 +7,7 @@ import Badge from '@/components/ui/Badge';
 import BlogCard from '@/components/cards/BlogCard';
 import { getBlogPostBySlug, getBlogPosts } from '@/lib/api';
 import ShareButtons from '@/components/blog/ShareButtons';
+import { siteConfig } from '@/lib/site-config';
 
 /**
  * Extract a YouTube video ID from short-links (youtu.be/ID)
@@ -19,7 +20,7 @@ function getYouTubeId(url: string): string | null {
   return longMatch?.[1] ?? null;
 }
 
-const SITE_URL = 'https://jancosmicfoundation.org';
+const SITE_URL = siteConfig.url;
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;

@@ -25,7 +25,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jancosmicfoundation.org"),
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: "Jan Cosmic Foundation — Self-Realization & Conscious Living",
     template: "%s | Jan Cosmic Foundation",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     title: "Jan Cosmic Foundation — Self-Realization & Conscious Living",
     description:
       "A spiritual foundation carrying the teachings of Dr. Baffour Jan through retreats, centres, media, organic farming, and service for sincere seekers.",
-    url: "https://jancosmicfoundation.org",
+    url: siteConfig.url,
     siteName: "Jan Cosmic Foundation",
     type: "website",
   },
