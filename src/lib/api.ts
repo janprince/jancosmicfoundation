@@ -15,6 +15,7 @@ import type {
   NewsletterFormData,
 } from '@/types';
 import * as mock from './mock-data';
+import { eventHasEnded } from './event-status';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://admin.jancosmicfoundation.org/api';
 
@@ -80,7 +81,7 @@ function transformEvent(raw: any): Event {
     address: raw.address ?? undefined,
     image: raw.image_url ?? raw.image ?? '/images/student-in-yoga-posture.jpg',
     category: raw.category_name ?? '',
-    isPast: raw.is_past ?? false,
+    isPast: raw.is_past === true || eventHasEnded(raw.date, raw.end_date),
     registrationUrl: raw.registration_url ?? undefined,
   };
 }
@@ -255,8 +256,13 @@ export async function getEvents(filter?: 'upcoming' | 'past'): Promise<Event[]> 
   const query = filter ? `?filter=${filter}` : '';
   const fallback: PaginatedResponse<unknown> = { count: 0, next: null, previous: null, results: [] };
   const data = await fetchWithFallback<PaginatedResponse<unknown>>(`/events/${query}`, fallback);
-  if (data.results.length === 0 && mock.events.length > 0) return mock.events;
-  return data.results.map(transformEvent);
+  // An empty calendar must stay empty. Sample events are not bookable events.
+  return data.results.map(transformEvent)
+    .filter(event => Number.isFinite(Date.parse(event.date)))
+    .filter(event => !filter || (filter === 'past' ? event.isPast : !event.isPast))
+    .sort((a, b) => filter === 'past'
+      ? Date.parse(b.date) - Date.parse(a.date)
+      : Date.parse(a.date) - Date.parse(b.date));
 }
 
 export async function getEventBySlug(slug: string): Promise<Event | undefined> {
@@ -264,7 +270,7 @@ export async function getEventBySlug(slug: string): Promise<Event | undefined> {
     const raw = await fetchAPI<unknown>(`/events/${slug}/`);
     return transformEvent(raw);
   } catch {
-    return mock.events.find((e) => e.slug === slug);
+    return undefined;
   }
 }
 

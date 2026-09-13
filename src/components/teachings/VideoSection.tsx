@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { HiOutlinePlay } from 'react-icons/hi2';
+import { MagnifyingGlass, Play } from '@phosphor-icons/react';
+import SectionHeader from '@/components/ui/SectionHeader';
 
 interface Video {
   id: string;
@@ -31,132 +32,128 @@ const PLAYLIST_ID = 'PL77C1eSjQlOJPUZ0mgkVaBZEFkrf7efcv';
 
 export default function VideoSection() {
   const [activeVideo, setActiveVideo] = useState(videos[0]);
+  const [playing, setPlaying] = useState(false);
+  const [query, setQuery] = useState('');
+  const visibleVideos = videos.filter(video => video.title.toLowerCase().includes(query.trim().toLowerCase()));
 
   return (
-    <section className="bg-white py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-        {/* Section label */}
-        <div className="mb-12 text-center">
-          <div className="mb-4 flex items-center justify-center gap-3">
-            <span className="h-px w-8 rounded-full bg-[#D4A843]/70" />
-            <span className="eyebrow text-[#8a6c1a]">Video Teachings</span>
-            <span className="h-px w-8 rounded-full bg-[#D4A843]/70" />
+    <section className="section bg-cream">
+      <div className="wrap">
+        <SectionHeader label="Video Teachings" title="Conversations with Dr. Jan" />
+
+        {/* Player */}
+        <div className="mx-auto mt-12 max-w-4xl">
+          <div className="relative w-full overflow-hidden rounded-card bg-navy" style={{ paddingBottom: '56.25%' }}>
+            {playing ? (
+              <iframe
+                className="absolute inset-0 h-full w-full"
+                src={`https://www.youtube.com/embed/${activeVideo.id}?rel=0`}
+                title={activeVideo.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            ) : (
+              <button
+                type="button"
+                className="group absolute inset-0 h-full w-full cursor-pointer text-white"
+                onClick={() => setPlaying(true)}
+                aria-label={`Play ${activeVideo.title}`}
+              >
+                <Image
+                  src={`https://img.youtube.com/vi/${activeVideo.id}/hqdefault.jpg`}
+                  alt=""
+                  fill
+                  className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.03]"
+                  sizes="(max-width: 900px) 100vw, 900px"
+                />
+                <span className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/15 to-transparent" />
+                <span className="absolute bottom-6 left-6 flex items-center gap-4">
+                  <span className="grid h-16 w-16 place-items-center rounded-full bg-gold text-navy shadow-[0_0_0_8px_rgba(212,168,67,0.28)] transition-shadow duration-500 group-hover:shadow-[0_0_0_14px_rgba(212,168,67,0.18)]">
+                    <Play size={24} weight="fill" aria-hidden="true" />
+                  </span>
+                  <span className="font-medium">Play teaching</span>
+                </span>
+              </button>
+            )}
           </div>
-          <h2 className="display text-[2rem] leading-[1.12] text-[#000B58] sm:text-4xl">
-            Conversations with Dr. Jan
-          </h2>
+
+          <div className="mt-6">
+            <p className="eyebrow">{playing ? 'Now playing' : 'Featured teaching'}</p>
+            <h3 className="mt-2 text-2xl leading-snug sm:text-3xl">{activeVideo.title}</h3>
+          </div>
         </div>
 
-        {/* Main video player */}
-        <div className="mx-auto max-w-4xl">
-          <div
-            className="relative w-full overflow-hidden rounded-2xl shadow-xl shadow-black/10"
-            style={{ paddingBottom: '56.25%' }}
-          >
-            <iframe
-              className="absolute inset-0 h-full w-full"
-              src={`https://www.youtube.com/embed/${activeVideo.id}?rel=0`}
-              title={activeVideo.title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
+        {/* Collection */}
+        <div className="mx-auto mt-16 max-w-4xl border-t border-line pt-12">
+          <label htmlFor="teaching-search" className="field-label">Find a teaching by title</label>
+          <div className="relative mb-6">
+            <MagnifyingGlass size={20} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-muted" aria-hidden="true" />
+            <input
+              id="teaching-search"
+              type="search"
+              value={query}
+              onChange={event => setQuery(event.target.value)}
+              className="field !pl-12"
+              placeholder="Search teachings"
             />
           </div>
-
-          {/* Now playing label */}
-          <div className="mt-5 flex items-start gap-3">
-            <span className="mt-0.5 shrink-0 rounded bg-primary/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
-              Now Playing
-            </span>
-            <h3 className="display text-lg leading-snug text-[#000B58] sm:text-xl">
-              {activeVideo.title}
-            </h3>
-          </div>
-        </div>
-
-        {/* Video list */}
-        <div className="mx-auto mt-12 max-w-4xl">
-          <div className="mb-5 flex items-center justify-between">
-            <p className="text-sm font-medium text-[#1c1a26]/60">
-              {videos.length} teachings in this series
+          <div className="mb-5 flex items-center justify-between gap-4">
+            <p className="text-sm text-muted">
+              {visibleVideos.length} {visibleVideos.length === 1 ? 'teaching' : 'teachings'}
             </p>
-            <a
-              href={`https://www.youtube.com/playlist?list=${PLAYLIST_ID}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium text-primary transition-colors hover:text-primary/80"
-            >
-              View all on YouTube &rarr;
+            <a href={`https://www.youtube.com/playlist?list=${PLAYLIST_ID}`} target="_blank" rel="noopener noreferrer" className="text-link text-sm">
+              View all on YouTube
             </a>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {videos.map((video) => {
+          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+            {visibleVideos.map((video) => {
               const isActive = video.id === activeVideo.id;
               return (
                 <button
                   key={video.id}
                   onClick={() => {
                     setActiveVideo(video);
+                    setPlaying(true);
                     // Scroll to player on mobile
                     if (window.innerWidth < 1024) {
-                      document
-                        .getElementById('video-player-top')
-                        ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      document.getElementById('video-player-top')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                   }}
                   className={[
-                    'group flex gap-3 rounded-xl border p-3 text-left transition-all duration-200',
-                    isActive
-                      ? 'border-primary/30 bg-primary/5 shadow-sm'
-                      : 'border-[#e8e4dc] bg-[#FDFBF7] hover:border-primary/20 hover:shadow-sm',
+                    'group flex gap-3 rounded-2xl border p-2.5 pr-4 text-left transition-colors duration-200',
+                    isActive ? 'border-navy/20 bg-white' : 'border-transparent hover:border-line hover:bg-white',
                   ].join(' ')}
                 >
-                  {/* Thumbnail */}
-                  <div className="relative h-16 w-28 shrink-0 overflow-hidden rounded-lg sm:h-18 sm:w-32">
-                    <Image
-                      src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`}
-                      alt={video.title}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      sizes="128px"
-                    />
-                    {/* Play overlay */}
-                    {!isActive && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                        <HiOutlinePlay className="h-6 w-6 text-white" />
-                      </div>
-                    )}
-                    {isActive && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-primary/30">
-                        <div className="flex items-center gap-0.5">
+                  <div className="relative h-16 w-28 shrink-0 overflow-hidden rounded-xl">
+                    <Image src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`} alt="" fill className="object-cover" sizes="112px" />
+                    {isActive ? (
+                      <div className="absolute inset-0 grid place-items-center bg-navy/45">
+                        <div className="flex items-end gap-0.5">
                           <span className="block h-3 w-0.5 animate-pulse rounded-full bg-white" />
                           <span className="block h-4 w-0.5 animate-pulse rounded-full bg-white" style={{ animationDelay: '0.15s' }} />
                           <span className="block h-2.5 w-0.5 animate-pulse rounded-full bg-white" style={{ animationDelay: '0.3s' }} />
                         </div>
                       </div>
+                    ) : (
+                      <div className="absolute inset-0 grid place-items-center bg-navy/30 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                        <Play size={20} weight="fill" className="text-white" aria-hidden="true" />
+                      </div>
                     )}
                   </div>
-
-                  {/* Title */}
                   <div className="flex min-w-0 flex-col justify-center">
-                    <p
-                      className={[
-                        'line-clamp-2 text-sm font-medium leading-snug transition-colors',
-                        isActive
-                          ? 'text-primary'
-                          : 'text-[#000B58] group-hover:text-primary',
-                      ].join(' ')}
-                    >
+                    <p className={['line-clamp-2 text-sm font-medium leading-snug transition-colors', isActive ? 'text-navy' : 'text-ink group-hover:text-navy'].join(' ')}>
                       {video.title}
                     </p>
-                    <span className="mt-1 text-xs text-[#1c1a26]/40">
-                      Dr. Baffour Jan
-                    </span>
+                    <span className="mt-1 text-xs text-muted">Dr. Baffour Jan</span>
                   </div>
                 </button>
               );
             })}
           </div>
+          {visibleVideos.length === 0 && (
+            <p role="status" className="py-6 text-center text-muted">No teachings match that title. Try another word or clear your search.</p>
+          )}
         </div>
       </div>
     </section>

@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Button from '@/components/ui/Button';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 import { getPrograms } from '@/lib/api';
 
 const categoryLabels: Record<string, string> = {
@@ -12,13 +14,7 @@ const categoryLabels: Record<string, string> = {
   humanitarian: 'Humanitarian',
 };
 
-const categoryColors: Record<string, { bg: string; text: string }> = {
-  spiritual: { bg: 'rgba(var(--color-primary-rgb),0.1)', text: 'var(--color-primary)' },
-  education: { bg: 'rgba(212,168,67,0.12)', text: '#8a6c1a' },
-  community: { bg: 'rgba(0,11,88,0.08)', text: '#000B58' },
-  humanitarian: { bg: 'rgba(192,80,33,0.1)', text: '#C05021' },
-};
-
+// A real sequence (external → internal → spiritual), so the numbering carries meaning.
 const frameworkLevels = [
   {
     name: 'External',
@@ -34,44 +30,20 @@ const frameworkLevels = [
   },
 ];
 
-const iconMap: Record<string, React.ReactNode> = {
-  lotus: (
-    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 8.25 6.007 7.5 7.5 0 0 0 12 3Z" />
-    </svg>
-  ),
-  meditation: (
-    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
-    </svg>
-  ),
-  children: (
-    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
-    </svg>
-  ),
-  hands: (
-    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M10.05 4.575a1.575 1.575 0 1 0-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 0 1 3.15 0v1.5m-3.15 0 .075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 0 1 3.15 0V15M6.9 7.575a1.575 1.575 0 1 0-3.15 0v8.175a6.75 6.75 0 0 0 6.75 6.75h2.018a5.25 5.25 0 0 0 3.712-1.538l1.732-1.732a5.25 5.25 0 0 0 1.538-3.712l.003-2.024a.668.668 0 0 1 .198-.471 1.575 1.575 0 1 0-2.228-2.228 3.818 3.818 0 0 0-1.12 2.687M6.9 7.575V12m6.27 4.318A4.49 4.49 0 0 1 16.35 15m.002 0h-.002" />
-    </svg>
-  ),
-  guidance: (
-    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-    </svg>
-  ),
-  media: (
-    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
-    </svg>
-  ),
-};
-
 export const metadata: Metadata = {
   title: 'Our Programmes',
   description:
     'Programmes of Jan Cosmic Foundation: teachings, retreats, InnerSpace study, outreach teachers, healing and counselling, organic farms, children\'s work, media, and community.',
 };
+
+function ActiveMarker({ label }: { label: string }) {
+  return (
+    <p className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-navy">
+      <span className="h-2 w-2 rounded-full bg-gold" aria-hidden="true" />
+      {label}
+    </p>
+  );
+}
 
 export default async function ProgramsPage() {
   const programs = await getPrograms();
@@ -80,16 +52,16 @@ export default async function ProgramsPage() {
   const otherPrograms = programs.filter((p) => p.category !== 'spiritual');
 
   return (
-    <main style={{ backgroundColor: '#FDFBF7' }}>
+    <div className="bg-cream">
       <PageHero
         title="Programmes"
         subtitle="Different forms of one work: awakening, practice, and service."
       />
 
       {/* Framework */}
-      <section className="py-16 sm:py-24" style={{ backgroundColor: '#FDFBF7' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-12">
+      <section className="section">
+        <div className="wrap">
+          <div className="max-w-3xl">
             <SectionHeader
               label="The movement"
               title="External, internal, spiritual"
@@ -98,207 +70,103 @@ export default async function ProgramsPage() {
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <ScrollReveal staggerChildren={0.12} className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-3">
             {frameworkLevels.map((level, index) => (
-              <div
-                key={level.name}
-                className="rounded-2xl p-7"
-                style={{
-                  backgroundColor: index === 2 ? '#000B58' : '#ffffff',
-                  border: '1px solid rgba(0,11,88,0.08)',
-                  color: index === 2 ? '#FDFBF7' : '#1c1a26',
-                }}
-              >
-                <p
-                  className="text-xs font-semibold uppercase tracking-[0.18em] mb-3"
-                  style={{ color: index === 2 ? '#D4A843' : '#8a6c1a' }}
-                >
-                  {String(index + 1).padStart(2, '0')}
-                </p>
-                <h3 className="display text-2xl mb-4" style={{ color: index === 2 ? '#ffffff' : '#000B58' }}>
-                  {level.name}
-                </h3>
-                <p className="text-sm leading-relaxed mb-4" style={{ color: index === 2 ? 'rgba(253,251,247,0.86)' : '#1c1a26cc' }}>
-                  {level.focus}
-                </p>
+              <div key={level.name} className={`border-t pt-8 ${index === 2 ? 'border-gold' : 'border-line'}`}>
+                <p className="font-serif text-lg italic text-gold-ink">{String(index + 1).padStart(2, '0')}</p>
+                <h3 className="mt-2 text-3xl">{level.name}</h3>
+                <p className="mt-3 leading-relaxed text-muted">{level.focus}</p>
               </div>
             ))}
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* Spiritual Programmes */}
+      {/* Spiritual programmes */}
       {spiritualPrograms.length > 0 && (
-        <section className="pb-16 sm:pb-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="section bg-sand">
+          <div className="wrap">
             <SectionHeader
               label="Inner work"
               title="Sittings, retreats, and structured study"
               subtitle="The core of the Foundation: study, stillness, inquiry, balanced-state practice, and direct experience."
             />
 
-            <div className="mt-12 space-y-8">
+            <div className="mt-16 space-y-20 lg:space-y-28">
               {spiritualPrograms.map((program, index) => (
-                <div
-                  key={program.id}
-                  className="rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
-                  style={{ backgroundColor: '#ffffff', border: '1px solid rgba(0,11,88,0.06)' }}
-                >
-                  <div className={`grid grid-cols-1 lg:grid-cols-2 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-                    {/* Image */}
-                    <div className={`relative min-h-[280px] lg:min-h-[360px] ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                      <Image
-                        src={program.image}
-                        alt={program.title}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 1024px) 100vw, 50vw"
-                      />
-                      {/* Category badge */}
-                      <div className="absolute top-4 left-4">
-                        <span
-                          className="text-xs font-semibold px-3 py-1.5 rounded-full"
-                          style={{
-                            backgroundColor: categoryColors[program.category]?.bg,
-                            color: categoryColors[program.category]?.text,
-                            backdropFilter: 'blur(8px)',
-                          }}
-                        >
-                          {categoryLabels[program.category]}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className={`p-8 sm:p-10 lg:p-12 flex flex-col justify-center ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                      <div
-                        className="w-14 h-14 rounded-xl flex items-center justify-center mb-5"
-                        style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.1)', color: 'var(--color-primary)' }}
-                      >
-                        {iconMap[program.icon] || iconMap.lotus}
-                      </div>
-                      <h3 className="display text-2xl sm:text-3xl mb-4" style={{ color: '#000B58' }}>
-                        {program.title}
-                      </h3>
-                      <p className="text-base leading-relaxed mb-6" style={{ color: '#1c1a26cc' }}>
-                        {program.content}
-                      </p>
-                      {program.isActive && (
-                        <span
-                          className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full w-fit"
-                          style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.1)', color: 'var(--color-primary)' }}
-                        >
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                          Active Programme
-                        </span>
-                      )}
-                    </div>
+                <ScrollReveal key={program.id} className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-20">
+                  <div className={`relative aspect-[4/3] overflow-hidden rounded-card ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                    <Image
+                      src={program.image}
+                      alt={program.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
                   </div>
-                </div>
+                  <div>
+                    <p className="eyebrow">{categoryLabels[program.category]}</p>
+                    <h3 className="mt-3 text-3xl leading-tight sm:text-4xl">{program.title}</h3>
+                    <p className="mt-5 text-lg leading-relaxed text-ink/75">{program.content}</p>
+                    {program.isActive && <ActiveMarker label="Active programme" />}
+                  </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
         </section>
       )}
 
-      {/* Other Programmes */}
+      {/* Service and outreach programmes */}
       {otherPrograms.length > 0 && (
-        <section className="py-16 sm:py-24" style={{ backgroundColor: '#F2EFE9' }}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="section">
+          <div className="wrap">
             <SectionHeader
               label="Service and outreach"
               title="Where the teaching meets the world"
               subtitle="Outreach teachers, organisers, media, farms, children's work, and practical support. The same inner work expressed outwardly."
             />
 
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <ScrollReveal staggerChildren={0.08} className="mt-14 grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
               {otherPrograms.map((program) => (
-                <div
-                  key={program.id}
-                  className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col"
-                  style={{ border: '1px solid rgba(0,11,88,0.06)' }}
-                >
-                  {/* Image */}
-                  <div className="relative h-48 overflow-hidden">
+                <article key={program.id} className="group flex flex-col">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-card">
                     <Image
                       src={program.image}
                       alt={program.title}
                       fill
-                      className="object-cover transition-transform duration-500 hover:scale-105"
+                      className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
-                    <div className="absolute top-3 left-3">
-                      <span
-                        className="text-xs font-semibold px-2.5 py-1 rounded-full backdrop-blur-sm"
-                        style={{
-                          backgroundColor: categoryColors[program.category]?.bg,
-                          color: categoryColors[program.category]?.text,
-                        }}
-                      >
-                        {categoryLabels[program.category]}
-                      </span>
-                    </div>
                   </div>
-
-                  {/* Content */}
-                  <div className="p-6 flex flex-col flex-1">
-                    <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                      style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.1)', color: 'var(--color-primary)' }}
-                    >
-                      {iconMap[program.icon] || iconMap.lotus}
-                    </div>
-                    <h3 className="display text-xl mb-3" style={{ color: '#000B58' }}>
-                      {program.title}
-                    </h3>
-                    <p className="text-sm leading-relaxed flex-1" style={{ color: '#1c1a26cc' }}>
-                      {program.description}
-                    </p>
-                    {program.isActive && (
-                      <span
-                        className="inline-flex items-center gap-1.5 text-xs font-semibold mt-4 px-2.5 py-1 rounded-full w-fit"
-                        style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.1)', color: 'var(--color-primary)' }}
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                        Active
-                      </span>
-                    )}
-                  </div>
-                </div>
+                  <p className="eyebrow mt-6">{categoryLabels[program.category]}</p>
+                  <h3 className="mt-2 text-2xl leading-snug">{program.title}</h3>
+                  <p className="mt-3 flex-1 text-[15px] leading-relaxed text-muted">{program.description}</p>
+                  {program.isActive && <ActiveMarker label="Active" />}
+                </article>
               ))}
-            </div>
+            </ScrollReveal>
           </div>
         </section>
       )}
 
       {/* CTA */}
-      <section
-        className="py-16 sm:py-24"
-        style={{
-          background:
-            'linear-gradient(135deg, #000B58 0%, #1a1b6b 50%, var(--color-violet, #5B4B9E) 100%)',
-        }}
-      >
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="display text-3xl sm:text-4xl text-white mb-4">
-            Take part in the work
-          </h2>
-          <p
-            className="text-base sm:text-lg mb-10 leading-relaxed"
-            style={{ color: 'rgba(253,251,247,0.9)' }}
-          >
+      <section className="night stars section">
+        <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
+          <h2 className="text-4xl sm:text-5xl">Take part in the work</h2>
+          <p className="mt-5 text-lg leading-relaxed text-white/80">
             Support a programme, give your time, or join a centre. Choose the service that is sincere, useful, and sustainable.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button href="/donate" variant="secondary" size="lg">
               Support a programme
             </Button>
-            <Button href="/volunteer" variant="outline" size="lg" className="!border-white/30 !text-white hover:!bg-white/10">
+            <Link href="/volunteer" className="button ghost button-lg">
               Volunteer
-            </Button>
+            </Link>
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

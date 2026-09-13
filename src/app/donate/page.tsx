@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
+import { FilmSlate, HandHeart, Plant, Student } from '@phosphor-icons/react/dist/ssr';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 import CauseCard from '@/components/cards/CauseCard';
 import { getCauses } from '@/lib/api';
 
@@ -10,38 +12,32 @@ export const metadata: Metadata = {
     'Support Jan Cosmic Foundation. Donations help sustain teachings, outreach, media, organic farms, children\'s work, centres, and the developing JCF Village.',
 };
 
+const impactItems = [
+  {
+    Icon: Plant,
+    title: 'JCF Village & organic farms',
+    description: 'A peaceful place for retreat, organic food, herbal gardens, practice, and community life.',
+  },
+  {
+    Icon: FilmSlate,
+    title: 'Media and outreach',
+    description: 'Filming, interviewing, editing, and publishing Dr. Jan\'s talks so seekers can meet the teachings wherever they are.',
+  },
+  {
+    Icon: Student,
+    title: 'Guide the Children',
+    description: 'Mentorship and simple awareness practices that help young people grow with presence, responsibility, and inner clarity.',
+  },
+];
+
+const tiers = [
+  { amount: 'GH₵50', impact: 'Provides educational materials for one child in the Guide the Children programme' },
+  { amount: 'GH₵200', impact: 'Funds organic inputs for JCF farm work' },
+  { amount: 'GH₵500', impact: 'Supports production of one teaching session for the Media & Digital Outreach programme' },
+];
+
 export default async function DonatePage() {
   const causes = await getCauses();
-
-  const impactItems = [
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-        </svg>
-      ),
-      title: 'JCF Village & organic farms',
-      description: 'A peaceful place for retreat, organic food, herbal gardens, practice, and community life.',
-    },
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-        </svg>
-      ),
-      title: 'Media and outreach',
-      description: 'Filming, interviewing, editing, and publishing Dr. Jan\'s talks so seekers can meet the teachings wherever they are.',
-    },
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-        </svg>
-      ),
-      title: 'Guide the Children',
-      description: 'Mentorship and simple awareness practices that help young people grow with presence, responsibility, and inner clarity.',
-    },
-  ];
 
   return (
     <>
@@ -50,109 +46,70 @@ export default async function DonatePage() {
         subtitle="Support the teachings, outreach, media, farms, children's work, centres, and long-term home of the Foundation."
       />
 
-      {/* Intro */}
-      <section className="py-16 md:py-20" style={{ backgroundColor: '#FDFBF7' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-14">
-            <SectionHeader
-              label="Where it goes"
-              title="What your contribution funds"
-              subtitle="Your support helps keep the teachings reachable, the programmes active, and the work grounded in service."
-            />
-          </div>
-
-          {/* Impact cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
-            {impactItems.map((item) => (
-              <div
-                key={item.title}
-                className="text-center rounded-2xl p-6"
-                style={{ backgroundColor: '#F2EFE9' }}
-              >
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 text-primary">
-                  {item.icon}
-                </div>
-                <h3 className="display text-xl text-[#000B58] mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-[#1c1a26]/70 leading-relaxed">
-                  {item.description}
-                </p>
+      {/* Where it goes */}
+      <section className="section bg-cream">
+        <div className="wrap">
+          <SectionHeader
+            label="Where it goes"
+            title="What your contribution funds"
+            subtitle="Your support helps keep the teachings reachable, the programmes active, and the work grounded in service."
+          />
+          <ScrollReveal staggerChildren={0.1} className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-3">
+            {impactItems.map(({ Icon, title, description }) => (
+              <div key={title} className="border-t border-line pt-8">
+                <Icon size={34} weight="light" className="icon-mark" aria-hidden="true" />
+                <h3 className="text-2xl leading-snug">{title}</h3>
+                <p className="mt-3 text-[15px] leading-relaxed text-muted">{description}</p>
               </div>
             ))}
-          </div>
+          </ScrollReveal>
+        </div>
+      </section>
 
-          {/* Causes grid */}
+      {/* Causes */}
+      <section className="section bg-sand">
+        <div className="wrap">
           <SectionHeader
             label="Active causes"
             title="Choose where to give"
             subtitle="Support a specific cause, or give to the Foundation directly so resources can go where the work needs them most."
-            className="mb-10"
+            className="mb-12"
           />
-
           {causes.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {causes.map((cause) => (
                 <CauseCard key={cause.id} cause={cause} />
               ))}
             </div>
           ) : (
-            <div className="text-center py-20">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center">
-                <svg className="w-8 h-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-                </svg>
-              </div>
-              <h3 className="display text-2xl text-[#000B58] mb-2">No active causes yet</h3>
-              <p className="text-sm text-gray-500">Check back soon for new causes to support.</p>
+            <div className="py-16 text-center">
+              <HandHeart size={48} weight="light" className="mx-auto mb-4 block text-gold-ink" aria-hidden="true" />
+              <h3 className="mb-2 text-3xl">No active causes yet</h3>
+              <p className="text-muted">Check back soon for new causes to support.</p>
             </div>
           )}
         </div>
       </section>
 
-      {/* General donation section */}
-      <section
-        className="py-20"
-        style={{
-          background: 'linear-gradient(135deg, #000B58 0%, #1a1b6b 50%, var(--color-violet, #5B4B9E) 100%)',
-        }}
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          {/* Decorative accent */}
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <span className="block h-px w-10 rounded-full bg-[#D4A843]/50" />
-            <span className="block w-2 h-2 rounded-full bg-[#D4A843]" />
-            <span className="block h-px w-10 rounded-full bg-[#D4A843]/50" />
-          </div>
-
-          <h2 className="display text-3xl sm:text-4xl text-white leading-tight">
-            Or give to the whole work
-          </h2>
-          <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed text-white/90">
+      {/* Give to the whole work */}
+      <section className="night stars section">
+        <div className="mx-auto max-w-4xl px-5 text-center sm:px-8">
+          <h2 className="text-4xl leading-tight sm:text-5xl">Or give to the whole work</h2>
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/80">
             If you would rather not choose a specific cause, give to the
             Foundation directly. Your contribution will support the area of the
             work that needs it most: teaching, outreach, farms, media, centres,
             or care for children.
           </p>
-
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
-            {[
-              { amount: 'GH₵50', impact: 'Provides educational materials for one child in the Guide the Children programme' },
-              { amount: 'GH₵200', impact: 'Funds organic inputs for JCF farm work' },
-              { amount: 'GH₵500', impact: 'Supports production of one teaching session for the Media & Digital Outreach programme' },
-            ].map((tier) => (
-              <div
-                key={tier.amount}
-                className="rounded-2xl p-5 text-center"
-                style={{ backgroundColor: 'rgba(255,255,255,0.08)', border: '1px solid rgba(212,168,67,0.25)' }}
-              >
-                <p className="text-2xl font-bold text-[#D4A843]">{tier.amount}</p>
-                <p className="mt-2 text-xs text-white/85 leading-relaxed">{tier.impact}</p>
+          <div className="mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3">
+            {tiers.map((tier) => (
+              <div key={tier.amount} className="rounded-card border border-white/15 bg-white/[0.05] p-6">
+                <p className="font-serif text-4xl text-gold">{tier.amount}</p>
+                <p className="mt-3 text-sm leading-relaxed text-white/75">{tier.impact}</p>
               </div>
             ))}
           </div>
-
-          <p className="mt-8 text-sm text-white/75">
+          <p className="mt-10 text-sm text-white/65">
             Payments are processed securely via Paystack. A receipt is sent to your email.
           </p>
         </div>

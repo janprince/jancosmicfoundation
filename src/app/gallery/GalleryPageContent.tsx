@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { Images, MagnifyingGlassPlus, X } from '@phosphor-icons/react';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
 import type { GalleryItem } from '@/types';
@@ -18,6 +19,10 @@ interface GalleryPageContentProps {
   items: GalleryItem[];
 }
 
+function formatDate(date: string) {
+  return new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+
 export default function GalleryPageContent({ items }: GalleryPageContentProps) {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
@@ -25,9 +30,7 @@ export default function GalleryPageContent({ items }: GalleryPageContentProps) {
   const filteredItems =
     activeCategory === 'all'
       ? items
-      : items.filter(
-          (item) => item.category.toLowerCase() === activeCategory,
-        );
+      : items.filter((item) => item.category.toLowerCase() === activeCategory);
 
   return (
     <>
@@ -36,9 +39,8 @@ export default function GalleryPageContent({ items }: GalleryPageContentProps) {
         subtitle="Photographs from teachings, sittings, retreats, outreach, service, and life in community."
       />
 
-      <section className="py-16 md:py-20" style={{ backgroundColor: '#FDFBF7' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section header */}
+      <section className="section bg-cream">
+        <div className="wrap">
           <SectionHeader
             label="Photographs"
             title="The work in lived moments"
@@ -46,121 +48,65 @@ export default function GalleryPageContent({ items }: GalleryPageContentProps) {
             className="mb-10"
           />
 
-          {/* Category filter tabs */}
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
+          <div className="filter-pills mb-6 justify-center" role="group" aria-label="Filter photographs">
             {CATEGORIES.map((cat) => (
-              <button
-                key={cat.value}
-                onClick={() => setActiveCategory(cat.value)}
-                className={[
-                  'px-5 py-2 rounded-full text-sm font-medium tracking-wide transition-all duration-200 border',
-                  activeCategory === cat.value
-                    ? 'bg-primary text-white border-primary shadow-md shadow-primary/20'
-                    : 'bg-white text-[#000B58] border-primary/20 hover:border-primary hover:text-primary',
-                ].join(' ')}
-              >
+              <button key={cat.value} aria-pressed={activeCategory === cat.value} onClick={() => setActiveCategory(cat.value)}>
                 {cat.label}
               </button>
             ))}
           </div>
 
-          {/* Item count */}
-          <p className="text-center text-sm text-gray-500 mb-8">
-            Showing{' '}
-            <span className="font-semibold text-primary">
-              {filteredItems.length}
-            </span>{' '}
-            {filteredItems.length === 1 ? 'item' : 'items'}
+          <p className="mb-10 text-center text-sm text-muted">
+            Showing {filteredItems.length} {filteredItems.length === 1 ? 'photograph' : 'photographs'}
           </p>
 
-          {/* Masonry grid */}
           {filteredItems.length > 0 ? (
-            <div className="columns-1 md:columns-2 lg:columns-3 gap-5">
+            <div className="columns-1 gap-6 md:columns-2 lg:columns-3">
               {filteredItems.map((item) => (
-                <div
+                <button
                   key={item.id}
-                  className="break-inside-avoid mb-5 group cursor-pointer"
+                  type="button"
+                  className="group mb-8 block w-full break-inside-avoid text-left"
                   onClick={() => setSelectedItem(item)}
+                  aria-label={`Open ${item.title}`}
                 >
-                  <div className="bg-white rounded-xl overflow-hidden border border-black/[0.06] shadow-sm hover:shadow-lg hover:shadow-[#000B58]/5 transition-all duration-500">
-                    {/* Gallery image */}
-                    <div
-                      className="w-full relative overflow-hidden"
-                      style={{
-                        paddingBottom: item.id.charCodeAt(item.id.length - 1) % 2 === 0 ? '75%' : '60%',
-                      }}
-                    >
-                      <Image
-                        src={item.thumbnail || item.url}
-                        alt={item.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      />
-                      {/* Category badge */}
-                      <div className="absolute top-3 left-3 z-10">
-                        <span className="bg-white/90 backdrop-blur-sm text-[#000B58] text-xs font-semibold px-2.5 py-1 rounded-full capitalize">
-                          {item.category}
-                        </span>
-                      </div>
-                      {/* Click to expand hint */}
-                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                        <div className="bg-black/40 backdrop-blur-sm rounded-full p-3">
-                          <svg
-                            className="w-6 h-6 text-white"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            strokeWidth={2}
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Card content */}
-                    <div className="p-4">
-                      <h3 className="text-sm font-semibold text-[#000B58] group-hover:text-primary transition-colors leading-snug">
-                        {item.title}
-                      </h3>
-                      {item.description && (
-                        <p className="mt-1 text-xs text-gray-500 line-clamp-2 leading-relaxed">
-                          {item.description}
-                        </p>
-                      )}
-                      <p className="mt-2 text-xs text-gray-400">
-                        {new Date(item.date).toLocaleDateString('en-GB', {
-                          day: 'numeric',
-                          month: 'long',
-                          year: 'numeric',
-                        })}
-                      </p>
-                    </div>
+                  <div
+                    className="relative w-full overflow-hidden rounded-card bg-sand"
+                    style={{ paddingBottom: item.id.charCodeAt(item.id.length - 1) % 2 === 0 ? '120%' : '75%' }}
+                  >
+                    <Image
+                      src={item.thumbnail || item.url}
+                      alt={item.title}
+                      fill
+                      className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                    <span className="absolute left-3 top-3 rounded-full bg-cream/95 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-navy">
+                      {item.category}
+                    </span>
+                    <span className="absolute inset-0 grid place-items-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                      <span className="rounded-full bg-navy/55 p-3 text-white backdrop-blur-sm">
+                        <MagnifyingGlassPlus size={24} weight="light" aria-hidden="true" />
+                      </span>
+                    </span>
                   </div>
-                </div>
+                  <span className="block pt-4">
+                    <span className="block font-serif text-xl leading-snug text-navy">{item.title}</span>
+                    {item.description && (
+                      <span className="mt-1 block text-sm leading-relaxed text-muted line-clamp-2">{item.description}</span>
+                    )}
+                    <span className="mt-2 block text-xs text-muted">{formatDate(item.date)}</span>
+                  </span>
+                </button>
               ))}
             </div>
           ) : (
-            <div className="text-center py-20">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center">
-                <svg className="w-8 h-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z" />
-                </svg>
-              </div>
-              <h3 className="display text-2xl text-[#000B58] mb-2">Nothing here yet</h3>
-              <p className="text-sm text-gray-500 mb-6">Photographs from this category haven&rsquo;t been added yet.</p>
+            <div className="py-16 text-center">
+              <Images size={48} weight="light" className="mx-auto mb-4 block text-gold-ink" aria-hidden="true" />
+              <h3 className="mb-2 text-3xl">Nothing here yet</h3>
+              <p className="mb-6 text-muted">Photographs from this category haven&rsquo;t been added yet.</p>
               {activeCategory !== 'all' && (
-                <button
-                  onClick={() => setActiveCategory('all')}
-                  className="text-sm font-semibold underline underline-offset-2 cursor-pointer"
-                  style={{ color: 'var(--color-primary)' }}
-                >
+                <button onClick={() => setActiveCategory('all')} className="text-link cursor-pointer">
                   View all photos
                 </button>
               )}
@@ -169,79 +115,30 @@ export default function GalleryPageContent({ items }: GalleryPageContentProps) {
         </div>
       </section>
 
-      {/* Lightbox overlay */}
       {selectedItem && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8"
           style={{ backgroundColor: 'rgba(0, 11, 88, 0.92)' }}
           onClick={() => setSelectedItem(null)}
         >
-          {/* Close button */}
           <button
             onClick={() => setSelectedItem(null)}
-            className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white/80 hover:text-white transition-colors z-10"
+            className="absolute right-4 top-4 z-10 text-white/80 transition-colors hover:text-white sm:right-6 sm:top-6"
             aria-label="Close lightbox"
           >
-            <svg
-              className="w-8 h-8"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
+            <X size={32} weight="light" aria-hidden="true" />
           </button>
 
-          {/* Lightbox card — stop propagation so clicking card doesn't close */}
-          <div
-            className="relative max-w-2xl w-full bg-white rounded-2xl overflow-hidden shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Full-size image */}
-            <div className="w-full relative" style={{ paddingBottom: '62%' }}>
-              <Image
-                src={selectedItem.url}
-                alt={selectedItem.title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 672px) 100vw, 672px"
-              />
-              {/* Category badge */}
-              <div className="absolute top-4 left-4 z-10">
-                <span className="bg-white/90 backdrop-blur-sm text-[#000B58] text-xs font-semibold px-3 py-1 rounded-full capitalize">
-                  {selectedItem.category}
-                </span>
-              </div>
+          <div className="relative w-full max-w-2xl overflow-hidden rounded-card bg-cream" onClick={(e) => e.stopPropagation()}>
+            <div className="relative w-full" style={{ paddingBottom: '62%' }}>
+              <Image src={selectedItem.url} alt={selectedItem.title} fill className="object-cover" sizes="(max-width: 672px) 100vw, 672px" />
             </div>
-
-            {/* Details */}
-            <div className="p-6">
-              <h2 className="display text-2xl text-[#000B58]">
-                {selectedItem.title}
-              </h2>
-              {selectedItem.description && (
-                <p className="mt-2 text-sm text-gray-600 leading-relaxed">
-                  {selectedItem.description}
-                </p>
-              )}
-              <p className="mt-3 text-xs text-gray-400">
-                {new Date(selectedItem.date).toLocaleDateString('en-GB', {
-                  day: 'numeric',
-                  month: 'long',
-                  year: 'numeric',
-                })}
-              </p>
-              <button
-                onClick={() => setSelectedItem(null)}
-                className="mt-4 text-sm text-primary font-medium hover:underline"
-              >
-                Close
-              </button>
+            <div className="p-7">
+              <p className="eyebrow">{selectedItem.category}</p>
+              <h2 className="mt-2 text-3xl">{selectedItem.title}</h2>
+              {selectedItem.description && <p className="mt-3 leading-relaxed text-muted">{selectedItem.description}</p>}
+              <p className="mt-3 text-xs text-muted">{formatDate(selectedItem.date)}</p>
+              <button onClick={() => setSelectedItem(null)} className="text-link mt-5 cursor-pointer">Close</button>
             </div>
           </div>
         </div>

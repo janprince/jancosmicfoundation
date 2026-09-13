@@ -1,6 +1,7 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
+import { CheckCircle, CircleNotch, EnvelopeSimple, WarningCircle } from '@phosphor-icons/react';
 
 interface NewsletterProps {
   dark?: boolean;
@@ -25,11 +26,11 @@ export default function Newsletter({
   const [status, setStatus] = useState<FormStatus>('idle');
   const [errorMsg, setErrorMsg] = useState('');
 
-  const headingColor = dark ? 'text-white' : 'text-[#000B58]';
+  const headingColor = dark ? 'text-white' : 'text-navy';
   const descColor = dark ? 'text-white/85' : 'text-[#1c1a26]/75';
   const inputBg = dark
     ? 'bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-[#D4A843] focus:bg-white/15'
-    : 'bg-white border-primary/25 text-[#1c1a26] placeholder:text-[#1c1a26]/60 focus:border-primary';
+    : 'bg-white border-line text-[#1c1a26] placeholder:text-[#1c1a26]/60 focus:border-primary';
 
   function validateEmail(val: string) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
@@ -67,26 +68,15 @@ export default function Newsletter({
     return (
       <div
         className={[
-          'w-full rounded-2xl p-6 text-center sm:p-8',
-          dark ? 'bg-white/10' : 'bg-primary/10',
+          'w-full rounded-card p-6 text-center sm:p-8',
+          dark ? 'bg-white/10' : 'bg-sand',
           className,
         ].join(' ')}
         role="status"
         aria-live="polite"
       >
         {/* Checkmark icon */}
-        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/15">
-          <svg
-            className="h-7 w-7 text-primary"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2.5}
-            aria-hidden="true"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-          </svg>
-        </div>
+        <CheckCircle size={56} weight="light" className={['mx-auto mb-4 block', dark ? 'text-gold' : 'text-gold-ink'].join(' ')} aria-hidden="true" />
         <h3 className={['display text-2xl', headingColor].join(' ')}>
           You&rsquo;re on the list.
         </h3>
@@ -127,21 +117,8 @@ export default function Newsletter({
             <label htmlFor="newsletter-email" className="sr-only">
               Email address
             </label>
-            <div className="pointer-events-none absolute inset-y-0 left-3.5 flex items-center">
-              <svg
-                className={['h-4 w-4', dark ? 'text-white/60' : 'text-primary/60'].join(' ')}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
+            <div className="pointer-events-none absolute inset-y-0 left-4 flex items-center">
+              <EnvelopeSimple size={18} className={dark ? 'text-white/60' : 'text-navy/50'} aria-hidden="true" />
             </div>
             <input
               id="newsletter-email"
@@ -155,7 +132,7 @@ export default function Newsletter({
               autoComplete="email"
               disabled={status === 'loading'}
               className={[
-                'w-full rounded-xl border py-3 pl-10 pr-4 text-sm outline-none',
+                'w-full rounded-full border py-3 pl-11 pr-5 text-sm outline-none',
                 'transition-all duration-200 focus:ring-2 focus:ring-primary/20',
                 'disabled:opacity-60',
                 inputBg,
@@ -169,37 +146,18 @@ export default function Newsletter({
             type="submit"
             disabled={status === 'loading'}
             className={[
-              'shrink-0 rounded-xl px-6 py-3 text-sm font-semibold',
-              'transition-all duration-300 active:scale-[0.97]',
+              'shrink-0 rounded-full px-6 py-3 text-sm font-semibold',
+              'transition-all duration-300 ',
               'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4A843] focus-visible:ring-offset-2',
               'disabled:opacity-60 disabled:pointer-events-none',
               dark
-                ? 'bg-[#D4A843] text-[#000B58] hover:bg-[#c49a38] hover:shadow-lg hover:shadow-[#D4A843]/25'
-                : 'bg-primary text-white hover:bg-[#1f1f57] hover:shadow-lg hover:shadow-primary/20',
+                ? 'bg-[#D4A843] text-navy hover:bg-[#c49a38]  '
+                : 'bg-primary text-white hover:bg-[#1f1f57]  ',
             ].join(' ')}
           >
             {status === 'loading' ? (
               <span className="flex items-center gap-2">
-                <svg
-                  className="h-4 w-4 animate-spin"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <circle
-                    className="opacity-25"
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                  />
-                  <path
-                    className="opacity-75"
-                    fill="currentColor"
-                    d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-                  />
-                </svg>
+                <CircleNotch size={16} className="animate-spin" aria-hidden="true" />
                 Subscribing…
               </span>
             ) : (
@@ -214,18 +172,7 @@ export default function Newsletter({
             className="mt-2 flex items-center gap-1.5 text-xs text-[#C05021]"
             role="alert"
           >
-            <svg
-              className="h-3.5 w-3.5 shrink-0"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              aria-hidden="true"
-            >
-              <path
-                fillRule="evenodd"
-                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                clipRule="evenodd"
-              />
-            </svg>
+            <WarningCircle size={14} className="shrink-0" aria-hidden="true" />
             {errorMsg}
           </p>
         )}

@@ -1,46 +1,35 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Play } from "@phosphor-icons/react/dist/ssr";
 import { BlogPost } from "@/types";
 
 export default function BlogCard({ post }: { post: BlogPost }) {
   return (
-    <Link href={`/blog/${post.slug}`} className="group block cursor-pointer">
-      <div className="bg-white rounded-xl overflow-hidden border border-black/[0.07] shadow-sm transition-all duration-500 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#000B58]/5 hover:border-primary/25 h-full flex flex-col">
-        <div className="relative aspect-video overflow-hidden">
-          <Image
-            src={post.image}
-            alt={post.title}
-            fill
-            className="object-cover group-hover:scale-[1.04] transition-transform duration-[900ms]"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          />
-          <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
-            <span className="inline-flex items-center rounded-full bg-[#FDFBF7]/95 px-3 py-1 text-[11px] font-semibold tracking-[0.12em] uppercase text-[#000B58] shadow-sm backdrop-blur-sm">
-              {post.category}
-            </span>
-            {post.videoLink && (
-              <span className="inline-flex items-center gap-1 rounded-full bg-red-600/90 px-2.5 py-1 text-xs font-medium text-white shadow-sm backdrop-blur-sm">
-                <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-                Video
-              </span>
-            )}
-          </div>
-        </div>
-        <div className="p-5 flex flex-col flex-1">
-          <div className="flex items-center gap-3 text-xs text-gray-500 mb-3">
-            <span>{new Date(post.date).toLocaleDateString("en", { month: "long", day: "numeric", year: "numeric" })}</span>
-            <span className="w-1 h-1 rounded-full bg-gray-300" />
-            <span>{post.readTime}</span>
-          </div>
-          <h3 className="display text-xl text-[#000B58] group-hover:text-primary transition-colors line-clamp-2">
-            {post.title}
-          </h3>
-          <p className="mt-2 text-sm text-gray-600 line-clamp-3 flex-1">
-            {post.excerpt}
-          </p>
-        </div>
+    <Link href={`/blog/${post.slug}`} className="group flex h-full flex-col">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-card bg-sand">
+        <Image
+          src={post.image}
+          alt={post.title}
+          fill
+          className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
+        {post.videoLink && (
+          <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-cream/95 px-3 py-1 text-xs font-medium text-navy">
+            <Play size={12} weight="fill" className="text-gold-ink" aria-hidden="true" />
+            Video
+          </span>
+        )}
+      </div>
+      <div className="flex flex-1 flex-col pt-5">
+        <p className="eyebrow">{post.category}</p>
+        <h3 className="mt-2 line-clamp-2 text-2xl leading-snug text-navy transition-colors group-hover:text-violet">
+          {post.title}
+        </h3>
+        <p className="mt-3 line-clamp-3 flex-1 text-[15px] leading-relaxed text-muted">{post.excerpt}</p>
+        <p className="mt-4 text-xs text-muted">
+          {new Date(post.date).toLocaleDateString("en", { month: "long", day: "numeric", year: "numeric" })} · {post.readTime}
+        </p>
       </div>
     </Link>
   );

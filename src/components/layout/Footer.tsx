@@ -1,190 +1,24 @@
-import Link from 'next/link';
 import Image from 'next/image';
-import {
-  FaFacebookF,
-  FaXTwitter,
-  FaInstagram,
-  FaYoutube,
-} from 'react-icons/fa6';
-import NewsletterForm from './NewsletterForm';
+import Link from 'next/link';
+import { FacebookLogo, YoutubeLogo } from '@phosphor-icons/react/dist/ssr';
 import { siteConfig } from '@/lib/site-config';
-
-const exploreLinks = [
-  { label: 'About the Foundation', href: '/about' },
-  { label: 'Teachings', href: '/teachings' },
-  { label: 'Writings', href: '/blog' },
-  { label: 'Retreats & Events', href: '/events' },
-  { label: 'Programmes', href: '/programs' },
-  { label: 'Centres', href: '/centres' },
-];
-
-const involvedLinks = [
-  { label: 'Give', href: '/donate' },
-  { label: 'Volunteer', href: '/volunteer' },
-  { label: 'Community', href: '/community' },
-  { label: 'Gallery', href: '/gallery' },
-  { label: 'Voices', href: '/testimonials' },
-  { label: 'Contact', href: '/contact' },
-];
-
-const socialLinks = [
-  { label: 'Facebook', href: siteConfig.social.facebook, Icon: FaFacebookF },
-  { label: 'X (Twitter)', href: siteConfig.social.x, Icon: FaXTwitter },
-  { label: 'Instagram', href: siteConfig.social.instagram, Icon: FaInstagram },
-  { label: 'YouTube', href: siteConfig.social.youtube, Icon: FaYoutube },
-];
+import NewsletterForm from './NewsletterForm';
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
-  return (
-    <footer style={{ backgroundColor: '#000B58' }} className="text-white">
-
-      {/* Main footer grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
-
-          {/* Column 1 — Brand & social */}
-          <div className="sm:col-span-2 lg:col-span-1">
-            {/* Logo mark */}
-            <div className="flex items-center gap-3 mb-4">
-              <Image src="/images/logo.png" alt="JCF Logo" width={36} height={36} className="rounded-full" />
-              <span className="text-white text-sm font-normal uppercase tracking-[0.2em]">
-                Jan Cosmic Foundation
-              </span>
-            </div>
-
-            <p className="display text-lg leading-snug text-white/95">
-              Freedom. Awake and aware.
-            </p>
-            <p
-              className="mt-3 text-sm leading-relaxed"
-              style={{ color: 'rgba(253,251,247,0.85)' }}
-            >
-              Guided by the teachings of Dr. Baffour Jan, JCF helps sincere
-              seekers move toward self-realization through practice, service,
-              and conscious living.
-            </p>
-
-            {/* Social icons */}
-            <div className="flex items-center gap-3 mt-6">
-              {socialLinks.map(({ label, href, Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="group flex items-center justify-center w-9 h-9 rounded-full transition-all duration-200 hover:scale-110"
-                  style={{ backgroundColor: 'rgba(255,255,255,0.08)' }}
-                >
-                  <Icon
-                    className="w-4 h-4 transition-colors duration-200 group-hover:text-white"
-                    style={{ color: 'rgba(253,251,247,0.88)' }}
-                  />
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Column 2 — Quick Links */}
-          <div>
-            <h3
-              className="text-sm font-semibold uppercase tracking-widest mb-5"
-              style={{ color: '#D4A843' }}
-            >
-              Explore
-            </h3>
-            <ul className="space-y-3">
-              {exploreLinks.map(({ label, href }) => (
-                <li key={href}>
-                  <Link
-                    href={href}
-                    className="text-sm transition-colors duration-150 hover:text-[#FDFBF7]"
-                    style={{ color: 'rgba(253,251,247,0.88)' }}
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 3 — Get Involved */}
-          <div>
-            <h3
-              className="text-sm font-semibold uppercase tracking-widest mb-5"
-              style={{ color: '#D4A843' }}
-            >
-              Get Involved
-            </h3>
-            <ul className="space-y-3">
-              {involvedLinks.map(({ label, href }) => (
-                <li key={href}>
-                  <Link
-                    href={href}
-                    className="text-sm transition-colors duration-150 hover:text-[#FDFBF7]"
-                    style={{ color: 'rgba(253,251,247,0.88)' }}
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 4 — Newsletter */}
-          <div>
-            <h3
-              className="text-sm font-semibold uppercase tracking-widest mb-5"
-              style={{ color: '#D4A843' }}
-            >
-              Letters for sincere seekers
-            </h3>
-            <p
-              className="text-sm mb-4"
-              style={{ color: 'rgba(253,251,247,0.85)' }}
-            >
-              Occasional teachings, retreat dates, service updates, and notes
-              from the Foundation.
-            </p>
-            <NewsletterForm />
-          </div>
+  return <footer className="foundation-footer stars">
+    <div className="wrap footer-grid">
+      <div>
+        <Link className="footer-brand" href="/"><Image src="/images/logo.png" alt="" width={48} height={48} /><span>Jan Cosmic<br />Foundation</span></Link>
+        <p>A spiritual foundation in Accra, Ghana, carrying the teachings of Dr. Baffour Jan.</p>
+        <div className="footer-social">
+          <a href={siteConfig.social.youtube} aria-label="YouTube"><YoutubeLogo size={20} weight="light" /></a>
+          <a href={siteConfig.social.facebook} aria-label="Facebook"><FacebookLogo size={20} weight="light" /></a>
         </div>
       </div>
-
-      {/* Divider */}
-      <div
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-        style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
-      />
-
-      {/* Bottom bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
-        <div
-          className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs"
-          style={{ color: 'rgba(253,251,247,0.75)' }}
-        >
-          <p>
-            &copy; {currentYear} Jan Cosmic Foundation. All rights reserved.
-          </p>
-          <div className="flex items-center gap-4">
-            <Link
-              href="/privacy-policy"
-              className="hover:text-[#FDFBF7] transition-colors duration-150"
-            >
-              Privacy Policy
-            </Link>
-            <span aria-hidden="true">&middot;</span>
-            <Link
-              href="/terms"
-              className="hover:text-[#FDFBF7] transition-colors duration-150"
-            >
-              Terms of Use
-            </Link>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
+      <div><h3>The Foundation</h3><Link href="/about">About the Foundation</Link><Link href="/about/founder">Dr. Baffour Jan</Link><Link href="/about/mission-vision">Mission &amp; vision</Link><Link href="/gallery">Life at the Foundation</Link><Link href="/testimonials">Community stories</Link><Link href="/contact">Contact &amp; directions</Link></div>
+      <div><h3>Take part</h3><Link href="/teachings">Teachings</Link><Link href="/blog">Writings</Link><Link href="/innerspace">InnerSpace</Link><Link href="/events">Retreats &amp; events</Link><Link href="/centres">Centres</Link><Link href="/community">Community</Link><Link href="/volunteer">Volunteer</Link><Link href="/donate">Give</Link></div>
+      <div><h3>Stay connected</h3><p>Occasional teachings, gatherings and news from the Foundation.</p><NewsletterForm /><div className="footer-contact"><a href={`tel:${siteConfig.contact.phoneE164}`}>{siteConfig.contact.phone}</a><a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a></div></div>
+    </div>
+    <div className="wrap footer-base"><span>© {new Date().getFullYear()} {siteConfig.name}</span><div><Link href="/privacy-policy">Privacy</Link><Link href="/terms">Terms</Link></div></div>
+  </footer>;
 }

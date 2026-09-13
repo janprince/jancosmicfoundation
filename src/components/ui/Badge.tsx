@@ -9,12 +9,9 @@ interface BadgeProps {
 }
 
 const variantClasses: Record<BadgeVariant, string> = {
-  primary:
-    'bg-primary/15 text-primary ring-1 ring-primary/30',
-  secondary:
-    'bg-[#D4A843]/15 text-[#a07d1f] ring-1 ring-[#D4A843]/40',
-  accent:
-    'bg-[#C05021]/15 text-[#C05021] ring-1 ring-[#C05021]/30',
+  primary: 'bg-navy/[0.06] text-navy',
+  secondary: 'bg-gold/15 text-gold-ink',
+  accent: 'bg-accent/10 text-accent',
 };
 
 export default function Badge({
@@ -25,8 +22,8 @@ export default function Badge({
   return (
     <span
       className={[
-        'inline-flex items-center gap-1 rounded-full px-2.5 py-0.5',
-        'text-xs font-semibold tracking-wide uppercase',
+        'inline-flex items-center gap-1.5 rounded-full px-3 py-1',
+        'text-[11px] font-semibold tracking-[0.12em] uppercase',
         variantClasses[variant],
         className,
       ].join(' ')}

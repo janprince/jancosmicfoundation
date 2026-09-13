@@ -1,26 +1,20 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { Raleway, Fraunces } from "next/font/google";
+import { Figtree, Newsreader } from "next/font/google";
 import "./globals.css";
+import "./foundation.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import RouteProgress from "@/components/layout/RouteProgress";
 import { siteConfig, socialUrlsForSchema } from "@/lib/site-config";
 
-const raleway = Raleway({
-  variable: "--font-raleway",
+// Same pairing as drbaffourjan.com: the teacher's site and the Foundation read as one family.
+const figtree = Figtree({ variable: "--font-figtree", subsets: ["latin"], display: "swap" });
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-});
-
-// Editorial serif for display headings & quote moments —
-// the "spiritual journal" voice. Optical sizing handled by the variable font.
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
   style: ["normal", "italic"],
+  axes: ["opsz"],
   display: "swap",
 });
 
@@ -103,15 +97,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${raleway.variable} ${fraunces.variable}`}>
-      <body className="font-sans antialiased bg-[#FDFBF7] text-[#1c1a26]">
+    <html lang="en" className={`${figtree.variable} ${newsreader.variable}`} suppressHydrationWarning>
+      <body className="foundation-site antialiased">
+        {/* Reveal animations only hide content once JavaScript is known to run. */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-lg focus:text-sm focus:font-medium focus:shadow-lg"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-sm focus:text-sm focus:font-medium focus:"
         >
           Skip to main content
         </a>

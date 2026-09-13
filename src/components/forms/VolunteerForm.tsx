@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { CheckCircle } from "@phosphor-icons/react";
 import Button from "@/components/ui/Button";
 import { submitVolunteerApplication } from "@/lib/api";
 
@@ -31,10 +32,8 @@ export default function VolunteerForm() {
   if (status === "sent") {
     return (
       <div className="text-center py-12">
-        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-          <span className="text-3xl text-primary">&#10003;</span>
-        </div>
-        <h3 className="text-xl font-semibold text-[#000B58]">Thank you</h3>
+        <CheckCircle size={64} weight="light" className="mx-auto mb-4 block text-gold-ink" aria-hidden="true" />
+        <h3 className="font-serif text-3xl text-navy">Thank you</h3>
         <p className="mt-2 text-gray-600">
           We have received your volunteer message and will be in touch soon.
         </p>
@@ -49,7 +48,7 @@ export default function VolunteerForm() {
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="vol-name" className="block text-sm font-medium text-gray-700 mb-1.5">
+          <label htmlFor="vol-name" className="field-label">
             Full name
           </label>
           <input
@@ -58,12 +57,12 @@ export default function VolunteerForm() {
             required
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+            className="field"
             placeholder="Your name"
           />
         </div>
         <div>
-          <label htmlFor="vol-email" className="block text-sm font-medium text-gray-700 mb-1.5">
+          <label htmlFor="vol-email" className="field-label">
             Email address
           </label>
           <input
@@ -72,14 +71,14 @@ export default function VolunteerForm() {
             required
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+            className="field"
             placeholder="your@email.com"
           />
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="vol-phone" className="block text-sm font-medium text-gray-700 mb-1.5">
+          <label htmlFor="vol-phone" className="field-label">
             Phone Number
           </label>
           <input
@@ -87,19 +86,19 @@ export default function VolunteerForm() {
             type="tel"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+            className="field"
             placeholder="+233 XXX XXX XXX"
           />
         </div>
         <div>
-          <label htmlFor="vol-centre" className="block text-sm font-medium text-gray-700 mb-1.5">
+          <label htmlFor="vol-centre" className="field-label">
             Preferred Centre
           </label>
           <select
             id="vol-centre"
             value={formData.centrePreference}
             onChange={(e) => setFormData({ ...formData, centrePreference: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white"
+            className="field"
           >
             <option value="">Select a centre</option>
             <option value="accra">Accra, Ghana</option>
@@ -111,7 +110,7 @@ export default function VolunteerForm() {
         </div>
       </div>
       <div>
-        <label htmlFor="vol-skills" className="block text-sm font-medium text-gray-700 mb-1.5">
+        <label htmlFor="vol-skills" className="field-label">
           Skills and experience
         </label>
         <input
@@ -119,19 +118,19 @@ export default function VolunteerForm() {
           type="text"
           value={formData.skills}
           onChange={(e) => setFormData({ ...formData, skills: e.target.value })}
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+          className="field"
           placeholder="e.g., teaching, events, IT, writing, care..."
         />
       </div>
       <div>
-        <label htmlFor="vol-availability" className="block text-sm font-medium text-gray-700 mb-1.5">
+        <label htmlFor="vol-availability" className="field-label">
           Availability
         </label>
         <select
           id="vol-availability"
           value={formData.availability}
           onChange={(e) => setFormData({ ...formData, availability: e.target.value })}
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white"
+          className="field"
         >
           <option value="">Select availability</option>
           <option value="weekdays">Weekdays</option>
@@ -141,7 +140,7 @@ export default function VolunteerForm() {
         </select>
       </div>
       <div>
-        <label htmlFor="vol-message" className="block text-sm font-medium text-gray-700 mb-1.5">
+        <label htmlFor="vol-message" className="field-label">
           What draws you to volunteer? (Optional)
         </label>
         <textarea
@@ -149,7 +148,7 @@ export default function VolunteerForm() {
           rows={4}
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
+          className="field"
           placeholder="Tell us what you feel called to offer..."
         />
       </div>

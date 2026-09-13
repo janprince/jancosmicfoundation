@@ -1,46 +1,32 @@
 import type { Metadata } from 'next';
+import { Clock, Compass, HandHeart, MapPin, Plant, UsersThree } from '@phosphor-icons/react/dist/ssr';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 import VolunteerForm from '@/components/forms/VolunteerForm';
 import { getVolunteerOpportunities, getTestimonials } from '@/lib/api';
 
 const benefits = [
   {
-    icon: (
-      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-      </svg>
-    ),
+    Icon: Plant,
     title: 'Real, hands-on work',
     description:
       'Your time supports the visible work: teachings, outreach, centres, farms, media, children\'s work, and practical care.',
   },
   {
-    icon: (
-      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-      </svg>
-    ),
+    Icon: UsersThree,
     title: 'A community to work alongside',
     description:
       'Volunteering places you beside students and supporters learning to let inner work become useful in daily life.',
   },
   {
-    icon: (
-      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
+    Icon: HandHeart,
     title: 'Service as practice',
     description:
       'Dr. Jan teaches service as part of evolution. It asks for attention, humility, patience, and love in practical form.',
   },
   {
-    icon: (
-      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-      </svg>
-    ),
+    Icon: Compass,
     title: 'Guidance, where it helps',
     description:
       'You will be guided toward service that fits your love, ability, capacity, and season of life.',
@@ -63,169 +49,113 @@ export default async function VolunteerPage() {
         subtitle="Offer your time, skills, and presence in service of evolution."
       />
 
-      {/* Why Volunteer section */}
-      <section className="py-16 md:py-20" style={{ backgroundColor: '#FDFBF7' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Why volunteer */}
+      <section className="section bg-cream">
+        <div className="wrap">
           <SectionHeader
             label="Why Volunteer"
             title="What you'd be helping with"
-            subtitle="Outreach teachers, centres, media, children\'s work, farms, writing, logistics, care, and community service. A little time, offered sincerely, matters."
-            className="mb-12"
+            subtitle="Outreach teachers, centres, media, children's work, farms, writing, logistics, care, and community service. A little time, offered sincerely, matters."
           />
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {benefits.map((benefit) => (
-              <div
-                key={benefit.title}
-                className="rounded-2xl p-6 flex flex-col gap-4"
-                style={{ backgroundColor: '#F2EFE9' }}
-              >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                  {benefit.icon}
-                </div>
-                <div>
-                  <h3 className="display text-xl text-[#000B58] mb-1">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    {benefit.description}
-                  </p>
-                </div>
+          <ScrollReveal staggerChildren={0.1} className="mt-16 grid grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+            {benefits.map(({ Icon, title, description }) => (
+              <div key={title} className="border-t border-line pt-8">
+                <Icon size={34} weight="light" className="icon-mark" aria-hidden="true" />
+                <h3 className="text-2xl leading-snug">{title}</h3>
+                <p className="mt-3 text-[15px] leading-relaxed text-muted">{description}</p>
               </div>
             ))}
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* Opportunities section */}
-      <section className="py-16 md:py-20" style={{ backgroundColor: '#F2EFE9' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            label="Open Roles"
-            title="Current openings"
-            subtitle="If none of these fit, write anyway. Some service is direct, some indirect, and there is often a quieter need that has not made the page yet."
-            className="mb-10"
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {volunteerOpportunities.map((opportunity) => (
-              <div
-                key={opportunity.id}
-                className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col gap-4"
-              >
-                {/* Header */}
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="display text-xl text-[#000B58] leading-snug">
-                    {opportunity.title}
-                  </h3>
-                  <span className="shrink-0 text-xs font-semibold text-primary bg-primary/10 px-2.5 py-1 rounded-full">
-                    Open
-                  </span>
-                </div>
-
-                {/* Description */}
-                <p className="text-sm text-gray-600 leading-relaxed flex-1">
-                  {opportunity.description}
-                </p>
-
-                {/* Meta info */}
-                <div className="space-y-2 text-sm">
-                  <div className="flex items-center gap-2 text-gray-500">
-                    <svg className="w-4 h-4 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <span>{opportunity.location}</span>
+      {/* Opportunities */}
+      {volunteerOpportunities.length > 0 && (
+        <section className="section bg-sand">
+          <div className="wrap">
+            <SectionHeader
+              label="Open Roles"
+              title="Current openings"
+              subtitle="If none of these fit, write anyway. Some service is direct, some indirect, and there is often a quieter need that has not made the page yet."
+              className="mb-12"
+            />
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              {volunteerOpportunities.map((opportunity) => (
+                <article key={opportunity.id} className="flex flex-col gap-4 rounded-card bg-white p-7 sm:p-8">
+                  <div className="flex items-start justify-between gap-4">
+                    <h3 className="text-2xl leading-snug">{opportunity.title}</h3>
+                    <span className="shrink-0 rounded-full bg-navy/[0.06] px-3 py-1 text-xs font-medium text-navy">Open</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-500">
-                    <svg className="w-4 h-4 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span>{opportunity.commitment}</span>
-                  </div>
-                </div>
-
-                {/* Skills badges */}
-                {opportunity.skills.length > 0 && (
-                  <div className="flex flex-wrap gap-2 pt-1">
-                    {opportunity.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="text-xs font-medium px-2.5 py-1 rounded-full"
-                        style={{
-                          backgroundColor: 'rgba(212,168,67,0.12)',
-                          color: '#8a6c1a',
-                        }}
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials section */}
-      <section className="py-16 md:py-20" style={{ backgroundColor: '#FDFBF7' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            label="Volunteer Stories"
-            title="From people already doing this"
-            subtitle="A few words from current and former volunteers."
-            className="mb-10"
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {testimonials.map((testimonial) => (
-              <div
-                key={testimonial.id}
-                className="bg-white rounded-2xl p-6 shadow-sm flex flex-col gap-4"
-              >
-                {/* Quote mark */}
-                <svg
-                  className="w-8 h-8 text-[#D4A843]/40"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                </svg>
-
-                {/* Quote text */}
-                <blockquote className="text-sm text-gray-600 leading-relaxed italic flex-1">
-                  {testimonial.quote}
-                </blockquote>
-
-                {/* Author */}
-                <div className="flex items-center gap-3 pt-2 border-t border-gray-100">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-[#D4A843] flex items-center justify-center text-white font-bold text-sm shrink-0">
-                    {testimonial.name.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-[#000B58]">
-                      {testimonial.name}
+                  <p className="flex-1 text-[15px] leading-relaxed text-muted">{opportunity.description}</p>
+                  <div className="space-y-2 text-sm text-ink/80">
+                    <p className="flex items-center gap-2.5">
+                      <MapPin size={18} weight="light" className="shrink-0 text-gold-ink" aria-hidden="true" />
+                      {opportunity.location}
                     </p>
-                    <p className="text-xs text-gray-400">{testimonial.role}</p>
+                    <p className="flex items-center gap-2.5">
+                      <Clock size={18} weight="light" className="shrink-0 text-gold-ink" aria-hidden="true" />
+                      {opportunity.commitment}
+                    </p>
                   </div>
-                </div>
-              </div>
-            ))}
+                  {opportunity.skills.length > 0 && (
+                    <div className="flex flex-wrap gap-2 pt-1">
+                      {opportunity.skills.map((skill) => (
+                        <span key={skill} className="rounded-full bg-sand px-3 py-1 text-xs font-medium text-navy">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      {/* Volunteer Form section */}
-      <section className="py-16 md:py-20" style={{ backgroundColor: '#F2EFE9' }}>
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Volunteer stories */}
+      {testimonials.length > 0 && (
+        <section className="section bg-cream">
+          <div className="wrap">
+            <SectionHeader
+              label="Volunteer Stories"
+              title="From people already doing this"
+              subtitle="A few words from current and former volunteers."
+              className="mb-12"
+            />
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              {testimonials.map((testimonial) => (
+                <figure key={testimonial.id} className="flex flex-col gap-4 rounded-card bg-white p-8">
+                  <span aria-hidden="true" className="font-serif text-6xl leading-[0.6] text-gold">&ldquo;</span>
+                  <blockquote className="flex-1 font-serif text-lg italic leading-relaxed text-ink/80">
+                    {testimonial.quote}
+                  </blockquote>
+                  <figcaption className="flex items-center gap-3 border-t border-line pt-5">
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-sand font-serif text-lg text-navy" aria-hidden="true">
+                      {testimonial.name.charAt(0)}
+                    </span>
+                    <span>
+                      <span className="block text-sm font-semibold text-navy">{testimonial.name}</span>
+                      <span className="block text-xs text-muted">{testimonial.role}</span>
+                    </span>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Form */}
+      <section className="section bg-sand">
+        <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <SectionHeader
             label="Apply"
             title="Tell us about yourself"
             subtitle="Fill the form below. Our volunteer coordinator will reply within a few days."
             className="mb-10"
           />
-          <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
+          <div className="rounded-card bg-white p-6 sm:p-10">
             <VolunteerForm />
           </div>
         </div>

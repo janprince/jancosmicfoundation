@@ -16,7 +16,7 @@ export default function PrivacyPolicyPage() {
         subtitle="How we handle your information"
       />
 
-      <section className="py-16 md:py-20" style={{ backgroundColor: '#FDFBF7' }}>
+      <section className="py-16 md:py-20" style={{ backgroundColor: '#FBF8F2' }}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             label="Your Privacy"

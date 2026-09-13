@@ -1,89 +1,21 @@
 'use client';
-
-import { useState, FormEvent } from 'react';
-import { HiArrowRight } from 'react-icons/hi2';
+import { useState, type FormEvent } from 'react';
 import { submitNewsletter } from '@/lib/api';
-
-type Status = 'idle' | 'loading' | 'success' | 'error';
 
 export default function NewsletterForm() {
   const [email, setEmail] = useState('');
-  const [status, setStatus] = useState<Status>('idle');
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (!email) return;
-
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  async function submit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
     setStatus('loading');
-
-    const result = await submitNewsletter({ email });
-    if (result.ok) {
-      setStatus('success');
-      setEmail('');
-    } else {
-      setStatus('error');
-    }
-  };
-
-  if (status === 'success') {
-    return (
-      <p
-        className="text-sm py-3 px-4 rounded-lg font-medium"
-        style={{ backgroundColor: 'rgba(212,168,67,0.15)', color: '#FDFBF7' }}
-      >
-        You&rsquo;re on the list. We&rsquo;ll write when there is something worth sharing.
-      </p>
-    );
+    try {
+      const result = await submitNewsletter({ email });
+      setStatus(result.ok ? 'success' : 'error');
+      if (result.ok) setEmail('');
+    } catch { setStatus('error'); }
   }
-
-  return (
-    <form onSubmit={handleSubmit} noValidate>
-      <div className="flex flex-col gap-2">
-        <div className="relative">
-          <label htmlFor="footer-newsletter-email" className="sr-only">
-            Email address
-          </label>
-          <input
-            id="footer-newsletter-email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="your@email.com"
-            required
-            disabled={status === 'loading'}
-            className={[
-              'w-full px-4 py-2.5 pr-12 rounded-lg text-sm',
-              'bg-white/8 border border-white/15 text-white placeholder-white/35',
-              'focus:outline-none focus:border-[#D4A843] focus:ring-1 focus:ring-[#D4A843]',
-              'transition-colors duration-150',
-              'disabled:opacity-60',
-            ].join(' ')}
-          />
-          <button
-            type="submit"
-            disabled={status === 'loading' || !email}
-            aria-label="Subscribe to newsletter"
-            className={[
-              'absolute right-1.5 top-1/2 -translate-y-1/2',
-              'flex items-center justify-center w-8 h-8 rounded-md',
-              'transition-all duration-150 disabled:opacity-40',
-            ].join(' ')}
-            style={{ backgroundColor: '#D4A843' }}
-          >
-            {status === 'loading' ? (
-              <span className="w-4 h-4 border-2 border-[#000B58]/30 border-t-[#000B58] rounded-full animate-spin block" />
-            ) : (
-              <HiArrowRight className="w-4 h-4 text-[#000B58]" />
-            )}
-          </button>
-        </div>
-
-        {status === 'error' && (
-          <p className="text-xs" style={{ color: '#fca5a5' }}>
-            Something went wrong. Please try again.
-          </p>
-        )}
-      </div>
-    </form>
-  );
+  return <form className="footer-newsletter" onSubmit={submit}>
+    {status !== 'success' && <><label htmlFor="footer-newsletter-email">Email address</label><input id="footer-newsletter-email" type="email" name="email" autoComplete="email" required value={email} onChange={event => setEmail(event.target.value)} disabled={status === 'loading'} /><button className="button" disabled={status === 'loading'} type="submit">{status === 'loading' ? 'Subscribing…' : 'Subscribe'}</button></>}
+    <p role="status">{status === 'success' ? 'Thank you. You are subscribed to updates from the Foundation.' : status === 'error' ? 'We could not save your subscription. Please try again.' : ''}</p>
+  </form>;
 }

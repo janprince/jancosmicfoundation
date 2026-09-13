@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Clock, MapPin } from "@phosphor-icons/react/dist/ssr";
 import { Event } from "@/types";
 import Badge from "@/components/ui/Badge";
 
@@ -9,47 +10,40 @@ export default function EventCard({ event }: { event: Event }) {
   const day = date.getDate();
 
   return (
-    <Link href={`/events/${event.slug}`} className="group block cursor-pointer">
-      <div className="bg-white rounded-xl overflow-hidden border border-black/[0.07] shadow-sm transition-all duration-500 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#000B58]/5 hover:border-primary/25 h-full flex flex-col">
-        <div className="relative aspect-video overflow-hidden">
-          <Image
-            src={event.image}
-            alt={event.title}
-            fill
-            className="object-cover group-hover:scale-[1.04] transition-transform duration-[900ms]"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#000B58]/35 to-transparent z-10" />
-          <div className="absolute top-4 left-4 z-20 bg-[#FDFBF7] rounded-lg px-3 py-2 text-center shadow-md">
-            <span className="block text-xs font-semibold text-primary uppercase tracking-wider">
-              {month}
-            </span>
-            <span className="block text-2xl font-bold text-[#000B58] leading-none">
-              {day}
-            </span>
-          </div>
-          {event.isPast && (
-            <div className="absolute top-4 right-4 z-20">
-              <Badge variant="secondary">Past</Badge>
-            </div>
-          )}
+    <Link href={`/events/${event.slug}`} className="group flex h-full flex-col">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-card bg-sand">
+        <Image
+          src={event.image}
+          alt={event.title}
+          fill
+          className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
+        <div className="absolute left-4 top-4 rounded-xl bg-cream px-3 py-2 text-center">
+          <span className="block text-[11px] font-semibold uppercase tracking-[0.14em] text-gold-ink">{month}</span>
+          <span className="block font-serif text-3xl leading-none text-navy">{day}</span>
         </div>
-        <div className="p-5 flex flex-col flex-1">
-          <h3 className="display text-xl text-[#000B58] group-hover:text-primary transition-colors line-clamp-2">
-            {event.title}
-          </h3>
-          <div className="mt-3 space-y-1.5">
-            <p className="text-sm text-gray-500 flex items-center gap-2">
-              <span className="text-primary">&#9719;</span> {event.time}
-            </p>
-            <p className="text-sm text-gray-500 flex items-center gap-2">
-              <span className="text-primary">&#9906;</span> {event.location}
-            </p>
+        {event.isPast && (
+          <div className="absolute right-4 top-4">
+            <Badge variant="secondary">Past</Badge>
           </div>
-          <p className="mt-3 text-sm text-gray-600 line-clamp-2">
-            {event.description}
+        )}
+      </div>
+      <div className="flex flex-1 flex-col pt-5">
+        <h3 className="line-clamp-2 text-2xl leading-snug text-navy transition-colors group-hover:text-violet">
+          {event.title}
+        </h3>
+        <div className="mt-3 space-y-1.5 text-sm text-muted">
+          <p className="flex items-center gap-2">
+            <Clock size={16} weight="light" className="shrink-0 text-gold-ink" aria-hidden="true" />
+            {event.time}
+          </p>
+          <p className="flex items-center gap-2">
+            <MapPin size={16} weight="light" className="shrink-0 text-gold-ink" aria-hidden="true" />
+            {event.location}
           </p>
         </div>
+        <p className="mt-3 line-clamp-2 text-[15px] leading-relaxed text-muted">{event.description}</p>
       </div>
     </Link>
   );

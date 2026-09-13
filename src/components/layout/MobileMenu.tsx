@@ -10,7 +10,7 @@ import {
   Transition,
   TransitionChild,
 } from '@headlessui/react';
-import { HiXMark, HiChevronDown } from 'react-icons/hi2';
+import { CaretDown, X } from '@phosphor-icons/react';
 import { NavLink } from '@/types';
 
 interface MobileMenuProps {
@@ -86,7 +86,7 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
                 aria-label="Close navigation menu"
                 className="p-1.5 rounded-md text-white/85 hover:text-white hover:bg-white/10 transition-colors duration-150"
               >
-                <HiXMark className="w-5 h-5" />
+                <X className="w-5 h-5" />
               </button>
             </div>
 
@@ -109,7 +109,7 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
                         aria-expanded={expandedItems.includes(link.href)}
                       >
                         <span>{link.label}</span>
-                        <HiChevronDown
+                        <CaretDown
                           className={[
                             'w-4 h-4 transition-transform duration-200',
                             expandedItems.includes(link.href) ? 'rotate-180' : '',
@@ -203,7 +203,7 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
               <Link
                 href="/donate"
                 onClick={onClose}
-                className="block w-full text-center py-3 px-6 rounded-xl text-sm font-semibold tracking-wide text-[#000B58] bg-[#D4A843] transition-all duration-200 hover:bg-[#c49a38] hover:shadow-lg active:scale-[0.98]"
+                className="block w-full text-center py-3 px-6 rounded-full text-sm font-semibold tracking-wide text-[#000B58] bg-[#D4A843] transition-all duration-200 hover:bg-[#c49a38] hover:shadow-lg active:scale-[0.98]"
               >
                 Give
               </Link>

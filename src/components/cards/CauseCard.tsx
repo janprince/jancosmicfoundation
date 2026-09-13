@@ -7,80 +7,47 @@ export default function CauseCard({ cause }: { cause: Cause }) {
   const isSpecific = cause.type === 'specific';
 
   return (
-    <Link href={`/donate/${cause.slug}`} className="group block cursor-pointer">
-      <div className="bg-white rounded-xl overflow-hidden border border-black/[0.07] shadow-sm transition-all duration-500 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#000B58]/5 hover:border-primary/25 h-full flex flex-col">
-        <div className="relative aspect-video overflow-hidden">
+    <Link href={`/donate/${cause.slug}`} className="group block h-full">
+      <div className="flex h-full flex-col overflow-hidden rounded-card bg-white transition-shadow duration-500 group-hover:shadow-[0_24px_48px_-28px_rgba(0,11,88,0.35)]">
+        <div className="relative aspect-[16/10] overflow-hidden">
           <Image
             src={cause.image}
             alt={cause.title}
             fill
-            className="object-cover group-hover:scale-[1.04] transition-transform duration-[900ms]"
+            className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.04]"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
-          {/* Ongoing badge */}
           {!isSpecific && (
-            <div className="absolute top-3 left-3 z-10">
-              <span className="flex items-center gap-1.5 rounded-full bg-[#D4A843]/90 backdrop-blur-sm px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white">
-                <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse" />
-                Ongoing
-              </span>
-            </div>
+            <span className="absolute left-4 top-4 flex items-center gap-1.5 rounded-full bg-cream/95 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-navy">
+              <span className="h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true" />
+              Ongoing
+            </span>
           )}
         </div>
-        <div className="p-5 flex flex-col flex-1">
-          <h3 className="display text-xl text-[#000B58] group-hover:text-primary transition-colors line-clamp-2">
-            {cause.title}
-          </h3>
-          <p className="mt-2 text-sm text-gray-600 line-clamp-3 flex-1">
-            {cause.description}
-          </p>
+        <div className="flex flex-1 flex-col p-6">
+          <h3 className="line-clamp-2 text-2xl leading-snug text-navy">{cause.title}</h3>
+          <p className="mt-2 line-clamp-3 flex-1 text-[15px] leading-relaxed text-muted">{cause.description}</p>
 
           {isSpecific ? (
-            /* Specific cause — progress bar */
-            <>
-              <div className="mt-4">
-                <ProgressBar
-                  current={cause.raisedAmount}
-                  goal={cause.goalAmount}
-                  currency={cause.currency}
-                />
-              </div>
-              <div className="mt-4 flex items-center justify-between">
-                <span className="text-xs text-gray-500">
-                  {cause.donorsCount} donor{cause.donorsCount !== 1 ? "s" : ""}
-                </span>
-                <span className="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white">
-                  Donate
-                </span>
-              </div>
-            </>
+            <div className="mt-5">
+              <ProgressBar current={cause.raisedAmount} goal={cause.goalAmount} currency={cause.currency} />
+            </div>
           ) : (
-            /* Ongoing cause — impact-focused */
-            <>
-              {cause.impactStatement && (
-                <div className="mt-4 rounded-lg bg-[#F2EFE9] px-4 py-3">
-                  <p className="text-xs leading-relaxed text-[#000B58]/70">
-                    <span className="mr-1.5 inline-block text-[#D4A843]" aria-hidden="true">&#10047;</span>
-                    {cause.impactStatement}
-                  </p>
-                </div>
-              )}
-              <div className="mt-4 flex items-center justify-between">
-                {cause.donorsCount > 0 ? (
-                  <span className="text-xs text-gray-500">
-                    {cause.donorsCount} supporter{cause.donorsCount !== 1 ? "s" : ""}
-                  </span>
-                ) : (
-                  <span className="text-xs text-gray-500">
-                    Be the first to support
-                  </span>
-                )}
-                <span className="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white">
-                  Support This Work
-                </span>
-              </div>
-            </>
+            cause.impactStatement && (
+              <p className="mt-5 rounded-xl bg-sand px-4 py-3 text-sm leading-relaxed text-ink/75">{cause.impactStatement}</p>
+            )
           )}
+
+          <div className="mt-5 flex items-center justify-between gap-4 border-t border-line pt-4">
+            <span className="text-xs text-muted">
+              {isSpecific
+                ? `${cause.donorsCount} donor${cause.donorsCount !== 1 ? 's' : ''}`
+                : cause.donorsCount > 0
+                ? `${cause.donorsCount} supporter${cause.donorsCount !== 1 ? 's' : ''}`
+                : 'Be the first to support'}
+            </span>
+            <span className="text-link text-sm">{isSpecific ? 'Donate' : 'Support this work'}</span>
+          </div>
         </div>
       </div>
     </Link>

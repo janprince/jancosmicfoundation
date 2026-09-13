@@ -1,10 +1,17 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
+import { CheckCircle, WarningCircle } from "@phosphor-icons/react";
 import { usePaystackPayment } from "react-paystack";
 import { PAYSTACK_PUBLIC_KEY, PRESET_AMOUNTS, MIN_DONATION, MAX_DONATION, generateReference, formatAmount } from "@/lib/paystack";
 import { verifyDonation } from "@/lib/api";
 import Button from "@/components/ui/Button";
+
+// Sized for the narrow donation sidebar: three columns must fit "GH₵1,000" without clipping.
+const amountButton =
+  "flex min-h-11 items-center justify-center whitespace-nowrap rounded-full border px-2 text-sm font-semibold tabular-nums transition-colors duration-200";
+const amountActive = "border-navy bg-navy text-white";
+const amountIdle = "border-line bg-white text-navy hover:border-navy/40";
 
 interface DonationCheckoutProps {
   causeTitle: string;
@@ -60,7 +67,7 @@ export default function DonationCheckout({ causeTitle, causeId }: DonationChecko
   const [email, setEmail] = useState("");
   const [isCustom, setIsCustom] = useState(false);
   const [state, setState] = useState<"idle" | "verifying" | "success" | "pending" | "error">("idle");
-  const referenceRef = useRef(generateReference());
+  const [reference, setReference] = useState(generateReference);
 
   const finalAmount = isCustom ? Number(customAmount) : selectedAmount;
 
@@ -85,16 +92,14 @@ export default function DonationCheckout({ causeTitle, causeId }: DonationChecko
   function handlePaymentClose() {
     // User closed the Paystack modal without completing — generate a fresh reference
     // so the next attempt doesn't reuse a potentially abandoned one.
-    referenceRef.current = generateReference();
+    setReference(generateReference());
   }
 
   if (state === "success") {
     return (
       <div className="text-center py-8">
-        <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-          <span className="text-4xl text-primary">&#10003;</span>
-        </div>
-        <h3 className="text-2xl font-semibold text-[#000B58]">Thank you</h3>
+        <CheckCircle size={64} weight="light" className="mx-auto mb-4 block text-gold-ink" aria-hidden="true" />
+        <h3 className="font-serif text-3xl text-navy">Thank you</h3>
         <p className="mt-2 text-gray-600">
           Your donation of {formatAmount(finalAmount)} to {causeTitle} has been received.
         </p>
@@ -104,7 +109,7 @@ export default function DonationCheckout({ causeTitle, causeId }: DonationChecko
         <button
           onClick={() => {
             setState("idle");
-            referenceRef.current = generateReference();
+            setReference(generateReference());
           }}
           className="mt-6 text-primary font-medium hover:underline"
         >
@@ -117,10 +122,8 @@ export default function DonationCheckout({ causeTitle, causeId }: DonationChecko
   if (state === "pending") {
     return (
       <div className="text-center py-8">
-        <div className="w-20 h-20 bg-[#D4A843]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-          <span className="text-4xl text-[#D4A843]">&#10003;</span>
-        </div>
-        <h3 className="text-2xl font-semibold text-[#000B58]">Payment Received</h3>
+        <CheckCircle size={64} weight="light" className="mx-auto mb-4 block text-gold-ink" aria-hidden="true" />
+        <h3 className="font-serif text-3xl text-navy">Payment Received</h3>
         <p className="mt-2 text-gray-600">
           Your donation of {formatAmount(finalAmount)} to {causeTitle} is being confirmed.
         </p>
@@ -130,7 +133,7 @@ export default function DonationCheckout({ causeTitle, causeId }: DonationChecko
         <button
           onClick={() => {
             setState("idle");
-            referenceRef.current = generateReference();
+            setReference(generateReference());
           }}
           className="mt-6 text-primary font-medium hover:underline"
         >
@@ -143,15 +146,13 @@ export default function DonationCheckout({ causeTitle, causeId }: DonationChecko
   if (state === "error") {
     return (
       <div className="text-center py-8">
-        <div className="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4">
-          <span className="text-4xl text-red-500">!</span>
-        </div>
-        <h3 className="text-xl font-semibold text-[#000B58]">Something went wrong</h3>
+        <WarningCircle size={64} weight="light" className="mx-auto mb-4 block text-accent" aria-hidden="true" />
+        <h3 className="font-serif text-3xl text-navy">Something went wrong</h3>
         <p className="mt-2 text-sm text-gray-600">We couldn&apos;t process your donation. Please try again or contact us for help.</p>
         <button
           onClick={() => {
             setState("idle");
-            referenceRef.current = generateReference();
+            setReference(generateReference());
           }}
           className="mt-6 text-primary font-medium hover:underline"
         >
@@ -164,35 +165,33 @@ export default function DonationCheckout({ causeTitle, causeId }: DonationChecko
   return (
     <div className="space-y-6">
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-3">
+        <label className="field-label !mb-3">
           Select Amount (GHS)
         </label>
-        <div className="grid grid-cols-3 gap-3">
-          {PRESET_AMOUNTS.map((amount) => (
-            <button
-              key={amount}
-              type="button"
-              onClick={() => {
-                setSelectedAmount(amount);
-                setIsCustom(false);
-              }}
-              className={`py-3 px-4 rounded-xl border-2 text-center font-semibold transition-all ${
-                !isCustom && selectedAmount === amount
-                  ? "border-primary bg-primary/5 text-primary"
-                  : "border-gray-200 text-gray-600 hover:border-primary/40"
-              }`}
-            >
-              GH₵{amount}
-            </button>
-          ))}
+        <div className="grid grid-cols-3 gap-2">
+          {PRESET_AMOUNTS.map((amount) => {
+            const active = !isCustom && selectedAmount === amount;
+            return (
+              <button
+                key={amount}
+                type="button"
+                aria-pressed={active}
+                onClick={() => {
+                  setSelectedAmount(amount);
+                  setIsCustom(false);
+                }}
+                className={`${amountButton} ${active ? amountActive : amountIdle}`}
+              >
+                <span className={`mr-0.5 text-[11px] font-medium ${active ? "text-white/70" : "text-muted"}`}>GH₵</span>
+                {amount.toLocaleString("en-GH")}
+              </button>
+            );
+          })}
           <button
             type="button"
+            aria-pressed={isCustom}
             onClick={() => setIsCustom(true)}
-            className={`py-3 px-4 rounded-xl border-2 text-center font-semibold transition-all ${
-              isCustom
-                ? "border-primary bg-primary/5 text-primary"
-                : "border-gray-200 text-gray-600 hover:border-primary/40"
-            }`}
+            className={`${amountButton} ${isCustom ? amountActive : amountIdle}`}
           >
             Custom
           </button>
@@ -201,7 +200,7 @@ export default function DonationCheckout({ causeTitle, causeId }: DonationChecko
 
       {isCustom && (
         <div>
-          <label htmlFor="custom-amount" className="block text-sm font-medium text-gray-700 mb-1.5">
+          <label htmlFor="custom-amount" className="field-label">
             Enter Amount (GHS)
           </label>
           <input
@@ -211,7 +210,7 @@ export default function DonationCheckout({ causeTitle, causeId }: DonationChecko
             max={MAX_DONATION}
             value={customAmount}
             onChange={(e) => setCustomAmount(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+            className="field"
             placeholder={`GH₵${MIN_DONATION} – GH₵${MAX_DONATION.toLocaleString()}`}
           />
           {customAmount && (Number(customAmount) < MIN_DONATION || Number(customAmount) > MAX_DONATION) && (
@@ -223,7 +222,7 @@ export default function DonationCheckout({ causeTitle, causeId }: DonationChecko
       )}
 
       <div>
-        <label htmlFor="donor-email" className="block text-sm font-medium text-gray-700 mb-1.5">
+        <label htmlFor="donor-email" className="field-label">
           Email Address
         </label>
         <input
@@ -232,7 +231,7 @@ export default function DonationCheckout({ causeTitle, causeId }: DonationChecko
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+          className="field"
           placeholder="your@email.com (for receipt)"
         />
       </div>
@@ -248,7 +247,7 @@ export default function DonationCheckout({ causeTitle, causeId }: DonationChecko
             email={email}
             causeId={causeId}
             causeTitle={causeTitle}
-            reference={referenceRef.current}
+            reference={reference}
             onSuccess={handlePaymentSuccess}
             onClose={handlePaymentClose}
           />

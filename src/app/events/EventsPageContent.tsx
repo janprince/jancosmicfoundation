@@ -1,8 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
+import { CalendarBlank } from '@phosphor-icons/react';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
+import Button from '@/components/ui/Button';
 import EventCard from '@/components/cards/EventCard';
 import type { Event } from '@/types';
 
@@ -19,7 +22,7 @@ interface EventsPageContentProps {
 }
 
 export default function EventsPageContent({ events }: EventsPageContentProps) {
-  const [activeFilter, setActiveFilter] = useState<Filter>('all');
+  const [activeFilter, setActiveFilter] = useState<Filter>('upcoming');
 
   const upcomingEvents = events.filter((e) => !e.isPast);
   const pastEvents = events.filter((e) => e.isPast);
@@ -38,95 +41,52 @@ export default function EventsPageContent({ events }: EventsPageContentProps) {
   };
 
   return (
-    <main style={{ backgroundColor: '#FDFBF7' }}>
+    <div className="bg-cream">
       <PageHero
         title="Retreats &amp; Events"
         subtitle="Retreats, sittings, teachings, balanced practice, and service gatherings for seekers who want to practise with others."
       />
 
-      <section className="py-16 sm:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header + filter tabs */}
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-10">
+      <section className="section">
+        <div className="wrap">
+          <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <SectionHeader
               label="Our Calendar"
-              title="All Events"
+              title={activeFilter === 'upcoming' ? 'Upcoming gatherings' : activeFilter === 'past' ? 'Past gatherings' : 'All gatherings'}
               align="left"
             />
-
-            {/* Tab filters */}
-            <div
-              className="flex items-center gap-1 rounded-xl p-1 self-start sm:self-auto shrink-0"
-              style={{ backgroundColor: '#F2EFE9' }}
-              role="tablist"
-              aria-label="Filter events"
-            >
-              {FILTERS.map((filter) => {
-                const isActive = activeFilter === filter.value;
-                return (
-                  <button
-                    key={filter.value}
-                    role="tab"
-                    aria-selected={isActive}
-                    onClick={() => setActiveFilter(filter.value)}
-                    className="flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 cursor-pointer"
-                    style={
-                      isActive
-                        ? { backgroundColor: 'var(--color-primary)', color: '#FDFBF7', boxShadow: '0 1px 3px rgba(0,0,0,0.15)' }
-                        : { color: '#1c1a2680' }
-                    }
-                  >
-                    {filter.label}
-                    <span
-                      className="rounded-full px-1.5 py-0.5 text-xs font-semibold leading-none"
-                      style={
-                        isActive
-                          ? { backgroundColor: 'rgba(212,168,67,0.3)', color: '#D4A843' }
-                          : { backgroundColor: 'rgba(0,0,0,0.08)', color: '#1c1a2660' }
-                      }
-                    >
-                      {counts[filter.value]}
-                    </span>
-                  </button>
-                );
-              })}
+            <div className="filter-pills shrink-0" role="group" aria-label="Filter events">
+              {FILTERS.map((filter) => (
+                <button key={filter.value} aria-pressed={activeFilter === filter.value} onClick={() => setActiveFilter(filter.value)}>
+                  {filter.label}
+                  <span className="count">{counts[filter.value]}</span>
+                </button>
+              ))}
             </div>
           </div>
 
-          {/* Events grid */}
           {visibleEvents.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
               {visibleEvents.map((event) => (
                 <EventCard key={event.id} event={event} />
               ))}
             </div>
           ) : (
-            /* Empty state */
-            <div className="flex flex-col items-center justify-center py-24 text-center">
-              <div
-                className="w-20 h-20 rounded-full flex items-center justify-center mb-6"
-                style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.08)' }}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="var(--color-primary)" className="w-9 h-9">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
-                </svg>
-              </div>
-              <h3 className="display text-2xl mb-2" style={{ color: '#000B58' }}>
+            <div className="flex flex-col items-center justify-center rounded-card bg-sand px-6 py-16 text-center">
+              <CalendarBlank size={48} weight="light" className="mb-5 text-gold-ink" aria-hidden="true" />
+              <h3 className="mb-2 text-3xl">
                 No {activeFilter === 'upcoming' ? 'upcoming' : activeFilter === 'past' ? 'past' : ''} events found
               </h3>
-              <p className="text-base max-w-sm" style={{ color: '#1c1a26bf' }}>
+              <p className="max-w-sm text-muted">
                 {activeFilter === 'upcoming'
-                  ? 'Check back soon — new events are added regularly.'
+                  ? 'Contact the Foundation to ask about the next gathering before making travel plans.'
                   : activeFilter === 'past'
                   ? 'Past events will appear here once they have concluded.'
                   : 'No events are currently available.'}
               </p>
+              <Link href="/contact" className="button mt-7">Ask about the next gathering</Link>
               {activeFilter !== 'all' && (
-                <button
-                  onClick={() => setActiveFilter('all')}
-                  className="mt-6 text-sm font-semibold underline underline-offset-2 cursor-pointer"
-                  style={{ color: 'var(--color-primary)' }}
-                >
+                <button onClick={() => setActiveFilter('all')} className="text-link mt-5 cursor-pointer">
                   View all events
                 </button>
               )}
@@ -135,24 +95,17 @@ export default function EventsPageContent({ events }: EventsPageContentProps) {
         </div>
       </section>
 
-      {/* Newsletter CTA */}
-      <section className="py-14" style={{ backgroundColor: '#F2EFE9' }}>
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="display text-3xl mb-3" style={{ color: '#000B58' }}>
-            Hear about events first
-          </h2>
-          <p className="text-sm sm:text-base mb-6" style={{ color: '#1c1a26bf' }}>
+      <section className="section bg-sand">
+        <div className="mx-auto max-w-2xl px-5 text-center sm:px-8">
+          <h2 className="text-4xl">Hear about events first</h2>
+          <p className="mt-4 text-lg text-muted">
             Join the community to hear when new retreats, sittings, and teaching dates are announced.
           </p>
-          <a
-            href="/community"
-            className="inline-flex items-center gap-2 rounded-xl px-7 py-3.5 text-base font-semibold transition-all duration-300 hover:shadow-lg"
-            style={{ backgroundColor: 'var(--color-primary)', color: '#FDFBF7' }}
-          >
-            Join the Community
-          </a>
+          <div className="mt-8">
+            <Button href="/community">Join the Community</Button>
+          </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

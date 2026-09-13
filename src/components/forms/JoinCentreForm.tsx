@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { CheckCircle } from "@phosphor-icons/react";
 import Button from "@/components/ui/Button";
 import { submitJoinCentreRequest } from "@/lib/api";
 
@@ -33,10 +34,8 @@ export default function JoinCentreForm({ centreName, centreId }: JoinCentreFormP
   if (status === "sent") {
     return (
       <div className="text-center py-8">
-        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-          <span className="text-3xl text-primary">&#10003;</span>
-        </div>
-        <h3 className="text-xl font-semibold text-[#000B58]">Request received</h3>
+        <CheckCircle size={64} weight="light" className="mx-auto mb-4 block text-gold-ink" aria-hidden="true" />
+        <h3 className="font-serif text-3xl text-navy">Request received</h3>
         <p className="mt-2 text-gray-600">
           Your message about {centreName} has been received. Someone from the centre will contact you soon.
         </p>
@@ -47,7 +46,7 @@ export default function JoinCentreForm({ centreName, centreId }: JoinCentreFormP
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label htmlFor="join-name" className="block text-sm font-medium text-gray-700 mb-1.5">
+        <label htmlFor="join-name" className="field-label">
           Full name
         </label>
         <input
@@ -56,12 +55,12 @@ export default function JoinCentreForm({ centreName, centreId }: JoinCentreFormP
           required
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+          className="field"
           placeholder="Your name"
         />
       </div>
       <div>
-        <label htmlFor="join-email" className="block text-sm font-medium text-gray-700 mb-1.5">
+        <label htmlFor="join-email" className="field-label">
           Email
         </label>
         <input
@@ -70,12 +69,12 @@ export default function JoinCentreForm({ centreName, centreId }: JoinCentreFormP
           required
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+          className="field"
           placeholder="your@email.com"
         />
       </div>
       <div>
-        <label htmlFor="join-phone" className="block text-sm font-medium text-gray-700 mb-1.5">
+        <label htmlFor="join-phone" className="field-label">
           Phone
         </label>
         <input
@@ -83,12 +82,12 @@ export default function JoinCentreForm({ centreName, centreId }: JoinCentreFormP
           type="tel"
           value={formData.phone}
           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+          className="field"
           placeholder="+233 XXX XXX XXX"
         />
       </div>
       <div>
-        <label htmlFor="join-message" className="block text-sm font-medium text-gray-700 mb-1.5">
+        <label htmlFor="join-message" className="field-label">
           Message (optional)
         </label>
         <textarea
@@ -96,7 +95,7 @@ export default function JoinCentreForm({ centreName, centreId }: JoinCentreFormP
           rows={3}
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
+          className="field"
           placeholder="Tell us what draws you to this centre..."
         />
       </div>

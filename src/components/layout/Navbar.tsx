@@ -4,8 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { HiOutlineBars3BottomRight } from 'react-icons/hi2';
-import { HiChevronDown } from 'react-icons/hi2';
+import { CaretDown, List } from '@phosphor-icons/react';
 import { NavLink } from '@/types';
 import MobileMenu from './MobileMenu';
 
@@ -60,10 +59,12 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => {
+  // Close mobile menu on route change (adjust state during render, not in an effect)
+  const [menuPath, setMenuPath] = useState(pathname);
+  if (menuPath !== pathname) {
+    setMenuPath(pathname);
     setMobileOpen(false);
-  }, [pathname]);
+  }
 
   const isActivePath = (href: string) => {
     if (href === '/') return pathname === '/';
@@ -97,7 +98,7 @@ export default function Navbar() {
               <Image src="/images/logo.png" alt="JCF Logo" width={36} height={36} className="rounded-full" />
               <span
                 className={[
-                  'text-sm font-normal uppercase tracking-[0.2em] transition-colors duration-300',
+                  'text-[0.8rem] font-medium uppercase tracking-[0.2em] transition-colors duration-300',
                   scrolled ? 'text-[#000B58]' : 'text-white',
                 ].join(' ')}
               >
@@ -142,7 +143,7 @@ export default function Navbar() {
                       ].join(' ')}
                     >
                       {link.label}
-                      <HiChevronDown
+                      <CaretDown
                         className={[
                           'w-4 h-4 transition-transform duration-200',
                           activeDropdown === link.href ? 'rotate-180' : '',
@@ -154,7 +155,7 @@ export default function Navbar() {
                           'absolute bottom-0 left-3 right-3 h-0.5 rounded-full transition-transform duration-200 origin-left',
                           isActivePath(link.href) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100',
                         ].join(' ')}
-                        style={{ backgroundColor: 'var(--color-primary)' }}
+                        style={{ backgroundColor: scrolled ? 'var(--color-primary)' : 'var(--color-secondary)' }}
                       />
                     </button>
 
@@ -216,7 +217,7 @@ export default function Navbar() {
                             ? 'scale-x-100'
                             : 'scale-x-0 group-hover:scale-x-100',
                         ].join(' ')}
-                        style={{ backgroundColor: 'var(--color-primary)' }}
+                        style={{ backgroundColor: scrolled ? 'var(--color-primary)' : 'var(--color-secondary)' }}
                       />
                     );
                     return link.external ? (
@@ -243,7 +244,7 @@ export default function Navbar() {
               {/* Give CTA button */}
               <Link
                 href="/donate"
-                className="ml-3 inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold tracking-wide text-[#000B58] bg-[#D4A843] transition-all duration-300 hover:bg-[#c49a38] hover:shadow-lg hover:shadow-[#D4A843]/30"
+                className="ml-3 inline-flex items-center gap-2 rounded-full px-6 py-2.5 text-sm font-semibold tracking-wide text-[#000B58] bg-[#D4A843] transition-all duration-300 hover:bg-[#c49a38] hover:shadow-lg hover:shadow-[#D4A843]/30"
               >
                 Give
               </Link>
@@ -260,7 +261,7 @@ export default function Navbar() {
                   : 'text-white hover:bg-white/10',
               ].join(' ')}
             >
-              <HiOutlineBars3BottomRight className="w-6 h-6" />
+              <List className="w-6 h-6" />
             </button>
           </div>
         </nav>

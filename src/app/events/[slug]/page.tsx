@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
+import { ArrowLeft, CalendarBlank, Clock, MapPin } from '@phosphor-icons/react/dist/ssr';
 import PageHero from '@/components/layout/PageHero';
 import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
@@ -38,16 +39,14 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
   const endDate = event.endDate ? formatDate(event.endDate) : null;
 
   return (
-    <main style={{ backgroundColor: '#FDFBF7' }}>
+    <div className="bg-cream">
       <PageHero title={event.title} subtitle={event.description} />
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14">
+      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-16">
           {/* Main content */}
           <div className="lg:col-span-2">
-            {/* Event image */}
-            <div className="relative aspect-video rounded-2xl overflow-hidden mb-8">
+            <div className="relative mb-8 aspect-video overflow-hidden rounded-card">
               <Image
                 src={event.image}
                 alt={event.title}
@@ -58,113 +57,61 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
               />
             </div>
 
-            {/* Category badge + past indicator */}
-            <div className="flex flex-wrap items-center gap-3 mb-6">
+            <div className="mb-6 flex flex-wrap items-center gap-3">
               <Badge variant="primary">{event.category}</Badge>
               {event.isPast && <Badge variant="accent">Past Event</Badge>}
             </div>
 
-            <h2 className="display text-3xl mb-6" style={{ color: '#000B58' }}>
-              About This Event
-            </h2>
+            <h2 className="mb-6 text-4xl">About This Event</h2>
 
-            {/* Content rendered as HTML */}
             <div
-              className="prose prose-sm sm:prose-base max-w-none space-y-4 leading-relaxed"
-              style={{ color: '#1c1a26' }}
+              className="prose prose-sm max-w-none leading-relaxed text-ink sm:prose-base"
               dangerouslySetInnerHTML={{ __html: event.content }}
             />
           </div>
 
-          {/* Sidebar — event details */}
+          {/* Event details */}
           <aside className="lg:col-span-1">
-            <div
-              className="rounded-2xl p-6 sticky top-24"
-              style={{ backgroundColor: '#ffffff', border: '1px solid rgba(0,11,88,0.1)', boxShadow: '0 4px 24px rgba(0,11,88,0.06)' }}
-            >
-              <h3 className="display text-lg mb-5 pb-4" style={{ color: '#000B58', borderBottom: '1px solid rgba(0,11,88,0.08)' }}>
-                Event Details
-              </h3>
+            <div className="sticky top-28 rounded-card border border-line bg-white p-7">
+              <h3 className="mb-3 text-2xl">Event Details</h3>
 
-              <ul className="space-y-5">
-                {/* Date */}
-                <li className="flex items-start gap-3">
-                  <span
-                    className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
-                    style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.1)' }}
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="var(--color-primary)" className="w-5 h-5">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
-                    </svg>
-                  </span>
+              <ul className="detail-list">
+                <li>
+                  <CalendarBlank size={22} weight="light" aria-hidden="true" />
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider mb-0.5" style={{ color: 'var(--color-primary)' }}>
-                      Date
-                    </p>
-                    <p className="text-sm font-medium" style={{ color: '#000B58' }}>{startDate}</p>
-                    {endDate && (
-                      <p className="text-sm mt-0.5" style={{ color: '#1c1a26bf' }}>
-                        to {endDate}
-                      </p>
-                    )}
+                    <p className="detail-label">Date</p>
+                    <p className="detail-value">{startDate}</p>
+                    {endDate && <p className="mt-0.5 text-sm text-muted">to {endDate}</p>}
                   </div>
                 </li>
-
-                {/* Time */}
-                <li className="flex items-start gap-3">
-                  <span
-                    className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
-                    style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.1)' }}
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="var(--color-primary)" className="w-5 h-5">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                    </svg>
-                  </span>
+                <li>
+                  <Clock size={22} weight="light" aria-hidden="true" />
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider mb-0.5" style={{ color: 'var(--color-primary)' }}>
-                      Start Time
-                    </p>
-                    <p className="text-sm font-medium" style={{ color: '#000B58' }}>{event.time}</p>
+                    <p className="detail-label">Start Time</p>
+                    <p className="detail-value">{event.time}</p>
                   </div>
                 </li>
-
-                {/* Location */}
-                <li className="flex items-start gap-3">
-                  <span
-                    className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 mt-0.5"
-                    style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.1)' }}
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="var(--color-primary)" className="w-5 h-5">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
-                    </svg>
-                  </span>
+                <li>
+                  <MapPin size={22} weight="light" aria-hidden="true" />
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider mb-0.5" style={{ color: 'var(--color-primary)' }}>
-                      Location
-                    </p>
-                    <p className="text-sm font-medium" style={{ color: '#000B58' }}>{event.location}</p>
-                    {event.address && (
-                      <p className="text-xs mt-1 leading-relaxed" style={{ color: '#1c1a26bf' }}>
-                        {event.address}
-                      </p>
-                    )}
+                    <p className="detail-label">Location</p>
+                    <p className="detail-value">{event.location}</p>
+                    {event.address && <p className="mt-1 text-xs leading-relaxed text-muted">{event.address}</p>}
                   </div>
                 </li>
               </ul>
 
-              {/* RSVP / Registration CTA */}
-              <div className="mt-7 pt-6" style={{ borderTop: '1px solid rgba(0,11,88,0.08)' }}>
+              <div className="mt-7">
                 {!event.isPast && event.registrationUrl ? (
-                  <Button href={event.registrationUrl} variant="primary" size="md" className="w-full justify-center">
+                  <Button href={event.registrationUrl} variant="primary" className="w-full">
                     Register / RSVP
                   </Button>
                 ) : event.isPast ? (
-                  <p className="text-center text-sm py-3 rounded-xl font-medium" style={{ backgroundColor: 'rgba(192,80,33,0.08)', color: '#C05021' }}>
+                  <p className="rounded-xl bg-accent/10 py-3 text-center text-sm font-medium text-accent">
                     This event has concluded
                   </p>
                 ) : (
-                  <Button href="/contact" variant="outline" size="md" className="w-full justify-center">
+                  <Button href="/contact" variant="outline" className="w-full">
                     Enquire About This Event
                   </Button>
                 )}
@@ -173,20 +120,13 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
           </aside>
         </div>
 
-        {/* Bottom back link */}
-        <div className="mt-14 pt-8" style={{ borderTop: '1px solid rgba(0,11,88,0.08)' }}>
-          <Link
-            href="/events"
-            className="inline-flex items-center gap-2 text-sm font-medium transition-colors hover:opacity-75"
-            style={{ color: 'var(--color-primary)' }}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-            </svg>
+        <div className="mt-16 border-t border-line pt-8">
+          <Link href="/events" className="inline-flex items-center gap-2 text-sm font-medium text-navy hover:text-violet">
+            <ArrowLeft size={16} aria-hidden="true" />
             View all events
           </Link>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

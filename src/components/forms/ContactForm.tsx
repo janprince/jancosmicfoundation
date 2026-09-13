@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { CheckCircle } from "@phosphor-icons/react";
 import Button from "@/components/ui/Button";
 import { submitContactForm } from "@/lib/api";
 
@@ -28,10 +29,8 @@ export default function ContactForm() {
   if (status === "sent") {
     return (
       <div className="text-center py-12">
-        <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-          <span className="text-3xl text-primary">&#10003;</span>
-        </div>
-        <h3 className="text-xl font-semibold text-[#000B58]">Message sent</h3>
+        <CheckCircle size={64} weight="light" className="mx-auto mb-4 block text-gold-ink" aria-hidden="true" />
+        <h3 className="font-serif text-3xl text-navy">Message sent</h3>
         <p className="mt-2 text-gray-600">
           Thank you for writing to the Foundation. We&apos;ll get back to you soon.
         </p>
@@ -49,7 +48,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">
+          <label htmlFor="name" className="field-label">
             Full name
           </label>
           <input
@@ -58,12 +57,12 @@ export default function ContactForm() {
             required
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+            className="field"
             placeholder="Your name"
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">
+          <label htmlFor="email" className="field-label">
             Email address
           </label>
           <input
@@ -72,13 +71,13 @@ export default function ContactForm() {
             required
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+            className="field"
             placeholder="your@email.com"
           />
         </div>
       </div>
       <div>
-        <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1.5">
+        <label htmlFor="subject" className="field-label">
           Subject
         </label>
         <input
@@ -87,12 +86,12 @@ export default function ContactForm() {
           required
           value={formData.subject}
           onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+          className="field"
           placeholder="Teachings, centres, volunteering, events..."
         />
       </div>
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5">
+        <label htmlFor="message" className="field-label">
           Message
         </label>
         <textarea
@@ -101,7 +100,7 @@ export default function ContactForm() {
           rows={5}
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
+          className="field"
           placeholder="Write your message..."
         />
       </div>

@@ -6,8 +6,8 @@ The charitable foundation of Dr. Baffour Jan, a spiritual master with 38+ years 
 
 - **Next.js 16** (App Router) with React 19, TypeScript
 - **Tailwind CSS 4** (CSS-first config via `@tailwindcss/postcss`) + `@tailwindcss/typography` (prose for blog/teachings)
-- Fonts via `next/font/google`: **Fraunces** (variable serif) + **Raleway** (sans)
-- **react-icons**, **@headlessui/react**, **react-paystack**
+- Fonts via `next/font/google`: **Newsreader** (serif, opsz + italics) + **Figtree** (sans) — same pairing as drbaffourjan.com
+- **@phosphor-icons/react** (the only icon set), **@headlessui/react**, **react-paystack**
 - **@next/third-parties** for Google Analytics
 - No database — data comes from an external REST API (`NEXT_PUBLIC_API_URL`, defaults to
   `https://admin.jancosmicfoundation.org/api`) with a **static mock fallback** (`src/lib/mock-data.ts`)
@@ -43,16 +43,22 @@ Tokens live in `src/app/globals.css`:
 
 ### Typography
 
-- **Fraunces** (variable serif, via `next/font`) → `--font-serif` — display headings,
-  quote moments, card/section titles (use the `.display` helper class)
-- **Raleway** → body, UI, and uppercase tracked labels (use the `.eyebrow` helper)
+- **Newsreader** → `--font-newsreader` — display headings, section/card titles, one italic
+  accent phrase in heroes (use the `.display` helper class)
+- **Figtree** → `--font-figtree` — body, UI, and small uppercase tracked labels (`.eyebrow`)
+- Reference `var(--font-newsreader)` / `var(--font-figtree)` directly in CSS. Tailwind v4
+  swallows `--font-sans`/`--font-serif` declared in `:root`, so those come out empty.
+- Shared homepage/header/footer/page-heading styles live in `src/app/foundation.css`;
+  element defaults there sit in `@layer base` so Tailwind utilities on inner pages still win.
 
 ### Design Patterns
 
 - **Mobile-first**: base styles for mobile, `md:` and `lg:` breakpoints up
-- Sticky navbar with scroll-aware transparent → solid transition
+- Fixed navbar, transparent over dark heroes → cream/blur on scroll, with dropdowns and a gold pill **Give** CTA
+  (every page opens on a dark hero: the homepage photo hero or the indigo `PageHero`)
 - Full-viewport hero sections with gradient overlays
-- Card hover: image scale transforms + shadow elevation
+- Photography-led: real Foundation photos, 14px image radius, pill buttons; a homepage
+  "Life at the Foundation" photo strip; a faint star field (`.stars`) on indigo sections
 - Section rhythm: cream → white → sand → dark alternation; no two same-coloured sections adjacent
 - Editorial layouts: serif display headings, generous whitespace, hairline borders over heavy shadows
 - Light/dark blend: light editorial body sections with dark cinematic moments (hero, quote, footer)
@@ -89,8 +95,8 @@ src/
 │   # client interactivity split into a *PageContent.tsx client child.
 ├── components/
 │   ├── layout/             # Navbar, Footer, MobileMenu, PageHero, NewsletterForm, RouteProgress
-│   ├── home/               # Homepage sections (HeroSection, AboutSnippet, Pathways, LivingWork,
-│   │                       #   ServiceSection, InnerSpaceSection, WisdomQuote, Featured/Upcoming/Recent…)
+│   ├── home/               # GatheringNotice (next published gathering), LifeStrip (photo strip);
+│   │                       #   the homepage sections themselves live in app/page.tsx
 │   ├── cards/              # EventCard, BlogCard, CauseCard, CentreCard
 │   ├── ui/                 # Button, Badge, ProgressBar, Counter, SectionHeader, Newsletter,
 │   │                       #   QuoteBlock, ScrollReveal, TrustSignals
@@ -143,6 +149,13 @@ Centres** (About and Teachings have dropdowns), with **Donate** as the standalon
 
 ## Key Conventions
 
+- Icons: **Phosphor only**, `weight="light"`, in navy or gold-ink, never in tinted square/circle tiles.
+  Import from `@phosphor-icons/react/dist/ssr` in server components, `@phosphor-icons/react` in client ones.
+  Concept cards (values, programmes) lead with type and photographs; a bare `.icon-mark` above a hairline at most.
+- Inner pages use the shared vocabulary in `foundation.css`: `SectionHeader` (gold eyebrow + Newsreader title),
+  `.button` pills (`gold`, `outline`, `ghost`), `.night.stars` closing sections, `.detail-list`, `.filter-pills`,
+  `.field`, plus Tailwind tokens `bg-cream`, `bg-sand`, `text-navy`, `text-gold-ink`, `border-line`, `rounded-card`.
+  Don't combine `.wrap`/`.section` with Tailwind `max-w-*`/`py-*`: those classes are unlayered and win.
 - Dynamic route params use the `params: Promise<{ slug: string }>` pattern (Next.js async params)
 - All images use Next.js `<Image>` component for optimization
 - Forms submit through `src/lib/api.ts` (mocked during development)

@@ -36,20 +36,29 @@ export default function ScrollReveal({
     const el = ref.current;
     if (!el) return;
 
+    const reveal = () => {
+      setVisible(true);
+
+      if (staggerChildren) {
+        const items = el.children;
+        for (let i = 0; i < items.length; i++) {
+          const child = items[i] as HTMLElement;
+          child.style.transitionDelay = `${delay + i * staggerChildren}s`;
+          child.classList.add('sr-child-visible');
+        }
+      }
+    };
+
+    // Without IntersectionObserver, show the content rather than leave it hidden.
+    if (!('IntersectionObserver' in window)) {
+      const frame = requestAnimationFrame(reveal);
+      return () => cancelAnimationFrame(frame);
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setVisible(true);
-
-          if (staggerChildren) {
-            const items = el.children;
-            for (let i = 0; i < items.length; i++) {
-              const child = items[i] as HTMLElement;
-              child.style.transitionDelay = `${delay + i * staggerChildren}s`;
-              child.classList.add('sr-child-visible');
-            }
-          }
-
+          reveal();
           observer.unobserve(el);
         }
       },

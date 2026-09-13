@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { ArrowUpRight } from '@phosphor-icons/react/dist/ssr';
 import PageHero from '@/components/layout/PageHero';
 import VideoSection from '@/components/teachings/VideoSection';
-import { HiOutlineAcademicCap, HiOutlineSparkles } from 'react-icons/hi2';
 
 export const metadata: Metadata = {
   title: 'Teachings',
@@ -12,95 +12,41 @@ export const metadata: Metadata = {
 
 export default function TeachingsPage() {
   return (
-    <main>
+    <div className="bg-cream">
       <PageHero
         title="Teachings"
-        subtitle="Public talks for seekers, with InnerSpace for deeper structured study and practice."
+        subtitle="Watch public talks by Dr. Baffour Jan, freely shared. Search the collection below, or explore InnerSpace for structured study and practice."
       />
 
-      {/* Intro */}
-      <section className="bg-[#FDFBF7] py-20 lg:py-28">
-        <div className="mx-auto max-w-4xl px-5 sm:px-8 lg:px-12 text-center">
-          <div className="mb-6 flex items-center justify-center gap-3">
-            <span className="h-px w-8 rounded-full bg-[#D4A843]/70" />
-            <span className="eyebrow text-[#8a6c1a]">Public Teachings</span>
-            <span className="h-px w-8 rounded-full bg-[#D4A843]/70" />
-          </div>
-          <h2 className="display text-[2rem] leading-[1.12] text-[#000B58] sm:text-4xl lg:text-[2.7rem]">
-            Public teachings, freely shared
-          </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#1c1a26]/80 sm:text-lg">
-            Dr. Baffour Jan&rsquo;s public teachings explore consciousness,
-            self-realization, God, the soul, the mind, illusion, and the freedom
-            that becomes possible through direct inner knowing and lived
-            practice.
-          </p>
-        </div>
-      </section>
-
-      {/* Video section with player + carousel */}
       <div id="video-player-top" className="scroll-mt-20" />
       <VideoSection />
 
       {/* InnerSpace CTA */}
-      <section
-        className="relative overflow-hidden py-24 lg:py-32"
-        style={{
-          background:
-            'linear-gradient(135deg, #000B58 0%, #1a1b6b 55%, #5B4B9E 100%)',
-        }}
-      >
-        <div className="absolute top-0 left-0 right-0 h-px bg-[#D4A843]/30" />
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage:
-              'radial-gradient(circle at 20% 50%, rgba(212,168,67,0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(91,75,158,0.35) 0%, transparent 50%)',
-          }}
-        />
-
-        <div className="relative mx-auto max-w-4xl px-5 sm:px-8 lg:px-12 text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#D4A843]/30 bg-[#D4A843]/10 px-4 py-1.5">
-            <HiOutlineSparkles className="h-4 w-4 text-[#D4A843]" />
-            <span className="eyebrow text-[#D4A843]">For Sincere Seekers</span>
-          </div>
-
-          <h2 className="display text-[2rem] leading-[1.12] text-white sm:text-4xl lg:text-5xl">
-            For the deeper work —{' '}
-            <span className="italic text-[#D4A843]">InnerSpace</span>
+      <section className="night stars section">
+        <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
+          <p className="eyebrow !text-gold">For Sincere Seekers</p>
+          <h2 className="mt-4 text-4xl leading-tight sm:text-5xl">
+            For the deeper work — <em className="text-[#F0DCA6]">InnerSpace</em>
           </h2>
-
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/85">
             Public videos are an open door.{' '}
             <strong className="font-semibold text-white">InnerSpace</strong> is
             a structured path for students who want to study seriously, practise
             consistently, and receive guidance.
           </p>
-
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-white/70">
+          <p className="mx-auto mt-4 max-w-xl leading-relaxed text-white/65">
             Lessons, guided practices, and a living sequence through the work.
             Hosted on drbaffourjan.com.
           </p>
-
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <a
-              href="https://www.drbaffourjan.com/inner-space"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg bg-[#D4A843] px-8 py-3.5 text-sm font-semibold text-[#000B58] transition-all duration-300 hover:bg-[#e0b84f] hover:shadow-lg hover:shadow-[#D4A843]/20"
-            >
-              <HiOutlineAcademicCap className="h-5 w-5" />
+            <a href="https://www.drbaffourjan.com/inner-space" target="_blank" rel="noopener noreferrer" className="button gold button-lg">
               Explore InnerSpace
+              <ArrowUpRight size={18} aria-hidden="true" />
             </a>
-            <Link
-              href="/community"
-              className="inline-flex items-center gap-2 rounded-lg border-2 border-white/30 px-8 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:border-white/60 hover:bg-white/10"
-            >
-              Join the Community
-            </Link>
+            <Link href="/community" className="button ghost button-lg">Join the Community</Link>
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

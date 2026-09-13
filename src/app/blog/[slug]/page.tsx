@@ -7,6 +7,7 @@ import Badge from '@/components/ui/Badge';
 import BlogCard from '@/components/cards/BlogCard';
 import { getBlogPostBySlug, getBlogPosts } from '@/lib/api';
 import ShareButtons from '@/components/blog/ShareButtons';
+import { ArrowLeft, PlayCircle, YoutubeLogo } from '@phosphor-icons/react/dist/ssr';
 import { siteConfig } from '@/lib/site-config';
 
 /**
@@ -126,20 +127,18 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
   };
 
   return (
-    <main style={{ backgroundColor: '#FDFBF7' }}>
+    <div className="bg-cream">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <PageHero title={post.title} subtitle={post.excerpt} />
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14">
+      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-16">
           {/* Article body */}
           <article className="lg:col-span-2">
-            {/* Post image */}
-            <div className="relative aspect-video rounded-2xl overflow-hidden mb-8">
+            <div className="relative mb-8 aspect-video overflow-hidden rounded-card">
               <Image
                 src={post.image}
                 alt={post.title}
@@ -150,58 +149,37 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
               />
             </div>
 
-            {/* Meta row */}
-            <div className="flex flex-wrap items-center gap-3 mb-6">
+            <div className="mb-8 flex flex-wrap items-center gap-3 text-sm text-muted">
               <Badge variant="secondary">{post.category}</Badge>
-              <span className="text-sm" style={{ color: '#1c1a26bf' }}>{formattedDate}</span>
-              <span className="w-1 h-1 rounded-full inline-block" style={{ backgroundColor: '#1c1a2630' }} />
-              <span className="text-sm" style={{ color: '#1c1a26bf' }}>{post.readTime}</span>
+              <span>{formattedDate}</span>
+              <span aria-hidden="true">·</span>
+              <span>{post.readTime}</span>
             </div>
 
-            {/* Video transcription notice */}
             {videoId && (
-              <div
-                className="flex items-start gap-3 rounded-xl p-4 mb-8"
-                style={{ backgroundColor: '#F2EFE9', border: '1px solid rgba(0,11,88,0.06)' }}
-              >
-                <div
-                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg"
-                  style={{ backgroundColor: 'rgba(212,168,67,0.15)' }}
-                >
-                  <svg className="h-4 w-4 text-[#D4A843]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
+              <div className="mb-10 flex items-start gap-4 rounded-card bg-sand p-5">
+                <PlayCircle size={30} weight="light" className="shrink-0 text-gold-ink" aria-hidden="true" />
                 <div>
-                  <p className="text-sm font-medium" style={{ color: '#000B58' }}>
-                    Transcribed from video
-                  </p>
-                  <p className="text-xs mt-0.5" style={{ color: '#1c1a26bf' }}>
+                  <p className="font-medium text-navy">Transcribed from video</p>
+                  <p className="mt-0.5 text-sm text-muted">
                     This article was derived from a teaching on our YouTube channel. Watch the original video below.
                   </p>
                 </div>
               </div>
             )}
 
-            {/* Article content */}
             <div
-              className="prose prose-sm sm:prose-base max-w-none leading-relaxed"
-              style={{ color: '#1c1a26' }}
+              className="prose prose-sm max-w-none leading-relaxed text-ink sm:prose-base"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
 
-            {/* Embedded YouTube video */}
             {videoId && (
-              <div className="mt-12 pt-8" style={{ borderTop: '1px solid rgba(0,11,88,0.08)' }}>
-                <div className="mb-4 flex items-center gap-2">
-                  <svg className="h-5 w-5 text-red-600" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0C.488 3.45.029 5.804 0 12c.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0C23.512 20.55 23.971 18.196 24 12c-.029-6.185-.484-8.549-4.385-8.816zM9 16V8l8 4-8 4z" />
-                  </svg>
-                  <h3 className="display text-xl" style={{ color: '#000B58' }}>
-                    Watch the Teaching
-                  </h3>
+              <div className="mt-12 border-t border-line pt-10">
+                <div className="mb-5 flex items-center gap-3">
+                  <YoutubeLogo size={26} weight="light" className="text-navy" aria-hidden="true" />
+                  <h3 className="text-2xl">Watch the Teaching</h3>
                 </div>
-                <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
+                <div className="relative aspect-video overflow-hidden rounded-card">
                   <iframe
                     src={`https://www.youtube-nocookie.com/embed/${videoId}`}
                     title={post.title}
@@ -214,19 +192,12 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
               </div>
             )}
 
-            {/* Tags */}
             {post.tags.length > 0 && (
-              <div className="mt-10 pt-8" style={{ borderTop: '1px solid rgba(0,11,88,0.08)' }}>
-                <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: '#1c1a26bf' }}>
-                  Tagged
-                </p>
+              <div className="mt-10 border-t border-line pt-8">
+                <p className="detail-label mb-3">Tagged</p>
                 <div className="flex flex-wrap gap-2">
                   {post.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full px-3 py-1 text-xs font-medium"
-                      style={{ backgroundColor: 'rgba(var(--color-primary-rgb),0.08)', color: 'var(--color-primary)' }}
-                    >
+                    <span key={tag} className="rounded-full bg-navy/[0.06] px-3 py-1 text-xs font-medium text-navy">
                       #{tag}
                     </span>
                   ))}
@@ -234,52 +205,40 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
               </div>
             )}
 
-            {/* Share buttons (visual only) */}
-            <div className="mt-10 pt-8" style={{ borderTop: '1px solid rgba(0,11,88,0.08)' }}>
-              <p className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: '#1c1a26bf' }}>
-                Share this article
-              </p>
+            <div className="mt-10 border-t border-line pt-8">
+              <p className="detail-label mb-4">Share this article</p>
               <ShareButtons title={post.title} />
             </div>
           </article>
 
           {/* Sidebar */}
           <aside className="lg:col-span-1">
-            <div
-              className="rounded-2xl p-6 sticky top-24"
-              style={{ backgroundColor: '#ffffff', border: '1px solid rgba(0,11,88,0.08)', boxShadow: '0 4px 24px rgba(0,11,88,0.05)' }}
-            >
-              <h3 className="text-sm font-semibold uppercase tracking-wider mb-5 pb-4" style={{ color: '#000B58', borderBottom: '1px solid rgba(0,11,88,0.08)' }}>
-                Article Info
-              </h3>
-
-              <dl className="space-y-4 text-sm">
-                <div>
-                  <dt className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: 'var(--color-primary)' }}>Published</dt>
-                  <dd style={{ color: '#000B58' }}>{formattedDate}</dd>
+            <div className="sticky top-28 rounded-card border border-line bg-white p-7">
+              <h3 className="mb-2 text-2xl">Article Info</h3>
+              <dl className="detail-list">
+                <div className="flex-col !gap-1">
+                  <dt className="detail-label">Published</dt>
+                  <dd className="detail-value">{formattedDate}</dd>
                 </div>
-                <div>
-                  <dt className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: 'var(--color-primary)' }}>Reading Time</dt>
-                  <dd style={{ color: '#000B58' }}>{post.readTime}</dd>
+                <div className="flex-col !gap-1">
+                  <dt className="detail-label">Reading Time</dt>
+                  <dd className="detail-value">{post.readTime}</dd>
                 </div>
-                <div>
-                  <dt className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: 'var(--color-primary)' }}>Category</dt>
+                <div className="flex-col !gap-2">
+                  <dt className="detail-label">Category</dt>
                   <dd><Badge variant="secondary">{post.category}</Badge></dd>
                 </div>
                 {videoId && (
-                  <div>
-                    <dt className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: 'var(--color-primary)' }}>Source</dt>
+                  <div className="flex-col !gap-1">
+                    <dt className="detail-label">Source</dt>
                     <dd>
                       <a
                         href={post.videoLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-medium transition-opacity hover:opacity-75"
-                        style={{ color: '#000B58' }}
+                        className="inline-flex items-center gap-1.5 font-medium text-navy hover:text-violet"
                       >
-                        <svg className="h-4 w-4 text-red-600" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                          <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0C.488 3.45.029 5.804 0 12c.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0C23.512 20.55 23.971 18.196 24 12c-.029-6.185-.484-8.549-4.385-8.816zM9 16V8l8 4-8 4z" />
-                        </svg>
+                        <YoutubeLogo size={18} weight="light" aria-hidden="true" />
                         Watch on YouTube
                       </a>
                     </dd>
@@ -290,13 +249,10 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
           </aside>
         </div>
 
-        {/* Related posts */}
         {relatedPosts.length > 0 && (
-          <section className="mt-20 pt-14" style={{ borderTop: '2px solid rgba(0,11,88,0.07)' }}>
-            <h2 className="display text-3xl mb-8" style={{ color: '#000B58' }}>
-              Related Articles
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <section className="mt-24 border-t border-line pt-16">
+            <h2 className="mb-10 text-4xl">Related Articles</h2>
+            <div className="grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
               {relatedPosts.map((related) => (
                 <BlogCard key={related.id} post={related} />
               ))}
@@ -304,20 +260,13 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
           </section>
         )}
 
-        {/* Bottom back link */}
-        <div className="mt-14 pt-8" style={{ borderTop: '1px solid rgba(0,11,88,0.08)' }}>
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-75"
-            style={{ color: 'var(--color-primary)' }}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-            </svg>
+        <div className="mt-16 border-t border-line pt-8">
+          <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-medium text-navy hover:text-violet">
+            <ArrowLeft size={16} aria-hidden="true" />
             Back to Blog
           </Link>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

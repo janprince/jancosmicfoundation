@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import { ChatCircleText } from '@phosphor-icons/react/dist/ssr';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Button from '@/components/ui/Button';
@@ -14,170 +16,100 @@ export default async function TestimonialsPage() {
   const testimonials = await getTestimonials();
 
   return (
-    <main style={{ backgroundColor: '#FDFBF7' }}>
+    <div className="bg-cream">
       <PageHero
         title="Voices from the Community"
         subtitle="Reflections from students, volunteers, centre members, and people serving with the Foundation."
       />
 
-      {/* Empty state */}
       {testimonials.length === 0 && (
-        <section className="py-16 sm:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center py-20">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center">
-                <svg className="w-8 h-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
-                </svg>
-              </div>
-              <h3 className="display text-2xl text-[#000B58] mb-2">No testimonies yet</h3>
-              <p className="text-sm text-gray-500">We&rsquo;ll add reflections from students and volunteers as they come in.</p>
-            </div>
+        <section className="section">
+          <div className="wrap py-10 text-center">
+            <ChatCircleText size={48} weight="light" className="mx-auto mb-4 block text-gold-ink" aria-hidden="true" />
+            <h3 className="mb-2 text-3xl">No testimonies yet</h3>
+            <p className="text-muted">We&rsquo;ll add reflections from students and volunteers as they come in.</p>
           </div>
         </section>
       )}
 
-      {/* Featured Testimonial */}
+      {/* Featured */}
       {testimonials.length > 0 && (
-        <section className="py-16 sm:py-24">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div
-              className="relative rounded-3xl p-8 sm:p-12"
-              style={{
-                background:
-                  'linear-gradient(135deg, #000B58 0%, #1a1b6b 50%, var(--color-violet, #5B4B9E) 100%)',
-              }}
-            >
-              {/* Large quote mark */}
-              <svg
-                className="absolute top-6 left-6 sm:top-8 sm:left-8 w-16 h-16 sm:w-20 sm:h-20 opacity-15"
-                fill="white"
-                viewBox="0 0 24 24"
-              >
-                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-              </svg>
+        <section className="section">
+          <div className="mx-auto max-w-4xl px-5 sm:px-8">
+            <figure className="night stars overflow-hidden rounded-card p-8 sm:p-14">
+              <span aria-hidden="true" className="block font-serif text-7xl leading-[0.6] text-gold">&ldquo;</span>
+              <blockquote className="mt-6 font-serif text-2xl italic leading-relaxed text-white sm:text-3xl">
+                {testimonials[0].quote}
+              </blockquote>
+              <figcaption className="mt-10 flex items-center gap-4">
+                <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full border border-gold/50 font-serif text-2xl text-gold" aria-hidden="true">
+                  {testimonials[0].name.charAt(0)}
+                </span>
+                <span>
+                  <span className="block font-semibold text-white">{testimonials[0].name}</span>
+                  <span className="block text-sm text-[#F0DCA6]">{testimonials[0].role}</span>
+                </span>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+      )}
 
-              <div className="relative z-10">
-                <blockquote className="display text-xl sm:text-2xl leading-relaxed text-white/95 italic mb-8">
-                  &ldquo;{testimonials[0].quote}&rdquo;
-                </blockquote>
-                <div className="flex items-center gap-4">
-                  <div
-                    className="w-14 h-14 rounded-full flex items-center justify-center text-lg font-bold shrink-0"
-                    style={{
-                      backgroundColor: 'rgba(212,168,67,0.25)',
-                      color: '#D4A843',
-                      border: '2px solid rgba(212,168,67,0.5)',
-                    }}
-                  >
-                    {testimonials[0].name.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="text-base font-semibold text-white">
-                      {testimonials[0].name}
-                    </p>
-                    <p className="text-sm" style={{ color: 'rgba(212,168,67,0.95)' }}>
-                      {testimonials[0].role}
-                    </p>
-                  </div>
-                </div>
-              </div>
+      {/* All reflections */}
+      {testimonials.length > 1 && (
+        <section className="bg-cream pb-24">
+          <div className="wrap">
+            <SectionHeader
+              label="In their words"
+              title="Reflections from the community"
+              subtitle="No reflection can replace direct experience. Still, another seeker's words can sometimes help us take the next honest step."
+            />
+            <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+              {testimonials.slice(1).map((testimonial) => (
+                <figure key={testimonial.id} className="flex flex-col gap-5 rounded-card bg-white p-8">
+                  <span aria-hidden="true" className="font-serif text-6xl leading-[0.6] text-gold">&ldquo;</span>
+                  <blockquote className="flex-1 font-serif text-lg italic leading-relaxed text-ink/80">
+                    {testimonial.quote}
+                  </blockquote>
+                  <figcaption className="flex items-center gap-3 border-t border-line pt-5">
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-sand font-serif text-lg text-navy" aria-hidden="true">
+                      {testimonial.name.charAt(0)}
+                    </span>
+                    <span>
+                      <span className="block text-sm font-semibold text-navy">{testimonial.name}</span>
+                      <span className="block text-xs text-muted">{testimonial.role}</span>
+                    </span>
+                  </figcaption>
+                </figure>
+              ))}
             </div>
           </div>
         </section>
       )}
 
-      {/* All Testimonials Grid */}
-      <section className="pb-16 sm:pb-24" style={{ backgroundColor: '#FDFBF7' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            label="In their words"
-            title="Reflections from the community"
-            subtitle="No reflection can replace direct experience. Still, another seeker's words can sometimes help us take the next honest step."
-          />
-
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-            {testimonials.slice(1).map((testimonial) => (
-              <div
-                key={testimonial.id}
-                className="bg-white rounded-2xl p-7 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col gap-5"
-                style={{ border: '1px solid rgba(0,11,88,0.06)' }}
-              >
-                {/* Quote icon */}
-                <svg
-                  className="w-8 h-8 shrink-0"
-                  style={{ color: 'rgba(212,168,67,0.4)' }}
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                </svg>
-
-                {/* Quote text */}
-                <blockquote className="text-sm sm:text-base leading-relaxed italic flex-1" style={{ color: '#1c1a26cc' }}>
-                  &ldquo;{testimonial.quote}&rdquo;
-                </blockquote>
-
-                {/* Author */}
-                <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
-                  <div className="w-11 h-11 rounded-full flex items-center justify-center text-sm font-bold shrink-0 bg-gradient-to-br from-primary to-[#D4A843] text-white">
-                    {testimonial.name.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold" style={{ color: '#000B58' }}>
-                      {testimonial.name}
-                    </p>
-                    <p className="text-xs" style={{ color: '#1c1a26cc' }}>
-                      {testimonial.role}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Inspirational Quote Section */}
-      <section className="py-14 sm:py-20" style={{ backgroundColor: '#F2EFE9' }}>
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="display text-2xl sm:text-3xl italic leading-relaxed mb-4" style={{ color: '#000B58' }}>
+      {/* Quote */}
+      <section className="section bg-sand">
+        <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
+          <p className="font-serif text-3xl italic leading-snug text-navy sm:text-4xl">
             &ldquo;The proof of our spiritual journey is the genuine love that is revealed in us and among one another.&rdquo;
           </p>
-          <p className="text-sm font-semibold" style={{ color: 'var(--color-primary)' }}>
-            — Dr. Baffour Jan
-          </p>
+          <p className="eyebrow mt-6">Dr. Baffour Jan</p>
         </div>
       </section>
 
       {/* CTA */}
-      <section
-        className="py-16 sm:py-24"
-        style={{
-          background:
-            'linear-gradient(135deg, #000B58 0%, #1a1b6b 50%, var(--color-violet, #5B4B9E) 100%)',
-        }}
-      >
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="display text-3xl sm:text-4xl text-white mb-4">
-            Come and see for yourself
-          </h2>
-          <p
-            className="text-base sm:text-lg mb-10 leading-relaxed"
-            style={{ color: 'rgba(253,251,247,0.9)' }}
-          >
+      <section className="night stars section">
+        <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
+          <h2 className="text-4xl sm:text-5xl">Come and see for yourself</h2>
+          <p className="mt-5 text-lg leading-relaxed text-white/80">
             If these reflections speak to something in you, begin simply: join a gathering, visit a centre, or write to the Foundation.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button href="/community" variant="secondary" size="lg">
-              Join the Community
-            </Button>
-            <Button href="/volunteer" variant="outline" size="lg" className="!border-white/30 !text-white hover:!bg-white/10">
-              Volunteer With Us
-            </Button>
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button href="/community" variant="secondary" size="lg">Join the Community</Button>
+            <Link href="/volunteer" className="button ghost button-lg">Volunteer With Us</Link>
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
