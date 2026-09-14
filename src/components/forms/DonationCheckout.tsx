@@ -1,266 +1,86 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { CheckCircle, WarningCircle } from "@phosphor-icons/react";
-import { usePaystackPayment } from "react-paystack";
-import { PAYSTACK_PUBLIC_KEY, PRESET_AMOUNTS, MIN_DONATION, MAX_DONATION, generateReference, formatAmount } from "@/lib/paystack";
-import { verifyDonation } from "@/lib/api";
-import Button from "@/components/ui/Button";
+import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
+import { usePaystackPayment } from 'react-paystack';
+import { PAYSTACK_PUBLIC_KEY, PRESET_AMOUNTS, MIN_DONATION, MAX_DONATION, generateReference, formatAmount } from '@/lib/paystack';
+import { verifyDonation } from '@/lib/api';
+import { siteConfig } from '@/lib/site-config';
 
-// Sized for the narrow donation sidebar: three columns must fit "GH₵1,000" without clipping.
-const amountButton =
-  "flex min-h-11 items-center justify-center whitespace-nowrap rounded-full border px-2 text-sm font-semibold tabular-nums transition-colors duration-200";
-const amountActive = "border-navy bg-navy text-white";
-const amountIdle = "border-line bg-white text-navy hover:border-navy/40";
+interface Transaction { amount: number; email: string; reference: string; }
+type State = 'idle' | 'paying' | 'verifying' | 'success' | 'pending' | 'error';
 
-interface DonationCheckoutProps {
-  causeTitle: string;
-  causeId: string;
-}
-
-function PaystackButton({ amount, email, causeId, causeTitle, reference, onSuccess, onClose }: {
-  amount: number;
-  email: string;
-  causeId: string;
-  causeTitle: string;
-  reference: string;
-  onSuccess: (ref: string) => void;
-  onClose: () => void;
+function PaymentButton({ transaction, causeId, causeTitle, onStart, onSuccess, onClose, onError }: {
+  transaction: Transaction; causeId: string; causeTitle: string;
+  onStart: () => void; onSuccess: () => void; onClose: () => void; onError: () => void;
 }) {
-  const config = {
-    reference,
-    email,
-    amount: amount * 100, // Convert to pesewas
-    publicKey: PAYSTACK_PUBLIC_KEY,
-    currency: "GHS",
-    metadata: {
-      custom_fields: [
-        { display_name: "Cause", variable_name: "cause", value: causeTitle },
-        { display_name: "Cause ID", variable_name: "cause_id", value: causeId },
-      ],
-    },
-  };
-
-  const initializePayment = usePaystackPayment(config);
-
-  return (
-    <Button
-      type="button"
-      variant="primary"
-      size="lg"
-      className="w-full"
-      onClick={() => {
-        initializePayment({
-          onSuccess: () => onSuccess(reference),
-          onClose,
-        });
-      }}
-    >
-      Donate {formatAmount(amount)}
-    </Button>
-  );
+  const started = useRef(false);
+  const initialize = usePaystackPayment({
+    reference: transaction.reference, email: transaction.email, amount: Math.round(transaction.amount * 100),
+    publicKey: PAYSTACK_PUBLIC_KEY, currency: 'GHS',
+    metadata: { custom_fields: [{ display_name: 'Cause', variable_name: 'cause', value: causeTitle }, { display_name: 'Cause ID', variable_name: 'cause_id', value: causeId }] },
+  });
+  return <button type="button" className="button w-full" onClick={() => {
+    if (started.current) return;
+    started.current = true;
+    onStart();
+    try { initialize({ onSuccess, onClose }); } catch { started.current = false; onError(); }
+  }}>Donate {formatAmount(transaction.amount)}</button>;
 }
 
-export default function DonationCheckout({ causeTitle, causeId }: DonationCheckoutProps) {
-  const [selectedAmount, setSelectedAmount] = useState<number>(100);
-  const [customAmount, setCustomAmount] = useState("");
-  const [email, setEmail] = useState("");
-  const [isCustom, setIsCustom] = useState(false);
-  const [state, setState] = useState<"idle" | "verifying" | "success" | "pending" | "error">("idle");
+export default function DonationCheckout({ causeTitle, causeId }: { causeTitle: string; causeId: string }) {
+  const [amount, setAmount] = useState(100);
+  const [custom, setCustom] = useState<string | null>(null);
+  const [email, setEmail] = useState('');
+  const [state, setState] = useState<State>('idle');
   const [reference, setReference] = useState(generateReference);
+  const [submitted, setSubmitted] = useState<Transaction | null>(null);
+  const confirmation = useRef<HTMLDivElement>(null);
+  const inProgress = useRef(false);
+  const finalAmount = custom === null ? amount : Number(custom);
+  const amountValid = Number.isFinite(finalAmount) && finalAmount >= MIN_DONATION && finalAmount <= MAX_DONATION && Math.abs(finalAmount * 100 - Math.round(finalAmount * 100)) < .00001;
+  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+  const busy = state === 'paying' || state === 'verifying';
+  const transaction = { amount: finalAmount, email: email.trim(), reference };
+  useEffect(() => { if (state === 'success' || state === 'pending') confirmation.current?.focus(); }, [state]);
 
-  const finalAmount = isCustom ? Number(customAmount) : selectedAmount;
-
-  async function handlePaymentSuccess(reference: string) {
-    setState("verifying");
-    try {
-      const result = await verifyDonation({ reference, cause_id: causeId });
-      if (result.ok) {
-        setState("success");
-      } else {
-        // Payment went through Paystack but backend verification failed.
-        // Show a pending state — the webhook will catch it as a safety net.
-        setState("pending");
-      }
-    } catch {
-      // Network/server error — payment already went through Paystack,
-      // so treat as pending rather than error to avoid alarming the donor.
-      setState("pending");
-    }
+  async function confirm(paid: Transaction) {
+    setSubmitted(paid);
+    setState('verifying');
+    const result = await verifyDonation({ reference: paid.reference, cause_id: causeId });
+    inProgress.current = false;
+    setState(result.ok ? 'success' : 'pending');
   }
-
-  function handlePaymentClose() {
-    // User closed the Paystack modal without completing — generate a fresh reference
-    // so the next attempt doesn't reuse a potentially abandoned one.
+  function close() {
+    inProgress.current = false;
+    setState('idle');
     setReference(generateReference());
   }
 
-  if (state === "success") {
-    return (
-      <div className="text-center py-8">
-        <CheckCircle size={64} weight="light" className="mx-auto mb-4 block text-gold-ink" aria-hidden="true" />
-        <h3 className="font-serif text-3xl text-navy">Thank you</h3>
-        <p className="mt-2 text-gray-600">
-          Your donation of {formatAmount(finalAmount)} to {causeTitle} has been received.
-        </p>
-        <p className="mt-1 text-sm text-gray-500">
-          A receipt has been sent to your email.
-        </p>
-        <button
-          onClick={() => {
-            setState("idle");
-            setReference(generateReference());
-          }}
-          className="mt-6 text-primary font-medium hover:underline"
-        >
-          Make another donation
-        </button>
+  if (!PAYSTACK_PUBLIC_KEY) return <div className="space-y-4"><h3 className="text-2xl">Giving enquiries</h3><p className="text-muted">Online giving is currently unavailable. Contact the Foundation for help supporting this work.</p><Link href={`/contact?subject=${encodeURIComponent(`Giving to ${causeTitle}`)}#enquiry`} className="button outline">Contact about giving</Link></div>;
+
+  if ((state === 'success' || state === 'pending') && submitted) return <div ref={confirmation} tabIndex={-1} role="status" className="space-y-4">
+    <h3 className="text-3xl">{state === 'success' ? 'Thank you for your gift' : 'Your payment is being confirmed'}</h3>
+    <p>{formatAmount(submitted.amount)} for {causeTitle}.</p>
+    <p className="form-note">{state === 'success' ? 'Your donation has been confirmed. Please check your email for payment information.' : 'Please keep this reference. You do not need to make another payment while confirmation is pending.'}</p>
+    <p className="text-sm break-all"><strong>Reference:</strong> {submitted.reference}</p>
+    <a className="text-link" href={`mailto:${siteConfig.contact.email}?subject=${encodeURIComponent(`Donation enquiry: ${submitted.reference}`)}`}>Get help with this donation</a>
+    {state === 'success' && <button className="button outline mt-4" onClick={close}>Make another donation</button>}
+  </div>;
+
+  const guidance = !amountValid ? 'Enter a valid amount to continue' : !emailValid ? 'Enter your email to continue' : '';
+  return <div className="space-y-5" aria-busy={busy}>
+    <fieldset disabled={busy} className="space-y-5">
+      <legend className="field-label mb-3">Donation amount (GHS)</legend>
+      <div className="grid grid-cols-3 gap-2" role="group" aria-label="Choose a donation amount">
+        {PRESET_AMOUNTS.map(value => <button type="button" key={value} aria-pressed={custom === null && value === amount} onClick={() => { setAmount(value); setCustom(null); }} className={`min-h-11 rounded-full border px-1 text-sm font-medium ${custom === null && value === amount ? 'bg-navy text-white border-navy' : 'border-[#8b8793] text-navy'}`}>GH₵{value.toLocaleString('en-GH')}</button>)}
+        <button type="button" aria-pressed={custom !== null} onClick={() => setCustom('')} className={`min-h-11 rounded-full border px-1 text-sm ${custom !== null ? 'bg-navy text-white border-navy' : 'border-[#8b8793] text-navy'}`}>Custom</button>
       </div>
-    );
-  }
-
-  if (state === "pending") {
-    return (
-      <div className="text-center py-8">
-        <CheckCircle size={64} weight="light" className="mx-auto mb-4 block text-gold-ink" aria-hidden="true" />
-        <h3 className="font-serif text-3xl text-navy">Payment Received</h3>
-        <p className="mt-2 text-gray-600">
-          Your donation of {formatAmount(finalAmount)} to {causeTitle} is being confirmed.
-        </p>
-        <p className="mt-1 text-sm text-gray-500">
-          You&apos;ll receive a confirmation email shortly. If you have any concerns, please contact us.
-        </p>
-        <button
-          onClick={() => {
-            setState("idle");
-            setReference(generateReference());
-          }}
-          className="mt-6 text-primary font-medium hover:underline"
-        >
-          Make another donation
-        </button>
-      </div>
-    );
-  }
-
-  if (state === "error") {
-    return (
-      <div className="text-center py-8">
-        <WarningCircle size={64} weight="light" className="mx-auto mb-4 block text-accent" aria-hidden="true" />
-        <h3 className="font-serif text-3xl text-navy">Something went wrong</h3>
-        <p className="mt-2 text-sm text-gray-600">We couldn&apos;t process your donation. Please try again or contact us for help.</p>
-        <button
-          onClick={() => {
-            setState("idle");
-            setReference(generateReference());
-          }}
-          className="mt-6 text-primary font-medium hover:underline"
-        >
-          Try again
-        </button>
-      </div>
-    );
-  }
-
-  return (
-    <div className="space-y-6">
-      <div>
-        <label className="field-label !mb-3">
-          Select Amount (GHS)
-        </label>
-        <div className="grid grid-cols-3 gap-2">
-          {PRESET_AMOUNTS.map((amount) => {
-            const active = !isCustom && selectedAmount === amount;
-            return (
-              <button
-                key={amount}
-                type="button"
-                aria-pressed={active}
-                onClick={() => {
-                  setSelectedAmount(amount);
-                  setIsCustom(false);
-                }}
-                className={`${amountButton} ${active ? amountActive : amountIdle}`}
-              >
-                <span className={`mr-0.5 text-[11px] font-medium ${active ? "text-white/70" : "text-muted"}`}>GH₵</span>
-                {amount.toLocaleString("en-GH")}
-              </button>
-            );
-          })}
-          <button
-            type="button"
-            aria-pressed={isCustom}
-            onClick={() => setIsCustom(true)}
-            className={`${amountButton} ${isCustom ? amountActive : amountIdle}`}
-          >
-            Custom
-          </button>
-        </div>
-      </div>
-
-      {isCustom && (
-        <div>
-          <label htmlFor="custom-amount" className="field-label">
-            Enter Amount (GHS)
-          </label>
-          <input
-            id="custom-amount"
-            type="number"
-            min={MIN_DONATION}
-            max={MAX_DONATION}
-            value={customAmount}
-            onChange={(e) => setCustomAmount(e.target.value)}
-            className="field"
-            placeholder={`GH₵${MIN_DONATION} – GH₵${MAX_DONATION.toLocaleString()}`}
-          />
-          {customAmount && (Number(customAmount) < MIN_DONATION || Number(customAmount) > MAX_DONATION) && (
-            <p className="mt-1 text-sm text-red-500">
-              Amount must be between GH₵{MIN_DONATION} and GH₵{MAX_DONATION.toLocaleString()}
-            </p>
-          )}
-        </div>
-      )}
-
-      <div>
-        <label htmlFor="donor-email" className="field-label">
-          Email Address
-        </label>
-        <input
-          id="donor-email"
-          type="email"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="field"
-          placeholder="your@email.com (for receipt)"
-        />
-      </div>
-
-      {/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && finalAmount >= MIN_DONATION && finalAmount <= MAX_DONATION ? (
-        state === "verifying" ? (
-          <Button variant="primary" size="lg" className="w-full opacity-75" disabled>
-            Verifying payment...
-          </Button>
-        ) : (
-          <PaystackButton
-            amount={finalAmount}
-            email={email}
-            causeId={causeId}
-            causeTitle={causeTitle}
-            reference={reference}
-            onSuccess={handlePaymentSuccess}
-            onClose={handlePaymentClose}
-          />
-        )
-      ) : (
-        <Button variant="primary" size="lg" className="w-full opacity-50 cursor-not-allowed" disabled>
-          Enter email to donate
-        </Button>
-      )}
-
-      <p className="text-xs text-gray-400 text-center">
-        Payments are processed securely via Paystack. A receipt is sent to your email.
-      </p>
-    </div>
-  );
+      {custom !== null && <div><label htmlFor="custom-amount" className="field-label">Your amount (GHS)</label><input id="custom-amount" className="field" type="number" inputMode="decimal" min={MIN_DONATION} max={MAX_DONATION} step="0.01" value={custom} onChange={event => setCustom(event.target.value)} aria-describedby="amount-help" aria-invalid={custom !== '' && !amountValid} /><p id="amount-help" className={`mt-2 text-sm ${custom !== '' && !amountValid ? 'text-[#922f15]' : 'text-muted'}`}>GH₵{MIN_DONATION} to GH₵{MAX_DONATION.toLocaleString()}, with up to two decimal places.</p></div>}
+      <div><label htmlFor="donor-email" className="field-label">Email address</label><input id="donor-email" type="email" autoComplete="email" className="field" required value={email} onChange={event => setEmail(event.target.value)} aria-describedby="donor-email-help" /><p id="donor-email-help" className="form-note mt-2">For your payment confirmation.</p></div>
+    </fieldset>
+    {busy ? <p role="status" className="form-feedback">{state === 'verifying' ? 'Confirming your payment…' : 'Complete your payment in the Paystack window.'}</p> : guidance ? <><button disabled className="button w-full">Continue to payment</button><p role="status" className="form-note">{guidance}.</p></> : <PaymentButton transaction={transaction} causeId={causeId} causeTitle={causeTitle} onStart={() => { if (!inProgress.current) { inProgress.current = true; setState('paying'); } }} onSuccess={() => confirm(transaction)} onClose={close} onError={() => { inProgress.current = false; setState('error'); }} />}
+    {state === 'error' && <p role="alert" className="form-feedback error">The payment window could not open. Try again, or contact the Foundation for help.</p>}
+    <p className="form-note">Payments are handled by Paystack in Ghana cedis. <Link className="underline" href="/privacy-policy">Privacy information</Link></p>
+  </div>;
 }

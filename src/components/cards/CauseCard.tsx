@@ -41,10 +41,10 @@ export default function CauseCard({ cause }: { cause: Cause }) {
           <div className="mt-5 flex items-center justify-between gap-4 border-t border-line pt-4">
             <span className="text-xs text-muted">
               {isSpecific
-                ? `${cause.donorsCount} donor${cause.donorsCount !== 1 ? 's' : ''}`
-                : cause.donorsCount > 0
+                ? cause.donorsCount == null ? '' : `${cause.donorsCount} donor${cause.donorsCount !== 1 ? 's' : ''}`
+                : (cause.donorsCount ?? 0) > 0
                 ? `${cause.donorsCount} supporter${cause.donorsCount !== 1 ? 's' : ''}`
-                : 'Be the first to support'}
+                : 'Contributions welcome'}
             </span>
             <span className="text-link text-sm">{isSpecific ? 'Donate' : 'Support this work'}</span>
           </div>

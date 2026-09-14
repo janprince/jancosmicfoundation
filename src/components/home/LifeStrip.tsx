@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight } from '@phosphor-icons/react';
@@ -17,8 +17,18 @@ const moments = [
 
 export default function LifeStrip() {
   const track = useRef<HTMLUListElement>(null);
+  const [edges, setEdges] = useState({ first: true, last: false });
+  useEffect(() => {
+    const element = track.current;
+    if (!element) return;
+    const update = () => setEdges({ first: element.scrollLeft <= 2, last: element.scrollLeft + element.clientWidth >= element.scrollWidth - 2 });
+    const observer = new ResizeObserver(update);
+    observer.observe(element);
+    element.addEventListener('scroll', update, { passive: true });
+    return () => { observer.disconnect(); element.removeEventListener('scroll', update); };
+  }, []);
   const move = (direction: 1 | -1) =>
-    track.current?.scrollBy({ left: direction * track.current.clientWidth * 0.7, behavior: 'smooth' });
+    track.current?.scrollBy({ left: direction * track.current.clientWidth * 0.7, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
 
   return (
     <>
@@ -35,8 +45,8 @@ export default function LifeStrip() {
       <div className="wrap life-controls">
         <Link className="text-link" href="/gallery">See the gallery</Link>
         <div>
-          <button type="button" onClick={() => move(-1)} aria-label="Previous photographs"><ArrowLeft size={20} /></button>
-          <button type="button" onClick={() => move(1)} aria-label="Next photographs"><ArrowRight size={20} /></button>
+          <button type="button" onClick={() => move(-1)} disabled={edges.first} aria-label="Previous photographs"><ArrowLeft size={20} /></button>
+          <button type="button" onClick={() => move(1)} disabled={edges.last} aria-label="Next photographs"><ArrowRight size={20} /></button>
         </div>
       </div>
     </>

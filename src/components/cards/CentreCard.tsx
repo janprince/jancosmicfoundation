@@ -26,15 +26,12 @@ export default function CentreCard({ centre }: { centre: Centre }) {
         <p className="mt-3 line-clamp-2 flex-1 text-[15px] leading-relaxed text-ink/75">{centre.description}</p>
         <div className="mt-5 flex items-center justify-between gap-4 border-t border-line pt-4">
           <div className="flex items-center gap-3">
-            <span className="grid h-9 w-9 place-items-center rounded-full bg-sand font-serif text-navy" aria-hidden="true">
-              {centre.leader.name.charAt(0)}
-            </span>
             <span>
-              <span className="block text-xs font-medium text-navy">{centre.leader.name}</span>
-              <span className="block text-xs text-muted">{centre.leader.title}</span>
+              <span className="block text-sm font-medium text-navy">{centre.leader.name}</span>
+              <span className="block text-sm text-muted">{centre.leader.title}</span>
             </span>
           </div>
-          <span className="text-right text-xs font-medium text-gold-ink">{centreMembership(centre.memberCount)}</span>
+          <span className="text-right text-sm font-medium text-gold-ink">{centreMembership(centre.memberCount)}</span>
         </div>
       </div>
     </Link>

@@ -12,7 +12,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: SITE_URL,
-      lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1,
     },
@@ -27,7 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     },
     {
-      url: `${SITE_URL}/about/mission-vision`,
+      url: `${SITE_URL}/visit`,
       changeFrequency: 'monthly',
       priority: 0.6,
     },
@@ -87,11 +86,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     },
     {
-      url: `${SITE_URL}/testimonials`,
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-    {
       url: `${SITE_URL}/privacy-policy`,
       changeFrequency: 'yearly',
       priority: 0.3,
@@ -120,7 +114,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const eventPages: MetadataRoute.Sitemap = events.map((event) => ({
     url: `${SITE_URL}/events/${event.slug}`,
-    lastModified: new Date(event.date),
     changeFrequency: 'weekly',
     priority: 0.6,
   }));

@@ -43,7 +43,7 @@ export interface Cause {
   goalAmount: number;
   raisedAmount: number;
   currency: string;
-  donorsCount: number;
+  donorsCount: number | null;
   category: string;
   isActive: boolean;
   /** Short impact statement shown instead of progress for ongoing causes. */
@@ -59,7 +59,7 @@ export interface Centre {
   country: string;
   image: string;
   description: string;
-  memberCount: number;
+  memberCount: number | null;
   leader: {
     name: string;
     avatar: string;

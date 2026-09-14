@@ -286,3 +286,61 @@ a.detail-value:hover, .detail-list a:hover .detail-value { color: var(--violet);
 .field:focus { border-color: var(--navy); box-shadow: 0 0 0 3px rgba(0,11,88,.08); }
 textarea.field { resize: vertical; }
 .field-label { display: block; margin-bottom: 6px; font-size: 14px; font-weight: 500; color: var(--ink); }
+
+/* V2 review: a stable masthead, compact practical pages and comfortable reading. */
+.site-header { position: fixed; inset: 0 0 auto; z-index: 50; background: var(--cream); border-bottom: 1px solid var(--line); }
+.site-nav { max-width: 1280px; margin-inline: auto; min-height: 76px; padding: 12px 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.site-wordmark { display: flex; align-items: center; gap: 12px; color: var(--navy); font-size: 14px; font-weight: 600; letter-spacing: .055em; line-height: 1.35; }
+.site-wordmark img { flex-shrink: 0; }
+.nav-trigger { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 10px 12px; color: var(--navy); font-size: 14px; cursor: pointer; }
+.nav-trigger[data-current], .nav-trigger[aria-current], .nav-trigger[data-open] { text-decoration: underline; text-underline-offset: 7px; }
+.nav-panel { position: absolute; top: 100%; left: 0; width: 270px; background: var(--cream); border: 1px solid var(--line); border-radius: 8px; padding: 8px; box-shadow: 0 12px 26px rgba(0,11,88,.09); }
+.nav-panel a { display: block; padding: 12px; color: var(--navy); font-size: 15px; border-radius: 4px; }
+.nav-panel a:hover, .nav-panel a[aria-current], .mobile-nav-link[aria-current] { background: var(--sand); text-decoration: underline; text-underline-offset: 4px; }
+.mobile-nav-link { display: block; padding: 12px 0; color: var(--navy); font-size: 16px; }
+.page-heading { background: var(--cream); color: var(--ink); padding-block: 124px 44px; border-bottom: 1px solid var(--line); }
+.page-heading h1 { color: var(--navy); font-size: clamp(38px, 4.8vw, 64px); max-width: 24ch; line-height: 1.08; margin-top: 20px; }
+.page-heading p { color: var(--muted); font-size: 18px; max-width: 64ch; margin-top: 18px; }
+.page-home-link { color: var(--muted); font-size: 14px; text-transform: none; letter-spacing: 0; }
+.page-home-link:hover { color: var(--navy); }
+.section { padding-block: clamp(48px, 6vw, 88px); }
+.eyebrow, .detail-label { text-transform: none; letter-spacing: .02em; font-size: 14px; }
+.hero-media img { animation: none; transform: none; }
+.hero h1 em { color: inherit; }
+a:focus-visible, button:focus-visible, summary:focus-visible, [tabindex]:focus-visible { outline-color: var(--navy); }
+.night a:focus-visible, .night button:focus-visible, .hero a:focus-visible, .foundation-footer a:focus-visible, .foundation-footer button:focus-visible { outline-color: var(--gold-soft); }
+.field { border-color: #8b8793; }
+.field::placeholder { color: #6b6874; opacity: 1; }
+.field-label { font-size: 15px; }
+.form-note { font-size: 14px; color: var(--muted); line-height: 1.65; }
+.form-note a { text-decoration: underline; }
+.form-feedback { padding: 16px; background: var(--sand); color: var(--navy); border-left: 3px solid var(--navy); }
+.form-feedback.error { border-color: #a73817; color: #922f15; background: #fff6f1; }
+.reading-copy.prose { max-width: 68ch; font-size: 19px; line-height: 1.8; }
+.reading-copy.prose p { line-height: inherit; }
+.reading-copy.prose h2 { font-size: 1.65em; line-height: 1.2; }
+.reading-copy.prose h3 { font-size: 1.3em; line-height: 1.25; }
+[id] { scroll-margin-top: 100px; }
+.section-jump { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 26px; }
+.visit-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px; }
+.visit-facts dt { color: var(--muted); font-size: 14px; margin-bottom: 7px; }
+.visit-facts dd { color: var(--navy); font-size: 18px; }
+@media (max-width: 600px) {
+  .site-nav { min-height: 72px; padding: 12px 20px; }
+  .site-wordmark { font-size: 14px; letter-spacing: .025em; }
+  .page-heading { padding-block: 108px 32px; }
+  .page-heading h1 { font-size: 38px; }
+  .page-heading p { font-size: 17px; }
+  .hero { display: block; min-height: 0; padding-top: 72px; }
+  .hero-media { position: relative; inset: auto; width: 100%; height: 280px; z-index: 0; }
+  .hero-media img { object-position: 40% 62%; }
+  .hero::before { display: none; }
+  .hero-copy { padding-block: 32px 40px; }
+  .hero h1 { font-size: 44px; max-width: 16ch; }
+  .hero-kicker { margin-bottom: 18px; }
+  .hero-lede { margin-top: 20px; }
+  .hero .actions { margin-top: 24px; }
+  .hero-caption { display: none; }
+  .reading-copy.prose { font-size: 17px; }
+  .visit-facts { grid-template-columns: 1fr; gap: 24px; }
+}

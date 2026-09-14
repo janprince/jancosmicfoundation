@@ -27,7 +27,7 @@ export default function HomePage() {
         <p className="hero-lede hero-animate-3">A spiritual foundation founded by spiritual master and mystic Dr. Baffour Jan, devoted to self-realization.</p>
         <div className="actions hero-animate-4">
           <Link className="button gold" href="/teachings">Explore the teachings</Link>
-          <a className="button ghost" href="#visit">Plan a first visit</a>
+          <a className="button ghost" href="/visit">Plan a first visit</a>
         </div>
       </div>
       <p className="hero-caption">Dr. Baffour Jan with members of the community</p>
@@ -115,7 +115,7 @@ export default function HomePage() {
           <h2 id="visit-title" className="section-title">Come and meet the community</h2>
           <p className="lede">Our home is in Accra. If you would like to visit, contact the Foundation to ask about the next gathering and what to expect.</p>
           <address>{siteConfig.address.streetAddress}, {siteConfig.address.locality}<br />Accra, {siteConfig.address.countryName}</address>
-          <div className="actions"><Link className="button light" href="/contact">Ask about visiting</Link><Link className="text-link" href="/centres">Find a centre</Link></div>
+          <div className="actions"><Link className="button light" href="/visit">Plan your visit</Link><Link className="text-link" href="/centres">Find a centre</Link></div>
         </ScrollReveal>
         <ScrollReveal className="questions" delay={0.1}>
           <h3>Your first visit</h3>

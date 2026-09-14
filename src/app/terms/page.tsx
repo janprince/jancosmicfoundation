@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import PageHero from '@/components/layout/PageHero';
-import SectionHeader from '@/components/ui/SectionHeader';
 
 export const metadata: Metadata = {
   title: 'Terms of Use',
@@ -16,16 +15,9 @@ export default function TermsPage() {
         subtitle="Guidelines for using this website"
       />
 
-      <section className="py-16 md:py-20" style={{ backgroundColor: '#FBF8F2' }}>
+      <section className="section bg-cream">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            label="Legal"
-            title="Terms of Use"
-            subtitle="These terms govern your use of the Jan Cosmic Foundation website."
-            className="mb-10"
-          />
-
-          <div className="prose prose-sm sm:prose-base max-w-none leading-relaxed" style={{ color: '#1c1a26' }}>
+          <div className="reading-copy prose max-w-none leading-relaxed" style={{ color: '#1c1a26' }}>
             <p>
               Our full terms of use are coming soon. In the meantime, please
               note the following:

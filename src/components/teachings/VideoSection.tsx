@@ -31,7 +31,7 @@ const videos: Video[] = [
 const PLAYLIST_ID = 'PL77C1eSjQlOJPUZ0mgkVaBZEFkrf7efcv';
 
 export default function VideoSection() {
-  const [activeVideo, setActiveVideo] = useState(videos[0]);
+  const [activeVideo, setActiveVideo] = useState(videos[1]);
   const [playing, setPlaying] = useState(false);
   const [query, setQuery] = useState('');
   const visibleVideos = videos.filter(video => video.title.toLowerCase().includes(query.trim().toLowerCase()));
@@ -39,7 +39,7 @@ export default function VideoSection() {
   return (
     <section className="section bg-cream">
       <div className="wrap">
-        <SectionHeader label="Video Teachings" title="Conversations with Dr. Jan" />
+        <SectionHeader title="Conversations with Dr. Jan" align="left" /><a href="#teaching-collection" className="text-link mt-4">Search the teaching collection</a>
 
         {/* Player */}
         <div className="mx-auto mt-12 max-w-4xl">
@@ -79,12 +79,12 @@ export default function VideoSection() {
 
           <div className="mt-6">
             <p className="eyebrow">{playing ? 'Now playing' : 'Featured teaching'}</p>
-            <h3 className="mt-2 text-2xl leading-snug sm:text-3xl">{activeVideo.title}</h3>
+            <h3 className="mt-2 text-2xl leading-snug sm:text-3xl">{activeVideo.title}</h3><a className="text-link mt-3 text-sm" href={`https://www.youtube.com/watch?v=${activeVideo.id}`} target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
           </div>
         </div>
 
         {/* Collection */}
-        <div className="mx-auto mt-16 max-w-4xl border-t border-line pt-12">
+        <div id="teaching-collection" className="mx-auto mt-10 max-w-4xl border-t border-line pt-8">
           <label htmlFor="teaching-search" className="field-label">Find a teaching by title</label>
           <div className="relative mb-6">
             <MagnifyingGlass size={20} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-muted" aria-hidden="true" />
@@ -98,7 +98,7 @@ export default function VideoSection() {
             />
           </div>
           <div className="mb-5 flex items-center justify-between gap-4">
-            <p className="text-sm text-muted">
+            <p className="text-sm text-muted" role="status">
               {visibleVideos.length} {visibleVideos.length === 1 ? 'teaching' : 'teachings'}
             </p>
             <a href={`https://www.youtube.com/playlist?list=${PLAYLIST_ID}`} target="_blank" rel="noopener noreferrer" className="text-link text-sm">
@@ -112,12 +112,13 @@ export default function VideoSection() {
               return (
                 <button
                   key={video.id}
+                  aria-pressed={isActive}
                   onClick={() => {
                     setActiveVideo(video);
                     setPlaying(true);
                     // Scroll to player on mobile
                     if (window.innerWidth < 1024) {
-                      document.getElementById('video-player-top')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      document.getElementById('video-player-top')?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
                     }
                   }}
                   className={[
@@ -127,7 +128,7 @@ export default function VideoSection() {
                 >
                   <div className="relative h-16 w-28 shrink-0 overflow-hidden rounded-xl">
                     <Image src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`} alt="" fill className="object-cover" sizes="112px" />
-                    {isActive ? (
+                    {isActive && playing ? (
                       <div className="absolute inset-0 grid place-items-center bg-navy/45">
                         <div className="flex items-end gap-0.5">
                           <span className="block h-3 w-0.5 animate-pulse rounded-full bg-white" />

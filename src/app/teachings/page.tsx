@@ -24,14 +24,14 @@ export default function TeachingsPage() {
       {/* InnerSpace CTA */}
       <section className="night stars section">
         <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
-          <p className="eyebrow !text-gold">For Sincere Seekers</p>
+          <p className="eyebrow !text-gold">Structured study</p>
           <h2 className="mt-4 text-4xl leading-tight sm:text-5xl">
-            For the deeper work — <em className="text-[#F0DCA6]">InnerSpace</em>
+            Continue with InnerSpace
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/85">
             Public videos are an open door.{' '}
             <strong className="font-semibold text-white">InnerSpace</strong> is
-            a structured path for students who want to study seriously, practise
+            a structured path for students who want to study and practise
             consistently, and receive guidance.
           </p>
           <p className="mx-auto mt-4 max-w-xl leading-relaxed text-white/65">

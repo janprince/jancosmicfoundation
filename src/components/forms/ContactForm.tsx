@@ -1,34 +1,45 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { CheckCircle } from "@phosphor-icons/react";
 import Button from "@/components/ui/Button";
 import { submitContactForm } from "@/lib/api";
 
-export default function ContactForm() {
+export default function ContactForm({ initialSubject = "" }: { initialSubject?: string }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
+    subject: initialSubject,
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
+  const sending = useRef(false);
+  const confirmation = useRef<HTMLDivElement>(null);
+  const [errorMessage, setErrorMessage] = useState('');
+  useEffect(() => { if (status === 'sent') confirmation.current?.focus(); }, [status]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (sending.current) return;
+    sending.current = true;
+    setErrorMessage('');
     setStatus("sending");
     const result = await submitContactForm(formData);
+    sending.current = false;
     if (result.ok) {
       setStatus("sent");
       setFormData({ name: "", email: "", subject: "", message: "" });
     } else {
+      setErrorMessage(result.error || "We could not send this message. Please try again, or contact the Foundation by phone or email.");
       setStatus("error");
     }
   };
 
   if (status === "sent") {
     return (
-      <div className="text-center py-12">
+      <div ref={confirmation} tabIndex={-1} role="status" className="text-center py-12">
         <CheckCircle size={64} weight="light" className="mx-auto mb-4 block text-gold-ink" aria-hidden="true" />
         <h3 className="font-serif text-3xl text-navy">Message sent</h3>
         <p className="mt-2 text-gray-600">
@@ -45,7 +56,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form aria-busy={status === "sending"} onSubmit={handleSubmit} className="space-y-5">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
           <label htmlFor="name" className="field-label">
@@ -54,6 +65,7 @@ export default function ContactForm() {
           <input
             id="name"
             type="text"
+            autoComplete="name"
             required
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -68,6 +80,7 @@ export default function ContactForm() {
           <input
             id="email"
             type="email"
+            autoComplete="email"
             required
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -105,9 +118,10 @@ export default function ContactForm() {
         />
       </div>
       {status === "error" && (
-        <p className="text-sm text-red-600">Something went wrong. Please try again.</p>
+        <p role="alert" className="form-feedback error">{errorMessage}</p>
       )}
-      <Button type="submit" variant="primary" size="lg" className="w-full md:w-auto">
+      <p className="form-note">Your details are used to respond to this enquiry. <Link href="/privacy-policy">Privacy information</Link></p>
+      <Button disabled={status === "sending"} type="submit" variant="primary" size="lg" className="w-full md:w-auto">
         {status === "sending" ? "Sending..." : "Send message"}
       </Button>
     </form>

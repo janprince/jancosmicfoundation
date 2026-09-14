@@ -66,7 +66,7 @@ export default function FounderPage() {
                 Dr. Baffour Jan is a mystic, spiritual master, and teacher whose work points beyond doctrine and ritual to the direct recognition of who one already is. His teachings explore God, the soul, consciousness, illusion, the mind, the body, truth, human suffering, and inner awakening.
               </p>
               <p>
-                Public materials around his work describe a path shaped by wide study and direct realization. He does not ask seekers to collect beliefs. He points them back to direct experience: the knowing that becomes possible when the mind becomes quiet.
+                He does not ask seekers to collect beliefs. He points them back to direct experience: the knowing that becomes possible when the mind becomes quiet.
               </p>
               <p>
                 Through Jan Cosmic Foundation, Dr. Jan&rsquo;s teachings are shared through public talks, retreats, courses, gatherings, media, outreach, farms, centres, and service. The invitation is simple and demanding: to know the Self, and to let that knowing transform how one lives.
@@ -117,7 +117,7 @@ export default function FounderPage() {
             Explore the Foundation&rsquo;s programmes, or visit Dr. Jan&rsquo;s personal site for public talks, writing, and the InnerSpace course.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button href="/programs" variant="secondary" size="lg">See the programmes</Button>
+            <Button href="/teachings" variant="secondary" size="lg">Explore the teachings</Button>
             <a href="https://drbaffourjan.com" target="_blank" rel="noopener noreferrer" className="button ghost button-lg">
               Visit drbaffourjan.com
               <ArrowUpRight size={18} aria-hidden="true" />

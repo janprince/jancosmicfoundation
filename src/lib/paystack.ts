@@ -16,7 +16,7 @@ export function formatAmount(amount: number, currency: string = "GHS"): string {
   return new Intl.NumberFormat("en-GH", {
     style: "currency",
     currency,
-    minimumFractionDigits: 0,
+    minimumFractionDigits: Number.isInteger(amount) ? 0 : 2,
     maximumFractionDigits: 2,
   }).format(amount);
 }

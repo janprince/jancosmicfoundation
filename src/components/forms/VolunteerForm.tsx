@@ -1,11 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { CheckCircle } from "@phosphor-icons/react";
 import Button from "@/components/ui/Button";
 import { submitVolunteerApplication } from "@/lib/api";
 
-export default function VolunteerForm() {
+import type { Centre, VolunteerOpportunity } from "@/types";
+
+export default function VolunteerForm({ centres, opportunities, initialRole = "" }: { centres: Centre[]; opportunities: VolunteerOpportunity[]; initialRole?: string }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,24 +17,35 @@ export default function VolunteerForm() {
     skills: "",
     availability: "",
     message: "",
+    opportunity: initialRole,
   });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
+  const sending = useRef(false);
+  const confirmation = useRef<HTMLDivElement>(null);
+  const [errorMessage, setErrorMessage] = useState('');
+  useEffect(() => { if (status === 'sent') confirmation.current?.focus(); }, [status]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (sending.current) return;
+    sending.current = true;
+    setErrorMessage('');
     setStatus("sending");
-    const result = await submitVolunteerApplication(formData);
+    const result = await submitVolunteerApplication({ ...formData, message: [formData.opportunity ? `Role: ${formData.opportunity}` : "", formData.message].filter(Boolean).join("\n\n") });
+    sending.current = false;
     if (result.ok) {
       setStatus("sent");
-      setFormData({ name: "", email: "", phone: "", centrePreference: "", skills: "", availability: "", message: "" });
+      setFormData({ name: "", email: "", phone: "", centrePreference: "", skills: "", availability: "", message: "", opportunity: "" });
     } else {
+      setErrorMessage(result.error || "We could not send this message. Please try again, or contact the Foundation by phone or email.");
       setStatus("error");
     }
   };
 
   if (status === "sent") {
     return (
-      <div className="text-center py-12">
+      <div ref={confirmation} tabIndex={-1} role="status" className="text-center py-12">
         <CheckCircle size={64} weight="light" className="mx-auto mb-4 block text-gold-ink" aria-hidden="true" />
         <h3 className="font-serif text-3xl text-navy">Thank you</h3>
         <p className="mt-2 text-gray-600">
@@ -45,7 +59,8 @@ export default function VolunteerForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form aria-busy={status === "sending"} onSubmit={handleSubmit} className="space-y-5">
+      {opportunities.length > 0 && <div><label htmlFor="vol-role" className="field-label">Area of interest (optional)</label><select id="vol-role" className="field" value={formData.opportunity} onChange={e => setFormData({ ...formData, opportunity: e.target.value })}><option value="">General expression of interest</option>{opportunities.map(role => <option key={role.id} value={role.title}>{role.title}</option>)}</select></div>}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
           <label htmlFor="vol-name" className="field-label">
@@ -54,6 +69,7 @@ export default function VolunteerForm() {
           <input
             id="vol-name"
             type="text"
+            autoComplete="name"
             required
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -68,6 +84,7 @@ export default function VolunteerForm() {
           <input
             id="vol-email"
             type="email"
+            autoComplete="email"
             required
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -79,11 +96,12 @@ export default function VolunteerForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
           <label htmlFor="vol-phone" className="field-label">
-            Phone Number
+            Phone number (optional)
           </label>
           <input
             id="vol-phone"
             type="tel"
+            autoComplete="tel"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             className="field"
@@ -92,7 +110,7 @@ export default function VolunteerForm() {
         </div>
         <div>
           <label htmlFor="vol-centre" className="field-label">
-            Preferred Centre
+            Preferred centre (optional)
           </label>
           <select
             id="vol-centre"
@@ -101,17 +119,14 @@ export default function VolunteerForm() {
             className="field"
           >
             <option value="">Select a centre</option>
-            <option value="accra">Accra, Ghana</option>
-            <option value="kumasi">Kumasi, Ghana</option>
-            <option value="london">London, UK</option>
-            <option value="toronto">Toronto, Canada</option>
-            <option value="new-york">New York, USA</option>
+            <option value="remote">Remote / no centre preference</option>
+            {centres.map(centre => <option key={centre.id} value={centre.slug}>{centre.name}</option>)}
           </select>
         </div>
       </div>
       <div>
         <label htmlFor="vol-skills" className="field-label">
-          Skills and experience
+          Skills and experience (optional)
         </label>
         <input
           id="vol-skills"
@@ -124,7 +139,7 @@ export default function VolunteerForm() {
       </div>
       <div>
         <label htmlFor="vol-availability" className="field-label">
-          Availability
+          Availability (optional)
         </label>
         <select
           id="vol-availability"
@@ -153,9 +168,10 @@ export default function VolunteerForm() {
         />
       </div>
       {status === "error" && (
-        <p className="text-sm text-red-600">Something went wrong. Please try again.</p>
+        <p role="alert" className="form-feedback error">{errorMessage}</p>
       )}
-      <Button type="submit" variant="primary" size="lg" className="w-full md:w-auto">
+      <p className="form-note">Your details are used to respond to this enquiry. <Link href="/privacy-policy">Privacy information</Link></p>
+      <Button disabled={status === "sending"} type="submit" variant="primary" size="lg" className="w-full md:w-auto">
         {status === "sending" ? "Submitting..." : "Send volunteer message"}
       </Button>
     </form>

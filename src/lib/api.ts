@@ -14,10 +14,10 @@ import type {
   JoinCentreFormData,
   NewsletterFormData,
 } from '@/types';
-import * as mock from './mock-data';
+import { foundationPrograms } from '@/content/programmes';
 import { eventHasEnded } from './event-status';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://admin.jancosmicfoundation.org/api';
+const API_URL = (process.env.NEXT_PUBLIC_API_URL || 'https://admin.jancosmicfoundation.org/api').replace(/\/+$/, '');
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -30,35 +30,51 @@ interface PaginatedResponse<T> {
   results: T[];
 }
 
-async function fetchAPI<T>(
-  path: string,
-  options?: { revalidate?: number },
-): Promise<T> {
-  const res = await fetch(`${API_URL}${path}`, {
-    next: { revalidate: options?.revalidate ?? 60 },
-  });
-  if (!res.ok) {
-    throw new Error(`API error: ${res.status} ${res.statusText}`);
+class APIError extends Error {
+  constructor(public status: number) { super(`Content request failed (${status})`); }
+}
+
+async function fetchAPI<T>(path: string, options?: { revalidate?: number }): Promise<T> {
+  const url = new URL(path.startsWith('http') ? path : `${API_URL}${path}`);
+  const base = new URL(API_URL);
+  if (url.origin !== base.origin || !url.pathname.startsWith(`${base.pathname}/`)) {
+    throw new Error('Unexpected content pagination destination');
   }
+  const res = await fetch(url.toString(), {
+    next: { revalidate: options?.revalidate ?? 60 },
+    signal: AbortSignal.timeout(10000),
+  });
+  if (!res.ok) throw new APIError(res.status);
   return res.json();
 }
 
-/**
- * Wraps fetchAPI with a fallback value so server components don't throw
- * (and trigger an infinite re-render loop) when the API is unreachable.
- */
-async function fetchWithFallback<T>(
-  path: string,
-  fallback: T,
-  options?: { revalidate?: number },
-): Promise<T> {
-  try {
-    return await fetchAPI<T>(path, options);
-  } catch {
-    if (process.env.NODE_ENV !== 'production') {
-      console.warn(`[api] ${API_URL}${path} unreachable — using fallback data`);
+// Follow the complete published collection. Empty and unavailable are different states.
+async function collection<T>(path: string): Promise<T[]> {
+  const items: T[] = [];
+  const seen = new Set<string>();
+  let next: string | null = path;
+  while (next) {
+    if (seen.has(next) || seen.size >= 100) throw new Error('Invalid content pagination');
+    seen.add(next);
+    let page: T[] | PaginatedResponse<T>;
+    try { page = await fetchAPI<T[] | PaginatedResponse<T>>(next); }
+    catch (error) {
+      // An optional collection that has not been installed has no published records.
+      if (error instanceof APIError && error.status === 404 && items.length === 0) return [];
+      throw error;
     }
-    return fallback;
+    if (Array.isArray(page)) return [...items, ...page];
+    items.push(...page.results);
+    next = page.next ? new URL(page.next, next.startsWith('http') ? next : `${API_URL}${next}`).toString() : null;
+  }
+  return items;
+}
+
+async function detail<T>(path: string): Promise<T | undefined> {
+  try { return await fetchAPI<T>(path); }
+  catch (error) {
+    if (error instanceof APIError && error.status === 404) return undefined;
+    throw error;
   }
 }
 
@@ -115,24 +131,13 @@ function transformCause(raw: any): Cause {
     goalAmount: Number(raw.goal_amount ?? 0),
     raisedAmount: Number(raw.raised_amount ?? 0),
     currency: raw.currency ?? 'GHS',
-    donorsCount: Number(raw.donors_count ?? 0),
+    donorsCount: raw.donors_count == null ? null : Number(raw.donors_count),
     category: raw.category_name ?? '',
     isActive: raw.is_active ?? true,
     impactStatement: raw.impact_statement,
   };
 
-  const override = mock.causes.find((item) => item.slug === cause.slug);
-
-  return override
-    ? {
-        ...cause,
-        title: override.title,
-        description: override.description,
-        content: override.content,
-        category: override.category,
-        impactStatement: override.impactStatement,
-      }
-    : cause;
+  return cause;
 }
 
 function transformCentre(raw: any): Centre {
@@ -145,10 +150,10 @@ function transformCentre(raw: any): Centre {
     country: raw.country ?? '',
     image: raw.image_url ?? raw.image ?? '/images/group-of-students.jpg',
     description: raw.description ?? '',
-    memberCount: raw.member_count ?? 0,
+    memberCount: raw.member_count ?? null,
     leader: {
       name: raw.leader?.name ?? '',
-      avatar: raw.leader?.avatar ?? '/images/doc-jcf.jpg',
+      avatar: raw.leader?.avatar ?? '',
       title: raw.leader?.title ?? '',
     },
     contactEmail: raw.contact_email ?? '',
@@ -163,8 +168,8 @@ function transformGalleryItem(raw: any): GalleryItem {
     id: String(raw.id),
     title: raw.title,
     description: raw.description ?? undefined,
-    url: raw.image_url ?? raw.image ?? '/images/studentslistening.jpg',
-    thumbnail: raw.thumbnail_url ?? raw.thumbnail ?? '/images/studentslistening.jpg',
+    url: raw.image_url || raw.image || '',
+    thumbnail: raw.thumbnail_url || raw.thumbnail || raw.image_url || raw.image || '',
     type: raw.type,
     category: raw.category,
     date: raw.date,
@@ -187,7 +192,7 @@ function transformTestimonial(raw: any): Testimonial {
     id: String(raw.id),
     name: raw.name,
     role: raw.role,
-    avatar: raw.avatar_url ?? raw.avatar ?? '/images/doc-jcf.jpg',
+    avatar: raw.avatar_url ?? raw.avatar ?? '',
     quote: raw.quote,
   };
 }
@@ -198,17 +203,10 @@ function transformTeamMember(raw: any): TeamMember {
     name: raw.name,
     role: raw.role,
     bio: raw.bio,
-    image: raw.image_url ?? raw.image ?? '/images/doc-potrait.jpg',
+    image: raw.image_url ?? raw.image ?? '',
   };
 
-  const override = mock.teamMembers.find((item) => item.name === member.name);
-  return override
-    ? {
-        ...member,
-        role: override.role,
-        bio: override.bio,
-      }
-    : member;
+  return member;
 }
 
 function transformImpactStat(raw: any): ImpactStat {
@@ -219,33 +217,6 @@ function transformImpactStat(raw: any): ImpactStat {
     prefix: raw.prefix ?? undefined,
   };
 }
-function transformProgram(raw: any): Program {
-  const program = {
-    id: String(raw.id),
-    slug: raw.slug,
-    title: raw.title,
-    description: raw.description,
-    content: raw.content ?? '',
-    image: raw.image_url ?? raw.image ?? '/images/teaching.jpg',
-    icon: raw.icon ?? 'lotus',
-    category: raw.category ?? 'spiritual',
-    isActive: raw.is_active ?? true,
-  };
-
-  const override = mock.programs.find((item) => item.slug === program.slug);
-
-  return override
-    ? {
-        ...program,
-        title: override.title,
-        description: override.description,
-        content: override.content,
-        icon: override.icon,
-        category: override.category,
-        isActive: override.isActive,
-      }
-    : program;
-}
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
 // ---------------------------------------------------------------------------
@@ -253,148 +224,65 @@ function transformProgram(raw: any): Program {
 // ---------------------------------------------------------------------------
 
 export async function getEvents(filter?: 'upcoming' | 'past'): Promise<Event[]> {
-  const query = filter ? `?filter=${filter}` : '';
-  const fallback: PaginatedResponse<unknown> = { count: 0, next: null, previous: null, results: [] };
-  const data = await fetchWithFallback<PaginatedResponse<unknown>>(`/events/${query}`, fallback);
-  // An empty calendar must stay empty. Sample events are not bookable events.
-  return data.results.map(transformEvent)
+  // A temporarily unavailable calendar must never invent a bookable event.
+  let rows: unknown[];
+  try { rows = await collection<unknown>('/events/'); } catch { return []; }
+  return rows.map(transformEvent)
     .filter(event => Number.isFinite(Date.parse(event.date)))
     .filter(event => !filter || (filter === 'past' ? event.isPast : !event.isPast))
-    .sort((a, b) => filter === 'past'
-      ? Date.parse(b.date) - Date.parse(a.date)
-      : Date.parse(a.date) - Date.parse(b.date));
+    .sort((a, b) => filter === 'past' ? Date.parse(b.date) - Date.parse(a.date) : Date.parse(a.date) - Date.parse(b.date));
 }
 
 export async function getEventBySlug(slug: string): Promise<Event | undefined> {
-  try {
-    const raw = await fetchAPI<unknown>(`/events/${slug}/`);
-    return transformEvent(raw);
-  } catch {
-    return undefined;
-  }
+  const raw = await detail<unknown>(`/events/${encodeURIComponent(slug)}/`);
+  return raw ? transformEvent(raw) : undefined;
 }
-
-// ---------------------------------------------------------------------------
-// Blog Posts
-// ---------------------------------------------------------------------------
-
 export async function getBlogPosts(category?: string): Promise<BlogPost[]> {
-  const query = category ? `?category=${encodeURIComponent(category)}` : '';
-  const fallback: PaginatedResponse<unknown> = { count: 0, next: null, previous: null, results: [] };
-  const data = await fetchWithFallback<PaginatedResponse<unknown>>(`/posts/${query}`, fallback);
-  if (data.results.length === 0 && mock.blogPosts.length > 0) return mock.blogPosts;
-  return data.results.map(transformBlogPost);
+  const posts = (await collection<unknown>('/posts/')).map(transformBlogPost);
+  return category ? posts.filter(post => post.category === category) : posts;
 }
-
 export async function getBlogPostBySlug(slug: string): Promise<BlogPost | undefined> {
-  try {
-    const raw = await fetchAPI<unknown>(`/posts/${slug}/`);
-    return transformBlogPost(raw);
-  } catch {
-    return mock.blogPosts.find((p) => p.slug === slug);
-  }
+  const raw = await detail<unknown>(`/posts/${encodeURIComponent(slug)}/`);
+  return raw ? transformBlogPost(raw) : undefined;
 }
-
-// ---------------------------------------------------------------------------
-// Causes
-// ---------------------------------------------------------------------------
-
 export async function getCauses(): Promise<Cause[]> {
-  const fallback: PaginatedResponse<unknown> = { count: 0, next: null, previous: null, results: [] };
-  const data = await fetchWithFallback<PaginatedResponse<unknown>>('/causes/', fallback);
-  if (data.results.length === 0 && mock.causes.length > 0) return mock.causes;
-  return data.results.map(transformCause);
+  return (await collection<unknown>('/causes/')).map(transformCause).filter(cause => cause.isActive);
 }
-
 export async function getCauseBySlug(slug: string): Promise<Cause | undefined> {
-  try {
-    const raw = await fetchAPI<unknown>(`/causes/${slug}/`);
-    return transformCause(raw);
-  } catch {
-    return mock.causes.find((c) => c.slug === slug);
-  }
+  const raw = await detail<unknown>(`/causes/${encodeURIComponent(slug)}/`);
+  const cause = raw ? transformCause(raw) : undefined;
+  return cause?.isActive ? cause : undefined;
 }
-
-// ---------------------------------------------------------------------------
-// Centres
-// ---------------------------------------------------------------------------
-
 export async function getCentres(): Promise<Centre[]> {
-  const fallback: PaginatedResponse<unknown> = { count: 0, next: null, previous: null, results: [] };
-  const data = await fetchWithFallback<PaginatedResponse<unknown>>('/centres/', fallback);
-  if (data.results.length === 0 && mock.centres.length > 0) return mock.centres;
-  return data.results.map(transformCentre);
+  const centres = (await collection<unknown>('/centres/')).map(transformCentre);
+  return centres.sort((a, b) => Number(b.slug === 'accra-ghana') - Number(a.slug === 'accra-ghana'));
 }
-
 export async function getCentreBySlug(slug: string): Promise<Centre | undefined> {
-  try {
-    const raw = await fetchAPI<unknown>(`/centres/${slug}/`);
-    return transformCentre(raw);
-  } catch {
-    return mock.centres.find((c) => c.slug === slug);
-  }
+  const raw = await detail<unknown>(`/centres/${encodeURIComponent(slug)}/`);
+  return raw ? transformCentre(raw) : undefined;
 }
-
-// ---------------------------------------------------------------------------
-// Gallery
-// ---------------------------------------------------------------------------
-
 export async function getGalleryItems(category?: string): Promise<GalleryItem[]> {
-  const query = category ? `?category=${encodeURIComponent(category)}` : '';
-  const fallback: PaginatedResponse<unknown> = { count: 0, next: null, previous: null, results: [] };
-  const data = await fetchWithFallback<PaginatedResponse<unknown>>(`/gallery/${query}`, fallback);
-  if (data.results.length === 0 && mock.galleryItems.length > 0) return mock.galleryItems;
-  return data.results.map(transformGalleryItem);
+  const items = (await collection<unknown>('/gallery/')).map(transformGalleryItem)
+    .filter(item => item.type === 'image' && item.url);
+  return category ? items.filter(item => item.category === category) : items;
 }
-
-// ---------------------------------------------------------------------------
-// Website content (no pagination)
-// ---------------------------------------------------------------------------
-
 export async function getVolunteerOpportunities(): Promise<VolunteerOpportunity[]> {
-  const data = await fetchWithFallback<unknown[]>('/volunteer-opportunities/', []);
-  if (data.length === 0 && mock.volunteerOpportunities.length > 0) return mock.volunteerOpportunities;
-  return data.map(transformVolunteerOpportunity);
+  return (await collection<unknown>('/volunteer-opportunities/')).map(transformVolunteerOpportunity);
 }
-
 export async function getTestimonials(): Promise<Testimonial[]> {
-  const data = await fetchWithFallback<unknown[]>('/testimonials/', []);
-  if (data.length === 0 && mock.testimonials.length > 0) return mock.testimonials;
-  return data.map(transformTestimonial);
+  return (await collection<unknown>('/testimonials/')).map(transformTestimonial);
 }
-
 export async function getTeamMembers(): Promise<TeamMember[]> {
-  const data = await fetchWithFallback<unknown[]>('/team/', []);
-  if (data.length === 0 && mock.teamMembers.length > 0) return mock.teamMembers;
-  return data.map(transformTeamMember);
+  return (await collection<unknown>('/team/')).map(transformTeamMember);
 }
-
 export async function getImpactStats(): Promise<ImpactStat[]> {
-  const data = await fetchWithFallback<unknown[]>('/impact-stats/', []);
-  if (data.length === 0 && mock.impactStats.length > 0) return mock.impactStats;
-  return data.map(transformImpactStat);
+  return (await collection<unknown>('/impact-stats/')).map(transformImpactStat);
 }
-
-// ---------------------------------------------------------------------------
-// Programs
-// ---------------------------------------------------------------------------
-
-export async function getPrograms(): Promise<Program[]> {
-  const data = await fetchWithFallback<unknown[]>('/programs/', []);
-  if (data.length === 0 && mock.programs.length > 0) return mock.programs;
-  const programs = data.map(transformProgram);
-  const existing = new Set(programs.map((program) => program.slug));
-  const localOnly = mock.programs.filter((program) => !existing.has(program.slug));
-  return [...programs, ...localOnly];
-}
-
+// The public API has no programmes endpoint. This editorial collection is owned locally;
+// it never overrides, merges with, or resurrects backend records.
+export async function getPrograms(): Promise<Program[]> { return foundationPrograms; }
 export async function getProgramBySlug(slug: string): Promise<Program | undefined> {
-  try {
-    const raw = await fetchAPI<unknown>(`/programs/${slug}/`);
-    return transformProgram(raw);
-  } catch {
-    return mock.programs.find((p) => p.slug === slug);
-  }
+  return foundationPrograms.find(program => program.slug === slug);
 }
 
 // ---------------------------------------------------------------------------
@@ -410,11 +298,16 @@ async function postAPI<T>(path: string, body: T): Promise<{ ok: boolean; error?:
     });
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));
-      return { ok: false, error: JSON.stringify(err) };
+      const messages = Object.entries(err).flatMap(([field, value]) => {
+        const values = Array.isArray(value) ? value : [value];
+        return values.filter((item): item is string => typeof item === 'string').map(message =>
+          ['detail', 'non_field_errors'].includes(field) ? message : `${field.replaceAll('_', ' ')}: ${message}`);
+      });
+      return { ok: false, error: messages.join(' ') || 'We could not send your request. Please try again.' };
     }
     return { ok: true };
   } catch {
-    return { ok: false, error: 'Network error' };
+    return { ok: false, error: 'We could not confirm receipt. Please try again or contact the Foundation by phone or email.' };
   }
 }
 

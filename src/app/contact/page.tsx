@@ -48,7 +48,8 @@ const contactDetails = [
   },
 ];
 
-export default function ContactPage() {
+export default async function ContactPage({ searchParams }: { searchParams: Promise<{ subject?: string }> }) {
+  const { subject } = await searchParams;
   return (
     <>
       <PageHero
@@ -58,17 +59,10 @@ export default function ContactPage() {
 
       <section className="section bg-cream">
         <div className="wrap grid grid-cols-1 gap-14 lg:grid-cols-5 lg:gap-20">
-          {/* Form */}
-          <div className="lg:col-span-3">
-            <SectionHeader label="Write to us" title="Send a message" align="left" className="mb-8" />
-            <div className="rounded-card border border-line bg-white p-6 sm:p-10">
-              <ContactForm />
-            </div>
-          </div>
-
           {/* Details */}
-          <div className="lg:col-span-2">
+          <div className="order-1 lg:order-2 lg:col-span-2">
             <SectionHeader label="Find Us" title="How to reach the Foundation" align="left" className="mb-8" />
+            <a href="#enquiry" className="button outline mb-6 lg:hidden">Send a message</a>
             <div className="detail-list">
               {contactDetails.map(({ Icon, label, lines, href }) => {
                 const body = (
@@ -90,6 +84,8 @@ export default function ContactPage() {
               })}
             </div>
 
+            <p className="form-note mt-6">Office hours are separate from gathering times. Please confirm your visit before travelling.</p>
+            <a href={mapsDirectUrl} target="_blank" rel="noopener noreferrer" className="text-link mt-5">Get directions</a>
             <p className="detail-label mt-10 mb-4">Follow Us</p>
             <div className="flex flex-wrap gap-3">
               {socialLinks.map(({ label, href, Icon }) => (
@@ -104,6 +100,14 @@ export default function ContactPage() {
                   <Icon size={20} weight="light" aria-hidden="true" />
                 </a>
               ))}
+            </div>
+          </div>
+
+          {/* Form */}
+          <div id="enquiry" className="order-2 lg:order-1 lg:col-span-3">
+            <SectionHeader label="Write to us" title="Send a message" align="left" className="mb-8" />
+            <div className="rounded-card border border-line bg-white p-6 sm:p-10">
+              <ContactForm key={typeof subject === "string" ? subject : "general"} initialSubject={typeof subject === "string" ? subject.slice(0,160) : ""} />
             </div>
           </div>
         </div>

@@ -27,10 +27,11 @@ export default function ProgressBar({
       <div
         className="relative h-3 w-full overflow-hidden rounded-full bg-primary/15"
         role="progressbar"
-        aria-valuenow={current}
+        aria-valuenow={displayPercent}
         aria-valuemin={0}
-        aria-valuemax={goal}
-        aria-label={`${displayPercent}% funded`}
+        aria-valuemax={100}
+        aria-label="Funding progress"
+        aria-valuetext={goal > 0 ? `${currency} ${formatAmount(current)} raised of ${currency} ${formatAmount(goal)}` : "No funding goal published"}
       >
         {/* Filled bar */}
         <div

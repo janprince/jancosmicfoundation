@@ -25,7 +25,7 @@ export default function EventsPageContent({ events }: EventsPageContentProps) {
   const [activeFilter, setActiveFilter] = useState<Filter>('upcoming');
 
   const upcomingEvents = events.filter((e) => !e.isPast);
-  const pastEvents = events.filter((e) => e.isPast);
+  const pastEvents = events.filter((e) => e.isPast).sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
 
   const visibleEvents =
     activeFilter === 'upcoming'

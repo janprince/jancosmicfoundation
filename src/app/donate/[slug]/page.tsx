@@ -15,6 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `Donate: ${cause.title}`,
     description: cause.description,
+    openGraph: { title: cause.title, description: cause.description, images: [{ url: cause.image, alt: cause.title }] },
   };
 }
 
@@ -36,7 +37,7 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
     ? Math.min(Math.round((cause.raisedAmount / cause.goalAmount) * 100), 100)
     : 0;
 
-  const supporters = (label: string) => (
+  const supporters = (label: string) => cause.donorsCount == null ? null : (
     <p className="mt-4 flex items-center gap-2 text-sm text-muted">
       <UsersThree size={18} weight="light" className="text-gold-ink" aria-hidden="true" />
       <span>
@@ -59,7 +60,7 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
         title={cause.title}
         subtitle={
           isSpecific
-            ? `${cause.category} · ${cause.donorsCount} donors`
+            ? cause.category
             : `${cause.category} · Ongoing initiative`
         }
       />
@@ -67,7 +68,8 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
       <section className="section bg-cream">
         <div className="wrap grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-16">
           {/* Story */}
-          <div className="space-y-10 lg:col-span-2">
+          <div className="space-y-8 lg:col-span-2">
+            <a href="#donation-form" className="button lg:hidden">Give to this work</a>
             <div className="relative aspect-video w-full overflow-hidden rounded-card">
               <Image src={cause.image} alt={cause.title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 66vw" priority />
               <span className="absolute left-4 top-4 rounded-full bg-cream/95 px-3 py-1 text-xs font-semibold text-navy">
@@ -99,7 +101,7 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
                   <p className="mt-3 text-sm leading-relaxed text-muted">
                     An ongoing initiative sustained by students, volunteers, and supporters. Every contribution helps keep it moving.
                   </p>
-                  {cause.donorsCount > 0 && supporters('supporter')}
+                  {(cause.donorsCount ?? 0) > 0 && supporters('supporter')}
                 </>
               )}
             </div>
@@ -110,7 +112,7 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
             </div>
 
             <div
-              className="prose max-w-none leading-relaxed text-ink/80 prose-headings:text-navy prose-p:leading-relaxed prose-strong:text-navy"
+              className="reading-copy prose max-w-none leading-relaxed text-ink/80 prose-headings:text-navy prose-p:leading-relaxed prose-strong:text-navy"
               dangerouslySetInnerHTML={{ __html: cause.content }}
             />
 
@@ -129,7 +131,7 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
           </div>
 
           {/* Donation sidebar */}
-          <div className="lg:col-span-1">
+          <div id="donation-form" className="lg:col-span-1">
             <div className="sticky top-28 space-y-6">
               <div className="hidden rounded-card border border-line bg-white p-7 lg:block">
                 {isSpecific ? (
@@ -148,7 +150,7 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
                     <p className="mt-3 text-xs leading-relaxed text-muted">
                       This ongoing work has no fixed goal. Every contribution helps sustain it with care.
                     </p>
-                    {cause.donorsCount > 0 && supporters('supporter')}
+                    {(cause.donorsCount ?? 0) > 0 && supporters('supporter')}
                   </>
                 )}
               </div>

@@ -15,6 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: event.title,
     description: event.description,
+    openGraph: { title: event.title, description: event.description, images: [{ url: event.image, alt: event.title }] },
   };
 }
 
@@ -44,36 +45,10 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
 
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-16">
-          {/* Main content */}
-          <div className="lg:col-span-2">
-            <div className="relative mb-8 aspect-video overflow-hidden rounded-card">
-              <Image
-                src={event.image}
-                alt={event.title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 66vw"
-                priority
-              />
-            </div>
-
-            <div className="mb-6 flex flex-wrap items-center gap-3">
-              <Badge variant="primary">{event.category}</Badge>
-              {event.isPast && <Badge variant="accent">Past Event</Badge>}
-            </div>
-
-            <h2 className="mb-6 text-4xl">About This Event</h2>
-
-            <div
-              className="prose prose-sm max-w-none leading-relaxed text-ink sm:prose-base"
-              dangerouslySetInnerHTML={{ __html: event.content }}
-            />
-          </div>
-
           {/* Event details */}
-          <aside className="lg:col-span-1">
+          <aside className="lg:col-span-1 lg:order-2">
             <div className="sticky top-28 rounded-card border border-line bg-white p-7">
-              <h3 className="mb-3 text-2xl">Event Details</h3>
+              <h2 className="mb-3 text-2xl">Event details</h2>
 
               <ul className="detail-list">
                 <li>
@@ -96,7 +71,7 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
                   <div>
                     <p className="detail-label">Location</p>
                     <p className="detail-value">{event.location}</p>
-                    {event.address && <p className="mt-1 text-xs leading-relaxed text-muted">{event.address}</p>}
+                    {event.address && <p className="mt-1 text-sm leading-relaxed text-muted">{event.address}</p>}
                   </div>
                 </li>
               </ul>
@@ -111,13 +86,40 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
                     This event has concluded
                   </p>
                 ) : (
-                  <Button href="/contact" variant="outline" className="w-full">
-                    Enquire About This Event
+                  <Button href={`/contact?subject=${encodeURIComponent(`Enquiry: ${event.title}`)}#enquiry`} variant="outline" className="w-full">
+                    Enquire about this event
                   </Button>
                 )}
               </div>
             </div>
           </aside>
+          {/* Main content */}
+          <div className="lg:col-span-2 lg:order-1">
+            <div className="relative mb-8 aspect-video overflow-hidden rounded-card">
+              <Image
+                src={event.image}
+                alt={event.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 66vw"
+                priority
+              />
+            </div>
+
+            <div className="mb-6 flex flex-wrap items-center gap-3">
+              <Badge variant="primary">{event.category}</Badge>
+              {event.isPast && <Badge variant="accent">Past Event</Badge>}
+            </div>
+
+            <h2 className="mb-6 text-4xl">{event.isPast ? 'Original event description' : 'About this event'}</h2>
+
+            <div
+              className="reading-copy prose text-ink"
+              dangerouslySetInnerHTML={{ __html: event.content }}
+            />
+          </div>
+
+
         </div>
 
         <div className="mt-16 border-t border-line pt-8">

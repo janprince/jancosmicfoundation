@@ -52,9 +52,11 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     siteName: "Jan Cosmic Foundation",
     type: "website",
+    images: [{ url: "/images/teaching.jpg", alt: "Dr. Baffour Jan with the Jan Cosmic Foundation community" }],
   },
   twitter: {
     card: "summary_large_image",
+    images: ["/images/teaching.jpg"],
     title: "Jan Cosmic Foundation — Self-Realization & Conscious Living",
     description:
       "Teachings, practice, centres, media, and service for seekers drawn to self-realization, consciousness, and inner freedom.",
@@ -99,15 +101,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${figtree.variable} ${newsreader.variable}`} suppressHydrationWarning>
       <body className="foundation-site antialiased">
-        {/* Reveal animations only hide content once JavaScript is known to run. */}
-        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-sm focus:text-sm focus:font-medium focus:"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-sm focus:text-sm focus:font-medium"
         >
           Skip to main content
         </a>

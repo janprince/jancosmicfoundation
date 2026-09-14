@@ -16,6 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${centre.name} Centre`,
     description: centre.description,
+    openGraph: { title: centre.name, description: centre.description, images: centre.image ? [{ url: centre.image, alt: centre.name }] : undefined },
   };
 }
 
@@ -50,6 +51,7 @@ export default async function CentrePage({ params }: { params: Promise<{ slug: s
         <div className="wrap grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-16">
           {/* Description + details */}
           <div className="space-y-10 lg:col-span-2">
+            <a href="#centre-enquiry" className="button outline">Enquire about this community</a>
             {centre.image && (
               <div className="relative aspect-video w-full overflow-hidden rounded-card">
                 <Image
@@ -89,9 +91,6 @@ export default async function CentrePage({ params }: { params: Promise<{ slug: s
             <div className="rounded-card border border-line bg-white p-7">
               <p className="detail-label mb-4">Centre Leader</p>
               <div className="flex items-center gap-4">
-                <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full bg-sand font-serif text-2xl text-navy" aria-hidden="true">
-                  {centre.leader.name.charAt(0)}
-                </span>
                 <div>
                   <p className="font-medium text-navy">{centre.leader.name}</p>
                   <p className="text-sm text-muted">{centre.leader.title}</p>
@@ -126,7 +125,7 @@ export default async function CentrePage({ params }: { params: Promise<{ slug: s
       </section>
 
       {/* Join form */}
-      <section className="section bg-sand">
+      <section className="section bg-sand" id="centre-enquiry">
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <SectionHeader
             label="Join Us"

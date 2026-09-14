@@ -135,9 +135,9 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
       <PageHero title={post.title} subtitle={post.excerpt} />
 
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-16">
+        <div className="mx-auto max-w-3xl">
           {/* Article body */}
-          <article className="lg:col-span-2">
+          <article className="w-full">
             <div className="relative mb-8 aspect-video overflow-hidden rounded-card">
               <Image
                 src={post.image}
@@ -169,7 +169,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             )}
 
             <div
-              className="prose prose-sm max-w-none leading-relaxed text-ink sm:prose-base"
+              className="reading-copy prose text-ink"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
 
@@ -211,42 +211,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             </div>
           </article>
 
-          {/* Sidebar */}
-          <aside className="lg:col-span-1">
-            <div className="sticky top-28 rounded-card border border-line bg-white p-7">
-              <h3 className="mb-2 text-2xl">Article Info</h3>
-              <dl className="detail-list">
-                <div className="flex-col !gap-1">
-                  <dt className="detail-label">Published</dt>
-                  <dd className="detail-value">{formattedDate}</dd>
-                </div>
-                <div className="flex-col !gap-1">
-                  <dt className="detail-label">Reading Time</dt>
-                  <dd className="detail-value">{post.readTime}</dd>
-                </div>
-                <div className="flex-col !gap-2">
-                  <dt className="detail-label">Category</dt>
-                  <dd><Badge variant="secondary">{post.category}</Badge></dd>
-                </div>
-                {videoId && (
-                  <div className="flex-col !gap-1">
-                    <dt className="detail-label">Source</dt>
-                    <dd>
-                      <a
-                        href={post.videoLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 font-medium text-navy hover:text-violet"
-                      >
-                        <YoutubeLogo size={18} weight="light" aria-hidden="true" />
-                        Watch on YouTube
-                      </a>
-                    </dd>
-                  </div>
-                )}
-              </dl>
-            </div>
-          </aside>
+
         </div>
 
         {relatedPosts.length > 0 && (
@@ -263,7 +228,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
         <div className="mt-16 border-t border-line pt-8">
           <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-medium text-navy hover:text-violet">
             <ArrowLeft size={16} aria-hidden="true" />
-            Back to Blog
+            All writings
           </Link>
         </div>
       </div>

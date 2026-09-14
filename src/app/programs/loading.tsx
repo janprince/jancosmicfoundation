@@ -6,8 +6,8 @@ export default function Loading() {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center space-y-4">
             <div className="h-4 w-32 bg-white/15 rounded mx-auto" />
-            <div className="h-8 w-72 bg-white/15 rounded mx-auto" />
-            <div className="h-4 w-96 bg-white/15 rounded mx-auto" />
+            <div className="h-8 w-64 max-w-full bg-white/15 rounded mx-auto" />
+            <div className="h-4 w-full max-w-sm bg-white/15 rounded mx-auto" />
           </div>
         </div>
       </div>

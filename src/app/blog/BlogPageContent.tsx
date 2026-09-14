@@ -37,7 +37,7 @@ export default function BlogPageContent({ posts }: BlogPageContentProps) {
   return (
     <div className="bg-cream">
       <PageHero
-        title="Writing"
+        title="Writings"
         subtitle="Teachings, reflections, retreat notes, service insights, and writing from the Foundation."
       />
 
@@ -49,17 +49,17 @@ export default function BlogPageContent({ posts }: BlogPageContentProps) {
               title="Recent writing"
               subtitle="Some pieces begin as talks, some as questions, some as quiet notes from practice and service. Read what meets you where you are."
             />
-            <div className="filter-pills justify-center" role="tablist" aria-label="Filter posts by category">
+            {categories.length > 2 && <div className="filter-pills justify-center" role="group" aria-label="Filter writings by category">
               {categories.map((cat) => {
                 const count = cat === ALL_LABEL ? posts.length : posts.filter((p) => p.category === cat).length;
                 return (
-                  <button key={cat} role="tab" aria-selected={activeCategory === cat} onClick={() => setActiveCategory(cat)}>
+                  <button key={cat} aria-pressed={activeCategory === cat} onClick={() => setActiveCategory(cat)}>
                     {cat}
                     <span className="count">{count}</span>
                   </button>
                 );
               })}
-            </div>
+            </div>}
           </div>
 
           {visiblePosts.length > 0 ? (
@@ -69,7 +69,7 @@ export default function BlogPageContent({ posts }: BlogPageContentProps) {
                   <BlogCard key={post.id} post={post} />
                 ))}
               </div>
-              <p className="mt-16 text-center text-sm text-muted">
+              <p className="mt-10 text-sm text-muted" role="status">
                 Showing all {visiblePosts.length} {activeCategory !== ALL_LABEL ? `“${activeCategory}” ` : ''}posts
               </p>
             </>
