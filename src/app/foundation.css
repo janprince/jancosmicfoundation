@@ -290,7 +290,7 @@ textarea.field { resize: vertical; }
 /* V2 review: a stable masthead, compact practical pages and comfortable reading. */
 .site-header { position: fixed; inset: 0 0 auto; z-index: 50; background: var(--cream); border-bottom: 1px solid var(--line); }
 .site-nav { max-width: 1280px; margin-inline: auto; min-height: 76px; padding: 12px 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-.site-wordmark { display: flex; align-items: center; gap: 12px; color: var(--navy); font-size: 14px; font-weight: 600; letter-spacing: .055em; line-height: 1.35; }
+.site-wordmark { display: flex; align-items: center; flex-shrink: 0; gap: 12px; color: var(--navy); font-size: .8rem; font-weight: 500; text-transform: uppercase; letter-spacing: .2em; line-height: 1.35; }
 .site-wordmark img { flex-shrink: 0; }
 .nav-trigger { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 10px 12px; color: var(--navy); font-size: 14px; cursor: pointer; }
 .nav-trigger[data-current], .nav-trigger[aria-current], .nav-trigger[data-open] { text-decoration: underline; text-underline-offset: 7px; }
@@ -327,7 +327,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [tabindex]:focus-v
 .visit-facts dd { color: var(--navy); font-size: 18px; }
 @media (max-width: 600px) {
   .site-nav { min-height: 72px; padding: 12px 20px; }
-  .site-wordmark { font-size: 14px; letter-spacing: .025em; }
   .page-heading { padding-block: 108px 32px; }
   .page-heading h1 { font-size: 38px; }
   .page-heading p { font-size: 17px; }

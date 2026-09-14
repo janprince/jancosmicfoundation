@@ -39,8 +39,9 @@ export default function Navbar() {
     <header className="site-header">
       <nav className="site-nav" aria-label="Main navigation">
         <Link href="/" className="site-wordmark" aria-label="Jan Cosmic Foundation — home">
-          <Image src="/images/logo.png" alt="" width={36} height={36} />
-          <span>Jan Cosmic<br className="sm:hidden" /> Foundation</span>
+          <Image src="/images/logo.png" alt="" width={36} height={36} className="rounded-full" />
+          <span className="sm:hidden">JCF</span>
+          <span className="hidden sm:inline">Jan Cosmic Foundation</span>
         </Link>
         <div className="hidden xl:flex items-center gap-1" key={pathname}>
           {navLinks.map(link => <Popover key={link.href} className="relative">
