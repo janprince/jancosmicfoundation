@@ -130,17 +130,25 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [tabindex]:focus-v
 .teachings-more { margin-top: clamp(40px, 5vw, 56px); }
 
 /* Life at the Foundation */
-.life { background: var(--cream); overflow: hidden; }
-.life-track { --edge: max(var(--gutter), calc((100vw - 1200px) / 2 + 40px)); display: flex; align-items: flex-start; gap: clamp(14px, 2vw, 26px); margin: 0; padding: 4px var(--edge) 8px; list-style: none; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--edge); scrollbar-width: none; }
-.life-track::-webkit-scrollbar { display: none; }
-.life-track li { flex: 0 0 auto; width: clamp(250px, 29vw, 390px); scroll-snap-align: start; }
-.life-track li:nth-child(even) { margin-top: clamp(28px, 4vw, 60px); }
-.life-track img { aspect-ratio: 4 / 5; }
-.life-track li:nth-child(3n) img { aspect-ratio: 1; }
-.life-controls { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 32px; }
-.life-controls div { display: flex; gap: 10px; }
-.life-controls button { display: grid; place-items: center; width: 50px; height: 50px; border-radius: 50%; border: 1px solid rgba(0,11,88,.22); background: transparent; color: var(--navy); cursor: pointer; transition: background-color .3s, color .3s; }
-.life-controls button:hover { background: var(--navy); color: #fff; }
+.life { background: var(--cream); }
+.life-gallery { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: clamp(24px, 3vw, 40px); align-items: start; }
+.life-gallery figure { min-width: 0; }
+.life-gallery img { display: block; width: 100%; height: auto; border-radius: 6px; }
+.life-gallery figcaption { margin-top: 10px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.life-gallery-lead figcaption { margin-top: 20px; }
+.life-gallery-title { display: block; color: var(--navy); font-family: var(--font-newsreader), Georgia, serif; font-size: 28px; line-height: 1.2; }
+.life-gallery-description { display: block; max-width: 52ch; margin-top: 8px; font-size: 16px; }
+.life-gallery-companions { display: grid; gap: 24px; }
+.life-gallery-footer { margin-top: 28px; }
+
+@media (max-width: 760px) {
+  .life-gallery { grid-template-columns: 1fr; gap: 28px; }
+  .life-gallery-companions { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .life-gallery-lead figcaption { margin-top: 14px; }
+  .life-gallery-title { font-size: 24px; }
+  .life-gallery-description { font-size: 15px; }
+  .life-gallery-footer { margin-top: 24px; }
+}
 
 /* Practice */
 .practice { background: var(--sand); }
@@ -232,7 +240,6 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [tabindex]:focus-v
   .hero-caption { display: none; }
   .hero .actions .button { flex: 1 1 100%; }
   .intro .home-figure img { aspect-ratio: 1; }
-  .life-track li { width: 76vw; }
   .footer-grid { grid-template-columns: 1fr; }
 }
 

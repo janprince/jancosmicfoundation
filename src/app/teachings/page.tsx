@@ -15,7 +15,7 @@ export default function TeachingsPage() {
     <div className="bg-cream">
       <PageHero
         title="Teachings"
-        subtitle="Watch public talks by Dr. Baffour Jan, freely shared. Search the collection below, or explore InnerSpace for structured study and practice."
+        subtitle="Public talks on consciousness, self-realization, God, the soul, the mind, and inner freedom. Listen to Dr. Baffour Jan’s teaching and explore its meaning through your own practice."
       />
 
       <div id="video-player-top" className="scroll-mt-20" />
@@ -29,14 +29,12 @@ export default function TeachingsPage() {
             Continue with InnerSpace
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/85">
-            Public videos are an open door.{' '}
-            <strong className="font-semibold text-white">InnerSpace</strong> is
-            a structured path for students who want to study and practise
-            consistently, and receive guidance.
+            For a regular course of study, <strong className="font-semibold text-white">InnerSpace</strong> brings
+            lessons into a sequence, with guided practices and support for
+            sustained inner work.
           </p>
           <p className="mx-auto mt-4 max-w-xl leading-relaxed text-white/65">
-            Lessons, guided practices, and a living sequence through the work.
-            Hosted on drbaffourjan.com.
+            Find the current course details on Dr. Jan’s teaching website, drbaffourjan.com.
           </p>
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a href="https://www.drbaffourjan.com/inner-space" target="_blank" rel="noopener noreferrer" className="button gold button-lg">

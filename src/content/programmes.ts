@@ -49,7 +49,7 @@ export const foundationPrograms: Program[] = [
     description:
       'Direct and indirect service that carries the teaching into homes, centres, regions, media, land work, and community life.',
     content:
-      'In Dr. Jan\'s teaching, service is not a public relations activity. It is one way evolution moves through a person. Outreach teachers, organisers, volunteers, and supporters help carry basic knowledge to sleeping souls, guide newcomers, coordinate centres, and let the understanding of unity become visible in action.',
+      'In Dr. Jan\'s teaching, service is one way spiritual evolution becomes visible in daily life. Outreach teachers, organisers, volunteers, and supporters share foundational teachings, welcome newcomers, and coordinate local centres. Service can be direct or indirect, according to the time, skills, and support each person can offer.',
     image: '/images/students-sitting-down-on-grass.jpg',
     icon: 'hands',
     category: 'community',
@@ -62,7 +62,7 @@ export const foundationPrograms: Program[] = [
     description:
       'Support for seekers through guidance, counselling, and healing work rooted in receptivity, balance, and compassion.',
     content:
-      'Dr. Jan presents healing, counselling, and teaching as connected forms of service. Counselling helps a person become receptive; teaching brings clarity; healing flows through love, balance, and the recognition of the perfect Self beneath the condition. This work supports sincere inquiry without replacing personal responsibility.',
+      'Dr. Jan presents healing, counselling, and teaching as connected forms of service. This work centres on receptivity, compassion, balance, and spiritual inquiry. Contact the Foundation to discuss the guidance you are seeking and the arrangements available.',
     image: '/images/masterseated3.jpg',
     icon: 'guidance',
     category: 'spiritual',
@@ -88,7 +88,7 @@ export const foundationPrograms: Program[] = [
     description:
       'Organic farms, herbal gardens, food preparation, and training that connect spiritual work with the body, the land, and daily living.',
     content:
-      'Dr. Jan described the organic farms, herbal preparations, and vegetarian training restaurant as practical arms of the Foundation. The farms provide natural food, train workers and managers, support regional communities, and prepare the ground for a village atmosphere where seekers can recharge in nature.',
+      'Organic farming, herbal gardens, and vegetarian food preparation connect care for the body with care for the land. Dr. Jan describes these as practical forms of service, with roles for farm workers and managers and a longer-term vision of a village where seekers can recharge in nature.',
     image: '/images/students-sitting-down-on-grass.jpg',
     icon: 'hands',
     category: 'community',

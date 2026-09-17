@@ -100,7 +100,7 @@ src/
 │   # client interactivity split into a *PageContent.tsx client child.
 ├── components/
 │   ├── layout/             # Navbar, Footer, MobileMenu, PageHero, NewsletterForm, RouteProgress
-│   ├── home/               # GatheringNotice (next published gathering), LifeStrip (photo strip);
+│   ├── home/               # GatheringNotice (next published gathering), LifeGallery (three-photo story);
 │   │                       #   the homepage sections themselves live in app/page.tsx
 │   ├── cards/              # EventCard, BlogCard, CauseCard, CentreCard
 │   ├── ui/                 # Button, Badge, ProgressBar, Counter, SectionHeader, Newsletter,
@@ -162,6 +162,10 @@ Mission and vision live within About; testimonials live within Community. Keep l
 - Live payment completion and notification delivery need a controlled provider/backend test before release.
 
 ## Key Conventions
+
+- Copywriting: retain the Foundation’s specific teaching and service language from the live website.
+  See `docs/design-review/v2-copy-revision-2026-09-17.md`; avoid replacing substantive explanations
+  with repeated generic invitations. Keep published API records authoritative.
 
 - Icons: **Phosphor only**, `weight="light"`, in navy or gold-ink, never in tinted square/circle tiles.
   Import from `@phosphor-icons/react/dist/ssr` in server components, `@phosphor-icons/react` in client ones.

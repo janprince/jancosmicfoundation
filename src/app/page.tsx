@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Play } from '@phosphor-icons/react/dist/ssr';
 import { siteConfig } from '@/lib/site-config';
 import GatheringNotice from '@/components/home/GatheringNotice';
-import LifeStrip from '@/components/home/LifeStrip';
+import LifeGallery from '@/components/home/LifeGallery';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 
 export const metadata: Metadata = { description: 'Jan Cosmic Foundation is a spiritual foundation in Accra, Ghana, founded by Dr. Baffour Jan. Explore teachings, practice, retreats, community and service.' };
@@ -23,8 +23,8 @@ export default function HomePage() {
       </div>
       <div className="wrap hero-copy">
         <p className="hero-kicker hero-animate-1">Accra, Ghana</p>
-        <h1 id="hero-title" className="hero-animate-2">A life of awareness, <em>rooted in practice.</em></h1>
-        <p className="hero-lede hero-animate-3">A spiritual foundation founded by spiritual master and mystic Dr. Baffour Jan, devoted to self-realization.</p>
+        <h1 id="hero-title" className="hero-animate-2">A path of freedom <em>and awareness.</em></h1>
+        <p className="hero-lede hero-animate-3">A living spiritual foundation guiding sincere seekers toward inner freedom, self-realization, and conscious living through the teachings of Dr. Baffour Jan.</p>
         <div className="actions hero-animate-4">
           <Link className="button gold" href="/teachings">Explore the teachings</Link>
           <a className="button ghost" href="/visit">Plan a first visit</a>
@@ -43,10 +43,10 @@ export default function HomePage() {
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
           <p className="eyebrow">Welcome</p>
-          <h2 id="intro-title" className="section-title">A spiritual home in Accra, open to the world.</h2>
-          <p className="lede">Jan Cosmic Foundation carries the teachings of Dr. Baffour Jan, a spiritual master and mystic devoted to self-realization.</p>
-          <p className="lede">Explore the teachings, spend time in practice, and meet a community bringing spiritual understanding into everyday life.</p>
-          <Link className="text-link" href="/about/founder">Meet Dr. Baffour Jan</Link>
+          <h2 id="intro-title" className="section-title">A living movement of awakening and service</h2>
+          <p className="lede">Dr. Jan’s teaching points beyond belief, ritual, and accumulated knowledge toward direct inner realization: knowing who we are beneath the layers of mind and identity.</p>
+          <p className="lede">Based in Ghana and open to the world, the Foundation gives this work a home through public talks, sittings, retreats, structured study, and practical service.</p>
+          <Link className="text-link" href="/about">Read the Foundation’s story</Link>
         </ScrollReveal>
       </div>
     </section>
@@ -55,7 +55,7 @@ export default function HomePage() {
       <div className="wrap">
         <ScrollReveal className="section-head">
           <div><p className="eyebrow">Teachings</p><h2 id="teaching-title" className="section-title">Begin with a teaching</h2></div>
-          <p>Listen to Dr. Jan in his own words. Public talks are freely available, with nothing to join before you begin.</p>
+          <p>Explore consciousness, the Self, God, the soul, and the mind through Dr. Jan’s public talks. Watch freely, then take time to sit with what you hear.</p>
         </ScrollReveal>
         <div className="teachings-grid">
           <ScrollReveal className="feature-teaching">
@@ -77,12 +77,12 @@ export default function HomePage() {
       </div>
     </section>
 
-    <section className="life section" aria-labelledby="life-title">
+    <section id="life" className="life section" aria-labelledby="life-title">
       <ScrollReveal className="wrap section-head">
         <div><p className="eyebrow">Community</p><h2 id="life-title" className="section-title">Life at the Foundation</h2></div>
-        <p>Practice, teaching and time together with the community in Accra.</p>
+        <p>Listening, sitting in silence, asking questions, and working alongside one another. These photographs offer a glimpse of the people and shared practice behind the Foundation.</p>
       </ScrollReveal>
-      <LifeStrip />
+      <LifeGallery />
     </section>
 
     <section id="practice" className="practice section" aria-labelledby="practice-title">
@@ -95,12 +95,12 @@ export default function HomePage() {
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
           <p className="eyebrow">Practice &amp; retreats</p>
-          <h2 id="practice-title" className="section-title">Make time for the inner life</h2>
-          <p className="lede">Retreats and gatherings offer time to step away from daily routines and practise with the community.</p>
+          <h2 id="practice-title" className="section-title">Come and sit with us</h2>
+          <p className="lede">Silence, meditation, teaching, and balanced-state practice create space to look inward with greater steadiness. Retreats and sittings bring this work into a shared rhythm.</p>
           <GatheringNotice />
           <div className="innerspace">
             <h3>Study with InnerSpace</h3>
-            <p>Explore Dr. Jan’s structured study path, with lessons and guided practice.</p>
+            <p>Lessons in sequence, guided practices, and support for bringing the teaching into daily life.</p>
             <Link className="text-link" href="/innerspace">About InnerSpace</Link>
             <p className="caption">The course is hosted on drbaffourjan.com.</p>
           </div>
@@ -113,7 +113,7 @@ export default function HomePage() {
         <ScrollReveal>
           <p className="eyebrow">Visit</p>
           <h2 id="visit-title" className="section-title">Come and meet the community</h2>
-          <p className="lede">Our home is in Accra. If you would like to visit, contact the Foundation to ask about the next gathering and what to expect.</p>
+          <p className="lede">Meet the work in person at our home in Kwabenya, Accra. Contact the Foundation to find a suitable gathering and confirm the arrangements for your first visit.</p>
           <address>{siteConfig.address.streetAddress}, {siteConfig.address.locality}<br />Accra, {siteConfig.address.countryName}</address>
           <div className="actions"><Link className="button light" href="/visit">Plan your visit</Link><Link className="text-link" href="/centres">Find a centre</Link></div>
         </ScrollReveal>
@@ -130,8 +130,9 @@ export default function HomePage() {
       <div className="wrap service-grid">
         <ScrollReveal>
           <p className="eyebrow">Service</p>
-          <h2 id="service-title" className="section-title">Spiritual life, expressed in service</h2>
-          <p className="lede">The Foundation’s work extends into teaching, community initiatives and care. Discover the work and the ways you can take part.</p>
+          <h2 id="service-title" className="section-title">Inner work becomes real in how we serve</h2>
+          <p className="lede">Dr. Jan presents service as part of spiritual evolution. Outreach teachers, organisers, media workers, farmers, and volunteers each help carry the work forward.</p>
+          <p className="lede">Guide the Children introduces young people to awareness and responsibility. Media preserves and shares the teachings. Organic farming connects care for the land with daily living.</p>
           <div className="actions"><Link className="button" href="/programs">Our initiatives</Link><Link className="button outline" href="/volunteer">Volunteer</Link><Link className="text-link" href="/donate">Support the work</Link></div>
         </ScrollReveal>
         <ScrollReveal animation="fade-in" delay={0.1}>
