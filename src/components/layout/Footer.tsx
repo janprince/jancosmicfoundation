@@ -8,7 +8,7 @@ export default function Footer() {
   return <footer className="foundation-footer stars">
     <div className="wrap footer-grid">
       <div>
-        <Link className="footer-brand" href="/"><Image src="/images/logo.png" alt="" width={48} height={48} /><span>Jan Cosmic<br />Foundation</span></Link>
+        <Link className="footer-brand" href="/"><Image src="/images/logo.png" alt="" width={1438} height={1166} sizes="62px" /><span>Jan Cosmic<br />Foundation</span></Link>
         <p>A spiritual foundation in Accra, Ghana, carrying the teachings of Dr. Baffour Jan.</p>
         <div className="footer-social">
           <a href={siteConfig.social.youtube} aria-label="YouTube"><YoutubeLogo size={20} weight="light" /></a>
