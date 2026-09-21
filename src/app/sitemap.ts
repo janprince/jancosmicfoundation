@@ -6,6 +6,7 @@ import { getCentres } from '@/lib/api';
 import { siteConfig } from '@/lib/site-config';
 
 const SITE_URL = siteConfig.url;
+export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Static pages

@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,7 +8,7 @@ import GatheringNotice from '@/components/home/GatheringNotice';
 import LifeGallery from '@/components/home/LifeGallery';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 
-export const metadata: Metadata = { description: 'Jan Cosmic Foundation is a spiritual foundation in Accra, Ghana, founded by Dr. Baffour Jan. Explore teachings, practice, retreats, community and service.' };
+export const metadata: Metadata = pageMetadata('/', { title: 'Jan Cosmic Foundation — Self-Realization & Conscious Living', description: 'Jan Cosmic Foundation is a spiritual foundation in Accra, Ghana, founded by Dr. Baffour Jan. Explore teachings, practice, retreats, community and service.' });
 
 const featuredTeaching = {
   title: 'Beloved Brothers and Sisters: The Power of Unity and Love',
@@ -37,16 +38,18 @@ export default function HomePage() {
       <div className="wrap intro-grid">
         <ScrollReveal animation="fade-in">
           <figure className="home-figure">
-            <Image src="/images/doc-potrait.jpg" alt="Dr. Baffour Jan smiling outdoors" width={4480} height={4480} sizes="(max-width: 900px) 90vw, 42vw" />
-            <figcaption>Dr. Baffour Jan, founder and spiritual teacher</figcaption>
+            <Image src="/images/group-of-students2.jpg" alt="Members of the Jan Cosmic Foundation listening together during a gathering" width={6720} height={4480} sizes="(max-width: 900px) 100vw, 50vw" />
+            <figcaption>A shared life of teaching, practice, and service.</figcaption>
           </figure>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <p className="eyebrow">Welcome</p>
-          <h2 id="intro-title" className="section-title">A living movement of awakening and service</h2>
-          <p className="lede">Dr. Jan’s teaching points beyond belief, ritual, and accumulated knowledge toward direct inner realization: knowing who we are beneath the layers of mind and identity.</p>
-          <p className="lede">Based in Ghana and open to the world, the Foundation gives this work a home through public talks, sittings, retreats, structured study, and practical service.</p>
-          <Link className="text-link" href="/about">Read the Foundation’s story</Link>
+          <h2 id="intro-title" className="eyebrow">Welcome to the Foundation</h2>
+          <figure className="foundation-purpose">
+            <blockquote><p>“The Jan Cosmic Foundation is an expression of the divine will.”</p></blockquote>
+            <figcaption>Dr. Jan</figcaption>
+          </figure>
+          <p className="lede">Based in Ghana and open to the world, the Foundation gives Dr. Jan’s teaching a home through public talks, sittings, retreats, and practical service. Together, we explore a path toward self-realization and conscious living.</p>
+          <Link className="text-link" href="/about">Discover the Foundation</Link>
         </ScrollReveal>
       </div>
     </section>
@@ -60,10 +63,10 @@ export default function HomePage() {
         <div className="teachings-grid">
           <ScrollReveal className="feature-teaching">
             <a className="teaching-photo" href={featuredTeaching.url} aria-label={`Watch ${featuredTeaching.title} on YouTube`}>
-              <Image src="/images/doc-holding-mic.jpg" alt="Dr. Baffour Jan speaking at a gathering" width={6525} height={4350} sizes="(max-width: 900px) 100vw, 60vw" />
+              <Image src="https://img.youtube.com/vi/lO75YxDm20Y/maxresdefault.jpg" alt="Video thumbnail for The Power of Unity and Love by Dr. Baffour Jan" width={1280} height={720} sizes="(max-width: 900px) 100vw, 60vw" />
               <span className="play" aria-hidden="true"><Play size={24} weight="fill" /></span>
             </a>
-            <p className="media-type">Video teaching</p>
+            <p className="media-type">Watch freely on YouTube</p>
             <h3><a href={featuredTeaching.url}>{featuredTeaching.title}</a></h3>
           </ScrollReveal>
           <ScrollReveal className="reading-list" delay={0.1}>
@@ -74,6 +77,16 @@ export default function HomePage() {
           </ScrollReveal>
         </div>
         <div className="teachings-more"><Link className="button outline" href="/teachings">Browse all teachings</Link></div>
+        <aside className="study-bridge" aria-labelledby="study-title">
+          <div>
+            <h3 id="study-title">When you’re ready to go deeper</h3>
+            <p>Inner Space brings together courses, recorded teachings, and monthly live guidance with Dr. Jan for those drawn to a sustained practice.</p>
+          </div>
+          <div className="study-bridge-action">
+            <a className="text-link" href="https://www.drbaffourjan.com/inner-space">Explore Inner Space</a>
+            <p className="caption">On Dr. Jan’s teaching website</p>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -85,43 +98,24 @@ export default function HomePage() {
       <LifeGallery />
     </section>
 
-    <section id="practice" className="practice section" aria-labelledby="practice-title">
-      <div className="wrap practice-grid">
-        <ScrollReveal animation="fade-in">
-          <figure className="home-figure">
-            <Image src="/images/studentinmeditation.jpg" alt="Members of the Foundation kneeling in meditation on the lawn" width={5472} height={3648} sizes="(max-width: 900px) 100vw, 50vw" />
-            <figcaption>Time for practice, in the company of others.</figcaption>
-          </figure>
-        </ScrollReveal>
-        <ScrollReveal delay={0.1}>
-          <p className="eyebrow">Practice &amp; retreats</p>
-          <h2 id="practice-title" className="section-title">Come and sit with us</h2>
-          <p className="lede">Silence, meditation, teaching, and balanced-state practice create space to look inward with greater steadiness. Retreats and sittings bring this work into a shared rhythm.</p>
-          <GatheringNotice />
-          <div className="innerspace">
-            <h3>Study with InnerSpace</h3>
-            <p>Lessons in sequence, guided practices, and support for bringing the teaching into daily life.</p>
-            <Link className="text-link" href="/innerspace">About InnerSpace</Link>
-            <p className="caption">The course is hosted on drbaffourjan.com.</p>
-          </div>
-        </ScrollReveal>
-      </div>
-    </section>
-
     <section id="visit" className="visit stars section" aria-labelledby="visit-title">
+      <span id="practice" className="section-anchor" aria-hidden="true" />
       <div className="wrap visit-grid">
         <ScrollReveal>
-          <p className="eyebrow">Visit</p>
-          <h2 id="visit-title" className="section-title">Come and meet the community</h2>
-          <p className="lede">Meet the work in person at our home in Kwabenya, Accra. Contact the Foundation to find a suitable gathering and confirm the arrangements for your first visit.</p>
+          <p className="eyebrow">Practice &amp; community</p>
+          <h2 id="visit-title" className="section-title">Come and sit with us</h2>
+          <p className="lede">Meet the teaching in person at our home in Kwabenya, Accra. Sittings and retreats bring together silence, meditation, and shared practice, with time to listen and ask questions.</p>
           <address>{siteConfig.address.streetAddress}, {siteConfig.address.locality}<br />Accra, {siteConfig.address.countryName}</address>
           <div className="actions"><Link className="button light" href="/visit">Plan your visit</Link><Link className="text-link" href="/centres">Find a centre</Link></div>
         </ScrollReveal>
-        <ScrollReveal className="questions" delay={0.1}>
+        <ScrollReveal className="visit-details" delay={0.1}>
+          <GatheringNotice />
+          <div className="questions">
           <h3>Your first visit</h3>
           <details><summary>Where should I begin?</summary><p>You can start with a <Link href="/teachings">public teaching</Link>. If you would prefer to meet the community, <Link href="/contact">contact the Foundation</Link> about visiting.</p></details>
           <details><summary>When can I attend a gathering?</summary><p>See the <Link href="/events">events calendar</Link> for published details, or call <a href={`tel:${siteConfig.contact.phoneE164}`}>{siteConfig.contact.phone}</a> to confirm arrangements before travelling.</p></details>
           <details><summary>What should I bring?</summary><p>Ask the organiser about clothing, seating, accessibility, fees and anything to bring for the gathering you plan to attend.</p></details>
+          </div>
         </ScrollReveal>
       </div>
     </section>

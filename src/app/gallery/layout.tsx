@@ -1,10 +1,11 @@
+import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata('/gallery', {
   title: 'Gallery',
   description:
     'Photographs from Jan Cosmic Foundation teachings, retreats, sittings, service days, centres, outreach, and community life.',
-};
+});
 
 export default function GalleryLayout({ children }: { children: React.ReactNode }) {
   return children;

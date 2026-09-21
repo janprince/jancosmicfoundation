@@ -1,11 +1,12 @@
+import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import PageHero from '@/components/layout/PageHero';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata('/privacy-policy', {
   title: 'Privacy Policy',
   description:
     'How the Jan Cosmic Foundation handles your personal information and protects your privacy.',
-};
+});
 
 export default function PrivacyPolicyPage() {
   return (

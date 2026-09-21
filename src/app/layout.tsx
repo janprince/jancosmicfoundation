@@ -8,7 +8,7 @@ import Footer from "@/components/layout/Footer";
 import RouteProgress from "@/components/layout/RouteProgress";
 import { siteConfig, socialUrlsForSchema } from "@/lib/site-config";
 
-// Same pairing as drbaffourjan.com: the teacher's site and the Foundation read as one family.
+// The Foundation's own type pairing: clear body copy and expressive editorial headings.
 const figtree = Figtree({ variable: "--font-figtree", subsets: ["latin"], display: "swap" });
 const newsreader = Newsreader({
   variable: "--font-newsreader",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "spiritual teachings",
     "spiritual master Ghana",
     "mystic teacher",
-    "InnerSpace course",
+    "Inner Space study",
     "spiritual retreat Ghana",
     "consciousness",
     "conscious living",

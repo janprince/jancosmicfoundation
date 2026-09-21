@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
@@ -11,12 +12,13 @@ import { getEventBySlug } from '@/lib/api';
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const event = await getEventBySlug(slug);
-  if (!event) return { title: 'Event Not Found' };
-  return {
+  if (!event) return { robots: { index: false, follow: true }, title: 'Event Not Found' };
+  return pageMetadata(`/events/${event.slug}`, {
     title: event.title,
     description: event.description,
+    twitter: { card: 'summary_large_image', images: event.image ? [event.image] : undefined },
     openGraph: { title: event.title, description: event.description, images: [{ url: event.image, alt: event.title }] },
-  };
+  });
 }
 
 function formatDate(dateStr: string): string {

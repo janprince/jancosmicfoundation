@@ -36,18 +36,14 @@ export const siteConfig = {
     },
   },
 
-  // Social handles — all use the `jancosmicfoundation` handle.
-  // WhatsApp channel/group URLs need real invite codes; the values
-  // below are placeholders until those are provided.
+  // Official profiles and community invitations supplied by the Foundation.
   social: {
     facebook: 'https://www.facebook.com/jancosmicfoundation',
     instagram: 'https://www.instagram.com/jancosmicfoundation',
     youtube: 'https://www.youtube.com/@jancosmicfoundation',
     x: 'https://x.com/jancosmicfoundation',
-    telegramChannel: 'https://t.me/jancosmicfoundation',
-    telegramGroup: 'https://t.me/jancosmicfoundationchat',
-    whatsappChannel: 'https://whatsapp.com/channel/jancosmicfoundation',
-    whatsappGroup: 'https://chat.whatsapp.com/jancosmicfoundation',
+    telegramGroup: 'https://t.me/+OZa023K6Pj4yOTdk',
+    whatsappCommunity: 'https://chat.whatsapp.com/Cb70KgYryHz0p83eIlOOJs',
   },
 } as const;
 

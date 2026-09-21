@@ -1,10 +1,11 @@
+import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import PageHero from '@/components/layout/PageHero';
 import VolunteerForm from '@/components/forms/VolunteerForm';
 import { getCentres, getVolunteerOpportunities } from '@/lib/api';
 
-export const metadata: Metadata = { title: 'Volunteer', description: 'Offer your time and skills to Jan Cosmic Foundation. Explore current opportunities and contact the volunteer team.' };
+export const metadata: Metadata = pageMetadata('/volunteer', { title: 'Volunteer', description: 'Offer your time and skills to Jan Cosmic Foundation. Explore current opportunities and contact the volunteer team.' });
 
 export default async function VolunteerPage({ searchParams }: { searchParams: Promise<{ role?: string }> }) {
   const { role: selectedRole } = await searchParams;

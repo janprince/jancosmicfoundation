@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { ArrowUpRight } from '@phosphor-icons/react/dist/ssr';
@@ -29,11 +30,11 @@ const teachings = [
   },
 ];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata('/about/founder', {
   title: 'Dr. Baffour Jan — The Mystic & Teacher',
   description:
     'Dr. Baffour Jan is a mystic, spiritual master, and teacher. His teachings explore self-realization, consciousness, God, the soul, mind, truth, service, and inner freedom.',
-};
+});
 
 export default function FounderPage() {
   return (
@@ -93,7 +94,7 @@ export default function FounderPage() {
           <SectionHeader
             label="The Teachings"
             title="Four threads that run through the work"
-            subtitle="These threads recur across the talks, retreats, public teachings, and InnerSpace study path."
+            subtitle="These threads recur across the talks, retreats, public teachings, and Inner Space study path."
           />
           <ScrollReveal staggerChildren={0.1} className="mt-14 grid grid-cols-1 gap-x-16 gap-y-12 sm:grid-cols-2">
             {teachings.map((teaching) => (
@@ -114,7 +115,7 @@ export default function FounderPage() {
             &ldquo;The most useful knowledge is that which helps to dismantle the ego, in order to reveal the True Self.&rdquo;
           </p>
           <p className="mt-5 text-lg leading-relaxed text-white/80">
-            Explore the Foundation&rsquo;s programmes, or visit Dr. Jan&rsquo;s personal site for public talks, writing, and the InnerSpace course.
+            Explore the Foundation&rsquo;s programmes, or visit Dr. Jan&rsquo;s personal site for public talks, writing, and the Inner Space programme.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button href="/teachings" variant="secondary" size="lg">Explore the teachings</Button>

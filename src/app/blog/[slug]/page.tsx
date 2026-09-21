@@ -26,7 +26,7 @@ const SITE_URL = siteConfig.url;
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = await getBlogPostBySlug(slug);
-  if (!post) return { title: 'Post Not Found' };
+  if (!post) return { robots: { index: false, follow: true }, title: 'Post Not Found' };
 
   const url = `${SITE_URL}/blog/${post.slug}`;
   const description = post.excerpt.length > 160
@@ -45,14 +45,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description,
       url,
       type: 'article',
+      siteName: siteConfig.name,
       publishedTime: post.date,
       section: post.category,
       tags: post.tags,
       images: [
         {
           url: post.image,
-          width: 1200,
-          height: 630,
           alt: post.title,
         },
       ],
@@ -112,25 +111,14 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
       '@type': 'WebPage',
       '@id': `${SITE_URL}/blog/${post.slug}`,
     },
-    ...(videoId
-      ? {
-          video: {
-            '@type': 'VideoObject',
-            name: post.title,
-            description: post.excerpt,
-            thumbnailUrl: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
-            embedUrl: `https://www.youtube-nocookie.com/embed/${videoId}`,
-            uploadDate: post.date,
-          },
-        }
-      : {}),
+
   };
 
   return (
     <div className="bg-cream">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
       />
       <PageHero title={post.title} subtitle={post.excerpt} />
 

@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { Clock, EnvelopeSimple, FacebookLogo, InstagramLogo, MapPin, Phone, XLogo, YoutubeLogo } from '@phosphor-icons/react/dist/ssr';
 import PageHero from '@/components/layout/PageHero';
@@ -5,11 +6,11 @@ import SectionHeader from '@/components/ui/SectionHeader';
 import ContactForm from '@/components/forms/ContactForm';
 import { siteConfig, mapsEmbedUrl, mapsDirectUrl } from '@/lib/site-config';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata('/contact', {
   title: 'Contact Us',
   description:
     'Contact Jan Cosmic Foundation for teachings, centres, outreach, volunteering, giving, partnerships, or visiting the Foundation in Accra.',
-};
+});
 
 const socialLinks = [
   { label: 'Facebook', href: siteConfig.social.facebook, Icon: FacebookLogo },

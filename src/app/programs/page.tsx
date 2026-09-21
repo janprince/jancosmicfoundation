@@ -1,10 +1,11 @@
+import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import PageHero from '@/components/layout/PageHero';
 import { getPrograms } from '@/lib/api';
 
-export const metadata: Metadata = { title: 'Programmes & service', description: 'Explore the teaching, practice, and service work of Jan Cosmic Foundation, and find out how to take part.' };
+export const metadata: Metadata = pageMetadata('/programs', { title: 'Programmes & service', description: 'Explore the teaching, practice, and service work of Jan Cosmic Foundation, and find out how to take part.' });
 
 const actions: Record<string, { label: string; href: string }> = {
   'spiritual-teachings': { label: 'Explore public teachings', href: '/teachings' },

@@ -1,16 +1,17 @@
+import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import PageHero from '@/components/layout/PageHero';
 import { siteConfig } from '@/lib/site-config';
 
-export const metadata: Metadata = { title: 'About the Foundation', description: 'Meet Jan Cosmic Foundation, founded by Dr. Baffour Jan in Accra, Ghana, and learn about its mission, community, and work.' };
+export const metadata: Metadata = pageMetadata('/about', { title: 'About the Foundation', description: 'Meet Jan Cosmic Foundation, founded by Dr. Baffour Jan in Accra, Ghana, and learn about its mission, community, and work.' });
 
 export default function AboutPage() {
   return <>
     <PageHero title="A spiritual home in Accra" subtitle="The story and purpose behind a movement of awakening and service." />
     <section className="section"><div className="wrap grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-      <div><h2 className="text-3xl sm:text-4xl">The Foundation</h2><p className="mt-5 text-lg text-muted">Established in {siteConfig.founded}, Jan Cosmic Foundation gives a home to the teaching work of Dr. Baffour Jan, a spiritual master and mystic based in Ghana.</p><p className="mt-5 text-lg text-muted">His teaching explores consciousness, the soul, God, the mind, illusion, and human suffering. It asks how we can become free from false identity and recognise the Spirit within.</p><p className="mt-5 text-lg text-muted">The Foundation makes room for that inquiry through public talks, retreats, sittings, InnerSpace study, and service. Outreach, counselling, media, organic farms, and children’s work are ways of bringing inner understanding into relationship with the world.</p><div className="section-jump"><Link href="/about/founder" className="button">Meet Dr. Baffour Jan</Link><Link href="/visit" className="text-link">Plan a visit</Link></div></div>
+      <div><h2 className="text-3xl sm:text-4xl">The Foundation</h2><p className="mt-5 text-lg text-muted">Established in {siteConfig.founded}, Jan Cosmic Foundation gives a home to the teaching work of Dr. Baffour Jan, a spiritual master and mystic based in Ghana.</p><p className="mt-5 text-lg text-muted">His teaching explores consciousness, the soul, God, the mind, illusion, and human suffering. It asks how we can become free from false identity and recognise the Spirit within.</p><p className="mt-5 text-lg text-muted">The Foundation makes room for that inquiry through public talks, retreats, sittings, Inner Space study, and service. Outreach, counselling, media, organic farms, and children’s work are ways of bringing inner understanding into relationship with the world.</p><div className="section-jump"><Link href="/about/founder" className="button">Meet Dr. Baffour Jan</Link><Link href="/visit" className="text-link">Plan a visit</Link></div></div>
       <figure><Image src="/images/doc-jcf.jpg" alt="Dr. Baffour Jan seated during a Foundation training programme" width={1120} height={630} className="rounded-card w-full h-auto" priority /></figure>
     </div></section>
     <section className="section"><div className="wrap grid gap-6 lg:grid-cols-[.7fr_1.3fr] lg:gap-16"><h2 className="text-3xl sm:text-4xl">External, internal, spiritual</h2><p className="mt-5 text-lg text-muted">Dr. Jan describes the path as a movement from external living into inner refinement and spiritual realization. The external concerns the body and public life; the internal concerns mind and feeling; the spiritual concerns awareness and direct realization. Teaching, practice, and service support this movement.</p></div></section>

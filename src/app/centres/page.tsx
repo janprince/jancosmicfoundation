@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import PageHero from '@/components/layout/PageHero';
@@ -6,11 +7,11 @@ import Button from '@/components/ui/Button';
 import CentreCard from '@/components/cards/CentreCard';
 import { getCentres } from '@/lib/api';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata('/centres', {
   title: 'Our Centres',
   description:
     'Jan Cosmic Foundation centres and communities offer sittings, study, outreach, healing and counselling support, service, and contact points for sincere seekers.',
-};
+});
 
 export default async function CentresPage() {
   const centres = await getCentres();

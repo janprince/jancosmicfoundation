@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
@@ -11,12 +12,13 @@ import { getCauseBySlug, getCauses } from '@/lib/api';
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const cause = await getCauseBySlug(slug);
-  if (!cause) return { title: 'Cause Not Found' };
-  return {
+  if (!cause) return { robots: { index: false, follow: true }, title: 'Cause Not Found' };
+  return pageMetadata(`/donate/${cause.slug}`, {
     title: `Donate: ${cause.title}`,
     description: cause.description,
+    twitter: { card: 'summary_large_image', images: cause.image ? [cause.image] : undefined },
     openGraph: { title: cause.title, description: cause.description, images: [{ url: cause.image, alt: cause.title }] },
-  };
+  });
 }
 
 export async function generateStaticParams() {

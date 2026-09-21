@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import PageHero from '@/components/layout/PageHero';
@@ -5,7 +6,7 @@ import CauseCard from '@/components/cards/CauseCard';
 import DonationCheckout from '@/components/forms/DonationCheckoutWrapper';
 import { getCauses } from '@/lib/api';
 
-export const metadata: Metadata = { title: 'Give to the Foundation', description: 'Support the teachings and work of Jan Cosmic Foundation. Explore current initiatives or enquire about an unrestricted contribution.' };
+export const metadata: Metadata = pageMetadata('/donate', { title: 'Give to the Foundation', description: 'Support the teachings and work of Jan Cosmic Foundation. Explore current initiatives or enquire about an unrestricted contribution.' });
 
 export default async function DonatePage() {
   const causes = await getCauses();

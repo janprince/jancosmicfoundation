@@ -1,7 +1,8 @@
+import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { siteConfig } from '@/lib/site-config';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata('/blog', {
   title: 'Blog',
   description:
     'Teachings, reflections, retreat notes, and practical wisdom from Jan Cosmic Foundation on consciousness, self-realization, service, healing, and conscious living.',
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     url: `${siteConfig.url}/blog`,
     type: 'website',
   },
-};
+});
 
 export default function BlogLayout({ children }: { children: React.ReactNode }) {
   return children;

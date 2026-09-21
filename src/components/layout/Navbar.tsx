@@ -13,13 +13,13 @@ const navLinks: NavLink[] = [
   { label: 'The Foundation', href: '/about', children: [
     { label: 'About the Foundation', href: '/about' },
     { label: 'Dr. Baffour Jan', href: '/about/founder' },
-    { label: 'Community', href: '/community' },
+    { label: 'Community & social links', href: '/community' },
     { label: 'Life at the Foundation', href: '/gallery' },
   ] },
   { label: 'Teachings', href: '/teachings', children: [
     { label: 'Public teachings', href: '/teachings' },
     { label: 'Writings', href: '/blog' },
-    { label: 'InnerSpace — structured study', href: '/innerspace' },
+    { label: 'Inner Space — structured study', href: '/innerspace' },
   ] },
   { label: 'Visit & gatherings', href: '/visit', children: [
     { label: 'Plan a visit', href: '/visit' },

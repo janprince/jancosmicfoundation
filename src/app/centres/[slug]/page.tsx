@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
@@ -12,12 +13,13 @@ import { centreMembership, centreMembershipDetail } from '@/lib/centres';
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const centre = await getCentreBySlug(slug);
-  if (!centre) return { title: 'Centre Not Found' };
-  return {
+  if (!centre) return { robots: { index: false, follow: true }, title: 'Centre Not Found' };
+  return pageMetadata(`/centres/${centre.slug}`, {
     title: `${centre.name} Centre`,
     description: centre.description,
+    twitter: { card: 'summary_large_image', images: centre.image ? [centre.image] : undefined },
     openGraph: { title: centre.name, description: centre.description, images: centre.image ? [{ url: centre.image, alt: centre.name }] : undefined },
-  };
+  });
 }
 
 export async function generateStaticParams() {

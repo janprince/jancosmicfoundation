@@ -1,3 +1,4 @@
+import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -5,7 +6,7 @@ import PageHero from '@/components/layout/PageHero';
 import { siteConfig, mapsDirectUrl } from '@/lib/site-config';
 import GatheringNotice from '@/components/home/GatheringNotice';
 
-export const metadata: Metadata = { title: 'Plan a visit', description: 'Find Jan Cosmic Foundation in Kwabenya, Accra. Ask about attending a gathering, get directions, and plan your first visit.' };
+export const metadata: Metadata = pageMetadata('/visit', { title: 'Plan a visit', description: 'Find Jan Cosmic Foundation in Kwabenya, Accra. Ask about attending a gathering, get directions, and plan your first visit.' });
 
 export default function VisitPage() {
   return <>
