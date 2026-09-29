@@ -2,6 +2,7 @@ import { pageMetadata } from '@/lib/seo';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import Link from 'next/link';
 import PageHero from '@/components/layout/PageHero';
 import SectionHeader from '@/components/ui/SectionHeader';
 import ProgressBar from '@/components/ui/ProgressBar';
@@ -165,6 +166,7 @@ export default async function CausePage({ params }: { params: Promise<{ slug: st
               <p className="rounded-card bg-sand p-5 text-center text-xs leading-relaxed text-muted">
                 Donations support the work named on this page. For questions about giving or stewardship, write to the Foundation.
               </p>
+              <p className="form-note text-center">Prefer to support the whole Foundation? <Link href="/donate#general-giving">Make a general donation</Link>.</p>
             </div>
           </div>
         </div>

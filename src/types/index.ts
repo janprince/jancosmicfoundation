@@ -150,6 +150,14 @@ export interface NewsletterFormData {
   email: string;
 }
 
+export interface JoinFoundationFormData {
+  name: string;
+  email: string;
+  phone: string;
+  country: string;
+  region: string;
+}
+
 export interface ImpactStat {
   label: string;
   value: number;

@@ -25,6 +25,7 @@ export default async function CommunityPage() {
   const stories = await getTestimonials();
   return <>
     <PageHero title="Stay connected" subtitle="Find the Jan Cosmic Foundation community online. Receive teachings, hear about gatherings, and stay close to the work wherever you are." />
+    <div className="wrap"><div className="home-join-invitation"><div><h2 className="text-3xl">New to the Foundation?</h2><p>Introduce yourself and tell us where you’re based. Then join our Telegram community to stay connected.</p></div><Link href="/join" className="button">Join the Foundation</Link></div></div>
     <section id="online" className="section" aria-labelledby="community-links-title">
       <div className="wrap">
         <div className="section-head">

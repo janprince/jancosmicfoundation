@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePaystackPayment } from 'react-paystack';
-import { PAYSTACK_PUBLIC_KEY, PRESET_AMOUNTS, MIN_DONATION, MAX_DONATION, generateReference, formatAmount } from '@/lib/paystack';
+import { PAYSTACK_PUBLIC_KEY, PRESET_AMOUNTS, MIN_DONATION, MAX_DONATION, generateReference, formatAmount, donationMetadata } from '@/lib/paystack';
 import { verifyDonation } from '@/lib/api';
 import { siteConfig } from '@/lib/site-config';
 
@@ -11,14 +11,14 @@ interface Transaction { amount: number; email: string; reference: string; }
 type State = 'idle' | 'paying' | 'verifying' | 'success' | 'pending' | 'error';
 
 function PaymentButton({ transaction, causeId, causeTitle, onStart, onSuccess, onClose, onError }: {
-  transaction: Transaction; causeId: string; causeTitle: string;
+  transaction: Transaction; causeId?: string; causeTitle: string;
   onStart: () => void; onSuccess: () => void; onClose: () => void; onError: () => void;
 }) {
   const started = useRef(false);
   const initialize = usePaystackPayment({
     reference: transaction.reference, email: transaction.email, amount: Math.round(transaction.amount * 100),
     publicKey: PAYSTACK_PUBLIC_KEY, currency: 'GHS',
-    metadata: { custom_fields: [{ display_name: 'Cause', variable_name: 'cause', value: causeTitle }, { display_name: 'Cause ID', variable_name: 'cause_id', value: causeId }] },
+    metadata: donationMetadata(causeTitle, causeId),
   });
   return <button type="button" className="button w-full" onClick={() => {
     if (started.current) return;
@@ -28,7 +28,7 @@ function PaymentButton({ transaction, causeId, causeTitle, onStart, onSuccess, o
   }}>Donate {formatAmount(transaction.amount)}</button>;
 }
 
-export default function DonationCheckout({ causeTitle, causeId }: { causeTitle: string; causeId: string }) {
+export default function DonationCheckout({ causeTitle, causeId }: { causeTitle: string; causeId?: string }) {
   const [amount, setAmount] = useState(100);
   const [custom, setCustom] = useState<string | null>(null);
   const [email, setEmail] = useState('');

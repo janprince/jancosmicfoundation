@@ -27,7 +27,7 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: { isOpen: bool
         </Disclosure>)}
         <Link href="/contact" onClick={onClose} aria-current={pathname === '/contact' ? 'page' : undefined} className="mobile-nav-link border-t border-line">Contact & directions</Link>
       </nav>
-      <div className="border-t border-line p-6"><Link href="/donate" onClick={onClose} className="button gold w-full">Give to the Foundation</Link></div>
+      <div className="border-t border-line p-6 space-y-3"><Link href="/join" onClick={onClose} className="button w-full" aria-current={pathname === '/join' ? 'page' : undefined}>Join the Foundation</Link><Link href="/donate" onClick={onClose} className="button gold w-full">Give to the Foundation</Link></div>
     </DialogPanel>
   </Dialog>;
 }

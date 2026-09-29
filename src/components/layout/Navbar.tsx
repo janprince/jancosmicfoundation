@@ -15,6 +15,7 @@ const navLinks: NavLink[] = [
     { label: 'Dr. Baffour Jan', href: '/about/founder' },
     { label: 'Community & social links', href: '/community' },
     { label: 'Life at the Foundation', href: '/gallery' },
+    { label: 'Contact & directions', href: '/contact' },
   ] },
   { label: 'Teachings', href: '/teachings', children: [
     { label: 'Public teachings', href: '/teachings' },
@@ -52,10 +53,13 @@ export default function Navbar() {
               {({ close }) => <>{link.children?.map(child => <Link key={child.href} href={child.href} onClick={() => close()} aria-current={pathname === child.href ? 'page' : undefined}>{child.label}</Link>)}</>}
             </PopoverPanel>
           </Popover>)}
-          <Link href="/contact" className="nav-trigger" aria-current={pathname === '/contact' ? 'page' : undefined}>Contact</Link>
+          <Link href="/join" className="nav-trigger" aria-current={pathname === '/join' ? 'page' : undefined}>Join</Link>
           <Link href="/donate" className="button gold button-sm ml-3" aria-current={pathname === '/donate' ? 'page' : undefined}>Give</Link>
         </div>
-        <button onClick={() => setMobileOpen(true)} className="xl:hidden grid h-11 w-11 place-items-center text-navy" aria-label="Open navigation menu"><List size={25} aria-hidden="true" /></button>
+        <div className="flex items-center gap-3 xl:hidden">
+          <Link href="/join" className="nav-trigger" aria-current={pathname === '/join' ? 'page' : undefined}>Join</Link>
+          <button onClick={() => setMobileOpen(true)} className="grid h-11 w-11 place-items-center text-navy" aria-label="Open navigation menu"><List size={25} aria-hidden="true" /></button>
+        </div>
       </nav>
     </header>
     <MobileMenu isOpen={mobileOpen} onClose={() => setMobileOpen(false)} navLinks={navLinks} />

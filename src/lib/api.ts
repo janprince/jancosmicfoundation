@@ -12,6 +12,7 @@ import type {
   ContactFormData,
   VolunteerFormData,
   JoinCentreFormData,
+  JoinFoundationFormData,
   NewsletterFormData,
 } from '@/types';
 import { foundationPrograms } from '@/content/programmes';
@@ -289,12 +290,13 @@ export async function getProgramBySlug(slug: string): Promise<Program | undefine
 // Form submissions (POST)
 // ---------------------------------------------------------------------------
 
-async function postAPI<T>(path: string, body: T): Promise<{ ok: boolean; error?: string }> {
+async function postAPI<T>(path: string, body: T, expectedStatus?: string): Promise<{ ok: boolean; error?: string }> {
   try {
     const res = await fetch(`${API_URL}${path}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
+      signal: AbortSignal.timeout(15000),
     });
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));
@@ -304,6 +306,12 @@ async function postAPI<T>(path: string, body: T): Promise<{ ok: boolean; error?:
           ['detail', 'non_field_errors'].includes(field) ? message : `${field.replaceAll('_', ' ')}: ${message}`);
       });
       return { ok: false, error: messages.join(' ') || 'We could not send your request. Please try again.' };
+    }
+    if (expectedStatus) {
+      const result = await res.json();
+      if (result?.status !== expectedStatus) {
+        return { ok: false, error: 'We could not confirm your registration. Please try again.' };
+      }
     }
     return { ok: true };
   } catch {
@@ -341,9 +349,16 @@ export async function submitNewsletter(data: NewsletterFormData) {
   return postAPI('/newsletter/', data);
 }
 
+// Foundation-wide registration is separate from centre membership requests.
+export const JOIN_FOUNDATION_PATH = '/join-foundation/';
+
+export async function submitJoinFoundation(data: JoinFoundationFormData) {
+  return postAPI(JOIN_FOUNDATION_PATH, data, 'registered');
+}
+
 export async function verifyDonation(data: {
   reference: string;
-  cause_id: string;
+  cause_id?: string;
 }): Promise<{ ok: boolean; error?: string }> {
   return postAPI('/donations/verify/', data);
 }

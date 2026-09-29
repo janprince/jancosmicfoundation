@@ -4,12 +4,12 @@ import dynamic from "next/dynamic";
 
 const DonationCheckout = dynamic(
   () => import("@/components/forms/DonationCheckout"),
-  { ssr: false }
+  { ssr: false, loading: () => <p role="status" className="form-note">Loading secure giving…</p> }
 );
 
 interface Props {
   causeTitle: string;
-  causeId: string;
+  causeId?: string;
 }
 
 export default function DonationCheckoutWrapper({ causeTitle, causeId }: Props) {

@@ -28,7 +28,7 @@ export default function HomePage() {
         <p className="hero-lede hero-animate-3">A living spiritual foundation guiding sincere seekers toward inner freedom, self-realization, and conscious living through the teachings of Dr. Baffour Jan.</p>
         <div className="actions hero-animate-4">
           <Link className="button gold" href="/teachings">Explore the teachings</Link>
-          <a className="button ghost" href="/visit">Plan a first visit</a>
+          <Link className="button ghost" href="/join">Join the Foundation</Link>
         </div>
       </div>
       <p className="hero-caption">Dr. Baffour Jan with members of the community</p>
@@ -96,6 +96,12 @@ export default function HomePage() {
         <p>Listening, sitting in silence, asking questions, and working alongside one another. These photographs offer a glimpse of the people and shared practice behind the Foundation.</p>
       </ScrollReveal>
       <LifeGallery />
+      <div className="wrap">
+        <div className="home-join-invitation">
+          <div><h3>Become part of the community</h3><p>Wherever you are, you can take part. Share a few details, then join our Telegram group for teachings, gatherings, and life at the Foundation.</p></div>
+          <Link className="button" href="/join">Join the Foundation</Link>
+        </div>
+      </div>
     </section>
 
     <section id="visit" className="visit stars section" aria-labelledby="visit-title">

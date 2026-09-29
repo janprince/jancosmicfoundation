@@ -139,6 +139,7 @@ src/
 | `/testimonials` | Permanent redirect to `/community#stories` |
 | `/donate`, `/donate/[slug]` | Donation causes + single cause with Paystack checkout |
 | `/volunteer` | Volunteering info + signup form |
+| `/join` | Foundation registration, followed by the Telegram invitation |
 | `/contact` | Contact form |
 | `/privacy-policy`, `/terms` | Legal pages |
 
@@ -146,7 +147,7 @@ Data is fetched in async Server Components via `src/lib/api.ts`, which fetches t
 external API with `next: { revalidate: 60 }`, follows same-origin pagination, and preserves empty
 collections. Events may return an empty calendar on an outage, with a contact fallback; other content
 outages surface through the error boundary. Do not silently replace backend titles or descriptions.
-Nav groups: **The Foundation · Teachings · Visit & gatherings · Our work**, followed by **Contact · Give**.
+Nav groups: **The Foundation · Teachings · Visit & gatherings · Our work**, followed by **Join · Give**. Contact is also in The Foundation menu and the footer.
 Mission and vision live within About; testimonials live within Community. Keep legacy redirects.
 
 ## Payments
@@ -155,8 +156,8 @@ Mission and vision live within About; testimonials live within Community. Keep l
 - `react-paystack` requires `ssr: false` (uses `window`) — wrap with dynamic import
 - Preset amounts + custom amount input
 - Currency: GH₵ (Ghanaian Cedis)
-- `NEXT_PUBLIC_GENERAL_DONATION_CAUSE_ID` optionally identifies an existing published backend cause for
-  unrestricted donations. Never invent this ID. Without it, general giving leads to a contextual enquiry.
+- General donations omit `cause_id` from Paystack metadata and verification; the backend accepts a nullable
+  cause. Initiative donations retain their published cause ID. No general-donation cause ID is needed.
 - Freeze the submitted amount, email and reference while payment/verification is underway. A payment
   pending verification must keep its reference and must not invite the donor to pay again.
 - Live payment completion and notification delivery need a controlled provider/backend test before release.
@@ -177,6 +178,9 @@ Mission and vision live within About; testimonials live within Community. Keep l
 - Dynamic route params use the `params: Promise<{ slug: string }>` pattern (Next.js async params)
 - All images use Next.js `<Image>` component for optimization
 - Forms submit through `src/lib/api.ts` to the configured API; there is no mock-success path.
+- Foundation joining posts to `/join-foundation/` beneath `NEXT_PUBLIC_API_URL`. The API saves
+  the details and returns `status: registered` before the Telegram invitation appears. See
+  `docs/launch/giving-and-joining.md` for the payload and integration checklist.
 - Read foundation facts from `siteConfig` (`src/lib/site-config.ts`) — never hard-code name,
   stats, contact details, address, or social URLs in components
 - Centre membership counts render through `src/lib/centres.ts`; do not infer community status from a
