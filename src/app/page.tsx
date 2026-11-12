@@ -76,7 +76,10 @@ export default function HomePage() {
             <Link className="text-link" href="/blog">All writings</Link>
           </ScrollReveal>
         </div>
-        <div className="teachings-more"><Link className="button outline" href="/teachings">Browse all teachings</Link></div>
+        <div className="teachings-more flex flex-wrap items-center gap-4 sm:gap-6">
+          <Link className="button outline" href="/teachings">Browse all teachings</Link>
+          <Link className="text-link" href="/teachings#live-radio">Listen live</Link>
+        </div>
         <aside className="study-bridge" aria-labelledby="study-title">
           <div>
             <h3 id="study-title">When you’re ready to go deeper</h3>
